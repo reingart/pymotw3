@@ -1,3 +1,9 @@
 build
 module
 source/_themes/pymotw/static/pymotw.css
+dist
+
+# Created by pbr
+AUTHORS
+ChangeLog
+*.egg-info
