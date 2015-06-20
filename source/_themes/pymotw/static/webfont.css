@@ -1,0 +1,21 @@
+/*
+ * Stylesheet defining WebFont font face.
+ * http://www.justbenice.ru/studio/websymbols
+ */
+
+/* WebFont ----------------------------------------------------------------- */
+@ Font-face {
+      font-family: 'WebSymbolsLigaRegular';
+          src: url ('WebSymbolsLiga-Regular/WebSymbolsLiga-Regular.eot');
+          src: url ('WebSymbolsLiga-Regular/WebSymbolsLiga-Regular.eot? #iefix') format ('embedded-opentype'),
+               url ('WebSymbolsLiga-Regular/WebSymbolsLiga-Regular.woff') format ('woff'),
+               url ('WebSymbolsLiga-Regular/WebSymbolsLiga-Regular.ttf') format ('truetype'),
+               url ('WebSymbolsLiga-Regular/WebSymbolsLiga-Regular.svg # WebSymbolsRegular') format ('svg');
+}
+
+.webfont {
+    font-family: WebSymbolsLigaRegular;
+    font-weight: normal;
+    font-style: normal;
+}
+
