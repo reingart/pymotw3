@@ -29,6 +29,8 @@ simplejson==3.8.2
 six==1.10.0
 snowballstemmer==1.2.1
 Sphinx==1.4.8
+sphinx-intl==0.9.9
 sphinx-rtd-theme==0.1.9
 sphinxcontrib-paverutils==1.16.0
 uritemplate==0.6
+python-levenshtein==0.12.0

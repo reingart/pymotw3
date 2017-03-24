@@ -1,6 +1,7 @@
 import configparser
 import functools
 import http.server
+import locale
 import os
 import subprocess
 
@@ -71,6 +72,17 @@ options(
         docroot='.',
         builddir='build',
         sourcedir='source',
+        warnerror=False,
+    ),
+
+    gettext = Bunch(
+        builder='gettext',
+        builddir='build',
+        outdir='locale/pot',
+        templates='pkg',
+        sourcedir='source',
+        doctrees='gettext/doctrees',
+        docroot='.',
         warnerror=False,
     ),
 
@@ -197,6 +209,10 @@ def css(options):
 @task
 def html(options):
     "Generate HTML files."
+    # Override target translation configuration -locale- (see source/conf.py)
+    language_code, encoding = locale.getdefaultlocale()
+    if language_code and language_code != "C":
+        options.config_args = {"language": language_code}
     paverutils.html(options)
     css(options)
     return
@@ -341,6 +357,26 @@ def notify_google(options):
     #    % options.sitemap_gen.config)
     return
 
+@task
+def gettext(options):
+    "Collect all translatable strings from rst input."
+    # Clean and recreate output directory
+    remake_directories(options.gettext.outdir)
+    # Choosing another doctree directory
+    remake_directories(os.path.dirname(options.gettext.doctrees))
+    # Set templates environment variable, used by sphinx/conf.py
+    ##os.environ['TEMPLATES'] = options.gettext.templates
+    if paverutils is None:
+        raise RuntimeError('Could not find sphinxcontrib.paverutils, will not be able to build text output.')
+    # Extract messages (POT)
+    ##import dbg; dbg.set_trace()
+    options.order('gettext', 'sphinx', add_rest=True)
+    paverutils.run_sphinx(options, "gettext")    
+    # Update translations PO: TODO: read conf["locale_dirs"][0] & language (es)
+    sh('sphinx-intl update -p "%s" --locale-dir locale -l es' % (options.gettext.outdir, ))
+    # Remember to build the MO files once translated:
+    sh('sphinx-intl build --locale-dir locale')
+    return
 
 @task
 @needs('setuptools.command.sdist')

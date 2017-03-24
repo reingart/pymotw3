@@ -70,6 +70,12 @@ templates_path = ['_templates']
 # The suffix of source filenames.
 source_suffix = '.rst'
 
+# Sphinx internationalization details:
+locale_dirs = ['../locale/']    # path outside PyMOTW source directory
+gettext_compact = False         # optional.
+gettext_uuid = True             # add uid line and calculate similarity
+language = "en"                 # target translation
+
 # The encoding of source files.
 #source_encoding = 'utf-8-sig'
 
