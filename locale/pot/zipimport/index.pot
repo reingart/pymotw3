@@ -1,0 +1,243 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/zipimport/index.rst:5
+# 4abca7b24b7942bb892991f99da7fd2e
+msgid "zipimport --- Load Python Code from ZIP Archives"
+msgstr ""
+
+#: ../../source/zipimport/index.rst:10
+# 319398d134e348a5adebdb445c835c1a
+msgid "Import Python modules saved as members of ZIP archives."
+msgstr ""
+
+#: ../../source/zipimport/index.rst:12
+# 2318df2d72e740118a8f3219505feb54
+msgid "The ``zipimport`` module implements the ``zipimporter`` class, which can be used to find and load Python modules inside ZIP archives. The ``zipimporter`` supports the import hooks API specified in PEP 302; this is how Python Eggs work."
+msgstr ""
+
+#: ../../source/zipimport/index.rst:17
+# 1e4770f4bf29468fa872fa9f99913779
+msgid "It is not usually necessary to use the ``zipimport`` module directly, since it is possible to import directly from a ZIP archive as long as that archive appears in ``sys.path``. However, it is instructive to study how the importer API can be used, to learn the features available and understand how module importing works.  Knowing how the ZIP importer works will also help debug issues that may come up when distributing applications packaged as ZIP archives created with ``zipfile.PyZipFile``."
+msgstr ""
+
+#: ../../source/zipimport/index.rst:27
+# b5525fb974f04c7f9c0d9a55fbcfd0ea
+msgid "Example"
+msgstr ""
+
+#: ../../source/zipimport/index.rst:29
+# 2c1c1f113e9b43399ed86454a3207ec6
+msgid "These examples reuse some of the code from the discussion of :mod:`zipfile` to create an example ZIP archive containing a few Python modules."
+msgstr ""
+
+#: ../../source/zipimport/index.rst:0
+# 3cacf0cf9f0b4444b03346fcc299334b
+msgid "zipimport_make_example.py"
+msgstr ""
+
+#: ../../source/zipimport/index.rst:37
+# fdbed192a4b44e1c8edc2d480a1ed577
+msgid "Run ``zipimport_make_example.py`` before any of the rest of the examples to create a ZIP archive containing all of the modules in the example directory, along with some test data needed for the examples in this section."
+msgstr ""
+
+#: ../../source/zipimport/index.rst:78
+# 4dde9e7e28a240cf8fc33f393b36564c
+msgid "Finding a Module"
+msgstr ""
+
+#: ../../source/zipimport/index.rst:80
+# 42bcac1588e04e66a2a095b3ee8b36e7
+msgid "Given the full name of a module, ``find_module()`` will try to locate that module inside the ZIP archive."
+msgstr ""
+
+#: ../../source/zipimport/index.rst:0
+# eb589b08bf5c4235ba08883e4701edf6
+msgid "zipimport_find_module.py"
+msgstr ""
+
+#: ../../source/zipimport/index.rst:87
+# ebab355b67f1459287e2a66ec8ca8b68
+msgid "If the module is found, the ``zipimporter`` instance is returned. Otherwise, ``None`` is returned."
+msgstr ""
+
+#: ../../source/zipimport/index.rst:107
+# 8b5def2378fb48a7b5ce80c22846a92b
+msgid "Accessing Code"
+msgstr ""
+
+#: ../../source/zipimport/index.rst:109
+# 73b0f0a6be474542a3d653208b93ff43
+msgid "The ``get_code()`` method loads the code object for a module from the archive."
+msgstr ""
+
+#: ../../source/zipimport/index.rst:0
+# b26a38cfbe6b43fb9e70eed1b23460c1
+msgid "zipimport_get_code.py"
+msgstr ""
+
+#: ../../source/zipimport/index.rst:116
+# 300f2983f2704389832ff270dfdcae23
+msgid "The code object is not the same as a ``module`` object, but is used to create one."
+msgstr ""
+
+#: ../../source/zipimport/index.rst:135
+# 65d435f9265a4b5ba463578a6598586e
+msgid "To load the code as a usable module, use ``load_module()`` instead."
+msgstr ""
+
+#: ../../source/zipimport/index.rst:0
+# 2ff4b838bb9e4a7baa0b58363907663d
+msgid "zipimport_load_module.py"
+msgstr ""
+
+#: ../../source/zipimport/index.rst:142
+# 62c0a938a0124cf4b3b90648a5e1a9e7
+msgid "The result is a module object configured as though the code had been loaded from a regular import."
+msgstr ""
+
+#: ../../source/zipimport/index.rst:166
+# 529d41dd89d74804945ca6e87286bc92
+msgid "Source"
+msgstr ""
+
+#: ../../source/zipimport/index.rst:168
+# e593690ed6c748c7b57a97cb756f3041
+msgid "As with the :mod:`inspect` module, it is possible to retrieve the source code for a module from the ZIP archive, if the archive includes the source. In the case of the example, only ``zipimport_get_source.py`` is added to ``zipimport_example.zip`` (the rest of the modules are just added as the ``.pyc`` files)."
+msgstr ""
+
+#: ../../source/zipimport/index.rst:0
+# 1d8a4cf053e54dba810340c7ea350c2e
+msgid "zipimport_get_source.py"
+msgstr ""
+
+#: ../../source/zipimport/index.rst:178
+# f8785b5179884ec18f1f57bd5c2c2685
+msgid "If the source for a module is not available, ``get_source()`` returns ``None``."
+msgstr ""
+
+#: ../../source/zipimport/index.rst:229
+# 46d9c1fd65ac4329a89e0d68489b6aa9
+msgid "Packages"
+msgstr ""
+
+#: ../../source/zipimport/index.rst:231
+# 287c8ce058694f4b93d0f5bbf2ef2267
+msgid "To determine if a name refers to a package instead of a regular module, use ``is_package()``."
+msgstr ""
+
+#: ../../source/zipimport/index.rst:0
+# 9660fb718ae14fa48ae38f6e382615be
+msgid "zipimport_is_package.py"
+msgstr ""
+
+#: ../../source/zipimport/index.rst:238
+# e216460afd4649a19f7e4dff3091e90c
+msgid "In this case, ``zipimport_is_package`` came from a module and the ``example_package`` is a package."
+msgstr ""
+
+#: ../../source/zipimport/index.rst:257
+# 39bfe97911bd47668d49b772a2c772b8
+msgid "Data"
+msgstr ""
+
+#: ../../source/zipimport/index.rst:259
+# 172fd149d0e64b7faf0f7f6b12b3dd91
+msgid "There are times when source modules or packages need to be distributed with non-code data. Images, configuration files, default data, and test fixtures are just a few examples of this. Frequently, the module ``__path__`` or ``__file__`` attributes are used to find these data files relative to where the code is installed."
+msgstr ""
+
+#: ../../source/zipimport/index.rst:265
+# e9a84201234b4f5ba5f38461f26d09fd
+msgid "For example, with a \"normal\" module, the file system path can be constructed from the ``__file__`` attribute of the imported package like this:"
+msgstr ""
+
+#: ../../source/zipimport/index.rst:0
+# dbaab249fa584d83a6eb087857791e78
+msgid "zipimport_get_data_nozip.py"
+msgstr ""
+
+#: ../../source/zipimport/index.rst:273
+# 6d8729806c5747ab97b13c805e26e799
+msgid "The output will depend on where the sample code is located on the file system."
+msgstr ""
+
+#: ../../source/zipimport/index.rst:294
+# a2cc57c4ce4047239ee314490002b0a6
+msgid "If the ``example_package`` is imported from the ZIP archive instead of the file system, using ``__file__`` does not work."
+msgstr ""
+
+#: ../../source/zipimport/index.rst:0
+# c5b4e5577a554e73b27564cb4f9ab972
+msgid "zipimport_get_data_zip.py"
+msgstr ""
+
+#: ../../source/zipimport/index.rst:301
+# 178e4c8be1234778a39ead2cc6161e4e
+msgid "The ``__file__`` of the package refers to the ZIP archive, and not a directory, so building up the path to the ``README.txt`` file gives the wrong value."
+msgstr ""
+
+#: ../../source/zipimport/index.rst:326
+# f982e5dfa3274319825da653127bc77a
+msgid "A more reliable way to retrieve the file is to use the ``get_data()`` method. The ``zipimporter`` instance that loaded the module can be accessed through the ``__loader__`` attribute of the imported module:"
+msgstr ""
+
+#: ../../source/zipimport/index.rst:0
+# 9d57528cc6e3467bb4d391175d25831c
+msgid "zipimport_get_data.py"
+msgstr ""
+
+#: ../../source/zipimport/index.rst:335
+# 3b35da7dbeea4a50b34a2bf6fad9fdcf
+msgid "``pkgutil.get_data()`` uses this interface to access data from within a package. The value returned is a byte string, which needs to be decoded to a unicode string before printing."
+msgstr ""
+
+#: ../../source/zipimport/index.rst:357
+# bad49d4243d4424b832a8f32a9b0cc42
+msgid "The ``__loader__`` is not set for modules not imported via ``zipimport``."
+msgstr ""
+
+#: ../../source/zipimport/index.rst:362
+# 4191735dd291421f8c67d032e77eaee2
+msgid ":pydoc:`zipimport`"
+msgstr ""
+
+#: ../../source/zipimport/index.rst:364
+# 7e6fa9aa614b43a790324e9f097e1f21
+msgid ":ref:`Python 2 to 3 porting notes for zipimport <porting-zipimport>`"
+msgstr ""
+
+#: ../../source/zipimport/index.rst:366
+# 896a5f41636946ab872a7b65fd3728c3
+msgid ":mod:`imp` -- Other import-related functions."
+msgstr ""
+
+#: ../../source/zipimport/index.rst:368
+# 291ad26c52704524a592a3a266f1b4c1
+msgid ":mod:`pkgutil` -- Provides a more generic interface to ``get_data()``."
+msgstr ""
+
+#: ../../source/zipimport/index.rst:371
+# 38d8614a2f844a90aa58e5c1948f0414
+msgid ":mod:`zipfile` -- Read and write ZIP archive files."
+msgstr ""
+
+#: ../../source/zipimport/index.rst:373
+# e5b15c82540c470d967f4ae2fb0d3300
+msgid ":pep:`302` -- New Import Hooks"
+msgstr ""
+

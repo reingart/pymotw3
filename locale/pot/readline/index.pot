@@ -1,0 +1,343 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/readline/index.rst:3
+# 9fe06d69331648818c55dea8d16cb140
+msgid "readline --- The GNU readline Library"
+msgstr ""
+
+#: ../../source/readline/index.rst:8
+# 25d624539bbf4613bbfb979853a41756
+msgid "Provides an interface to the GNU readline library for interacting with the user at a command prompt."
+msgstr ""
+
+#: ../../source/readline/index.rst:11
+# b97b161dda024252a1e1f8c5ffbd1d94
+msgid "The ``readline`` module can be used to enhance interactive command line programs to make them easier to use.  It is primarily used to provide command line text completion, or \"tab completion\"."
+msgstr ""
+
+#: ../../source/readline/index.rst:17
+# 652cb34fe95f4911aa9aaf8d0024be1d
+msgid "Because ``readline`` interacts with the console content, printing debug messages makes it difficult to see what it happening in the sample code versus what readline is doing for free.  The following examples use the :mod:`logging` module to write debug information to a separate file.  The log output is shown with each example."
+msgstr ""
+
+#: ../../source/readline/index.rst:26
+# c1432743fae94230a300f7c2c6ce41bd
+msgid "The GNU libraries needed for ``readline`` are not available on all platforms by default.  If your system does not include them, you may need to recompile the Python interpreter to enable the module, after installing the dependencies. A stand-alone version of the library is also distributed from the Python Package Index under the name gnureadline_. The examples in this section first try to import gnureadline, and then fall back to readline."
+msgstr ""
+
+#: ../../source/readline/index.rst:39
+# a4589a3625ba4e6b82a3a6c953a902c9
+msgid "Configuring"
+msgstr ""
+
+#: ../../source/readline/index.rst:41
+# 9fe177991f2e4367884fe39a29d61311
+msgid "There are two ways to configure the underlying readline library, using a configuration file or the ``parse_and_bind()`` function. Configuration options include the key-binding to invoke completion, editing modes (``vi`` or ``emacs``), and many other values.  Refer to the documentation for the GNU readline library for details."
+msgstr ""
+
+#: ../../source/readline/index.rst:48
+# 147f208cb4c94ae59326edc9d5a9f731
+msgid "The easiest way to enable tab-completion is through a call to ``parse_and_bind()``.  Other options can be set at the same time. This example changes the editing controls to use \"vi\" mode instead of the default of \"emacs\".  To edit the current input line, press ``ESC`` then use normal ``vi`` navigation keys such as ``j``, ``k``, ``l``, and ``h``."
+msgstr ""
+
+#: ../../source/readline/index.rst:0
+# 517ac103c162409886f3aee95447de1f
+msgid "readline_parse_and_bind.py"
+msgstr ""
+
+#: ../../source/readline/index.rst:59
+# f57475fc9b5b4fbf92f07eeea68ae317
+msgid "The same configuration can be stored as instructions in a file read by the library with a single call.  If ``myreadline.rc`` contains"
+msgstr ""
+
+#: ../../source/readline/index.rst:0
+# 0d7f976750b34f0c81d4f3a154aa0cee
+msgid "myreadline.rc"
+msgstr ""
+
+#: ../../source/readline/index.rst:65
+# 68c4ef5ca41846128872a8093ca2a0ca
+msgid "the file can be read with ``read_init_file()``"
+msgstr ""
+
+#: ../../source/readline/index.rst:0
+# fb0237fb63b44410a6bad83f4429664b
+msgid "readline_read_init_file.py"
+msgstr ""
+
+#: ../../source/readline/index.rst:72
+# 99c33d2e463d4b4b9ad3305bd92f36fd
+msgid "Completing Text"
+msgstr ""
+
+#: ../../source/readline/index.rst:74
+# a75e9b3041e04d02bdd8e20c03d321eb
+msgid "This program has a built-in set of possible commands and uses tab-completion when the user is entering instructions."
+msgstr ""
+
+#: ../../source/readline/index.rst:0
+# 8ed6e1cafa19491598cd944ead0016ef
+msgid "readline_completer.py"
+msgstr ""
+
+#: ../../source/readline/index.rst:81
+# 90a096c472824d39aed209fb3c964215
+msgid "The ``input_loop()`` function reads one line after another until the input value is ``\"stop\"``.  A more sophisticated program could actually parse the input line and run the command."
+msgstr ""
+
+#: ../../source/readline/index.rst:85
+# 77c72ec45de9467c9647cf4f37757111
+msgid "The ``SimpleCompleter`` class keeps a list of \"options\" that are candidates for auto-completion.  The ``complete()`` method for an instance is designed to be registered with ``readline`` as the source of completions.  The arguments are a ``text`` string to complete and a ``state`` value, indicating how many times the function has been called with the same text.  The function is called repeatedly with the state incremented each time.  It should return a string if there is a candidate for that state value or ``None`` if there are no more candidates.  The implementation of ``complete()`` here looks for a set of matches when state is ``0``, and then returns all of the candidate matches one at a time on subsequent calls."
+msgstr ""
+
+#: ../../source/readline/index.rst:97
+# 38c70bb605224ab8bd6b415294169935
+msgid "When run, the initial output is:"
+msgstr ""
+
+#: ../../source/readline/index.rst:105
+# 2bb30167d32847749c07feef21f470e6
+msgid "Pressing ``TAB`` twice causes a list of options to be printed."
+msgstr ""
+
+#: ../../source/readline/index.rst:115
+# 4e16a269add84297abb1fcc1c6f4db21
+msgid "The log file shows that ``complete()`` was called with two separate sequences of state values."
+msgstr ""
+
+#: ../../source/readline/index.rst:135
+# 878c635054354154b8b360d18b9489c9
+msgid "The first sequence is from the first TAB key-press.  The completion algorithm asks for all candidates but does not expand the empty input line.  Then on the second TAB, the list of candidates is recalculated so it can be printed for the user."
+msgstr ""
+
+#: ../../source/readline/index.rst:140
+# 15ec911c0e4a468eabd0b004feec6ba0
+msgid "If the next input is \"``l``\" followed by another TAB, the screen shows:"
+msgstr ""
+
+#: ../../source/readline/index.rst:147
+# d4b4ee63034a455c81ce80a11ec32798
+msgid "and the log reflects the different arguments to ``complete()``:"
+msgstr ""
+
+#: ../../source/readline/index.rst:155
+# 1642926409fc4ce3a3a810ea5f645327
+msgid "Pressing RETURN now causes ``input()`` to return the value, and the ``while`` loop cycles."
+msgstr ""
+
+#: ../../source/readline/index.rst:163
+# 80e3e7cfcd774c9190f68548539cbb27
+msgid "There are two possible completions for a command beginning with \"``s``\".  Typing \"``s``\", then pressing TAB finds that \"``start``\" and \"``stop``\" are candidates, but only partially completes the text on the screen by adding a \"``t``\"."
+msgstr ""
+
+#: ../../source/readline/index.rst:168
+# 420db1d3332e4470911b0fa0b6886f3a
+msgid "The log file shows:"
+msgstr ""
+
+#: ../../source/readline/index.rst:177
+# 6f22645903954bd189114d6774c749b1
+msgid "and the screen:"
+msgstr ""
+
+#: ../../source/readline/index.rst:186
+# 079b5be935544b9fa9a1fcceb3d23c71
+msgid "If a completer function raises an exception, it is ignored silently and ``readline`` assumes there are no matching completions."
+msgstr ""
+
+#: ../../source/readline/index.rst:192
+# 497ea1672cab4f3cb9cb9e2d3901ca4c
+msgid "Accessing the Completion Buffer"
+msgstr ""
+
+#: ../../source/readline/index.rst:194
+# 21ba12a9877c4ff7bd1f2d9436680060
+msgid "The completion algorithm in ``SimpleCompleter`` only looks at the text argument passed to the function, but does not use any more of readline's internal state.  It is also possible to use ``readline`` functions to manipulate the text of the input buffer."
+msgstr ""
+
+#: ../../source/readline/index.rst:0
+# 784717e72c004beca1d5613f9d8a107f
+msgid "readline_buffer.py"
+msgstr ""
+
+#: ../../source/readline/index.rst:203
+# dbc5d2df19fe4de1a4b04c6366648405
+msgid "In this example, commands with sub-options are being completed. The ``complete()`` method needs to look at the position of the completion within the input buffer to determine whether it is part of the first word or a later word.  If the target is the first word, the keys of the options dictionary are used as candidates.  If it is not the first word, then the first word is used to find candidates from the options dictionary."
+msgstr ""
+
+#: ../../source/readline/index.rst:211
+# dd4d48b943a944058c70c5ef8cc8a258
+msgid "There are three top-level commands, two of which have sub-commands."
+msgstr ""
+
+#: ../../source/readline/index.rst:213
+# 70005f1172a949d7a725025e7e4e5e7b
+msgid "list"
+msgstr ""
+
+#: ../../source/readline/index.rst:215
+# 3d3df63a278e44e1bd1c37528eaf61ed
+msgid "files"
+msgstr ""
+
+#: ../../source/readline/index.rst:216
+# c9506177ca03497a8c352464dbbfc468
+msgid "directories"
+msgstr ""
+
+#: ../../source/readline/index.rst:218
+# 584c69cfa5564c0f8e5eba33cf2ed12b
+msgid "print"
+msgstr ""
+
+#: ../../source/readline/index.rst:220
+# c3886e8367f644788fd99c8ab8ec9a92
+msgid "byname"
+msgstr ""
+
+#: ../../source/readline/index.rst:221
+# b170f125b450442697aff493efa159c2
+msgid "bysize"
+msgstr ""
+
+#: ../../source/readline/index.rst:223
+# 5912afa311584cdba6423d6af068f225
+msgid "stop"
+msgstr ""
+
+#: ../../source/readline/index.rst:226
+# 641a0792d0ef4e56ac9ad7035d4f4d5a
+msgid "Following the same sequence of actions as before, pressing TAB twice gives the three top-level commands:"
+msgstr ""
+
+#: ../../source/readline/index.rst:237
+# 9065022845a84025be755f986a35b41e
+msgid "and in the log:"
+msgstr ""
+
+#: ../../source/readline/index.rst:260
+# a2eb8aa02f5d476ab0ea15fde44b1eab
+msgid "If the first word is ``\"list \"`` (with a space after the word), the candidates for completion are different."
+msgstr ""
+
+#: ../../source/readline/index.rst:268
+# 68c00626bf18410192a2f69a15126b3f
+msgid "The log shows that the text being completed is *not* the full line, but the portion after ``list``."
+msgstr ""
+
+#: ../../source/readline/index.rst:293
+# 34eb8a9aac9b4d72b16a7bbf33c9df29
+msgid "Input History"
+msgstr ""
+
+#: ../../source/readline/index.rst:295
+# b851d62b0145450aaa694ac9dd1f98ec
+msgid "``readline`` tracks the input history automatically.  There are two different sets of functions for working with the history.  The history for the current session can be accessed with ``get_current_history_length()`` and ``get_history_item()``.  That same history can be saved to a file to be reloaded later using ``write_history_file()`` and ``read_history_file()``.  By default the entire history is saved but the maximum length of the file can be set with ``set_history_length()``.  A length of -1 means no limit."
+msgstr ""
+
+#: ../../source/readline/index.rst:0
+# 66bfc1aa2bd94521be48af970dd774a2
+msgid "readline_history.py"
+msgstr ""
+
+#: ../../source/readline/index.rst:308
+# 633150e386144196ac0c831ed8784378
+msgid "The ``HistoryCompleter`` remembers everything typed, and uses those values when completing subsequent inputs."
+msgstr ""
+
+#: ../../source/readline/index.rst:329
+# dccee253989645269f6685aaf1fcbee6
+msgid "The log shows this output when the \"``b``\" is followed by two TABs."
+msgstr ""
+
+#: ../../source/readline/index.rst:344
+# f7e2ad1eebc84820b2e76f417bb1d66a
+msgid "When the script is run the second time, all of the history is read from the file."
+msgstr ""
+
+#: ../../source/readline/index.rst:355
+# 1cdce327824c45449fe754d1314acdcc
+msgid "There are functions for removing individual history items and clearing the entire history, as well."
+msgstr ""
+
+#: ../../source/readline/index.rst:359
+# eb3293b1fbc84935b1295f47b6ac8622
+msgid "Hooks"
+msgstr ""
+
+#: ../../source/readline/index.rst:361
+# 19f5eb2a92d44a33b6fd4865a7601cc0
+msgid "There are several hooks available for triggering actions as part of the interaction sequence.  The *startup* hook is invoked immediately before printing the prompt, and the *pre-input* hook is run after the prompt, but before reading text from the user."
+msgstr ""
+
+#: ../../source/readline/index.rst:0
+# 5a56e25e28b54104bf7e22ffbdf173f8
+msgid "readline_hooks.py"
+msgstr ""
+
+#: ../../source/readline/index.rst:370
+# 6e9ed4de578145a5aae5aad7efd2fc05
+msgid "Either hook is a potentially good place to use ``insert_text()`` to modify the input buffer."
+msgstr ""
+
+#: ../../source/readline/index.rst:379
+# 0d35c5f5826d41efb8abd3110e18c8b5
+msgid "If the buffer is modified inside the pre-input hook, ``redisplay()`` must be called to update the screen."
+msgstr ""
+
+#: ../../source/readline/index.rst:384
+# d041e8b49b424257ba4bc5175a0cfaad
+msgid ":pydoc:`readline`"
+msgstr ""
+
+#: ../../source/readline/index.rst:386
+# 413e1a4385ab4b4ea6891fb84abac15f
+msgid "`GNU readline <http://tiswww.case.edu/php/chet/readline/readline.html>`_ -- Documentation for the GNU readline library."
+msgstr ""
+
+#: ../../source/readline/index.rst:390
+# 0ab0548dde5442dba6b3273a1dc6ae51
+msgid "`readline init file format <http://tiswww.case.edu/php/chet/readline/readline.html#SEC10>`_ -- The initialization and configuration file format."
+msgstr ""
+
+#: ../../source/readline/index.rst:394
+# bd08ad590a824bd8a8d8872985d63f31
+msgid "`effbot: The readline module <http://sandbox.effbot.org/librarybook/readline.htm>`_ -- Effbot's guide to the readline module."
+msgstr ""
+
+#: ../../source/readline/index.rst:398
+# 21b5b3113acc4a049d463c72c7ac7d82
+msgid "gnureadline_ -- A statically linked version of ``readline`` available for many platforms and installable via ``pip``."
+msgstr ""
+
+#: ../../source/readline/index.rst:401
+# e36dda480b2249c89b927acf542eee4a
+msgid "`pyreadline <http://ipython.org/pyreadline.html>`_ -- pyreadline, developed as a Python-based replacement for readline to be used on Windows."
+msgstr ""
+
+#: ../../source/readline/index.rst:405
+# 6d865cc412d441a78bb548b636919a9f
+msgid ":mod:`cmd` -- The ``cmd`` module uses ``readline`` extensively to implement tab-completion in the command interface.  Some of the examples here were adapted from the code in ``cmd``."
+msgstr ""
+
+#: ../../source/readline/index.rst:409
+# 94fd89eee16e421f8357cd14f551bcc0
+msgid ":mod:`rlcompleter` -- ``rlcompleter`` uses ``readline`` to add tab-completion to the interactive Python interpreter."
+msgstr ""
+

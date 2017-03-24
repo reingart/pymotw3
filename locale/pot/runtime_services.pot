@@ -1,0 +1,63 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/runtime_services.rst:3
+# cd1e8ce27a9b4bebba8f11ca2949f5e4
+msgid "Runtime Features"
+msgstr ""
+
+#: ../../source/runtime_services.rst:5
+# 6f4a6a15c04e4b7ea703c2b1fb294415
+msgid "This chapter covers the features of the Python standard library that allow a program to interact with the interpreter or the environment in which it runs."
+msgstr ""
+
+#: ../../source/runtime_services.rst:9
+# e481982b41e34e79899dda4418cc050b
+msgid "During start-up, the interpreter loads the :mod:`site` module to configure settings specific to the current installation.  The import path is constructed from a combination of environment settings, interpreter build parameters, and configuration files."
+msgstr ""
+
+#: ../../source/runtime_services.rst:14
+# 3e39b4d56a5b4a6f86a79f43dbf4315e
+msgid "The :mod:`sys` module is one of the largest in the standard library. It includes functions for accessing a broad range of interpreter and system settings, including interpreter build settings and limits; command line arguments and program exit codes; exception handling; thread debugging and control; the import mechanism and imported modules; runtime control flow tracing; and standard input and output streams for the process."
+msgstr ""
+
+#: ../../source/runtime_services.rst:22
+# 50147972f0374874b7ca2db7fe1d18a9
+msgid "While ``sys`` is focused on interpreter settings, :mod:`os` provides access to operating system information.  It can be used for portable interfaces to system calls that return details about the running process such as its owner and environment variables.  It also includes functions for working with the file system and process management."
+msgstr ""
+
+#: ../../source/runtime_services.rst:29
+# 5e5f6ce3757b4b74b2e8aebd9909c5f6
+msgid "Python is often used as a cross-platform language for creating portable programs.  Even in a program intended to run anywhere, it is occasionally necessary to know the operating system or hardware architecture of the current system.  The :mod:`platform` module provides functions to retrieve those settings"
+msgstr ""
+
+#: ../../source/runtime_services.rst:35
+# 5577067addca4dc9855f8168db75b537
+msgid "The limits for system resources such as the maximum process stack size or number of open files can be probed and changed through the :mod:`resource` module.  It also reports the current consumption rates, so a process can be monitored for resource leaks."
+msgstr ""
+
+#: ../../source/runtime_services.rst:40
+# 8a5a574ff89e4513a2b0493befe6622c
+msgid "The :mod:`gc` module gives access to the internal state of Python's garbage collection system.  It includes information useful for detecting and breaking object cycles, turning the collector on and off, and adjusting thresholds that automatically trigger collection sweeps."
+msgstr ""
+
+#: ../../source/runtime_services.rst:46
+# bfcf63f025df411a9aae8994697738e8
+msgid "The :mod:`sysconfig` module holds the compile-time variables from the build scripts, and can be used by build and packaging tools to generate paths and other settings dynamically."
+msgstr ""
+

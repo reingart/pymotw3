@@ -1,0 +1,173 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/fractions/index.rst:3
+# 2c2a142f678743f69c36bd04f122ee37
+msgid "fractions --- Rational Numbers"
+msgstr ""
+
+#: ../../source/fractions/index.rst:8
+# ad9821c78e724030aa7e00f6e64ee66d
+msgid "Implements a class for working with rational numbers."
+msgstr ""
+
+#: ../../source/fractions/index.rst:10
+# 50f06b2462a1476c9fa11095d693d3db
+msgid "The ``Fraction`` class implements numerical operations for rational numbers based on the API defined by ``Rational`` in the :mod:`numbers` module."
+msgstr ""
+
+#: ../../source/fractions/index.rst:15
+# c18f8f12a8d742bba4cbc41e8edb44ed
+msgid "Creating Fraction Instances"
+msgstr ""
+
+#: ../../source/fractions/index.rst:17
+# a4535024ee764972a2c5578dec273406
+msgid "As with the :mod:`decimal` module, new values can be created in several ways.  One easy way is to create them from separate numerator and denominator values:"
+msgstr ""
+
+#: ../../source/fractions/index.rst:0
+# 4a596043aaff442b849bc95a79033488
+msgid "fractions_create_integers.py"
+msgstr ""
+
+#: ../../source/fractions/index.rst:25
+# eb230ce96b314705ab60c536f39290cc
+msgid "The lowest common denominator is maintained as new values are computed."
+msgstr ""
+
+#: ../../source/fractions/index.rst:42
+# d1334c53f9db4b8bbad70edaf5ed7cc2
+msgid "Another way to create a ``Fraction`` is using a string representation of ``<numerator> / <denominator>``:"
+msgstr ""
+
+#: ../../source/fractions/index.rst:0
+# 6ed2e45ec9dc42009aa528af9dabf851
+msgid "fractions_create_strings.py"
+msgstr ""
+
+#: ../../source/fractions/index.rst:49
+# 18500e2c556642fc9e7a29a57ce392e1
+msgid "The string is parsed to find the numerator and denominator values."
+msgstr ""
+
+#: ../../source/fractions/index.rst:65
+# ad0315e69e5c42aeaa8fb79e45ab01d6
+msgid "Strings can also use the more usual decimal or floating point notation of series of digits separated by a period. Any string that can be parsed by ``float()`` and that does not represent \"not a number\" (``NaN``) or an infinite value is supported."
+msgstr ""
+
+#: ../../source/fractions/index.rst:0
+# 2120479e44e74b76a8b7de059b470dab
+msgid "fractions_create_strings_floats.py"
+msgstr ""
+
+#: ../../source/fractions/index.rst:74
+# 6d22da9062f1471aa4a4bf08153bc77c
+msgid "The numerator and denominator values represented by the floating point value is computed automatically."
+msgstr ""
+
+#: ../../source/fractions/index.rst:92
+# 21d802cdddac4b9584da30526d4d3915
+msgid "It is also possible to create ``Fraction`` instances directly from other representations of rational values, such as ``float`` or ``Decimal``."
+msgstr ""
+
+#: ../../source/fractions/index.rst:0
+# f6a4b2a1acb6414f8a5db6c9a48162d4
+msgid "fractions_from_float.py"
+msgstr ""
+
+#: ../../source/fractions/index.rst:100
+# 93ffdeb1d3ad4a90bfb3b95c5f0f7970
+msgid "Floating point values that cannot be expressed exactly may yield unexpected results."
+msgstr ""
+
+#: ../../source/fractions/index.rst:118
+# 2fb1c041f20e4f2397e7a4fff646be16
+msgid "Using ``Decimal`` representations of the values gives the expected results."
+msgstr ""
+
+#: ../../source/fractions/index.rst:0
+# 217a3d226f094869adad1626567f2437
+msgid "fractions_from_decimal.py"
+msgstr ""
+
+#: ../../source/fractions/index.rst:125
+# 174da0034da24a4e9a768047c5068019
+msgid "The internal implementation of ``Decimal`` does not suffer from the precision errors of the standard floating point representation."
+msgstr ""
+
+#: ../../source/fractions/index.rst:146
+# daaf8a7703d64f8d86df1110ae73423d
+msgid "Arithmetic"
+msgstr ""
+
+#: ../../source/fractions/index.rst:148
+# eaa22c41c61d43c7827a009c3fa8e5cf
+msgid "Once the fractions are instantiated, they can be used in mathematical expressions."
+msgstr ""
+
+#: ../../source/fractions/index.rst:0
+# 2818795991074a8ba8f071336ce5faf3
+msgid "fractions_arithmetic.py"
+msgstr ""
+
+#: ../../source/fractions/index.rst:155
+# cd74fb672aae47a6bfe30d245ed7f5cf
+msgid "All of the standard operators are supported."
+msgstr ""
+
+#: ../../source/fractions/index.rst:173
+# ee72cadbcc484c7e96f1dd85e864a10c
+msgid "Approximating Values"
+msgstr ""
+
+#: ../../source/fractions/index.rst:175
+# 6fc543044047451db8455da0edcc52e6
+msgid "A useful feature of ``Fraction`` is the ability to convert a floating point number to an approximate rational value."
+msgstr ""
+
+#: ../../source/fractions/index.rst:0
+# 8c66c34051834cc491ad4538430f1c88
+msgid "fractions_limit_denominator.py"
+msgstr ""
+
+#: ../../source/fractions/index.rst:182
+# 874f7d5d5aad44cb8744942e61d846d7
+msgid "The value of the fraction can be controlled by limiting the size of the denominator."
+msgstr ""
+
+#: ../../source/fractions/index.rst:208
+# 88ae2d09dc63400abcceeddf5afa0aa3
+msgid ":pydoc:`fractions`"
+msgstr ""
+
+#: ../../source/fractions/index.rst:210
+# 248f11d0ce194ec2a6f134a056dff0c1
+msgid ":mod:`decimal` -- The ``decimal`` module provides an API for fixed and floating point math."
+msgstr ""
+
+#: ../../source/fractions/index.rst:213
+# 1365e71eb0444a21b59806ea703d7d6e
+msgid ":mod:`numbers` -- Numeric abstract base classes."
+msgstr ""
+
+#: ../../source/fractions/index.rst:215
+# 9adda1f65b374f8986e81232e61bf9b6
+msgid ":ref:`Python 2 to 3 porting notes for fractions <porting-fractions>`"
+msgstr ""
+

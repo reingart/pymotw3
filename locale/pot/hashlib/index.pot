@@ -1,0 +1,203 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/hashlib/index.rst:3
+# 5668caea50b040bbaecab3b8f677fed9
+msgid "hashlib --- Cryptographic Hashing"
+msgstr ""
+
+#: ../../source/hashlib/index.rst:8
+# 359ff9eee9f341ea861c056250d743dd
+msgid "Cryptographic hashes and message digests"
+msgstr ""
+
+#: ../../source/hashlib/index.rst:10
+# 13058b083485432ab0871d115e0b1e37
+msgid "The ``hashlib`` module defines an API for accessing different cryptographic hashing algorithms. To work with a specific hash algorithm, use the appropriate constructor function or ``new()`` to create a hash object. From there, the objects use the same API, no matter what algorithm is being used."
+msgstr ""
+
+#: ../../source/hashlib/index.rst:17
+# f6552ae4554b4c2baea9d9122a7b94b5
+msgid "Hash Algorithms"
+msgstr ""
+
+#: ../../source/hashlib/index.rst:19
+# e514352e418d42499d4b241a7058162a
+msgid "Since ``hashlib`` is \"backed\" by OpenSSL, all of the algorithms provided by that library are available, including:"
+msgstr ""
+
+#: ../../source/hashlib/index.rst:22
+# 0163669fdf954528a8a3e8d4df4f3d6e
+msgid "md5"
+msgstr ""
+
+#: ../../source/hashlib/index.rst:23
+# 5e27d5620e084665bb460e32d62a19f4
+msgid "sha1"
+msgstr ""
+
+#: ../../source/hashlib/index.rst:24
+# d3ee71ef3d5e4c328b032867bf32b4a6
+msgid "sha224"
+msgstr ""
+
+#: ../../source/hashlib/index.rst:25
+# db27baa563894c2bb52eaaebf8fa470b
+msgid "sha256"
+msgstr ""
+
+#: ../../source/hashlib/index.rst:26
+# 913b1ad206e44160a16486fe2426e204
+msgid "sha384"
+msgstr ""
+
+#: ../../source/hashlib/index.rst:27
+# bc6138dc1a5f4619b78bbf5be8879733
+msgid "sha512"
+msgstr ""
+
+#: ../../source/hashlib/index.rst:29
+# 19b950a593e44abd85f4ca16e2ecc52a
+msgid "Some algorithms are available on all platforms, and some depend on the underlying libraries. For lists of each, look at ``algorithms_guaranteed`` and ``algorithms_available`` respectively."
+msgstr ""
+
+#: ../../source/hashlib/index.rst:0
+# 6847274f84494e5b9dd2546f5e8248a5
+msgid "hashlib_algorithms.py"
+msgstr ""
+
+#: ../../source/hashlib/index.rst:60
+# fe06e88e04a84418ae08fdc9dfd4368b
+msgid "Sample Data"
+msgstr ""
+
+#: ../../source/hashlib/index.rst:62
+# ef67af2df8ad49df8a89d9a66171b78d
+msgid "All of the examples in this section use the same sample data:"
+msgstr ""
+
+#: ../../source/hashlib/index.rst:0
+# f4e478c586004342b8b7397c62520009
+msgid "hashlib_data.py"
+msgstr ""
+
+#: ../../source/hashlib/index.rst:70
+# 973b95d027cb49568b42c05ba6e89ae7
+msgid "MD5 Example"
+msgstr ""
+
+#: ../../source/hashlib/index.rst:72
+# 92aed77d68424dbc931eb4cae79e7eff
+msgid "To calculate the MD5 hash, or *digest*, for a block of data (here a unicode string converted to a byte string), first create the hash object, then add the data and call ``digest()`` or ``hexdigest()``."
+msgstr ""
+
+#: ../../source/hashlib/index.rst:0
+# ad0856783a69441a84454313a4dd2811
+msgid "hashlib_md5.py"
+msgstr ""
+
+#: ../../source/hashlib/index.rst:81
+# aacaf31024ec43dd8d506d0a3a6db431
+msgid "This example uses the ``hexdigest()`` method instead of ``digest()`` because the output is formatted so it can be printed clearly. If a binary digest value is acceptable, use ``digest()``."
+msgstr ""
+
+#: ../../source/hashlib/index.rst:98
+# f3ca73caa608499380765f3dc4f5795b
+msgid "SHA1 Example"
+msgstr ""
+
+#: ../../source/hashlib/index.rst:100
+# 36d202e195934fbaaa76e1898f1d8d3b
+msgid "A SHA1 digest is calculated in the same way."
+msgstr ""
+
+#: ../../source/hashlib/index.rst:0
+# e471af28775b4093b05b80820a2a1689
+msgid "hashlib_sha1.py"
+msgstr ""
+
+#: ../../source/hashlib/index.rst:106
+# f7e643a796a3492b8afa5451621a2b7e
+msgid "The digest value is different in this example because the algorithm changed from MD5 to SHA1."
+msgstr ""
+
+#: ../../source/hashlib/index.rst:123
+# c11b33d0d138466aa936527c3b8879d5
+msgid "Creating a Hash by Name"
+msgstr ""
+
+#: ../../source/hashlib/index.rst:125
+# aa5ddc74a9474728bb5bd864ba37452b
+msgid "Sometimes it is more convenient to refer to the algorithm by name in a string rather than by using the constructor function directly. It is useful, for example, to be able to store the hash type in a configuration file. In those cases, use ``new()`` to create a hash calculator."
+msgstr ""
+
+#: ../../source/hashlib/index.rst:0
+# fc06725171914f789cdd7621537cb019
+msgid "hashlib_new.py"
+msgstr ""
+
+#: ../../source/hashlib/index.rst:135
+# 4a642499a2d84666b76a639771b2c8ac
+msgid "When run with a variety of arguments:"
+msgstr ""
+
+#: ../../source/hashlib/index.rst:167
+# 69caed7decb24b74b140e65ab1edf192
+msgid "Incremental Updates"
+msgstr ""
+
+#: ../../source/hashlib/index.rst:169
+# 9a62a5971be44682b24c63b4ced014b8
+msgid "The ``update()`` method of the hash calculators can be called repeatedly. Each time, the digest is updated based on the additional text fed in. Updating incrementally is more efficient than reading an entire file into memory, and produces the same results."
+msgstr ""
+
+#: ../../source/hashlib/index.rst:0
+# 9b47d82a44c24e488e2fb9f47621f1f5
+msgid "hashlib_update.py"
+msgstr ""
+
+#: ../../source/hashlib/index.rst:178
+# 425c89b112f4419c83f364db5c9a20e0
+msgid "This example demonstrates how to update a digest incrementally as data is read or otherwise produced."
+msgstr ""
+
+#: ../../source/hashlib/index.rst:197
+# 31dafde719334628b20ff802d967efc9
+msgid ":pydoc:`hashlib`"
+msgstr ""
+
+#: ../../source/hashlib/index.rst:199
+# fe19bb0212884b0f84467a1950b8794d
+msgid ":mod:`hmac` -- The ``hmac`` module."
+msgstr ""
+
+#: ../../source/hashlib/index.rst:201
+# 24c67826a82d4babb17136097766c834
+msgid "OpenSSL_ -- An open source encryption toolkit."
+msgstr ""
+
+#: ../../source/hashlib/index.rst:203
+# 568565243e054ddbafa8f6e9fceb5782
+msgid "Cryptography_ module -- A Python package that provides cryptographic recipes and primitives."
+msgstr ""
+
+#: ../../source/hashlib/index.rst:206
+# effa0986f4fc4626a4502aaa75beaadd
+msgid "`Voidspace: IronPython and hashlib <http://www.voidspace.org.uk/python/weblog/arch_d7_2006_10_07.shtml#e497>`_ -- A wrapper for ``hashlib`` that works with IronPython."
+msgstr ""
+

@@ -1,0 +1,193 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/profile/index.rst:6
+# 6133173f9b0c48b69354298c9a9fe1f5
+msgid "profile and pstats --- Performance Analysis"
+msgstr ""
+
+#: ../../source/profile/index.rst:11
+# 85a1b6f0d951489b83041a0deaa60c81
+msgid "Performance analysis of Python programs."
+msgstr ""
+
+#: ../../source/profile/index.rst:13
+# fcef0aa84a9a4430a03bd165a7c40a7e
+msgid "The ``profile`` module provides APIs for collecting and analyzing statistics about how Python source consumes processor resources."
+msgstr ""
+
+#: ../../source/profile/index.rst:18
+# a2e44a83e0854bb3ae7e72e241b0a773
+msgid "This output reports in this section have been reformatted to fit on the page.  Lines ending with backslash (``\\``) are continued on the next line."
+msgstr ""
+
+#: ../../source/profile/index.rst:23
+# fa66fe1de61449b896ac9f1922a52759
+msgid "Running the Profiler"
+msgstr ""
+
+#: ../../source/profile/index.rst:25
+# 551d0b4751c14817ba394bae25f681b2
+msgid "The most basic starting point in the ``profile`` module is ``run()``.  It takes a string statement as argument, and creates a report of the time spent executing different lines of code while running the statement."
+msgstr ""
+
+#: ../../source/profile/index.rst:0
+# 40684d9516b04032a61efe16ec36559e
+msgid "profile_fibonacci_raw.py"
+msgstr ""
+
+#: ../../source/profile/index.rst:34
+# 362ca6b7e79c43249531d86d604778b5
+msgid "This recursive version of a Fibonacci sequence calculator is especially useful for demonstrating the profile because the performance can be improved significantly.  The standard report format shows a summary and then details for each function executed."
+msgstr ""
+
+#: ../../source/profile/index.rst:77
+# 34ac1c91551148118346e64f7daf81da
+msgid "The raw version takes 57359 separate function calls and 0.127 seconds to run.  The fact that there are only 69 *primitive* calls says that the vast majority of those 57k calls were recursive.  The details about where time was spent are broken out by function in the listing showing the number of calls, total time spent in the function, time per call (tottime/ncalls), cumulative time spent in a function, and the ratio of cumulative time to primitive calls."
+msgstr ""
+
+#: ../../source/profile/index.rst:85
+# 6fc8787a6f494d6ea6f044bd83855dfa
+msgid "Not surprisingly, most of the time here is spent calling ``fib()`` repeatedly.  Adding a cache decorator reduces the number of recursive calls, and has a big impact on the performance of this function."
+msgstr ""
+
+#: ../../source/profile/index.rst:0
+# eb60494ad4844be8ab92fe79685d1ae7
+msgid "profile_fibonacci_memoized.py"
+msgstr ""
+
+#: ../../source/profile/index.rst:93
+# 55ba865a6d70480a9c5a4d6e51585d62
+msgid "By remembering the Fibonacci value at each level, most of the recursion is avoided and the run drops down to 89 calls that only take 0.001 seconds.  The ``ncalls`` count for ``fib()`` shows that it *never* recurses."
+msgstr ""
+
+#: ../../source/profile/index.rst:136
+# 6f2a4e256e8f40c3a10c8eeddf5b3c4d
+msgid "Running in a Context"
+msgstr ""
+
+#: ../../source/profile/index.rst:138
+# 36e918a64bc940b081d322a85865c301
+msgid "Sometimes, instead of constructing a complex expression for ``run()``, it is easier to build a simple expression and pass it parameters through a context, using ``runctx()``."
+msgstr ""
+
+#: ../../source/profile/index.rst:0
+# f14358390d624029bc2658a02129e2e4
+msgid "profile_runctx.py"
+msgstr ""
+
+#: ../../source/profile/index.rst:146
+# 5892a109fa27478c86d52841672f7345
+msgid "In this example, the value of ``n`` is passed through the local variable context instead of being embedded directly in the statement passed to ``runctx()``."
+msgstr ""
+
+#: ../../source/profile/index.rst:184
+# 47c65b9dae40474abc8fef6e4306c074
+msgid "pstats: Saving and Working With Statistics"
+msgstr ""
+
+#: ../../source/profile/index.rst:189
+# 369799760d4b4838a75e8a8721966493
+msgid "The standard report created by the ``profile`` functions is not very flexible.  However, custom reports can be produced by saving the raw profiling data from ``run()`` and ``runctx()`` and processing it separately with the ``pstats.Stats`` class."
+msgstr ""
+
+#: ../../source/profile/index.rst:194
+# 612cb6f3b7344ef6aeb79dda09732b7e
+msgid "This example runs several iterations of the same test and combines the results:"
+msgstr ""
+
+#: ../../source/profile/index.rst:0
+# ed961812e45849a6b9ee7a050c8264ce
+msgid "profile_stats.py"
+msgstr ""
+
+#: ../../source/profile/index.rst:201
+# 9756f7400a394f938c5bd090da672773
+msgid "The output report is sorted in descending order of cumulative time spent in the function and the directory names are removed from the printed filenames to conserve horizontal space on the page."
+msgstr ""
+
+#: ../../source/profile/index.rst:258
+# 508fe3e4f71c4548ad7063b061837bb3
+msgid "Limiting Report Contents"
+msgstr ""
+
+#: ../../source/profile/index.rst:260
+# 23dea408bd584fd2971606332db75701
+msgid "The output can be restricted by function.  This version only shows information about the performance of ``fib()`` and ``fib_seq()`` by using a regular expression to match the desired ``filename:lineno(function)`` values."
+msgstr ""
+
+#: ../../source/profile/index.rst:0
+# c481baaa1447481e84f2ddbd839877f7
+msgid "profile_stats_restricted.py"
+msgstr ""
+
+#: ../../source/profile/index.rst:269
+# babcb80e1d064539876aefcaee98abb3
+msgid "The regular expression includes a literal left parenthesis (``(``) to match against the function name portion of the location value."
+msgstr ""
+
+#: ../../source/profile/index.rst:304
+# 8452fe7417b442b2866b77c53ea9d54c
+msgid "Caller / Callee Graphs"
+msgstr ""
+
+#: ../../source/profile/index.rst:306
+# 79d1195158e345089b8b1f522a57de60
+msgid "``Stats`` also includes methods for printing the callers and callees of functions."
+msgstr ""
+
+#: ../../source/profile/index.rst:0
+# 29d284161fda4f42abfde9d4a150c6f6
+msgid "profile_stats_callers.py"
+msgstr ""
+
+#: ../../source/profile/index.rst:313
+# 8f63b12d6c3f4d0eae35fc0cfae83e16
+msgid "The arguments to ``print_callers()`` and ``print_callees()`` work the same as the restriction arguments to ``print_stats()``.  The output shows the caller, callee, number of calls, and cumulative time."
+msgstr ""
+
+#: ../../source/profile/index.rst:364
+# af6384260c3d4d5289cd46846789cbf9
+msgid ":pydoc:`profile`"
+msgstr ""
+
+#: ../../source/profile/index.rst:366
+# ed36795a2651473f86b8a9d13f960b49
+msgid ":ref:`functools.lru_cache() <functools-lru_cache>` -- The cache decorator used to improve performance in this example."
+msgstr ""
+
+#: ../../source/profile/index.rst:369
+# 3f87197ea0e54cbebe48d82387f93308
+msgid "`The Stats Class <https://docs.python.org/3.5/library/profile.html#the-stats-class>`__ -- Standard library documentation for ``pstats.Stats``."
+msgstr ""
+
+#: ../../source/profile/index.rst:373
+# 59301f3343b44583aa14d4d8b1127e52
+msgid "`Gprof2Dot <http://code.google.com/p/jrfonseca/wiki/Gprof2Dot>`__ -- Visualization tool for profile output data."
+msgstr ""
+
+#: ../../source/profile/index.rst:376
+# 9ac5a99280db44058ba5093e7cc4160e
+msgid "`Python Decorators: Syntactic Sugar | avinash.vora <http://avinashv.net/2008/04/python-decorators-syntactic-sugar/>`__ -- Another memoized Fibonacci sequence generator in Python."
+msgstr ""
+
+#: ../../source/profile/index.rst:380
+# b28c82b2b7ec461fac7651340c5128c5
+msgid "`Smiley <https://github.com/dhellmann/smiley>`__ -- Python Application Tracer"
+msgstr ""
+

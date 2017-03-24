@@ -1,0 +1,168 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/collections/namedtuple.rst:5
+# 0db9ee8d40594d19b878cf9f02a35263
+msgid "namedtuple --- Tuple Subclass with Named Fields"
+msgstr ""
+
+#: ../../source/collections/namedtuple.rst:7
+# 3c3abf0cb7754892ad1eed33e94d6001
+msgid "The standard ``tuple`` uses numerical indexes to access its members."
+msgstr ""
+
+#: ../../source/collections/namedtuple.rst:0
+# c73dc0082cf949e5b5eb4444f99af8c6
+msgid "collections_tuple.py"
+msgstr ""
+
+#: ../../source/collections/namedtuple.rst:14
+# 83b3a0bf32524b4a8f8d5c2815c6e727
+msgid "This makes ``tuples`` convenient containers for simple uses."
+msgstr ""
+
+#: ../../source/collections/namedtuple.rst:34
+# a37bb5fab0694477b6bc8d41acbfb8b8
+msgid "In contrast, remembering which index should be used for each value can lead to errors, especially if the ``tuple`` has a lot of fields and is constructed far from where it is used.  A ``namedtuple`` assigns names, as well as the numerical index, to each member."
+msgstr ""
+
+#: ../../source/collections/namedtuple.rst:41
+# fa8ba97c0f124ed4ac234e565ec27313
+msgid "Defining"
+msgstr ""
+
+#: ../../source/collections/namedtuple.rst:43
+# 2013a34601654029829d49e31c81df36
+msgid "``namedtuple`` instances are just as memory efficient as regular tuples because they do not have per-instance dictionaries.  Each kind of ``namedtuple`` is represented by its own class, which is created by using the ``namedtuple()`` factory function.  The arguments are the name of the new class and a string containing the names of the elements."
+msgstr ""
+
+#: ../../source/collections/namedtuple.rst:0
+# 86e7d609c49a4bff8b2c4c055f90a7b6
+msgid "collections_namedtuple_person.py"
+msgstr ""
+
+#: ../../source/collections/namedtuple.rst:54
+# 48015ce4fbe44bb79af582b6f65c73ac
+msgid "As the example illustrates, it is possible to access the fields of the ``namedtuple`` by name using dotted notation (``obj.attr``) as well as by using the positional indexes of standard tuples."
+msgstr ""
+
+#: ../../source/collections/namedtuple.rst:77
+# 0fd64f9a648d44d18886d24d85eaa7f0
+msgid "Just like a regular ``tuple``, a ``namedtuple`` is immutable. This restriction allows ``tuple`` instances to have a consistent hash value, which makes it possible to use them as keys in dictionaries and to be included in sets."
+msgstr ""
+
+#: ../../source/collections/namedtuple.rst:0
+# 56a099fb2b664e8c97be30395cbb32b9
+msgid "collections_namedtuple_immutable.py"
+msgstr ""
+
+#: ../../source/collections/namedtuple.rst:86
+# e9e0fefb36f94b0e8fc05348db896ac1
+msgid "Trying to change a value through its named attribute results in an ``AttributeError``."
+msgstr ""
+
+#: ../../source/collections/namedtuple.rst:108
+# 860074915c274684bfac32cb7743f962
+msgid "Invalid Field Names"
+msgstr ""
+
+#: ../../source/collections/namedtuple.rst:110
+# 67ad0c0094b54d5e899a6eea751d85d6
+msgid "Field names are invalid if they are repeated or conflict with Python keywords."
+msgstr ""
+
+#: ../../source/collections/namedtuple.rst:0
+# 047f4f0bfc694d018ca24bf4b929a1f6
+msgid "collections_namedtuple_bad_fields.py"
+msgstr ""
+
+#: ../../source/collections/namedtuple.rst:117
+# 71ca7ef62ebd4b1c8a623626b84fc5bc
+msgid "As the field names are parsed, invalid values cause ``ValueError`` exceptions."
+msgstr ""
+
+#: ../../source/collections/namedtuple.rst:133
+# c25fa8419c6e4f4faee9f508ea03568e
+msgid "In situations where a ``namedtuple`` is created based on values outside the control of the program (such as to represent the rows returned by a database query, where the schema is not known in advance), the ``rename`` option should be set to ``True`` so the invalid fields are renamed."
+msgstr ""
+
+#: ../../source/collections/namedtuple.rst:0
+# 798fe105ee7c4b2f868efafb35d45b46
+msgid "collections_namedtuple_rename.py"
+msgstr ""
+
+#: ../../source/collections/namedtuple.rst:143
+# 909c7dbcf2a743d8ba5fc6241e375d25
+msgid "The new names for renamed fields depend on their index in the tuple, so the field with name ``class`` becomes ``_1`` and the duplicate ``age`` field is changed to ``_2``."
+msgstr ""
+
+#: ../../source/collections/namedtuple.rst:161
+# 7b82777799ca43a6b4f63d12f48e421e
+msgid "Special Attributes"
+msgstr ""
+
+#: ../../source/collections/namedtuple.rst:163
+# 902b54b4b4c243698a90142da0fcfd67
+msgid "``namedtuple`` provides several useful attributes and methods for working with subclasses and instances. All of these built-in properties have names prefixed with an underscore (``_``), which by convention in most Python programs indicates a private attribute. For ``namedtuple``, however, the prefix is intended to protect the name from collision with user-provided attribute names."
+msgstr ""
+
+#: ../../source/collections/namedtuple.rst:170
+# 2a073fba0b02467fbe39cc99590a1d28
+msgid "The names of the fields passed to ``namedtuple`` to define the new class are saved in the :attr:`_fields` attribute."
+msgstr ""
+
+#: ../../source/collections/namedtuple.rst:0
+# 8e15210ca2684171aaa70235eb86f542
+msgid "collections_namedtuple_fields.py"
+msgstr ""
+
+#: ../../source/collections/namedtuple.rst:177
+# 58ae5cf6f64b444ba3a395af6abafcee
+msgid "Although the argument is a single space-separated string, the stored value is the sequence of individual names."
+msgstr ""
+
+#: ../../source/collections/namedtuple.rst:193
+# 01816276333a4f80bc9030e7d248f637
+msgid "``namedtuple`` instances can be converted to ``OrderedDict`` instances using ``_asdict()``."
+msgstr ""
+
+#: ../../source/collections/namedtuple.rst:0
+# a2c0d69f023d498ba4f26abe47f77d31
+msgid "collections_namedtuple_asdict.py"
+msgstr ""
+
+#: ../../source/collections/namedtuple.rst:200
+# 28962ee3981743e69a9f635a396d5ae7
+msgid "The keys of the ``OrderedDict`` are in the same order as the fields for the ``namedtuple``."
+msgstr ""
+
+#: ../../source/collections/namedtuple.rst:216
+# eaa90fb821b44fdd9bc1feef89c06c4e
+msgid "The ``_replace()`` method builds a new instance, replacing the values of some fields in the process."
+msgstr ""
+
+#: ../../source/collections/namedtuple.rst:0
+# 8cb11ced45c54156bbfe7ecec38e432a
+msgid "collections_namedtuple_replace.py"
+msgstr ""
+
+#: ../../source/collections/namedtuple.rst:223
+# 2b20558eda1d4049abf2e2508266b7e5
+msgid "Although the name implies it is modifying the existing object, because ``namedtuple`` instances are immutable the method actually returns a new object."
+msgstr ""
+

@@ -1,0 +1,138 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/about.rst:3
+# ddec135f0a4744b8bce094dd369f7841
+msgid "About Python Module of the Week"
+msgstr ""
+
+#: ../../source/about.rst:5
+# b2e3f3396c85481989e3653f0848a343
+msgid "PyMOTW-3 is a series of articles written by `Doug Hellmann <https://doughellmann.com/blog/>`_.  to demonstrate how to use the modules of the Python 3 standard library. It is based on the original PyMOTW_ series, which covered Python 2.7."
+msgstr ""
+
+#: ../../source/about.rst:12
+# 4ccc1856f3fa4dee9455c71c988d192a
+msgid "See the project home page at https://pymotw.com/3/ for updates."
+msgstr ""
+
+#: ../../source/about.rst:14
+# 36afe1b7a83847c4a5b8a74e354ca3cf
+msgid "Source code is available via git from https://bitbucket.org/dhellmann/pymotw-3/ or https://pymotw.com/3/PyMOTW-3-1.0.tar.gz as a single downloadable archive."
+msgstr ""
+
+#: ../../source/about.rst:19
+# b5714639ccba4a8fbd745689c805a99a
+msgid "Complete documentation for the standard library can be found on the Python web site at https://docs.python.org/3/library/."
+msgstr ""
+
+#: ../../source/about.rst:23
+# 4396e7b8eb0842a39618ee73a9388bd5
+msgid "Subscribe"
+msgstr ""
+
+#: ../../source/about.rst:25
+# 2e7e4d7844b041a89b0842d46531bed9
+msgid "As new articles are written, they are posted to `my blog`_ as well as https://pymotw.com.  Updates are available by RSS from http://feeds.doughellmann.com/PyMOTW and `email <http://feedburner.google.com/fb/a/mailverify?uri=PyMOTW&amp;loc=en_US>`_. Follow `@pymotw`_ or `@doughellmann`_ for updates as well."
+msgstr ""
+
+#: ../../source/about.rst:36
+# bafb0cd4c329478bb76d0169d8b76880
+msgid "Tools"
+msgstr ""
+
+#: ../../source/about.rst:38
+# 626020c7e9924c218139b2c27b75d7c9
+msgid "The source text for PyMOTW-3 is reStructuredText_ and the HTML output is created using Sphinx_."
+msgstr ""
+
+#: ../../source/about.rst:45
+# 8f357f26365d46549824d1aea5e048d8
+msgid "The output from all the example programs has been generated with CPython (see below for version) and inserted into the text using cog_."
+msgstr ""
+
+#: ../../source/about.rst:64
+# 86297e939693475593c8e9798e65879c
+msgid "Some of the features described here may not be available in earlier versions of the standard library. When in doubt, refer to the documentation for the version of Python you are using."
+msgstr ""
+
+#: ../../source/about.rst:69
+# 6bbb634a2b834fd4bdfb3b66b525e89f
+msgid "Translations and Other Versions"
+msgstr ""
+
+#: ../../source/about.rst:71
+# 6c35ca668d244d8e84236ba11b40de9e
+msgid "`Italian <http://robyp.x10host.com/3/index.html>`__"
+msgstr ""
+
+#: ../../source/about.rst:73
+# fcd12f20adac4bf6ad15d785783626af
+msgid "Roberto Pauletto has started translating the Python 3 articles into Italian."
+msgstr ""
+
+#: ../../source/about.rst:75
+# 219e79fea93e40ae9645f0d152282f2d
+msgid "`Chinese <http://www.pandacademy.com/pymotw-3-介绍/>`__"
+msgstr ""
+
+#: ../../source/about.rst:77
+# 8e245e313af946c4903a51481af8ff10
+msgid "Jaron has translated most of the articles into Chines for pandacademy.com."
+msgstr ""
+
+#: ../../source/about.rst:82
+# 5a2800e09eeb426a87d01184fe81d230
+msgid "Copyright and Licensing"
+msgstr ""
+
+#: ../../source/about.rst:84
+# a6f5fef8b1244062aeded0ba91e5c7bc
+msgid "All of the prose from the Python Module of the Week is licensed under a `Creative Commons Attribution, Non-commercial, Share-alike 4.0`_ license.  You are free to share and create derivative works from it. If you post the material online, you must give attribution and link to the PyMOTW home page (https://pymotw.com/).  You may not use this work for commercial purposes.  If you alter, transform, or build upon this work, you may distribute the resulting work only under the same or similar license to this one."
+msgstr ""
+
+#: ../../source/about.rst:93
+# 4d97eedf94944e34ac484386695c36d1
+msgid "The source code included here is copyright Doug Hellmann and licensed under the BSD license."
+msgstr ""
+
+#: ../../source/about.rst:96
+# 6f0f2d488af143bfa05fd12b2f11653c
+msgid "Copyright (c) 2015, Doug Hellmann, All Rights Reserved"
+msgstr ""
+
+#: ../../source/about.rst:98
+# 57d6bf081d5b4c3087fb97bda7cad65e
+msgid "Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:"
+msgstr ""
+
+#: ../../source/about.rst:101
+# a5d404603395417ab9bf7279be252f42
+msgid "Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer."
+msgstr ""
+
+#: ../../source/about.rst:103
+# a5d19df4e93f4f898cecdadcee2c3c2e
+msgid "Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution."
+msgstr ""
+
+#: ../../source/about.rst:107
+# dbb6209d2639447592f8e90e74a62d77
+msgid "THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+msgstr ""
+

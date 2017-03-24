@@ -1,0 +1,208 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/textwrap/index.rst:3
+# 1a325f983ad34062b1c683de111db262
+msgid "textwrap --- Formatting Text Paragraphs"
+msgstr ""
+
+#: ../../source/textwrap/index.rst:8
+# b1a2d669ec9943b0a8b20c869108a53d
+msgid "Formatting text by adjusting where line breaks occur in a paragraph."
+msgstr ""
+
+#: ../../source/textwrap/index.rst:10
+# 54c5afc556154fa1903ea34554adecbb
+msgid "The ``textwrap`` module can be used to format text for output in situations where pretty-printing is desired. It offers programmatic functionality similar to the paragraph wrapping or filling features found in many text editors and word processors."
+msgstr ""
+
+#: ../../source/textwrap/index.rst:16
+# ce787047bb2f49aabe54516c830ace95
+msgid "Example Data"
+msgstr ""
+
+#: ../../source/textwrap/index.rst:18
+# d362e33cf10347169415ae7d9b06344f
+msgid "The examples in this section use the module ``textwrap_example.py``, which contains a string ``sample_text``."
+msgstr ""
+
+#: ../../source/textwrap/index.rst:0
+# e81d8711d51c440b88f90e6f61ac7947
+msgid "textwrap_example.py"
+msgstr ""
+
+#: ../../source/textwrap/index.rst:27
+# 93db64cfa5a347368fe639cfedd07900
+msgid "Filling Paragraphs"
+msgstr ""
+
+#: ../../source/textwrap/index.rst:29
+# b6dda0c881fc4f65a06e4306e4fa64a3
+msgid "The ``fill()`` function takes text as input and produces formatted text as output."
+msgstr ""
+
+#: ../../source/textwrap/index.rst:0
+# fcd751857c094d0c850dc11e750bc755
+msgid "textwrap_fill.py"
+msgstr ""
+
+#: ../../source/textwrap/index.rst:36
+# 147b338ac5e64593b87539387cb891fc
+msgid "The results are something less than desirable.  The text is now left justified, but the first line retains its indent and the spaces from the front of each subsequent line are embedded in the paragraph."
+msgstr ""
+
+#: ../../source/textwrap/index.rst:58
+# 7c26caefe1f04d82ae1761932bf63633
+msgid "Removing Existing Indentation"
+msgstr ""
+
+#: ../../source/textwrap/index.rst:60
+# d303c987263d4bd1a08208226989c257
+msgid "The previous example has embedded tabs and extra spaces mixed into the middle of the output, so it is not formatted very cleanly. Removing the common whitespace prefix from all of the lines in the sample text with ``dedent()`` produces better results and allows the use of docstrings or embedded multiline strings straight from Python code while removing the formatting of the code itself. The sample string has an artificial indent level introduced for illustrating this feature."
+msgstr ""
+
+#: ../../source/textwrap/index.rst:0
+# b6aa958620e2410390409d7f3fab1585
+msgid "textwrap_dedent.py"
+msgstr ""
+
+#: ../../source/textwrap/index.rst:73
+# bf4e5fd60f554d0280e7148f01024c9c
+msgid "The results are starting to look better."
+msgstr ""
+
+#: ../../source/textwrap/index.rst:93
+# a0f2ddc0fa524c088b632e255d43b92d
+msgid "Since \"dedent\" is the opposite of \"indent,\" the result is a block of text with the common initial whitespace from each line removed. If one line is already indented more than another, some of the whitespace will not be removed."
+msgstr ""
+
+#: ../../source/textwrap/index.rst:98
+# 152455e0d56e4ba3853e7a68a6d91c47
+msgid "Input like"
+msgstr ""
+
+#: ../../source/textwrap/index.rst:106
+# d08bac03a67d49f9b2f43858960b940a
+msgid "becomes"
+msgstr ""
+
+#: ../../source/textwrap/index.rst:115
+# 6bd5535dda0e4cc0b440fb9a92a275e8
+msgid "Combining Dedent and Fill"
+msgstr ""
+
+#: ../../source/textwrap/index.rst:117
+# 808a7659373e492dabbcad90762aae0e
+msgid "Next, the dedented text can be passed through ``fill()`` with a few different ``width`` values."
+msgstr ""
+
+#: ../../source/textwrap/index.rst:0
+# f36c29f8e9bc4997bc5b56d091574d9d
+msgid "textwrap_fill_width.py"
+msgstr ""
+
+#: ../../source/textwrap/index.rst:125
+# e0abe489f9674bbe84d9b3a78e6304d7
+msgid "This produces outputs in the specified widths."
+msgstr ""
+
+#: ../../source/textwrap/index.rst:155
+# 92419b749e7442eea31aa261d71c3987
+msgid "Indenting Blocks"
+msgstr ""
+
+#: ../../source/textwrap/index.rst:157
+# 7688ca17caab4491a83f4d1f8151e91d
+msgid "Use the ``indent()`` function to add consistent prefix text to all of the lines in a string. This example formats the same example text as though it was part of an email message being quoted in the reply, using ``>`` as the prefix for each line."
+msgstr ""
+
+#: ../../source/textwrap/index.rst:0
+# eade65d5783147fea4f661651d0a3a0d
+msgid "textwrap_indent.py"
+msgstr ""
+
+#: ../../source/textwrap/index.rst:166
+# 15ff9cbb424043b7892506bb1da50af0
+msgid "The block of text is split on newlines, the prefix is added to each line that contains text, and then the lines are combined back into a new string and returned."
+msgstr ""
+
+#: ../../source/textwrap/index.rst:190
+# fdc00991e25f4ef2b7c0a815f58c6538
+msgid "To control which lines receive the new prefix, pass a callable as the ``predicate`` argument to ``indent()``. The callable will be invoked for each line of text in turn and the prefix will be added for lines where the return value is true."
+msgstr ""
+
+#: ../../source/textwrap/index.rst:0
+# c43d04a826bd4fd7a0475271301085d0
+msgid "textwrap_indent_predicate.py"
+msgstr ""
+
+#: ../../source/textwrap/index.rst:199
+# 1cad2bed94a34d5f8cbc86e76524545e
+msgid "This example adds the prefix ``EVEN`` to lines that contain an even number of characters."
+msgstr ""
+
+#: ../../source/textwrap/index.rst:227
+# 7e04c6a4c73142d799b973b403a48b12
+msgid "Hanging Indents"
+msgstr ""
+
+#: ../../source/textwrap/index.rst:229
+# c8406bedccd64c269ef1fb86821b3282
+msgid "In the same way that it is possible to set the width of the output, the indent of the first line can be controlled independently of subsequent lines."
+msgstr ""
+
+#: ../../source/textwrap/index.rst:0
+# 2fb2023424e44dd5a35e5b61e4cef786
+msgid "textwrap_hanging_indent.py"
+msgstr ""
+
+#: ../../source/textwrap/index.rst:237
+# 5aed483cc9f242bcb69dc0c9e87626ab
+msgid "This makes it possible to produce a hanging indent, where the first line is indented less than the other lines."
+msgstr ""
+
+#: ../../source/textwrap/index.rst:256
+# 49e5e048a1b64eb0bbb8227cfb34a908
+msgid "The indent values can include nonwhitespace characters, too. The hanging indent can be prefixed with ``*`` to produce bullet points, for example."
+msgstr ""
+
+#: ../../source/textwrap/index.rst:261
+# 8aaabbd02b08488689858fd18a2c8622
+msgid "Truncating Long Text"
+msgstr ""
+
+#: ../../source/textwrap/index.rst:263
+# f14410007830413cb665a0065cf04cd0
+msgid "To truncate text to create a summary or preview, use ``shorten()``. All existing whitespace, such as tabs, newlines, and series of multiple spaces, will be standardized to a single space. Then the text will be truncated to a length less than or equal to what is requested, between word boundaries so that no partial words are included."
+msgstr ""
+
+#: ../../source/textwrap/index.rst:0
+# 6f779829f4ed49698ebe06359da2848d
+msgid "textwrap_shorten.py"
+msgstr ""
+
+#: ../../source/textwrap/index.rst:274
+# 7ea111de240745288c88bf3000cec514
+msgid "If non-whitespace text is removed from the original text as part of the truncation, it is replaced with a placeholder value. The default value ``[...]`` can be replaced by providing a ``placeholder`` argument to ``shorten()``."
+msgstr ""
+
+#: ../../source/textwrap/index.rst:306
+# 0e1aa316405c4169a1ae2fcce7ef9a9e
+msgid ":pydoc:`textwrap`"
+msgstr ""
+

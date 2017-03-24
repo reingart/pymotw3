@@ -1,0 +1,138 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/smtplib/index.rst:3
+# 2e9d189f46e54431b8108937ed6caa5c
+msgid "smtplib --- Simple Mail Transfer Protocol Client"
+msgstr ""
+
+#: ../../source/smtplib/index.rst:8
+# 1d33911193e04e7293158959518b07b2
+msgid "Interact with SMTP servers, including sending email."
+msgstr ""
+
+#: ../../source/smtplib/index.rst:10
+# 6625668ca6c045a0845173d9b5f2d4cb
+msgid "``smtplib`` includes the class ``SMTP``, which can be used to communicate with mail servers to send mail."
+msgstr ""
+
+#: ../../source/smtplib/index.rst:15
+# b64a313fffa24aafa1d5aa493735152b
+msgid "The email addresses, host names, and IP addresses in the following examples have been obscured, but otherwise the transcripts illustrate the sequence of commands and responses accurately."
+msgstr ""
+
+#: ../../source/smtplib/index.rst:21
+# 648efc3d69464965acbe8acf90d763c4
+msgid "Sending an Email Message"
+msgstr ""
+
+#: ../../source/smtplib/index.rst:23
+# 68ae20e44e184ca88efc53b810b72932
+msgid "The most common use of ``SMTP`` is to connect to a mail server and send a message.  The mail server host name and port can be passed to the constructor, or ``connect()`` can be invoked explicitly. Once connected, call ``sendmail()`` with the envelope parameters and body of the message.  The message text should be fully formed and comply with RFC 5322, since ``smtplib`` does not modify the contents or headers at all.  That means the ``From`` and ``To`` headers need to be added by the caller."
+msgstr ""
+
+#: ../../source/smtplib/index.rst:0
+# 464701cb7f68429ca7bc29f49ca827c0
+msgid "smtplib_sendmail.py"
+msgstr ""
+
+#: ../../source/smtplib/index.rst:36
+# 4ed6bcdc2d734f879cdfcfdecda136d5
+msgid "In this example, debugging is also turned on to show the communication between client and server.  Otherwise the example would produce no output at all."
+msgstr ""
+
+#: ../../source/smtplib/index.rst:78
+# 528a5e844a064ed9944f91635976a565
+msgid "The second argument to ``sendmail()``, the recipients, is passed as a list.  Any number of addresses can be included in the list to have the message delivered to each of them in turn.  Since the envelope information is separate from the message headers, it is possible to blind carbon-copy (BCC) someone by including them in the method argument, but not in the message header."
+msgstr ""
+
+#: ../../source/smtplib/index.rst:87
+# f7deb8c5cb4841b2b31d1b42ca92b8f6
+msgid "Authentication and Encryption"
+msgstr ""
+
+#: ../../source/smtplib/index.rst:89
+# 6f7ee75dc05149fb9b0d39158d937ca4
+msgid "The ``SMTP`` class also handles authentication and TLS (transport layer security) encryption, when the server supports them.  To determine if the server supports TLS, call ``ehlo()`` directly to identify the client to the server and ask it what extensions are available.  Then call ``has_extn()`` to check the results.  After TLS is started, ``ehlo()`` must be called again before authenticating. Many mail hosting providers now *only* support TLS-based connections. For communicating with those servers, use ``SMTP_SSL`` to start off with an encrypted connection."
+msgstr ""
+
+#: ../../source/smtplib/index.rst:0
+# 1356fba6390a4eb8814a8871fa489f0c
+msgid "smtplib_authenticated.py"
+msgstr ""
+
+#: ../../source/smtplib/index.rst:103
+# 22998bfab6184507858d804d42a3653a
+msgid "The ``STARTTLS`` extension does not appear in the reply to ``EHLO`` after TLS is enabled."
+msgstr ""
+
+#: ../../source/smtplib/index.rst:199
+# fcb7a501f28d4754b0e2ab5723e7b008
+msgid "Verifying an Email Address"
+msgstr ""
+
+#: ../../source/smtplib/index.rst:201
+# bf3dfae36cfa41b3b8de4b0baa10c4ad
+msgid "The SMTP protocol includes a command to ask a server whether an address is valid.  Usually ``VRFY`` is disabled to prevent spammers from finding legitimate email addresses, but if it is enabled a client can ask the server about an address and receive a status code indicating validity along with the user's full name, if it is available."
+msgstr ""
+
+#: ../../source/smtplib/index.rst:0
+# be2aa95c27c44cf188407e58e3e20f94
+msgid "smtplib_verify.py"
+msgstr ""
+
+#: ../../source/smtplib/index.rst:212
+# 075d4b14869249168133085d863042ec
+msgid "As the last two lines of output here show, the address ``dhellmann`` is valid but ``notthere`` is not."
+msgstr ""
+
+#: ../../source/smtplib/index.rst:235
+# bb589d7faab5481c958439eed5418c79
+msgid ":pydoc:`smtplib`"
+msgstr ""
+
+#: ../../source/smtplib/index.rst:237
+# 257a545639ec407186bf05d653417ffc
+msgid ":rfc:`821` -- The Simple Mail Transfer Protocol (SMTP) specification."
+msgstr ""
+
+#: ../../source/smtplib/index.rst:240
+# 8b05f3e98ccf43989d5e16e0bb03ad9d
+msgid ":rfc:`1869` -- SMTP Service Extensions to the base protocol."
+msgstr ""
+
+#: ../../source/smtplib/index.rst:242
+# 7bdbfb02520a425db3c600ded7d41bb1
+msgid ":rfc:`822` -- \"Standard for the Format of ARPA Internet Text Messages\", the original email message format specification."
+msgstr ""
+
+#: ../../source/smtplib/index.rst:245
+# 1bfb3c4d8d3c4211aa822fe6e9099bdb
+msgid ":rfc:`5322` -- \"Internet Message Format\", updates to the email message format."
+msgstr ""
+
+#: ../../source/smtplib/index.rst:248
+# b4d18de0ef3f4cbda83e79b5d9ac5249
+msgid ":mod:`email` -- Standard library module for building and parsing email messages."
+msgstr ""
+
+#: ../../source/smtplib/index.rst:251
+# 4d1e286ab68b48649f0b8bafa7a130a8
+msgid ":mod:`smtpd` -- Implements a simple SMTP server."
+msgstr ""
+

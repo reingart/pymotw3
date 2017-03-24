@@ -1,0 +1,223 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/multiprocessing/communication.rst:4
+# 9cc4493fe6af413988db8586e5a07651
+msgid "Passing Messages to Processes"
+msgstr ""
+
+#: ../../source/multiprocessing/communication.rst:6
+# 6f41fe7d574d46c4a2c48888afa6e0c6
+msgid "As with threads, a common use pattern for multiple processes is to divide a job up among several workers to run in parallel.  Effective use of multiple processes usually requires some communication between them, so that work can be divided and results can be aggregated.  A simple way to communicate between processes with ``multiprocessing`` is to use a ``Queue`` to pass messages back and forth.  Any object that can be serialized with :mod:`pickle` can pass through a ``Queue``."
+msgstr ""
+
+#: ../../source/multiprocessing/communication.rst:0
+# 62cc848392bc4ba791df6bc459fd5716
+msgid "multiprocessing_queue.py"
+msgstr ""
+
+#: ../../source/multiprocessing/communication.rst:19
+# 45f59dcfc7504d2ba8908a4b1e17c0db
+msgid "This short example only passes a single message to a single worker, then the main process waits for the worker to finish."
+msgstr ""
+
+#: ../../source/multiprocessing/communication.rst:34
+# c0a837d513454165bbc44930d1f7a9f9
+msgid "A more complex example shows how to manage several workers consuming data from a ``JoinableQueue`` and passing results back to the parent process.  The *poison pill* technique is used to stop the workers.  After setting up the real tasks, the main program adds one \"stop\" value per worker to the job queue.  When a worker encounters the special value, it breaks out of its processing loop.  The main process uses the task queue's ``join()`` method to wait for all of the tasks to finish before processing the results."
+msgstr ""
+
+#: ../../source/multiprocessing/communication.rst:0
+# f348b4c0a29145589874f42e881ae7f4
+msgid "multiprocessing_producer_consumer.py"
+msgstr ""
+
+#: ../../source/multiprocessing/communication.rst:47
+# 4c7b4dcd5f4842bd88d5c129583013d9
+msgid "Although the jobs enter the queue in order, their execution is parallelized so there is no guarantee about the order they will be completed."
+msgstr ""
+
+#: ../../source/multiprocessing/communication.rst:94
+# 3883b23ee84f4e268e0cb21ed9cdd9a8
+msgid "Signaling between Processes"
+msgstr ""
+
+#: ../../source/multiprocessing/communication.rst:96
+# ff59c4c5df254bfabd6fc42c3df3fb6a
+msgid "The ``Event`` class provides a simple way to communicate state information between processes.  An event can be toggled between set and unset states.  Users of the event object can wait for it to change from unset to set, using an optional timeout value."
+msgstr ""
+
+#: ../../source/multiprocessing/communication.rst:0
+# f459490f6f994a7e96a047490b61b70b
+msgid "multiprocessing_event.py"
+msgstr ""
+
+#: ../../source/multiprocessing/communication.rst:105
+# 413a3afb2cc84f869c0c597769a7a8cd
+msgid "When ``wait()`` times out it returns without an error.  The caller is responsible for checking the state of the event using ``is_set()``."
+msgstr ""
+
+#: ../../source/multiprocessing/communication.rst:127
+# ebe8597d90fe4e1a9caa9cb4382e568b
+msgid "Controlling Access to Resources"
+msgstr ""
+
+#: ../../source/multiprocessing/communication.rst:129
+# 5636bd164b6a4556985751fca4a2b7e6
+msgid "In situations when a single resource needs to be shared between multiple processes, a ``Lock`` can be used to avoid conflicting accesses."
+msgstr ""
+
+#: ../../source/multiprocessing/communication.rst:0
+# d822b8dc82ed4ff9b85ad2f247ea8978
+msgid "multiprocessing_lock.py"
+msgstr ""
+
+#: ../../source/multiprocessing/communication.rst:137
+# 62ab5f5038ed423f9ac3cd5396842e10
+msgid "In this example, the messages printed to the console may be jumbled together if the two processes do not synchronize their access of the output stream with the lock."
+msgstr ""
+
+#: ../../source/multiprocessing/communication.rst:156
+# f6bcd242939641feab72899ee53ffda8
+msgid "Synchronizing Operations"
+msgstr ""
+
+#: ../../source/multiprocessing/communication.rst:158
+# 7c4c028245bb4ba08c82ffca77b0ed37
+msgid "``Condition`` objects can be used to synchronize parts of a workflow so that some run in parallel but others run sequentially, even if they are in separate processes."
+msgstr ""
+
+#: ../../source/multiprocessing/communication.rst:0
+# 31377090e4dc467eacea6616613b29fe
+msgid "multiprocessing_condition.py"
+msgstr ""
+
+#: ../../source/multiprocessing/communication.rst:166
+# a763ee776c92487ba56b6cf1720c1453
+msgid "In this example, two process run the second stage of a job in parallel, but only after the first stage is done."
+msgstr ""
+
+#: ../../source/multiprocessing/communication.rst:188
+# d6ea3add55e34455afa454aa0f515a44
+msgid "Controlling Concurrent Access to Resources"
+msgstr ""
+
+#: ../../source/multiprocessing/communication.rst:190
+# 243c927f89e04f46980f31cd7114403a
+msgid "Sometimes it is useful to allow more than one worker access to a resource at a time, while still limiting the overall number. For example, a connection pool might support a fixed number of simultaneous connections, or a network application might support a fixed number of concurrent downloads. A ``Semaphore`` is one way to manage those connections."
+msgstr ""
+
+#: ../../source/multiprocessing/communication.rst:0
+# e6cc513ffedc41b2b2fb953697328951
+msgid "multiprocessing_semaphore.py"
+msgstr ""
+
+#: ../../source/multiprocessing/communication.rst:201
+# 395c3801d6be42eba0465accb5c6a8e4
+msgid "In this example, the ``ActivePool`` class simply serves as a convenient way to track which processes are running at a given moment. A real resource pool would probably allocate a connection or some other value to the newly active process, and reclaim the value when the task is done. Here, the pool is just used to hold the names of the active processes to show that only three are running concurrently."
+msgstr ""
+
+#: ../../source/multiprocessing/communication.rst:254
+# a4f57e219df742ad9cd4f7a1c23d7872
+msgid "Managing Shared State"
+msgstr ""
+
+#: ../../source/multiprocessing/communication.rst:256
+# 3fce378551e14155a31bc99f59785e76
+msgid "In the previous example, the list of active processes is maintained centrally in the ``ActivePool`` instance via a special type of list object created by a ``Manager``.  The ``Manager`` is responsible for coordinating shared information state between all of its users."
+msgstr ""
+
+#: ../../source/multiprocessing/communication.rst:0
+# 99ac02d6e30f4d10ac1fad2c4b45dbbb
+msgid "multiprocessing_manager_dict.py"
+msgstr ""
+
+#: ../../source/multiprocessing/communication.rst:266
+# 6d0c240553db4d6393c7052d3e59e116
+msgid "By creating the list through the manager, it is shared and updates are seen in all processes.  Dictionaries are also supported."
+msgstr ""
+
+#: ../../source/multiprocessing/communication.rst:284
+# a3d10e6137ca449ea4217b46773f1a8f
+msgid "Shared Namespaces"
+msgstr ""
+
+#: ../../source/multiprocessing/communication.rst:286
+# f2f98c0e858d4a1b917053de4597ecd5
+msgid "In addition to dictionaries and lists, a ``Manager`` can create a shared ``Namespace``."
+msgstr ""
+
+#: ../../source/multiprocessing/communication.rst:0
+# df6b12977719412d80364f9359671083
+msgid "multiprocessing_namespaces.py"
+msgstr ""
+
+#: ../../source/multiprocessing/communication.rst:293
+# 5cbefadae76c49109476a00c631e26d3
+msgid "Any named value added to the ``Namespace`` is visible to all of the clients that receive the ``Namespace`` instance."
+msgstr ""
+
+#: ../../source/multiprocessing/communication.rst:309
+# 53ff17d32464441689d70b94b373556f
+msgid "It is important to know that updates to the contents of mutable values in the namespace are not propagated automatically."
+msgstr ""
+
+#: ../../source/multiprocessing/communication.rst:0
+# f464f966a5f14bc8af0e6a7959666c96
+msgid "multiprocessing_namespaces_mutable.py"
+msgstr ""
+
+#: ../../source/multiprocessing/communication.rst:316
+# f35cfb5256984d028dc4468911c9659f
+msgid "To update the list, attach it to the namespace object again."
+msgstr ""
+
+#: ../../source/multiprocessing/communication.rst:333
+# 5f3b5a21f97643469c4b948697b59406
+msgid "Process Pools"
+msgstr ""
+
+#: ../../source/multiprocessing/communication.rst:335
+# 34ecf927bf254bbd891e6201a81e7e29
+msgid "The ``Pool`` class can be used to manage a fixed number of workers for simple cases where the work to be done can be broken up and distributed between workers independently.  The return values from the jobs are collected and returned as a list.  The pool arguments include the number of processes and a function to run when starting the task process (invoked once per child)."
+msgstr ""
+
+#: ../../source/multiprocessing/communication.rst:0
+# 8794cabfd75a4414aeb6bcfa36800411
+msgid "multiprocessing_pool.py"
+msgstr ""
+
+#: ../../source/multiprocessing/communication.rst:346
+# b49b62d4fd4744edab0d723e3c98e599
+msgid "The result of the ``map()`` method is functionally equivalent to the built-in ``map()``, except that individual tasks run in parallel. Since the pool is processing its inputs in parallel, ``close()`` and ``join()`` can be used to synchronize the main process with the task processes to ensure proper cleanup."
+msgstr ""
+
+#: ../../source/multiprocessing/communication.rst:374
+# c7de7aabf5994891abcf5e7c01222aa4
+msgid "By default, ``Pool`` creates a fixed number of worker processes and passes jobs to them until there are no more jobs.  Setting the ``maxtasksperchild`` parameter tells the pool to restart a worker process after it has finished a few tasks, preventing long-running workers from consuming ever more system resources."
+msgstr ""
+
+#: ../../source/multiprocessing/communication.rst:0
+# d0a3465f7fb14e299c5485582f329263
+msgid "multiprocessing_pool_maxtasksperchild.py"
+msgstr ""
+
+#: ../../source/multiprocessing/communication.rst:384
+# 3e7825819405424a9f5b91834e9bd910
+msgid "The pool restarts the workers when they have completed their allotted tasks, even if there is no more work.  In this output, eight workers are created, even though there are only 10 tasks, and each worker can complete two of them at a time."
+msgstr ""
+

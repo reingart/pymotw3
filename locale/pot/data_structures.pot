@@ -1,0 +1,78 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/data_structures.rst:3
+# 4eec3fc25a9b4d11a64384dc041ab0db
+msgid "Data Structures"
+msgstr ""
+
+#: ../../source/data_structures.rst:5
+# 451ee9ffc0e749a98d3f7c82322f875b
+msgid "Python includes several standard programming data structures, such as ``list``, ``tuple``, ``dict``, and ``set``, as part of its built-in types.  Many applications do not require other structures, but when they do, the standard library provides powerful and well-tested versions that are ready to be used."
+msgstr ""
+
+#: ../../source/data_structures.rst:11
+# e394ebd1bfc04b70a029ddfde954a632
+msgid "The :mod:`enum` module provides an implementation of an *enumeration* type, with iteration and comparison capabilities. It can be used to create well-defined symbols for values, instead of using literal strings or integers."
+msgstr ""
+
+#: ../../source/data_structures.rst:16
+# 6df211eb202240b18bb7d7cef2b9339d
+msgid "The :mod:`collections` module includes implementations of several data structures that extend those found in other modules.  For example, ``Deque`` is a double-ended queue, which allows the addition or removal of items from either end.  The ``defaultdict`` is a dictionary that responds with a default value if a key is missing, while ``OrderedDict`` remembers the sequence in which items are added to it.  ``namedtuple`` extends the normal ``tuple`` to give each member item an attribute name in addition to a numeric index."
+msgstr ""
+
+#: ../../source/data_structures.rst:26
+# 061f8cb68d514fac89e8a41681794a3e
+msgid "For large amounts of data, an :mod:`array` may make more efficient use of memory than a ``list``.  Since the ``array`` is limited to a single data type, it can use a more compact memory representation than a general-purpose ``list``.  At the same time, ``array`` instances can be manipulated using many of the same methods as a ``list``, so it may be possible to replace a ``list`` with an ``array`` in an application without a lot of other changes."
+msgstr ""
+
+#: ../../source/data_structures.rst:35
+# 3d6f1a95609048ca96fd323bb073539a
+msgid "Sorting items in a sequence is a fundamental aspect of data manipulation.  Python's ``list`` includes a ``sort()`` method, but sometimes it is more efficient to maintain a list in sorted order without re-sorting it each time its contents are changed.  The functions in :mod:`heapq` modify the contents of a list while preserving the sort order of the list with low overhead."
+msgstr ""
+
+#: ../../source/data_structures.rst:42
+# f617b3a515244e77a47069033249bdbd
+msgid "Another option for building sorted lists or arrays is :mod:`bisect`. It uses a binary search to find the insertion point for new items, and is an alternative to repeatedly sorting a list that changes frequently."
+msgstr ""
+
+#: ../../source/data_structures.rst:47
+# 281983c2f9ab414abf4ac9a6e8aefa3f
+msgid "Although the built-in ``list`` can simulate a queue using the ``insert()`` and ``pop()`` methods, it is not thread-safe.  For true ordered communication between threads use the :mod:`queue` module.  :mod:`multiprocessing` includes a version of a ``Queue`` that works between processes, making it easier to convert a multithreaded program to use processes instead."
+msgstr ""
+
+#: ../../source/data_structures.rst:54
+# 3bff111107b04a0ab78a8fa0d691d622
+msgid ":mod:`struct` is useful for decoding data from another application, perhaps coming from a binary file or stream of data, into Python's native types for easier manipulation."
+msgstr ""
+
+#: ../../source/data_structures.rst:58
+# c29ae74f599d42d2b1cc591eb1d33f64
+msgid "This chapter covers two modules related to memory management.  For highly interconnected data structures, such as graphs and trees, use :mod:`weakref` to maintain references while still allowing the garbage collector to clean up objects after they are no longer needed.  Use the functions in :mod:`copy` for duplicating data structures and their contents, including making recursive copies with ``deepcopy()``."
+msgstr ""
+
+#: ../../source/data_structures.rst:65
+# 7058752ba92c414f80f5a46f4dc6bff1
+msgid "Debugging data structures can be time consuming, especially when wading through printed output of large sequences or dictionaries.  Use :mod:`pprint` to create easy-to-read representations that can be printed to the console or written to a log file for easier debugging."
+msgstr ""
+
+#: ../../source/data_structures.rst:70
+# 15d493ccfff84edfad273c6ca7973506
+msgid "Finally, if the available types do not meet the requirements, subclass one of the native types and customize it, or build a new container type using one of the abstract base classes defined in :mod:`collections` as a starting point."
+msgstr ""
+

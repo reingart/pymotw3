@@ -1,0 +1,253 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/tempfile/index.rst:3
+# f44c3897fbf042eb81b32faa7faabeb7
+msgid "tempfile --- Temporary File System Objects"
+msgstr ""
+
+#: ../../source/tempfile/index.rst:8
+# 84af15516c3045aca544b6819ab3e6d8
+msgid "Create temporary file system objects."
+msgstr ""
+
+#: ../../source/tempfile/index.rst:10
+# 2afde1eec4c6410eb27631d08e5dc6cc
+msgid "Creating temporary files with unique names securely, so they cannot be guessed by someone wanting to break the application or steal the data, is challenging. The ``tempfile`` module provides several functions for creating temporary file system resources securely. ``TemporaryFile()`` opens and returns an unnamed file, ``NamedTemporaryFile()`` opens and returns a named file, ``SpooledTemporaryFile`` holds its content in memory before writing to disk, and ``TemporaryDirectory`` is a context manager that removes the directory when the context is closed."
+msgstr ""
+
+#: ../../source/tempfile/index.rst:21
+# 0e739bd9f0554cb2939cd6cb4543c396
+msgid "Temporary Files"
+msgstr ""
+
+#: ../../source/tempfile/index.rst:23
+# 8d8ba2aad0c64954a596f00fd3073a92
+msgid "Applications that need temporary files to store data, without needing to share that file with other programs, should use the ``TemporaryFile()`` function to create the files. The function creates a file, and on platforms where it is possible, unlinks it immediately. This makes it impossible for another program to find or open the file, since there is no reference to it in the file system table. The file created by ``TemporaryFile()`` is removed automatically when it is closed, whether by calling ``close()`` or by using the context manager API and ``with`` statement."
+msgstr ""
+
+#: ../../source/tempfile/index.rst:0
+# 04f61a09cec84a6ca614e76ef466c866
+msgid "tempfile_TemporaryFile.py"
+msgstr ""
+
+#: ../../source/tempfile/index.rst:37
+# a3e57575eceb4d94affc156d8dede3f9
+msgid "This example illustrates the difference in creating a temporary file using a common pattern for making up a name, versus using the ``TemporaryFile()`` function. The file returned by ``TemporaryFile()`` has no name."
+msgstr ""
+
+#: ../../source/tempfile/index.rst:64
+# 2c03ecb3b1904894a31bd4e6a5719428
+msgid "By default, the file handle is created with mode ``'w+b'`` so it behaves consistently on all platforms and the caller can write to it and read from it."
+msgstr ""
+
+#: ../../source/tempfile/index.rst:0
+# 00c9a4a0974c4ccfb9159a1ffcdf31ff
+msgid "tempfile_TemporaryFile_binary.py"
+msgstr ""
+
+#: ../../source/tempfile/index.rst:72
+# 7942ea42f4de480da5167a8f0ff3a7e9
+msgid "After writing, the file handle must be \"rewound\" using ``seek()`` in order to read the data back from it."
+msgstr ""
+
+#: ../../source/tempfile/index.rst:87
+# cfd25eeaacf24754b0d069103e3aaa0b
+msgid "To open the file in text mode, set ``mode`` to ``'w+t'`` when the file is created."
+msgstr ""
+
+#: ../../source/tempfile/index.rst:0
+# 8843acfd3d6146fcbacc378618007c72
+msgid "tempfile_TemporaryFile_text.py"
+msgstr ""
+
+#: ../../source/tempfile/index.rst:94
+# 697f86655f0e4f14b8e8f088c08d37e1
+msgid "The file handle treats the data as text."
+msgstr ""
+
+#: ../../source/tempfile/index.rst:110
+# f8b8ebb0deee4105acda977f38e62737
+msgid "Named Files"
+msgstr ""
+
+#: ../../source/tempfile/index.rst:112
+# 62b046f26be14bb094b002196bec1e12
+msgid "There are situations where having a named temporary file is important. For applications spanning multiple processes, or even hosts, naming the file is the simplest way to pass it between parts of the application. The ``NamedTemporaryFile()`` function creates a file without unlinking it, so it retains its name (accessed with the :attr:`name` attribute)."
+msgstr ""
+
+#: ../../source/tempfile/index.rst:0
+# 10adf610f46643edb7bc3657c104377c
+msgid "tempfile_NamedTemporaryFile.py"
+msgstr ""
+
+#: ../../source/tempfile/index.rst:123
+# 6dc72c8108344530b16868cda01c94fb
+msgid "The file is removed after the handle is closed."
+msgstr ""
+
+#: ../../source/tempfile/index.rst:142
+# ce6b390cf0bc4f109163f0360f1dc37d
+msgid "Spooled Files"
+msgstr ""
+
+#: ../../source/tempfile/index.rst:144
+# 10ee827ec3ab4625bdbb0840856c9629
+msgid "For temporary files containing relatively small amounts of data, it is likely to be more efficient to use a ``SpooledTemporaryFile`` because it holds the file contents in memory using a ``io.BytesIO`` or ``io.StringIO`` buffer until they reach a threshold size. When the amount of data passes the threshold, it is \"rolled over\" and written to disk, and then the buffer is replaced with a normal ``TemporaryFile()``."
+msgstr ""
+
+#: ../../source/tempfile/index.rst:0
+# 051e8ba2cd424919a2bff212e52cbdde
+msgid "tempfile_SpooledTemporaryFile.py"
+msgstr ""
+
+#: ../../source/tempfile/index.rst:156
+# 11dd6f15464447a191825f1d6a96c845
+msgid "This example uses private attributes of the ``SpooledTemporaryFile`` to determine when the rollover to disk has happened. It is not normally necessary to check this status except when tuning the buffer size."
+msgstr ""
+
+#: ../../source/tempfile/index.rst:176
+# de16466950c040bda1eda2fb1e7611f7
+msgid "To explicitly cause the buffer to be written to disk, call the ``rollover()`` or ``fileno()`` methods."
+msgstr ""
+
+#: ../../source/tempfile/index.rst:0
+# b377364ca5a945d0988cd86eff8807da
+msgid "tempfile_SpooledTemporaryFile_explicit.py"
+msgstr ""
+
+#: ../../source/tempfile/index.rst:183
+# 9b7a0fdbe807461dbac1df7ae32c322f
+msgid "In this example, because the buffer size is so much larger than the amount of data, no file would be created on disk except that ``rollover()`` was called."
+msgstr ""
+
+#: ../../source/tempfile/index.rst:205
+# 99793e568a074cfb931233b0589b41d1
+msgid "Temporary Directories"
+msgstr ""
+
+#: ../../source/tempfile/index.rst:207
+# a29877a187574e90ac7834c15998e897
+msgid "When several temporary files are needed, it may be more convenient to create a single temporary directory with ``TemporaryDirectory`` and open all of the files in that directory."
+msgstr ""
+
+#: ../../source/tempfile/index.rst:0
+# a55e72a642834e9bac1e72a776598858
+msgid "tempfile_TemporaryDirectory.py"
+msgstr ""
+
+#: ../../source/tempfile/index.rst:215
+# 6b4815026ec146c9b48c9b3414413a39
+msgid "The context manager produces the name of the directory, which can then be used within the context block to build other file names."
+msgstr ""
+
+#: ../../source/tempfile/index.rst:233
+# eb989540ee89445589c64b2e989c0b29
+msgid "Predicting Names"
+msgstr ""
+
+#: ../../source/tempfile/index.rst:235
+# 7af2cac9597444138f5421a4e614c51f
+msgid "While less secure than strictly anonymous temporary files, including a predictable portion in the name makes it possible to find the file and examine it for debugging purposes. All of the functions described so far take three arguments to control the filenames to some degree. Names are generated using the formula:"
+msgstr ""
+
+#: ../../source/tempfile/index.rst:245
+# 68c3c6806490499ca0f304eb7851067b
+msgid "All of the values except ``random`` can be passed as arguments to the functions for creating temporary files or directories."
+msgstr ""
+
+#: ../../source/tempfile/index.rst:0
+# 882ff9ecf3dd4acfbc0880310d12ea68
+msgid "tempfile_NamedTemporaryFile_args.py"
+msgstr ""
+
+#: ../../source/tempfile/index.rst:252
+# 86a62fd5261745af9a72924924f878a8
+msgid "The ``prefix`` and ``suffix`` arguments are combined with a random string of characters to build the filename, and the ``dir`` argument is taken as-is and used as the location of the new file."
+msgstr ""
+
+#: ../../source/tempfile/index.rst:272
+# adb904ca97f647c1a9abc49a7c99893f
+msgid "Temporary File Location"
+msgstr ""
+
+#: ../../source/tempfile/index.rst:274
+# a600375fd2b5456c98226354e19a4439
+msgid "If an explicit destination is not given using the ``dir`` argument, the path used for the temporary files will vary based on the current platform and settings. The ``tempfile`` module includes two functions for querying the settings being used at runtime."
+msgstr ""
+
+#: ../../source/tempfile/index.rst:0
+# bf8dc33ca05d41b282dd1c9f1a8406e3
+msgid "tempfile_settings.py"
+msgstr ""
+
+#: ../../source/tempfile/index.rst:283
+# 188e490aefc84ac5b7fb23f8a31a2d39
+msgid "``gettempdir()`` returns the default directory that will hold all of the temporary files and ``gettempprefix()`` returns the string prefix for new file and directory names."
+msgstr ""
+
+#: ../../source/tempfile/index.rst:300
+# 476511b8852a44ed88aad7c45dda706f
+msgid "The value returned by ``gettempdir()`` is set based on a straightforward algorithm of looking through a list of locations for the first place the current process can create a file.  The search list is:"
+msgstr ""
+
+#: ../../source/tempfile/index.rst:305
+# e48cc2b3e1c04a898efe589c7d336c9d
+msgid "The environment variable ``TMPDIR``"
+msgstr ""
+
+#: ../../source/tempfile/index.rst:306
+# 546fee8a5225498dba48c82844cbd6b8
+msgid "The environment variable ``TEMP``"
+msgstr ""
+
+#: ../../source/tempfile/index.rst:307
+# 0ef46288ee944a92b9bd093bff3d9a1b
+msgid "The environment variable ``TMP``"
+msgstr ""
+
+#: ../../source/tempfile/index.rst:308
+# 10f643e2f57c4658a9caf1642b3dcfa4
+msgid "A fallback, based on the platform.  (Windows uses the first available of ``C:\\temp``, ``C:\\tmp``, ``\\temp``, or ``\\tmp``. Other platforms use ``/tmp``, ``/var/tmp``, or ``/usr/tmp``.)"
+msgstr ""
+
+#: ../../source/tempfile/index.rst:311
+# 7eaad7328d1341a09ba147626fedd886
+msgid "If no other directory can be found, the current working directory is used."
+msgstr ""
+
+#: ../../source/tempfile/index.rst:0
+# d99325a69dbd49ac875fc0f7e04af688
+msgid "tempfile_tempdir.py"
+msgstr ""
+
+#: ../../source/tempfile/index.rst:318
+# 4c598cd085644fbf8aeb26596c8c99b4
+msgid "Programs that need to use a global location for all temporary files without using any of these environment variables should set ``tempfile.tempdir`` directly by assigning a value to the variable."
+msgstr ""
+
+#: ../../source/tempfile/index.rst:337
+# 423a2dbcccfa469caa76852804f307a3
+msgid ":pydoc:`tempfile`"
+msgstr ""
+
+#: ../../source/tempfile/index.rst:339
+# 84c9fa3d44e145c3bdbce4ecdf43421e
+msgid ":mod:`random` -- Psuedorandom number generators, used to introduce random values into temporary file names"
+msgstr ""
+

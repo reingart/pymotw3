@@ -1,0 +1,293 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/bz2/index.rst:3
+# f8c46c407b824c4c8e2b1c1e99d2ea22
+msgid "bz2 --- bzip2 Compression"
+msgstr ""
+
+#: ../../source/bz2/index.rst:8
+# 5205c28a4deb414a85ce32c22114e310
+msgid "bzip2 compression"
+msgstr ""
+
+#: ../../source/bz2/index.rst:10
+# 59a3d276c0a34fd0a5c53646be1d62b1
+msgid "The ``bz2`` module is an interface for the bzip2 library, used to compress data for storage or transmission.  There are three APIs provided:"
+msgstr ""
+
+#: ../../source/bz2/index.rst:14
+# 63de94fbc304428ab0477055c4444bcb
+msgid "\"one shot\" compression/decompression functions for operating on a blob of data"
+msgstr ""
+
+#: ../../source/bz2/index.rst:16
+# 7b8fe0f88c9a457c89749865db0e57ce
+msgid "iterative compression/decompression objects for working with streams of data"
+msgstr ""
+
+#: ../../source/bz2/index.rst:18
+# 545414d711644158ba1fe5034663ece0
+msgid "a file-like class that supports reading and writing as with an uncompressed file"
+msgstr ""
+
+#: ../../source/bz2/index.rst:22
+# ab450703dba444a78bde828833ec6b9a
+msgid "One-shot Operations in Memory"
+msgstr ""
+
+#: ../../source/bz2/index.rst:24
+# 06b16b82073a41b7883d4de4ca5fb508
+msgid "The simplest way to work with ``bz2`` is to load all of the data to be compressed or decompressed in memory, and then use ``compress()`` and ``decompress()`` to transform it."
+msgstr ""
+
+#: ../../source/bz2/index.rst:0
+# bbcef86c16544f93be262b3cdb7948a9
+msgid "bz2_memory.py"
+msgstr ""
+
+#: ../../source/bz2/index.rst:32
+# 102fa36591074154bce623e950d1d3bf
+msgid "The compressed data contains non-ASCII characters, so it needs to be converted to its hexadecimal representation before it can be printed. In the output from these examples, the hexadecimal version is reformatted to have at most 40 characters on each line."
+msgstr ""
+
+#: ../../source/bz2/index.rst:59
+# 06eb5a5304ea469da193bf0d1ba398fa
+msgid "For short text, the compressed version can be significantly longer than the original.  While the actual results depend on the input data, it is interesting to observe the compression overhead."
+msgstr ""
+
+#: ../../source/bz2/index.rst:0
+# 66f6b2a909b24d42b819726c3ab45cb9
+msgid "bz2_lengths.py"
+msgstr ""
+
+#: ../../source/bz2/index.rst:67
+# 8f54241684dc4d488cbece45f37888ad
+msgid "The output lines ending with ``*`` show the points where the compressed data is longer than the raw input."
+msgstr ""
+
+#: ../../source/bz2/index.rst:89
+# d58a3fb251bb4e35a8b56ef24044bd4a
+msgid "Incremental Compression and Decompression"
+msgstr ""
+
+#: ../../source/bz2/index.rst:91
+# 8f4dd123406e488696f92b9cef5324a8
+msgid "The in-memory approach has obvious drawbacks that make it impractical for real-world use cases.  The alternative is to use ``BZ2Compressor`` and ``BZ2Decompressor`` objects to manipulate data incrementally so that the entire data set does not have to fit into memory."
+msgstr ""
+
+#: ../../source/bz2/index.rst:0
+# 5a874b6ad7834726a5169d337c87c301
+msgid "bz2_incremental.py"
+msgstr ""
+
+#: ../../source/bz2/index.rst:100
+# dd4fc0205dd247d59f77c6be7fe1471c
+msgid "This example reads small blocks of data from a plain-text file and passes it to ``compress()``.  The compressor maintains an internal buffer of compressed data.  Since the compression algorithm depends on checksums and minimum block sizes, the compressor may not be ready to return data each time it receives more input.  If it does not have an entire compressed block ready, it returns an empty string.  When all of the data is fed in, the ``flush()`` method forces the compressor to close the final block and return the rest of the compressed data."
+msgstr ""
+
+#: ../../source/bz2/index.rst:132
+# 5daa2429825d421fad652d7d1c883aff
+msgid "Mixed Content Streams"
+msgstr ""
+
+#: ../../source/bz2/index.rst:134
+# 26faf196162f46ad989b0d372517f7bb
+msgid "``BZ2Decompressor`` can also be used in situations where compressed and uncompressed data is mixed together."
+msgstr ""
+
+#: ../../source/bz2/index.rst:0
+# 2d1818584db54216b2fbe4d8a1a72909
+msgid "bz2_mixed.py"
+msgstr ""
+
+#: ../../source/bz2/index.rst:141
+# 7d4b239addb0422f986d0ba83f19279b
+msgid "After decompressing all of the data, the ``unused_data`` attribute contains any data not used."
+msgstr ""
+
+#: ../../source/bz2/index.rst:159
+# b98fdf976436445c85d73cc3b52e0def
+msgid "Writing Compressed Files"
+msgstr ""
+
+#: ../../source/bz2/index.rst:161
+# 9dbf101e5cb7401f95c89230097db489
+msgid "``BZ2File`` can be used to write to and read from bzip2-compressed files using the usual methods for writing and reading data."
+msgstr ""
+
+#: ../../source/bz2/index.rst:0
+# b7ce7d030d5044ab96a32deb2fec8020
+msgid "bz2_file_write.py"
+msgstr ""
+
+#: ../../source/bz2/index.rst:169
+# f84432629c524424a6f661b2a10e70c8
+msgid "To write data into a compressed file, open the file with mode ``'wb'``. This example wraps the ``BZ2File`` with a ``TextIOWrapper`` from the :mod:`io` module to encode Unicode text to bytes suitable for compression."
+msgstr ""
+
+#: ../../source/bz2/index.rst:191
+# a03370c444b948af8460a358ac49957a
+msgid "Different compression levels can be used by passing a ``compresslevel`` argument.  Valid values range from ``1`` to ``9``, inclusive.  Lower values are faster and result in less compression.  Higher values are slower and compress more, up to a point."
+msgstr ""
+
+#: ../../source/bz2/index.rst:0
+# c004a5be42174887b68be36a63b04d11
+msgid "bz2_file_compresslevel.py"
+msgstr ""
+
+#: ../../source/bz2/index.rst:200
+# 6c90dfd024cd47029ad3b709343e2135
+msgid "The center column of numbers in the output of the script is the size in bytes of the files produced.  For this input data, the higher compression values do not always pay off in decreased storage space for the same input data.  Results will vary for other inputs."
+msgstr ""
+
+#: ../../source/bz2/index.rst:220
+# a0ebc941876d4dc58baa17d3e94d277f
+msgid "A ``BZ2File`` instance also includes a ``writelines()`` method that can be used to write a sequence of strings."
+msgstr ""
+
+#: ../../source/bz2/index.rst:0
+# 342f18cee8d6465bad49a5b14e2f6887
+msgid "bz2_file_writelines.py"
+msgstr ""
+
+#: ../../source/bz2/index.rst:227
+# aa52207d270c414bbae2a568a76ecb07
+msgid "The lines should end in a newline character, as when writing to a regular file."
+msgstr ""
+
+#: ../../source/bz2/index.rst:255
+# 2e544c8b434144db9f550817017a92fb
+msgid "Reading Compressed Files"
+msgstr ""
+
+#: ../../source/bz2/index.rst:257
+# 7894ef4e7fb54692ab702176d8db5f16
+msgid "To read data back from previously compressed files, open the file with read mode (``'rb'``). The value returned from ``read()`` will be a byte string."
+msgstr ""
+
+#: ../../source/bz2/index.rst:0
+# 6de813a6bd734fb2ba5f242238029111
+msgid "bz2_file_read.py"
+msgstr ""
+
+#: ../../source/bz2/index.rst:265
+# 2e4e58a06f1a46d5866b8671bd424c4b
+msgid "This example reads the file written by ``bz2_file_write.py`` from the previous section. The ``BZ2File`` is wrapped with a ``TextIOWrapper`` to decode bytes read to Unicode text."
+msgstr ""
+
+#: ../../source/bz2/index.rst:282
+# 67de805315ef4068b1b919c566e1c08a
+msgid "While reading a file, it is also possible to seek, and to read only part of the data."
+msgstr ""
+
+#: ../../source/bz2/index.rst:0
+# 2a093ec224a440f48f30088e199c3348
+msgid "bz2_file_seek.py"
+msgstr ""
+
+#: ../../source/bz2/index.rst:289
+# e9171395200e4c8ca70278105bf91749
+msgid "The ``seek()`` position is relative to the *uncompressed* data, so the caller does not need to be aware that the data file is compressed. This allows a ``BZ2File`` instance to be passed to a function expecting a regular uncompressed file."
+msgstr ""
+
+#: ../../source/bz2/index.rst:312
+# bc230c4c26e24f19869f6a920e3765ba
+msgid "Reading and Writing Unicode Data"
+msgstr ""
+
+#: ../../source/bz2/index.rst:314
+# 41a7f9a5634f4006a61a2658c8fe4ecd
+msgid "The previous examples used ``BZ2File`` directly and managed the encoding and decoding of Unicode text strings inline with an ``io.TextIOWrapper``, where necessary. These extra steps can be avoided by using ``bz2.open()``, which sets up an ``io.TextIOWrapper`` to handle the encoding or decoding automatically."
+msgstr ""
+
+#: ../../source/bz2/index.rst:0
+# 953402d5053d4e9d85677bd8905687c8
+msgid "bz2_unicode.py"
+msgstr ""
+
+#: ../../source/bz2/index.rst:325
+# fa53ae7568824cb38af1a3ac2d7a5fdc
+msgid "The file handle returned by ``open()`` supports ``seek()``, but use care because the file pointer moves by *bytes* not *characters* and may end up in the middle of an encoded character."
+msgstr ""
+
+#: ../../source/bz2/index.rst:346
+# df7e7530b08840438cf1141743cac20c
+msgid "Compressing Network Data"
+msgstr ""
+
+#: ../../source/bz2/index.rst:348
+# ae6e2adafcdf46f0b6f8b5b0b440b2e9
+msgid "The code in the next example responds to requests consisting of filenames by writing a compressed version of the file to the socket used to communicate with the client.  It has some artificial chunking in place to illustrate the buffering that occurs when the data passed to ``compress()`` or ``decompress()`` does not result in a complete block of compressed or uncompressed output."
+msgstr ""
+
+#: ../../source/bz2/index.rst:0
+# d71c0b5973d746ef8814c13119f1059c
+msgid "bz2_server.py"
+msgstr ""
+
+#: ../../source/bz2/index.rst:359
+# 581b029c2c0149f7a206da5cac89fd50
+msgid "The main program starts a server in a thread, combining :mod:`SocketServer` and ``Bz2RequestHandler``."
+msgstr ""
+
+#: ../../source/bz2/index.rst:365
+# 23fc3aaca3cc4d40b1eace5b7c54b368
+msgid "It then opens a socket to communicate with the server as a client, and requests the file (defaulting to ``lorem.txt``) which contains:"
+msgstr ""
+
+#: ../../source/bz2/index.rst:372
+# e34b30f5fdc0459f909887c311c2c419
+msgid "This implementation has obvious security implications.  Do not run it on a server on the open Internet or in any environment where security might be an issue."
+msgstr ""
+
+#: ../../source/bz2/index.rst:376
+# 63ad7748e6ca4b57a883a616f00391d3
+msgid "Running ``bz2_server.py`` produces:"
+msgstr ""
+
+#: ../../source/bz2/index.rst:440
+# 0c7e6df246724a39adc20d45188c0f54
+msgid ":pydoc:`bz2`"
+msgstr ""
+
+#: ../../source/bz2/index.rst:442
+# d0e24e6ff8c84c91b4144ae38e39ffdb
+msgid "`bzip2.org <http://www.bzip.org/>`_ -- The home page for ``bzip2``."
+msgstr ""
+
+#: ../../source/bz2/index.rst:445
+# 0245af3aaf994bb1b493f702cbb4a832
+msgid ":mod:`zlib` -- The ``zlib`` module for GNU zip compression."
+msgstr ""
+
+#: ../../source/bz2/index.rst:447
+# 84a9168390ce4398b285ffbb4bfb154d
+msgid ":mod:`gzip` -- A file-like interface to GNU zip compressed files."
+msgstr ""
+
+#: ../../source/bz2/index.rst:450
+# 10440e450f604b13b30763af5005522a
+msgid ":mod:`io` -- Building-blocks for creating input and output pipelines."
+msgstr ""
+
+#: ../../source/bz2/index.rst:453
+# ce913e0f8c964ae1ab791a9336540bed
+msgid ":ref:`Python 2 to 3 porting notes for bz2 <porting-bz2>`"
+msgstr ""
+

@@ -1,0 +1,198 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/importlib/index.rst:3
+# edeea67f992a44378d9d3a93dde0e157
+msgid "importlib --- Python's Import Mechanism"
+msgstr ""
+
+#: ../../source/importlib/index.rst:8
+# 1a865a604c414e03b8291570b77375fe
+msgid "The importlib module exposes the implementation of Python's import statement."
+msgstr ""
+
+#: ../../source/importlib/index.rst:11
+# b97b5c1065d54a559c509cb8391275d4
+msgid "The ``importlib`` module includes functions that implement Python's import mechanism for loading code in packages and modules. It is one access point to importing modules dynamically, and useful in some cases where the name of the module that needs to be imported is unknown when the code is written (for example, for plugins or extensions to an application)."
+msgstr ""
+
+#: ../../source/importlib/index.rst:19
+# 24c18c26ba384ea68bb8e6f735978709
+msgid "Example Package"
+msgstr ""
+
+#: ../../source/importlib/index.rst:21
+# 56e31c58c2e54079a03d6486b7870b0f
+msgid "The examples in this section use a package called ``example`` with ``__init__.py``."
+msgstr ""
+
+#: ../../source/importlib/index.rst:0
+# 215f2999005b4609999fae5f344034ad
+msgid "example/__init__.py"
+msgstr ""
+
+#: ../../source/importlib/index.rst:28
+# e619d8000c2c49ce9387e1051eace2b7
+msgid "The package also contains ``submodule.py``."
+msgstr ""
+
+#: ../../source/importlib/index.rst:0
+# bd83ccbfac8445b2bc2f4e8cf4aad066
+msgid "example/submodule.py"
+msgstr ""
+
+#: ../../source/importlib/index.rst:34
+# 4c73c8a5639d4143880b1a402015b650
+msgid "Watch for the text from the ``print()`` calls in the sample output when the package or module are imported."
+msgstr ""
+
+#: ../../source/importlib/index.rst:38
+# 082bcbcea6914c3c83be70cad47e1e21
+msgid "Module Types"
+msgstr ""
+
+#: ../../source/importlib/index.rst:40
+# 073f82e1f546460cb394cbcae39159cf
+msgid "Python supports several styles of modules. Each requires its own handling when opening the module and adding it to the namespace, and support for the formats varies by platform.  For example, under Microsoft Windows, shared libraries are loaded from files with extensions ``.dll`` or ``.pyd``, instead of ``.so``.  The extensions for C modules may also change when using a debug build of the interpreter instead of a normal release build, since they can be compiled with debug information included as well.  If a C extension library or other module is not loading as expected, use the constants defined in ``importlib.machinery`` to find the supported types for the current platform, and the parameters for loading them."
+msgstr ""
+
+#: ../../source/importlib/index.rst:0
+# 663741c253504d4493e3d511455291c1
+msgid "importlib_suffixes.py"
+msgstr ""
+
+#: ../../source/importlib/index.rst:56
+# a1bda9b2afaf49729779530c04b47e79
+msgid "The return value is a sequence of tuples containing the file extension, mode to use for opening the file containing the module, and a type code from a constant defined in the module. This table is incomplete, because some of the importable module or package types do not correspond to single files."
+msgstr ""
+
+#: ../../source/importlib/index.rst:79
+# 4375c950392a452f9bcae11f087f12b3
+msgid "Importing Modules"
+msgstr ""
+
+#: ../../source/importlib/index.rst:81
+# ff95814789544a788c7509f5ee209923
+msgid "The high level API in ``importlib`` makes it simple to import a module given an absolute or relative name.  When using a relative module name, specify the package containing the module as a separate argument."
+msgstr ""
+
+#: ../../source/importlib/index.rst:0
+# b87fa3e12fa04ff3b48f614d0470ca64
+msgid "importlib_import_module.py"
+msgstr ""
+
+#: ../../source/importlib/index.rst:90
+# 6a8376572d6c4929b14c3d0ecd174603
+msgid "The return value from ``import_module()`` is the module object that was created by the import."
+msgstr ""
+
+#: ../../source/importlib/index.rst:109
+# 5a3fa5c9c2b744e9b80d13088f64ed31
+msgid "If the module cannot be imported, ``import_module()`` raises ``ImportError``."
+msgstr ""
+
+#: ../../source/importlib/index.rst:0
+# c60d8b76c12f468cb4ed6faf80778847
+msgid "importlib_import_module_error.py"
+msgstr ""
+
+#: ../../source/importlib/index.rst:116
+# 920bbe3efb13412d8e7fe5630063ed2d
+msgid "The error message includes the name of the missing module."
+msgstr ""
+
+#: ../../source/importlib/index.rst:131
+# e47fc186123b437ab818f862607b2c57
+msgid "To reload an existing module, use ``reload()``."
+msgstr ""
+
+#: ../../source/importlib/index.rst:0
+# 8ca7a6d65e9b489ea0b3c31052a9e7ea
+msgid "importlib_reload.py"
+msgstr ""
+
+#: ../../source/importlib/index.rst:137
+# ab2be08d5d1e4134989eb0c993c2a6c8
+msgid "The return value from ``reload()`` is the new module. Depending on which type of loader was used, it may be the same module instance."
+msgstr ""
+
+#: ../../source/importlib/index.rst:157
+# 383ec8e2fed940f28ecb0385e43a863e
+msgid "Loaders"
+msgstr ""
+
+#: ../../source/importlib/index.rst:159
+# 4094465a42974b97a909ac9de6068776
+msgid "The lower-level API in ``importlib`` provides access to the loader objects, as described in :ref:`sys-imports` from the section on the ``sys`` module. To get a loader for a module, use ``find_loader()``. Then to retrieve the module, use the loader's ``load_module()`` method."
+msgstr ""
+
+#: ../../source/importlib/index.rst:0
+# e48357e0df63444eb830a102f907890e
+msgid "importlib_find_loader.py"
+msgstr ""
+
+#: ../../source/importlib/index.rst:169
+# 44415dac74de41a190a48a4c0ad3d652
+msgid "This example loads the top level of the ``example`` package."
+msgstr ""
+
+#: ../../source/importlib/index.rst:186
+# 742dcd08cb364c97b70efcaa66af6dca
+msgid "Submodules within packages need to be loaded separately using the path from the package. In the following example, the package is loaded first and then its path is passed to ``find_loader()`` to create a loader capable of loading the submodule."
+msgstr ""
+
+#: ../../source/importlib/index.rst:0
+# 9ae477bde8804ed58a2f3f548a37d993
+msgid "importlib_submodule.py"
+msgstr ""
+
+#: ../../source/importlib/index.rst:195
+# 707b3a57fea14907b86443d0a7dbe133
+msgid "Unlike with ``import_module()``, the name of the submodule should be given without any relative path prefix, since the loader will already be constrained by the package's path."
+msgstr ""
+
+#: ../../source/importlib/index.rst:217
+# 29b2cc0b0ea3494da225081ab0abd01f
+msgid ":pydoc:`importlib`"
+msgstr ""
+
+#: ../../source/importlib/index.rst:219
+# 2db5cef7716b40148288f8929f32cca0
+msgid ":ref:`sys-imports` -- Import hooks, the module search path, and other related machinery in the ``sys`` module."
+msgstr ""
+
+#: ../../source/importlib/index.rst:222
+# a9f7c74acf5048a2b67b9f0c52dc141a
+msgid ":mod:`inspect` -- Load information from a module programmatically."
+msgstr ""
+
+#: ../../source/importlib/index.rst:225
+# 47f242b4eeab4876a4b7c8345db38944
+msgid ":pep:`302` -- New import hooks."
+msgstr ""
+
+#: ../../source/importlib/index.rst:227
+# 4ef264e987e946598834e6484bd1d062
+msgid ":pep:`369` -- Post import hooks."
+msgstr ""
+
+#: ../../source/importlib/index.rst:229
+# 4fa865dfad1d4dca82fe5ce5d44a6aae
+msgid ":pep:`488` -- Elimination of PYO files."
+msgstr ""
+

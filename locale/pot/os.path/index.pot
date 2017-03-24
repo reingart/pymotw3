@@ -1,0 +1,308 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/os.path/index.rst:3
+# fcdc442e17cb403d9408206de752e8d8
+msgid "os.path --- Platform-independent Manipulation of Filenames"
+msgstr ""
+
+#: ../../source/os.path/index.rst:8
+# 76214f82240e4052adb3fb512a098023
+msgid "Parse, build, test, and otherwise work on filenames and paths."
+msgstr ""
+
+#: ../../source/os.path/index.rst:10
+# b3ba3300a6574a82bb162c6db221f903
+msgid "Writing code to work with files on multiple platforms is easy using the functions included in the ``os.path`` module. Even programs not intended to be ported between platforms should use ``os.path`` for reliable filename parsing."
+msgstr ""
+
+#: ../../source/os.path/index.rst:16
+# abbc02ae4b584b618815aeec6119946b
+msgid "Parsing Paths"
+msgstr ""
+
+#: ../../source/os.path/index.rst:18
+# 4b78af4e2eae490ebcca44aa83b07ccc
+msgid "The first set of functions in ``os.path`` can be used to parse strings representing filenames into their component parts. It is important to realize that these functions do not depend on the paths actually existing; they operate solely on the strings."
+msgstr ""
+
+#: ../../source/os.path/index.rst:23
+# 94f446170a1048bdabab87448c1565d5
+msgid "Path parsing depends on a few variable defined in :mod:`os`:"
+msgstr ""
+
+#: ../../source/os.path/index.rst:25
+# d2406d50d218445d933f6d19cb4ed0cd
+msgid "``os.sep`` - The separator between portions of the path (e.g., \"``/``\" or \"``\\``\")."
+msgstr ""
+
+#: ../../source/os.path/index.rst:28
+# 47a1ad0bc0554a40b2fc5f0cc73ca532
+msgid "``os.extsep`` - The separator between a filename and the file \"extension\" (e.g., \"``.``\")."
+msgstr ""
+
+#: ../../source/os.path/index.rst:31
+# c050392f3bdc495081fdb92fe2bc4af3
+msgid "``os.pardir`` - The path component that means traverse the directory tree up one level (e.g., \"``..``\")."
+msgstr ""
+
+#: ../../source/os.path/index.rst:34
+# 65a94a56d82345569226d59bffb5df9e
+msgid "``os.curdir`` - The path component that refers to the current directory (e.g., \"``.``\")."
+msgstr ""
+
+#: ../../source/os.path/index.rst:37
+# 47f92b0a655b489390debe0d87fe8751
+msgid "The ``split()`` function breaks the path into two separate parts and returns a ``tuple`` with the results. The second element of the ``tuple`` is the last component of the path, and the first element is everything that comes before it."
+msgstr ""
+
+#: ../../source/os.path/index.rst:0
+# fdd80ec5eb2c49e7b70af39ea9e3eed8
+msgid "ospath_split.py"
+msgstr ""
+
+#: ../../source/os.path/index.rst:46
+# 9cebd2b6227d4afd95ab9296a8651bb5
+msgid "When the input argument ends in ``os.sep``, the last element of the path is an empty string."
+msgstr ""
+
+#: ../../source/os.path/index.rst:65
+# f5d0bf87960b48a497ed601e11c2ab0a
+msgid "The ``basename()`` function returns a value equivalent to the second part of the ``split()`` value."
+msgstr ""
+
+#: ../../source/os.path/index.rst:0
+# 889a8571133c4fc1be2794bc5cd95010
+msgid "ospath_basename.py"
+msgstr ""
+
+#: ../../source/os.path/index.rst:72
+# 3d7ef6572ce047a5aa599425fd860df3
+msgid "The full path is stripped down to the last element, whether that refers to a file or directory.  If the path ends in the directory separator (``os.sep``), the base portion is considered to be empty."
+msgstr ""
+
+#: ../../source/os.path/index.rst:93
+# 1dc8468b448349959eba8a6f683c8b4e
+msgid "The ``dirname()`` function returns the first part of the split path:"
+msgstr ""
+
+#: ../../source/os.path/index.rst:0
+# 8f08894378e84490bef040d17fa262fa
+msgid "ospath_dirname.py"
+msgstr ""
+
+#: ../../source/os.path/index.rst:99
+# 32227306b6014c3ba021bb90e4a3bb9b
+msgid "Combining the results of ``basename()`` with ``dirname()`` gives the original path."
+msgstr ""
+
+#: ../../source/os.path/index.rst:118
+# 95d6f1a6849549dda41f71c96e0b794a
+msgid "``splitext()`` works like ``split()``, but divides the path on the extension separator, rather than the directory separator."
+msgstr ""
+
+#: ../../source/os.path/index.rst:0
+# ab3cbc4d75fd4b46aa459315ba91b1b0
+msgid "ospath_splitext.py"
+msgstr ""
+
+#: ../../source/os.path/index.rst:125
+# 6b784f22799c40918e8d74f4d60de58f
+msgid "Only the last occurrence of ``os.extsep`` is used when looking for the extension, so if a filename has multiple extensions the results of splitting it leaves part of the extension on the prefix."
+msgstr ""
+
+#: ../../source/os.path/index.rst:148
+# e0fe1cbd256943cbb5cd02dda989dd68
+msgid "``commonprefix()`` takes a list of paths as an argument and returns a single string that represents a common prefix present in all of the paths. The value may represent a path that does not actually exist, and the path separator is not included in the consideration, so the prefix might not stop on a separator boundary."
+msgstr ""
+
+#: ../../source/os.path/index.rst:0
+# b2c9e94e13384bf4b1613667bd7e76ba
+msgid "ospath_commonprefix.py"
+msgstr ""
+
+#: ../../source/os.path/index.rst:158
+# 233d3350891e46deabd50aca87be987d
+msgid "In this example, the common prefix string is ``/one/two/three``, even though one path does not include a directory named ``three``."
+msgstr ""
+
+#: ../../source/os.path/index.rst:177
+# dcf8e0f716ba4c208732871f348190f0
+msgid "``commonpath()`` does honor path separators, and returns a prefix that does not include partial path values."
+msgstr ""
+
+#: ../../source/os.path/index.rst:0
+# d515d2161f2d44efaabf3747aee80f01
+msgid "ospath_commonpath.py"
+msgstr ""
+
+#: ../../source/os.path/index.rst:184
+# 61b83a428f3b41e7acad1dafc0bb4f04
+msgid "Because ``\"threefold\"`` does not have a path separator after ``\"three\"`` the common prefix is ``/one/two``."
+msgstr ""
+
+#: ../../source/os.path/index.rst:204
+# 8e0bcf7868974464b92cd7a6e5f3f0d5
+msgid "Building Paths"
+msgstr ""
+
+#: ../../source/os.path/index.rst:206
+# a4a58127e0604691a70f7d2a8adbfdc6
+msgid "Besides taking existing paths apart, it is frequently necessary to build paths from other strings.  To combine several path components into a single value, use ``join()``:"
+msgstr ""
+
+#: ../../source/os.path/index.rst:0
+# f39cd9bcc8764f4c914efcc31dbd9bb7
+msgid "ospath_join.py"
+msgstr ""
+
+#: ../../source/os.path/index.rst:214
+# c9c36f4a62bd42898f02a23f3b57a8d1
+msgid "If any argument to join begins with ``os.sep``, all of the previous arguments are discarded and the new one becomes the beginning of the return value."
+msgstr ""
+
+#: ../../source/os.path/index.rst:232
+# 0555492b98ae40d8b04b894dfae5e9a4
+msgid "It is also possible to work with paths that include \"variable\" components that can be expanded automatically. For example, ``expanduser()`` converts the tilde (``~``) character to the name of a user's home directory."
+msgstr ""
+
+#: ../../source/os.path/index.rst:0
+# 3159b42d039440fdb1e645f03cc99bc1
+msgid "ospath_expanduser.py"
+msgstr ""
+
+#: ../../source/os.path/index.rst:241
+# 90fbe24db8604de6bdfa6aa15cd3cb88
+msgid "If the user's home directory cannot be found, the string is returned unchanged, as with ``~nosuchuser`` in this example."
+msgstr ""
+
+#: ../../source/os.path/index.rst:258
+# a4f9d5b0e4f44f61a87134d0e4496781
+msgid "``expandvars()`` is more general, and expands any shell environment variables present in the path."
+msgstr ""
+
+#: ../../source/os.path/index.rst:0
+# 3b338e31ede046159c65ac4b6b3144ee
+msgid "ospath_expandvars.py"
+msgstr ""
+
+#: ../../source/os.path/index.rst:265
+# c5f926ed969e41189ba8d192281945fd
+msgid "No validation is performed to ensure that the variable value results in the name of a file that already exists."
+msgstr ""
+
+#: ../../source/os.path/index.rst:281
+# deaac4d446f14aff9cb0e7e13bf18721
+msgid "Normalizing Paths"
+msgstr ""
+
+#: ../../source/os.path/index.rst:283
+# b21af7a043de4bfdbfe6cf6bb70cc060
+msgid "Paths assembled from separate strings using ``join()`` or with embedded variables might end up with extra separators or relative path components. Use ``normpath()`` to clean them up:"
+msgstr ""
+
+#: ../../source/os.path/index.rst:0
+# 93c27803a91941c388fd202f044d64d3
+msgid "ospath_normpath.py"
+msgstr ""
+
+#: ../../source/os.path/index.rst:291
+# d1611440e53a4ec0b6b61c6c25904eea
+msgid "Path segments made up of ``os.curdir`` and ``os.pardir`` are evaluated and collapsed."
+msgstr ""
+
+#: ../../source/os.path/index.rst:308
+# 3e109a5019cd42558453cbb1dfad0e1e
+msgid "To convert a relative path to an absolute filename, use ``abspath()``."
+msgstr ""
+
+#: ../../source/os.path/index.rst:0
+# 7ea00038512e491d83277d0f6813fc0f
+msgid "ospath_abspath.py"
+msgstr ""
+
+#: ../../source/os.path/index.rst:315
+# 7418257c811b4ebea94d413efe5bcadd
+msgid "The result is a complete path, starting at the top of the file system tree."
+msgstr ""
+
+#: ../../source/os.path/index.rst:334
+# d071437d4ffd47098224eb62c4623ab7
+msgid "File Times"
+msgstr ""
+
+#: ../../source/os.path/index.rst:336
+# 174e442ffb144540b95381abaf2058a1
+msgid "Besides working with paths, ``os.path`` includes functions for retrieving file properties, similar to the ones returned by ``os.stat()``:"
+msgstr ""
+
+#: ../../source/os.path/index.rst:0
+# f2b7d9f7857740368544c085159200bd
+msgid "ospath_properties.py"
+msgstr ""
+
+#: ../../source/os.path/index.rst:344
+# b54e93f908f7451c8425d7c9676fad01
+msgid "``os.path.getatime()`` returns the access time, ``os.path.getmtime()`` returns the modification time, and ``os.path.getctime()`` returns the creation time. ``os.path.getsize()`` returns the amount of data in the file, represented in bytes."
+msgstr ""
+
+#: ../../source/os.path/index.rst:367
+# 665f0891ada54d26934f744b04a4466f
+msgid "Testing Files"
+msgstr ""
+
+#: ../../source/os.path/index.rst:369
+# 8ded7c0abf674632b47d0bf74e46085a
+msgid "When a program encounters a path name, it often needs to know whether the path refers to a file, directory, or symlink and whether it exists.  ``os.path`` includes functions for testing all of these conditions."
+msgstr ""
+
+#: ../../source/os.path/index.rst:0
+# b4582574a08b4b7ba536a6125fcd05e4
+msgid "ospath_tests.py"
+msgstr ""
+
+#: ../../source/os.path/index.rst:378
+# 963a16d40f084919b1ccc4be0feaa52a
+msgid "All of the test functions return boolean values."
+msgstr ""
+
+#: ../../source/os.path/index.rst:433
+# 1d7676a962914993b75839c1959379af
+msgid ":pydoc:`os.path`"
+msgstr ""
+
+#: ../../source/os.path/index.rst:435
+# f076709309ce485f8de0ec30e4e2ad2c
+msgid ":ref:`Python 2 to 3 porting notes for os.path <porting-os.path>`"
+msgstr ""
+
+#: ../../source/os.path/index.rst:437
+# 0159105c3e1e4fd38fa7ba18ba554aed
+msgid ":mod:`pathlib` -- Paths as objects."
+msgstr ""
+
+#: ../../source/os.path/index.rst:439
+# d4697b025d92435883d1923f6e03de8c
+msgid ":mod:`os` -- The ``os`` module is a parent of ``os.path``."
+msgstr ""
+
+#: ../../source/os.path/index.rst:441
+# 56b807cae0ba42d2a0a3d1540ba280ea
+msgid ":mod:`time` -- The time module includes functions to convert between the representation used by the time property functions in ``os.path`` and easy-to-read strings."
+msgstr ""
+

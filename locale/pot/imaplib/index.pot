@@ -1,0 +1,583 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/imaplib/index.rst:5
+# ab885e57afc94cc594481263d304494e
+msgid "imaplib --- IMAP4 Client Library"
+msgstr ""
+
+#: ../../source/imaplib/index.rst:10
+# 7da0baeffd9448cc9ce441aed618db61
+msgid "Client library for IMAP4 communication."
+msgstr ""
+
+#: ../../source/imaplib/index.rst:12
+# 42e497b1fc2a4a4eb459bc745dc636e5
+msgid "``imaplib`` implements a client for communicating with Internet Message Access Protocol (IMAP) version 4 servers.  The IMAP protocol defines a set of commands sent to the server and the responses delivered back to the client.  Most of the commands are available as methods of the ``IMAP4`` object used to communicate with the server."
+msgstr ""
+
+#: ../../source/imaplib/index.rst:19
+# 188206df06c14f448df7d21bd201ec89
+msgid "These examples discuss part of the IMAP protocol, but are by no means complete.  Refer to RFC 3501 for complete details."
+msgstr ""
+
+#: ../../source/imaplib/index.rst:24
+# ccdc8160c2114742bfdb09821858b988
+msgid "Variations"
+msgstr ""
+
+#: ../../source/imaplib/index.rst:26
+# 974980a322de47c395d7ce79fb1023b4
+msgid "There are three client classes for communicating with servers using various mechanisms.  The first, ``IMAP4``, uses clear text sockets; ``IMAP4_SSL`` uses encrypted communication over SSL sockets; and ``IMAP4_stream`` uses the standard input and standard output of an external command.  All of the examples here will use ``IMAP4_SSL``, but the APIs for the other classes are similar."
+msgstr ""
+
+#: ../../source/imaplib/index.rst:36
+# b7ba54a49aa944109dd8043b9ea6db35
+msgid "Connecting to a Server"
+msgstr ""
+
+#: ../../source/imaplib/index.rst:38
+# 1f9abdc8182844a68c13aa2669030fd9
+msgid "There are two steps for establishing a connection with an IMAP server. First, set up the socket connection itself.  Second, authenticate as a user with an account on the server.  The following example code will read server and user information from a configuration file."
+msgstr ""
+
+#: ../../source/imaplib/index.rst:0
+# f3e114e2a18945cfac476d51b0c8660c
+msgid "imaplib_connect.py"
+msgstr ""
+
+#: ../../source/imaplib/index.rst:47
+# 6cefb63e1e0a4dde85a917ff43b3178b
+msgid "When run, ``open_connection()`` reads the configuration information from a file in the user's home directory, then opens the ``IMAP4_SSL`` connection and authenticates."
+msgstr ""
+
+#: ../../source/imaplib/index.rst:61
+# 843667cc95f04c05b4d9a4979631ddda
+msgid "The other examples in this section reuse this module, to avoid duplicating the code."
+msgstr ""
+
+#: ../../source/imaplib/index.rst:65
+# ee03083f58414901905358d7e88199f8
+msgid "Authentication Failure"
+msgstr ""
+
+#: ../../source/imaplib/index.rst:67
+# 0e80bdd1be83420ca557a61171db4e1b
+msgid "If the connection is established but authentication fails, an exception is raised."
+msgstr ""
+
+#: ../../source/imaplib/index.rst:0
+# 16b5e4ddf8004500a7aacf0208cef886
+msgid "imaplib_connect_fail.py"
+msgstr ""
+
+#: ../../source/imaplib/index.rst:74
+# e6b149fd1c80454e8f8e03bf03bad8f3
+msgid "This example uses the wrong password on purpose to trigger the exception."
+msgstr ""
+
+#: ../../source/imaplib/index.rst:86
+# 4d1f2f4459c5400885c73de5d4a2cf23
+msgid "Example Configuration"
+msgstr ""
+
+#: ../../source/imaplib/index.rst:88
+# 1fa3d62e4f984f3882ef33913fd0a0f6
+msgid "The example account has several mailboxes in a hierarchy:"
+msgstr ""
+
+#: ../../source/imaplib/index.rst:90
+# b26bb96947e0458a8ac85798fb500ac6
+msgid "INBOX"
+msgstr ""
+
+#: ../../source/imaplib/index.rst:91
+# 6769d5f290914711a547ec5c2d329dc3
+msgid "Deleted Messages"
+msgstr ""
+
+#: ../../source/imaplib/index.rst:92
+# 3b303291d3d5421197e403992ce4271c
+msgid "Archive"
+msgstr ""
+
+#: ../../source/imaplib/index.rst:93
+# a78ec2d59e9e45d09b247887e0c61bca
+msgid "Example"
+msgstr ""
+
+#: ../../source/imaplib/index.rst:95
+# acf4e1e08fe64d139df901ddfcb1f2f9
+msgid "2016"
+msgstr ""
+
+#: ../../source/imaplib/index.rst:97
+# 085ec6024490442a9120b5153c4ff8d3
+msgid "There is one unread message in the ``INBOX`` folder, and one read message in ``Example/2016``."
+msgstr ""
+
+#: ../../source/imaplib/index.rst:101
+# 0e9ef0a4ce3e44babd3279be4d81b22c
+msgid "Listing Mailboxes"
+msgstr ""
+
+#: ../../source/imaplib/index.rst:103
+# 6a85e1a92fa2427e8c7f949c5ab15ff2
+msgid "To retrieve the mailboxes available for an account, use the ``list()`` method."
+msgstr ""
+
+#: ../../source/imaplib/index.rst:0
+# 2529f0fb40b046afb9ff96fdddf19ce8
+msgid "imaplib_list.py"
+msgstr ""
+
+#: ../../source/imaplib/index.rst:110
+# b674cd786c9e4dc8b3ec960060e0b9d6
+msgid "The return value is a ``tuple`` containing a response code and the data returned by the server.  The response code is ``OK``, unless there has been an error.  The data for ``list()`` is a sequence of strings containing *flags*, the *hierarchy delimiter*, and *mailbox name* for each mailbox."
+msgstr ""
+
+#: ../../source/imaplib/index.rst:130
+# b67becf48f954d7290ff522bec7ec4c1
+msgid "Each response string can be split into three parts using :mod:`re` or :mod:`csv` (see *IMAP Backup Script* in the references at the end of this section for an example using ``csv``)."
+msgstr ""
+
+#: ../../source/imaplib/index.rst:0
+# e5509abe95a044f99209edeece058d13
+msgid "imaplib_list_parse.py"
+msgstr ""
+
+#: ../../source/imaplib/index.rst:138
+# e460efbdaf814489961c30950e084b26
+msgid "The server quotes the mailbox name if it includes spaces, but those quotes need to be stripped out to use the mailbox name in other calls back to the server later."
+msgstr ""
+
+#: ../../source/imaplib/index.rst:160
+# 102c9b4b213948a8a8a08248d0e82618
+msgid "``list()`` takes arguments to specify mailboxes in part of the hierarchy.  For example, to list sub-folders of ``Example``, pass ``\"Example\"`` as the ``directory`` argument."
+msgstr ""
+
+#: ../../source/imaplib/index.rst:0
+# 239ad7e24f314d088efb26b1611c9870
+msgid "imaplib_list_subfolders.py"
+msgstr ""
+
+#: ../../source/imaplib/index.rst:168
+# e5009944a9824345942945b2834eac00
+msgid "The parent and subfolder are returned."
+msgstr ""
+
+#: ../../source/imaplib/index.rst:180
+# e4345b4f8cba4637a60dc334e3c1a37a
+msgid "Alternately, to list folders matching a pattern pass the ``pattern`` argument."
+msgstr ""
+
+#: ../../source/imaplib/index.rst:0
+# 5adfd03443504751891901a5726ada69
+msgid "imaplib_list_pattern.py"
+msgstr ""
+
+#: ../../source/imaplib/index.rst:187
+# 5ec0760921a74cc38a95ebcba2092048
+msgid "In this case, both ``Example`` and ``Example.2016`` are included in the response."
+msgstr ""
+
+#: ../../source/imaplib/index.rst:201
+# 08070ff217c54bfab7e807bf70e610d6
+msgid "Mailbox Status"
+msgstr ""
+
+#: ../../source/imaplib/index.rst:203
+# eafee80bdcd14679a070c46cbed887a9
+msgid "Use ``status()`` to ask for aggregated information about the contents.  :table:`IMAP 4 Mailbox Status Conditions` lists the status conditions defined by the standard."
+msgstr ""
+
+#: ../../source/imaplib/index.rst:0
+# 17c16451ead74b12ae3e27171e5d6f40
+msgid "IMAP 4 Mailbox Status Conditions"
+msgstr ""
+
+#: ../../source/imaplib/index.rst:210
+# 86f78b42b96241599dd0b24bfba76ae5
+msgid "Condition"
+msgstr ""
+
+#: ../../source/imaplib/index.rst:210
+# e1db2d12ea4445ea8d205dfaafd7de53
+msgid "Meaning"
+msgstr ""
+
+#: ../../source/imaplib/index.rst:212
+# 93677a9d34594cc18fd8ea783578c7bf
+msgid "MESSAGES"
+msgstr ""
+
+#: ../../source/imaplib/index.rst:212
+# 0bcacfb0b26f461884ca4bc3553a0c02
+msgid "The number of messages in the mailbox."
+msgstr ""
+
+#: ../../source/imaplib/index.rst:213
+# cc759c06fa894cf38f711b65c6f5a1dd
+msgid "RECENT"
+msgstr ""
+
+#: ../../source/imaplib/index.rst:213
+# daee918629874088909568cc596af0eb
+msgid "The number of messages with the ``\\Recent`` flag set."
+msgstr ""
+
+#: ../../source/imaplib/index.rst:214
+# a862e77dcf8a41479b6c721b6331065e
+msgid "UIDNEXT"
+msgstr ""
+
+#: ../../source/imaplib/index.rst:214
+# 8121d5a8c24e4a5e9d4f5d9743df7ba9
+msgid "The next unique identifier value of the mailbox."
+msgstr ""
+
+#: ../../source/imaplib/index.rst:215
+# f87dfd8bf88148fabbd55c7c3a81825c
+msgid "UIDVALIDITY"
+msgstr ""
+
+#: ../../source/imaplib/index.rst:215
+# b07670851c3343c88e7d94deeac3da9d
+msgid "The unique identifier validity value of the mailbox."
+msgstr ""
+
+#: ../../source/imaplib/index.rst:216
+# 9f945a2b28b845888b8f319f5d988aba
+msgid "UNSEEN"
+msgstr ""
+
+#: ../../source/imaplib/index.rst:216
+# 7db0cf69db9d4a2a81d2083fb1d0f1c6
+msgid "The number of messages which do not have the ``\\Seen`` flag set."
+msgstr ""
+
+#: ../../source/imaplib/index.rst:219
+# 77a94ed2a78f49ec8658b51cdc736000
+msgid "The status conditions must be formatted as a space separated string enclosed in parentheses, the encoding for a \"list\" in the IMAP4 specification. The mailbox name is wrapped in ``\"`` in case any of the names include spaces or other characters that would throw of the parser."
+msgstr ""
+
+#: ../../source/imaplib/index.rst:0
+# f80e9946259d464a80faebcd3e326b56
+msgid "imaplib_status.py"
+msgstr ""
+
+#: ../../source/imaplib/index.rst:229
+# 6c28f6a20a2e401d8c7e700bb2fca977
+msgid "The return value is the usual ``tuple`` containing a response code and a list of information from the server.  In this case, the list contains a single string formatted with the name of the mailbox in quotes, then the status conditions and values in parentheses."
+msgstr ""
+
+#: ../../source/imaplib/index.rst:268
+# a6c60456d4204ac5962952bdc41257ac
+msgid "Selecting a Mailbox"
+msgstr ""
+
+#: ../../source/imaplib/index.rst:270
+# 2fde1c723d774aa9b2b94f5e2d34c3b8
+msgid "The basic mode of operation, once the client is authenticated, is to select a mailbox, then interrogate the server regarding messages in the mailbox.  The connection is stateful, so after a mailbox is selected all commands operate on messages in that mailbox until a new mailbox is selected."
+msgstr ""
+
+#: ../../source/imaplib/index.rst:0
+# c829b69cde454d19908a971c89feefca
+msgid "imaplib_select.py"
+msgstr ""
+
+#: ../../source/imaplib/index.rst:280
+# 36731e44c5ec476eb355bb63932b21de
+msgid "The response data contains the total number of messages in the mailbox."
+msgstr ""
+
+#: ../../source/imaplib/index.rst:292
+# 3f680d865c994934a1ed85bcb767988a
+msgid "If an invalid mailbox is specified, the response code is ``NO``."
+msgstr ""
+
+#: ../../source/imaplib/index.rst:0
+# c4a2d5218a9748f1aaddc792439ef667
+msgid "imaplib_select_invalid.py"
+msgstr ""
+
+#: ../../source/imaplib/index.rst:298
+# 4038b973638c41278dfb60f2362eb914
+msgid "The data contains an error message describing the problem."
+msgstr ""
+
+#: ../../source/imaplib/index.rst:309
+# 9e3f2390e87744caa71808f597794a01
+msgid "Searching for Messages"
+msgstr ""
+
+#: ../../source/imaplib/index.rst:311
+# 8ba17e4edf634e7eb3d48160e7bab4ef
+msgid "After selecting the mailbox, use ``search()`` to retrieve the IDs of messages in the mailbox."
+msgstr ""
+
+#: ../../source/imaplib/index.rst:0
+# 2d3280055f8e48348f0726e024f27cb6
+msgid "imaplib_search_all.py"
+msgstr ""
+
+#: ../../source/imaplib/index.rst:318
+# f88e7911f2df42a58586b334b0fd35b7
+msgid "Message IDs are assigned by the server, and are implementation dependent.  The IMAP4 protocol makes a distinction between sequential IDs for messages at a given point in time during a transaction and UID identifiers for messages, but not all servers implement both."
+msgstr ""
+
+#: ../../source/imaplib/index.rst:346
+# 8a31e41644bf497880e66af8768280ff
+msgid "In this case, ``INBOX`` and ``Example.2016`` each have a different message with id ``1``. The other mailboxes are empty."
+msgstr ""
+
+#: ../../source/imaplib/index.rst:350
+# 05deb5d649124cde8ee0487807db5544
+msgid "Search Criteria"
+msgstr ""
+
+#: ../../source/imaplib/index.rst:352
+# 0f6602aebc144231aa88590d76a50065
+msgid "A variety of other search criteria can be used, including looking at dates for the message, flags, and other headers.  Refer to section 6.4.4. of RFC 3501 for complete details."
+msgstr ""
+
+#: ../../source/imaplib/index.rst:356
+# 512a47f6c6fa43b4a551aa57a786e0e8
+msgid "To look for messages with ``'Example message 2'`` in the subject, the search criteria should be constructed as::"
+msgstr ""
+
+#: ../../source/imaplib/index.rst:361
+# ead841092f7644a79f37fbcde8fd8f09
+msgid "This example finds all messages with the title \"Example message 2\" in all mailboxes:"
+msgstr ""
+
+#: ../../source/imaplib/index.rst:0
+# eed2ddd7b32e4d03b0ceadd883555c2f
+msgid "imaplib_search_subject.py"
+msgstr ""
+
+#: ../../source/imaplib/index.rst:368
+# 3caa6dd7d4ec40a6a35d58d000dab6a0
+msgid "There is only one such message in the account, and it is in the ``INBOX``."
+msgstr ""
+
+#: ../../source/imaplib/index.rst:394
+# 889a4a25bd0e4dc4919073842b7a4f78
+msgid "Search criteria can also be combined."
+msgstr ""
+
+#: ../../source/imaplib/index.rst:0
+# eae0282794e84c669310aee424bbf2c5
+msgid "imaplib_search_from.py"
+msgstr ""
+
+#: ../../source/imaplib/index.rst:400
+# 68fd1783b9464e32a6b4472151e5a915
+msgid "The criteria are combined with a logical ``and`` operation."
+msgstr ""
+
+#: ../../source/imaplib/index.rst:426
+# 44a6956b274f49619db576db06c302e7
+msgid "Fetching Messages"
+msgstr ""
+
+#: ../../source/imaplib/index.rst:428
+# 276ccab0227542db8289f1c956a77b75
+msgid "The identifiers returned by ``search()`` are used to retrieve the contents, or partial contents, of messages for further processing using the ``fetch()`` method.  It takes two arguments, the message IDs to fetch and the portion(s) of the message to retrieve."
+msgstr ""
+
+#: ../../source/imaplib/index.rst:433
+# 5f9ec31f5f88407c95a3b866e3a07b01
+msgid "The ``message_ids`` argument is a comma separated list of ids (e.g., ``\"1\"``, ``\"1,2\"``) or ID ranges (e.g., ``1:2``).  The ``message_parts`` argument is an IMAP list of message segment names.  As with search criteria for ``search()``, the IMAP protocol specifies named message segments so clients can efficiently retrieve only the parts of the message they actually need.  For example, to retrieve the headers of the messages in a mailbox, use ``fetch()`` with the argument ``BODY.PEEK[HEADER]``."
+msgstr ""
+
+#: ../../source/imaplib/index.rst:444
+# cfa20fabc8b74304bda5981440a1d146
+msgid "Another way to fetch the headers is ``BODY[HEADERS]``, but that form has a side-effect of implicitly marking the message as read, which is undesirable in many cases."
+msgstr ""
+
+#: ../../source/imaplib/index.rst:0
+# bba4f46fd19c40c7bdc7892c6bd281fa
+msgid "imaplib_fetch_raw.py"
+msgstr ""
+
+#: ../../source/imaplib/index.rst:452
+# cb9966426cb94d49a73418fa331eaa37
+msgid "The return value of ``fetch()`` has been partially parsed so it is somewhat harder to work with than the return value of ``list()``. Turning on debugging shows the complete interaction between the client and server to understand why this is so."
+msgstr ""
+
+#: ../../source/imaplib/index.rst:594
+# 842b2bf9009d4e50b850428b917e50f2
+msgid "The response from the ``FETCH`` command starts with the flags, then indicates that there are 595 bytes of header data.  The client constructs a tuple with the response for the message, and then closes the sequence with a single string containing the right parenthesis (\"``)``\") the server sends at the end of the fetch response.  Because of this formatting, it may be easier to fetch different pieces of information separately, or to recombine the response and parse it in the client."
+msgstr ""
+
+#: ../../source/imaplib/index.rst:0
+# 7d8458c445d14600aacacc164a4fbf9c
+msgid "imaplib_fetch_separately.py"
+msgstr ""
+
+#: ../../source/imaplib/index.rst:607
+# c65ed5b259d64392b7f51131819def26
+msgid "Fetching values separately has the added benefit of making it easy to use ``ParseFlags()`` to parse the flags from the response."
+msgstr ""
+
+#: ../../source/imaplib/index.rst:677
+# bbbb60cec295412bbf721f8472cf1b66
+msgid "Whole Messages"
+msgstr ""
+
+#: ../../source/imaplib/index.rst:679
+# 0c81e61d3c2042ecb1d5918275c5095e
+msgid "As illustrated earlier, the client can ask the server for individual parts of the message separately.  It is also possible to retrieve the entire message as an RFC 822 formatted mail message and parse it with classes from the :mod:`email` module."
+msgstr ""
+
+#: ../../source/imaplib/index.rst:0
+# cfeba46826f04805a18cbb5c3748cd59
+msgid "imaplib_fetch_rfc822.py"
+msgstr ""
+
+#: ../../source/imaplib/index.rst:688
+# 9e52b169c86f4bdeb2b4ebd15040fe9e
+msgid "The parser in the :mod:`email` module make it very easy to access and manipulate messages.  This example prints just a few of the headers for each message."
+msgstr ""
+
+#: ../../source/imaplib/index.rst:703
+# 5854d56de230481182d1736f88634c6e
+msgid "Uploading Messages"
+msgstr ""
+
+#: ../../source/imaplib/index.rst:705
+# 727c3af0812142ff9aa62e9dd4949ef4
+msgid "To add a new message to a mailbox, construct a ``Message`` instance and pass it to the ``append()`` method, along with the timestamp for the message."
+msgstr ""
+
+#: ../../source/imaplib/index.rst:0
+# 78bbf4a7523a410989498aa4eaae22cb
+msgid "imaplib_append.py"
+msgstr ""
+
+#: ../../source/imaplib/index.rst:713
+# b95d87cf2f7649c5ae5131ba3c139f74
+msgid "The ``payload`` used in this example is a simple plaintext email body. ``Message`` also supports MIME-encoded multi-part messages."
+msgstr ""
+
+#: ../../source/imaplib/index.rst:787
+# 68546991e7b145eba3ab6495d11eec5d
+msgid "Moving and Copying Messages"
+msgstr ""
+
+#: ../../source/imaplib/index.rst:789
+# c006d945b3644c1fa11b366fd71fbbc0
+msgid "Once a message is on the server, it can be moved or copied without downloading it using ``move()`` or ``copy()``.  These methods operate on message id ranges, just as ``fetch()`` does."
+msgstr ""
+
+#: ../../source/imaplib/index.rst:0
+# 98bea9c7b2734c48af06d0694f8d57b3
+msgid "imaplib_archive_read.py"
+msgstr ""
+
+#: ../../source/imaplib/index.rst:797
+# fb763fc6f6414cb2ae16599ea02b6668
+msgid "This example script creates a new mailbox under ``Example`` and copies the read messages from ``INBOX`` into it."
+msgstr ""
+
+#: ../../source/imaplib/index.rst:810
+# 263564e56c1f4ecb80c86f2ae6f5eaeb
+msgid "Running the same script again shows the importance to checking return codes.  Instead of raising an exception, the call to ``create()`` to make the new mailbox reports that the mailbox already exists."
+msgstr ""
+
+#: ../../source/imaplib/index.rst:826
+# 540835f9ba9e4a2c958d016ad0265830
+msgid "Deleting Messages"
+msgstr ""
+
+#: ../../source/imaplib/index.rst:828
+# 8c95adc84f4643bfbd8b9a0000dcdc51
+msgid "Although many modern mail clients use a \"Trash folder\" model for working with deleted messages, the messages are not usually moved into an actual folder.  Instead, their flags are updated to add ``\\Deleted``.  The operation for \"emptying\" the trash is implemented through the ``EXPUNGE`` command.  This example script finds the archived messages with \"Lorem ipsum\" in the subject, sets the deleted flag, then shows that the messages are still present in the folder by querying the server again."
+msgstr ""
+
+#: ../../source/imaplib/index.rst:0
+# 580f49c8ef54409b96b53bb2597c8985
+msgid "imaplib_delete_messages.py"
+msgstr ""
+
+#: ../../source/imaplib/index.rst:841
+# 15a7e6a6d719479197ef475630e364c8
+msgid "Explicitly calling ``expunge()`` removes the messages, but calling ``close()`` has the same effect.  The difference is the client is not notified about the deletions when ``close()`` is called."
+msgstr ""
+
+#: ../../source/imaplib/index.rst:874
+# 5d649d6a59a04291bf86f9c90812000a
+msgid ":pydoc:`imaplib`"
+msgstr ""
+
+#: ../../source/imaplib/index.rst:876
+# d454932d49794483b9ac8a01dc062933
+msgid ":mod:`rfc822` -- The ``rfc822`` module includes an RFC 822 / RFC 5322 parser."
+msgstr ""
+
+#: ../../source/imaplib/index.rst:878
+# 8f786c945881454ab7604590effb93a5
+msgid ":mod:`email` -- The ``email`` module for parsing email messages."
+msgstr ""
+
+#: ../../source/imaplib/index.rst:880
+# 90f650b9cedd4ccfa700b15495c51607
+msgid ":mod:`mailbox` -- Local mailbox parser."
+msgstr ""
+
+#: ../../source/imaplib/index.rst:882
+# f904da7b9ffb47b9bb599f65d18161d8
+msgid ":mod:`ConfigParser` -- Read and write configuration files."
+msgstr ""
+
+#: ../../source/imaplib/index.rst:884
+# 3baf0e365b6c44fe8bb3dec43dcd5ee3
+msgid "`University of Washington IMAP Information Center <http://www.washington.edu/imap/>`_ -- Good resource for IMAP information, along with source code."
+msgstr ""
+
+#: ../../source/imaplib/index.rst:888
+# 5e58114b6ee1420d93dd76e5cde3696c
+msgid ":rfc:`3501` -- Internet Message Access Protocol"
+msgstr ""
+
+#: ../../source/imaplib/index.rst:890
+# e3b3fefd11f4469391f4f2f9c25c14d6
+msgid ":rfc:`5322` -- Internet Message Format"
+msgstr ""
+
+#: ../../source/imaplib/index.rst:892
+# 320a13a422e04c098354f3de8890e910
+msgid "`IMAP Backup Script`_ -- A script to backup email from an IMAP server."
+msgstr ""
+
+#: ../../source/imaplib/index.rst:895
+# ce57dd9dc95e423b898cb5cbb4641fbe
+msgid "`IMAPClient <http://imapclient.freshfoo.com/>`_ -- A higher-level client for talking to IMAP servers, written by Menno Smits."
+msgstr ""
+
+#: ../../source/imaplib/index.rst:899
+# 1c6ec6c8f7894582920621ad7c57bc1b
+msgid "`offlineimap <http://www.offlineimap.org>`_ -- A Python application for keeping a local set of mailboxes in sync with an IMAP server."
+msgstr ""
+
+#: ../../source/imaplib/index.rst:903
+# 6609809ca7e94efab6a748e3a16c5b8b
+msgid ":ref:`Python 2 to 3 porting notes for imaplib <porting-imaplib>`"
+msgstr ""
+

@@ -1,0 +1,43 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/algorithm_tools.rst:3
+# a8892431673c4da6b503637783cb3f3d
+msgid "Algorithms"
+msgstr ""
+
+#: ../../source/algorithm_tools.rst:5
+# feb2ad2200dd4086b2dba92c086cd6a6
+msgid "Python includes several modules for implementing algorithms elegantly and concisely using whatever style is most appropriate for the task. It supports purely procedural, object oriented, and functional styles and all three styles are frequently mixed within different parts of the same program."
+msgstr ""
+
+#: ../../source/algorithm_tools.rst:11
+# d4d2e3358fd2402e8c4487282dc9eb89
+msgid ":mod:`functools` includes functions for creating function decorators, enabling aspect oriented programming and code reuse beyond what a traditional object oriented approach supports.  It also provides a class decorator for implementing all of the rich comparison APIs using a short-cut, and ``partial`` objects for creating references to functions with their arguments included."
+msgstr ""
+
+#: ../../source/algorithm_tools.rst:18
+# 42ad64284230413885f77a8392c5e479
+msgid "The :mod:`itertools` module includes functions for creating and working with iterators and generators used in functional programming. The :mod:`operator` module eliminates the need for many trivial lambda functions when using a functional programming style by providing function-based interfaces to built-in operations such as arithmetic or item lookup."
+msgstr ""
+
+#: ../../source/algorithm_tools.rst:25
+# 30c811b5b41846cfbf4ed912930db8f9
+msgid "And no matter what style is used in a program, :mod:`contextlib` makes resource management easier, more reliable, and more concise. Combining context managers and the ``with`` statement reduces the number of ``try:finally`` blocks and indentation levels needed, while ensuring that files, sockets, database transactions, and other resources are closed and released at the right time."
+msgstr ""
+

@@ -1,0 +1,583 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/configparser/index.rst:3
+# 69d839d716d24ff09bb4ccdb583c38a3
+msgid "configparser --- Work with Configuration Files"
+msgstr ""
+
+#: ../../source/configparser/index.rst:8
+# 4684e14a7cee4c168af7e0f8280c8123
+msgid "Read/write configuration files similar to Windows INI files"
+msgstr ""
+
+#: ../../source/configparser/index.rst:10
+# ab31c1ead2e24eea9298c5c08d48c38c
+msgid "Use the ``configparser`` module to manage user-editable configuration files for an application. The contents of the configuration files can be organized into groups and several option value types are supported, including integers, floating point values, and Booleans.  Option values can be combined using Python formatting strings, to build longer values such as URLs from shorter values like host names and port numbers."
+msgstr ""
+
+#: ../../source/configparser/index.rst:19
+# 84399e4700444c71b8f99f5b2eed5e2b
+msgid "Configuration File Format"
+msgstr ""
+
+#: ../../source/configparser/index.rst:21
+# 25c650f23aa7458cb7633384565fc564
+msgid "The file format used by ``configparser`` is similar to the format used by older versions of Microsoft Windows.  It consists of one or more named *sections*, each of which can contain individual *options* with names and values."
+msgstr ""
+
+#: ../../source/configparser/index.rst:26
+# bae8b576c3464f2e986bd44be121f29c
+msgid "Config file sections are identified by looking for lines starting with ``[`` and ending with ``]``.  The value between the square brackets is the section name, and can contain any characters except square brackets."
+msgstr ""
+
+#: ../../source/configparser/index.rst:31
+# 70a3b2f8510a4bf7a7fa18c00211d185
+msgid "Options are listed one per line within a section.  The line starts with the name of the option, which is separated from the value by a colon (``:``) or equal sign (``=``).  Whitespace around the separator is ignored when the file is parsed."
+msgstr ""
+
+#: ../../source/configparser/index.rst:36
+# 8461594b5d9a475c815372f37c5804dc
+msgid "Lines starting with semi-colon (``;``) or octothorpe (``#``) are treated as comments and not visible when accessing the contents of the configuration file programmatically."
+msgstr ""
+
+#: ../../source/configparser/index.rst:40
+# 453a970635ad4429adb6874fcc04d822
+msgid "This sample configuration file has a section named ``bug_tracker`` with three options, ``url``, ``username``, and ``password``."
+msgstr ""
+
+#: ../../source/configparser/index.rst:46
+# f82610e508b640d2abd7f9e1fbcb660e
+msgid "Reading Configuration Files"
+msgstr ""
+
+#: ../../source/configparser/index.rst:48
+# 350dbb0fd668435f9cd45d82febfeaa4
+msgid "The most common use for a configuration file is to have a user or system administrator edit the file with a regular text editor to set application behavior defaults and then have the application read the file, parse it, and act based on its contents.  Use the ``read()`` method of :mod:`ConfigParser` to read the configuration file."
+msgstr ""
+
+#: ../../source/configparser/index.rst:0
+# b7cd3bbe662b43fcbc80ea05df33b56b
+msgid "configparser_read.py"
+msgstr ""
+
+#: ../../source/configparser/index.rst:58
+# 3c891d85be69410eaaf2e2805462e904
+msgid "This program reads the ``simple.ini`` file from the previous section and prints the value of the ``url`` option from the ``bug_tracker`` section."
+msgstr ""
+
+#: ../../source/configparser/index.rst:74
+# b96417c971c8475096a67abce34c2ce8
+msgid "The ``read()`` method also accepts a list of filenames.  Each name in turn is scanned, and if the file exists it is opened and read."
+msgstr ""
+
+#: ../../source/configparser/index.rst:0
+# 69af65c4dfe94362851ddaa85193eeae
+msgid "configparser_read_many.py"
+msgstr ""
+
+#: ../../source/configparser/index.rst:81
+# 397809c87e1e4fffb8f5aba39c576dd6
+msgid "``read()`` returns a list containing the names of the files successfully loaded, so the program can discover which configuration files are missing and decide whether to ignore them or treat the condition as an error."
+msgstr ""
+
+#: ../../source/configparser/index.rst:101
+# 18ac2024056b47fc8432d533718d4253
+msgid "Unicode Configuration Data"
+msgstr ""
+
+#: ../../source/configparser/index.rst:103
+# ea378430957d46488e78284f99662f26
+msgid "Configuration files containing Unicode data should be read using the proper encoding value.  The following example file changes the password value of the original input to contain Unicode characters and is encoded using UTF-8."
+msgstr ""
+
+#: ../../source/configparser/index.rst:0
+# 42c111d5bb2d46108d326f7cf462f2d6
+msgid "unicode.ini"
+msgstr ""
+
+#: ../../source/configparser/index.rst:112
+# fc83207007bb434294553d4d46d21d76
+msgid "The file is opened with the appropriate decoder, converting the UTF-8 data to native Unicode strings."
+msgstr ""
+
+#: ../../source/configparser/index.rst:0
+# 6152e8a53fdf4c329b2333a193cda520
+msgid "configparser_unicode.py"
+msgstr ""
+
+#: ../../source/configparser/index.rst:119
+# d78cb7bb5834407eb87d9f4bd19de1f9
+msgid "The value returned by ``get()`` is a Unicode string, so in order to print it safely it must be re-encoded as UTF-8."
+msgstr ""
+
+#: ../../source/configparser/index.rst:138
+# 65f3747840194ef38a461b4531b9323a
+msgid "Accessing Configuration Settings"
+msgstr ""
+
+#: ../../source/configparser/index.rst:140
+# e86b34e67af947dd8fbae3187d89042a
+msgid "``ConfigParser`` includes methods for examining the structure of the parsed configuration, including listing the sections and options, and getting their values.  This configuration file includes two sections for separate web services."
+msgstr ""
+
+#: ../../source/configparser/index.rst:147
+# c52e7a3f146841d2a3f701db784803ce
+msgid "And this sample program exercises some of the methods for looking at the configuration data, including ``sections()``, ``options()``, and ``items()``."
+msgstr ""
+
+#: ../../source/configparser/index.rst:0
+# deaf10bc786643c5bdfb251ff12ebfd3
+msgid "configparser_structure.py"
+msgstr ""
+
+#: ../../source/configparser/index.rst:155
+# 3c1b4d049e014c8ebc5eefb35a76459f
+msgid "Both ``sections()`` and ``options()`` return lists of strings, while ``items()`` returns a list of tuples containing the name-value pairs."
+msgstr ""
+
+#: ../../source/configparser/index.rst:182
+# d2b2427872be4ba4a74fbb4a9934b282
+msgid "A ``ConfigParser`` also supports the same mapping API as `dict`, with the ``ConfigParser`` acting as one dictionary containing separate dictionaries for each section."
+msgstr ""
+
+#: ../../source/configparser/index.rst:0
+# c21a2381aa274ff9a3f8b6925d8057ae
+msgid "configparser_structure_dict.py"
+msgstr ""
+
+#: ../../source/configparser/index.rst:190
+# 797a73469b734be68bc94ebc027812d2
+msgid "Using the mapping API to access the same configuration file produces the same output."
+msgstr ""
+
+#: ../../source/configparser/index.rst:220
+# 6b42a004377046189dc914e1549bb802
+msgid "Testing Whether Values Are Present"
+msgstr ""
+
+#: ../../source/configparser/index.rst:222
+# b917435a042d46c1a3989b6605fa1d34
+msgid "To test if a section exists, use ``has_section()``, passing the section name."
+msgstr ""
+
+#: ../../source/configparser/index.rst:0
+# aafa96254e5f4bea906faf3f2866d592
+msgid "configparser_has_section.py"
+msgstr ""
+
+#: ../../source/configparser/index.rst:229
+# df7b63889f58400986b826f122e94b24
+msgid "Testing if a section exists before calling ``get()`` avoids exceptions for missing data."
+msgstr ""
+
+#: ../../source/configparser/index.rst:246
+# 2cf6843178c24ea2bb788417858ec49c
+msgid "Use ``has_option()`` to test if an option exists within a section."
+msgstr ""
+
+#: ../../source/configparser/index.rst:0
+# 8dc0504abbf844a0972529b19fb07bee
+msgid "configparser_has_option.py"
+msgstr ""
+
+#: ../../source/configparser/index.rst:252
+# 8d60fec1174447068ed1ce4ab9c8be23
+msgid "If the section does not exist, ``has_option()`` returns ``False``."
+msgstr ""
+
+#: ../../source/configparser/index.rst:278
+# 0205037c319d47cf8097a27be5a22e90
+msgid "Value Types"
+msgstr ""
+
+#: ../../source/configparser/index.rst:280
+# 0704b4dd8aa74600bdfa193eabafb16f
+msgid "All section and option names are treated as strings, but option values can be strings, integers, floating point numbers, or Booleans.  There are a range of possible Boolean values that are converted true or false.  The following example file includes one of each."
+msgstr ""
+
+#: ../../source/configparser/index.rst:0
+# ce88d88b94cf46d49ea6deb6b511e87b
+msgid "types.ini"
+msgstr ""
+
+#: ../../source/configparser/index.rst:288
+# 70f169e7ea554b5a983c350b6148e139
+msgid "``ConfigParser`` does not make any attempt to understand the option type.  The application is expected to use the correct method to fetch the value as the desired type.  ``get()`` always returns a string.  Use ``getint()`` for integers, ``getfloat()`` for floating point numbers, and ``getboolean()`` for boolean values."
+msgstr ""
+
+#: ../../source/configparser/index.rst:0
+# 727604851a3a459998414739733f73e6
+msgid "configparser_value_types.py"
+msgstr ""
+
+#: ../../source/configparser/index.rst:298
+# 44493e5ebe674fa3bbcb5bb65f5e8c8b
+msgid "Running this program with the example input produces the following output."
+msgstr ""
+
+#: ../../source/configparser/index.rst:329
+# 97c3db6c6e0f45afb905b03fc86a67e3
+msgid "Custom type converters can be added by passing conversion functions in the ``converters`` argument to ``ConfigParser``. Each converter receives a single input value, and should transform that value into the appropriate return type."
+msgstr ""
+
+#: ../../source/configparser/index.rst:0
+# 294a8f47c621486c837d502a6ea9b4a0
+msgid "configparser_custom_types.py"
+msgstr ""
+
+#: ../../source/configparser/index.rst:338
+# 464116516a4b4a9dad6fbaae269210cd
+msgid "Adding a converter causes ``ConfigParser`` to automatically create a retrieval method for that type, using the name of the type as specified in ``converters``. In this example, the ``'datetime'`` converter causes a new ``getdatetime()`` method to be added."
+msgstr ""
+
+#: ../../source/configparser/index.rst:357
+# aa4897ba72cc4ab5bad8c1e88346616c
+msgid "It is also possible to add converter methods directly to a subclass of ``ConfigParser``."
+msgstr ""
+
+#: ../../source/configparser/index.rst:362
+# b8f3bbed267a4b3b9520a45f950d34ac
+msgid "Options as Flags"
+msgstr ""
+
+#: ../../source/configparser/index.rst:364
+# 5e42abbecb9d4fe08e9e9cb0b8b679ec
+msgid "Usually, the parser requires an explicit value for each option, but with the ``ConfigParser`` parameter ``allow_no_value`` set to ``True`` an option can appear by itself on a line in the input file, and be used as a flag."
+msgstr ""
+
+#: ../../source/configparser/index.rst:0
+# 09f737a0d31d42f0b9efdb382436e9b7
+msgid "configparser_allow_no_value.py"
+msgstr ""
+
+#: ../../source/configparser/index.rst:373
+# 128ca209a83848afb1b1cd0c81bbbc72
+msgid "When an option has no explicit value, ``has_option()`` reports that the option exists and ``get()`` returns ``None``."
+msgstr ""
+
+#: ../../source/configparser/index.rst:400
+# c56c572900c34fda872724e3a6fe70db
+msgid "Multi-line Strings"
+msgstr ""
+
+#: ../../source/configparser/index.rst:402
+# 53fe53e3ac894c09828e4ea1beaf1851
+msgid "String values can span multiple lines, if subsequent lines are indented."
+msgstr ""
+
+#: ../../source/configparser/index.rst:407
+# 444a1dd40ca343b7b5e0777945e7d39a
+msgid "Within the indented multi-line values, blank lines are treated as part of the value and preserved."
+msgstr ""
+
+#: ../../source/configparser/index.rst:428
+# ed32d84261ad49c2b3943b5b8b24be32
+msgid "Modifying Settings"
+msgstr ""
+
+#: ../../source/configparser/index.rst:430
+# e664792690c2497682ff3432ab51d503
+msgid "While ``ConfigParser`` is primarily intended to be configured by reading settings from files, settings can also be populated by calling ``add_section()`` to create a new section, and ``set()`` to add or change an option."
+msgstr ""
+
+#: ../../source/configparser/index.rst:0
+# 815506dcdf0448c18957a2d84c1b0b50
+msgid "configparser_populate.py"
+msgstr ""
+
+#: ../../source/configparser/index.rst:439
+# b57a584685d24bd19cbf8d03f6c3c8bd
+msgid "All options must be set as strings, even if they will be retrieved as integer, float, or Boolean values."
+msgstr ""
+
+#: ../../source/configparser/index.rst:457
+# 02db700836914f7a9c5f849fb0b42c11
+msgid "Sections and options can be removed from a ``ConfigParser`` with ``remove_section()`` and ``remove_option()``."
+msgstr ""
+
+#: ../../source/configparser/index.rst:0
+# b00869ac5701427bbaae79c88e0619bd
+msgid "configparser_remove.py"
+msgstr ""
+
+#: ../../source/configparser/index.rst:464
+# 1b1ee4619c1a4cbaa8ee10ba14baca63
+msgid "Removing a section deletes any options it contains."
+msgstr ""
+
+#: ../../source/configparser/index.rst:495
+# 82ac5be34e8d43c6a2a0a9bb1d0d080a
+msgid "Saving Configuration Files"
+msgstr ""
+
+#: ../../source/configparser/index.rst:497
+# 11d5ffb4da284236b8eb7c29cb0fe396
+msgid "Once a ``ConfigParser`` is populated with desired data, it can be saved to a file by calling the ``write()`` method.  This makes it possible to provide a user interface for editing the configuration settings, without having to write any code to manage the file."
+msgstr ""
+
+#: ../../source/configparser/index.rst:0
+# a401d75a1fdf457da998f398157443b3
+msgid "configparser_write.py"
+msgstr ""
+
+#: ../../source/configparser/index.rst:507
+# 7348aba9aa544574acad170cfc7401df
+msgid "The ``write()`` method takes a file-like object as argument.  It writes the data out in the INI format so it can be parsed again by ``ConfigParser``."
+msgstr ""
+
+#: ../../source/configparser/index.rst:529
+# 83fce00754de4ed5af0405682759cba4
+msgid "Comments in the original configuration file are not preserved when reading, modifying, and re-writing a configuration file."
+msgstr ""
+
+#: ../../source/configparser/index.rst:535
+# 31a75588d7a4455399e9a555e7d8e7ef
+msgid "Option Search Path"
+msgstr ""
+
+#: ../../source/configparser/index.rst:537
+# 7d935999bfcf47bcbc91d1017196f823
+msgid "``ConfigParser`` uses a multi-step search process when looking for an option."
+msgstr ""
+
+#: ../../source/configparser/index.rst:540
+# 759fd17583124d27abde854e8505b5ce
+msgid "Before starting the option search, the section name is tested.  If the section does not exist, and the name is not the special value ``DEFAULT``, then ``NoSectionError`` is raised."
+msgstr ""
+
+#: ../../source/configparser/index.rst:544
+# af5fd60771f648258c5395a4adaee23b
+msgid "If the option name appears in the ``vars`` dictionary passed to ``get()``, the value from ``vars`` is returned."
+msgstr ""
+
+#: ../../source/configparser/index.rst:546
+# daf9a69037e742da8bf997e059f5616a
+msgid "If the option name appears in the specified section, the value from that section is returned."
+msgstr ""
+
+#: ../../source/configparser/index.rst:548
+# a35de1313f6e42dcbad0f74c5325c112
+msgid "If the option name appears in the ``DEFAULT`` section, that value is returned."
+msgstr ""
+
+#: ../../source/configparser/index.rst:550
+# f2eb05926e9e4c38940a5071a11ab43d
+msgid "If the option name appears in the ``defaults`` dictionary passed to the constructor, that value is returned."
+msgstr ""
+
+#: ../../source/configparser/index.rst:553
+# a094837098eb41da8f0ea932b529967c
+msgid "If the name is not found in any of those locations, ``NoOptionError`` is raised."
+msgstr ""
+
+#: ../../source/configparser/index.rst:556
+# 9431f25e06b0493bb638145cddec5ee7
+msgid "The search path behavior can be demonstrated using this configuration file."
+msgstr ""
+
+#: ../../source/configparser/index.rst:561
+# 73baa573db6a428ab7a50ce9064c1f1c
+msgid "This test program includes default settings for options not specified in the configuration file, and overrides some values that are defined in the file."
+msgstr ""
+
+#: ../../source/configparser/index.rst:0
+# 26ab1ed82dcb4e53812730cd7d9331fd
+msgid "configparser_defaults.py"
+msgstr ""
+
+#: ../../source/configparser/index.rst:569
+# 067b0fc02b7346cf807a91d4002758eb
+msgid "The output shows the origin for the value of each option and illustrates the way defaults from different sources override existing values."
+msgstr ""
+
+#: ../../source/configparser/index.rst:613
+# b73ab642d4fe465f812c945b8ddf5428
+msgid "Combining Values with Interpolation"
+msgstr ""
+
+#: ../../source/configparser/index.rst:615
+# bffe58205e0843cd8f8a8b7403f94376
+msgid "``ConfigParser`` provides a feature called *interpolation* that can be used to combine values together.  Values containing standard Python format strings trigger the interpolation feature when they are retrieved.  Options named within the value being fetched are replaced with their values in turn, until no more substitution is necessary."
+msgstr ""
+
+#: ../../source/configparser/index.rst:622
+# ddd2bd3848ef479ea79811ace235684a
+msgid "The URL examples from earlier in this section can be rewritten to use interpolation to make it easier to change only part of the value.  For example, this configuration file separates the protocol, hostname, and port from the URL as separate options."
+msgstr ""
+
+#: ../../source/configparser/index.rst:629
+# 452ec7d1437a477280f521f0b1fa28f2
+msgid "Interpolation is performed by default each time ``get()`` is called. Pass a true value in the ``raw`` argument to retrieve the original value, without interpolation."
+msgstr ""
+
+#: ../../source/configparser/index.rst:0
+# 5f6eb39db213466ebbb9e372aec7b018
+msgid "configparser_interpolation.py"
+msgstr ""
+
+#: ../../source/configparser/index.rst:637
+# 78dfbae734af42949253a00701270a38
+msgid "Because the value is computed by ``get()``, changing one of the settings being used by the ``url`` value changes the return value."
+msgstr ""
+
+#: ../../source/configparser/index.rst:655
+# ca6f92d96bfe4b438e10d3234f0e7020
+msgid "Using Defaults"
+msgstr ""
+
+#: ../../source/configparser/index.rst:657
+# 828fe98e286c4c28966b0798ad602bc6
+msgid "Values for interpolation do not need to appear in the same section as the original option.  Defaults can be mixed with override values."
+msgstr ""
+
+#: ../../source/configparser/index.rst:662
+# 066b962189784a5a87d9d88826e28e51
+msgid "With this configuration, the value for ``url`` comes from the ``DEFAULT`` section, and the substitution starts by looking in ``bug_tracker`` and falling back to ``DEFAULT`` for pieces not found."
+msgstr ""
+
+#: ../../source/configparser/index.rst:0
+# 2f7fc3f885384e36a2364b99de64c8c5
+msgid "configparser_interpolation_defaults.py"
+msgstr ""
+
+#: ../../source/configparser/index.rst:670
+# 3a0e65acf60c4634922db298d5ad0286
+msgid "The ``hostname`` and ``port`` values come from the ``bug_tracker`` section, but the ``protocol`` comes from ``DEFAULT``."
+msgstr ""
+
+#: ../../source/configparser/index.rst:686
+# 782bcc587fcc4759a14918c24f8d18cf
+msgid "Substitution Errors"
+msgstr ""
+
+#: ../../source/configparser/index.rst:688
+# 8c8942ed052d4f69b79b61fc88c04d43
+msgid "Substitution stops after :attr:`MAX_INTERPOLATION_DEPTH` steps to avoid problems due to recursive references."
+msgstr ""
+
+#: ../../source/configparser/index.rst:0
+# 04d6c00947e84ee9ba0536a7f82bce0a
+msgid "configparser_interpolation_recursion.py"
+msgstr ""
+
+#: ../../source/configparser/index.rst:695
+# b66a2eec9a6c47be9d9667c322353a22
+msgid "An ``InterpolationDepthError`` exception is raised if there are too many substitution steps."
+msgstr ""
+
+#: ../../source/configparser/index.rst:712
+# d78a8faf2d4c4f599a1e5c355518c862
+msgid "Missing values result in an ``InterpolationMissingOptionError`` exception."
+msgstr ""
+
+#: ../../source/configparser/index.rst:0
+# 5331c4cdccfd4cc58f7574c053cb72a0
+msgid "configparser_interpolation_error.py"
+msgstr ""
+
+#: ../../source/configparser/index.rst:719
+# 710217db09af49a1830c3a2c27ce4e0c
+msgid "Since no ``server`` value is defined, the ``url`` cannot be constructed."
+msgstr ""
+
+#: ../../source/configparser/index.rst:738
+# 2454c231516044509897cb6bbc55eeec
+msgid "Escaping Special Characters"
+msgstr ""
+
+#: ../../source/configparser/index.rst:740
+# 760815ac8d8146a19577cf8680e31133
+msgid "Since ``%`` starts the interpolation instructions, a literal ``%`` in a value must be escaped as ``%%``."
+msgstr ""
+
+#: ../../source/configparser/index.rst:745
+# 64ee447e7ead4523a8f2be66ef5c1f96
+msgid "Reading the value does not require any special consideration."
+msgstr ""
+
+#: ../../source/configparser/index.rst:0
+# e648066ee8344ff49162fb66d956a287
+msgid "configparser_escape.py"
+msgstr ""
+
+#: ../../source/configparser/index.rst:751
+# 203b876d2aa6469b88a2afb4319b3a1d
+msgid "When the value is read, the ``%%`` is converted to ``%`` automatically."
+msgstr ""
+
+#: ../../source/configparser/index.rst:767
+# af6f1c91dd864aeb8aff17161d701959
+msgid "Extended Interpolation"
+msgstr ""
+
+#: ../../source/configparser/index.rst:769
+# cfb33a3bec6e41a1aee5bbae06122e3c
+msgid "``ConfigParser`` supports alternate interpolation implementations Passing an object that supports the API defined by ``Interpolation`` to the ``interpolation`` parameter.  For example, using ``ExtendedInterpolation`` instead of the default ``BasicInterpolation`` enables a different syntax using ``${}`` to indicate variables."
+msgstr ""
+
+#: ../../source/configparser/index.rst:0
+# 3e4444c0f26e44ce80df6175fef978d7
+msgid "configparser_extendedinterpolation.py"
+msgstr ""
+
+#: ../../source/configparser/index.rst:780
+# 7090ba892eac45f98933f6c69a15e5f4
+msgid "Extended interpolation supports accessing values from other sections of the configuration file by prefixing the variable name with the section name and a colon (``:``)."
+msgstr ""
+
+#: ../../source/configparser/index.rst:787
+# 6c73fda2716049c798197cd1cc8bb89c
+msgid "Referring to values in other sections of the file makes it possible to share a hierarchy of values, without placing all defaults in the ``DEFAULTS`` section."
+msgstr ""
+
+#: ../../source/configparser/index.rst:807
+# 6e3c854ac2184e138f9661bddd2443c5
+msgid "Disabling Interpolation"
+msgstr ""
+
+#: ../../source/configparser/index.rst:809
+# afd086fef4bb41129c897b45aa467d07
+msgid "To disable interpolation, pass ``None`` instead of an ``Interpolation`` object."
+msgstr ""
+
+#: ../../source/configparser/index.rst:0
+# c135876eaa5b49918eddbc15a9861f06
+msgid "configparser_nointerpolation.py"
+msgstr ""
+
+#: ../../source/configparser/index.rst:816
+# 42660c9c172e4a5995cbd9e49f1cf963
+msgid "This enables any syntax that might have been processed by the interpolation object to be safely ignored."
+msgstr ""
+
+#: ../../source/configparser/index.rst:835
+# dd576bdb1c89462ea6c2591b743707ad
+msgid ":pydoc:`configparser`"
+msgstr ""
+
+#: ../../source/configparser/index.rst:837
+# 1ec9e796e2c74058bd0b9d321e5e783f
+msgid "`ConfigObj <http://configobj.readthedocs.org/en/latest/configobj.html>`__ -- An advanced configuration file parser with support for features like content validation."
+msgstr ""
+
+#: ../../source/configparser/index.rst:842
+# 17700be6773a41d483cbea461a240215
+msgid ":ref:`Python 2 to 3 porting notes for configparser <porting-configparser>`"
+msgstr ""
+

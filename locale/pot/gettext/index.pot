@@ -1,0 +1,358 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/gettext/index.rst:3
+# dc9f40724ace4aff80bbb7103b77b09e
+msgid "gettext --- Message Catalogs"
+msgstr ""
+
+#: ../../source/gettext/index.rst:8
+# 12db30b8f26645b2b3d720f39af89d29
+msgid "Message catalog API for internationalization."
+msgstr ""
+
+#: ../../source/gettext/index.rst:10
+# 94481dd248394f498fa4d1bd2db4de47
+msgid "The ``gettext`` module provides a pure-Python implementation compatible with the GNU **gettext** library for message translation and catalog management.  The tools available with the Python source distribution enable you to extract messages from a set of source files, build a message catalog containing translations, and use that message catalog to display an appropriate message for the user at runtime."
+msgstr ""
+
+#: ../../source/gettext/index.rst:18
+# 0706c8a36b294f1083bdd374ec5b9e76
+msgid "Message catalogs can be used to provide internationalized interfaces for a program, showing messages in a language appropriate to the user. They can also be used for other message customizations, including \"skinning\" an interface for different wrappers or partners."
+msgstr ""
+
+#: ../../source/gettext/index.rst:25
+# c6401ca5054e4e8fadf426565927f1d1
+msgid "Although the standard library documentation says all of the necessary tools are included with Python, ``pygettext.py`` failed to extract messages wrapped in the ``ngettext`` call, even with the appropriate command line options. These examples use ``xgettext`` from the GNU **gettext** tool set, instead."
+msgstr ""
+
+#: ../../source/gettext/index.rst:32
+# eb643d806c91459083c29e5c0236f1a7
+msgid "Translation Workflow Overview"
+msgstr ""
+
+#: ../../source/gettext/index.rst:34
+# 3ba1d709bdcf472083abdfe683712953
+msgid "The process for setting up and using translations includes five steps."
+msgstr ""
+
+#: ../../source/gettext/index.rst:36
+# 24dad400817940a99aa58bca3e1c9d63
+msgid "*Identify and mark up literal strings in the source code that contain messages to translate.*"
+msgstr ""
+
+#: ../../source/gettext/index.rst:39
+# 278d82cecd92417fa8c7e15f962405f2
+msgid "Start by identifying the messages within the program source that need to be translated, and marking the literal strings so the extraction program can find them."
+msgstr ""
+
+#: ../../source/gettext/index.rst:43
+# c83b0c28b9224eb88c85347beb40e31d
+msgid "*Extract the messages.*"
+msgstr ""
+
+#: ../../source/gettext/index.rst:45
+# f06ac6f4fca84d5dac852ee278696927
+msgid "After the translatable strings in the source are identified, use ``xgettext`` to extract them and create a ``.pot`` file, or *translation template*. The template is a text file with copies of all of the strings identified and placeholders for their translations."
+msgstr ""
+
+#: ../../source/gettext/index.rst:51
+# a65732c426a64a21b98f328fb49992fc
+msgid "*Translate the messages.*"
+msgstr ""
+
+#: ../../source/gettext/index.rst:53
+# 8ca66157d25f460fb25c85d66481ce8a
+msgid "Give a copy of the ``.pot`` file to the translator, changing the extension to ``.po``. The ``.po`` file is an editable source file used as input for the compilation step. The translator should update the header text in the file and provide translations for all of the strings."
+msgstr ""
+
+#: ../../source/gettext/index.rst:59
+# 7fff73c3e42e461c894967f42d97d932
+msgid "*\"Compile\" the message catalog from the translation.*"
+msgstr ""
+
+#: ../../source/gettext/index.rst:61
+# 4da93370f6604b17815a0120cc24a353
+msgid "When the translator sends back the completed ``.po`` file, compile the text file to the binary catalog format using ``msgfmt``. The binary format is used by the runtime catalog lookup code."
+msgstr ""
+
+#: ../../source/gettext/index.rst:65
+# 48f879382d494a11afcb5b8732aa7eba
+msgid "*Load and activate the appropriate message catalog at runtime.*"
+msgstr ""
+
+#: ../../source/gettext/index.rst:67
+# c739c93abee144e68fd63d2ac8a1c8c9
+msgid "The final step is to add a few lines to the application to configure and load the message catalog and install the translation function. There are a couple of ways to do that, with associated trade-offs."
+msgstr ""
+
+#: ../../source/gettext/index.rst:72
+# e0f9a0c6def9432aae673e14a4a9e63f
+msgid "The rest of this section will examine those steps in a little more detail, starting with the code modifications needed."
+msgstr ""
+
+#: ../../source/gettext/index.rst:76
+# 93ee9f0af2df4880b86d2f5b4a17082d
+msgid "Creating Message Catalogs from Source Code"
+msgstr ""
+
+#: ../../source/gettext/index.rst:78
+# c239476311874269b9669c99da5f2fae
+msgid "``gettext`` works by looking up literal strings in a database of translations, and pulling out the appropriate translated string.  The usual pattern is to bind the appropriate lookup function to the name \"``_``\" (a single underscore character) so that the code is not cluttered with a lot of calls to functions with longer names."
+msgstr ""
+
+#: ../../source/gettext/index.rst:84
+# 24bb1cf99f464795848da46cebc7a8a3
+msgid "The message extraction program, ``xgettext``, looks for messages embedded in calls to the catalog lookup functions.  It understands different source languages and uses an appropriate parser for each. If the lookup functions are aliased, or extra functions are added, give ``xgettext`` the names of additional symbols to consider when extracting messages."
+msgstr ""
+
+#: ../../source/gettext/index.rst:91
+# 51da2ac45b374154a992cf6b8f881f3c
+msgid "This script has a single message ready to be translated."
+msgstr ""
+
+#: ../../source/gettext/index.rst:0
+# f03f3f69be6943ada707b682064f957c
+msgid "gettext_example.py"
+msgstr ""
+
+#: ../../source/gettext/index.rst:97
+# 553fae210c5f4bf4989240d6634bea81
+msgid "The text ``\"This message is in the script.\"`` is the message to be substituted from the catalog.  Fallback mode is enabled, so if the script is run without a message catalog, the in-lined message is printed."
+msgstr ""
+
+#: ../../source/gettext/index.rst:115
+# ed6a13f830ec410c8a64ce71ba7d57c7
+msgid "The next step is to extract the message and create the ``.pot`` file, using ``pygettext.py`` or ``xgettext``."
+msgstr ""
+
+#: ../../source/gettext/index.rst:129
+# 7592481b1a4a4b3aae28d1d4d49e8a67
+msgid "The output file produced contains the following content."
+msgstr ""
+
+#: ../../source/gettext/index.rst:0
+# a5c1689bde9245bc9be6c05a6fdc0f76
+msgid "example.pot"
+msgstr ""
+
+#: ../../source/gettext/index.rst:134
+# a893199a32764a9aa0c1cff8efeabe45
+msgid "Message catalogs are installed into directories organized by *domain* and *language*.  The domain is provided by the application or library, and is usually a unique value like the application name.  In this case, the domain in ``gettext_example.py`` is ``example_domain``.  The language value is provided by the user's environment at runtime, through one of the environment variables ``LANGUAGE``, ``LC_ALL``, ``LC_MESSAGES``, or ``LANG``, depending on their configuration and platform.  These examples were all run with the language set to ``en_US``."
+msgstr ""
+
+#: ../../source/gettext/index.rst:144
+# 6284e0f7b5634f938bd122f9e125bffb
+msgid "Now that the template is ready, the next step is to create the required directory structure and copy the template in to the right spot.  The ``locale`` directory inside the PyMOTW source tree will serve as the root of the message catalog directory for these examples, but it is typically better to use a directory accessible system-wide so that all users have access to the message catalogs.  The full path to the catalog input source is ``$localedir/$language/LC_MESSAGES/$domain.po``, and the actual catalog has the filename extension ``.mo``."
+msgstr ""
+
+#: ../../source/gettext/index.rst:154
+# 902840a9444b427caee09b1a9e3d9cb4
+msgid "The catalog is created by copying ``example.pot`` to ``locale/en_US/LC_MESSAGES/example.po`` and editing it to change the values in the header and set the alternate messages.  The result is shown next."
+msgstr ""
+
+#: ../../source/gettext/index.rst:0
+# bf64de3294684a10b0b4e3dc4fafb54e
+msgid "locale/en_US/LC_MESSAGES/example.po"
+msgstr ""
+
+#: ../../source/gettext/index.rst:162
+# 2621fd9ca3fe4a0db6d088343f49cf77
+msgid "The catalog is built from the ``.po`` file using ``msgformat``."
+msgstr ""
+
+#: ../../source/gettext/index.rst:176
+# 384dcdb845e44b6192977bcd404c7958
+msgid "The domain in ``gettext_example.py`` is ``example_domain``, but the file is called ``example.pot``. To have ``gettext`` find the right translation file, the names need to match."
+msgstr ""
+
+#: ../../source/gettext/index.rst:0
+# 8bdbbbbeced04a3a9f0dd59123647d12
+msgid "gettext_example_corrected.py"
+msgstr ""
+
+#: ../../source/gettext/index.rst:184
+# ae1f1a13c6d34638ae62c63b846d8594
+msgid "Now when the script is run, the message from the catalog is printed instead of the in-line string."
+msgstr ""
+
+#: ../../source/gettext/index.rst:201
+# 95900cb91a9b4544b6426c47b467aca0
+msgid "Finding Message Catalogs at Runtime"
+msgstr ""
+
+#: ../../source/gettext/index.rst:203
+# ec39d5b5994d4203bb2f6b74bfab4f1a
+msgid "As described earlier, the *locale directory* containing the message catalogs is organized based on the language with catalogs named for the *domain* of the program.  Different operating systems define their own default value, but ``gettext`` does not know all of these defaults.  It uses a default locale directory of ``sys.prefix + '/share/locale'``, but most of the time it is safer to always explicitly give a ``localedir`` value than to depend on this default being valid.  The ``find()`` function is responsible for locating an appropriate message catalog at runtime."
+msgstr ""
+
+#: ../../source/gettext/index.rst:0
+# 9c3dea5257b24ed3ae169bc9c8e1d3bf
+msgid "gettext_find.py"
+msgstr ""
+
+#: ../../source/gettext/index.rst:217
+# 8dca6f29d01b4c0da35b12e0e7de9fdc
+msgid "The language portion of the path is taken from one of several environment variables that can be used to configure localization features (``LANGUAGE``, ``LC_ALL``, ``LC_MESSAGES``, and ``LANG``). The first variable found to be set is used.  Multiple languages can be selected by separating the values with a colon (``:``).  To see how that works, use a second message catalog to run a few experiments."
+msgstr ""
+
+#: ../../source/gettext/index.rst:264
+# 3c3a8aa216d54105b41949b30a42388e
+msgid "Although ``find()`` shows the complete list of catalogs, only the first one in the sequence is actually loaded for message lookups."
+msgstr ""
+
+#: ../../source/gettext/index.rst:299
+# d84e8c37e0df420f92cbfef7b304e3b5
+msgid "Plural Values"
+msgstr ""
+
+#: ../../source/gettext/index.rst:301
+# ce5c8125372042e9bbd912a4159aae00
+msgid "While simple message substitution will handle most translation needs, ``gettext`` treats pluralization as a special case.  Depending on the language, the difference between the singular and plural forms of a message may vary only by the ending of a single word, or the entire sentence structure may be different.  There may also be different forms depending on the level of plurality.  To make managing plurals easier (and, in some cases, possible), there is a separate set of functions for asking for the plural form of a message."
+msgstr ""
+
+#: ../../source/gettext/index.rst:0
+# 7dbff2d784034332a128d41d9105bbec
+msgid "gettext_plural.py"
+msgstr ""
+
+#: ../../source/gettext/index.rst:314
+# df3362ff090c45ddb5caabd8092b9512
+msgid "Use ``ngettext()`` to access the plural substitution for a message. The arguments are the messages to be translated and the item count."
+msgstr ""
+
+#: ../../source/gettext/index.rst:328
+# 972702fc12fa45aaa2ce3e7f08d7d107
+msgid "Since there are alternate forms to be translated, the replacements are listed in an array.  Using an array allows translations for languages with multiple plural forms (for example, Polish has different forms indicating the relative quantity)."
+msgstr ""
+
+#: ../../source/gettext/index.rst:0
+# 16ea9e94aae5492eb2ce1c59089ed14c
+msgid "plural.pot"
+msgstr ""
+
+#: ../../source/gettext/index.rst:336
+# c2e11144ba9e41c38e8c3fe02b5ccd16
+msgid "In addition to filling in the translation strings, the library needs to be told about the way plurals are formed so it knows how to index into the array for any given count value.  The line ``\"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\\n\"`` includes two values to replace manually.  ``nplurals`` is an integer indicating the size of the array (the number of translations used) and ``plural`` is a C language expression for converting the incoming quantity to an index in the array when looking up the translation.  The literal string ``n`` is replaced with the quantity passed to ``ungettext()``."
+msgstr ""
+
+#: ../../source/gettext/index.rst:346
+# f16737e57223477d9881e98c1a0078e3
+msgid "For example, English includes two plural forms.  A quantity of ``0`` is treated as plural (\"0 bananas\").  The ``Plural-Forms`` entry is::"
+msgstr ""
+
+#: ../../source/gettext/index.rst:351
+# eb70e10bcec34d2690dd10534ad603f4
+msgid "The singular translation would then go in position 0, and the plural translation in position 1."
+msgstr ""
+
+#: ../../source/gettext/index.rst:0
+# 7d086176afe94261bf1c1e9e3196b717
+msgid "locale/en_US/LC_MESSAGES/plural.po"
+msgstr ""
+
+#: ../../source/gettext/index.rst:357
+# 5faeb21a1adc433f894265cad3a1f1cf
+msgid "Running the test script a few times after the catalog is compiled will demonstrate how different values of N are converted to indexes for the translation strings."
+msgstr ""
+
+#: ../../source/gettext/index.rst:390
+# 30d7ec8a1fc943c4b3107591f06ede1a
+msgid "Application vs. Module Localization"
+msgstr ""
+
+#: ../../source/gettext/index.rst:392
+# 9b95d3297f334dc38ecc52fd2084571e
+msgid "The scope of a translation effort defines how ``gettext`` is installed and used with a body of code."
+msgstr ""
+
+#: ../../source/gettext/index.rst:396
+# 10873b4eacd34b18b2919fb1d3145c45
+msgid "Application Localization"
+msgstr ""
+
+#: ../../source/gettext/index.rst:398
+# f547a05139154191a09f4f709413edf5
+msgid "For application-wide translations, it is acceptable for the author to install a function like ``ngettext()`` globally using the ``__builtins__`` namespace, because they have control over the top-level of the application's code."
+msgstr ""
+
+#: ../../source/gettext/index.rst:0
+# 3166ff85da384cec979dd5a13a0ad667
+msgid "gettext_app_builtin.py"
+msgstr ""
+
+#: ../../source/gettext/index.rst:407
+# 1334b9f897f04fc3961896a0aad4604c
+msgid "The ``install()`` function binds ``gettext()`` to the name ``_()`` in the ``__builtins__`` namespace.  It also adds ``ngettext()`` and other functions listed in ``names``."
+msgstr ""
+
+#: ../../source/gettext/index.rst:412
+# eec70752fe8b49fb85d7da384fb62171
+msgid "Module Localization"
+msgstr ""
+
+#: ../../source/gettext/index.rst:414
+# 4290b2a9d0554e18ace48c1f3cd3011d
+msgid "For a library or individual module, modifying ``__builtins__`` is not a good idea because it may introduce conflicts with an application global value.  Instead, import or re-bind the names of translation functions by hand at the top of the module."
+msgstr ""
+
+#: ../../source/gettext/index.rst:0
+# 05d9ffc29d3e4ef1821df1f1ebe22d31
+msgid "gettext_module_global.py"
+msgstr ""
+
+#: ../../source/gettext/index.rst:424
+# b50b58a8c7ee4872a7f9b9395286121c
+msgid "Switching Translations"
+msgstr ""
+
+#: ../../source/gettext/index.rst:426
+# 2966bda80a3947a7ab6cea19764227e2
+msgid "The earlier examples all use a single translation for the duration of the program.  Some situations, especially web applications, need to use different message catalogs at different times, without exiting and resetting the environment.  For those cases, the class-based API provided in ``gettext`` will be more convenient.  The API calls are essentially the same as the global calls described in this section, but the message catalog object is exposed and can be manipulated directly, so that multiple catalogs can be used."
+msgstr ""
+
+#: ../../source/gettext/index.rst:437
+# 6bdcc93c73134c07b74be820b00f14f5
+msgid ":pydoc:`gettext`"
+msgstr ""
+
+#: ../../source/gettext/index.rst:439
+# 70e1e02b9b104e1c965cece2e7754c94
+msgid ":mod:`locale` -- Other localization tools."
+msgstr ""
+
+#: ../../source/gettext/index.rst:441
+# a636b09e1d4745a6836c8cb76f6d19e7
+msgid "`GNU gettext`_ -- The message catalog formats, API, etc. for this module are all based on the original gettext package from GNU. The catalog file formats are compatible, and the command line scripts have similar options (if not identical).  The `GNU gettext manual <http://www.gnu.org/software/gettext/manual/gettext.html>`_ has a detailed description of the file formats and describes GNU versions of the tools for working with them."
+msgstr ""
+
+#: ../../source/gettext/index.rst:450
+# b222485648c5489db7e3c0d814847a15
+msgid "`Plural forms <http://www.gnu.org/software/gettext/manual/gettext.html#Plural-forms>`__ -- Handling of plural forms of words and sentences in different languages."
+msgstr ""
+
+#: ../../source/gettext/index.rst:455
+# 0e8b319c08284016bade21463ea7874c
+msgid "`Internationalizing Python <http://legacy.python.org/workshops/1997-10/proceedings/loewis.html>`_ -- A paper by Martin von Löwis about techniques for internationalization of Python applications."
+msgstr ""
+
+#: ../../source/gettext/index.rst:460
+# 64e6c723160e4889b3cedb38164986ae
+msgid "`Django Internationalization <https://docs.djangoproject.com/en/dev/topics/i18n/>`_ -- Another good source of information on using gettext, including real-life examples."
+msgstr ""
+

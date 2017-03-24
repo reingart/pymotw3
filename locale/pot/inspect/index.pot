@@ -1,0 +1,448 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/inspect/index.rst:3
+# e1a7e5874fdf4c81ae602d3928a0c4c7
+msgid "inspect --- Inspect Live Objects"
+msgstr ""
+
+#: ../../source/inspect/index.rst:9
+# eaf6c5e42e774ed294242afb49db1fde
+msgid "The inspect module provides functions for introspecting on live objects and their source code."
+msgstr ""
+
+#: ../../source/inspect/index.rst:12
+# f6b3b68bc662414ab04ea35d543f6570
+msgid "The ``inspect`` module provides functions for learning about live objects, including modules, classes, instances, functions, and methods. The functions in this module can be used to retrieve the original source code for a function, look at the arguments to a method on the stack, and extract the sort of information useful for producing library documentation for source code."
+msgstr ""
+
+#: ../../source/inspect/index.rst:20
+# d61d5489aec04590a6c90907338b5913
+msgid "Example Module"
+msgstr ""
+
+#: ../../source/inspect/index.rst:22
+# 0700857e527847f7aac1f3f86f9e4b50
+msgid "The rest of the examples for this section use this example file, ``example.py``."
+msgstr ""
+
+#: ../../source/inspect/index.rst:0
+# 3de802fe52eb4aafbb9d1fd8d12271db
+msgid "example.py"
+msgstr ""
+
+#: ../../source/inspect/index.rst:30
+# 7425b362fcf64774a384853830384950
+msgid "Inspecting Modules"
+msgstr ""
+
+#: ../../source/inspect/index.rst:32
+# 1d409eca010843d6b759f227d005d3f4
+msgid "The first kind of introspection probes live objects to learn about them. Use ``getmembers()`` to discover the member attributes of object.  The types of members that might be returned depend on the type of object scanned. Modules can contain classes and functions; classes can contain methods and attributes; and so on."
+msgstr ""
+
+#: ../../source/inspect/index.rst:38
+# 664c353ba2754eaf8bce4307ed94114a
+msgid "The arguments to ``getmembers()`` are an object to scan (a module, class, or instance) and an optional predicate function that is used to filter the objects returned. The return value is a list of tuples with two values: the name of the member, and the type of the member. The ``inspect`` module includes several such predicate functions with names like ``ismodule()``, ``isclass()``, etc."
+msgstr ""
+
+#: ../../source/inspect/index.rst:0
+# 810fa5fb5e984603a7afdaf5729e01d5
+msgid "inspect_getmembers_module.py"
+msgstr ""
+
+#: ../../source/inspect/index.rst:49
+# c87d178c567b4376bf16156a12b1417e
+msgid "This sample prints the members of the ``example`` module. Modules have several private attributes that are used as part of the import implementation as well as a set of ``__builtins__``.  All of these are ignored in the output for this example because they are not actually part of the module and the list is long."
+msgstr ""
+
+#: ../../source/inspect/index.rst:72
+# 44d864fa41144c758e5a06a935c44df2
+msgid "The ``predicate`` argument can be used to filter the types of objects returned."
+msgstr ""
+
+#: ../../source/inspect/index.rst:0
+# b8a22fa0e4fb4b2ab30b1019d3870d0d
+msgid "inspect_getmembers_module_class.py"
+msgstr ""
+
+#: ../../source/inspect/index.rst:79
+# 5d3db388acc745c1b9cbd4eb0adb51fe
+msgid "Only classes are included in the output, now."
+msgstr ""
+
+#: ../../source/inspect/index.rst:96
+# a9d5a266c92f40afae9e5beed1e6420f
+msgid "Inspecting Classes"
+msgstr ""
+
+#: ../../source/inspect/index.rst:98
+# 69ebefacab4b4fbe97cd2c3a5832c5f7
+msgid "Classes are scanned using ``getmembers()`` in the same way as modules, though the types of members are different."
+msgstr ""
+
+#: ../../source/inspect/index.rst:0
+# 0d65666d13114d8bb1a9bffeba33e602
+msgid "inspect_getmembers_class.py"
+msgstr ""
+
+#: ../../source/inspect/index.rst:105
+# 18b81293afe240cb89f5163002d76ecc
+msgid "Because no filtering is applied, the output shows the attributes, methods, slots, and other members of the class."
+msgstr ""
+
+#: ../../source/inspect/index.rst:163
+# a4a53ff0cefc40d3a11c198987cf8d33
+msgid "To find the methods of a class, use the ``isfunction()`` predicate. The ``ismethod()`` predicate only recognizes bound methods of instances."
+msgstr ""
+
+#: ../../source/inspect/index.rst:0
+# 49c8c0d581a4449ea8c08fafd42a00db
+msgid "inspect_getmembers_class_methods.py"
+msgstr ""
+
+#: ../../source/inspect/index.rst:171
+# 78476ef17abf4f9594ac24c58df1aa28
+msgid "Only unbound methods are returned now."
+msgstr ""
+
+#: ../../source/inspect/index.rst:186
+# 8e57d25cac5643bbaa9c9bdfcd4012a7
+msgid "The output for ``B`` includes the override for ``get_name()`` as well as the new method, and the inherited ``__init__()`` method implemented in ``A``."
+msgstr ""
+
+#: ../../source/inspect/index.rst:0
+# cbf242e4ce014964b8209a7df31962ce
+msgid "inspect_getmembers_class_methods_b.py"
+msgstr ""
+
+#: ../../source/inspect/index.rst:194
+# 9cb50f4b92b7492da42547297f19ddc2
+msgid "Methods inherited from ``A``, such as ``__init__()``, are identified as being methods of ``B``."
+msgstr ""
+
+#: ../../source/inspect/index.rst:212
+# fa8e84877bbc41ca82388cc413bfa421
+msgid "Inspecting Instances"
+msgstr ""
+
+#: ../../source/inspect/index.rst:214
+# 5358a0b792a94959bee64932ecd11fdf
+msgid "Introspecting instances works in the same way as other objects."
+msgstr ""
+
+#: ../../source/inspect/index.rst:0
+# d72d9fdeb98f4003b8829dc2b9cb61b4
+msgid "inspect_getmembers_instance.py"
+msgstr ""
+
+#: ../../source/inspect/index.rst:220
+# c57dd5d9d02f4020a3b1b881186a7bc2
+msgid "The predicate ``ismethod()`` recognizes two bound methods from ``A`` in the example instance."
+msgstr ""
+
+#: ../../source/inspect/index.rst:239
+# 97fd977274f848baa17eb5c7186d939d
+msgid "Documentation Strings"
+msgstr ""
+
+#: ../../source/inspect/index.rst:241
+# bcdfa8f614a345bcab504a831cc6c207
+msgid "The docstring for an object can be retrieved with ``getdoc()``. The return value is the :attr:`__doc__` attribute with tabs expanded to spaces and with indentation made uniform."
+msgstr ""
+
+#: ../../source/inspect/index.rst:0
+# 8767b4ca7e164cd18502070d0b492ee0
+msgid "inspect_getdoc.py"
+msgstr ""
+
+#: ../../source/inspect/index.rst:249
+# 10204ae9791c4624bcfcdd785182265e
+msgid "The second line of the docstring is indented when it is retrieved through the attribute directly, but moved to the left margin by ``getdoc()``."
+msgstr ""
+
+#: ../../source/inspect/index.rst:272
+# 0bf194af831e4b848b94b36bb5692027
+msgid "In addition to the actual docstring, it is possible to retrieve the comments from the source file where an object is implemented, if the source is available. The ``getcomments()`` function looks at the source of the object and finds comments on lines preceding the implementation."
+msgstr ""
+
+#: ../../source/inspect/index.rst:0
+# 2eecd76f7dca46a081873b70d4c6ac38
+msgid "inspect_getcomments_method.py"
+msgstr ""
+
+#: ../../source/inspect/index.rst:282
+# b37649c361424bee8ccd1ee7b0ed99c3
+msgid "The lines returned include the comment prefix with any whitespace prefix stripped off."
+msgstr ""
+
+#: ../../source/inspect/index.rst:298
+# 7453bf1e23994e229f4b5d7e98ed4942
+msgid "When a module is passed to ``getcomments()``, the return value is always the first comment in the module."
+msgstr ""
+
+#: ../../source/inspect/index.rst:0
+# 2495f0ea07fb4fb8bbf61cc99c14ee6a
+msgid "inspect_getcomments_module.py"
+msgstr ""
+
+#: ../../source/inspect/index.rst:305
+# b2a0f6d741244c7ab94bc24cc0629a18
+msgid "Contiguous lines from the example file are included as a single comment, but as soon as a blank line appears the comment is stopped."
+msgstr ""
+
+#: ../../source/inspect/index.rst:323
+# 629c25cbf550495680579b8b325df0c3
+msgid "Retrieving Source"
+msgstr ""
+
+#: ../../source/inspect/index.rst:325
+# 1ca5bf24d708451aaef0506b71359aac
+msgid "If the ``.py`` file is available for a module, the original source code for the class or method can be retrieved using ``getsource()`` and ``getsourcelines()``."
+msgstr ""
+
+#: ../../source/inspect/index.rst:0
+# fb6536d3b58149dd9db3329ce6c2a113
+msgid "inspect_getsource_class.py"
+msgstr ""
+
+#: ../../source/inspect/index.rst:333
+# 4366f82e4ca44a5b88aaeec0f151bd16
+msgid "When a class is passed in, all of the methods for the class are included in the output."
+msgstr ""
+
+#: ../../source/inspect/index.rst:357
+# bd7e659967a04a0b974294cdc51633a1
+msgid "To retrieve the source for a single method, pass the method reference to ``getsource()``."
+msgstr ""
+
+#: ../../source/inspect/index.rst:0
+# af6c30127b6c4978b938f4af32e09918
+msgid "inspect_getsource_method.py"
+msgstr ""
+
+#: ../../source/inspect/index.rst:364
+# a219703b9e984265af8ee2e16806be3f
+msgid "The original indent level is retained in this case."
+msgstr ""
+
+#: ../../source/inspect/index.rst:381
+# 58900a3e0763453695cf73bff046ead7
+msgid "Use ``getsourcelines()`` instead of ``getsource()`` to retrieve the lines of source split into individual strings."
+msgstr ""
+
+#: ../../source/inspect/index.rst:0
+# 01f449a2e06e4cd885d818c808ea97ee
+msgid "inspect_getsourcelines_method.py"
+msgstr ""
+
+#: ../../source/inspect/index.rst:388
+# 951ea8469131424782cf3520da177ffa
+msgid "The return value from ``getsourcelines()`` is a ``tuple`` containing a list of strings (the lines from the source file), and a starting line number in the file where the source appears."
+msgstr ""
+
+#: ../../source/inspect/index.rst:407
+# b3619991cc474d57822ea71c95bb3a4c
+msgid "If the source file is not available, ``getsource()`` and ``getsourcelines()`` raise an ``IOError``."
+msgstr ""
+
+#: ../../source/inspect/index.rst:411
+# 83a1c0fa6ade42c986ca70059fadac8e
+msgid "Method and Function Signatures"
+msgstr ""
+
+#: ../../source/inspect/index.rst:413
+# 4265d92a0a9644aeb1ff3543b41f782e
+msgid "In addition to the documentation for a function or method, it is possible to ask for a complete specification of the arguments the callable takes, including default values. The ``signature()`` function returns a ``Signature`` instance containing information about the arguments to the function."
+msgstr ""
+
+#: ../../source/inspect/index.rst:0
+# f827b2ce631144869f91e4f8b3ffccfd
+msgid "inspect_signature_function.py"
+msgstr ""
+
+#: ../../source/inspect/index.rst:423
+# 8b9f4d4cd3e4408d81ca4e129b1d010b
+msgid "The function arguments are available through the ``parameters`` attribute of the ``Signature``. ``parameters`` is an ordered dictionary mapping the parameter names to ``Parameter`` instances describing the argument.  In this example, the first argument to the function, ``arg1``, does not have a default value, while ``arg2`` does."
+msgstr ""
+
+#: ../../source/inspect/index.rst:447
+# 78aefb44cc864ab58795d3a75375a4e0
+msgid "The ``Signature`` for a function can be used by decorators or other functions to validate inputs, provide different defaults, etc. Writing a suitably generic and reusable validation decorator has one special challenge, though, because it can be complicated to match up incoming arguments with their names for functions that accept a combination of named and positional arguments. The ``bind()`` and ``bind_partial()`` methods provide the necessary logic to handle the mapping.  They return a ``BoundArguments`` instance populated with the arguments associated with the names of the arguments of a specified function."
+msgstr ""
+
+#: ../../source/inspect/index.rst:0
+# 71349bcf7df54ceab239c603879218a0
+msgid "inspect_signature_bind.py"
+msgstr ""
+
+#: ../../source/inspect/index.rst:462
+# 1c160e22ce354158bf4fdfc017c98a2b
+msgid "The ``BoundArguments`` instance has attributes ``args`` and ``kwargs`` that can be used to call the function using the syntax to expand the tuple and dictionary onto the stack as the arguments."
+msgstr ""
+
+#: ../../source/inspect/index.rst:485
+# 81e72db4402b4a45996b8fd3a9dfcaa7
+msgid "If only some arguments are available, ``bind_partial()`` will still create a ``BoundArguments`` instance. It may not be fully usable until the remaining arguments are added."
+msgstr ""
+
+#: ../../source/inspect/index.rst:0
+# b720e5f60b8e408d9c2b5df805205043
+msgid "inspect_signature_bind_partial.py"
+msgstr ""
+
+#: ../../source/inspect/index.rst:493
+# bbb2af4947a042fe984b545e942bc06c
+msgid "``apply_defaults()`` will add any values from the parameter defaults."
+msgstr ""
+
+#: ../../source/inspect/index.rst:516
+# 6a697a74d1bd4e949eca44fb5427be0b
+msgid "Class Hierarchies"
+msgstr ""
+
+#: ../../source/inspect/index.rst:518
+# 1943c8ff2549480aa7ffdf278b80bc7e
+msgid "``inspect`` includes two methods for working directly with class hierarchies. The first, ``getclasstree()``, creates a tree-like data structure based on the classes it is given and their base classes. Each element in the list returned is either a tuple with a class and its base classes, or another list containing tuples for subclasses."
+msgstr ""
+
+#: ../../source/inspect/index.rst:0
+# 9afe743a619842aaaea4abc04fb82bae
+msgid "inspect_getclasstree.py"
+msgstr ""
+
+#: ../../source/inspect/index.rst:529
+# 31c870157c484fccb5d32ca8301aab1a
+msgid "The output from this example is the tree of inheritance for the ``A``, ``B``, ``C``, and ``D`` classes.  ``D`` appears twice, since it inherits from both ``C`` and ``A``."
+msgstr ""
+
+#: ../../source/inspect/index.rst:551
+# 73c85f3b4adf4b41a68a86d0617b7575
+msgid "If ``getclasstree()`` is called with ``unique`` set to a true value, the output is different."
+msgstr ""
+
+#: ../../source/inspect/index.rst:0
+# 3f80e9a7842c4bffb06d7be30f6a6171
+msgid "inspect_getclasstree_unique.py"
+msgstr ""
+
+#: ../../source/inspect/index.rst:558
+# 0e76a387bdb54aa1a4a08e5155d14d53
+msgid "This time, ``D`` only appears in the output once:"
+msgstr ""
+
+#: ../../source/inspect/index.rst:578
+# 794c61d6d8df40cdb3523b3928090236
+msgid "Method Resolution Order"
+msgstr ""
+
+#: ../../source/inspect/index.rst:580
+# 1d53ebc4f9e84ea7a3e41c1a46b32d4a
+msgid "The other function for working with class hierarchies is ``getmro()``, which returns a ``tuple`` of classes in the order they should be scanned when resolving an attribute that might be inherited from a base class using the *Method Resolution Order* (MRO). Each class in the sequence appears only once."
+msgstr ""
+
+#: ../../source/inspect/index.rst:0
+# aa76f7f9232743c7bfb0f1d38ca599f9
+msgid "inspect_getmro.py"
+msgstr ""
+
+#: ../../source/inspect/index.rst:590
+# 84c3729db39e4f5b9686d5a13f98e149
+msgid "This output demonstrates the \"depth-first\" nature of the MRO search. For ``B_First``, ``A`` also comes before ``C`` in the search order, because ``B`` is derived from ``A``."
+msgstr ""
+
+#: ../../source/inspect/index.rst:620
+# d88ff6b6d8854dbd9a8c82ebb8fd7307
+msgid "The Stack and Frames"
+msgstr ""
+
+#: ../../source/inspect/index.rst:622
+# b665b4f737e74387bc093adc6c950e68
+msgid "In addition to introspection of code objects, ``inspect`` includes functions for inspecting the runtime environment while a program is being executed. Most of these functions work with the call stack, and operate on *call frames*. Frame objects hold the current execution context, including references to the code being run, the operation being executed, as well as the values of local and global variables. Typically such information is used to build tracebacks when exceptions are raised. It can also be useful for logging or when debugging programs, since the stack frames can be interrogated to discover the argument values passed into the functions."
+msgstr ""
+
+#: ../../source/inspect/index.rst:633
+# 13f78dc7a3434469a29ca52e093e0c2e
+msgid "``currentframe()`` returns the frame at the top of the stack (for the current function)."
+msgstr ""
+
+#: ../../source/inspect/index.rst:0
+# 34a29be481194697bdb6a3aab0f52496
+msgid "inspect_currentframe.py"
+msgstr ""
+
+#: ../../source/inspect/index.rst:640
+# 20988b938ae34d97b2eda75471a0c3aa
+msgid "The values of the arguments to ``recurse()`` are included in the frame's dictionary of local variables."
+msgstr ""
+
+#: ../../source/inspect/index.rst:679
+# ee7a7e288a174b5b9804b5621553bc1a
+msgid "Using ``stack()``, it is also possible to access all of the stack frames from the current frame to the first caller. This example is similar to the one shown earlier, except it waits until reaching the end of the recursion to print the stack information."
+msgstr ""
+
+#: ../../source/inspect/index.rst:0
+# 2d740637a59e412ca147dca045bf707c
+msgid "inspect_stack.py"
+msgstr ""
+
+#: ../../source/inspect/index.rst:688
+# 314884a1d46b4d6d8ee4b9db6a05a54f
+msgid "The last part of the output represents the main program, outside of the ``recurse()`` function."
+msgstr ""
+
+#: ../../source/inspect/index.rst:737
+# fbed325bf5ea4d81abf6ed30a7c0c8ea
+msgid "There are other functions for building lists of frames in different contexts, such as when an exception is being processed. See the documentation for ``trace()``, ``getouterframes()``, and ``getinnerframes()`` for more details."
+msgstr ""
+
+#: ../../source/inspect/index.rst:743
+# 6255463e22684e5c8d719590c850e082
+msgid "Command Line Interface"
+msgstr ""
+
+#: ../../source/inspect/index.rst:745
+# a8ddebfd65e64a47aae2cdd5e29f536e
+msgid "The ``inspect`` module also includes a command line interface for getting details about objects without having to write out the calls in a separate Python program. The input is a module name and optional object from within the module.  The default output is the source code for the named object. Using the ``--details`` argument causes metadata to be printed instead of the source."
+msgstr ""
+
+#: ../../source/inspect/index.rst:790
+# b1579247a9d04945927fdccdee5f6743
+msgid ":pydoc:`inspect`"
+msgstr ""
+
+#: ../../source/inspect/index.rst:792
+# 46048b1bd85643e3a4f544be856255a5
+msgid ":ref:`Python 2 to 3 porting notes for inspect <porting-inspect>`"
+msgstr ""
+
+#: ../../source/inspect/index.rst:794
+# b7fc631625bd413293a96c9a0b60e22c
+msgid "`Python 2.3 Method Resolution Order <http://www.python.org/download/releases/2.3/mro/>`__ -- Documentation for the C3 Method Resolution order used by Python 2.3 and later."
+msgstr ""
+
+#: ../../source/inspect/index.rst:799
+# f646a43f5bd549fa89d547e7f14d166f
+msgid ":mod:`pyclbr` -- The ``pyclbr`` module provides access to some of the same information as ``inspect`` by parsing the module without importing it."
+msgstr ""
+
+#: ../../source/inspect/index.rst:803
+# b5eafe8f439a4400bbdc6617bc15d50f
+msgid ":pep:`362` -- Function Signature Object"
+msgstr ""
+

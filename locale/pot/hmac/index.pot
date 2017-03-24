@@ -1,0 +1,183 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/hmac/index.rst:3
+# fa47d8e7da894c12b9b879801f5a8066
+msgid "hmac --- Cryptographic Message Signing and Verification"
+msgstr ""
+
+#: ../../source/hmac/index.rst:9
+# 37dc0976e31247a0845c7561f2ec32f0
+msgid "The hmac module implements keyed-hashing for message authentication, as described in RFC 2104."
+msgstr ""
+
+#: ../../source/hmac/index.rst:12
+# cff4725721594eef840e884b572c9791
+msgid "The HMAC algorithm can be used to verify the integrity of information passed between applications or stored in a potentially vulnerable location. The basic idea is to generate a cryptographic hash of the actual data combined with a shared secret key. The resulting hash can then be used to check the transmitted or stored message to determine a level of trust, without transmitting the secret key."
+msgstr ""
+
+#: ../../source/hmac/index.rst:21
+# 06da54b750af4f999c93de3fbae9d210
+msgid "Disclaimer: I am not a security expert. For the full details on HMAC, check out :rfc:`2104`."
+msgstr ""
+
+#: ../../source/hmac/index.rst:25
+# 8ffeb4efc8414802a6bf10607662889d
+msgid "Signing Messages"
+msgstr ""
+
+#: ../../source/hmac/index.rst:27
+# 11a8629e8eba4ed7ae2a12a5d83d4df2
+msgid "The ``new()`` function creates a new object for calculating a message signature.  This example uses the default MD5 hash algorithm."
+msgstr ""
+
+#: ../../source/hmac/index.rst:0
+# 3894436001a44ebbbdd00c73de194b03
+msgid "hmac_simple.py"
+msgstr ""
+
+#: ../../source/hmac/index.rst:34
+# 26e0ace81ac8436283922b32e26fff1d
+msgid "When run, the code reads a data file and computes an HMAC signature for it."
+msgstr ""
+
+#: ../../source/hmac/index.rst:50
+# c58dc23d23f340daa4d0a58ca946dcbc
+msgid "Alternate Digest Types"
+msgstr ""
+
+#: ../../source/hmac/index.rst:52
+# 84d16a0df34e40efbc38aa4d76b8497d
+msgid "Although the default cryptographic algorithm for ``hmac`` is MD5, that is not the most secure method to use. MD5 hashes have some weaknesses, such as collisions (where two different messages produce the same hash). The SHA-1 algorithm is considered to be stronger, and should be used instead."
+msgstr ""
+
+#: ../../source/hmac/index.rst:0
+# f33eb0cb65ff4c778444321854aa5e9d
+msgid "hmac_sha.py"
+msgstr ""
+
+#: ../../source/hmac/index.rst:62
+# 0af17dec185248ce91e12b7f9a2acb88
+msgid "The ``new()`` function takes three arguments. The first is the secret key, which should be shared between the two endpoints that are communicating so both ends can use the same value. The second value is an initial message. If the message content that needs to be authenticated is small, such as a timestamp or HTTP POST, the entire body of the message can be passed to ``new()`` instead of using the ``update()`` method. The last argument is the digest module to be used. The default is ``hashlib.md5``. This example passes ``'sha1'``, causing ``hmac`` to use ``hashlib.sha1``"
+msgstr ""
+
+#: ../../source/hmac/index.rst:85
+# 073cf277ba1e429bba6a5c04ec49e3db
+msgid "Binary Digests"
+msgstr ""
+
+#: ../../source/hmac/index.rst:87
+# fce59b7587ac4e69a8f1866084473bcb
+msgid "The previous examples used the ``hexdigest()`` method to produce printable digests. The hexdigest is a different representation of the value calculated by the ``digest()`` method, which is a binary value that may include unprintable characters, including ``NUL``.  Some web services (Google checkout, Amazon S3) use the base64 encoded version of the binary digest instead of the hexdigest."
+msgstr ""
+
+#: ../../source/hmac/index.rst:0
+# 49d9b0dbfc624b9e8a5817133b950cb7
+msgid "hmac_base64.py"
+msgstr ""
+
+#: ../../source/hmac/index.rst:98
+# a05889296e1a4de894e2902eb859cbe3
+msgid "The base64 encoded string ends in a newline, which frequently needs to be stripped off when embedding the string in http headers or other formatting-sensitive contexts."
+msgstr ""
+
+#: ../../source/hmac/index.rst:117
+# b1b869c5ac8341b7a3af841d8b4025f0
+msgid "Applications of Message Signatures"
+msgstr ""
+
+#: ../../source/hmac/index.rst:119
+# c6eb353bae3c4ab283cc042adee60e22
+msgid "HMAC authentication should be used for any public network service, and any time data is stored where security is important. For example, when sending data through a pipe or socket, that data should be signed and then the signature should be tested before the data is used. The extended example given here is available in the file ``hmac_pickle.py``."
+msgstr ""
+
+#: ../../source/hmac/index.rst:126
+# 34252f608fe94969bf2aa1dda4a4f7be
+msgid "The first step is to establish a function to calculate a digest for a string, and a simple class to be instantiated and passed through a communication channel."
+msgstr ""
+
+#: ../../source/hmac/index.rst:0
+# c9524b78e62b4a3e9b2104e214980462
+msgid "hmac_pickle.py"
+msgstr ""
+
+#: ../../source/hmac/index.rst:134
+# 20192e085b7b47e2b6b2a98547bf5e25
+msgid "Next, create a :mod:`BytesIO` buffer to represent the socket or pipe. The example uses a naive, but easy to parse, format for the data stream. The digest and length of the data are written, followed by a new line. The serialized representation of the object, generated by :mod:`pickle`, follows. A real system would not want to depend on a length value, since if the digest is wrong the length is probably wrong as well. Some sort of terminator sequence not likely to appear in the real data would be more appropriate."
+msgstr ""
+
+#: ../../source/hmac/index.rst:143
+# a34453fa59a5404d92ede05f1d6acd57
+msgid "The example program then writes two objects to the stream. the first is written using the correct digest value."
+msgstr ""
+
+#: ../../source/hmac/index.rst:149
+# 1c8833fef3f243409badaa6a01a30123
+msgid "The second object is written to the stream with an invalid digest, produced by calculating the digest for some other data instead of the pickle."
+msgstr ""
+
+#: ../../source/hmac/index.rst:156
+# 43f966fdb53d4680ad2851d7e498ee08
+msgid "Now that the data is in the :mod:`BytesIO` buffer, it can be read back out again.  Start by reading the line of data with the digest and data length.  Then read the remaining data, using the length value. ``pickle.load()`` could read directly from the stream, but that assumes a trusted data stream and this data is not yet trusted enough to unpickle it. Reading the pickle as a string from the stream, without actually unpickling the object, is safer."
+msgstr ""
+
+#: ../../source/hmac/index.rst:167
+# 048f937093a148ac87afd8942dacd08c
+msgid "Once the pickled data is in memory, the digest value can be recalculated and compared against the data read using ``compare_digest()``. If the digests match, it is safe to trust the data and unpickle it."
+msgstr ""
+
+#: ../../source/hmac/index.rst:175
+# 99a703df82b149539c96f16a46e9183c
+msgid "The output shows that the first object is verified and the second is deemed \"corrupted\", as expected."
+msgstr ""
+
+#: ../../source/hmac/index.rst:200
+# a2fe41aa7d734eb897671cccae91b6b6
+msgid "Comparing two digests with a simple string or bytes comparison can be used in a timing attack to expose part or all of the secret key by passing digests of different lengths. ``compare_digest()`` implements a fast but constant-time comparison function to protect against timing attacks."
+msgstr ""
+
+#: ../../source/hmac/index.rst:208
+# 3cf0a24c360d4db1b8df0f278fb2afae
+msgid ":pydoc:`hmac`"
+msgstr ""
+
+#: ../../source/hmac/index.rst:210
+# 9dac2672d2394101a6cb187bb39d7f34
+msgid ":rfc:`2104` -- HMAC: Keyed-Hashing for Message Authentication"
+msgstr ""
+
+#: ../../source/hmac/index.rst:212
+# a8afc9d694cb4173b44b8235cd7b06ea
+msgid ":mod:`hashlib` -- The ``hashlib`` module provides MD5 and SHA1 hash generators."
+msgstr ""
+
+#: ../../source/hmac/index.rst:215
+# cb0ae7b4af57401bab4e9fb540ebce38
+msgid ":mod:`pickle` -- Serialization library."
+msgstr ""
+
+#: ../../source/hmac/index.rst:217
+# f99c968ccbe6472dacef71087e4a0b26
+msgid "`WikiPedia: MD5 <https://en.wikipedia.org/wiki/MD5>`_ -- Description of the MD5 hashing algorithm."
+msgstr ""
+
+#: ../../source/hmac/index.rst:220
+# e57c059e249841ddb277c2d400503063
+msgid "`Signing and Authenticating REST Requests (Amazon AWS) <http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html>`__ -- Instructions for authenticating to S3 using HMAC-SHA1 signed credentials."
+msgstr ""
+

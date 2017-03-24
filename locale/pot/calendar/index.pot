@@ -1,0 +1,183 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/calendar/index.rst:3
+# 578d503aa98745dfa8f529cb2130f133
+msgid "calendar --- Work with Dates"
+msgstr ""
+
+#: ../../source/calendar/index.rst:8
+# 312fc2d5c7fb4e9180679ea3fcbf43c1
+msgid "The calendar module implements classes for working with dates to manage year/month/week oriented values."
+msgstr ""
+
+#: ../../source/calendar/index.rst:11
+# d4104cfe992d44b3a69c5ad14fc8a5f4
+msgid "The ``calendar`` module defines the ``Calendar`` class, which encapsulates calculations for values such as the dates of the weeks in a given month or year. In addition, the ``TextCalendar`` and ``HTMLCalendar`` classes can produce pre-formatted output."
+msgstr ""
+
+#: ../../source/calendar/index.rst:17
+# e3f76c3be811419784624174cf6bce54
+msgid "Formatting Examples"
+msgstr ""
+
+#: ../../source/calendar/index.rst:19
+# 3a1bff2fcd7343c39b40fbe7d6684b63
+msgid "The ``prmonth()`` method is a simple function that produces the formatted text output for a month."
+msgstr ""
+
+#: ../../source/calendar/index.rst:0
+# b1b183f32cfd4a0985bbcfa54ed49daf
+msgid "calendar_textcalendar.py"
+msgstr ""
+
+#: ../../source/calendar/index.rst:26
+# cb420d41c39b43bb829f364f824a1284
+msgid "The example configures ``TextCalendar`` to start weeks on Sunday, following the American convention. The default is to use the European convention of starting a week on Monday."
+msgstr ""
+
+#: ../../source/calendar/index.rst:30
+# ed9477f2a2484ca0b29a632175a69dae
+msgid "The output looks like:"
+msgstr ""
+
+#: ../../source/calendar/index.rst:52
+# 9599096e5ac8492781ef3ff906827928
+msgid "A similar HTML table can be produced with ``HTMLCalendar`` and ``formatmonth()``.  The rendered output looks roughly the same as the plain text version, but is wrapped with HTML tags.  Each table cell has a class attribute corresponding to the day of the week, so the HTML can be styled through CSS."
+msgstr ""
+
+#: ../../source/calendar/index.rst:58
+# 0436530b85604667a37b1980170fa799
+msgid "To produce output in a format other than one of the available defaults, use ``calendar`` to calculate the dates and organize the values into week and month ranges, then iterate over the result.  The ``weekheader()``, ``monthcalendar()``, and ``yeardays2calendar()`` methods of ``Calendar`` are especially useful for that."
+msgstr ""
+
+#: ../../source/calendar/index.rst:65
+# 49665df6d4ca40cebcdfded03bfec712
+msgid "Calling ``yeardays2calendar()`` produces a sequence of \"month row\" lists. Each list includes the months as another list of weeks. The weeks are lists of tuples made up of day number (1-31) and weekday number (0-6). Days that fall outside of the month have a day number of 0."
+msgstr ""
+
+#: ../../source/calendar/index.rst:0
+# 2517845ad3b6490591a02eee9deb99ca
+msgid "calendar_yeardays2calendar.py"
+msgstr ""
+
+#: ../../source/calendar/index.rst:75
+# 96de4993c41c491c8b4040db12a2eb9b
+msgid "Calling ``yeardays2calendar(2017, 3)`` returns data for 2017, organized with three months per row."
+msgstr ""
+
+#: ../../source/calendar/index.rst:100
+# 72bc5e3c9ca34137965e03de075b99c2
+msgid "This is equivalent to the data used by ``formatyear()``."
+msgstr ""
+
+#: ../../source/calendar/index.rst:0
+# 098f9e22331b44ba99c89ec27facd5fe
+msgid "calendar_formatyear.py"
+msgstr ""
+
+#: ../../source/calendar/index.rst:106
+# cb67e2b810494c90827cb37a9f22937d
+msgid "For the same arguments, ``formatyear()`` produces this output:"
+msgstr ""
+
+#: ../../source/calendar/index.rst:156
+# f5ef8b2e019e43f4984921421840f435
+msgid "The ``day_name``, ``day_abbr``, ``month_name``, and ``month_abbr`` module attributes useful for producing custom formatted output (i.e., to include links in the HTML output). They are automatically configured correctly for the current locale."
+msgstr ""
+
+#: ../../source/calendar/index.rst:162
+# 7629f961d010467397e436937e0a87a5
+msgid "Locales"
+msgstr ""
+
+#: ../../source/calendar/index.rst:164
+# 3f997aa9a7bc4201a00e86e56aed6178
+msgid "To produce a calendar formatted for a locale other than the current default, use ``LocaleTextCalendar`` or ``LocaleHTMLCalendar``."
+msgstr ""
+
+#: ../../source/calendar/index.rst:0
+# 3eeb6a3b3c0a40d0b449ae0e2b95a492
+msgid "calendar_locale.py"
+msgstr ""
+
+#: ../../source/calendar/index.rst:172
+# 0411fc4cdbaf4f9aa877a5fe0ff565aa
+msgid "The first day of the week is not part of the locale settings, and the value is taken from the argument to the calendar class just as with the regular ``TextCalendar``."
+msgstr ""
+
+#: ../../source/calendar/index.rst:208
+# d515d74438a5465393e547512863af7c
+msgid "Calculating Dates"
+msgstr ""
+
+#: ../../source/calendar/index.rst:210
+# 8991c5b217e3466982c605a5117638eb
+msgid "Although the calendar module focuses mostly on printing full calendars in various formats, it also provides functions useful for working with dates in other ways, such as calculating dates for a recurring event. For example, the Python Atlanta User's Group meets on the second Thursday of every month. To calculate the dates for the meetings for a year, use the return value of ``monthcalendar()``."
+msgstr ""
+
+#: ../../source/calendar/index.rst:0
+# 5acb3be56ee146f8be1d12d15de8c66a
+msgid "calendar_monthcalendar.py"
+msgstr ""
+
+#: ../../source/calendar/index.rst:221
+# 579c20e8194f4ffb82b59d91151df9a5
+msgid "Some days have a 0 value. Those are days of the week that overlap with the given month, but that are part of another month."
+msgstr ""
+
+#: ../../source/calendar/index.rst:242
+# 97f2dcf922ca41fd8f9c1cf50db2e4c6
+msgid "The first day of the week defaults to Monday. It is possible to change that by calling ``setfirstweekday()``, but since the calendar module includes constants for indexing into the date ranges returned by ``monthcalendar()``, it is more convenient to skip that step in this case."
+msgstr ""
+
+#: ../../source/calendar/index.rst:248
+# 034f50f0a78c4b179e75a3ccedfc73a1
+msgid "To calculate the group meeting dates for a year, assuming they are always on the second Thursday of every month, look at the output of ``monthcalendar()`` to find the dates on which Thursdays fall. The first and last week of the month are padded with 0 values as placeholders for the days falling in the preceding or subsequent month. For example, if a month starts on a Friday, the value in the first week in the Thursday position will be 0."
+msgstr ""
+
+#: ../../source/calendar/index.rst:0
+# 133cce1c7553419e8679e5ad1c096c9f
+msgid "calendar_secondthursday.py"
+msgstr ""
+
+#: ../../source/calendar/index.rst:260
+# bda1db8ad5de4549a1cbae2515417d1e
+msgid "So the meeting schedule for the year is:"
+msgstr ""
+
+#: ../../source/calendar/index.rst:288
+# 405d4d1394ad4cbfa91416a96d50443a
+msgid ":pydoc:`calendar`"
+msgstr ""
+
+#: ../../source/calendar/index.rst:290
+# 0de8118632f949aca3a8480a2514db79
+msgid ":mod:`time` -- Lower-level time functions."
+msgstr ""
+
+#: ../../source/calendar/index.rst:292
+# d0d5f8d610434d2facd4b021eb6c1829
+msgid ":mod:`datetime` -- Manipulate date values, including timestamps and time zones."
+msgstr ""
+
+#: ../../source/calendar/index.rst:295
+# a47b2a00388743fda9c61e3f9bb2913a
+msgid ":mod:`locale` -- Locale settings."
+msgstr ""
+

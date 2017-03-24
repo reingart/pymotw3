@@ -1,0 +1,133 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/statistics/index.rst:3
+# 3e2a2d30488546669e3b53dabaff9e56
+msgid "statistics --- Statistical Calculations"
+msgstr ""
+
+#: ../../source/statistics/index.rst:8
+# 34ea68715e8e45988b63704548b4588d
+msgid "Implementations of common statistical calculations."
+msgstr ""
+
+#: ../../source/statistics/index.rst:10
+# 96c9ec96d51c4b5e80a4c5b880eff069
+msgid "The ``statistics`` module implements many common statistical formulas for efficient calculations using Python's various numerical types (``int``, ``float``, ``Decimal``, and ``Fraction``)."
+msgstr ""
+
+#: ../../source/statistics/index.rst:16
+# 7a98712a3df14a5997c76d73f2954a2b
+msgid "Averages"
+msgstr ""
+
+#: ../../source/statistics/index.rst:18
+# d891fe1a46814ee392b5a006fe275f3f
+msgid "There are three forms of averages supported, the mean, the median, and the mode. Calculate the arithmetic mean with ``mean()``."
+msgstr ""
+
+#: ../../source/statistics/index.rst:0
+# d82959acb9bb4fae8ea874e07fcd7cde
+msgid "statistics_mean.py"
+msgstr ""
+
+#: ../../source/statistics/index.rst:25
+# 6c3c3860dad245a08d40de7941cec655
+msgid "The return value for integers and floats is always a ``float``. For ``Decimal`` and ``Fraction`` input data, the result is of the same type as the inputs."
+msgstr ""
+
+#: ../../source/statistics/index.rst:41
+# b9ba3a9f0fdc439cbb2e0ee2d41ddaa1
+msgid "Calculate the most common data point in a data set using ``mode()``."
+msgstr ""
+
+#: ../../source/statistics/index.rst:0
+# 1e4e1a34655241bcbf21d854412df736
+msgid "statistics_mode.py"
+msgstr ""
+
+#: ../../source/statistics/index.rst:47
+# 7c163a365adf473fbbea5f298ffa33f3
+msgid "The return value is always a member of the input data set. Because ``mode()`` treats the input as a set of discrete values, and counts the recurrences, the inputs do not actually need to be numerical values."
+msgstr ""
+
+#: ../../source/statistics/index.rst:64
+# 53db83bc7d044e019b73af51a2ff6331
+msgid "There are four variations for calculating the median, or middle, value. The first three are straightforward versions of the usual algorithm, with different solutions for handling data sets with an even number of elements."
+msgstr ""
+
+#: ../../source/statistics/index.rst:0
+# 6eec2426fc2746e49f9f4fb701b6b2b2
+msgid "statistics_median.py"
+msgstr ""
+
+#: ../../source/statistics/index.rst:73
+# d6b6e54f77654e8fa90f3011c80fec54
+msgid "``median()`` finds the center value, and if the data set has an even number of values it averages the two middle items. ``median_low()`` always returns a value from the input data set, using the lower of the two middle items for data sets with an even number of items. ``median_high()`` similarly returns the higher of the two middle items."
+msgstr ""
+
+#: ../../source/statistics/index.rst:94
+# 86a39e5baf0945cfb08130a83ff1166d
+msgid "The fourth version of the median calculation, ``median_grouped()``, treats the inputs as continuous data and calculates the 50% percentile median by first finding the median range using the provided interval width and then interpolating within that range using the position of the actual value(s) from the data set that fall in that range."
+msgstr ""
+
+#: ../../source/statistics/index.rst:0
+# d045603cb4a748718f5139b446daa732
+msgid "statistics_median_grouped.py"
+msgstr ""
+
+#: ../../source/statistics/index.rst:104
+# edf936b5d2db493ab90abba0ee3bf6fd
+msgid "As the interval width increases, the median computed for the same data set changes."
+msgstr ""
+
+#: ../../source/statistics/index.rst:122
+# 737c298a8dd64ca0be1d4ee0eca8ff4a
+msgid "Variance"
+msgstr ""
+
+#: ../../source/statistics/index.rst:124
+# fc7c767256de4eb5b15131d2b7402f02
+msgid "Statistics uses two values to express how disperse a set of values is relative to the mean. The *variance* is the average of the square of the difference of each value and the mean, and the *standard deviation* is the square root of the variance (which is useful because taking the square root allows the standard deviation to be expressed in the same units as the input data). Large values for variance or standard deviation indicate that a set of data is disperse, while small values indicate that the data is clustered closer to the mean."
+msgstr ""
+
+#: ../../source/statistics/index.rst:0
+# 6e9758c7f14c4e72978848660e20bce1
+msgid "statistics_variance.py"
+msgstr ""
+
+#: ../../source/statistics/index.rst:137
+# 14ba2b925ede467a926835dd6f68b78e
+msgid "Python includes two sets of functions for computing variance and standard deviation, depending on whether the data set represents the entire population or a sample of the population.  This example uses ``wc`` to count the number of lines in the input files for all of the example programs and then uses ``pvariance()`` and ``pstdev()`` to compute the variance and standard deviation for the entire population before using ``variance()`` and ``stddev()`` to compute the sample variance and standard deviation for a subset created by using the length of every second file found."
+msgstr ""
+
+#: ../../source/statistics/index.rst:174
+# 2ef7ab60e9b049aa9ad5779481f880c5
+msgid ":pydoc:`statistics`"
+msgstr ""
+
+#: ../../source/statistics/index.rst:176
+# d920bbf800bf4afa8ad554d8740ba46e
+msgid "`mathtips.com: Median for Discrete and Continuous Frequency Type Data (grouped data) <http://www.mathstips.com/statistics/median-for-discrete-and-continuous-frequency-type.html>`__ -- Discussion of median for continuous data"
+msgstr ""
+
+#: ../../source/statistics/index.rst:181
+# 70f3f60e90014c78bf1bc90f7c4fa346
+msgid ":pep:`450` -- Adding A Statistics Module To The Standard Library"
+msgstr ""
+

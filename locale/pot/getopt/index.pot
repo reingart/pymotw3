@@ -1,0 +1,213 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/getopt/index.rst:3
+# 4d9965861e204801a39a4b0de0a10f63
+msgid "getopt --- Command Line Option Parsing"
+msgstr ""
+
+#: ../../source/getopt/index.rst:8
+# 57cf88179bf148ffa8d73dc3bc7ba75d
+msgid "Command line option parsing"
+msgstr ""
+
+#: ../../source/getopt/index.rst:10
+# eed35cc3b5734759bddd79c46ec3b565
+msgid "The ``getopt`` module is the original command line option parser that supports the conventions established by the Unix function ``getopt``. It parses an argument sequence, such as ``sys.argv`` and returns a sequence of tuples containing (option, argument) pairs and a sequence of non-option arguments."
+msgstr ""
+
+#: ../../source/getopt/index.rst:16
+# 60fc057af3b34f129d04534c9270c513
+msgid "Supported option syntax includes short and long form options:"
+msgstr ""
+
+#: ../../source/getopt/index.rst:29
+# c8004009a1324bfcb6bd7dcfbf26c09a
+msgid "``getopt`` is not deprecated, but :mod:`argparse` is more actively maintained and should be used for new development."
+msgstr ""
+
+#: ../../source/getopt/index.rst:33
+# 5aca9f52402044188d94d2b6934d42b6
+msgid "Function Arguments"
+msgstr ""
+
+#: ../../source/getopt/index.rst:35
+# 2e4d020133094ff4aedce8a6b2c6bad0
+msgid "The ``getopt()`` function takes three arguments:"
+msgstr ""
+
+#: ../../source/getopt/index.rst:37
+# 39c8e198820f43f2b464111688c54176
+msgid "The first parameter is the sequence of arguments to be parsed. This usually comes from ``sys.argv[1:]`` (ignoring the program name in ``sys.arg[0]``)."
+msgstr ""
+
+#: ../../source/getopt/index.rst:41
+# f2e9cd8edd7c4488b4909357cba495f8
+msgid "The second argument is the option definition string for single character options. If one of the options requires an argument, its letter is followed by a colon."
+msgstr ""
+
+#: ../../source/getopt/index.rst:45
+# ad291e05e4cb4463bb4411d5207ead3c
+msgid "The third argument, if used, should be a sequence of the long-style option names. Long style options can be more than a single character, such as ``--noarg`` or ``--witharg``. The option names in the sequence should not include the \"``--``\" prefix. If any long option requires an argument, its name should have a suffix of \"``=``\"."
+msgstr ""
+
+#: ../../source/getopt/index.rst:51
+# 80f6dce89f4b41f79b3d9987a72478c3
+msgid "Short and long form options can be combined in a single call."
+msgstr ""
+
+#: ../../source/getopt/index.rst:54
+# 8248a25bce8448f88e639030cb1dd1c8
+msgid "Short Form Options"
+msgstr ""
+
+#: ../../source/getopt/index.rst:56
+# 8b0dd1f749b14ecd8ecdd800c2b0534d
+msgid "This example program accepts three options.  The ``-a`` is a simple flag, while ``-b`` and ``-c`` require an argument.  The option definition string is ``\"ab:c:\"``."
+msgstr ""
+
+#: ../../source/getopt/index.rst:0
+# 6900d45de948457a914bb6b8fabd9acb
+msgid "getopt_short.py"
+msgstr ""
+
+#: ../../source/getopt/index.rst:64
+# 55d91e2cd1a948a6857d5b35b79f7e2b
+msgid "The program passes a list of simulated option values to ``getopt()`` to show the way they are processed."
+msgstr ""
+
+#: ../../source/getopt/index.rst:83
+# 1168cd0635194876a1e361f722e8ffa0
+msgid "Long Form Options"
+msgstr ""
+
+#: ../../source/getopt/index.rst:85
+# 377a692fea074cf496826373958748e7
+msgid "For a program that takes two options, ``--noarg`` and ``--witharg``, the long-argument sequence should be ``[ 'noarg', 'witharg=' ]``."
+msgstr ""
+
+#: ../../source/getopt/index.rst:0
+# 53eb5ae1a24840a496205dcb0903ae8c
+msgid "getopt_long.py"
+msgstr ""
+
+#: ../../source/getopt/index.rst:92
+# 6b1a7be32f3a420fb0fe9de4ad7626d2
+msgid "Since this sample program does not take any short form options, the second argument to ``getopt()`` is an empty string."
+msgstr ""
+
+#: ../../source/getopt/index.rst:111
+# ea50233cf34d44d1a5fd7a121ec5c24e
+msgid "A Complete Example"
+msgstr ""
+
+#: ../../source/getopt/index.rst:113
+# 0b9120340ace43179c58641357bd2307
+msgid "This example is a more complete program that takes five options: ``-o``, ``-v``, ``--output``, ``--verbose``, and ``--version``. The ``-o``, ``--output``, and ``--version`` options each require an argument."
+msgstr ""
+
+#: ../../source/getopt/index.rst:0
+# ceafc5ca54f04a0c8960c8edb56412bd
+msgid "getopt_example.py"
+msgstr ""
+
+#: ../../source/getopt/index.rst:122
+# d488d3c5a0fa4339ab3c7ef4b4e003aa
+msgid "The program can be called in a variety of ways.  When it is called without any arguments at all, the default settings are used."
+msgstr ""
+
+#: ../../source/getopt/index.rst:142
+# bd4387d99eb545f4820093cccec37b0d
+msgid "A single letter option can be a separated from its argument by whitespace."
+msgstr ""
+
+#: ../../source/getopt/index.rst:162
+# 2d5e084116be4522865340349af39cdf
+msgid "Or the option and value can be combined into a single argument."
+msgstr ""
+
+#: ../../source/getopt/index.rst:181
+# 7a8322f0d32a40ceba3e33f3823ac0ba
+msgid "A long form option can similarly be separate from the value."
+msgstr ""
+
+#: ../../source/getopt/index.rst:200
+# fba35076cb434f25bb596c41e18ffc54
+msgid "When a long option is combined with its value, the option name and value should be separated by a single ``=``."
+msgstr ""
+
+#: ../../source/getopt/index.rst:222
+# 9061da7fad634c9f897057c2e17b8f75
+msgid "Abbreviating Long Form Options"
+msgstr ""
+
+#: ../../source/getopt/index.rst:224
+# 46dfa1becd0b4bec8377b6071d391174
+msgid "The long form option does not have to be spelled out entirely on the command line, as long as a unique prefix is provided."
+msgstr ""
+
+#: ../../source/getopt/index.rst:244
+# 58fb115dde9e4f5092300c948b8733e8
+msgid "If a unique prefix is not provided, an exception is raised."
+msgstr ""
+
+#: ../../source/getopt/index.rst:261
+# 8685285f1ee4468bb75d5b65aac5591c
+msgid "GNU-style Option Parsing"
+msgstr ""
+
+#: ../../source/getopt/index.rst:263
+# e1e0ce9acac24935b33ed83d67fce89a
+msgid "Normally, option processing stops as soon as the first non-option argument is encountered."
+msgstr ""
+
+#: ../../source/getopt/index.rst:283
+# 4d4f1be0dc1f4105bc2519472c234467
+msgid "To mix option and non-option arguments on the command line in any order, use ``gnu_getopt()`` instead."
+msgstr ""
+
+#: ../../source/getopt/index.rst:0
+# cddecd85526d436dad258d3d691a515d
+msgid "getopt_gnu.py"
+msgstr ""
+
+#: ../../source/getopt/index.rst:290
+# 119e3f6ab68e4d058bf4c5f790404669
+msgid "After changing the call in the previous example, the difference becomes clear."
+msgstr ""
+
+#: ../../source/getopt/index.rst:312
+# 62a77c1b585f4fcba39164fee0327b0e
+msgid "Ending Argument Processing"
+msgstr ""
+
+#: ../../source/getopt/index.rst:314
+# c303ff2f18a2445c91f26f000628b4c8
+msgid "If ``getopt()`` encounters \"``--``\" in the input arguments, it stops processing the remaining arguments as options.  This feature can be used to pass argument values that look like options, such as filenames that start with a dash (\"``-``\")."
+msgstr ""
+
+#: ../../source/getopt/index.rst:338
+# 4f7a8a18ee104735b4d014bcf2d8c552
+msgid ":pydoc:`getopt`"
+msgstr ""
+
+#: ../../source/getopt/index.rst:340
+# e03a4ec64ab044c7a5c8c66ad36bf262
+msgid ":mod:`argparse` -- The ``argparse`` module replaces ``getopt`` for newer applications."
+msgstr ""
+

@@ -1,0 +1,173 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/glob/index.rst:3
+# d0e6b9ace0e445a681a209d97350b380
+msgid "glob --- Filename Pattern Matching"
+msgstr ""
+
+#: ../../source/glob/index.rst:8
+# 1a31c1de84474ce2af674f8b4c908603
+msgid "Use Unix shell rules to find filenames matching a pattern."
+msgstr ""
+
+#: ../../source/glob/index.rst:10
+# 19ae8031a24a4ff0826824cca2490957
+msgid "Even though the ``glob`` API is small, the module packs a lot of power. It is useful in any situation where a program needs to look for a list of files on the file system with names matching a pattern. To create a list of filenames that all have a certain extension, prefix, or any common string in the middle, use ``glob`` instead of writing custom code to scan the directory contents."
+msgstr ""
+
+#: ../../source/glob/index.rst:17
+# 8eb7c351c19f40f9ac9200feebedef54
+msgid "The pattern rules for ``glob`` are not the same as the regular expressions used by the :mod:`re` module. Instead, they follow standard Unix path expansion rules. There are only a few special characters used to implement two different wild-cards and character ranges. The pattern rules are applied to segments of the filename (stopping at the path separator, ``/``). Paths in the pattern can be relative or absolute. Shell variable names and tilde (``~``) are not expanded."
+msgstr ""
+
+#: ../../source/glob/index.rst:27
+# cdf25b1645454dd7be09c423875944a7
+msgid "Example Data"
+msgstr ""
+
+#: ../../source/glob/index.rst:29
+# 1d8d667f5d5a4a5fb639047a8fab5b7f
+msgid "The examples in this section assume the following test files are present in the current working directory."
+msgstr ""
+
+#: ../../source/glob/index.rst:57
+# 22ccfa54aabb4df8a4d55622a2107d09
+msgid "If these files do not exist, use ``glob_maketestdata.py`` in the sample code to create them before running the following examples."
+msgstr ""
+
+#: ../../source/glob/index.rst:61
+# dce906da9f1c428eb7479b6c8ddfa663
+msgid "Wildcards"
+msgstr ""
+
+#: ../../source/glob/index.rst:63
+# 9a061342ad894bccb921b4298ed1b190
+msgid "An asterisk (``*``) matches zero or more characters in a segment of a name. For example, ``dir/*``."
+msgstr ""
+
+#: ../../source/glob/index.rst:0
+# 75ca79cf3ae44d708860e469a8994cbf
+msgid "glob_asterisk.py"
+msgstr ""
+
+#: ../../source/glob/index.rst:70
+# 5e7446614160434fa6825fd661c4d86e
+msgid "The pattern matches every path name (file or directory) in the directory dir, without recursing further into subdirectories. The data returned by ``glob()`` is not sorted, so the examples here sort it to make studying the results easier."
+msgstr ""
+
+#: ../../source/glob/index.rst:95
+# fc50f5e3b4ad418689a9d1687603cf58
+msgid "To list files in a subdirectory, the subdirectory must be included in the pattern."
+msgstr ""
+
+#: ../../source/glob/index.rst:0
+# e7101cbc97404347a486fb87e8394a1a
+msgid "glob_subdir.py"
+msgstr ""
+
+#: ../../source/glob/index.rst:102
+# d3d5cb96cfe84448bf999315e33f2711
+msgid "The first case shown earlier lists the subdirectory name explicitly, while the second case depends on a wildcard to find the directory."
+msgstr ""
+
+#: ../../source/glob/index.rst:120
+# 64f39972b6d64423bb564e752b296a5e
+msgid "The results, in this case, are the same. If there was another subdirectory, the wildcard would match both subdirectories and include the filenames from both."
+msgstr ""
+
+#: ../../source/glob/index.rst:125
+# 14b03cb410fe475f8282c9e8357df9ba
+msgid "Single Character Wildcard"
+msgstr ""
+
+#: ../../source/glob/index.rst:127
+# e022afcb10964423b60b52196824a2d3
+msgid "A question mark (``?``) is another wildcard character. It matches any single character in that position in the name."
+msgstr ""
+
+#: ../../source/glob/index.rst:0
+# c48b201248ff446ea0576c95e30bb825
+msgid "glob_question.py"
+msgstr ""
+
+#: ../../source/glob/index.rst:134
+# fc1c1d5b519a4e2a944e3fea449a9da8
+msgid "The previous example matches all of the filenames that begin with ``file``, have one more character of any type, then end with ``.txt``."
+msgstr ""
+
+#: ../../source/glob/index.rst:157
+# 17f722976b3e4317b9b83c8f6b974a62
+msgid "Character Ranges"
+msgstr ""
+
+#: ../../source/glob/index.rst:159
+# 60729904774a4d35a62ac374e9dc2f1d
+msgid "Use a character range (``[a-z]``) instead of a question mark to match one of several characters.  This example finds all of the files with a digit in the name before the extension."
+msgstr ""
+
+#: ../../source/glob/index.rst:0
+# 45612170c0e641b9b3bae6cfad7b24c3
+msgid "glob_charrange.py"
+msgstr ""
+
+#: ../../source/glob/index.rst:167
+# 7dd8e32a869247aa865267bcad161412
+msgid "The character range ``[0-9]`` matches any single digit. The range is ordered based on the character code for each letter/digit, and the dash indicates an unbroken range of sequential characters. The same range value could be written ``[0123456789]``."
+msgstr ""
+
+#: ../../source/glob/index.rst:186
+# 68ba1ffcdf79475d8b45e1fa5e7d224e
+msgid "Escaping Meta-characters"
+msgstr ""
+
+#: ../../source/glob/index.rst:188
+# 551a832d9ad044c09025d0acd007117b
+msgid "Sometimes it is necessary to search for files with names containing the special meta-characters ``glob`` uses for its patterns. The ``escape()`` function builds a suitable pattern with the special characters \"escaped\" so they are not expanded or interpreted as special by ``glob``."
+msgstr ""
+
+#: ../../source/glob/index.rst:0
+# 19a2160564824506a45104aecfbffc13
+msgid "glob_escape.py"
+msgstr ""
+
+#: ../../source/glob/index.rst:198
+# 3129060e69e94432a35277d34dec63c5
+msgid "Each special character is escaped by building a character range containing a single entry."
+msgstr ""
+
+#: ../../source/glob/index.rst:225
+# 8269172eabac462d85ed82abdf6c7543
+msgid ":pydoc:`glob`"
+msgstr ""
+
+#: ../../source/glob/index.rst:227
+# 6c2ed6f017ca4632b14f924623ec1fff
+msgid "`Pattern Matching Notation <http://www.opengroup.org/onlinepubs/000095399/utilities/xcu_chap02.html#tag_02_13>`_ -- An explanation of globbing from The Open Group's Shell Command Language specification."
+msgstr ""
+
+#: ../../source/glob/index.rst:232
+# 0a9bcb05a41d4f54bc6b8d6f3c36d3ae
+msgid ":mod:`fnmatch` -- Filename matching implementation."
+msgstr ""
+
+#: ../../source/glob/index.rst:234
+# be71bbe87e3d4178a1e22e28f9eb3806
+msgid ":ref:`Python 2 to 3 porting notes for glob <porting-glob>`"
+msgstr ""
+

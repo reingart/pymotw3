@@ -1,0 +1,43 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/importing.rst:3
+# 571900b0324749cd9c3474f340df3990
+msgid "Modules and Packages"
+msgstr ""
+
+#: ../../source/importing.rst:5
+# 8b83c6ce096646c4a823331ea7df08e1
+msgid "Python's primary extension mechanism uses source code saved to modules and incorporated into a program through the ``import`` statement.  The features that most developers think of as \"Python\" are actually implemented as the collection of modules called the Standard Library, the subject of this book.  Although the import feature is built into the interpreter itself, there are several modules in the library related to the import process."
+msgstr ""
+
+#: ../../source/importing.rst:13
+# 1b9bb3c22a6840e98b6832000ae514c9
+msgid "The :mod:`importlib` module exposes the underlying implementation of the import mechanism used by the interpreter.  It can be used to import modules dynamically at runtime, instead of using the ``import`` statement to load them during start-up.  Dynamically loading modules is useful when the name of a module that needs to be imported is not known in advance, such as for plugins or extensions to an application."
+msgstr ""
+
+#: ../../source/importing.rst:21
+# 531e4e419b194c1e9945f3f93ec2a1ed
+msgid "Python packages can include supporting resource files such as templates, default configuration files, images, and other data along with source code.  The interface for accessing resource files in a portable way is implemented in the :mod:`pkgutil` module.  It also includes support for modifying the import path for a package, so that the contents can be installed into multiple directories but appear as part of the same package."
+msgstr ""
+
+#: ../../source/importing.rst:29
+# 1455f835f7544d648a70e08cdd4ea704
+msgid ":mod:`zipimport` provides a custom importer for modules and packages saved to ZIP archives.  It is used to load Python EGG files, for example, and can also be used as a convenient way to package and distribute an application."
+msgstr ""
+

@@ -1,0 +1,528 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/subprocess/index.rst:3
+# f6d331b650a544aea2795df0e36e03d3
+msgid "subprocess --- Spawning Additional Processes"
+msgstr ""
+
+#: ../../source/subprocess/index.rst:8
+# f0db1354074142218c7afcbd5e35f751
+msgid "Start and communicate with additional processes."
+msgstr ""
+
+#: ../../source/subprocess/index.rst:10
+# d3e94592b9464209b0f9a8cfd3072da4
+msgid "The ``subprocess`` module supports three APIs for working with processes. The ``run()`` function, added in Python 3.5, is a high-level API for running a process and optionally collecting its output. The functions ``call()``, ``check_call()``, and ``check_output()`` are the former high-level API, carried over from Python 2. They are still supported and widely used in existing programs. The class ``Popen`` is a low-level API used to build the other APIs and useful for more complex process interactions. The constructor for ``Popen`` takes arguments to set up the new process so the parent can communicate with it via pipes.  It provides all of the functionality of the other modules and functions it replaces, and more. The API is consistent for all uses, and many of the extra steps of overhead needed (such as closing extra file descriptors and ensuring the pipes are closed) are \"built in\" instead of being handled by the application code separately."
+msgstr ""
+
+#: ../../source/subprocess/index.rst:26
+# 17ad6fcb1d42478399332d73e5a750ca
+msgid "The ``subprocess`` module is intended to replace functions such as ``os.system()``, ``os.spawnv()``, the variations of ``popen()`` in the :mod:`os` and :mod:`popen2` modules, as well as the ``commands()`` module. To make it easier to compare ``subprocess`` with those other modules, many of the examples in this section re-create the ones used for :mod:`os` and :mod:`popen2`."
+msgstr ""
+
+#: ../../source/subprocess/index.rst:35
+# 004435881c2b4a46bd0a6472f2d1c808
+msgid "The API for working on Unix and Windows is roughly the same, but the underlying implementation is different because of the difference in process models in the operating systems.  All of the examples shown here were tested on Mac OS X. Behavior on a non-Unix OS may vary."
+msgstr ""
+
+#: ../../source/subprocess/index.rst:42
+# d7bbd8df065a41ff8c8642434cfbc453
+msgid "Running External Command"
+msgstr ""
+
+#: ../../source/subprocess/index.rst:44
+# 5fe2bf4f61804f04a0cc5a129b04f155
+msgid "To run an external command without interacting with it in the same way as ``os.system()``, use the ``run()`` function."
+msgstr ""
+
+#: ../../source/subprocess/index.rst:0
+# 9763506e1d204342a426106be2ab3532
+msgid "subprocess_os_system.py"
+msgstr ""
+
+#: ../../source/subprocess/index.rst:51
+# 30cd9f6dd75f480eb5d2c22068a16db3
+msgid "The command line arguments are passed as a list of strings, which avoids the need for escaping quotes or other special characters that might be interpreted by the shell. ``run()`` returns a ``CompletedProcess`` instance, with information about the process like the exit code and output."
+msgstr ""
+
+#: ../../source/subprocess/index.rst:91
+# 7d9dc230fcac4e4db1fcd4c49619b350
+msgid "Setting the ``shell`` argument to a true value causes ``subprocess`` to spawn an intermediate shell process which then runs the command.  The default is to run the command directly."
+msgstr ""
+
+#: ../../source/subprocess/index.rst:0
+# c8b2f5ee693941e5a675f7fe372cd7d2
+msgid "subprocess_shell_variables.py"
+msgstr ""
+
+#: ../../source/subprocess/index.rst:99
+# 77bbd69209134cdc87ee9dec876e2157
+msgid "Using an intermediate shell means that variables, glob patterns, and other special shell features in the command string are processed before the command is run."
+msgstr ""
+
+#: ../../source/subprocess/index.rst:118
+# 3f32c9c6a9a14ae184b170d0b6e63cb7
+msgid "Using ``run()`` without passing ``check=True`` is equivalent to using ``call()``, which only returned the exit code from the process."
+msgstr ""
+
+#: ../../source/subprocess/index.rst:123
+# ecfde54a73704ffaa9a7ae0f7c95c897
+msgid "Error Handling"
+msgstr ""
+
+#: ../../source/subprocess/index.rst:125
+# 043f78b69f534cc5a2a7ea465b8ef1ee
+msgid "The ``returncode`` attribute of the ``CompletedProcess`` is the exit code of the program.  The caller is responsible for interpreting it to detect errors.  If the ``check`` argument to ``run()`` is ``True``, the exit code is checked and if it indicates an error happened then a ``CalledProcessError`` exception is raised."
+msgstr ""
+
+#: ../../source/subprocess/index.rst:0
+# 37544d3044cb418d8ec36d51dc5d8dc4
+msgid "subprocess_run_check.py"
+msgstr ""
+
+#: ../../source/subprocess/index.rst:135
+# 9572881181d94ffead4391aac02d755f
+msgid "The ``false`` command always exits with a non-zero status code, which ``run()`` interprets as an error."
+msgstr ""
+
+#: ../../source/subprocess/index.rst:152
+# d855b32d677a42b2b7ba78da60ad8f1e
+msgid "Passing ``check=True`` to ``run()`` makes it equivalent to using ``check_call()``."
+msgstr ""
+
+#: ../../source/subprocess/index.rst:156
+# 608d1a5648ee4248a0c3c46b4bc5ae00
+msgid "Capturing Output"
+msgstr ""
+
+#: ../../source/subprocess/index.rst:158
+# c21252c613254215b302efe710267158
+msgid "The standard input and output channels for the process started by ``run()`` are bound to the parent's input and output.  That means the calling program cannot capture the output of the command.  Pass ``PIPE`` for the ``stdout`` and ``stderr`` arguments to capture the output for later processing."
+msgstr ""
+
+#: ../../source/subprocess/index.rst:0
+# 6ce92e84ddaa4e1582fcbf2bf2b14834
+msgid "subprocess_run_output.py"
+msgstr ""
+
+#: ../../source/subprocess/index.rst:168
+# 89eb438dc3b547ca8753124a9a46354d
+msgid "The ``ls -1`` command runs successfully, so the text it prints to standard output is captured and returned."
+msgstr ""
+
+#: ../../source/subprocess/index.rst:208
+# 18c6c004e0ac43308a335c2cf29c6751
+msgid "Passing ``check=True`` and setting ``stdout`` to ``PIPE`` is equivalent to using ``check_output()``."
+msgstr ""
+
+#: ../../source/subprocess/index.rst:211
+# c0d87f3706cc4d97bd6da7bfd45c7e75
+msgid "The next example runs a series of commands in a sub-shell.  Messages are sent to standard output and standard error before the commands exit with an error code."
+msgstr ""
+
+#: ../../source/subprocess/index.rst:0
+# 41e19e653255403699f623489190f6b1
+msgid "subprocess_run_output_error.py"
+msgstr ""
+
+#: ../../source/subprocess/index.rst:219
+# d35035a77ca0425da6a0d29ad14bebee
+msgid "The message to standard error is printed to the console, but the message to standard output is hidden."
+msgstr ""
+
+#: ../../source/subprocess/index.rst:237
+# e02eb8bd729c4a5f9fc11d6182a40c47
+msgid "To prevent error messages from commands run through ``run()`` from being written to the console, set the ``stderr`` parameter to the constant ``PIPE``."
+msgstr ""
+
+#: ../../source/subprocess/index.rst:0
+# f77cb2d37fec4d8f8675b6be45e73902
+msgid "subprocess_run_output_error_trap.py"
+msgstr ""
+
+#: ../../source/subprocess/index.rst:245
+# 31a83f235bc94606a39c9daf6216ebe1
+msgid "This example does not set ``check=True`` so the output of the command is captured and printed."
+msgstr ""
+
+#: ../../source/subprocess/index.rst:263
+# a61771523e3446e0ac910fa14082c697
+msgid "To capture error messages when using ``check_output()``, set ``stderr`` to ``STDOUT``, and the messages will be merged with the rest of the output from the command."
+msgstr ""
+
+#: ../../source/subprocess/index.rst:0
+# 54ac367a95694aa4bf5e38c99c36e4a9
+msgid "subprocess_check_output_error_trap_output.py"
+msgstr ""
+
+#: ../../source/subprocess/index.rst:271
+# a07d275af964412ab470f43242bc446a
+msgid "The order of output may vary, depending on how buffering is applied to the standard output stream and how much data is being printed."
+msgstr ""
+
+#: ../../source/subprocess/index.rst:287
+# 53f7c6b617c24992a513bd940471c02c
+msgid "Suppressing Output"
+msgstr ""
+
+#: ../../source/subprocess/index.rst:289
+# 856d0b3aa0d24bb5adfb505cd905140c
+msgid "For cases where the output should not be shown or captured, use ``DEVNULL`` to suppress an output stream. This example suppresses both the standard output and error streams."
+msgstr ""
+
+#: ../../source/subprocess/index.rst:0
+# ed68027a60114f3eaa0b8c6f706e4d2f
+msgid "subprocess_run_output_error_suppress.py"
+msgstr ""
+
+#: ../../source/subprocess/index.rst:297
+# 4ef8027684fc42afb2b8d32364e379b8
+msgid "The name ``DEVNULL`` comes from the Unix special device file, ``/dev/null``, which responds with end-of-file when opened for reading and receives but ignores any amount of input when writing."
+msgstr ""
+
+#: ../../source/subprocess/index.rst:316
+# 675fff431dba4e148766cecdda5707dc
+msgid "Working with Pipes Directly"
+msgstr ""
+
+#: ../../source/subprocess/index.rst:318
+# afb5d362f86c4aa98ccce1ca7ae033d9
+msgid "The functions ``run()``, ``call()``, ``check_call()``, and ``check_output()`` are wrappers around the ``Popen`` class. Using ``Popen`` directly gives more control over how the command is run, and how its input and output streams are processed.  For example, by passing different arguments for ``stdin``, ``stdout``, and ``stderr`` it is possible to mimic the variations of ``os.popen()``."
+msgstr ""
+
+#: ../../source/subprocess/index.rst:326
+# 572419516668464bbacc9aafc5323673
+msgid "One-way Communication With a Process"
+msgstr ""
+
+#: ../../source/subprocess/index.rst:328
+# 32d2471283da45ad8a4b01c8f7c8be12
+msgid "To run a process and read all of its output, set the ``stdout`` value to ``PIPE`` and call ``communicate()``."
+msgstr ""
+
+#: ../../source/subprocess/index.rst:0
+# 3c555068a199440c8fbb5816875eb780
+msgid "subprocess_popen_read.py"
+msgstr ""
+
+#: ../../source/subprocess/index.rst:335
+# 7eb850a350da46e3be31cd16ac07ebe5
+msgid "This is similar to the way ``popen()`` works, except that the reading is managed internally by the ``Popen`` instance."
+msgstr ""
+
+#: ../../source/subprocess/index.rst:351
+# d32fdf2a8b514915810585220b366f32
+msgid "To set up a pipe to allow the calling program to write data to it, set ``stdin`` to ``PIPE``."
+msgstr ""
+
+#: ../../source/subprocess/index.rst:0
+# 2af62e8c11e3435a8e5fa8afe621b878
+msgid "subprocess_popen_write.py"
+msgstr ""
+
+#: ../../source/subprocess/index.rst:358
+# 075687898cbe4da4a601ee1b0cb8f458
+msgid "To send data to the standard input channel of the process one time, pass the data to ``communicate()``.  This is similar to using ``popen()`` with mode ``'w'``."
+msgstr ""
+
+#: ../../source/subprocess/index.rst:376
+# a635dd5b9af64505ac5fe07a4339e15b
+msgid "Bi-directional Communication With a Process"
+msgstr ""
+
+#: ../../source/subprocess/index.rst:378
+# dc0ba2134ffe453cbf0c2c0d66721cf0
+msgid "To set up the ``Popen`` instance for reading and writing at the same time, use a combination of the previous techniques."
+msgstr ""
+
+#: ../../source/subprocess/index.rst:0
+# 247e03123a304e7593596baa3ff426cc
+msgid "subprocess_popen2.py"
+msgstr ""
+
+#: ../../source/subprocess/index.rst:385
+# 8382d3c388bc4f7aaeaa18f8bab21b09
+msgid "This sets up the pipe to mimic ``popen2()``."
+msgstr ""
+
+#: ../../source/subprocess/index.rst:401
+# b9bae069563a4cf18d78f62882d8370b
+msgid "Capturing Error Output"
+msgstr ""
+
+#: ../../source/subprocess/index.rst:403
+# 1b904d07d9d849f2aec01a776dc906ca
+msgid "It is also possible watch both of the streams for ``stdout`` and ``stderr``, as with ``popen3()``."
+msgstr ""
+
+#: ../../source/subprocess/index.rst:0
+# 1d655f6e5f6844229fdebc5c0c07340a
+msgid "subprocess_popen3.py"
+msgstr ""
+
+#: ../../source/subprocess/index.rst:410
+# f1bf919d6ec44d489aa6f1820f39d478
+msgid "Reading from ``stderr`` works the same as with ``stdout``.  Passing ``PIPE`` tells ``Popen`` to attach to the channel, and ``communicate()`` reads all of the data from it before returning."
+msgstr ""
+
+#: ../../source/subprocess/index.rst:429
+# 4c5b0c7310a24eab9558597665e90a3f
+msgid "Combining Regular and Error Output"
+msgstr ""
+
+#: ../../source/subprocess/index.rst:431
+# eab6f0aca068469f9d5f8fd1cb9e2476
+msgid "To direct the error output from the process to its standard output channel, use ``STDOUT`` for ``stderr`` instead of ``PIPE``."
+msgstr ""
+
+#: ../../source/subprocess/index.rst:0
+# d4badef97e4445db89fc5dda23777d33
+msgid "subprocess_popen4.py"
+msgstr ""
+
+#: ../../source/subprocess/index.rst:438
+# ed9abdf4a4104ca1824d62cb27585860
+msgid "Combining the output in this way is similar to how ``popen4()`` works."
+msgstr ""
+
+#: ../../source/subprocess/index.rst:456
+# f939b8b3eec84cda88713ff7a26f1ae1
+msgid "Connecting Segments of a Pipe"
+msgstr ""
+
+#: ../../source/subprocess/index.rst:458
+# d52a25521d494be2bdde99fa0e9603c1
+msgid "Multiple commands can be connected into a *pipeline*, similar to the way the Unix shell works, by creating separate ``Popen`` instances and chaining their inputs and outputs together.  The :attr:`stdout` attribute of one ``Popen`` instance is used as the ``stdin`` argument for the next in the pipeline, instead of the constant ``PIPE``.  The output is read from the :attr:`stdout` handle for the final command in the pipeline."
+msgstr ""
+
+#: ../../source/subprocess/index.rst:0
+# f4ea9ee4d24146fcaef18a128db13320
+msgid "subprocess_pipes.py"
+msgstr ""
+
+#: ../../source/subprocess/index.rst:470
+# 171343c6ad874784acd7023203f7a9ea
+msgid "The example reproduces the command line:"
+msgstr ""
+
+#: ../../source/subprocess/index.rst:476
+# 881d494250db4dc0861833547fe858b8
+msgid "The pipeline reads the reStructuredText source file for this section and finds all of the lines that include other files, then prints the names of the files being included."
+msgstr ""
+
+#: ../../source/subprocess/index.rst:514
+# 9963243c43b34e7ebae14e38cca50d42
+msgid "Interacting with Another Command"
+msgstr ""
+
+#: ../../source/subprocess/index.rst:516
+# 3f95e4c7f37741cdbd5b5602b91fb05a
+msgid "All of the previous examples assume a limited amount of interaction. The ``communicate()`` method reads all of the output and waits for child process to exit before returning. It is also possible to write to and read from the individual pipe handles used by the ``Popen`` instance incrementally, as the program runs. A simple echo program that reads from standard input and writes to standard output illustrates this technique."
+msgstr ""
+
+#: ../../source/subprocess/index.rst:524
+# 613e1c2e05ac4921a76af8a0b6049482
+msgid "The script ``repeater.py`` is used as the child process in the next example.  It reads from ``stdin`` and writes the values to ``stdout``, one line at a time until there is no more input.  It also writes a message to ``stderr`` when it starts and stops, showing the lifetime of the child process."
+msgstr ""
+
+#: ../../source/subprocess/index.rst:0
+# 38d1fa2d61594053b8c8343583bbb5a4
+msgid "repeater.py"
+msgstr ""
+
+#: ../../source/subprocess/index.rst:534
+# 35658dc2943e41eaba976c4313d544a6
+msgid "The next interaction example uses the :attr:`stdin` and :attr:`stdout` file handles owned by the ``Popen`` instance in different ways. In the first example, a sequence of five numbers are written to :attr:`stdin` of the process, and after each write the next line of output is read back. In the second example, the same five numbers are written but the output is read all at once using ``communicate()``."
+msgstr ""
+
+#: ../../source/subprocess/index.rst:0
+# 56cbc1daabb14363ab93b0e7cf4d9bdc
+msgid "interaction.py"
+msgstr ""
+
+#: ../../source/subprocess/index.rst:546
+# 66068188975d49709e974af45678d8d6
+msgid "The ``\"repeater.py: exiting\"`` lines come at different points in the output for each loop style."
+msgstr ""
+
+#: ../../source/subprocess/index.rst:581
+# c166fa93ff5642bdb48d70f5e766fd4a
+msgid "Signaling Between Processes"
+msgstr ""
+
+#: ../../source/subprocess/index.rst:583
+# 8452ebb213714b3a9d710563b7f22b3a
+msgid "The process management examples for the :mod:`os` module include a demonstration of signaling between processes using ``os.fork()`` and ``os.kill()``. Since each ``Popen`` instance provides a *pid* attribute with the process id of the child process, it is possible to do something similar with ``subprocess``. The next example combines two scripts.  This child process sets up a signal handler for the ``USR`` signal."
+msgstr ""
+
+#: ../../source/subprocess/index.rst:0
+# 636935ab362746909ca187b89402bed7
+msgid "signal_child.py"
+msgstr ""
+
+#: ../../source/subprocess/index.rst:595
+# c94713ef601d45a7becd571d2daec1b8
+msgid "This script runs as the parent process.  It starts ``signal_child.py``, then sends the ``USR1`` signal."
+msgstr ""
+
+#: ../../source/subprocess/index.rst:0
+# 3bf836df378841c5a217e52499108000
+msgid "signal_parent.py"
+msgstr ""
+
+#: ../../source/subprocess/index.rst:602
+# a803b320b75a497493cb808eb494e5da
+msgid "The output is:"
+msgstr ""
+
+#: ../../source/subprocess/index.rst:623
+# 104d534c6aaa4ec59e49c90b368ac2d5
+msgid "Process Groups / Sessions"
+msgstr ""
+
+#: ../../source/subprocess/index.rst:625
+# b4edd2311b8a4ada89b9158024d6d780
+msgid "If the process created by ``Popen`` spawns sub-processes, those children will not receive any signals sent to the parent.  That means when using the ``shell`` argument to ``Popen`` it will be difficult to cause the command started in the shell to terminate by sending ``SIGINT`` or ``SIGTERM``."
+msgstr ""
+
+#: ../../source/subprocess/index.rst:0
+# a8b68343c4304c0ba5210a7737c4237b
+msgid "subprocess_signal_parent_shell.py"
+msgstr ""
+
+#: ../../source/subprocess/index.rst:635
+# 4b903fd629cf4a4f9e6158d69fe1d3b6
+msgid "The pid used to send the signal does not match the pid of the child of the shell script waiting for the signal, because in this example there are three separate processes interacting:"
+msgstr ""
+
+#: ../../source/subprocess/index.rst:639
+# 01d8795b5e494a969dc398aad1cb22cd
+msgid "The program ``subprocess_signal_parent_shell.py``"
+msgstr ""
+
+#: ../../source/subprocess/index.rst:640
+# a56c810479de4b8e9284a0abbf9849f1
+msgid "The shell process running the script created by the main python program"
+msgstr ""
+
+#: ../../source/subprocess/index.rst:642
+# dfadccc5c1714dd599d855fa201cebbb
+msgid "The program ``signal_child.py``"
+msgstr ""
+
+#: ../../source/subprocess/index.rst:662
+# b1c36a9f68424308ba353333c96bd8fb
+msgid "To send signals to descendants without knowing their process id, use a *process group* to associate the children so they can be signaled together.  The process group is created with ``os.setpgrp()``, which sets process group id to the process id of the current process. All child processes inherit their process group from their parent, and since it should only be set in the shell created by ``Popen`` and its descendants, ``os.setpgrp()`` should not be called in the same process where the ``Popen`` is created.  Instead, the function is passed to ``Popen`` as the ``preexec_fn`` argument so it is run after the ``fork()`` inside the new process, before it uses ``exec()`` to run the shell.  To signal the entire process group, use ``os.killpg()`` with the :attr:`pid` value from the ``Popen`` instance."
+msgstr ""
+
+#: ../../source/subprocess/index.rst:0
+# f4af900e83274f25990234cf19e8950a
+msgid "subprocess_signal_setpgrp.py"
+msgstr ""
+
+#: ../../source/subprocess/index.rst:680
+# 9c60efb7cb0a44629bab15d5c95415de
+msgid "The sequence of events is"
+msgstr ""
+
+#: ../../source/subprocess/index.rst:682
+# 8abe832c32fc4ca495c8a2eae332ecb1
+msgid "The parent program instantiates ``Popen``."
+msgstr ""
+
+#: ../../source/subprocess/index.rst:683
+# e3e320ac9c4a43bbb6897a8c01cd8e3b
+msgid "The ``Popen`` instance forks a new process."
+msgstr ""
+
+#: ../../source/subprocess/index.rst:684
+# 9ed1b3c0c429456cbaa3315537790d83
+msgid "The new process runs ``os.setpgrp()``."
+msgstr ""
+
+#: ../../source/subprocess/index.rst:685
+# b7392ba44a1d4c20a3e5a9928c6fe196
+msgid "The new process runs ``exec()`` to start the shell."
+msgstr ""
+
+#: ../../source/subprocess/index.rst:686
+# c907828f18f74b649dbb681d42c62e75
+msgid "The shell runs the shell script."
+msgstr ""
+
+#: ../../source/subprocess/index.rst:687
+# 78cd9872ca3448f0a797931ce63dabd9
+msgid "The shell script forks again and that process execs Python."
+msgstr ""
+
+#: ../../source/subprocess/index.rst:688
+# 19c3155d33be4c08a69e95b5f655b5c1
+msgid "Python runs ``signal_child.py``."
+msgstr ""
+
+#: ../../source/subprocess/index.rst:689
+# 857b566a2a494b73a19cddeaadcbc9a6
+msgid "The parent program signals the process group using the pid of the shell."
+msgstr ""
+
+#: ../../source/subprocess/index.rst:690
+# 1b451a9eec934ae2828dff2745fab174
+msgid "The shell and Python processes receive the signal."
+msgstr ""
+
+#: ../../source/subprocess/index.rst:691
+# bba832d162c04ebaa8d8ced61c94ce60
+msgid "The shell ignores the signal."
+msgstr ""
+
+#: ../../source/subprocess/index.rst:692
+# 5dd84716c5ef4b569f315ee1d5af87d3
+msgid "The Python process running ``signal_child.py`` invokes the signal handler."
+msgstr ""
+
+#: ../../source/subprocess/index.rst:717
+# f3ed8072ffea412bb8e41adb9f8f5cac
+msgid ":pydoc:`subprocess`"
+msgstr ""
+
+#: ../../source/subprocess/index.rst:719
+# 3428fe22a8dd4a5e90065c58afda29ab
+msgid ":mod:`os` -- Although ``subprocess`` replaces many of them, the functions for working with processes found in the :mod:`os` module are still widely used in existing code."
+msgstr ""
+
+#: ../../source/subprocess/index.rst:723
+# 1b3a2508974747b2a94db2931ed85550
+msgid "`UNIX Signals and Process Groups <http://www.cs.ucsb.edu/~almeroth/classes/W99.276/assignment1/signals.html>`__ -- A good description of Unix signaling and how process groups work."
+msgstr ""
+
+#: ../../source/subprocess/index.rst:728
+# 306eea5942cf45e485c77a77c15eabbe
+msgid ":mod:`signal` -- More details about using the ``signal`` module."
+msgstr ""
+
+#: ../../source/subprocess/index.rst:730
+# f2b653cb94f44f7caf4eb6c962c1e9fd
+msgid "`Advanced Programming in the UNIX(R) Environment <http://www.amazon.com/Programming-Environment-Addison-Wesley-Professional-Computing/dp/0201433079/ref=pd_bbs_3/002-2842372-4768037?ie=UTF8&s=books&amp;qid=1182098757&sr=8-3>`__ -- Covers working with multiple processes, such as handling signals, closing duplicated file descriptors, etc."
+msgstr ""
+
+#: ../../source/subprocess/index.rst:735
+# 23f1ca66f1f74ed7853462baedeae872
+msgid ":mod:`pipes` -- Unix shell command pipeline templates in the standard library."
+msgstr ""
+

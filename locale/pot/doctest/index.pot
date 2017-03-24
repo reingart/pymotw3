@@ -1,0 +1,488 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/doctest/index.rst:3
+# cbcb79b897b2424f9b575cbfa29c057e
+msgid "doctest --- Testing Through Documentation"
+msgstr ""
+
+#: ../../source/doctest/index.rst:8
+# c063bbe7cc7f4887a67aa7face6f64ba
+msgid "Write automated tests as part of the documentation for a module."
+msgstr ""
+
+#: ../../source/doctest/index.rst:10
+# 76ff09db10754e56853da1313b24803c
+msgid "``doctest`` tests source code by running examples embedded in the documentation and verifying that they produce the expected results. It works by parsing the help text to find examples, running them, then comparing the output text against the expected value.  Many developers find ``doctest`` easier to use than :mod:`unittest` because, in its simplest form, there is no API to learn before using it.  However, as the examples become more complex the lack of fixture management can make writing ``doctest`` tests more cumbersome than using :mod:`unittest`."
+msgstr ""
+
+#: ../../source/doctest/index.rst:21
+# c09b854bc82a4448a2bacd36075f3978
+msgid "Getting Started"
+msgstr ""
+
+#: ../../source/doctest/index.rst:23
+# 83749bd6ed1b46f8807d4f885eabab1a
+msgid "The first step to setting up doctests is to use the interactive interpreter to create examples and then copy and paste them into the docstrings in the module.  Here, ``my_function()`` has two examples given:"
+msgstr ""
+
+#: ../../source/doctest/index.rst:0
+# 7733099313554c0c88a51637d9a95f84
+msgid "doctest_simple.py"
+msgstr ""
+
+#: ../../source/doctest/index.rst:32
+# c4344ad1dc1f4136b5139e4757a8c56d
+msgid "To run the tests, use ``doctest`` as the main program via the ``-m`` option.  Usually no output is produced while the tests are running, so the next example includes the ``-v`` option to make the output more verbose."
+msgstr ""
+
+#: ../../source/doctest/index.rst:65
+# 6b9b4eab44ac4545b18adda2c2ad5ae7
+msgid "Examples cannot usually stand on their own as explanations of a function, so ``doctest`` also allows for surrounding text.  It looks for lines beginning with the interpreter prompt (``>>>``) to find the beginning of a test case, and the case is ended by a blank line or by the next interpreter prompt.  Intervening text is ignored, and can have any format as long as it does not look like a test case."
+msgstr ""
+
+#: ../../source/doctest/index.rst:0
+# dd3b4ca4d87c4a34b6b0a74967f9b2e1
+msgid "doctest_simple_with_docs.py"
+msgstr ""
+
+#: ../../source/doctest/index.rst:76
+# 12d64407a3ad465cb20291269129e9a1
+msgid "The surrounding text in the updated docstring makes it more useful to a human reader.  Because it is ignored by ``doctest``, the results are the same."
+msgstr ""
+
+#: ../../source/doctest/index.rst:109
+# 16988f6115f442dc8901126ccd185f6d
+msgid "Handling Unpredictable Output"
+msgstr ""
+
+#: ../../source/doctest/index.rst:111
+# cc856c5c653e438b9f2a781e6bffaa50
+msgid "There are other cases where the exact output may not be predictable, but should still be testable.  For example, local date and time values and object ids change on every test run, the default precision used in the representation of floating point values depend on compiler options, and string representations of container objects like dictionaries may not be deterministic.  Although these conditions cannot be controlled, there are techniques for dealing with them."
+msgstr ""
+
+#: ../../source/doctest/index.rst:119
+# e7b6fc6d964e41baafa20b7bb9cc3042
+msgid "For example, in CPython, object identifiers are based on the memory address of the data structure holding the object."
+msgstr ""
+
+#: ../../source/doctest/index.rst:0
+# f29cc03d8f9441509b99c6cb9974d3a8
+msgid "doctest_unpredictable.py"
+msgstr ""
+
+#: ../../source/doctest/index.rst:126
+# 7341ce9052ce4e5bbad279bdb81a16e5
+msgid "These id values change each time a program runs, because it is loaded into a different part of memory."
+msgstr ""
+
+#: ../../source/doctest/index.rst:162
+# e72f38780362418a8ec3a9642aa8f520
+msgid "When the tests include values that are likely to change in unpredictable ways, and where the actual value is not important to the test results, use the ``ELLIPSIS`` option to tell ``doctest`` to ignore portions of the verification value."
+msgstr ""
+
+#: ../../source/doctest/index.rst:0
+# 7f32a5d42c444baaa768ca198f89220c
+msgid "doctest_ellipsis.py"
+msgstr ""
+
+#: ../../source/doctest/index.rst:171
+# 1cec77422d6847869b38cfd8446fc834
+msgid "The \"``#doctest: +ELLIPSIS``\" comment after the call to ``unpredictable()`` tells ``doctest`` to turn on the ``ELLIPSIS`` option for that test.  The ``...`` replaces the memory address in the object id, so that portion of the expected value is ignored and the actual output matches and the test passes."
+msgstr ""
+
+#: ../../source/doctest/index.rst:201
+# 3b23bdb94268456983bb5084ba7e68cc
+msgid "There are cases where the unpredictable value cannot be ignored, because that would make the test incomplete or inaccurate.  For example, simple tests quickly become more complex when dealing with data types whose string representations are inconsistent.  The string form of a dictionary, for example, may change based on the order the keys are added."
+msgstr ""
+
+#: ../../source/doctest/index.rst:0
+# 83d2d1b694fe4f53b329ef7ad5580ea2
+msgid "doctest_hashed_values.py"
+msgstr ""
+
+#: ../../source/doctest/index.rst:212
+# 2244a9fc90f8438e91ee4c95a2583e67
+msgid "Because of hash randomization and key collision, the internal key list order may be different for the dictionary each time the script runs. Sets use the same hashing algorithm, and exhibit the same behavior."
+msgstr ""
+
+#: ../../source/doctest/index.rst:233
+# b0719f5a40b146bdb8507814959b5275
+msgid "The best way to deal with these potential discrepancies is to create tests that produce values that are not likely to change.  In the case of dictionaries and sets, that might mean looking for specific keys individually, generating a sorted list of the contents of the data structure, or comparing against a literal value for equality instead of depending on the string representation."
+msgstr ""
+
+#: ../../source/doctest/index.rst:0
+# f6bdccecf3ca480ca1f655719dd5e245
+msgid "doctest_hashed_values_tests.py"
+msgstr ""
+
+#: ../../source/doctest/index.rst:244
+# d498c2d907e246768fc4bbe74cfb6849
+msgid "The single example is actually interpreted as two separate tests, with the first expecting no console output and the second expecting the boolean result of the comparison operation."
+msgstr ""
+
+#: ../../source/doctest/index.rst:282
+# 18ddc7647be846c0a807d2e8bcbb72ec
+msgid "Tracebacks"
+msgstr ""
+
+#: ../../source/doctest/index.rst:284
+# 0c2a6466b1b4433ca71b4aefa78c6c6e
+msgid "Tracebacks are a special case of changing data.  Since the paths in a traceback depend on the location where a module is installed on the file system, it would be impossible to write portable tests if they were treated the same as other output."
+msgstr ""
+
+#: ../../source/doctest/index.rst:0
+# 359ff1620a404f979e5eebef25b17f97
+msgid "doctest_tracebacks.py"
+msgstr ""
+
+#: ../../source/doctest/index.rst:293
+# deb3b4b3956045e68c2b1e2f61d8fed0
+msgid "``doctest`` makes a special effort to recognize tracebacks, and ignore the parts that might change from system to system."
+msgstr ""
+
+#: ../../source/doctest/index.rst:324
+# 346315a1d0694124bd73aebd7fbcd1c4
+msgid "In fact, the entire body of the traceback is ignored and can be omitted."
+msgstr ""
+
+#: ../../source/doctest/index.rst:0
+# b9632c820f5a4d179e514ae7c0d13920
+msgid "doctest_tracebacks_no_body.py"
+msgstr ""
+
+#: ../../source/doctest/index.rst:331
+# 1b449510d6d04b4cbbd374605d10a5d1
+msgid "When ``doctest`` sees a traceback header line (either \"``Traceback (most recent call last):``\" or \"``Traceback (innermost last):``\", to support different versions of Python), it skips ahead to find the exception type and message, ignoring the intervening lines entirely."
+msgstr ""
+
+#: ../../source/doctest/index.rst:367
+# 23debcca5d4e42a3b5f248ef5354d92e
+msgid "Working Around Whitespace"
+msgstr ""
+
+#: ../../source/doctest/index.rst:369
+# 19b95651129e4fb2836859ede585981f
+msgid "In real world applications, output usually includes whitespace such as blank lines, tabs, and extra spacing to make it more readable.  Blank lines, in particular, cause issues with ``doctest`` because they are used to delimit tests."
+msgstr ""
+
+#: ../../source/doctest/index.rst:0
+# 6df8b51af06942b9a2f2a843f12c53ec
+msgid "doctest_blankline_fail.py"
+msgstr ""
+
+#: ../../source/doctest/index.rst:378
+# d0944edfc67a4c15ba50556ae04a9c55
+msgid "``double_space()`` takes a list of input lines, and prints them double-spaced with blank lines between."
+msgstr ""
+
+#: ../../source/doctest/index.rst:417
+# 1c648427512348a4a17649011454cb82
+msgid "The test fails, because it interprets the blank line after the line containing ``Line one.`` in the docstring as the end of the sample output.  To match the blank lines, replace them in the sample input with the string ``<BLANKLINE>``."
+msgstr ""
+
+#: ../../source/doctest/index.rst:0
+# dd6a40073d3b470ebc368d48948768c8
+msgid "doctest_blankline.py"
+msgstr ""
+
+#: ../../source/doctest/index.rst:426
+# f08259e13dee440b9747e8eab6ebeb23
+msgid "``doctest`` replaces actual blank lines with the same literal before performing the comparison, so now the actual and expected values match and the test passes."
+msgstr ""
+
+#: ../../source/doctest/index.rst:456
+# 9af7eb3a52c949719aaa9dd6f3bf958b
+msgid "Whitespace within a line can also cause tricky problems with tests. This example has a single extra space after the ``6``."
+msgstr ""
+
+#: ../../source/doctest/index.rst:0
+# 33d8ccf00bce48d2802a944f9c620e5b
+msgid "doctest_extra_space.py"
+msgstr ""
+
+#: ../../source/doctest/index.rst:463
+# a57e32b18aa847afa43f57a847538ed1
+msgid "Extra spaces can find their way into code via copy-and-paste errors, but since they come at the end of the line, they can go unnoticed in the source file and be invisible in the test failure report as well."
+msgstr ""
+
+#: ../../source/doctest/index.rst:505
+# bda53bb8d956402e8021395e555c7bf8
+msgid "Using one of the diff-based reporting options, such as ``REPORT_NDIFF``, shows the difference between the actual and expected values with more detail, and the extra space becomes visible."
+msgstr ""
+
+#: ../../source/doctest/index.rst:0
+# 0b686d7066574e7ab76959cc1954a879
+msgid "doctest_ndiff.py"
+msgstr ""
+
+#: ../../source/doctest/index.rst:513
+# 1059ed7b468c404f8cd2c89dac7ec52a
+msgid "Unified (``REPORT_UDIFF``) and context (``REPORT_CDIFF``) diffs are also available, for output where those formats are more readable."
+msgstr ""
+
+#: ../../source/doctest/index.rst:554
+# fe21f38073954600a3bef5a0574288fa
+msgid "There are cases where it is beneficial to add extra whitespace in the sample output for the test, and have ``doctest`` ignore it.  For example, data structures can be easier to read when spread across several lines, even if their representation would fit on a single line."
+msgstr ""
+
+#: ../../source/doctest/index.rst:564
+# dc10edaf19a44985ade6724f080bf6ca
+msgid "When ``NORMALIZE_WHITESPACE`` is turned on, any whitespace in the actual and expected values is considered a match.  Whitespace cannot be added to the expected value where none exists in the output, but the length of the whitespace sequence and actual whitespace characters do not need to match.  The first test example gets this rule correct, and passes, even though there are extra spaces and newlines.  The second has extra whitespace after ``[`` and before ``]``, so it fails."
+msgstr ""
+
+#: ../../source/doctest/index.rst:622
+# 289d86f1702d4296804a1f599df94156
+msgid "Test Locations"
+msgstr ""
+
+#: ../../source/doctest/index.rst:624
+# d66700365ef949218cc576d1197eb88b
+msgid "All of the tests in the examples so far have been written in the docstrings of the functions they are testing.  That is convenient for users who examine the docstrings for help using the function (especially with :mod:`pydoc`), but ``doctest`` looks for tests in other places, too.  The obvious location for additional tests is in the docstrings elsewhere in the module."
+msgstr ""
+
+#: ../../source/doctest/index.rst:0
+# 490699fc86f145eea92076470e01cc73
+msgid "doctest_docstrings.py"
+msgstr ""
+
+#: ../../source/doctest/index.rst:635
+# 9c5c094f846741c08c8c0f3de673b82c
+msgid "Docstrings at the module, class, and function levels can all contain tests."
+msgstr ""
+
+#: ../../source/doctest/index.rst:679
+# 59f59daeaff24165838b67146c2156b3
+msgid "There are cases where tests exist for a module that should be included with the source code but not in the help text for a module, so they need to be placed somewhere other than the docstrings.  ``doctest`` also looks for a module-level variable called ``__test__`` and uses it to locate other tests.  The value of ``__test__`` should be a dictionary that maps test set names (as strings) to strings, modules, classes, or functions."
+msgstr ""
+
+#: ../../source/doctest/index.rst:0
+# 26cab7f64fe14302b7c3a5505bebab02
+msgid "doctest_private_tests.py"
+msgstr ""
+
+#: ../../source/doctest/index.rst:691
+# 6b996995dfe7486b827ed2bc6c5c4ba5
+msgid "If the value associated with a key is a string, it is treated as a docstring and scanned for tests.  If the value is a class or function, ``doctest`` searches them recursively for docstrings, which are then scanned for tests.  In this example, the module :mod:`doctest_private_tests_external` has a single test in its docstring."
+msgstr ""
+
+#: ../../source/doctest/index.rst:0
+# c5ba8e82506046e699527be88f421867
+msgid "doctest_private_tests_external.py"
+msgstr ""
+
+#: ../../source/doctest/index.rst:702
+# c415993d99174fb299e583f167a54885
+msgid "After scanning the example file, ``doctest`` finds a total of five tests to run."
+msgstr ""
+
+#: ../../source/doctest/index.rst:751
+# c2119d8a9fe0452f849648567691ed24
+msgid "External Documentation"
+msgstr ""
+
+#: ../../source/doctest/index.rst:753
+# a8a521313f1b46a1b9e0f8f1998194e6
+msgid "Mixing tests in with regular code is not the only way to use ``doctest``.  Examples embedded in external project documentation files, such as reStructuredText files, can be used as well."
+msgstr ""
+
+#: ../../source/doctest/index.rst:0
+# 13bb8f438ef540509ad61822ab3362c0
+msgid "doctest_in_help.py"
+msgstr ""
+
+#: ../../source/doctest/index.rst:761
+# 9666f779cf4c45f38b3e1e7d7bdc8e56
+msgid "The help for this sample module is saved to a separate file, ``doctest_in_help.txt``.  The examples illustrating how to use the module are included with the help text, and ``doctest`` can be used to find and run them."
+msgstr ""
+
+#: ../../source/doctest/index.rst:0
+# e73f52586db44a1394429b8bd2d99702
+msgid "doctest_in_help.txt"
+msgstr ""
+
+#: ../../source/doctest/index.rst:770
+# f419b045c5e74304abade22189254782
+msgid "The tests in the text file can be run from the command line, just as with the Python source modules."
+msgstr ""
+
+#: ../../source/doctest/index.rst:813
+# 80bffe7314b843cc840133c29ccc9129
+msgid "Normally ``doctest`` sets up the test execution environment to include the members of the module being tested, so the tests do not need to import the module explicitly.  In this case, however, the tests are not defined in a Python module, and ``doctest`` does not know how to set up the global namespace, so the examples need to do the import work themselves.  All of the tests in a given file share the same execution context, so importing the module once at the top of the file is enough."
+msgstr ""
+
+#: ../../source/doctest/index.rst:823
+# 553edb887f2244a3b0fc64be04d4ce6b
+msgid "Running Tests"
+msgstr ""
+
+#: ../../source/doctest/index.rst:825
+# a02ce2409ca445b58ee11f14602f772a
+msgid "The previous examples all use the command line test runner built into ``doctest``.  It is easy and convenient for a single module, but will quickly become tedious as a package spreads out into multiple files.  There are several alternative approaches."
+msgstr ""
+
+#: ../../source/doctest/index.rst:831
+# 05c554e279914a919434098928473bdc
+msgid "By Module"
+msgstr ""
+
+#: ../../source/doctest/index.rst:833
+# 98992d0ac99e421d9c1fa7596ab4310b
+msgid "The instructions to run ``doctest`` against the source can be included at the bottom of modules."
+msgstr ""
+
+#: ../../source/doctest/index.rst:0
+# bd6eeed85975472c8ae12784addb618a
+msgid "doctest_testmod.py"
+msgstr ""
+
+#: ../../source/doctest/index.rst:840
+# cde446e7858a45bc88d45a470b35124b
+msgid "Calling ``testmod()`` only if the current module name is ``__main__`` ensures that the tests are only run when the module is invoked as a main program."
+msgstr ""
+
+#: ../../source/doctest/index.rst:872
+# 4b3bf65b330c49238a02feb64b037e27
+msgid "The first argument to ``testmod()`` is a module containing code to be scanned for tests.  A separate test script can use this feature to import the real code and run the tests in each module one after another."
+msgstr ""
+
+#: ../../source/doctest/index.rst:0
+# 43bc06a818b74418963e7c4b6e9b6fa8
+msgid "doctest_testmod_other_module.py"
+msgstr ""
+
+#: ../../source/doctest/index.rst:881
+# 9575d38f81ba4772940968cdeb47f084
+msgid "A test suite can be constructed for the project by importing each module and running its tests."
+msgstr ""
+
+#: ../../source/doctest/index.rst:913
+# a28bbfbdfcb74be0a83bd366f6fb6afd
+msgid "By File"
+msgstr ""
+
+#: ../../source/doctest/index.rst:915
+# 3c7c0db5425443b5a4e310af79885333
+msgid "``testfile()`` works in a way similar to ``testmod()``, allowing the tests to be invoked explicitly in an external file from within the test program."
+msgstr ""
+
+#: ../../source/doctest/index.rst:0
+# 3a48a3145d3b44ab9860f547d49e5df7
+msgid "doctest_testfile.py"
+msgstr ""
+
+#: ../../source/doctest/index.rst:923
+# f2f7b7bc5e94411fb4815b01491cd1e9
+msgid "Both ``testmod()`` and ``testfile()`` include optional parameters to control the behavior of the tests through the ``doctest`` options.  Refer to the standard library documentation for more details about those features -- most of the time they are not needed."
+msgstr ""
+
+#: ../../source/doctest/index.rst:969
+# 9640bb935edd442cbfd5dbbe414ab0cc
+msgid "Unittest Suite"
+msgstr ""
+
+#: ../../source/doctest/index.rst:971
+# dd0c948b937e45d0a6277cb4c42c108a
+msgid "When both :mod:`unittest` and ``doctest`` are used for testing the same code in different situations, the ``unittest`` integration in ``doctest`` can be used to run the tests together.  Two classes, ``DocTestSuite`` and ``DocFileSuite`` create test suites compatible with the test-runner API of ``unittest``."
+msgstr ""
+
+#: ../../source/doctest/index.rst:0
+# eb7e9b4c075446ecb7218308453eba4f
+msgid "doctest_unittest.py"
+msgstr ""
+
+#: ../../source/doctest/index.rst:981
+# f8998e99e5614336b2ca3462cfc272f5
+msgid "The tests from each source are collapsed into a single outcome, instead of being reported individually."
+msgstr ""
+
+#: ../../source/doctest/index.rst:1005
+# a2e55170c2674c6686ada30275d4b5f6
+msgid "Test Context"
+msgstr ""
+
+#: ../../source/doctest/index.rst:1007
+# 97e2c78255e5432cace57d2cc485cbd7
+msgid "The execution context created by ``doctest`` as it runs tests contains a copy of the module-level globals for the test module.  Each test source (function, class, module) has its own set of global values to isolate the tests from each other somewhat, so they are less likely to interfere with one another."
+msgstr ""
+
+#: ../../source/doctest/index.rst:0
+# f73dfc54e4b748c79f44582024637359
+msgid "doctest_test_globals.py"
+msgstr ""
+
+#: ../../source/doctest/index.rst:1017
+# 17e03b07987e431abc4ff6ce1d49b345
+msgid "``TestGlobals`` has two methods: ``one()`` and ``two()``. The tests in the docstring for ``one()`` set a global variable, and the test for ``two()`` looks for it (expecting not to find it)."
+msgstr ""
+
+#: ../../source/doctest/index.rst:1055
+# 071b0eaeb40245e38dce46224e1a93f1
+msgid "That does not mean the tests *cannot* interfere with each other, though, if they change the contents of mutable variables defined in the module."
+msgstr ""
+
+#: ../../source/doctest/index.rst:0
+# 271686e776de4dabb12b96be7928f4e8
+msgid "doctest_mutable_globals.py"
+msgstr ""
+
+#: ../../source/doctest/index.rst:1063
+# 47e750a8682e4f6cb5ab61649cfdbfdb
+msgid "The module variable ``_module_data`` is changed by the tests for ``one()``, causing the test for ``two()`` to fail."
+msgstr ""
+
+#: ../../source/doctest/index.rst:1110
+# d9d182acc50b4d5297b5927b3046f16f
+msgid "If global values are needed for the tests, to parameterize them for an environment for example, values can be passed to ``testmod()`` and ``testfile()`` to have the context set up using data controlled by the caller."
+msgstr ""
+
+#: ../../source/doctest/index.rst:1117
+# eff64a203fad4b55af49df6fbc78ad95
+msgid ":pydoc:`doctest`"
+msgstr ""
+
+#: ../../source/doctest/index.rst:1119
+# 41ce063081d9428ab71c0b28488455ad
+msgid "`The Mighty Dictionary <https://www.youtube.com/watch?v=C4Kc8xzcA68>`__ -- Presentation by Brandon Rhodes at PyCon 2010 about the internal operations of the ``dict``."
+msgstr ""
+
+#: ../../source/doctest/index.rst:1123
+# 303555dd99c24b158472c411de122ff6
+msgid ":mod:`difflib` -- Python's sequence difference computation library, used to produce the ndiff output."
+msgstr ""
+
+#: ../../source/doctest/index.rst:1126
+# deedf5a0e4b0475c853b287cdae214f2
+msgid "`Sphinx <http://www.sphinx-doc.org/>`_ -- As well as being the documentation processing tool for Python's standard library, Sphinx has been adopted by many third-party projects because it is easy to use and produces clean output in several digital and print formats.  Sphinx includes an extension for running doctests as is processes documentation source files, so the examples are always accurate."
+msgstr ""
+
+#: ../../source/doctest/index.rst:1134
+# 83abbf22fbef4e87b8213cc836846d57
+msgid "`py.test <http://doc.pytest.org/en/latest/>`_ -- Third-party test runner with ``doctest`` support."
+msgstr ""
+
+#: ../../source/doctest/index.rst:1137
+# 17d1e9170c4949dba00c9580d2389f3b
+msgid "`nose2 <https://nose2.readthedocs.io/en/latest/>`_ -- Third-party test runner with ``doctest`` support."
+msgstr ""
+
+#: ../../source/doctest/index.rst:1140
+# 75c2fec0ff7c41c68553cbe77b90107e
+msgid "`Manuel <https://pythonhosted.org/manuel/>`_ -- Third-party documentation-based test runner with more advanced test case extraction and integration with Sphinx."
+msgstr ""
+

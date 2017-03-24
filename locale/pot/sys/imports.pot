@@ -1,0 +1,353 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/sys/imports.rst:5
+# 4c808b21647443f1bc07e4a6f487a4ce
+msgid "Modules and Imports"
+msgstr ""
+
+#: ../../source/sys/imports.rst:7
+# e268cfd4547f4c6db6d9b5ff6b78977d
+msgid "Most Python programs end up as a combination of several modules with a main application importing them. Whether using the features of the standard library or organizing custom code in separate files to make it easier to maintain, understanding and managing the dependencies for a program is an important aspect of development. ``sys`` includes information about the modules available to an application, either as built-ins or after being imported.  It also defines hooks for overriding the standard import behavior for special cases."
+msgstr ""
+
+#: ../../source/sys/imports.rst:19
+# 381c61cd630341e8a2e0c5aff3efe413
+msgid "Imported Modules"
+msgstr ""
+
+#: ../../source/sys/imports.rst:21
+# c46aa2e5f3604a1e9dcc369f15e32088
+msgid "``sys.modules`` is a dictionary mapping the names of imported modules to the module object holding the code."
+msgstr ""
+
+#: ../../source/sys/imports.rst:0
+# 539e0816241c4db69ecbfc74353a8dcd
+msgid "sys_modules.py"
+msgstr ""
+
+#: ../../source/sys/imports.rst:28
+# 099e8f6c0bf5412a91ebdf21bd0eeb25
+msgid "The contents of ``sys.modules`` change as new modules are imported."
+msgstr ""
+
+#: ../../source/sys/imports.rst:51
+# 519f017283784a8992994e47ebf3b72a
+msgid "Built-in Modules"
+msgstr ""
+
+#: ../../source/sys/imports.rst:53
+# 759375d180ae4c3ab936150908a75db5
+msgid "The Python interpreter can be compiled with some C modules built right in, so they do not need to be distributed as separate shared libraries. These modules do not appear in the list of imported modules managed in ``sys.modules`` because they were not technically imported. The only way to find the available built-in modules is through ``sys.builtin_module_names``."
+msgstr ""
+
+#: ../../source/sys/imports.rst:0
+# cbb7cea063954a07a2856effd29faf31
+msgid "sys_builtins.py"
+msgstr ""
+
+#: ../../source/sys/imports.rst:64
+# 09a7ff11eb82478fb6f6010235063102
+msgid "The output of this script will vary, especially if run with a custom-built version of the interpreter.  This output was created using a copy of the interpreter installed from the standard python.org installer for OS X."
+msgstr ""
+
+#: ../../source/sys/imports.rst:88
+# 970c07e6eae6496cbf5b3516806e4586
+msgid "`Build Instructions <https://hg.python.org/cpython/file/tip/README>`_ -- Instructions for building Python, from the README distributed with the source."
+msgstr ""
+
+#: ../../source/sys/imports.rst:94
+# adc9199327844aec82a781b64b72338b
+msgid "Import Path"
+msgstr ""
+
+#: ../../source/sys/imports.rst:96
+# e622ce49b0904b0c8f99bb0bc999b5ca
+msgid "The search path for modules is managed as a Python list saved in ``sys.path``. The default contents of the path include the directory of the script used to start the application and the current working directory."
+msgstr ""
+
+#: ../../source/sys/imports.rst:0
+# 6d296694d4b9451590818f7c75a972d3
+msgid "sys_path_show.py"
+msgstr ""
+
+#: ../../source/sys/imports.rst:105
+# 3d0c94b8bd924780b1f87d0ea4ca6325
+msgid "The first directory in the search path is the home for the sample script itself. That is followed by a series of platform-specific paths where compiled extension modules (written in C) might be installed, and then the global ``site-packages`` directory is listed last."
+msgstr ""
+
+#: ../../source/sys/imports.rst:122
+# 69f923cadc494e348b84d80bce7e7d7e
+msgid "The import search-path list can be modified before starting the interpreter by setting the shell variable ``PYTHONPATH`` to a colon-separated list of directories."
+msgstr ""
+
+#: ../../source/sys/imports.rst:140
+# ee55c0cc4f454425b6b294005ea0258f
+msgid "A program can also modify its path by adding elements to ``sys.path`` directly."
+msgstr ""
+
+#: ../../source/sys/imports.rst:0
+# c3e374ac8a6b47f69b3ba737e7456960
+msgid "sys_path_modify.py"
+msgstr ""
+
+#: ../../source/sys/imports.rst:147
+# acceb5f0277448a3889320ea44eeef73
+msgid "Reloading an imported module re-imports the file, and uses the same ``module`` object to hold the results.  Changing the path between the initial import and the call to ``reload()`` means a different module may be loaded the second time."
+msgstr ""
+
+#: ../../source/sys/imports.rst:169
+# 115cc1234a1e42bfbe5825f453f41777
+msgid "Custom Importers"
+msgstr ""
+
+#: ../../source/sys/imports.rst:171
+# 93f41235de5b4c508e648fef7bd57f43
+msgid "Modifying the search path lets a programmer control how standard Python modules are found. But, what if a program needs to import code from somewhere other than the usual ``.py`` or ``.pyc`` files on the file system? :pep:`302` solves this problem by introducing the idea of *import hooks*, which can trap an attempt to find a module on the search path and take alternative measures to load the code from somewhere else or apply pre-processing to it."
+msgstr ""
+
+#: ../../source/sys/imports.rst:179
+# 8907bc89c99343dbaf2e8ff2afa89564
+msgid "Custom importers are implemented in two separate phases. The *finder* is responsible for locating a module and providing a *loader* to manage the actual import. Custom module finders are added by appending a factory to the ``sys.path_hooks`` list. On import, each part of the path is given to a finder until one claims support (by not raising ``ImportError``). That finder is then responsible for searching data storage represented by its path entry for named modules."
+msgstr ""
+
+#: ../../source/sys/imports.rst:0
+# b0abe340b8e546ae878f50613cc0c55d
+msgid "sys_path_hooks_noisy.py"
+msgstr ""
+
+#: ../../source/sys/imports.rst:192
+# 3f7cbb8f769843e0a907614ddef8937e
+msgid "This example illustrates how the finders are instantiated and queried. The ``NoisyImportFinder`` raises ``ImportError`` when instantiated with a path entry that does not match its special trigger value, which is obviously not a real path on the file system. This test prevents the ``NoisyImportFinder`` from breaking imports of real modules."
+msgstr ""
+
+#: ../../source/sys/imports.rst:221
+# e8d1f43e51b1491fad357f0558512286
+msgid "Importing from a Shelve"
+msgstr ""
+
+#: ../../source/sys/imports.rst:223
+# 1d1ee27ecb5f49c9a9d9f4c3a312bdef
+msgid "When the finder locates a module, it is responsible for returning a *loader* capable of importing that module.  This example illustrates a custom importer that saves its module contents in a database created by :mod:`shelve`."
+msgstr ""
+
+#: ../../source/sys/imports.rst:228
+# 41166c894f5f44169e3a1aed4506059f
+msgid "First, a script is used to populate the shelf with a package containing a sub-module and sub-package."
+msgstr ""
+
+#: ../../source/sys/imports.rst:0
+# e05da6666ef142eea21b3abfa7170b1e
+msgid "sys_shelve_importer_create.py"
+msgstr ""
+
+#: ../../source/sys/imports.rst:235
+# 4f5d35b460f3455b9d0e6a6bfdb4669f
+msgid "A real packaging script would read the contents from the file system, but using hard-coded values is sufficient for a simple example like this."
+msgstr ""
+
+#: ../../source/sys/imports.rst:257
+# 85a4cfeb5f10429da38b73cfc56916ce
+msgid "The custom importer needs to provide finder and loader classes that know how to look in a shelf for the source of a module or package."
+msgstr ""
+
+#: ../../source/sys/imports.rst:0
+# 40d8e060a2ce41869a298b3596f4dd53
+msgid "sys_shelve_importer.py"
+msgstr ""
+
+#: ../../source/sys/imports.rst:264
+# 3823000b68654e6a85a7d67d71ec2f78
+msgid "Now ``ShelveFinder`` and ``ShelveLoader`` can be used to import code from a shelf. For example, importing the :mod:`package` just created:"
+msgstr ""
+
+#: ../../source/sys/imports.rst:0
+# 800f7721e9384d868ef99799cc3c946b
+msgid "sys_shelve_importer_package.py"
+msgstr ""
+
+#: ../../source/sys/imports.rst:272
+# bd1360ea4eca4b1192f222eb871d2763
+msgid "The shelf is added to the import path the first time an import occurs after the path is modified. The finder recognizes the shelf and returns a loader, which is used for all imports from that shelf. The initial package-level import creates a new module object and then uses ``exec`` to run the source loaded from the shelf. It uses the new module as the namespace so that names defined in the source are preserved as module-level attributes."
+msgstr ""
+
+#: ../../source/sys/imports.rst:318
+# ec1bcc5b31404e1f88124bfdd3c87fc9
+msgid "Custom Package Importing"
+msgstr ""
+
+#: ../../source/sys/imports.rst:320
+# 0d52aed7028b4fe290e057c24546d733
+msgid "Loading other modules and sub-packages proceeds in the same way."
+msgstr ""
+
+#: ../../source/sys/imports.rst:0
+# 176ee70024324605a5bcf788597336d0
+msgid "sys_shelve_importer_module.py"
+msgstr ""
+
+#: ../../source/sys/imports.rst:326
+# e90019f25caa4161b6795900f408ca47
+msgid "The finder receives the entire dotted name of the module to load, and returns a ``ShelveLoader`` configured to load modules from the path entry pointing to the shelf file.  The fully qualified module name is passed to the loader's :meth:`load_module` method, which constructs and returns a ``module`` instance."
+msgstr ""
+
+#: ../../source/sys/imports.rst:407
+# 2e95753f75384a9887d69bec1a67f1c5
+msgid "Reloading Modules in a Custom Importer"
+msgstr ""
+
+#: ../../source/sys/imports.rst:409
+# 198231d6611d498999a96cea1b87f495
+msgid "Reloading a module is handled slightly differently. Instead of creating a new module object, the existing object is re-used."
+msgstr ""
+
+#: ../../source/sys/imports.rst:0
+# c675c5b557e246759d67eb09338a68c1
+msgid "sys_shelve_importer_reload.py"
+msgstr ""
+
+#: ../../source/sys/imports.rst:416
+# 932922e6c5774ba88dbb2087646b21d3
+msgid "By re-using the same object, existing references to the module are preserved even if class or function definitions are modified by the reload."
+msgstr ""
+
+#: ../../source/sys/imports.rst:456
+# 8b85f59854604b698eed48ab772a592a
+msgid "Handling Import Errors"
+msgstr ""
+
+#: ../../source/sys/imports.rst:458
+# 27f451262f414292adbabf4055fd15e4
+msgid "When a module cannot be located by any finder, ``ImportError`` is raised by the main import code."
+msgstr ""
+
+#: ../../source/sys/imports.rst:0
+# a5f9a9554e8043e9ae983f1dc57f54a3
+msgid "sys_shelve_importer_missing.py"
+msgstr ""
+
+#: ../../source/sys/imports.rst:465
+# 4e96fa7dd60445cea213ada5d6cd7179
+msgid "Other errors during the import are propagated."
+msgstr ""
+
+#: ../../source/sys/imports.rst:496
+# 10965e81be4146d595721ad1bfb91c91
+msgid "Package Data"
+msgstr ""
+
+#: ../../source/sys/imports.rst:498
+# ae1f025bf671458f9eea75018d98de5f
+msgid "In addition to defining the API for loading executable Python code, PEP 302 defines an optional API for retrieving package data intended for distributing data files, documentation, and other non-code resources used by a package. By implementing ``get_data()``, a loader can allow calling applications to support retrieval of data associated with the package without considering how the package is actually installed (especially without assuming that the package is stored as files on a file system)."
+msgstr ""
+
+#: ../../source/sys/imports.rst:0
+# 19e515bedc7d46fa94610b6b98444352
+msgid "sys_shelve_importer_get_data.py"
+msgstr ""
+
+#: ../../source/sys/imports.rst:511
+# 982d34a2f75741008bc9ded5fb5c61a5
+msgid "``get_data()`` takes a path based on the module or package that owns the data, and returns the contents of the resource \"file\" as a byte string, or raises ``IOError`` if the resource does not exist."
+msgstr ""
+
+#: ../../source/sys/imports.rst:554
+# c6dab1f2bcde4777817f12a092433c8c
+msgid ":mod:`pkgutil` -- Includes ``get_data()`` for retrieving data from a package."
+msgstr ""
+
+#: ../../source/sys/imports.rst:558
+# 1a9d776387b34960961f9abb87986143
+msgid "Importer Cache"
+msgstr ""
+
+#: ../../source/sys/imports.rst:560
+# 3448c5f9fd1044faa457811f08d6776b
+msgid "Searching through all of the hooks each time a module is imported can become expensive. To save time, ``sys.path_importer_cache`` is maintained as a mapping between a path entry and the loader that can use the value to find modules."
+msgstr ""
+
+#: ../../source/sys/imports.rst:0
+# 0710308dc33f4c69a3ffbc1ddc3a5be6
+msgid "sys_path_importer_cache.py"
+msgstr ""
+
+#: ../../source/sys/imports.rst:569
+# 9ed5747513bb4299927bfd941cc35665
+msgid "A ``FileFinder`` is used for path locations found on the file system. Locations on the path not supported by any finder are associated with a ``None``, since they cannot be used to import modules. The output below has been truncated due to formatting constraints."
+msgstr ""
+
+#: ../../source/sys/imports.rst:613
+# 6dc916642098439aa3aa5d536b8434a0
+msgid "Meta Path"
+msgstr ""
+
+#: ../../source/sys/imports.rst:615
+# f8a72b44fe6045c6a1c7986637b42280
+msgid "The ``sys.meta_path`` further extends the sources of potential imports by allowing a finder to be searched *before* the regular ``sys.path`` is scanned. The API for a finder on the meta-path is the same as for a regular path. The difference is that the metafinder is not limited to a single entry in ``sys.path`` -- it can search anywhere at all."
+msgstr ""
+
+#: ../../source/sys/imports.rst:0
+# fb4eedc2819941549e683a427c313036
+msgid "sys_meta_path.py"
+msgstr ""
+
+#: ../../source/sys/imports.rst:626
+# 8327b05346cd48efaefc19d165571c4d
+msgid "Each finder on the meta-path is interrogated before ``sys.path`` is searched, so there is always an opportunity to have a central importer load modules without explicitly modifying ``sys.path``. Once the module is \"found,\" the loader API works in the same way as for regular loaders (although this example is truncated for simplicity)."
+msgstr ""
+
+#: ../../source/sys/imports.rst:658
+# 43df08c6c8a54f9898db40d9bc795f0c
+msgid ":mod:`importlib` -- Base classes and other tools for creating custom importers."
+msgstr ""
+
+#: ../../source/sys/imports.rst:661
+# 67edbcf2ac854bc98098ad3e531252ab
+msgid ":mod:`zipimport` -- Implements importing Python modules from inside ZIP archives."
+msgstr ""
+
+#: ../../source/sys/imports.rst:664
+# 64980a7690f14707b76f8e69f058f945
+msgid "`The Internal Structure of Python Eggs <http://setuptools.readthedocs.io/en/latest/formats.html?highlight=egg>`_ -- setuptools documentation for the egg format"
+msgstr ""
+
+#: ../../source/sys/imports.rst:668
+# 7db24e87583e44c8b9d71184baf9b1e8
+msgid "`Wheel <http://wheel.readthedocs.org/en/latest/>`_ -- Documentation for ``wheel`` archive format for installable Python code."
+msgstr ""
+
+#: ../../source/sys/imports.rst:672
+# 7987d68bc4eb4553a8972e64628d0441
+msgid ":pep:`302` -- Import Hooks"
+msgstr ""
+
+#: ../../source/sys/imports.rst:674
+# d583944ecdbc44148ab766642127d10e
+msgid ":pep:`366` -- Main module explicit relative imports"
+msgstr ""
+
+#: ../../source/sys/imports.rst:676
+# 9905fffe51b947d5a16f75fd243eadab
+msgid ":pep:`427` -- The Wheel Binary Package Format 1.0"
+msgstr ""
+
+#: ../../source/sys/imports.rst:678
+# 6cbc6d36462b4ed9b12cc527cecae41e
+msgid "`Import this, that, and the other thing: custom importers <http://pyvideo.org/pycon-us-2010/pycon-2010--import-this--that--and-the-other-thin.html>`_ -- Brett Cannon's PyCon 2010 presentation."
+msgstr ""
+

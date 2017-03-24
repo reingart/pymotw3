@@ -1,0 +1,148 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/compileall/index.rst:3
+# 13eebeeb57ed4253bdd21a0da0345ff6
+msgid "compileall --- Byte-compile Source Files"
+msgstr ""
+
+#: ../../source/compileall/index.rst:8
+# 79b5c548bab04b65adf9147f81a2196d
+msgid "Convert source files to byte-compiled version."
+msgstr ""
+
+#: ../../source/compileall/index.rst:10
+# e92bc0f759444357b702dfef7264cdde
+msgid "The ``compileall`` module finds Python source files and compiles them to the byte-code representation, saving the results in ``.pyc``."
+msgstr ""
+
+#: ../../source/compileall/index.rst:14
+# 7a5a9e313122432cba58a8d0235beac4
+msgid "Compiling One Directory"
+msgstr ""
+
+#: ../../source/compileall/index.rst:16
+# 1493c5b297e048a8bc054327903ef387
+msgid "``compile_dir()`` is used to recursively scan a directory and byte-compile the files within it."
+msgstr ""
+
+#: ../../source/compileall/index.rst:0
+# fdc1ed5a29ba4e60aedc8d3cf7295339
+msgid "compileall_compile_dir.py"
+msgstr ""
+
+#: ../../source/compileall/index.rst:23
+# a9426e029e88454886b9db6fa3747eb4
+msgid "By default, all of the subdirectories are scanned to a depth of 10. The output files are written to a ``__pycache__`` directory and named based on the Python interpreter version."
+msgstr ""
+
+#: ../../source/compileall/index.rst:67
+# 5fe0cc0fd1704da2a98c72365e565ba8
+msgid "Ignoring Files"
+msgstr ""
+
+#: ../../source/compileall/index.rst:69
+# 0bbb9533b39e48709d08991fe54e2631
+msgid "To filter directories out, use the ``rx`` argument to provide a regular expression to match the names to exclude."
+msgstr ""
+
+#: ../../source/compileall/index.rst:0
+# dae69a63fe9f4a348125331d6087d3a9
+msgid "compileall_exclude_dirs.py"
+msgstr ""
+
+#: ../../source/compileall/index.rst:76
+# 43017ff073d54faf93e214b1413ee8e5
+msgid "This version excludes files in the ``subdir`` subdirectory."
+msgstr ""
+
+#: ../../source/compileall/index.rst:93
+# bb3e92e2de1f4445bbab034f8a201cd1
+msgid "The ``maxlevels`` argument controls the depth of recursion.  For example, to avoid recursion entirely pass ``0``."
+msgstr ""
+
+#: ../../source/compileall/index.rst:0
+# 560c79111a5348c3acde8dc83f312762
+msgid "compileall_recursion_depth.py"
+msgstr ""
+
+#: ../../source/compileall/index.rst:100
+# 48a6ab6d004b4b648b46f1ca0a3673f9
+msgid "Only files within the directory passed to ``compile_dir()`` are compiled."
+msgstr ""
+
+#: ../../source/compileall/index.rst:118
+# c3477e324cc5404aae36967fd1e7c297
+msgid "Compiling sys.path"
+msgstr ""
+
+#: ../../source/compileall/index.rst:120
+# ae3a812b993f48689edb321bebb1b71c
+msgid "All of the Python source files found in sys.path can be compiled with a single call to ``compile_path()``."
+msgstr ""
+
+#: ../../source/compileall/index.rst:0
+# 970c6bdff57343299aa53505927bbefc
+msgid "compileall_path.py"
+msgstr ""
+
+#: ../../source/compileall/index.rst:127
+# 659d4cf8181d4d1cb8185fd924c318c3
+msgid "This example replaces the default contents of ``sys.path`` to avoid permission errors while running the script, but still illustrates the default behavior.  Note that the ``maxlevels`` value defaults to ``0``."
+msgstr ""
+
+#: ../../source/compileall/index.rst:150
+# e77cf45fb2bc4faea2369113cafe0c42
+msgid "Compiling Individual Files"
+msgstr ""
+
+#: ../../source/compileall/index.rst:152
+# ac921ab0679e4223b6a87c54d34792ae
+msgid "To compile a single file, rather than an entire directory of files, use ``compile_file()``."
+msgstr ""
+
+#: ../../source/compileall/index.rst:0
+# 42c414ee1736450eabe63b4d0784f6c5
+msgid "compileall_compile_file.py"
+msgstr ""
+
+#: ../../source/compileall/index.rst:159
+# ae66ff198b894b6c901c490f39e3c931
+msgid "The first argument should be the name to the file, either a full path or a relative path."
+msgstr ""
+
+#: ../../source/compileall/index.rst:194
+# 5b1d43645e2747f8974f969c5bb4814d
+msgid "From the Command Line"
+msgstr ""
+
+#: ../../source/compileall/index.rst:196
+# 406c15965010409aad1552658b6d4349
+msgid "It is also possible to invoke ``compileall`` from the command line, so it can be integrated with a build system via a Makefile.  For example:"
+msgstr ""
+
+#: ../../source/compileall/index.rst:257
+# 1775871691954611823293c9e69a204d
+msgid "To recreate the earlier example, skipping the ``subdir`` directory, run:"
+msgstr ""
+
+#: ../../source/compileall/index.rst:277
+# 0bb13b63558c49edbe711e935de897a7
+msgid ":pydoc:`compileall`"
+msgstr ""
+

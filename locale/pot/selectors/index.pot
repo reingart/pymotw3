@@ -1,0 +1,113 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/selectors/index.rst:3
+# 2e2cf271506d4a97a509f8ac11e10f99
+msgid "selectors --- I/O Multiplexing Abstractions"
+msgstr ""
+
+#: ../../source/selectors/index.rst:8
+# 48c5b79f33814773b4a9c418a2f2d952
+msgid "Provide platform-independent abstractions for I/O multiplexing based on the ``select`` module."
+msgstr ""
+
+#: ../../source/selectors/index.rst:11
+# 5d0002252b6746b7a8c5c285e38a91bf
+msgid "The ``selectors`` module provides a platform-independent abstraction layer on top of the platform-specific I/O monitoring functions in :mod:`select`."
+msgstr ""
+
+#: ../../source/selectors/index.rst:16
+# a49170983d6b4328a48cf0d223fcde1d
+msgid "Operating Model"
+msgstr ""
+
+#: ../../source/selectors/index.rst:18
+# 25a945988a6a43e59ba137dfd66f1434
+msgid "The APIs in ``selectors`` are event-based, similar to ``poll()`` from ``select``. There are several implementations and the module automatically sets the alias ``DefaultSelector`` to refer to the most efficient one for the current system configuration."
+msgstr ""
+
+#: ../../source/selectors/index.rst:23
+# af65baf66f7c400299f5e1cd0abc1040
+msgid "A selector object provides methods for specifying what events to look for on a socket, and then lets the caller wait for events in a platform-independent way.  Registering interest in an event creates a ``SelectorKey``, which holds the socket, information about the events of interest, and optional application data.  The owner of the selector calls its ``select()`` method to learn about events. The return value is a sequence of key objects and a bitmask indicating what events have occurred. A program using a selector should repeatedly call ``select()``, then handle the events appropriately."
+msgstr ""
+
+#: ../../source/selectors/index.rst:34
+# 1f60c76b3b254637a2f6b03af10d650b
+msgid "Echo Server"
+msgstr ""
+
+#: ../../source/selectors/index.rst:36
+# b1b44fa40a7e46aab8ffbc6fbd43736a
+msgid "The echo server example below uses the application data in the ``SelectorKey`` to register a callback function to be invoked on the new event. The main loop gets the callback from the key and passes the socket and event mask to it. As the server starts, it registers the ``accept()`` function to be called for read events on the main server socket. Accepting the connection produces a new socket, which is then registered with the ``read()`` function as a callback for read events."
+msgstr ""
+
+#: ../../source/selectors/index.rst:0
+# 82248e4ee5244362bfd063d0b16634e9
+msgid "selectors_echo_server.py"
+msgstr ""
+
+#: ../../source/selectors/index.rst:49
+# c913401917e1453e9d8cdcf8b8ca4449
+msgid "When ``read()`` receives no data from the socket, it interprets the read event as the other side of the connection being closed instead of sending data. It removes the socket from the selector and closes it. In order to avoid an infinite loop, this server also shuts itself down after it has finished communicating with a single client."
+msgstr ""
+
+#: ../../source/selectors/index.rst:56
+# cf35d263dfea4ba9bfefd85ad744538e
+msgid "Echo Client"
+msgstr ""
+
+#: ../../source/selectors/index.rst:58
+# ddd02dc11d564a2e952281ec9be9425b
+msgid "The echo client example below processes all of the I/O events in the main loop, instead of using callbacks. It sets up the selector to report read events on the socket, and to report when the socket is ready to send data. Because it is looking at two types of events, the client must check which occurred by examining the mask value.  After all of its outgoing data has been sent, it changes the selector configuration to only report when there is data to read."
+msgstr ""
+
+#: ../../source/selectors/index.rst:0
+# 6fad6251166747e191fea65234cb72db
+msgid "selectors_echo_client.py"
+msgstr ""
+
+#: ../../source/selectors/index.rst:70
+# b5797bdcdf094376a7994f84a6d644d3
+msgid "The client tracks the amount of data it has sent, and the amount it has received. When those values match and are non-zero, the client exits the processing loop and cleanly shuts down by removing the socket from the selector and closing both the socket and the selector."
+msgstr ""
+
+#: ../../source/selectors/index.rst:76
+# b1bce3ec94004f5c8cb1a7ee09a5d499
+msgid "Server and Client Together"
+msgstr ""
+
+#: ../../source/selectors/index.rst:78
+# 70b81bf868ea43e88e9a254dbf44e4ab
+msgid "The client and server should be run in separate terminal windows, so they can communicate with each other.  The server output shows the incoming connection and data, as well as the response sent back to the client."
+msgstr ""
+
+#: ../../source/selectors/index.rst:100
+# 65ce49ef70fb4ecbb08ee841270d31f7
+msgid "The client output shows the outgoing message and the response from the server."
+msgstr ""
+
+#: ../../source/selectors/index.rst:129
+# 7b3b92d41ffe41a596a608da53d93ef2
+msgid ":pydoc:`selectors`"
+msgstr ""
+
+#: ../../source/selectors/index.rst:131
+# 155a464770784df2adb9a7dcb8600a2d
+msgid ":mod:`select` -- Lower-level APIs for handling I/O efficiently."
+msgstr ""
+

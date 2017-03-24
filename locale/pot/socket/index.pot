@@ -1,0 +1,78 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/socket/index.rst:3
+# ba88229008ee4861b973e87552c9b224
+msgid "socket --- Network Communication"
+msgstr ""
+
+#: ../../source/socket/index.rst:8
+# ed3562920ba24e5799293d4d33344326
+msgid "Provides access to network communication"
+msgstr ""
+
+#: ../../source/socket/index.rst:10
+# c85c8ec52ebb4d3798248af956a531d2
+msgid "The ``socket`` module exposes the low-level C API for communicating over a network using the BSD socket interface.  It includes the ``socket`` class, for handling the actual data channel, and also includes functions for network-related tasks such as converting a server's name to an address and formatting data to be sent across the network."
+msgstr ""
+
+#: ../../source/socket/index.rst:30
+# 892ffa75a0584b3796f0b0e54fb4262d
+msgid ":pydoc:`socket`"
+msgstr ""
+
+#: ../../source/socket/index.rst:32
+# 8330b8025d7a4e7786621a3ce80aeb2e
+msgid ":ref:`Python 2 to 3 porting notes for socket <porting-socket>`"
+msgstr ""
+
+#: ../../source/socket/index.rst:34
+# e29a7b2406714a32a95aa7635d3e03d9
+msgid ":mod:`select` -- Testing a socket to see if it is ready for reading or writing for non-blocking I/O."
+msgstr ""
+
+#: ../../source/socket/index.rst:37
+# bfc044d016f14c2f84486e16130cc296
+msgid ":mod:`SocketServer` -- Framework for creating network servers."
+msgstr ""
+
+#: ../../source/socket/index.rst:39
+# db7a1d4ad21e4032b12184a8c52814be
+msgid ":mod:`asyncio` -- Asynchronous I/O and concurrency tools."
+msgstr ""
+
+#: ../../source/socket/index.rst:41
+# 3cf2af8b38524fe3adc3854122032e84
+msgid ":mod:`urllib` and :mod:`urllib2` -- Most network clients should use the more convenient libraries for accessing remote resources through a URL."
+msgstr ""
+
+#: ../../source/socket/index.rst:45
+# d808ad30b0364333b82082a128880298
+msgid "`Socket Programming HOWOTO <https://docs.python.org/3/howto/sockets.html>`__ -- An instructional guide by Gordon McMillan, included in the standard library documentation."
+msgstr ""
+
+#: ../../source/socket/index.rst:50
+# 92fb8b2f136c4cab82b9f6ab12bfb06b
+msgid "*Foundations of Python Network Programming, 3/E* -- By Brandon Rhodes and John Goerzen. Published by Apress, 2014. ISBN-10: 1430258543."
+msgstr ""
+
+#: ../../source/socket/index.rst:54
+# 9d592891bf8942f1aac32a5a8b73462e
+msgid "*Unix Network Programming, Volume 1: The Sockets Networking API, 3/E* -- By W. Richard Stevens, Bill Fenner, and Andrew M. Rudoff. Published by Addison-Wesley Professional, 2004. ISBN-10: 0131411551"
+msgstr ""
+

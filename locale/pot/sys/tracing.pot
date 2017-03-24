@@ -1,0 +1,256 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/sys/tracing.rst:5
+# 0c751be5248345cab46ed682157a803d
+msgid "Tracing a Program As It Runs"
+msgstr ""
+
+#: ../../source/sys/tracing.rst:7
+# 0a13f92f9d6c4125bc3e670a05037788
+msgid "There are two ways to inject code to watch a program run: *tracing* and *profiling*.  They are similar, but intended for different purposes and so have different constraints.  The easiest, but least efficient, way to monitor a program is through a *trace hook*, which can be used to write a debugger, monitor code coverage, or achieve many other purposes."
+msgstr ""
+
+#: ../../source/sys/tracing.rst:14
+# 997a9ef9d99645d4a934cd168751f463
+msgid "The trace hook is modified by passing a callback function to ``sys.settrace()``.  The callback will receive three arguments: the stack frame from the code being run, a string naming the type of notification, and an event-specific argument value.  :table:`Event Hooks for settrace()` lists the seven event types for different levels of information that occur as a program is being executed."
+msgstr ""
+
+#: ../../source/sys/tracing.rst:0
+# c6a208a924404c779a481cc956978a9e
+msgid "Event Hooks for settrace()"
+msgstr ""
+
+#: ../../source/sys/tracing.rst:25
+# a34bb69de9a94ebb80073780b163d21e
+msgid "Event"
+msgstr ""
+
+#: ../../source/sys/tracing.rst:26
+# 34595c9af0a14c58a40084db9c981c27
+msgid "When it occurs"
+msgstr ""
+
+#: ../../source/sys/tracing.rst:27
+# 99815108cbfb4b89b70902c061900457
+msgid "Argument value"
+msgstr ""
+
+#: ../../source/sys/tracing.rst:28
+# 458ca9990e4f472b82310eada4ebea60
+msgid "call"
+msgstr ""
+
+#: ../../source/sys/tracing.rst:29
+#: ../../source/sys/tracing.rst:32
+# 8003af07195145ca9fa7a5dd5c00bdca
+# ee1abf4c9894441fbc0d67cb181c940f
+msgid "Before a line is executed"
+msgstr ""
+
+#: ../../source/sys/tracing.rst:30
+#: ../../source/sys/tracing.rst:33
+#: ../../source/sys/tracing.rst:45
+#: ../../source/sys/tracing.rst:48
+# 194cf481880e424bb9283ccc99aa7290
+# 41056b13492347bea7412b42dd3ed1a0
+# c80fd98fd81748f6a2afabcd8a9f0fc2
+# a7b66dbb255749ab997293b8575a4056
+msgid "``None``"
+msgstr ""
+
+#: ../../source/sys/tracing.rst:31
+# be15f17a406e4e658f7e45075447a198
+msgid "line"
+msgstr ""
+
+#: ../../source/sys/tracing.rst:34
+# ee17def2afbf441f810ee3aaaf4cde11
+msgid "return"
+msgstr ""
+
+#: ../../source/sys/tracing.rst:35
+# c3789078cb224402b92455ed2119fe7a
+msgid "Before a function returns"
+msgstr ""
+
+#: ../../source/sys/tracing.rst:36
+# 0473126ef0b54bf6b42005fffe575e3a
+msgid "The value being returned"
+msgstr ""
+
+#: ../../source/sys/tracing.rst:37
+# 1a92cc544377414494799b775330841f
+msgid "exception"
+msgstr ""
+
+#: ../../source/sys/tracing.rst:38
+# 5ee18c5c6fbf4854a39bdf41a5606458
+msgid "After an exception occurs"
+msgstr ""
+
+#: ../../source/sys/tracing.rst:39
+# 08073e35ab934826beb3aef00d3a9547
+msgid "The (exception, value, traceback) tuple"
+msgstr ""
+
+#: ../../source/sys/tracing.rst:40
+# 69a92a5a6fc64767a42718b4333a8030
+msgid "c_call"
+msgstr ""
+
+#: ../../source/sys/tracing.rst:41
+# 3a4fc958901148b59be4ac4d187504e6
+msgid "Before a C function is called"
+msgstr ""
+
+#: ../../source/sys/tracing.rst:42
+# 36c3fa520ff84906a4b1b04b37c61cd6
+msgid "The C function object"
+msgstr ""
+
+#: ../../source/sys/tracing.rst:43
+# 64c6a5bde82944ba9c3d554a7a8ea10b
+msgid "c_return"
+msgstr ""
+
+#: ../../source/sys/tracing.rst:44
+# 2301bf22fdd54a50a8476d42c55646f3
+msgid "After a C function returns"
+msgstr ""
+
+#: ../../source/sys/tracing.rst:46
+# 9396c0c3f731427cb4acde992d7f8513
+msgid "c_exception"
+msgstr ""
+
+#: ../../source/sys/tracing.rst:47
+# f843b6312c694006b581193d72d52968
+msgid "After a C function throws an error"
+msgstr ""
+
+#: ../../source/sys/tracing.rst:51
+# a16aa751cd8b4f678fad5218183fffa2
+msgid "Tracing Function Calls"
+msgstr ""
+
+#: ../../source/sys/tracing.rst:53
+# 44a567cc22d54e9490e93ef407f7da3b
+msgid "A ``call`` event is generated before every function call.  The frame passed to the callback can be used to find out which function is being called and from where."
+msgstr ""
+
+#: ../../source/sys/tracing.rst:0
+# 57d535a1aa274321901dbe1362dd24cc
+msgid "sys_settrace_call.py"
+msgstr ""
+
+#: ../../source/sys/tracing.rst:63
+# 3882204b6af74657960201842f3ad16d
+msgid "This example ignores calls to ``write()``, as used by ``print`` to write to ``sys.stdout``."
+msgstr ""
+
+#: ../../source/sys/tracing.rst:88
+# dc76320e8a4d4fbaa7f6aa64e0006d63
+msgid "Tracing Inside Functions"
+msgstr ""
+
+#: ../../source/sys/tracing.rst:90
+# ec6b9e82263a4ac2823ab98f57aa3302
+msgid "The trace hook can return a new hook to be used inside the new scope (the *local* trace function). It is possible, for instance, to control tracing to only run line-by-line within certain modules or functions."
+msgstr ""
+
+#: ../../source/sys/tracing.rst:0
+# c3f3272b72e748c9b03e010f53100c77
+msgid "sys_settrace_line.py"
+msgstr ""
+
+#: ../../source/sys/tracing.rst:100
+# da2ee7a74d8d449bbf24c89e09f2237d
+msgid "In this example, the list of functions is kept in the variable :py``to_be_traced``, so when ``trace_calls()`` runs it can return ``trace_lines()`` to enable tracing inside of ``b()``."
+msgstr ""
+
+#: ../../source/sys/tracing.rst:127
+# 8f4a5b6030bf4fccb205649b7e36544f
+msgid "Watching the Stack"
+msgstr ""
+
+#: ../../source/sys/tracing.rst:129
+# ea3a75d7c8434f08b3244a1c71666394
+msgid "Another useful way to use the hooks is to keep up with which functions are being called, and what their return values are.  To monitor return values, watch for the ``return`` event."
+msgstr ""
+
+#: ../../source/sys/tracing.rst:0
+# 6fe53029b41e4708bc506011de414b32
+msgid "sys_settrace_return.py"
+msgstr ""
+
+#: ../../source/sys/tracing.rst:139
+# 0f86ab2029634ffba9c354f2a2324912
+msgid "The local trace function is used for watching return events, so ``trace_calls_and_returns()`` needs to return a reference to itself when a function is called, so the return value can be monitored."
+msgstr ""
+
+#: ../../source/sys/tracing.rst:162
+# 47d4d83154b24e57b9c8790d91546617
+msgid "Exception Propagation"
+msgstr ""
+
+#: ../../source/sys/tracing.rst:164
+# 8f481430a1914b03a1e3d70bb294296c
+msgid "Exceptions can be monitored by looking for the ``exception`` event in a local trace function.  When an exception occurs, the trace hook is called with a tuple containing the type of exception, the exception object, and a traceback object."
+msgstr ""
+
+#: ../../source/sys/tracing.rst:0
+# 7cc65b9dcb4540a4a0d650a98c4ce831
+msgid "sys_settrace_exception.py"
+msgstr ""
+
+#: ../../source/sys/tracing.rst:175
+# d95caec712a34159af542fc845a1484e
+msgid "Take care to limit where the local function is applied because some of the internals of formatting error messages generate, and ignore, their own exceptions.  Every exception is seen by the trace hook, whether the caller catches and ignores it or not."
+msgstr ""
+
+#: ../../source/sys/tracing.rst:208
+# 922b027be69041f9bcfb97b9779736a2
+msgid ":mod:`profile` -- The ``profile`` module documentation shows how to use a ready-made profiler."
+msgstr ""
+
+#: ../../source/sys/tracing.rst:211
+# e9214f5f22564cd4a1e24222c0f448e4
+msgid ":mod:`trace` -- The ``trace`` module implements several code analysis features."
+msgstr ""
+
+#: ../../source/sys/tracing.rst:214
+# ba05bcfcdd0f4951a38849baa15ff2af
+msgid "`Types and Members <https://docs.python.org/3/library/inspect.html#types-and-members>`_ -- The descriptions of frame and code objects and their attributes."
+msgstr ""
+
+#: ../../source/sys/tracing.rst:219
+# 30f8e8f6600e4aafa206fc4296239eed
+msgid "`Tracing python code <http://www.dalkescientific.com/writings/diary/archive/2005/04/20/tracing_python_code.html>`_ -- Another ``settrace()`` tutorial."
+msgstr ""
+
+#: ../../source/sys/tracing.rst:222
+# 9551bc14568e4759ae8d8b6135a78a1c
+msgid "`Wicked hack: Python bytecode tracing <http://nedbatchelder.com/blog/200804/wicked_hack_python_bytecode_tracing.html>`_ -- Ned Batchelder's experiments with tracing with more granularity than source line level."
+msgstr ""
+
+#: ../../source/sys/tracing.rst:227
+# b789c273bced4f24a1d122066664b801
+msgid "`smiley <https://pypi.python.org/pypi/smiley>`_ -- Python Application Tracer"
+msgstr ""
+

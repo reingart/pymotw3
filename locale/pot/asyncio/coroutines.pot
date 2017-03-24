@@ -1,0 +1,113 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/asyncio/coroutines.rst:3
+# f92f06af9ec14e6996d093336d781305
+msgid "Cooperative Multitasking with Coroutines"
+msgstr ""
+
+#: ../../source/asyncio/coroutines.rst:5
+# a00478fa93b445a7acf22e04c80ad17d
+msgid "Coroutines are a language construct designed for concurrent operation. A coroutine function creates a coroutine object when called, and the caller can then run the code of the function using the coroutine's ``send()`` method. A coroutine can pause execution using the ``await`` keyword with another coroutine. While it is paused, the coroutine's state is maintained, allowing it to resume where it left off the next time it is awakened."
+msgstr ""
+
+#: ../../source/asyncio/coroutines.rst:14
+# f2600e15ceba4fb1aa5905de9c6f7fd8
+msgid "Starting a Coroutine"
+msgstr ""
+
+#: ../../source/asyncio/coroutines.rst:16
+# c958cec697d84095a7754c8879b550b8
+msgid "There are a few different ways to have the ``asyncio`` event loop start a coroutine. The simplest is to use ``run_until_complete()``, passing the coroutine to it directly."
+msgstr ""
+
+#: ../../source/asyncio/coroutines.rst:0
+# becf0a710ac2419c93d8f766c30a8f5d
+msgid "asyncio_coroutine.py"
+msgstr ""
+
+#: ../../source/asyncio/coroutines.rst:24
+# 356e14d94c874c4fb21b6d2a526b184c
+msgid "The first step is to obtain a reference to the event loop. The default loop type can be used, or a specific loop class can be instantiated. In this example, the default loop is used. The ``run_until_complete()`` method starts the loop with the coroutine object and stops the loop when the coroutine exits by returning."
+msgstr ""
+
+#: ../../source/asyncio/coroutines.rst:46
+# 2cc8b4b0485d47aa864160c7297f3fca
+msgid "Returning Values from Coroutines"
+msgstr ""
+
+#: ../../source/asyncio/coroutines.rst:48
+# 91b876c679b544a5a75f0498f0002f54
+msgid "The return value of a coroutine is passed back to the code that starts and waits for it."
+msgstr ""
+
+#: ../../source/asyncio/coroutines.rst:0
+# 24cd90ea28fa4cb2926950e7950cfcd6
+msgid "asyncio_coroutine_return.py"
+msgstr ""
+
+#: ../../source/asyncio/coroutines.rst:55
+# 3a2a9da504454930bff6bb70142f8fe8
+msgid "In this case, ``run_until_complete()`` also returns the result of the coroutine it is waiting for."
+msgstr ""
+
+#: ../../source/asyncio/coroutines.rst:73
+# 748fb6005f57434983a225a3ddafb5a1
+msgid "Chaining Coroutines"
+msgstr ""
+
+#: ../../source/asyncio/coroutines.rst:75
+# d042bb699f4c4ca8b9a19bc5899975dc
+msgid "One coroutine can start another coroutine and wait for the results. This makes it easier to decompose a task into reusable parts. The following example has two phases that must be executed in order, but that can run concurrently with other operations."
+msgstr ""
+
+#: ../../source/asyncio/coroutines.rst:0
+# b31f68a063d64ec3b2178ad5f597ce89
+msgid "asyncio_coroutine_chain.py"
+msgstr ""
+
+#: ../../source/asyncio/coroutines.rst:84
+# 2d0ebbe91683432092bb19d20ebf3ee9
+msgid "The ``await`` keyword is used instead of adding the new coroutines to the loop, because control flow is already inside of a coroutine being managed by the loop so it isn't necessary to tell the loop to manage the new coroutines."
+msgstr ""
+
+#: ../../source/asyncio/coroutines.rst:107
+# 9206129552b94723b4af9a382181a762
+msgid "Generators Instead of Coroutines"
+msgstr ""
+
+#: ../../source/asyncio/coroutines.rst:109
+# 768699999052430d92a850a568ad41cb
+msgid "Coroutine functions are a key component of the design of ``asyncio``. They provide a language construct for stopping the execution of part of a program, preserving the state of that call, and re-entering the state at a later time, which are all important capabilities for a concurrency framework."
+msgstr ""
+
+#: ../../source/asyncio/coroutines.rst:115
+# d970801159e84b20a6c00695594ab6fa
+msgid "Python 3.5 introduced new language features to define such coroutines natively using ``async def`` and to yield control using ``await``, and the examples for ``asyncio`` take advantage of the new feature. Earlier versions of Python 3 can use generator functions wrapped with the ``asyncio.coroutine()`` decorator and ``yield from`` to achieve the same effect."
+msgstr ""
+
+#: ../../source/asyncio/coroutines.rst:0
+# 955d1f6ea616450fbc08d635b49ee928
+msgid "asyncio_generator.py"
+msgstr ""
+
+#: ../../source/asyncio/coroutines.rst:126
+# f4d5ad5b27b243569a10844372282bd2
+msgid "The preceding example reproduces ``asyncio_coroutine_chain.py`` using generator functions instead of native coroutines."
+msgstr ""
+

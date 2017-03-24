@@ -1,0 +1,543 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/itertools/index.rst:3
+# 748d3250fc964efeaba97b09dd01af31
+msgid "itertools --- Iterator Functions"
+msgstr ""
+
+#: ../../source/itertools/index.rst:9
+# c51651d53ee24e42bb8a29feb49479ed
+msgid "The itertools module includes a set of functions for working with sequence data sets."
+msgstr ""
+
+#: ../../source/itertools/index.rst:12
+# 2cba9e2ec24e46cebaf2cdc51f86bc2c
+msgid "The functions provided by ``itertools`` are inspired by similar features of functional programming languages such as Clojure, Haskell, APL, and SML. They are intended to be fast and use memory efficiently, and also to be hooked together to express more complicated iteration-based algorithms."
+msgstr ""
+
+#: ../../source/itertools/index.rst:18
+# 64343ace52184b98b665c98bfcce2402
+msgid "Iterator-based code offers better memory consumption characteristics than code that uses lists.  Since data is not produced from the iterator until it is needed, all of the data does not need to be stored in memory at the same time.  This \"lazy\" processing model can reduce swapping and other side-effects of large data sets, improving performance."
+msgstr ""
+
+#: ../../source/itertools/index.rst:25
+# 433e024e050544c0a97c4d9b12712d36
+msgid "In addition to the functions defined in ``itertools``, the examples in this section also rely on some of the built-in functions for iteration."
+msgstr ""
+
+#: ../../source/itertools/index.rst:30
+# 41e4e296dcbe4027badd33ae48f34a08
+msgid "Merging and Splitting Iterators"
+msgstr ""
+
+#: ../../source/itertools/index.rst:32
+# 663e13da5ffc45b3965ce4f283d43d1a
+msgid "The ``chain()`` function takes several iterators as arguments and returns a single iterator that produces the contents of all of the inputs as though they came from a single iterator."
+msgstr ""
+
+#: ../../source/itertools/index.rst:0
+# 7232962a37894d528e949ceac9e5d7bf
+msgid "itertools_chain.py"
+msgstr ""
+
+#: ../../source/itertools/index.rst:40
+# 8ec6467b7c1a43b892ad52450ab7a7b5
+msgid "``chain()`` makes it easy to process several sequences without constructing one large list."
+msgstr ""
+
+#: ../../source/itertools/index.rst:55
+# 44bd95cc25fc42bf8efb8868a8f25ea7
+msgid "If the iterables to be combined are not all known in advance, or need to be evaluated lazily, ``chain.from_iterable()`` can be used to construct the chain instead."
+msgstr ""
+
+#: ../../source/itertools/index.rst:0
+# 418d29e8b10e4e83b7c1da718ec08044
+msgid "itertools_chain_from_iterable.py"
+msgstr ""
+
+#: ../../source/itertools/index.rst:75
+# 02e784f88e9842f0af1ca9f1264a567d
+msgid "The built-in function ``zip()`` returns an iterator that combines the elements of several iterators into tuples."
+msgstr ""
+
+#: ../../source/itertools/index.rst:0
+# dc6986e2e9cc44c39b95e0628e49cc80
+msgid "itertools_zip.py"
+msgstr ""
+
+#: ../../source/itertools/index.rst:82
+# bb78d16453d540ffb619b62a9929156c
+msgid "As with the other functions in this module, the return value is an iterable object that produces values one at a time."
+msgstr ""
+
+#: ../../source/itertools/index.rst:99
+# 5c649492a6494fd7abb72e2baa8012c1
+msgid "``zip()`` stops when the first input iterator is exhausted. To process all of the inputs, even if the iterators produce different numbers of values, use ``zip_longest()``."
+msgstr ""
+
+#: ../../source/itertools/index.rst:0
+# 42da89922c614bccbd9c688aa4a3aa6d
+msgid "itertools_zip_longest.py"
+msgstr ""
+
+#: ../../source/itertools/index.rst:107
+# 1eb006e6e35d4142b644ea5617b2d1c1
+msgid "By default, ``zip_longest()`` substitutes ``None`` for any missing values. Use the ``fillvalue`` argument to use a different substitute value."
+msgstr ""
+
+#: ../../source/itertools/index.rst:128
+# f0996af52d1f407484f338467f9b56b8
+msgid "The ``islice()`` function returns an iterator which returns selected items from the input iterator, by index."
+msgstr ""
+
+#: ../../source/itertools/index.rst:0
+# ab3fadbc50864071bbf6448e5e279e7f
+msgid "itertools_islice.py"
+msgstr ""
+
+#: ../../source/itertools/index.rst:135
+# 8057085803894923b245726045dd49bf
+msgid "``islice()`` takes the same arguments as the slice operator for lists: ``start``, ``stop``, and ``step``. The start and step arguments are optional."
+msgstr ""
+
+#: ../../source/itertools/index.rst:159
+# 7a2420484bbe4270849c4bae7f0b863d
+msgid "The ``tee()`` function returns several independent iterators (defaults to 2) based on a single original input."
+msgstr ""
+
+#: ../../source/itertools/index.rst:0
+# 71a3d7f540244980aee45bc8e11deee0
+msgid "itertools_tee.py"
+msgstr ""
+
+#: ../../source/itertools/index.rst:166
+# bf5e66134df6446faf312ad9d537ddfb
+msgid "``tee()`` has semantics similar to the Unix ``tee`` utility, which repeats the values it reads from its input and writes them to a named file and standard output.  The iterators returned by ``tee()`` can be used to feed the same set of data into multiple algorithms to be processed in parallel."
+msgstr ""
+
+#: ../../source/itertools/index.rst:185
+# d3c476d5c7c64d5baa2ee33bc5f49a30
+msgid "The new iterators created by ``tee()`` share their input, so the original iterator should not be used after the new ones are created."
+msgstr ""
+
+#: ../../source/itertools/index.rst:0
+# 5b90a445da514763aca11f6b5c0bba6a
+msgid "itertools_tee_error.py"
+msgstr ""
+
+#: ../../source/itertools/index.rst:192
+# 6b2837a8dc1c4cc3b2bb9e920502777a
+msgid "If values are consumed from the original input, the new iterators will not produce those values:"
+msgstr ""
+
+#: ../../source/itertools/index.rst:210
+# e8a3da7c3ccd4a4aae1d93ddf1d52d59
+msgid "Converting Inputs"
+msgstr ""
+
+#: ../../source/itertools/index.rst:212
+# c7bdff8cf68647a3aea5bdea6dd7b8bf
+msgid "The built-in ``map()`` function returns an iterator that calls a function on the values in the input iterators, and returns the results. It stops when any input iterator is exhausted."
+msgstr ""
+
+#: ../../source/itertools/index.rst:0
+# 0afad75e7a214ed3a3c6736e1bbfac1d
+msgid "itertools_map.py"
+msgstr ""
+
+#: ../../source/itertools/index.rst:220
+# cae54e3e968e485086bc9510ccb9a2f4
+msgid "In the first example, the lambda function multiplies the input values by 2. In a second example, the lambda function multiplies two arguments, taken from separate iterators, and returns a tuple with the original arguments and the computed value. The third example stops after producing two tuples because the second range is exhausted."
+msgstr ""
+
+#: ../../source/itertools/index.rst:255
+# c64878e5a19647be848b668843fabae7
+msgid "The ``starmap()`` function is similar to ``map()``, but instead of constructing a tuple from multiple iterators, it splits up the items in a single iterator as arguments to the mapping function using the ``*`` syntax."
+msgstr ""
+
+#: ../../source/itertools/index.rst:0
+# ec8ec45f82244051a45ff03f3265f7f7
+msgid "itertools_starmap.py"
+msgstr ""
+
+#: ../../source/itertools/index.rst:264
+# 1d82768af0814be391e2c74fbcd51ffa
+msgid "Where the mapping function to ``map()`` is called ``f(i1, i2)``, the mapping function passed to ``starmap()`` is called ``f(*i)``."
+msgstr ""
+
+#: ../../source/itertools/index.rst:284
+# b4e3a6d553784aaf9e4120a6460c1879
+msgid "Producing New Values"
+msgstr ""
+
+#: ../../source/itertools/index.rst:286
+# 230a920633164c169a74af19bae0bb65
+msgid "The ``count()`` function returns an iterator that produces consecutive integers, indefinitely. The first number can be passed as an argument (the default is zero). There is no upper bound argument (see the built-in ``range()`` for more control over the result set)."
+msgstr ""
+
+#: ../../source/itertools/index.rst:0
+# 5dbc02a9abc241d2afab62a6063ca7c9
+msgid "itertools_count.py"
+msgstr ""
+
+#: ../../source/itertools/index.rst:295
+# c6a91dbe741949bcadd3a45b9eebb049
+msgid "This example stops because the list argument is consumed."
+msgstr ""
+
+#: ../../source/itertools/index.rst:311
+# b0ad1cde393f4f8ab2aa5fea68604d87
+msgid "The start and step arguments to ``count()`` can be any numerical values that can be added together."
+msgstr ""
+
+#: ../../source/itertools/index.rst:0
+# 3cd323e2749b4715bab115ce67fa73e3
+msgid "itertools_count_step.py"
+msgstr ""
+
+#: ../../source/itertools/index.rst:318
+# 580268c4bf194c6cb182d5b8a04b9d21
+msgid "In this example, the start point and steps are ``Fraction`` objects from the :mod:`fraction` module."
+msgstr ""
+
+#: ../../source/itertools/index.rst:335
+# f9e0d59c3c594171a0ec818b1dca4613
+msgid "The ``cycle()`` function returns an iterator that repeats the contents of the arguments it is given indefinitely. Since it has to remember the entire contents of the input iterator, it may consume quite a bit of memory if the iterator is long."
+msgstr ""
+
+#: ../../source/itertools/index.rst:0
+# 97eeabeba5844117b2ce5fba49287fa6
+msgid "itertools_cycle.py"
+msgstr ""
+
+#: ../../source/itertools/index.rst:344
+# 7949097c2ae74ea89238a14ccf511fdb
+msgid "A counter variable is used to break out of the loop after a few cycles in this example."
+msgstr ""
+
+#: ../../source/itertools/index.rst:365
+# 344583cdd0414c3d9c7d651a455d0f8d
+msgid "The ``repeat()`` function returns an iterator that produces the same value each time it is accessed."
+msgstr ""
+
+#: ../../source/itertools/index.rst:0
+# 2bc7d8cf899445319695c4b91a808524
+msgid "itertools_repeat.py"
+msgstr ""
+
+#: ../../source/itertools/index.rst:372
+# 11171e360817443697777437f9dcab65
+msgid "The iterator returned by ``repeat()`` keeps returning data forever, unless the optional ``times`` argument is provided to limit it."
+msgstr ""
+
+#: ../../source/itertools/index.rst:391
+# a9cd849d93cd44b192b26838fb144214
+msgid "It is useful to combine ``repeat()`` with ``zip()`` or ``map()`` when invariant values need to be included with the values from the other iterators."
+msgstr ""
+
+#: ../../source/itertools/index.rst:0
+# cba0522867c9412aba0c20fdb7ca669d
+msgid "itertools_repeat_zip.py"
+msgstr ""
+
+#: ../../source/itertools/index.rst:399
+# 2888f6ecb4ff462dbf4c60fe93ff292a
+msgid "A counter value is combined with the constant returned by ``repeat()`` in this example."
+msgstr ""
+
+#: ../../source/itertools/index.rst:418
+# 5f07538e1ba143f5ba12402de9575ff5
+msgid "This example uses ``map()`` to multiply the numbers in the range 0 through 4 by 2."
+msgstr ""
+
+#: ../../source/itertools/index.rst:0
+# 27d48d9c17eb43aca56e6aaf5ca8c71f
+msgid "itertools_repeat_map.py"
+msgstr ""
+
+#: ../../source/itertools/index.rst:425
+# 61f48988541a45dea1ccb2ca396503c5
+msgid "The ``repeat()`` iterator does not need to be explicitly limited, since ``map()`` stops processing when any of its inputs ends, and the ``range()`` returns only five elements."
+msgstr ""
+
+#: ../../source/itertools/index.rst:447
+# 6d252f4d8d5d4865b6aa8ee9dbd7196c
+msgid "Filtering"
+msgstr ""
+
+#: ../../source/itertools/index.rst:449
+# f282c26d45d1401f98f3fe14c0bc356e
+msgid "The ``dropwhile()`` function returns an iterator that produces elements of the input iterator after a condition becomes false for the first time."
+msgstr ""
+
+#: ../../source/itertools/index.rst:0
+# 78839f53103e4d63858db0023927a066
+msgid "itertools_dropwhile.py"
+msgstr ""
+
+#: ../../source/itertools/index.rst:457
+# 2cb71de95d714181bdd3d2dd90720766
+msgid "``dropwhile()`` does not filter every item of the input; after the condition is false the first time, all of the remaining items in the input are returned."
+msgstr ""
+
+#: ../../source/itertools/index.rst:478
+# 13dd1fb658e94205b864d271da06ca7c
+msgid "The opposite of ``dropwhile()`` is ``takewhile()``.  It returns an iterator that returns items from the input iterator as long as the test function returns true."
+msgstr ""
+
+#: ../../source/itertools/index.rst:0
+# 41ad03c966a2401dbedeb0ba5de726f9
+msgid "itertools_takewhile.py"
+msgstr ""
+
+#: ../../source/itertools/index.rst:486
+# 6f521ba0192a4a468f7c4fcb3b006b6b
+msgid "As soon as ``should_take()`` returns ``False``, ``takewhile()`` stops processing the input."
+msgstr ""
+
+#: ../../source/itertools/index.rst:508
+# e7ed9a621a7d4f63a34220f64b378934
+msgid "The built-in function ``filter()`` returns an iterator that includes only items for which the test function returns true."
+msgstr ""
+
+#: ../../source/itertools/index.rst:0
+# 1a593df43b6e47aba1c27af9b440a9f4
+msgid "itertools_filter.py"
+msgstr ""
+
+#: ../../source/itertools/index.rst:515
+# dcc897fb54d5497896131d242f0730c3
+msgid "``filter()`` is different from ``dropwhile()`` and ``takewhile()`` in that every item is tested before it is returned."
+msgstr ""
+
+#: ../../source/itertools/index.rst:537
+# 569e864d0629409c8f52cedd1dc7fc74
+msgid "``filterfalse()`` returns an iterator that includes only items where the test function returns false."
+msgstr ""
+
+#: ../../source/itertools/index.rst:0
+# 5e8a6f8cf9bf4d25a7283e5218836e67
+msgid "itertools_filterfalse.py"
+msgstr ""
+
+#: ../../source/itertools/index.rst:544
+# f6a7aded50ff4c7d8b0634ceffcbf4ec
+msgid "The test expression in ``check_item()`` is the same, so the results in this example with ``filterfalse()`` are the opposite of the results from the previous example."
+msgstr ""
+
+#: ../../source/itertools/index.rst:566
+# 361edcb43787458b9e8c0825cf1260f0
+msgid "``compress()`` offers another way to filter the contents of an iterable. Instead of calling a function, it uses the values in another iterable to indicate when to accept a value and when to ignore it."
+msgstr ""
+
+#: ../../source/itertools/index.rst:0
+# 6c3594aad48a4a76928c687af06b3c62
+msgid "itertools_compress.py"
+msgstr ""
+
+#: ../../source/itertools/index.rst:574
+# 1c17c1b0732c4717b09c5f0df30d3736
+msgid "The first argument is the data iterable to process and the second is a selector iterable producing Boolean values indicating which elements to take from the data input (a true value causes the value to be produced, a false value causes it to be ignored)."
+msgstr ""
+
+#: ../../source/itertools/index.rst:596
+# 8bd156d01d674809894c0fc8d8547d52
+msgid "Grouping Data"
+msgstr ""
+
+#: ../../source/itertools/index.rst:598
+# 30c258473f984174b8c48823cc79e7bf
+msgid "The ``groupby()`` function returns an iterator that produces sets of values organized by a common key.  This example illustrates grouping related values based on an attribute."
+msgstr ""
+
+#: ../../source/itertools/index.rst:0
+# b8a5ce4dbdf442769c0c6e1f8849cc90
+msgid "itertools_groupby_seq.py"
+msgstr ""
+
+#: ../../source/itertools/index.rst:606
+# c1824b41b9744d4cb6e2645258700237
+msgid "The input sequence needs to be sorted on the key value in order for the groupings to work out as expected."
+msgstr ""
+
+#: ../../source/itertools/index.rst:653
+# 8ee63c19ca5e47adb9833ae993248182
+msgid "Combining Inputs"
+msgstr ""
+
+#: ../../source/itertools/index.rst:655
+# a621802cdc664854b2ea887c3c68541e
+msgid "The ``accumulate()`` function processes the input iterable, passing the nth and n+1st item to a function and producing the return value instead of either input. The default function used to combine the two values adds them, so ``accumulate()`` can be used to produce the cumulative sum of a series of numerical inputs."
+msgstr ""
+
+#: ../../source/itertools/index.rst:0
+# fb28e2cf427c4b3e939351573496a125
+msgid "itertools_accumulate.py"
+msgstr ""
+
+#: ../../source/itertools/index.rst:665
+# 9af97ed4357b4ada97d6a360cd1b0b66
+msgid "When used with a sequence of non-integer values, the results depend on what it means to \"add\" two items together. The second example in this script shows that when ``accumulate()`` receives a string input each response is a progressively longer prefix of that string."
+msgstr ""
+
+#: ../../source/itertools/index.rst:683
+# b237765e91a0463ba3837e7d3291b810
+msgid "It is possible to combine ``accumulate()`` with any other function that takes two input values to achieve different results."
+msgstr ""
+
+#: ../../source/itertools/index.rst:0
+# 26b493c915e846bf809b619fcaf45296
+msgid "itertools_accumulate_custom.py"
+msgstr ""
+
+#: ../../source/itertools/index.rst:690
+# 5279c4847d0743d5baba2f08d0efdfb9
+msgid "This example combines the string values in a way that makes a series of (nonsensical) palindromes. Each step of the way when ``f()`` is called, it prints the input values passed to it by ``accumulate()``."
+msgstr ""
+
+#: ../../source/itertools/index.rst:710
+# cce26f676a934f13a804c898d136596a
+msgid "Nested ``for`` loops that iterate over multiple sequences can often be replaced with ``product()``, which produces a single iterable whose values are the Cartesian product of the set of input values."
+msgstr ""
+
+#: ../../source/itertools/index.rst:0
+# 79937039c90f4140a2db52fc0df230ca
+msgid "itertools_product.py"
+msgstr ""
+
+#: ../../source/itertools/index.rst:718
+# 386efdb0c3f4428db111f4e151df2a25
+msgid "The values produced by ``product()`` are tuples, with the members taken from each of the iterables passed in as arguments in the order they are passed. The first tuple returned includes the first value from each iterable. The *last* iterable passed to ``product()`` is processed first, followed by the next to last, and so on. The result is that the return values are in order based on the first iterable, then the next iterable, etc."
+msgstr ""
+
+#: ../../source/itertools/index.rst:726
+# e8406e215e484ff8bd1c6efff6115753
+msgid "In this example, the cards are ordered by value and then by suit."
+msgstr ""
+
+#: ../../source/itertools/index.rst:752
+# bdc6d174fa5d46d0b2481ec527de6be3
+msgid "To change the order of the cards, change the order of the arguments to ``product()``."
+msgstr ""
+
+#: ../../source/itertools/index.rst:0
+# ea6f1959754c4f558d884921505ee510
+msgid "itertools_product_ordering.py"
+msgstr ""
+
+#: ../../source/itertools/index.rst:760
+# 906c086a822f4b8b89a39f4ebd98ef24
+msgid "The print loop in this example looks for an Ace card, instead of the spade suit, and then adds a newline to break up the output."
+msgstr ""
+
+#: ../../source/itertools/index.rst:778
+# a080adb9944e4a60857d31cf6f658e16
+msgid "To compute the product of a sequence with itself, specify how many times the input should be repeated."
+msgstr ""
+
+#: ../../source/itertools/index.rst:0
+# d7a35298c4204b1c9d9c439e1a1b15a5
+msgid "itertools_product_repeat.py"
+msgstr ""
+
+#: ../../source/itertools/index.rst:785
+# a308f395c6234c408f2a0b94c203dacd
+msgid "Since repeating a single iterable is like passing the same iterable multiple times, each tuple produced by ``product()`` will contain a number of items equal to the repeat counter."
+msgstr ""
+
+#: ../../source/itertools/index.rst:818
+# 6d41f829bbe346f291f9df3b73ae52cd
+msgid "The ``permutations()`` function produces items from the input iterable combined in the possible permutations of the given length. It defaults to producing the full set of all permutations."
+msgstr ""
+
+#: ../../source/itertools/index.rst:0
+# 43911aa279c643fbba448e3509f3c25e
+msgid "itertools_permutations.py"
+msgstr ""
+
+#: ../../source/itertools/index.rst:826
+# 087e3ebf15194091a3a0ae0332df5950
+msgid "Use the ``r`` argument to limit the length and number of the individual permutations returned."
+msgstr ""
+
+#: ../../source/itertools/index.rst:853
+# 3295296c52b34144bca8a63354eab733
+msgid "To limit the values to unique combinations rather than permutations, use ``combinations()``. As long as the members of the input are unique, the output will not include any repeated values."
+msgstr ""
+
+#: ../../source/itertools/index.rst:0
+# 38469be2a02f425085ed198fc1203737
+msgid "itertools_combinations.py"
+msgstr ""
+
+#: ../../source/itertools/index.rst:861
+# a3a3507fb9334eb3af3539fe4d26057a
+msgid "Unlike with permutations, the ``r`` argument to ``combinations()`` is required."
+msgstr ""
+
+#: ../../source/itertools/index.rst:880
+# ad5a70ec76d4493689ceca14b0b5a6f1
+msgid "While ``combinations()`` does not repeat individual input elements, sometimes it is useful to consider combinations that do include repeated elements. For those cases, use ``combinations_with_replacement()``."
+msgstr ""
+
+#: ../../source/itertools/index.rst:0
+# 213a7d0d639f4584acca4423910164db
+msgid "itertools_combinations_with_replacement.py"
+msgstr ""
+
+#: ../../source/itertools/index.rst:889
+# da98ffadce89453a95fc1ba2a18b5a2b
+msgid "In this output, each input item is paired with itself as well as all of the other members of the input sequence."
+msgstr ""
+
+#: ../../source/itertools/index.rst:913
+# cc7f0eb70109418eaada187fb4a667eb
+msgid ":pydoc:`itertools`"
+msgstr ""
+
+#: ../../source/itertools/index.rst:915
+# a5d5f16e8680449193ae792425612385
+msgid ":ref:`Python 2 to 3 porting notes for itertools <porting-itertools>`"
+msgstr ""
+
+#: ../../source/itertools/index.rst:917
+# b1aa6097479245fbb7762d979b304a73
+msgid "`The Standard ML Basis Library <http://www.standardml.org/Basis/>`_) -- The library for SML."
+msgstr ""
+
+#: ../../source/itertools/index.rst:920
+# 067fb4d26e3f457fb5c80473742d2414
+msgid "`Definition of Haskell and the Standard Libraries <http://www.haskell.org/definition/>`__ -- Standard library specification for the functional language Haskell."
+msgstr ""
+
+#: ../../source/itertools/index.rst:924
+# 86e92447dab1471a90c09bedfee47c09
+msgid "`Clojure <http://clojure.org/>`__ -- Clojure is a dynamic functional language that runs on the Java Virtual Machine."
+msgstr ""
+
+#: ../../source/itertools/index.rst:927
+# 85826b2e3d954ef1b4d7062809c48a5e
+msgid "`tee <http://man7.org/linux/man-pages/man1/tee.1.html>`__ -- Unix command line tool for splitting one input into multiple identical output streams."
+msgstr ""
+
+#: ../../source/itertools/index.rst:931
+# 7fffb52892df4ef38094dfa6f074bdca
+msgid "`Cartesian product <https://en.wikipedia.org/wiki/Cartesian_product>`__ -- Mathematical definition of the Cartesian product of two sequences."
+msgstr ""
+

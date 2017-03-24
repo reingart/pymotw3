@@ -1,0 +1,243 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/socketserver/index.rst:3
+# f6c2fc6ff2e048038be38945562fa141
+msgid "socketserver --- Creating Network Servers"
+msgstr ""
+
+#: ../../source/socketserver/index.rst:8
+# af417fb4c0724d8ab9a3619292c19fd4
+msgid "Creating network servers."
+msgstr ""
+
+#: ../../source/socketserver/index.rst:10
+# 038ce316ae264718978bd0f8613342c0
+msgid "The ``socketserver`` module is a framework for creating network servers. It defines classes for handling synchronous network requests (the server request handler blocks until the request is completed) over TCP, UDP, Unix streams, and Unix datagrams. It also provides mix-in classes for easily converting servers to use a separate thread or process for each request."
+msgstr ""
+
+#: ../../source/socketserver/index.rst:17
+# 60a683cb47b3444482bc06680543e0e0
+msgid "Responsibility for processing a request is split between a server class and a request handler class. The server deals with the communication issues, such as listening on a socket and accepting connections, and the request handler deals with the \"protocol\" issues like interpreting incoming data, processing it, and sending data back to the client. This division of responsibility means that many applications can use one of the existing server classes without any modifications, and provide a request handler class for it to work with the custom protocol."
+msgstr ""
+
+#: ../../source/socketserver/index.rst:28
+# 7cfff3fffebe4b27be3d826d09dc513f
+msgid "Server Types"
+msgstr ""
+
+#: ../../source/socketserver/index.rst:30
+# 1c97983409de4cf589278dd2f4dc8156
+msgid "There are five different server classes defined in ``socketserver``.  ``BaseServer`` defines the API, and is not intended to be instantiated and used directly. ``TCPServer`` uses TCP/IP sockets to communicate. ``UDPServer`` uses datagram sockets. ``UnixStreamServer`` and ``UnixDatagramServer`` use Unix-domain sockets and are only available on Unix platforms."
+msgstr ""
+
+#: ../../source/socketserver/index.rst:38
+# 2eac81eb2a854d2482f86ebec5b9c001
+msgid "Server Objects"
+msgstr ""
+
+#: ../../source/socketserver/index.rst:40
+# 5dac24546e8748cc9bc631e41cf61386
+msgid "To construct a server, pass it an address on which to listen for requests and a request handler *class* (not instance). The address format depends on the server type and the socket family used. Refer to the :mod:`socket` module documentation for details."
+msgstr ""
+
+#: ../../source/socketserver/index.rst:45
+# c5b510a22113406998beacfcb44ee7cb
+msgid "Once the server object is instantiated, use either ``handle_request()`` or ``serve_forever()`` to process requests. The ``serve_forever()`` method calls ``handle_request()`` in an infinite loop, but if an application needs to integrate the server with another event loop or use ``select()`` to monitor several sockets for different servers, it can call ``handle_request()`` directly."
+msgstr ""
+
+#: ../../source/socketserver/index.rst:54
+# cb265ae0d537492fb8e86945bb686932
+msgid "Implementing a Server"
+msgstr ""
+
+#: ../../source/socketserver/index.rst:56
+# d9507513fe014564864e0b8106dc1b46
+msgid "When creating a server, it is usually sufficient to reuse one of the existing classes and provide a custom request handler class.  For other cases, ``BaseServer`` includes several methods that can be overridden in a subclass."
+msgstr ""
+
+#: ../../source/socketserver/index.rst:61
+# 0311f166db464000b9c776066d13d28b
+msgid "``verify_request(request, client_address)``: Return ``True`` to process the request or ``False`` to ignore it. For example, a server could refuse requests from an IP range or if it is overloaded."
+msgstr ""
+
+#: ../../source/socketserver/index.rst:65
+# 12c846e90d2f4e619cc8f0122744d9af
+msgid "``process_request(request, client_address)``: Calls ``finish_request()`` to actually do the work of handling the request.  It can also create a separate thread or process, as the mix-in classes do."
+msgstr ""
+
+#: ../../source/socketserver/index.rst:70
+# 3e0a74d5eee540b5943c1c97db8015af
+msgid "``finish_request(request, client_address)``: Creates a request handler instance using the class given to the server's constructor. Calls ``handle()`` on the request handler to process the request."
+msgstr ""
+
+#: ../../source/socketserver/index.rst:76
+# 70195e3f58714a8fa9c329debe4646bc
+msgid "Request Handlers"
+msgstr ""
+
+#: ../../source/socketserver/index.rst:78
+# cd5e7e9aa2d1458297359a30a040a930
+msgid "Request handlers do most of the work of receiving incoming requests and deciding what action to take. The handler is responsible for implementing the protocol on top of the socket layer (i.e., HTTP, XML-RPC, or AMQP). The request handler reads the request from the incoming data channel, processes it, and writes a response back out. There are three methods available to be over-ridden."
+msgstr ""
+
+#: ../../source/socketserver/index.rst:85
+# 6a62c3618a494474859dd5c1759f73ec
+msgid "``setup()``: Prepares the request handler for the request. In the ``StreamRequestHandler`` the ``setup()`` method creates file-like objects for reading from and writing to the socket."
+msgstr ""
+
+#: ../../source/socketserver/index.rst:89
+# 2fd330a467a64ae59fb296efa61ab7b7
+msgid "``handle()``: Does the real work for the request. Parse the incoming request, process the data, and send a response."
+msgstr ""
+
+#: ../../source/socketserver/index.rst:92
+# 12bfa5053cfc41379aad701bdd7ac790
+msgid "``finish()``: Cleans up anything created during ``setup()``."
+msgstr ""
+
+#: ../../source/socketserver/index.rst:94
+# f3b3f4495bf2479ca913aa7cce256f5d
+msgid "Many handlers can be implemented with only a ``handle()`` method."
+msgstr ""
+
+#: ../../source/socketserver/index.rst:97
+# 495db5b7822d40099a24dcac91deff54
+msgid "Echo Example"
+msgstr ""
+
+#: ../../source/socketserver/index.rst:99
+# 578cb682499b467992b5fdd4b3d3a4ad
+msgid "This example implements a simple server/request handler pair that accepts TCP connections and echos back any data sent by the client. It starts with the request handler."
+msgstr ""
+
+#: ../../source/socketserver/index.rst:0
+# 7139c073e85c427882daea2adb486048
+msgid "socketserver_echo.py"
+msgstr ""
+
+#: ../../source/socketserver/index.rst:107
+# f0addbd64fbe4b16b42e4a497a696d39
+msgid "The only method that actually needs to be implemented is ``EchoRequestHandler.handle()``, but versions of all of the methods described earlier are included to illustrate the sequence of calls made.  The ``EchoServer`` class does nothing different from ``TCPServer``, except log when each method is called."
+msgstr ""
+
+#: ../../source/socketserver/index.rst:117
+# d00cc92ef37a4219afb3406e209eef96
+msgid "The last step is to add a main program that sets up the server to run in a thread, and sends it data to illustrate which methods are called as the data is echoed back."
+msgstr ""
+
+#: ../../source/socketserver/index.rst:124
+# b67be49ec2b846caab7b466884cac86c
+msgid "Running the program produces the following output."
+msgstr ""
+
+#: ../../source/socketserver/index.rst:169
+# 2a42d3de7dc0466fb4bbf663911da979
+msgid "The port number used will change each time the program runs because the kernel allocates an available port automatically. To make the server listen on a specific port each time, provide that number in the address tuple instead of the ``0``."
+msgstr ""
+
+#: ../../source/socketserver/index.rst:174
+# e705b7c7ad8244c383fcdf6b619f0e5c
+msgid "Here is a condensed version of the same server, without the logging calls.  Only the ``handle()`` method in the request handler class needs to be provided."
+msgstr ""
+
+#: ../../source/socketserver/index.rst:0
+# 2bcad6e7a4bb456fbfa8b64dd4b6ffd1
+msgid "socketserver_echo_simple.py"
+msgstr ""
+
+#: ../../source/socketserver/index.rst:182
+# f8b61c22c6eb4320975a7b64a7429405
+msgid "In this case, no special server class is required since the :mod:`TCPServer` handles all of the server requirements."
+msgstr ""
+
+#: ../../source/socketserver/index.rst:199
+# 5c9b1a8004e541ce891e8f4aeb1e1cad
+msgid "Threading and Forking"
+msgstr ""
+
+#: ../../source/socketserver/index.rst:201
+# fa5fda0e57b1439788199de8bd539f33
+msgid "To add threading or forking support to a server, include the appropriate mix-in in the class hierarchy for the server. The mix-in classes override ``process_request()`` to start a new thread or process when a request is ready to be handled, and the work is done in the new child."
+msgstr ""
+
+#: ../../source/socketserver/index.rst:207
+# 849a7d42312d4e51b216971b6381ea8d
+msgid "For threads, use ``ThreadingMixIn``."
+msgstr ""
+
+#: ../../source/socketserver/index.rst:0
+# 38a13102518549829547b6101555a2d6
+msgid "socketserver_threaded.py"
+msgstr ""
+
+#: ../../source/socketserver/index.rst:213
+# 2754483e1f144b529e0ebbe9244ae362
+msgid "The response from this threaded server includes the identifier of the thread where the request is handled."
+msgstr ""
+
+#: ../../source/socketserver/index.rst:230
+# 64d92aafda8a4b2e9309a3b46eeaac2e
+msgid "For separate processes, use the ``ForkingMixIn``."
+msgstr ""
+
+#: ../../source/socketserver/index.rst:0
+# 12bd5bddaba648229d202aaeea692f16
+msgid "socketserver_forking.py"
+msgstr ""
+
+#: ../../source/socketserver/index.rst:236
+# fe788b7590ac46618b63fc1b0c2a35ab
+msgid "In this case, the process ID of the child is included in the response from the server:"
+msgstr ""
+
+#: ../../source/socketserver/index.rst:256
+# 33b521feb85246c2b347a77bb8fad381
+msgid ":pydoc:`socketserver`"
+msgstr ""
+
+#: ../../source/socketserver/index.rst:258
+# aa3e85cb2b9a46a296ebeb54bf8d0875
+msgid ":mod:`socket` -- Low-level network communication"
+msgstr ""
+
+#: ../../source/socketserver/index.rst:260
+# ce2984c6b5944041b0b5b7cc8846b609
+msgid ":mod:`select` -- Low-level asynchronous I/O tools"
+msgstr ""
+
+#: ../../source/socketserver/index.rst:262
+# 73a0599a3e38406a8e2e4342bf248fe2
+msgid ":mod:`asyncio` -- Asynchronous I/O, event loop, and concurrency tools"
+msgstr ""
+
+#: ../../source/socketserver/index.rst:264
+# eb452fca808f4edc818d65e2d0546087
+msgid ":mod:`SimpleXMLRPCServer` -- XML-RPC server built using ``socketserver``."
+msgstr ""
+
+#: ../../source/socketserver/index.rst:267
+# cb87ab11376f4c829f5c4abc7bd4f382
+msgid "*Unix Network Programming, Volume 1: The Sockets Networking API, 3/E* By W. Richard Stevens, Bill Fenner, and Andrew M. Rudoff. Published by Addison-Wesley Professional, 2004. ISBN-10: 0131411551"
+msgstr ""
+
+#: ../../source/socketserver/index.rst:272
+# ce7111dab6004f17a682818976ef1983
+msgid "*Foundations of Python Network Programminng, 3/E* By Brandon Rhodes and John Goerzen. Published by Apress, 2014. ISBN-10: 1430258543"
+msgstr ""
+

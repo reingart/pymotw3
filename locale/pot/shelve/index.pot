@@ -1,0 +1,143 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/shelve/index.rst:3
+# 043fb225e0004b2d98b3c37eb7d1d895
+msgid "shelve --- Persistent Storage of Objects"
+msgstr ""
+
+#: ../../source/shelve/index.rst:8
+# 5c9928670a164d62b3e65f1d335ee3c2
+msgid "The shelve module implements persistent storage for arbitrary Python objects that can be pickled, using a dictionary-like API."
+msgstr ""
+
+#: ../../source/shelve/index.rst:12
+# d78eb6de27e34b9989ce6fd5f2905922
+msgid "The ``shelve`` module can be used as a simple persistent storage option for Python objects when a relational database is not required. The shelf is accessed by keys, just as with a dictionary. The values are pickled and written to a database created and managed by :mod:`dbm`."
+msgstr ""
+
+#: ../../source/shelve/index.rst:19
+# 98394c6465a24b028ae7750461d08316
+msgid "Creating a new Shelf"
+msgstr ""
+
+#: ../../source/shelve/index.rst:21
+# d7b2099aa8dc4586a39c30552fd8566e
+msgid "The simplest way to use ``shelve`` is via the ``DbfilenameShelf`` class. It uses :mod:`dbm` to store the data. The class can be used directly, or by calling ``shelve.open()``."
+msgstr ""
+
+#: ../../source/shelve/index.rst:0
+# d9b15550f5424946b965da2f4f139894
+msgid "shelve_create.py"
+msgstr ""
+
+#: ../../source/shelve/index.rst:29
+# c2a21e798eb64dafa81d58da72b52b49
+msgid "To access the data again, open the shelf and use it like a dictionary."
+msgstr ""
+
+#: ../../source/shelve/index.rst:0
+# ffb52bf72b19423cbbd65e1db7639fa9
+msgid "shelve_existing.py"
+msgstr ""
+
+#: ../../source/shelve/index.rst:35
+# 039e5e5eb2c3436c91f893230e66826e
+msgid "Running both sample scripts produces the following output."
+msgstr ""
+
+#: ../../source/shelve/index.rst:52
+# 06e311106eb745e2aaf01b5d529d704e
+msgid "The :mod:`dbm` module does not support multiple applications writing to the same database at the same time, but it does support concurrent read-only clients. If a client will not be modifying the shelf, tell ``shelve`` to open the database read-only by passing ``flag='r'``."
+msgstr ""
+
+#: ../../source/shelve/index.rst:0
+# d603f11dfc7949d596267011710de066
+msgid "shelve_readonly.py"
+msgstr ""
+
+#: ../../source/shelve/index.rst:61
+# 85bffcc060574ad39cd6840c72d67732
+msgid "If the program tries to modify the database while it is opened read-only, an access error exception is generated. The exception type depends on the database module selected by :mod:`dbm` when the database was created."
+msgstr ""
+
+#: ../../source/shelve/index.rst:79
+# 1cbb3dc12cd3471eb9a8b478076b8c92
+msgid "Write-back"
+msgstr ""
+
+#: ../../source/shelve/index.rst:81
+# 1f88ed47e68b4d59a84f790b37c1ae8e
+msgid "Shelves do not track modifications to volatile objects, by default. That means if the contents of an item stored in the shelf are changed, the shelf must be updated explicitly by storing the entire item again."
+msgstr ""
+
+#: ../../source/shelve/index.rst:0
+# 813ab91759044571a4460efef7fdc5f8
+msgid "shelve_withoutwriteback.py"
+msgstr ""
+
+#: ../../source/shelve/index.rst:90
+# 6dcf75262c4c4d13bf7c72d6f60b509c
+msgid "In this example, the dictionary at ``'key1'`` is not stored again, so when the shelf is re-opened, the changes have not been preserved."
+msgstr ""
+
+#: ../../source/shelve/index.rst:108
+# 28697c3ee7894541b19764a9df49a5af
+msgid "To automatically catch changes to volatile objects stored in the shelf, open it with writeback enabled. The ``writeback`` flag causes the shelf to remember all of the objects retrieved from the database using an in-memory cache. Each cache object is also written back to the database when the shelf is closed."
+msgstr ""
+
+#: ../../source/shelve/index.rst:0
+# 86b4ef9cf1ad4ff38818c49b888ca861
+msgid "shelve_writeback.py"
+msgstr ""
+
+#: ../../source/shelve/index.rst:118
+# 044b0bfa91bb4829908c0078054b9407
+msgid "Although it reduces the chance of programmer error, and can make object persistence more transparent, using writeback mode may not be desirable in every situation. The cache consumes extra memory while the shelf is open, and pausing to write every cached object back to the database when it is closed slows down the application.  All of the cached objects are written back to the database because there is no way to tell if they have been modified. If the application reads data more than it writes, writeback will impact performance unnecessarily."
+msgstr ""
+
+#: ../../source/shelve/index.rst:157
+# 87f9ce0dc9fb4351abe77438db916768
+msgid "Specific Shelf Types"
+msgstr ""
+
+#: ../../source/shelve/index.rst:159
+# 0cdefe864c9f469782df481439d5dd3e
+msgid "The earlier examples all used the default shelf implementation. Using ``shelve.open()`` instead of one of the shelf implementations directly is a common usage pattern, especially if it does not matter what type of database is used to store the data. There are times, however, when the database format is important. In those situations, use ``DbfilenameShelf`` or ``BsdDbShelf`` directly, or even subclass ``Shelf`` for a custom solution."
+msgstr ""
+
+#: ../../source/shelve/index.rst:169
+# 15575c6f8584440b9ac004f4b28511a2
+msgid ":pydoc:`shelve`"
+msgstr ""
+
+#: ../../source/shelve/index.rst:171
+# 10b2917b40144e059d54eff5885becb5
+msgid ":mod:`dbm` -- The ``dbm`` module finds an available DBM library to create a new database."
+msgstr ""
+
+#: ../../source/shelve/index.rst:174
+# fa811bf683ef49c5846538b32ef7fbb0
+msgid "`feedcache <https://bitbucket.org/dhellmann/feedcache>`_ -- The ``feedcache`` module uses ``shelve`` as a default storage option."
+msgstr ""
+
+#: ../../source/shelve/index.rst:177
+# c50b066012b54bf381077b8e08680a62
+msgid "`shove <http://pypi.python.org/pypi/shove/>`_ -- Shove implements a similar API with more back-end formats."
+msgstr ""
+

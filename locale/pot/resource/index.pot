@@ -1,0 +1,118 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/resource/index.rst:3
+# 1b28aeb065df488bbb2afa445eb7cdfb
+msgid "resource --- System Resource Management"
+msgstr ""
+
+#: ../../source/resource/index.rst:8
+# a6743647bf0e4ce6a69d48efb4a16713
+msgid "Manage the system resource limits for a Unix program."
+msgstr ""
+
+#: ../../source/resource/index.rst:10
+# 202309f3853248bea0e9fd11494cec9b
+msgid "The functions in ``resource`` probe the current system resources consumed by a process, and place limits on them to control how much load a program can impose on a system."
+msgstr ""
+
+#: ../../source/resource/index.rst:15
+# d231ee049fb948c38937dd522ea12be0
+msgid "Current Usage"
+msgstr ""
+
+#: ../../source/resource/index.rst:17
+# 7a5e59fb0e4e42f896669694cc904a7f
+msgid "Use ``getrusage()`` to probe the resources used by the current process and/or its children.  The return value is a data structure containing several resource metrics based on the current state of the system."
+msgstr ""
+
+#: ../../source/resource/index.rst:24
+# 99da990495ca43f7948ea69a45be78f8
+msgid "Not all of the resource values gathered are displayed here.  Refer to the standard library documentation for ``resource`` for a more complete list."
+msgstr ""
+
+#: ../../source/resource/index.rst:0
+# 72d8e2cdbe874043b5b0b62152c90bff
+msgid "resource_getrusage.py"
+msgstr ""
+
+#: ../../source/resource/index.rst:32
+# 04bca3aeee1c4f42952ea6980c3da7fb
+msgid "Because the test program is extremely simple, it does not use very many resources."
+msgstr ""
+
+#: ../../source/resource/index.rst:55
+# 28fbdf880438435da1f27c2a772afe65
+msgid "Resource Limits"
+msgstr ""
+
+#: ../../source/resource/index.rst:57
+# d2e2f6c3643849d495a4b6f5208d36ac
+msgid "Separate from the current actual usage, it is possible to check the *limits* imposed on the application, and then change them."
+msgstr ""
+
+#: ../../source/resource/index.rst:0
+# de89472d641b4a039b5efc509a3f80cf
+msgid "resource_getrlimit.py"
+msgstr ""
+
+#: ../../source/resource/index.rst:64
+# fb3233e2164a4dfa884b4dde60b1ef45
+msgid "The return value for each limit is a tuple containing the *soft* limit imposed by the current configuration and the *hard* limit imposed by the operating system."
+msgstr ""
+
+#: ../../source/resource/index.rst:89
+# 46b5fa1717ad4bb09e8bd9a9910fa5da
+msgid "The limits can be changed with ``setrlimit()``."
+msgstr ""
+
+#: ../../source/resource/index.rst:0
+# 15001d9f4d3e4df2a5d024ccd8cfc84a
+msgid "resource_setrlimit_nofile.py"
+msgstr ""
+
+#: ../../source/resource/index.rst:95
+# e6b948ab961642b4b706334b19b66fd7
+msgid "This example uses ``RLIMIT_NOFILE`` to control the number of open files allowed, changing it to a smaller soft limit than the default."
+msgstr ""
+
+#: ../../source/resource/index.rst:113
+# a346cf18fef7462bb3723febf8cc1b58
+msgid "It can also be useful to limit the amount of CPU time a process should consume, to avoid using too much.  When the process runs past the allotted amount of time, it sent a ``SIGXCPU`` signal."
+msgstr ""
+
+#: ../../source/resource/index.rst:0
+# f74db43502844b4899e8a1bacbfa3d33
+msgid "resource_setrlimit_cpu.py"
+msgstr ""
+
+#: ../../source/resource/index.rst:121
+# 60f4718b96464a5c994c7b9b250291ad
+msgid "Normally the signal handler should flush all open files and close them, but in this case it just prints a message and exits."
+msgstr ""
+
+#: ../../source/resource/index.rst:143
+# 6e6fa00c0549483293612f686fa8aa45
+msgid ":pydoc:`resource`"
+msgstr ""
+
+#: ../../source/resource/index.rst:145
+# 5c1449c881004a22880f9fbe4809cedd
+msgid ":mod:`signal` -- For details on registering signal handlers."
+msgstr ""
+
