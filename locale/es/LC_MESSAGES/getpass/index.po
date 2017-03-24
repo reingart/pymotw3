@@ -1,0 +1,130 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 18:41-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../source/getpass/index.rst:5
+msgid "getpass --- Secure Password Prompt"
+msgstr ""
+
+#: ../../source/getpass/index.rst:10
+msgid ""
+"Prompt the user for a value, usually a password, without echoing what "
+"they type to the console."
+msgstr ""
+
+#: ../../source/getpass/index.rst:12
+msgid ""
+"Many programs that interact with the user via the terminal need to ask "
+"the user for password values without showing what the user types on the "
+"screen.  The ``getpass`` module provides a portable way to handle such "
+"password prompts securely."
+msgstr ""
+
+#: ../../source/getpass/index.rst:18
+msgid "Example"
+msgstr ""
+
+#: ../../source/getpass/index.rst:20
+msgid ""
+"The ``getpass()`` function prints a prompt, then reads input from the "
+"user until they press return. The input is returned as a string to the "
+"caller."
+msgstr ""
+
+#: ../../source/getpass/index.rst
+msgid "getpass_defaults.py"
+msgstr ""
+
+#: ../../source/getpass/index.rst:28
+msgid ""
+"The default prompt, if none is specified by the caller, is "
+"\"``Password:``\"."
+msgstr ""
+
+#: ../../source/getpass/index.rst:38
+msgid "The prompt can be changed to any value needed."
+msgstr ""
+
+#: ../../source/getpass/index.rst
+msgid "getpass_prompt.py"
+msgstr ""
+
+#: ../../source/getpass/index.rst:44
+msgid ""
+"Some programs ask for a pass phrase instead of a simple password, to give"
+" better security."
+msgstr ""
+
+#: ../../source/getpass/index.rst:59
+msgid ""
+"By default, ``getpass()`` uses ``sys.stdout`` to print the prompt string."
+" For a program that may produce useful output on ``sys.stdout``, it is "
+"frequently better to send the prompt to another stream such as "
+"``sys.stderr``."
+msgstr ""
+
+#: ../../source/getpass/index.rst
+msgid "getpass_stream.py"
+msgstr ""
+
+#: ../../source/getpass/index.rst:68
+msgid ""
+"Using ``sys.stderr`` for the prompt means standard output can be "
+"redirected (to a pipe or file) without seeing the password prompt. The "
+"value entered by the user is still not echoed back to the screen."
+msgstr ""
+
+#: ../../source/getpass/index.rst:79
+msgid "Using getpass Without a Terminal"
+msgstr ""
+
+#: ../../source/getpass/index.rst:81
+msgid ""
+"Under Unix, ``getpass()`` always requires a tty it can control via "
+":mod:`termios`, so input echoing can be disabled. This means values will "
+"not be read from a non-terminal stream redirected to standard input. "
+"Instead, ``getpass`` tries to get to the tty for a process, and no error "
+"is raised if they can access it."
+msgstr ""
+
+#: ../../source/getpass/index.rst:94
+msgid ""
+"It is up to the caller to detect when the input stream is not a tty, and "
+"use an alternate method for reading in that case."
+msgstr ""
+
+#: ../../source/getpass/index.rst
+msgid "getpass_noterminal.py"
+msgstr ""
+
+#: ../../source/getpass/index.rst:101
+msgid "With a tty:"
+msgstr ""
+
+#: ../../source/getpass/index.rst:110
+msgid "Without a tty:"
+msgstr ""
+
+#: ../../source/getpass/index.rst:121
+msgid ":pydoc:`getpass`"
+msgstr ""
+
+#: ../../source/getpass/index.rst:123
+msgid ":mod:`readline` -- Interactive prompt library."
+msgstr ""
+

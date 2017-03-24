@@ -1,0 +1,418 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 18:41-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../source/pkgutil/index.rst:3
+msgid "pkgutil --- Package Utilities"
+msgstr ""
+
+#: ../../source/pkgutil/index.rst:8
+msgid ""
+"Add to the module search path for a specific package and work with "
+"resources included in a package."
+msgstr ""
+
+#: ../../source/pkgutil/index.rst:11
+msgid ""
+"The ``pkgutil`` module includes functions for changing the import rules "
+"for Python packages and for loading non-code resources from files "
+"distributed within a package."
+msgstr ""
+
+#: ../../source/pkgutil/index.rst:16
+msgid "Package Import Paths"
+msgstr ""
+
+#: ../../source/pkgutil/index.rst:18
+msgid ""
+"The ``extend_path()`` function is used to modify the search path and "
+"change the way sub-modules are imported from within a package so that "
+"several different directories can be combined as though they are one. "
+"This can be used to override installed versions of packages with "
+"development versions, or to combine platform-specific and shared modules "
+"into a single package namespace."
+msgstr ""
+
+#: ../../source/pkgutil/index.rst:25
+msgid ""
+"The most common way to call ``extend_path()`` is by adding two lines to "
+"the ``__init__.py`` inside the package."
+msgstr ""
+
+#: ../../source/pkgutil/index.rst:33
+msgid ""
+"``extend_path()`` scans ``sys.path`` for directories that include a "
+"subdirectory named for the package given as the second argument.  The "
+"list of directories is combined with the path value passed as the first "
+"argument and returned as a single list, suitable for use as the package "
+"import path."
+msgstr ""
+
+#: ../../source/pkgutil/index.rst:39
+msgid ""
+"An example package called :mod:`demopkg` includes two files, "
+"``__init__.py`` and ``shared.py``.  The ``__init__.py`` file in "
+"``demopkg1`` contains ``print`` statements to show the search path before"
+" and after it is modified, to highlight the difference."
+msgstr ""
+
+#: ../../source/pkgutil/index.rst
+msgid "demopkg1/__init__.py"
+msgstr ""
+
+#: ../../source/pkgutil/index.rst:48
+msgid ""
+"The ``extension`` directory, with add-on features for :mod:`demopkg`, "
+"contains three more source files. There is an ``__init__.py`` at each "
+"directory level, and a ``not_shared.py``."
+msgstr ""
+
+#: ../../source/pkgutil/index.rst:66
+msgid "This simple test program imports the :mod:`demopkg1` package."
+msgstr ""
+
+#: ../../source/pkgutil/index.rst
+msgid "pkgutil_extend_path.py"
+msgstr ""
+
+#: ../../source/pkgutil/index.rst:72
+msgid ""
+"When this test program is run directly from the command line, the "
+":mod:`not_shared` module is not found."
+msgstr ""
+
+#: ../../source/pkgutil/index.rst:77
+msgid ""
+"The full file system paths in these examples have been shortened to "
+"emphasize the parts that change."
+msgstr ""
+
+#: ../../source/pkgutil/index.rst:101
+msgid ""
+"However, if the ``extension`` directory is added to the ``PYTHONPATH`` "
+"and the program is run again, different results are produced."
+msgstr ""
+
+#: ../../source/pkgutil/index.rst:126
+msgid ""
+"The version of :mod:`demopkg1` inside the ``extension`` directory has "
+"been added to the search path, so the :mod:`not_shared` module is found "
+"there."
+msgstr ""
+
+#: ../../source/pkgutil/index.rst:130
+msgid ""
+"Extending the path in this manner is useful for combining platform-"
+"specific versions of packages with common packages, especially if the "
+"platform-specific versions include C extension modules."
+msgstr ""
+
+#: ../../source/pkgutil/index.rst:136
+msgid "Development Versions of Packages"
+msgstr ""
+
+#: ../../source/pkgutil/index.rst:138
+msgid ""
+"While developing enhancements to a project, it is common to need to test "
+"changes to an installed package. Replacing the installed copy with a "
+"development version may be a bad idea, since it is not necessarily "
+"correct and other tools on the system are likely to depend on the "
+"installed package."
+msgstr ""
+
+#: ../../source/pkgutil/index.rst:144
+msgid ""
+"A completely separate copy of the package could be configured in a "
+"development environment using ``virtualenv`` or :mod:`venv`, but for "
+"small modifications the overhead of setting up a virtual environment with"
+" all of the dependencies may be excessive."
+msgstr ""
+
+#: ../../source/pkgutil/index.rst:149
+msgid ""
+"Another option is to use ``pkgutil`` to modify the module search path for"
+" modules that belong to the package under development. In this case, "
+"however, the path must be reversed so development version overrides the "
+"installed version."
+msgstr ""
+
+#: ../../source/pkgutil/index.rst:154
+msgid ""
+"Given a package :mod:`demopkg2` containing an ``__init__.py`` and "
+"``overloaded.py``, with the function under development located in "
+"``demopkg2/overloaded.py``. The installed version contains"
+msgstr ""
+
+#: ../../source/pkgutil/index.rst
+msgid "demopkg2/overloaded.py"
+msgstr ""
+
+#: ../../source/pkgutil/index.rst:162
+msgid "and ``demopkg2/__init__.py`` contains"
+msgstr ""
+
+#: ../../source/pkgutil/index.rst
+msgid "demopkg2/__init__.py"
+msgstr ""
+
+#: ../../source/pkgutil/index.rst:168
+msgid ""
+"``reverse()`` is used to ensure that any directories added to the search "
+"path by ``pkgutil`` are scanned for imports *before* the default "
+"location."
+msgstr ""
+
+#: ../../source/pkgutil/index.rst:172
+msgid "This program imports :mod:`demopkg2.overloaded` and calls ``func()``."
+msgstr ""
+
+#: ../../source/pkgutil/index.rst
+msgid "pkgutil_devel.py"
+msgstr ""
+
+#: ../../source/pkgutil/index.rst:178
+msgid ""
+"Running it without any special path treatment produces output from the "
+"installed version of ``func()``."
+msgstr ""
+
+#: ../../source/pkgutil/index.rst:196
+msgid "A development directory containing"
+msgstr ""
+
+#: ../../source/pkgutil/index.rst:211
+msgid "and a modified version of :mod:`overloaded`"
+msgstr ""
+
+#: ../../source/pkgutil/index.rst
+msgid "develop/demopkg2/overloaded.py"
+msgstr ""
+
+#: ../../source/pkgutil/index.rst:217
+msgid ""
+"will be loaded when the test program is run with the ``develop`` "
+"directory in the search path."
+msgstr ""
+
+#: ../../source/pkgutil/index.rst:236
+msgid "Managing Paths with PKG Files"
+msgstr ""
+
+#: ../../source/pkgutil/index.rst:238
+msgid ""
+"The first example illustrated how to extend the search path using extra "
+"directories included in the ``PYTHONPATH``. It is also possible to add to"
+" the search path using ``*.pkg`` files containing directory names. PKG "
+"files are similar to the PTH files used by the :mod:`site` module. They "
+"can contain directory names, one per line, to be added to the search path"
+" for the package."
+msgstr ""
+
+#: ../../source/pkgutil/index.rst:245
+msgid ""
+"Another way to structure the platform-specific portions of the "
+"application from the first example is to use a separate directory for "
+"each operating system, and include a ``.pkg`` file to extend the search "
+"path."
+msgstr ""
+
+#: ../../source/pkgutil/index.rst:250
+msgid ""
+"This example uses the same :mod:`demopkg1` files, and also includes the "
+"following files."
+msgstr ""
+
+#: ../../source/pkgutil/index.rst:271
+msgid ""
+"The PKG files are named ``demopkg1.pkg`` to match the package being "
+"extended.  They both contain one line."
+msgstr ""
+
+#: ../../source/pkgutil/index.rst:278
+msgid "This demo program shows the version of the module being imported."
+msgstr ""
+
+#: ../../source/pkgutil/index.rst
+msgid "pkgutil_os_specific.py"
+msgstr ""
+
+#: ../../source/pkgutil/index.rst:284
+msgid "A simple wrapper script can be used to switch between the two packages."
+msgstr ""
+
+#: ../../source/pkgutil/index.rst
+msgid "with_os.sh"
+msgstr ""
+
+#: ../../source/pkgutil/index.rst:291
+msgid ""
+"When run with ``\"one\"`` or ``\"two\"`` as the arguments, the path is "
+"adjusted."
+msgstr ""
+
+#: ../../source/pkgutil/index.rst:335
+msgid ""
+"PKG files can appear anywhere in the normal search path, so a single PKG "
+"file in the current working directory could also be used to include a "
+"development tree."
+msgstr ""
+
+#: ../../source/pkgutil/index.rst:340
+msgid "Nested Packages"
+msgstr ""
+
+#: ../../source/pkgutil/index.rst:342
+msgid ""
+"For nested packages, it is only necessary to modify the path of the top-"
+"level package. For example, with this directory structure"
+msgstr ""
+
+#: ../../source/pkgutil/index.rst:360
+msgid "Where ``nested/__init__.py`` contains"
+msgstr ""
+
+#: ../../source/pkgutil/index.rst
+msgid "nested/__init__.py"
+msgstr ""
+
+#: ../../source/pkgutil/index.rst:366
+msgid "and a development tree like"
+msgstr ""
+
+#: ../../source/pkgutil/index.rst:383
+msgid ""
+"Both the :mod:`shallow` and :mod:`deep` modules contain a simple function"
+" to print out a message indicating whether or not they come from the "
+"installed or development version."
+msgstr ""
+
+#: ../../source/pkgutil/index.rst:387
+msgid "This test program exercises the new packages."
+msgstr ""
+
+#: ../../source/pkgutil/index.rst
+msgid "pkgutil_nested.py"
+msgstr ""
+
+#: ../../source/pkgutil/index.rst:393
+msgid ""
+"When ``pkgutil_nested.py`` is run without any path manipulation, the "
+"installed version of both modules are used."
+msgstr ""
+
+#: ../../source/pkgutil/index.rst:413
+msgid ""
+"When the ``develop`` directory is added to the path, the development "
+"version of both functions override the installed versions."
+msgstr ""
+
+#: ../../source/pkgutil/index.rst:434
+msgid "Package Data"
+msgstr ""
+
+#: ../../source/pkgutil/index.rst:436
+msgid ""
+"In addition to code, Python packages can contain data files such as "
+"templates, default configuration files, images, and other supporting "
+"files used by the code in the package.  The ``get_data()`` function gives"
+" access to the data in the files in a format-agnostic way, so it does not"
+" matter if the package is distributed as an EGG, part of a frozen binary,"
+" or regular files on the file system."
+msgstr ""
+
+#: ../../source/pkgutil/index.rst:443
+msgid "With a package :mod:`pkgwithdata` containing a ``templates`` directory"
+msgstr ""
+
+#: ../../source/pkgutil/index.rst:458
+msgid ""
+"The file ``pkgwithdata/templates/base.html`` contains a simple HTML "
+"template."
+msgstr ""
+
+#: ../../source/pkgutil/index.rst
+msgid "pkgwithdata/templates/base.html"
+msgstr ""
+
+#: ../../source/pkgutil/index.rst:465
+msgid ""
+"This program uses ``get_data()`` to retrieve the template contents and "
+"print them out."
+msgstr ""
+
+#: ../../source/pkgutil/index.rst
+msgid "pkgutil_get_data.py"
+msgstr ""
+
+#: ../../source/pkgutil/index.rst:472
+msgid ""
+"The arguments to ``get_data()`` are the dotted name of the package, and a"
+" filename relative to the top of the package.  The return value is a byte"
+" sequence, so it is decoded from UTF-8 before being printed."
+msgstr ""
+
+#: ../../source/pkgutil/index.rst:499
+msgid ""
+"``get_data()`` is distribution format-agnostic because it uses the import"
+" hooks defined in PEP 302 to access the package contents. Any loader that"
+" provides the hooks can be used, including the ZIP archive importer in "
+":mod:`zipfile`."
+msgstr ""
+
+#: ../../source/pkgutil/index.rst
+msgid "pkgutil_get_data_zip.py"
+msgstr ""
+
+#: ../../source/pkgutil/index.rst:508
+msgid ""
+"This example uses ``PyZipFile.writepy()`` to create a ZIP archive "
+"containing a copy of the :mod:`pkgwithdata` package, including a renamed "
+"version of the template file.  It then adds the ZIP archive to the import"
+" path before using ``pkgutil`` to load the template and print it.  Refer "
+"to the discussion of :mod:`zipfile` for more details about using "
+"``writepy()``."
+msgstr ""
+
+#: ../../source/pkgutil/index.rst:545
+msgid ":pydoc:`pkgutil`"
+msgstr ""
+
+#: ../../source/pkgutil/index.rst:547
+msgid "`virtualenv`_ -- Ian Bicking's virtual environment script."
+msgstr ""
+
+#: ../../source/pkgutil/index.rst:549
+msgid ":mod:`distutils` -- Packaging tools from Python standard library."
+msgstr ""
+
+#: ../../source/pkgutil/index.rst:551
+msgid "`setuptools`_ -- Next-generation packaging tools."
+msgstr ""
+
+#: ../../source/pkgutil/index.rst:553
+msgid ":pep:`302` -- Import Hooks"
+msgstr ""
+
+#: ../../source/pkgutil/index.rst:555
+msgid ":mod:`zipfile` -- Create importable ZIP archives."
+msgstr ""
+
+#: ../../source/pkgutil/index.rst:557
+msgid ":mod:`zipimport` -- Importer for packages in ZIP archives."
+msgstr ""
+

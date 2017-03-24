@@ -1,0 +1,269 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 18:41-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../source/shlex/index.rst:3
+msgid "shlex --- Parse Shell-style Syntaxes"
+msgstr ""
+
+#: ../../source/shlex/index.rst:8
+msgid "Lexical analysis of shell-style syntaxes."
+msgstr ""
+
+#: ../../source/shlex/index.rst:10
+msgid ""
+"The ``shlex`` module implements a class for parsing simple shell-like "
+"syntaxes. It can be used for writing a domain-specific language, or for "
+"parsing quoted strings (a task that is more complex than it seems on the "
+"surface)."
+msgstr ""
+
+#: ../../source/shlex/index.rst:16
+msgid "Parsing Quoted Strings"
+msgstr ""
+
+#: ../../source/shlex/index.rst:18
+msgid ""
+"A common problem when working with input text is to identify a sequence "
+"of quoted words as a single entity. Splitting the text on quotes does not"
+" always work as expected, especially if there are nested levels of "
+"quotes. Take the following text as an example."
+msgstr ""
+
+#: ../../source/shlex/index.rst:26
+msgid ""
+"A naive approach would be to construct a regular expression to find the "
+"parts of the text outside the quotes to separate them from the text "
+"inside the quotes, or vice versa. That would be unnecessarily complex and"
+" prone to errors resulting from edge cases like apostrophes or even "
+"typos. A better solution is to use a true parser, such as the one "
+"provided by the ``shlex`` module. Here is a simple example that prints "
+"the tokens identified in the input file using the ``shlex`` class."
+msgstr ""
+
+#: ../../source/shlex/index.rst
+msgid "shlex_example.py"
+msgstr ""
+
+#: ../../source/shlex/index.rst:39
+msgid ""
+"When run on data with embedded quotes, the parser produces the list of "
+"expected tokens."
+msgstr ""
+
+#: ../../source/shlex/index.rst:71
+msgid ""
+"Isolated quotes such as apostrophes are also handled.  Consider this "
+"input file."
+msgstr ""
+
+#: ../../source/shlex/index.rst:77
+msgid "The token with the embedded apostrophe is no problem."
+msgstr ""
+
+#: ../../source/shlex/index.rst:104
+msgid "Making Safe Strings for Shells"
+msgstr ""
+
+#: ../../source/shlex/index.rst:106
+msgid ""
+"The ``quote()`` function performs the inverse operation, escaping "
+"existing quotes and adding missing quotes for strings to make them safe "
+"to use in shell commands."
+msgstr ""
+
+#: ../../source/shlex/index.rst
+msgid "shlex_quote.py"
+msgstr ""
+
+#: ../../source/shlex/index.rst:114
+msgid ""
+"It is still usually safer to use a list of arguments when using "
+"``subprocess.Popen``, but in situations where that is not possible "
+"``quote()`` provides some protection by ensuring that special characters "
+"and white space are quoted properly."
+msgstr ""
+
+#: ../../source/shlex/index.rst:146
+msgid "Embedded Comments"
+msgstr ""
+
+#: ../../source/shlex/index.rst:148
+msgid ""
+"Since the parser is intended to be used with command languages, it needs "
+"to handle comments. By default, any text following a ``#`` is considered "
+"part of a comment and ignored. Due to the nature of the parser, only "
+"single-character comment prefixes are supported. The set of comment "
+"characters used can be configured through the :attr:`commenters` "
+"property."
+msgstr ""
+
+#: ../../source/shlex/index.rst:182
+msgid "Splitting Strings into Tokens"
+msgstr ""
+
+#: ../../source/shlex/index.rst:184
+msgid ""
+"To split an existing string into component tokens, the convenience "
+"function ``split()`` is a simple wrapper around the parser."
+msgstr ""
+
+#: ../../source/shlex/index.rst
+msgid "shlex_split.py"
+msgstr ""
+
+#: ../../source/shlex/index.rst:191
+msgid "The result is a list."
+msgstr ""
+
+#: ../../source/shlex/index.rst:210
+msgid "Including Other Sources of Tokens"
+msgstr ""
+
+#: ../../source/shlex/index.rst:212
+msgid ""
+"The ``shlex`` class includes several configuration properties that "
+"control its behavior. The :attr:`source` property enables a feature for "
+"code (or configuration) re-use by allowing one token stream to include "
+"another. This is similar to the Bourne shell ``source`` operator, hence "
+"the name."
+msgstr ""
+
+#: ../../source/shlex/index.rst
+msgid "shlex_source.py"
+msgstr ""
+
+#: ../../source/shlex/index.rst:222
+msgid ""
+"The string \"``source quotes.txt``\" in the original text receives "
+"special handling. Since the :attr:`source` property of the lexer is set "
+"to ``\"source\"``, when the keyword is encountered, the filename "
+"appearing on the next line is automatically included. In order to cause "
+"the filename to appear as a single token, the ``.`` character needs to be"
+" added to the list of characters that are included in words (otherwise "
+"\"``quotes.txt``\" becomes three tokens, \"``quotes``\", \"``.``\", "
+"\"``txt``\"). This what the output looks like."
+msgstr ""
+
+#: ../../source/shlex/index.rst:266
+msgid ""
+"The source feature uses a method called ``sourcehook()`` to load the "
+"additional input source, so a subclass of ``shlex`` can provide an "
+"alternate implementation that loads data from locations other than files."
+msgstr ""
+
+#: ../../source/shlex/index.rst:272
+msgid "Controlling the Parser"
+msgstr ""
+
+#: ../../source/shlex/index.rst:274
+msgid ""
+"An earlier example demonstrated changing the :attr:`wordchars` value to "
+"control which characters are included in words. It is also possible to "
+"set the :attr:`quotes` character to use additional or alternative quotes."
+" Each quote must be a single character, so it is not possible to have "
+"different open and close quotes (no parsing on parentheses, for example)."
+msgstr ""
+
+#: ../../source/shlex/index.rst
+msgid "shlex_table.py"
+msgstr ""
+
+#: ../../source/shlex/index.rst:285
+msgid "In this example, each table cell is wrapped in vertical bars."
+msgstr ""
+
+#: ../../source/shlex/index.rst:304
+msgid ""
+"It is also possible to control the whitespace characters used to split "
+"words."
+msgstr ""
+
+#: ../../source/shlex/index.rst
+msgid "shlex_whitespace.py"
+msgstr ""
+
+#: ../../source/shlex/index.rst:311
+msgid ""
+"If the example in ``shlex_example.py`` is modified to include period and "
+"comma, the results change."
+msgstr ""
+
+#: ../../source/shlex/index.rst:343
+msgid "Error Handling"
+msgstr ""
+
+#: ../../source/shlex/index.rst:345
+msgid ""
+"When the parser encounters the end of its input before all quoted strings"
+" are closed, it raises ``ValueError``. When that happens, it is useful to"
+" examine some of the properties maintained by the parser as it processes "
+"the input. For example, :attr:`infile` refers to the name of the file "
+"being processed (which might be different from the original file, if one "
+"file sources another). The :attr:`lineno` reports the line when the error"
+" is discovered. The :attr:`lineno` is typically the end of the file, "
+"which may be far away from the first quote. The :attr:`token` attribute "
+"contains the buffer of text not already included in a valid token. The "
+"``error_leader()`` method produces a message prefix in a style similar to"
+" Unix compilers, which enables editors such as ``emacs`` to parse the "
+"error and take the user directly to the invalid line."
+msgstr ""
+
+#: ../../source/shlex/index.rst
+msgid "shlex_errors.py"
+msgstr ""
+
+#: ../../source/shlex/index.rst:364
+msgid "The example produces this output."
+msgstr ""
+
+#: ../../source/shlex/index.rst:394
+msgid "POSIX vs. Non-POSIX Parsing"
+msgstr ""
+
+#: ../../source/shlex/index.rst:396
+msgid ""
+"The default behavior for the parser is to use a backwards-compatible "
+"style that is not POSIX-compliant. For POSIX behavior, set the ``posix`` "
+"argument when constructing the parser."
+msgstr ""
+
+#: ../../source/shlex/index.rst
+msgid "shlex_posix.py"
+msgstr ""
+
+#: ../../source/shlex/index.rst:404
+msgid "Here are a few examples of the differences in parsing behavior."
+msgstr ""
+
+#: ../../source/shlex/index.rst:457
+msgid ":pydoc:`shlex`"
+msgstr ""
+
+#: ../../source/shlex/index.rst:459
+msgid ":mod:`cmd` -- Tools for building interactive command interpreters."
+msgstr ""
+
+#: ../../source/shlex/index.rst:462
+msgid ":mod:`argparse` -- Command line option parsing."
+msgstr ""
+
+#: ../../source/shlex/index.rst:464
+msgid ":mod:`subprocess` -- Run commands after parsing the command line."
+msgstr ""
+

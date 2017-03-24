@@ -1,0 +1,198 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 18:41-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../source/mmap/index.rst:3
+msgid "mmap --- Memory-map Files"
+msgstr ""
+
+#: ../../source/mmap/index.rst:8
+msgid "Memory-map files instead of reading the contents directly."
+msgstr ""
+
+#: ../../source/mmap/index.rst:10
+msgid ""
+"Memory-mapping a file uses the operating system virtual memory system to "
+"access the data on the file system directly, instead of using normal I/O "
+"functions.  Memory-mapping typically improves I/O performance because it "
+"does not involve a separate system call for each access and it does not "
+"require copying data between buffers -- the memory is accessed directly "
+"by both the kernel and the user application."
+msgstr ""
+
+#: ../../source/mmap/index.rst:17
+msgid ""
+"Memory-mapped files can be treated as mutable strings or file-like "
+"objects, depending on the need. A mapped file supports the expected file "
+"API methods, such as ``close()``, ``flush()``, ``read()``, "
+"``readline()``, ``seek()``, ``tell()``, and ``write()``. It also supports"
+" the string API, with features such as slicing and methods like "
+"``find()``."
+msgstr ""
+
+#: ../../source/mmap/index.rst:24
+msgid ""
+"All of the examples use the text file ``lorem.txt``, containing a bit of "
+"Lorem Ipsum. For reference, the text of the file is"
+msgstr ""
+
+#: ../../source/mmap/index.rst
+msgid "lorem.txt"
+msgstr ""
+
+#: ../../source/mmap/index.rst:32
+msgid ""
+"There are differences in the arguments and behaviors for ``mmap()`` "
+"between Unix and Windows, which are not fully discussed here. For more "
+"details, refer to the standard library documentation."
+msgstr ""
+
+#: ../../source/mmap/index.rst:37
+msgid "Reading"
+msgstr ""
+
+#: ../../source/mmap/index.rst:39
+msgid ""
+"Use the ``mmap()`` function to create a memory-mapped file.  The first "
+"argument is a file descriptor, either from the ``fileno()`` method of a "
+"``file`` object or from ``os.open()``. The caller is responsible for "
+"opening the file before invoking ``mmap()``, and closing it after it is "
+"no longer needed."
+msgstr ""
+
+#: ../../source/mmap/index.rst:45
+msgid ""
+"The second argument to ``mmap()`` is a size in bytes for the portion of "
+"the file to map. If the value is ``0``, the entire file is mapped. If the"
+" size is larger than the current size of the file, the file is extended."
+msgstr ""
+
+#: ../../source/mmap/index.rst:52
+msgid "Windows does not support creating a zero-length mapping."
+msgstr ""
+
+#: ../../source/mmap/index.rst:54
+msgid ""
+"An optional keyword argument, ``access``, is supported by both platforms."
+" Use ``ACCESS_READ`` for read-only access, ``ACCESS_WRITE`` for write-"
+"through (assignments to the memory go directly to the file), or "
+"``ACCESS_COPY`` for copy-on-write (assignments to memory are not written "
+"to the file)."
+msgstr ""
+
+#: ../../source/mmap/index.rst
+msgid "mmap_read.py"
+msgstr ""
+
+#: ../../source/mmap/index.rst:64
+msgid ""
+"The file pointer tracks the last byte accessed through a slice operation."
+"  In this example, the pointer moves ahead 10 bytes after the first read."
+"  It is then reset to the beginning of the file by the slice operation, "
+"and moved ahead 10 bytes again by the slice.  After the slice operation, "
+"calling ``read()`` again gives the bytes 11-20 in the file."
+msgstr ""
+
+#: ../../source/mmap/index.rst:86
+msgid "Writing"
+msgstr ""
+
+#: ../../source/mmap/index.rst:88
+msgid ""
+"To set up the memory mapped file to receive updates, start by opening it "
+"for appending with mode ``'r+'`` (not ``'w'``) before mapping it. Then "
+"use any of the API methods that change the data (``write()``, assignment "
+"to a slice, etc.)."
+msgstr ""
+
+#: ../../source/mmap/index.rst:93
+msgid ""
+"The next example uses the default access mode of ``ACCESS_WRITE`` and "
+"assigning to a slice to modify part of a line in place."
+msgstr ""
+
+#: ../../source/mmap/index.rst
+msgid "mmap_write_slice.py"
+msgstr ""
+
+#: ../../source/mmap/index.rst:100
+msgid ""
+"The word \"``consectetuer``\" is replaced in the middle of the first line"
+" in memory and in the file."
+msgstr ""
+
+#: ../../source/mmap/index.rst:123
+msgid "Copy Mode"
+msgstr ""
+
+#: ../../source/mmap/index.rst:125
+msgid ""
+"Using the access setting ``ACCESS_COPY`` does not write changes to the "
+"file on disk."
+msgstr ""
+
+#: ../../source/mmap/index.rst
+msgid "mmap_write_copy.py"
+msgstr ""
+
+#: ../../source/mmap/index.rst:132
+msgid ""
+"It is necessary to rewind the file handle in this example separately from"
+" the ``mmap`` handle, because the internal state of the two objects is "
+"maintained separately."
+msgstr ""
+
+#: ../../source/mmap/index.rst:157
+msgid "Regular Expressions"
+msgstr ""
+
+#: ../../source/mmap/index.rst:159
+msgid ""
+"Since a memory mapped file can act like a string, it can be used with "
+"other modules that operate on strings, such as regular expressions. This "
+"example finds all of the sentences with \"``nulla``\" in them."
+msgstr ""
+
+#: ../../source/mmap/index.rst
+msgid "mmap_regex.py"
+msgstr ""
+
+#: ../../source/mmap/index.rst:168
+msgid ""
+"Because the pattern includes two groups, the return value from "
+"``findall()`` is a sequence of tuples. The ``print`` statement pulls out "
+"the matching sentence and replaces newlines with spaces so each result "
+"prints on a single line."
+msgstr ""
+
+#: ../../source/mmap/index.rst:189
+msgid ":pydoc:`mmap`"
+msgstr ""
+
+#: ../../source/mmap/index.rst:191
+msgid ":ref:`Python 2 to 3 porting notes for mmap <porting-mmap>`"
+msgstr ""
+
+#: ../../source/mmap/index.rst:193
+msgid ":mod:`os` -- The ``os`` module."
+msgstr ""
+
+#: ../../source/mmap/index.rst:195
+msgid ":mod:`re` -- Regular expressions."
+msgstr ""
+

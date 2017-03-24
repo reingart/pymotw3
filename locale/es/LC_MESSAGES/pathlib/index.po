@@ -1,0 +1,479 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 18:41-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../source/pathlib/index.rst:3
+msgid "pathlib --- Filesystem Paths as Objects"
+msgstr ""
+
+#: ../../source/pathlib/index.rst:8
+msgid ""
+"Parse, build, test, and otherwise work on filenames and paths using an "
+"object-oriented API instead of low-level string operations."
+msgstr ""
+
+#: ../../source/pathlib/index.rst:13
+msgid "Path Representations"
+msgstr ""
+
+#: ../../source/pathlib/index.rst:15
+msgid ""
+"``pathlib`` includes classes for managing filesystem paths formatted "
+"using either the POSIX standard or Microsoft Windows syntax. It includes "
+"so called \"pure\" classes, which operate on strings but do not interact "
+"with an actual filesystem, and \"concrete\" classes, which extend the API"
+" to include operations that reflect or modify data on the local "
+"filesystem."
+msgstr ""
+
+#: ../../source/pathlib/index.rst:22
+msgid ""
+"The pure classes ``PurePosixPath`` and ``PureWindowsPath`` can be "
+"instantiated and used on any operating system, since they only work on "
+"names. To instantiate the correct class for working with a real "
+"filesystem, use ``Path`` to get either a ``PosixPath`` or "
+"``WindowsPath``, depending on the platform."
+msgstr ""
+
+#: ../../source/pathlib/index.rst:29
+msgid "Building Paths"
+msgstr ""
+
+#: ../../source/pathlib/index.rst:31
+msgid ""
+"To instantiate a new path, give a string as the first argument. The "
+"string representation of the path object is this name value. To create a "
+"new path referring to a value relative to an existing path, use the ``/``"
+" operator to extend the path. The argument to the operator can either be "
+"a string or another path object."
+msgstr ""
+
+#: ../../source/pathlib/index.rst
+msgid "pathlib_operator.py"
+msgstr ""
+
+#: ../../source/pathlib/index.rst:41
+msgid ""
+"As the value for ``root`` in the example output shows, the operator "
+"combines the path values as they are given, and does not normalize the "
+"result when it contains the parent directory reference ``\"..\"``. "
+"However, if a segment begins with the path separator it is interpreted as"
+" a new \"root\" reference in the same way as ``os.path.join()``.  Extra "
+"path separators are removed from the middle of the path value, as in the "
+"``etc`` example here."
+msgstr ""
+
+#: ../../source/pathlib/index.rst:65
+msgid ""
+"The concrete path classes include a ``resolve()`` method for normalizing "
+"a path by looking at the filesystem for directories and symbolic links "
+"and producing the absolute path referred to by a name."
+msgstr ""
+
+#: ../../source/pathlib/index.rst
+msgid "pathlib_resolve.py"
+msgstr ""
+
+#: ../../source/pathlib/index.rst:73
+msgid ""
+"Here the relative path is converted to the absolute path to "
+"``/usr/share``. If the input path includes symlinks, those are expanded "
+"as well to allow the resolved path to refer directly to the target."
+msgstr ""
+
+#: ../../source/pathlib/index.rst:90
+msgid ""
+"To build paths when the segments are not known in advance, use "
+"``joinpath()``, passing each path segment as a separate argument."
+msgstr ""
+
+#: ../../source/pathlib/index.rst
+msgid "pathlib_joinpath.py"
+msgstr ""
+
+#: ../../source/pathlib/index.rst:97
+msgid "As with the ``/`` operator, calling ``joinpath()`` creates a new instance."
+msgstr ""
+
+#: ../../source/pathlib/index.rst:112
+msgid ""
+"Given an existing path object, it is easy to build a new one with minor "
+"differences such as referring to a different file in the same directory. "
+"Use ``with_name()`` to create a new path that replaces the name portion "
+"of a path with a different file name. Use ``with_suffix()`` to create a "
+"new path that replaces the file name's extension with a different value."
+msgstr ""
+
+#: ../../source/pathlib/index.rst
+msgid "pathlib_from_existing.py"
+msgstr ""
+
+#: ../../source/pathlib/index.rst:123
+msgid "Both methods return new objects, and the original is left unchanged."
+msgstr ""
+
+#: ../../source/pathlib/index.rst:140
+msgid "Parsing Paths"
+msgstr ""
+
+#: ../../source/pathlib/index.rst:142
+msgid ""
+"Path objects have methods and properties for extracting partial values "
+"from the name. For example, the ``parts`` property produces a sequence of"
+" path segments parsed based on the path separator value."
+msgstr ""
+
+#: ../../source/pathlib/index.rst
+msgid "pathlib_parts.py"
+msgstr ""
+
+#: ../../source/pathlib/index.rst:150
+msgid "The sequence is a tuple, reflecting the immutability of the path instance."
+msgstr ""
+
+#: ../../source/pathlib/index.rst:165
+msgid ""
+"There are two ways to navigate \"up\" the filesystem hierarchy from a "
+"given path object. The ``parent`` property refers to a new path instance "
+"for the directory containing the path, the value returned by "
+"``os.path.dirname()``.  The ``parents`` property is an iterable that "
+"produces parent directory references, continually going \"up\" the path "
+"hierarchy until reaching the root."
+msgstr ""
+
+#: ../../source/pathlib/index.rst
+msgid "pathlib_parents.py"
+msgstr ""
+
+#: ../../source/pathlib/index.rst:176
+msgid ""
+"The example iterates over the ``parents`` property and prints the member "
+"values."
+msgstr ""
+
+#: ../../source/pathlib/index.rst:196
+msgid ""
+"Other parts of the path can be accessed through properties of the path "
+"object.  The ``name`` property holds the last part of the path, after the"
+" final path separator (the same value that ``os.path.basename()`` "
+"produces). The ``suffix`` property holds the value after the extension "
+"separator and the ``stem`` property holds the portion of the name before "
+"the suffix."
+msgstr ""
+
+#: ../../source/pathlib/index.rst
+msgid "pathlib_name.py"
+msgstr ""
+
+#: ../../source/pathlib/index.rst:207
+msgid ""
+"Although the ``suffix`` and ``stem`` values are similar to the values "
+"produced by ``os.path.splitext()``, the values are based only on the "
+"value of ``name`` and not the full path."
+msgstr ""
+
+#: ../../source/pathlib/index.rst:227
+msgid "Creating Concrete Paths"
+msgstr ""
+
+#: ../../source/pathlib/index.rst:229
+msgid ""
+"Instances of the concrete ``Path`` class can be created from string "
+"arguments referring to the name (or potential name) of a file, directory,"
+" or symbolic link on the file system. The class also provides several "
+"convenience methods for building instances using commonly used locations "
+"that change, such as the current working directory and the user's home "
+"directory."
+msgstr ""
+
+#: ../../source/pathlib/index.rst
+msgid "pathlib_convenience.py"
+msgstr ""
+
+#: ../../source/pathlib/index.rst:240
+msgid ""
+"Both methods create ``Path`` instances pre-populated with an absolute "
+"file system reference."
+msgstr ""
+
+#: ../../source/pathlib/index.rst:261
+msgid "Directory Contents"
+msgstr ""
+
+#: ../../source/pathlib/index.rst:263
+msgid ""
+"There are three methods for accessing the directory listings to discover "
+"the names of files available on the file system. ``iterdir()`` is a "
+"generator, yielding a new ``Path`` instance for each item in the "
+"containing directory."
+msgstr ""
+
+#: ../../source/pathlib/index.rst
+msgid "pathlib_iterdir.py"
+msgstr ""
+
+#: ../../source/pathlib/index.rst:272
+msgid ""
+"If the ``Path`` does not refer to a directory, ``iterdir()`` raises "
+"``NotADirectoryError``."
+msgstr ""
+
+#: ../../source/pathlib/index.rst:312
+msgid "Use ``glob()`` to find only files matching a pattern."
+msgstr ""
+
+#: ../../source/pathlib/index.rst
+msgid "pathlib_glob.py"
+msgstr ""
+
+#: ../../source/pathlib/index.rst:318
+msgid ""
+"This example shows all of the reStructuredText_ input files in the parent"
+" directory of the script."
+msgstr ""
+
+#: ../../source/pathlib/index.rst:357
+msgid ""
+"The glob processor supports recursive scanning using the pattern prefix "
+"``**`` or by calling ``rglob()`` instead of ``glob()``."
+msgstr ""
+
+#: ../../source/pathlib/index.rst
+msgid "pathlib_rglob.py"
+msgstr ""
+
+#: ../../source/pathlib/index.rst:364
+msgid ""
+"Because this example starts from the parent directory, a recursive search"
+" is necessary to find the example files matching ``pathlib_*.py``."
+msgstr ""
+
+#: ../../source/pathlib/index.rst:401
+msgid "Reading and Writing Files"
+msgstr ""
+
+#: ../../source/pathlib/index.rst:403
+msgid ""
+"Each ``Path`` instance includes methods for working with the contents of "
+"the file to which it refers. For immediately retrieving the contents, use"
+" ``read_bytes()`` or ``read_text()``. To write to the file, use "
+"``write_bytes()`` or ``write_text()``.  Use the ``open()`` method to open"
+" the file and retain the file handle, instead of passing the name to the "
+"built-in ``open()`` function."
+msgstr ""
+
+#: ../../source/pathlib/index.rst
+msgid "pathlib_read_write.py"
+msgstr ""
+
+#: ../../source/pathlib/index.rst:414
+msgid ""
+"The convenience methods do some type checking before opening the file and"
+" writing to it, but otherwise they are equivalent to doing the operation "
+"directly."
+msgstr ""
+
+#: ../../source/pathlib/index.rst:432
+msgid "Manipulating Directories and Symbolic Links"
+msgstr ""
+
+#: ../../source/pathlib/index.rst:434
+msgid ""
+"Paths representing directories or symbolic links that do not exist can be"
+" used to create the associated file system entries."
+msgstr ""
+
+#: ../../source/pathlib/index.rst
+msgid "pathlib_mkdir.py"
+msgstr ""
+
+#: ../../source/pathlib/index.rst:441
+msgid "If the path already exists, ``mkdir()`` raises a ``FileExistsError``."
+msgstr ""
+
+#: ../../source/pathlib/index.rst:470
+msgid ""
+"Use ``symlink_to()`` to create a symbolic link. The link will be named "
+"based on the path's value and will refer to the name given as argument to"
+" ``symlink_to()``."
+msgstr ""
+
+#: ../../source/pathlib/index.rst
+msgid "pathlib_symlink_to.py"
+msgstr ""
+
+#: ../../source/pathlib/index.rst:478
+msgid ""
+"This example creates a symbolic link, then uses ``resolve()`` to read the"
+" link to find what it points to and print the name."
+msgstr ""
+
+#: ../../source/pathlib/index.rst:496
+msgid "File Types"
+msgstr ""
+
+#: ../../source/pathlib/index.rst:498
+msgid ""
+"A ``Path`` instance includes several methods for testing the type of file"
+" refered to by the path. This example creates several files of different "
+"types and tests those as well as a few other device-specific files "
+"available on the local operating system."
+msgstr ""
+
+#: ../../source/pathlib/index.rst
+msgid "pathlib_types.py"
+msgstr ""
+
+#: ../../source/pathlib/index.rst:507
+msgid ""
+"Each of the methods, ``is_dir()``, ``is_file()``, ``is_symlink()``, "
+"``is_socket()``, ``is_fifo()``, ``is_block_device()``, and "
+"``is_char_device()``, takes no arguments."
+msgstr ""
+
+#: ../../source/pathlib/index.rst:531
+msgid "File Properties"
+msgstr ""
+
+#: ../../source/pathlib/index.rst:533
+msgid ""
+"Detailed information about a file can be accessed using the methods "
+"``stat()`` or ``lstat()`` (for checking the status of something that "
+"might be a symbolic link). These methods produce the same results as "
+"``os.stat()`` and ``os.lstat()``."
+msgstr ""
+
+#: ../../source/pathlib/index.rst
+msgid "pathlib_stat.py"
+msgstr ""
+
+#: ../../source/pathlib/index.rst:542
+msgid ""
+"The output will vary depending on how the example code was installed. Try"
+" passing different filenames on the command line to ``pathlib_stat.py``."
+msgstr ""
+
+#: ../../source/pathlib/index.rst:577
+msgid ""
+"For simpler access to information about the owner of a file, use "
+"``owner()`` and ``group()``."
+msgstr ""
+
+#: ../../source/pathlib/index.rst
+msgid "pathlib_ownership.py"
+msgstr ""
+
+#: ../../source/pathlib/index.rst:584
+msgid ""
+"While ``stat()`` returns numerical system ID values, these methods look "
+"up the name associated with the IDs."
+msgstr ""
+
+#: ../../source/pathlib/index.rst:599
+msgid ""
+"The ``touch()`` method works like the Unix command ``touch`` to create a "
+"file or update an existing file's modification time and permissions."
+msgstr ""
+
+#: ../../source/pathlib/index.rst
+msgid "pathlib_touch.py"
+msgstr ""
+
+#: ../../source/pathlib/index.rst:607
+msgid ""
+"Running this example more than once updates the existing file on "
+"subsequent runs."
+msgstr ""
+
+#: ../../source/pathlib/index.rst:633
+msgid "Permissions"
+msgstr ""
+
+#: ../../source/pathlib/index.rst:635
+msgid ""
+"On Unix-like systems, file permissions can be changed using ``chmod()``, "
+"passing the mode as an integer. Mode values can be constructed using "
+"constants defined in the :mod:`stat` module.  This example toggles the "
+"user's execute permission bit."
+msgstr ""
+
+#: ../../source/pathlib/index.rst
+msgid "pathlib_chmod.py"
+msgstr ""
+
+#: ../../source/pathlib/index.rst:644
+msgid ""
+"The script assumes it has the permissions necessary to modify the mode of"
+" the file when run."
+msgstr ""
+
+#: ../../source/pathlib/index.rst:662
+msgid "Deleting"
+msgstr ""
+
+#: ../../source/pathlib/index.rst:664
+msgid ""
+"There are two methods for removing things from the file system, depending"
+" on the type.  To remove an empty directory, use ``rmdir()``."
+msgstr ""
+
+#: ../../source/pathlib/index.rst
+msgid "pathlib_rmdir.py"
+msgstr ""
+
+#: ../../source/pathlib/index.rst:672
+msgid ""
+"A ``FileNotFoundError`` exception is raised if the post-conditions are "
+"already met and the directory does not exist. It is also an error to try "
+"to remove a directory that is not empty."
+msgstr ""
+
+#: ../../source/pathlib/index.rst:703
+msgid "For files, symbolic links, and most other path types use ``unlink()``."
+msgstr ""
+
+#: ../../source/pathlib/index.rst
+msgid "pathlib_unlink.py"
+msgstr ""
+
+#: ../../source/pathlib/index.rst:710
+msgid ""
+"The user must have permission to remove the file, symbolic link, socket, "
+"or other file system object."
+msgstr ""
+
+#: ../../source/pathlib/index.rst:735
+msgid ":pydoc:`pathlib`"
+msgstr ""
+
+#: ../../source/pathlib/index.rst:737
+msgid ":mod:`os.path` -- Platform-independent manipulation of filenames"
+msgstr ""
+
+#: ../../source/pathlib/index.rst:739
+msgid ":ref:`os-stat` -- Discussion of ``os.stat()`` and ``os.lstat()``."
+msgstr ""
+
+#: ../../source/pathlib/index.rst:741
+msgid ":mod:`glob` -- Unix shell pattern matching for filenames"
+msgstr ""
+
+#: ../../source/pathlib/index.rst:743
+msgid ":pep:`428` -- The pathlib module"
+msgstr ""
+

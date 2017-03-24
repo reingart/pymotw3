@@ -1,0 +1,349 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 18:41-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../source/logging/index.rst:3
+msgid "logging --- Report Status, Error, and Informational Messages"
+msgstr ""
+
+#: ../../source/logging/index.rst:8
+msgid "Report status, error, and informational messages."
+msgstr ""
+
+#: ../../source/logging/index.rst:10
+msgid ""
+"The ``logging`` module defines a standard API for reporting errors and "
+"status information from applications and libraries. The key benefit of "
+"having the logging API provided by a standard library module is that all "
+"Python modules can participate in logging, so an application's log can "
+"include messages from third-party modules."
+msgstr ""
+
+#: ../../source/logging/index.rst:17
+msgid "Logging Components"
+msgstr ""
+
+#: ../../source/logging/index.rst:19
+msgid ""
+"The logging system is made up of four interacting types of objects. Each "
+"module or application that wants to log uses a ``Logger`` instance to add"
+" information to the logs. Invoking the logger creates a ``LogRecord``, "
+"which is used to hold the information in memory until it is processed. A "
+"``Logger`` may have a number of ``Handler`` objects configured to receive"
+" and process log records. The ``Handler`` uses a ``Formatter`` to turn "
+"the log records into output messages."
+msgstr ""
+
+#: ../../source/logging/index.rst:29
+msgid "Logging in Applications vs. Libraries"
+msgstr ""
+
+#: ../../source/logging/index.rst:31
+msgid ""
+"Application developers and library authors can both use ``logging``, but "
+"each audience has different considerations to keep in mind."
+msgstr ""
+
+#: ../../source/logging/index.rst:35
+msgid ""
+"Application developers configure the ``logging`` module, directing the "
+"messages to appropriate output channels.  It is possible to log messages "
+"with different verbosity levels or to different destinations. Handlers "
+"for writing log messages to files, HTTP GET/POST locations, email via "
+"SMTP, generic sockets, or OS-specific logging mechanisms are all "
+"included, and it is possible to create custom log destination classes for"
+" special requirements not handled by any of the built-in classes."
+msgstr ""
+
+#: ../../source/logging/index.rst:44
+msgid ""
+"Developers of libraries can also use ``logging`` and have even less work "
+"to do.  Simply create a logger instance for each context, using an "
+"appropriate name, and then log messages using the standard levels. As "
+"long as a library uses the logging API with consistent naming and level "
+"selections, the application can be configured to show or hide messages "
+"from the library, as desired."
+msgstr ""
+
+#: ../../source/logging/index.rst:52
+msgid "Logging to a File"
+msgstr ""
+
+#: ../../source/logging/index.rst:54
+msgid ""
+"Most applications are configured to log to a file. Use the "
+"``basicConfig()`` function to set up the default handler so that debug "
+"messages are written to a file."
+msgstr ""
+
+#: ../../source/logging/index.rst
+msgid "logging_file_example.py"
+msgstr ""
+
+#: ../../source/logging/index.rst:62
+msgid ""
+"After running the script, the log message is written to "
+"``logging_example.out``:"
+msgstr ""
+
+#: ../../source/logging/index.rst:81
+msgid "Rotating Log Files"
+msgstr ""
+
+#: ../../source/logging/index.rst:83
+msgid ""
+"Running the script repeatedly causes more messages to be appended to the "
+"file. To create a new file each time the program runs, pass a "
+"``filemode`` argument to ``basicConfig()`` with a value of ``'w'``. "
+"Rather than managing the creation of files this way, though, it is better"
+" to use a ``RotatingFileHandler``, which creates new files automatically "
+"and preserves the old log file at the same time."
+msgstr ""
+
+#: ../../source/logging/index.rst
+msgid "logging_rotatingfile_example.py"
+msgstr ""
+
+#: ../../source/logging/index.rst:94
+msgid ""
+"The result is six separate files, each with part of the log history for "
+"the application."
+msgstr ""
+
+#: ../../source/logging/index.rst:115
+msgid ""
+"The most current file is always ``logging_rotatingfile_example.out``, and"
+" each time it reaches the size limit it is renamed with the suffix "
+"``.1``. Each of the existing backup files is renamed to increment the "
+"suffix (``.1`` becomes ``.2``, etc.) and the ``.5`` file is erased."
+msgstr ""
+
+#: ../../source/logging/index.rst:122
+msgid ""
+"Obviously, this example sets the log length much too small as an extreme "
+"example. Set ``maxBytes`` to a more appropriate value in a real program."
+msgstr ""
+
+#: ../../source/logging/index.rst:127
+msgid "Verbosity Levels"
+msgstr ""
+
+#: ../../source/logging/index.rst:129
+msgid ""
+"Another useful feature of the ``logging`` API is the ability to produce "
+"different messages at different *log levels*. This means code can be "
+"instrumented with debug messages, for example, and the log level can be "
+"set so that those debug messages are not written on a production system."
+"  :table:`Logging Levels` lists the logging levels defined by "
+"``logging``."
+msgstr ""
+
+#: ../../source/logging/index.rst
+msgid "Logging Levels"
+msgstr ""
+
+#: ../../source/logging/index.rst:139
+msgid "Level"
+msgstr ""
+
+#: ../../source/logging/index.rst:139
+msgid "Value"
+msgstr ""
+
+#: ../../source/logging/index.rst:141
+msgid "CRITICAL"
+msgstr ""
+
+#: ../../source/logging/index.rst:141
+msgid "50"
+msgstr ""
+
+#: ../../source/logging/index.rst:142
+msgid "ERROR"
+msgstr ""
+
+#: ../../source/logging/index.rst:142
+msgid "40"
+msgstr ""
+
+#: ../../source/logging/index.rst:143
+msgid "WARNING"
+msgstr ""
+
+#: ../../source/logging/index.rst:143
+msgid "30"
+msgstr ""
+
+#: ../../source/logging/index.rst:144
+msgid "INFO"
+msgstr ""
+
+#: ../../source/logging/index.rst:144
+msgid "20"
+msgstr ""
+
+#: ../../source/logging/index.rst:145
+msgid "DEBUG"
+msgstr ""
+
+#: ../../source/logging/index.rst:145
+msgid "10"
+msgstr ""
+
+#: ../../source/logging/index.rst:146
+msgid "UNSET"
+msgstr ""
+
+#: ../../source/logging/index.rst:146
+msgid "0"
+msgstr ""
+
+#: ../../source/logging/index.rst:149
+msgid ""
+"The log message is only emitted if the handler and logger are configured "
+"to emit messages of that level or higher. For example, if a message is "
+"``CRITICAL``, and the logger is set to ``ERROR``, the message is emitted "
+"(50 > 40). If a message is a ``WARNING``, and the logger is set to "
+"produce only messages set to ``ERROR``, the message is not emitted (30 < "
+"40)."
+msgstr ""
+
+#: ../../source/logging/index.rst
+msgid "logging_level_example.py"
+msgstr ""
+
+#: ../../source/logging/index.rst:160
+msgid ""
+"Run the script with an argument like 'debug' or 'warning' to see which "
+"messages show up at different levels:"
+msgstr ""
+
+#: ../../source/logging/index.rst:188
+msgid "Naming Logger Instances"
+msgstr ""
+
+#: ../../source/logging/index.rst:190
+msgid ""
+"All of the previous log messages all have 'root' embedded in them because"
+" the code uses the root logger.  An easy way to tell where a specific log"
+" message comes from is to use a separate logger object for each module. "
+"Log messages sent to a logger include the name of that logger. Here is an"
+" example of how to log from different modules so it is easy to trace the "
+"source of the message."
+msgstr ""
+
+#: ../../source/logging/index.rst
+msgid "logging_modules_example.py"
+msgstr ""
+
+#: ../../source/logging/index.rst:201
+msgid "The output shows the different module names for each output line."
+msgstr ""
+
+#: ../../source/logging/index.rst:217
+msgid "The Logging Tree"
+msgstr ""
+
+#: ../../source/logging/index.rst:219
+msgid ""
+"The ``Logger`` instances are configured in a tree structure, based on "
+"their names, as illustrated in :figure:`Example Logger Tree`. Typically "
+"each application or library defines a base name, with loggers for "
+"individual modules set as children. The root logger has no name."
+msgstr ""
+
+#: ../../source/logging/index.rst
+msgid "Example Logger Tree"
+msgstr ""
+
+#: ../../source/logging/index.rst:228
+msgid ""
+"The tree structure is useful for configuring logging because it means "
+"each logger does not need its own set of handlers. If a logger does not "
+"have any handlers, the message is handed to its parent for processing. "
+"This means that for most applications it is only necessary to configure "
+"handlers on the root logger, and all log information will be collected "
+"and sent to the same place, as shown in :figure:`One Logging Handler`."
+msgstr ""
+
+#: ../../source/logging/index.rst
+msgid "One Logging Handler"
+msgstr ""
+
+#: ../../source/logging/index.rst:239
+msgid ""
+"The tree structure also allows different verbosity levels, handlers, and "
+"formatters to be set for different parts of the application or library to"
+" control which messages are logged and where they go, as in "
+":figure:`Different Levels and Handlers`."
+msgstr ""
+
+#: ../../source/logging/index.rst
+msgid "Different Levels and Handlers"
+msgstr ""
+
+#: ../../source/logging/index.rst:248
+msgid "Integration with the warnings Module"
+msgstr ""
+
+#: ../../source/logging/index.rst:250
+msgid ""
+"The logging module integrates with :mod:`warnings` through "
+"``captureWarnings()``, which configures ``warnings`` to send messages "
+"through the logging system instead of outputting them directly."
+msgstr ""
+
+#: ../../source/logging/index.rst
+msgid "logging_capture_warnings.py"
+msgstr ""
+
+#: ../../source/logging/index.rst:259
+msgid ""
+"The warning message is sent to a logger named ``py.warnings`` using the "
+"``WARNING`` level."
+msgstr ""
+
+#: ../../source/logging/index.rst:282
+msgid ""
+":pydoc:`logging` -- The documentation for ``logging`` is extensive, and "
+"includes tutorials and reference material that goes beyond the exmaples "
+"presented here."
+msgstr ""
+
+#: ../../source/logging/index.rst:286
+msgid ":ref:`Python 2 to 3 porting notes for logging <porting-logging>`"
+msgstr ""
+
+#: ../../source/logging/index.rst:288
+msgid ":mod:`warnings` -- Non-fatal alerts."
+msgstr ""
+
+#: ../../source/logging/index.rst:290
+msgid ""
+"`logging_tree <https://pypi.python.org/pypi/logging_tree>`__ -- Third-"
+"party package by Brandon Rhodes for showing the logger tree for an "
+"application."
+msgstr ""
+
+#: ../../source/logging/index.rst:294
+msgid ""
+"`Logging Cookbook <https://docs.python.org/3.5/howto/logging-"
+"cookbook.html>`__ -- Part of the standard library documentation, with "
+"examples of using ``logging`` for different tasks."
+msgstr ""
+

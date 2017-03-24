@@ -1,0 +1,371 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 18:41-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../source/socket/addressing.rst:3
+msgid "Addressing, Protocol Families and Socket Types"
+msgstr ""
+
+#: ../../source/socket/addressing.rst:5
+msgid ""
+"A *socket* is one endpoint of a communication channel used by programs to"
+" pass data back and forth locally or across the Internet.  Sockets have "
+"two primary properties controlling the way they send data: the *address "
+"family* controls the OSI network layer protocol used and the *socket "
+"type* controls the transport layer protocol."
+msgstr ""
+
+#: ../../source/socket/addressing.rst:11
+msgid ""
+"Python supports three address families.  The most common, ``AF_INET``, is"
+" used for IPv4 Internet addressing.  IPv4 addresses are four bytes long "
+"and are usually represented as a sequence of four numbers, one per octet,"
+" separated by dots (e.g., ``10.1.1.5`` and ``127.0.0.1``).  These values "
+"are more commonly referred to as \"IP addresses.\"  Almost all Internet "
+"networking is done using IP version 4 at this time."
+msgstr ""
+
+#: ../../source/socket/addressing.rst:19
+msgid ""
+"``AF_INET6`` is used for IPv6 Internet addressing.  IPv6 is the \"next "
+"generation\" version of the Internet protocol, and supports 128-bit "
+"addresses, traffic shaping, and routing features not available under "
+"IPv4.  Adoption of IPv6 continues to grow, especially with the "
+"proliferation of cloud computing and the extra devices being added to the"
+" network because of Internet-of-things projects."
+msgstr ""
+
+#: ../../source/socket/addressing.rst:26
+msgid ""
+"``AF_UNIX`` is the address family for Unix Domain Sockets (UDS), an "
+"inter-process communication protocol available on POSIX-compliant "
+"systems.  The implementation of UDS typically allows the operating system"
+" to pass data directly from process to process, without going through the"
+" network stack.  This is more efficient than using ``AF_INET``, but "
+"because the file system is used as the namespace for addressing, UDS is "
+"restricted to processes on the same system. The appeal of using UDS over "
+"other IPC mechanisms such as named pipes or shared memory is that the "
+"programming interface is the same as for IP networking, so the "
+"application can take advantage of efficient communication when running on"
+" a single host, but use the same code when sending data across the "
+"network."
+msgstr ""
+
+#: ../../source/socket/addressing.rst:41
+msgid ""
+"The ``AF_UNIX`` constant is only defined on systems where UDS is "
+"supported."
+msgstr ""
+
+#: ../../source/socket/addressing.rst:44
+msgid ""
+"The socket type is usually either ``SOCK_DGRAM`` for message-oriented "
+"datagram transport or ``SOCK_STREAM`` for stream-oriented transport. "
+"Datagram sockets are most often associated with UDP, the *user datagram "
+"protocol*. They provide unreliable delivery of individual messages. "
+"Stream-oriented sockets are associated with TCP, *transmission control "
+"protocol*. They provide byte streams between the client and server, "
+"ensuring message delivery or failure notification through timeout "
+"management, retransmission, and other features."
+msgstr ""
+
+#: ../../source/socket/addressing.rst:53
+msgid ""
+"Most application protocols that deliver a large amount of data, such as "
+"HTTP, are built on top of TCP because it makes it simpler to create "
+"complex applications when message ordering and delivery is handled "
+"automatically. UDP is commonly used for protocols where order is less "
+"important (since the messages are self-contained and often small, such as"
+" name look-ups via DNS), or for *multicasting* (sending the same data to "
+"several hosts). Both UDP and TCP can be used with either IPv4 or IPv6 "
+"addressing."
+msgstr ""
+
+#: ../../source/socket/addressing.rst:64
+msgid ""
+"Python's ``socket`` module supports other socket types but they are less "
+"commonly used, so are not covered here.  Refer to the standard library "
+"documentation for more details."
+msgstr ""
+
+#: ../../source/socket/addressing.rst:69
+msgid "Looking up Hosts on the Network"
+msgstr ""
+
+#: ../../source/socket/addressing.rst:71
+msgid ""
+"``socket`` includes functions to interface with the domain name services "
+"on the network so a program can convert the host name of a server into "
+"its numerical network address.  Applications do not need to convert "
+"addresses explicitly before using them to connect to a server, but it can"
+" be useful when reporting errors to include the numerical address as well"
+" as the name value being used."
+msgstr ""
+
+#: ../../source/socket/addressing.rst:78
+msgid "To find the official name of the current host, use ``gethostname()``."
+msgstr ""
+
+#: ../../source/socket/addressing.rst
+msgid "socket_gethostname.py"
+msgstr ""
+
+#: ../../source/socket/addressing.rst:85
+msgid ""
+"The name returned will depend on the network settings for the current "
+"system, and may change if it is on a different network (such as a laptop "
+"attached to a wireless LAN)."
+msgstr ""
+
+#: ../../source/socket/addressing.rst:97
+msgid ""
+"Use ``gethostbyname()`` to consult the operating system hostname "
+"resolution API and convert the name of a server to its numerical address."
+msgstr ""
+
+#: ../../source/socket/addressing.rst
+msgid "socket_gethostbyname.py"
+msgstr ""
+
+#: ../../source/socket/addressing.rst:105
+msgid ""
+"If the DNS configuration of the current system includes one or more "
+"domains in the search, the name argument does not need to be a fully "
+"qualified name (i.e., it does not need to include the domain name as well"
+" as the base hostname).  If the name cannot be found, an exception of "
+"type ``socket.error`` is raised."
+msgstr ""
+
+#: ../../source/socket/addressing.rst:127
+msgid ""
+"For access to more naming information about a server, use "
+"``gethostbyname_ex()``.  It returns the canonical hostname of the server,"
+" any aliases, and all of the available IP addresses that can be used to "
+"reach it."
+msgstr ""
+
+#: ../../source/socket/addressing.rst
+msgid "socket_gethostbyname_ex.py"
+msgstr ""
+
+#: ../../source/socket/addressing.rst:136
+msgid ""
+"Having all known IP addresses for a server lets a client implement its "
+"own load balancing or fail-over algorithms."
+msgstr ""
+
+#: ../../source/socket/addressing.rst:168
+msgid ""
+"Use ``getfqdn()`` to convert a partial name to a fully qualified domain "
+"name."
+msgstr ""
+
+#: ../../source/socket/addressing.rst
+msgid "socket_getfqdn.py"
+msgstr ""
+
+#: ../../source/socket/addressing.rst:175
+msgid ""
+"The name returned will not necessarily match the input argument in any "
+"way if the input is an alias, such as ``www`` is here."
+msgstr ""
+
+#: ../../source/socket/addressing.rst:191
+msgid ""
+"When the address of a server is available, use ``gethostbyaddr()`` to do "
+"a \"reverse\" lookup for the name."
+msgstr ""
+
+#: ../../source/socket/addressing.rst
+msgid "socket_gethostbyaddr.py"
+msgstr ""
+
+#: ../../source/socket/addressing.rst:198
+msgid ""
+"The return value is a tuple containing the full hostname, any aliases, "
+"and all IP addresses associated with the name."
+msgstr ""
+
+#: ../../source/socket/addressing.rst:216
+msgid "Finding Service Information"
+msgstr ""
+
+#: ../../source/socket/addressing.rst:218
+msgid ""
+"In addition to an IP address, each socket address includes an integer "
+"*port number*.  Many applications can run on the same host, listening on "
+"a single IP address, but only one socket at a time can use a port at that"
+" address.  The combination of IP address, protocol, and port number "
+"uniquely identify a communication channel and ensure that messages sent "
+"through a socket arrive at the correct destination."
+msgstr ""
+
+#: ../../source/socket/addressing.rst:225
+msgid ""
+"Some of the port numbers are pre-allocated for a specific protocol. For "
+"example, communication between email servers using SMTP occurs over port "
+"number 25 using TCP, and web clients and servers use port 80 for HTTP.  "
+"The port numbers for network services with standardized names can be "
+"looked up with ``getservbyname()``."
+msgstr ""
+
+#: ../../source/socket/addressing.rst
+msgid "socket_getservbyname.py"
+msgstr ""
+
+#: ../../source/socket/addressing.rst:235
+msgid ""
+"Although a standardized service is unlikely to change ports, looking up "
+"the value with a system call instead of hard-coding it is more flexible "
+"when new services are added in the future."
+msgstr ""
+
+#: ../../source/socket/addressing.rst:259
+msgid "To reverse the service port lookup, use ``getservbyport()``."
+msgstr ""
+
+#: ../../source/socket/addressing.rst
+msgid "socket_getservbyport.py"
+msgstr ""
+
+#: ../../source/socket/addressing.rst:265
+msgid ""
+"The reverse lookup is useful for constructing URLs to services from "
+"arbitrary addresses."
+msgstr ""
+
+#: ../../source/socket/addressing.rst:288
+msgid ""
+"The number assigned to a transport protocol can be retrieved with "
+"``getprotobyname()``."
+msgstr ""
+
+#: ../../source/socket/addressing.rst
+msgid "socket_getprotobyname.py"
+msgstr ""
+
+#: ../../source/socket/addressing.rst:295
+msgid ""
+"The values for protocol numbers are standardized, and defined as "
+"constants in ``socket`` with the prefix ``IPPROTO_``."
+msgstr ""
+
+#: ../../source/socket/addressing.rst:314
+msgid "Looking Up Server Addresses"
+msgstr ""
+
+#: ../../source/socket/addressing.rst:316
+msgid ""
+"``getaddrinfo()`` converts the basic address of a service into a list of "
+"tuples with all of the information necessary to make a connection.  The "
+"contents of each tuple will vary, containing different network families "
+"or protocols."
+msgstr ""
+
+#: ../../source/socket/addressing.rst
+msgid "socket_getaddrinfo.py"
+msgstr ""
+
+#: ../../source/socket/addressing.rst:325
+msgid ""
+"This program demonstrates how to look up the connection information for "
+"``www.python.org``."
+msgstr ""
+
+#: ../../source/socket/addressing.rst:363
+msgid ""
+"``getaddrinfo()`` takes several arguments for filtering the result list. "
+"The ``host`` and ``port`` values given in the example are required "
+"arguments.  The optional arguments are ``family``, ``socktype``, "
+"``proto``, and ``flags``.  The optional values should be either ``0`` or "
+"one of the constants defined by ``socket``."
+msgstr ""
+
+#: ../../source/socket/addressing.rst
+msgid "socket_getaddrinfo_extra_args.py"
+msgstr ""
+
+#: ../../source/socket/addressing.rst:373
+msgid ""
+"Since ``flags`` includes ``AI_CANONNAME``, the canonical name of the "
+"server, which may be different from the value used for the lookup if the "
+"host has any aliases, is included in the results this time. Without the "
+"flag, the canonical name value is left empty."
+msgstr ""
+
+#: ../../source/socket/addressing.rst:397
+msgid "IP Address Representations"
+msgstr ""
+
+#: ../../source/socket/addressing.rst:399
+msgid ""
+"Network programs written in C use the data type ``struct sockaddr`` to "
+"represent IP addresses as binary values (instead of the string addresses "
+"usually found in Python programs).  To convert IPv4 addresses between the"
+" Python representation and the C representation, use ``inet_aton()`` and "
+"``inet_ntoa()``."
+msgstr ""
+
+#: ../../source/socket/addressing.rst
+msgid "socket_address_packing.py"
+msgstr ""
+
+#: ../../source/socket/addressing.rst:409
+msgid ""
+"The four bytes in the packed format can be passed to C libraries, "
+"transmitted safely over the network, or saved to a database compactly."
+msgstr ""
+
+#: ../../source/socket/addressing.rst:431
+msgid ""
+"The related functions ``inet_pton()`` and ``inet_ntop()`` work with both "
+"IPv4 and IPv6 addresses, producing the appropriate format based on the "
+"address family parameter passed in."
+msgstr ""
+
+#: ../../source/socket/addressing.rst
+msgid "socket_ipv6_address_packing.py"
+msgstr ""
+
+#: ../../source/socket/addressing.rst:439
+msgid ""
+"An IPv6 address is already a hexadecimal value, so converting the packed "
+"version to a series of hex digits produces a string similar to the "
+"original value."
+msgstr ""
+
+#: ../../source/socket/addressing.rst:459
+msgid ""
+"`Wikipedia: IPv6 <https://en.wikipedia.org/wiki/IPv6>`__ -- Article "
+"discussing Internet Protocol Version 6 (IPv6)."
+msgstr ""
+
+#: ../../source/socket/addressing.rst:462
+msgid ""
+"`Wikipedia: OSI Networking Model "
+"<https://en.wikipedia.org/wiki/OSI_model>`__ -- Article describing the "
+"seven layer model of networking implementation."
+msgstr ""
+
+#: ../../source/socket/addressing.rst:466
+msgid ""
+"`Assigned Internet Protocol Numbers <http://www.iana.org/assignments"
+"/protocol-numbers/protocol-numbers.xml>`__ -- List of standard protocol "
+"names and numbers."
+msgstr ""
+

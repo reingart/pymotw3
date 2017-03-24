@@ -1,0 +1,848 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 18:41-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../source/pdb/index.rst:3
+msgid "pdb --- Interactive Debugger"
+msgstr ""
+
+#: ../../source/pdb/index.rst:8
+msgid "Python's Interactive Debugger"
+msgstr ""
+
+#: ../../source/pdb/index.rst:10
+msgid ""
+"``pdb`` implements an interactive debugging environment for Python "
+"programs.  It includes features to pause a program, look at the values of"
+" variables, and watch program execution step-by-step, so you can "
+"understand what the program actually does and find bugs in the logic."
+msgstr ""
+
+#: ../../source/pdb/index.rst:16
+msgid "Starting the Debugger"
+msgstr ""
+
+#: ../../source/pdb/index.rst:18
+msgid ""
+"The first step to using ``pdb`` is causing the interpreter to enter the "
+"debugger at the right time.  There are a few different ways to do that, "
+"depending on the starting conditions and what is being debugged."
+msgstr ""
+
+#: ../../source/pdb/index.rst:23
+msgid "From the Command Line"
+msgstr ""
+
+#: ../../source/pdb/index.rst:25
+msgid ""
+"The most straightforward way to use the debugger is to run it from the "
+"command line, giving it the program as input so it knows what to run."
+msgstr ""
+
+#: ../../source/pdb/index.rst
+msgid "pdb_script.py"
+msgstr ""
+
+#: ../../source/pdb/index.rst:34
+msgid ""
+"Running the debugger from the command line causes it to load the source "
+"file and stop execution on the first statement it finds.  In this case, "
+"it stops before evaluating the definition of the class ``MyObj`` on line "
+"8."
+msgstr ""
+
+#: ../../source/pdb/index.rst:49
+msgid ""
+"Normally ``pdb`` includes the full path to each module in the output when"
+" printing a filename.  In order to maintain clear examples, the path in "
+"the sample output in this section has been replaced with ellipsis "
+"(``...``)."
+msgstr ""
+
+#: ../../source/pdb/index.rst:55
+msgid "Within the Interpreter"
+msgstr ""
+
+#: ../../source/pdb/index.rst:57
+msgid ""
+"Many Python developers work with the interactive interpreter while "
+"developing early versions of modules because it lets them experiment more"
+" iteratively without the save/run/repeat cycle needed when creating "
+"standalone scripts.  To run the debugger from within an interactive "
+"interpreter, use ``run()`` or ``runeval()``."
+msgstr ""
+
+#: ../../source/pdb/index.rst:76
+msgid ""
+"The argument to ``run()`` is a string expression that can be evaluated by"
+" the Python interpreter.  The debugger will parse it, then pause "
+"execution just before the first expression evaluates.  The debugger "
+"commands described here can be used to navigate and control the "
+"execution."
+msgstr ""
+
+#: ../../source/pdb/index.rst:83
+msgid "From Within a Program"
+msgstr ""
+
+#: ../../source/pdb/index.rst:85
+msgid ""
+"Both of the previous examples start the debugger at the beginning of a "
+"program.  For a long-running process where the problem appears much later"
+" in the program execution, it will be more convenient to start the "
+"debugger from inside the program using ``set_trace()``."
+msgstr ""
+
+#: ../../source/pdb/index.rst
+msgid "pdb_set_trace.py"
+msgstr ""
+
+#: ../../source/pdb/index.rst:96
+msgid ""
+"Line 17 of the sample script triggers the debugger at that point in "
+"execution, pausing it on line 18."
+msgstr ""
+
+#: ../../source/pdb/index.rst:107
+msgid ""
+"``set_trace()`` is just a Python function, so it can be called at any "
+"point in a program.  This makes it possible to enter the debugger based "
+"on conditions inside the program, including from an exception handler or "
+"via a specific branch of a control statement."
+msgstr ""
+
+#: ../../source/pdb/index.rst:113
+msgid "After a Failure"
+msgstr ""
+
+#: ../../source/pdb/index.rst:115
+msgid ""
+"Debugging a failure after a program terminates is called *post-mortem* "
+"debugging.  ``pdb`` supports post-mortem debugging through the ``pm()`` "
+"and ``post_mortem()`` functions."
+msgstr ""
+
+#: ../../source/pdb/index.rst
+msgid "pdb_post_mortem.py"
+msgstr ""
+
+#: ../../source/pdb/index.rst:125
+msgid ""
+"Here the incorrect attribute name on line 14 triggers an "
+"``AttributeError`` exception, causing execution to stop. ``pm()`` looks "
+"for the active traceback and starts the debugger at the point in the call"
+" stack where the exception occurred."
+msgstr ""
+
+#: ../../source/pdb/index.rst:150
+msgid "Controlling the Debugger"
+msgstr ""
+
+#: ../../source/pdb/index.rst:152
+msgid ""
+"The interface for the debugger is a small command language that lets you "
+"move around the call stack, examine and change the values of variables, "
+"and control how the debugger executes the program.  The interactive "
+"debugger uses :mod:`readline` to accept commands, and supports tab "
+"completion for commands, filenames, and function names. Entering a blank "
+"line re-runs the previous command again, unless it was a ``list`` "
+"operation."
+msgstr ""
+
+#: ../../source/pdb/index.rst:161
+msgid "Navigating the Execution Stack"
+msgstr ""
+
+#: ../../source/pdb/index.rst:163
+msgid ""
+"At any point while the debugger is running use ``where`` (abbreviated "
+"``w``) to find out exactly what line is being executed and where on the "
+"call stack the program is.  In this case, the module ``pdb_set_trace.py``"
+" line 18 in the ``go()`` method."
+msgstr ""
+
+#: ../../source/pdb/index.rst:180
+msgid "To add more context around the current location, use ``list`` (``l``)."
+msgstr ""
+
+#: ../../source/pdb/index.rst:199
+msgid ""
+"The default is to list 11 lines around the current line (five before and "
+"five after).  Using ``list`` with a single numerical argument lists 11 "
+"lines around that line instead of the current line."
+msgstr ""
+
+#: ../../source/pdb/index.rst:218
+msgid ""
+"If ``list`` receives two arguments, it interprets them as the first and "
+"last lines to include in its output."
+msgstr ""
+
+#: ../../source/pdb/index.rst:238
+msgid ""
+"The ``longlist`` (``ll``) command prints the source for the current "
+"function or frame, without having to determine the line numbers in "
+"advance. The command is \"longlist\" because for long functions it may "
+"produce considerably more output than the default for ``list``."
+msgstr ""
+
+#: ../../source/pdb/index.rst:253
+msgid ""
+"The ``source`` command loads and prints the full source for an arbitrary "
+"class, function, or module."
+msgstr ""
+
+#: ../../source/pdb/index.rst:270
+msgid ""
+"Move between frames within the current call stack using ``up`` and "
+"``down``.  ``up`` (abbreviated ``u``) moves towards older frames on the "
+"stack.  ``down`` (``d``) moves towards newer frames. Each time you move "
+"up or down the stack, the debugger prints the current location in the "
+"same format as produced by ``where``."
+msgstr ""
+
+#: ../../source/pdb/index.rst:286
+msgid ""
+"Pass a numerical argument to either ``up`` or ``down`` to move that many "
+"steps up or down the stack at one time."
+msgstr ""
+
+#: ../../source/pdb/index.rst:290
+msgid "Examining Variables on the Stack"
+msgstr ""
+
+#: ../../source/pdb/index.rst:292
+msgid ""
+"Each frame on the stack maintains a set of variables, including values "
+"local to the function being executed and global state information. "
+"``pdb`` provides several ways to examine the contents of those variables."
+msgstr ""
+
+#: ../../source/pdb/index.rst
+msgid "pdb_function_arguments.py"
+msgstr ""
+
+#: ../../source/pdb/index.rst:303
+msgid ""
+"The ``args`` command (abbreviated ``a``) prints all of the arguments to "
+"the function active in the current frame.  This example also uses a "
+"recursive function to show what a deeper stack looks like when printed by"
+" ``where``."
+msgstr ""
+
+#: ../../source/pdb/index.rst:341
+msgid ""
+"The ``p`` command evaluates an expression given as argument and prints "
+"the result.  Python's ``print()`` function is also available, but it is "
+"passed through to the interpreter to be executed rather than running as a"
+" command in the debugger."
+msgstr ""
+
+#: ../../source/pdb/index.rst:354
+msgid ""
+"Similarly, prefixing an expression with ``!`` passes it to the Python "
+"interpreter to be evaluated.  This feature can be used to execute "
+"arbitrary Python statements, including modifying variables.  This example"
+" changes the value of ``output`` before letting the debugger continue "
+"running the program.  The next statement after the call to "
+"``set_trace()`` prints the value of ``output``, showing the modified "
+"value."
+msgstr ""
+
+#: ../../source/pdb/index.rst:377
+msgid ""
+"For more complicated values such as nested or large data structures, use "
+"``pp`` to \"pretty print\" them.  This program reads several lines of "
+"text from a file."
+msgstr ""
+
+#: ../../source/pdb/index.rst
+msgid "pdb_pp.py"
+msgstr ""
+
+#: ../../source/pdb/index.rst:387
+msgid ""
+"Printing the variable ``lines`` with ``p`` results in output that is "
+"difficult to read because it may wrap awkwardly.  ``pp`` uses "
+":mod:`pprint` to format the value for clean printing."
+msgstr ""
+
+#: ../../source/pdb/index.rst:410
+msgid ""
+"For interactive exploration and experimentation it is possible to drop "
+"from the debugger into a standard Python interactive prompt with the "
+"globals and locals from the current frame already populated."
+msgstr ""
+
+#: ../../source/pdb/index.rst:447
+msgid ""
+"Mutable objects such as lists can be changed from the interactive "
+"interpreter.  Immutable objects cannot, and names cannot be rebound to "
+"new values."
+msgstr ""
+
+#: ../../source/pdb/index.rst:466
+msgid ""
+"Use the end-of-file sequence Ctrl-D to exit the interactive prompt and "
+"return to the debugger. In this example, the list ``l`` has been changed "
+"but the values of ``m`` and ``n`` are not."
+msgstr ""
+
+#: ../../source/pdb/index.rst:486
+msgid "Stepping Through a Program"
+msgstr ""
+
+#: ../../source/pdb/index.rst:488
+msgid ""
+"In addition to navigating up and down the call stack when the program is "
+"paused, it is also possible to step through execution of the program past"
+" the point where it enters the debugger."
+msgstr ""
+
+#: ../../source/pdb/index.rst
+msgid "pdb_step.py"
+msgstr ""
+
+#: ../../source/pdb/index.rst:498
+msgid ""
+"Use ``step`` (abbreviated ``s``) to execute the current line and then "
+"stop at the next execution point -- either the first statement inside a "
+"function being called or the next line of the current function."
+msgstr ""
+
+#: ../../source/pdb/index.rst:509
+msgid ""
+"The interpreter pauses after the call to ``set_trace()`` and gives "
+"control to the debugger.  The first ``step`` causes the execution to "
+"enter ``f()``."
+msgstr ""
+
+#: ../../source/pdb/index.rst:521
+msgid ""
+"One more ``step`` moves execution to the first line of ``f()`` and starts"
+" the loop."
+msgstr ""
+
+#: ../../source/pdb/index.rst:530
+msgid ""
+"Stepping again moves to the first line inside the loop where ``j`` is "
+"defined."
+msgstr ""
+
+#: ../../source/pdb/index.rst:542
+msgid ""
+"The value of ``i`` is ``0``, so after one more step the value of ``j`` "
+"should also be ``0``."
+msgstr ""
+
+#: ../../source/pdb/index.rst:556
+msgid ""
+"Stepping one line at a time in this way can become tedious if there is a "
+"lot of code to cover before the point where the error occurs, or if the "
+"same function is called repeatedly."
+msgstr ""
+
+#: ../../source/pdb/index.rst
+msgid "pdb_next.py"
+msgstr ""
+
+#: ../../source/pdb/index.rst:566
+msgid ""
+"In this example, there is nothing wrong with ``calc()``, so stepping "
+"through it each time it is called in the loop in ``f()`` obscures the "
+"useful output by showing all of the lines of ``calc()`` as they are "
+"executed."
+msgstr ""
+
+#: ../../source/pdb/index.rst:620
+msgid ""
+"The ``next`` command (abbreviated ``n``) is like ``step``, but does not "
+"enter functions called from the statement being executed.  In effect, it "
+"steps all the way through the function call to the next statement in the "
+"current function in a single operation."
+msgstr ""
+
+#: ../../source/pdb/index.rst:639
+msgid ""
+"The ``until`` command is like ``next``, except it explicitly continues "
+"until execution reaches a line in the same function with a line number "
+"higher than the current value.  That means, for example, that ``until`` "
+"can be used to step past the end of a loop."
+msgstr ""
+
+#: ../../source/pdb/index.rst:678
+msgid ""
+"Before the ``until`` command was run, the current line was 18, the last "
+"line of the loop.  After ``until`` ran, execution was on line 19, and the"
+" loop had been exhausted."
+msgstr ""
+
+#: ../../source/pdb/index.rst:682
+msgid ""
+"To let execution run until a specific line, pass the line number to the "
+"``until`` command. Unlike when setting a breakpoint, the line number "
+"passed to ``until`` must be higher than the current line number, so it is"
+" most useful for navigating within a function for skipping over long "
+"blocks."
+msgstr ""
+
+#: ../../source/pdb/index.rst:738
+msgid ""
+"The ``return`` command is another short-cut for bypassing parts of a "
+"function.  It continues executing until the function is about to execute "
+"a ``return`` statement, and then it pauses, providing time to look at the"
+" return value before the function returns."
+msgstr ""
+
+#: ../../source/pdb/index.rst:771
+msgid "Breakpoints"
+msgstr ""
+
+#: ../../source/pdb/index.rst:773
+msgid ""
+"As programs grow longer, even using ``next`` and ``until`` will become "
+"slow and cumbersome.  Instead of stepping through the program by hand, a "
+"better solution is to let it run normally until it reaches a point where "
+"the debugger should interrupt it.  ``set_trace()`` can start the "
+"debugger, but that only works if there is a single point in the program "
+"where it should pause.  It is more convenient to run the program through "
+"the debugger, but tell the debugger where to stop in advance using "
+"*breakpoints*.  The debugger monitors the program, and when it reaches "
+"the location described by a breakpoint the program is paused before the "
+"line is executed."
+msgstr ""
+
+#: ../../source/pdb/index.rst
+msgid "pdb_break.py"
+msgstr ""
+
+#: ../../source/pdb/index.rst:790
+msgid ""
+"There are several options to the ``break`` command (abbreviated ``b``) "
+"used for setting break points, including the line number, file, and "
+"function where processing should pause.  To set a breakpoint on a "
+"specific line of the current file, use ``break lineno``."
+msgstr ""
+
+#: ../../source/pdb/index.rst:814
+msgid ""
+"The command ``continue`` (abbreviated ``c``) tells the debugger to keep "
+"running the program until the next breakpoint.  In this case, it runs "
+"through the first iteration of the ``for`` loop in ``f()`` and stops "
+"inside ``calc()`` during the second iteration."
+msgstr ""
+
+#: ../../source/pdb/index.rst:819
+msgid ""
+"Breakpoints can also be set to the first line of a function by specifying"
+" the function name instead of a line number.  This example shows what "
+"happens if a breakpoint is added for the ``calc()`` function."
+msgstr ""
+
+#: ../../source/pdb/index.rst:848
+msgid ""
+"To specify a breakpoint in another file, prefix the line or function "
+"argument with a filename."
+msgstr ""
+
+#: ../../source/pdb/index.rst
+msgid "pdb_break_remote.py"
+msgstr ""
+
+#: ../../source/pdb/index.rst:857
+msgid ""
+"Here a breakpoint is set for line 12 of ``pdb_break.py`` after starting "
+"the main program ``pdb_break_remote.py``."
+msgstr ""
+
+#: ../../source/pdb/index.rst:879
+msgid ""
+"The filename can be a full path to the source file, or a relative path to"
+" a file available on ``sys.path``."
+msgstr ""
+
+#: ../../source/pdb/index.rst:882
+msgid ""
+"To list the breakpoints currently set, use ``break`` without any "
+"arguments.  The output includes the file and line number of each break "
+"point, as well as information about how many times it has been "
+"encountered."
+msgstr ""
+
+#: ../../source/pdb/index.rst:923
+msgid "Managing Breakpoints"
+msgstr ""
+
+#: ../../source/pdb/index.rst:925
+msgid ""
+"As each new breakpoint is added, it is assigned a numerical identifier.  "
+"These ID numbers are used to enable, disable, and remove the breakpoints "
+"interactively.  Turning off a breakpoint with ``disable`` tells the "
+"debugger not to stop when that line is reached.  The breakpoint is "
+"remembered, but ignored."
+msgstr ""
+
+#: ../../source/pdb/index.rst:965
+msgid ""
+"The next debugging session sets two breakpoints in the program, then "
+"disables one.  The program is run until the remaining breakpoint is "
+"encountered, and then the other breakpoint is turned back on with "
+"``enable`` before execution continues."
+msgstr ""
+
+#: ../../source/pdb/index.rst:1046
+msgid ""
+"The lines prefixed with ``B`` in the output from ``list`` show where the "
+"breakpoints are set in the program (lines 8 and 18)."
+msgstr ""
+
+#: ../../source/pdb/index.rst:1049
+msgid "Use ``clear`` to delete a breakpoint entirely."
+msgstr ""
+
+#: ../../source/pdb/index.rst:1082
+msgid ""
+"The other breakpoints retain their original identifiers and are not "
+"renumbered."
+msgstr ""
+
+#: ../../source/pdb/index.rst:1086
+msgid "Temporary Breakpoints"
+msgstr ""
+
+#: ../../source/pdb/index.rst:1088
+msgid ""
+"A temporary breakpoint is automatically cleared the first time program "
+"execution hits it.  Using a temporary breakpoint makes it easy to reach a"
+" particular spot in the program flow quickly, just as with a regular "
+"breakpoint, but since it is cleared immediately it does not interfere "
+"with subsequent progress if that part of the program is run repeatedly."
+msgstr ""
+
+#: ../../source/pdb/index.rst:1132
+msgid ""
+"After the program reaches line 12 the first time, the breakpoint is "
+"removed and execution does not stop again until the program finishes."
+msgstr ""
+
+#: ../../source/pdb/index.rst:1136
+msgid "Conditional Breakpoints"
+msgstr ""
+
+#: ../../source/pdb/index.rst:1138
+msgid ""
+"Rules can be applied to breakpoints so that execution only stops when the"
+" conditions are met.  Using conditional breakpoints gives finer control "
+"over how the debugger pauses the program than enabling and disabling "
+"breakpoints by hand.  Conditional breakpoints can be set in two ways.  "
+"The first is to specify the condition when the breakpoint is set using "
+"``break``."
+msgstr ""
+
+#: ../../source/pdb/index.rst:1168
+msgid ""
+"The condition argument must be an expression using values visible in the "
+"stack frame where the breakpoint is defined.  If the expression evaluates"
+" as true, execution stops at the breakpoint."
+msgstr ""
+
+#: ../../source/pdb/index.rst:1172
+msgid ""
+"A condition can also be applied to an existing breakpoint using the "
+"``condition`` command.  The arguments are the breakpoint id and the "
+"expression."
+msgstr ""
+
+#: ../../source/pdb/index.rst:1199
+msgid "Ignoring Breakpoints"
+msgstr ""
+
+#: ../../source/pdb/index.rst:1201
+msgid ""
+"Programs that loop or use a large number of recursive calls to the same "
+"function are often easier to debug by skipping ahead in the execution, "
+"instead of watching every call or breakpoint.  The ``ignore`` command "
+"tells the debugger to pass over a breakpoint without stopping.  Each time"
+" processing encounters the breakpoint, it decrements the ignore counter."
+"  When the counter is zero, the breakpoint is re-activated."
+msgstr ""
+
+#: ../../source/pdb/index.rst:1253
+msgid ""
+"Explicitly resetting the ignore count to zero re-enables the breakpoint "
+"immediately."
+msgstr ""
+
+#: ../../source/pdb/index.rst:1281
+msgid "Triggering Actions on a Breakpoint"
+msgstr ""
+
+#: ../../source/pdb/index.rst:1283
+msgid ""
+"In addition to the purely interactive mode, ``pdb`` supports basic "
+"scripting.  Using ``commands``, a series of interpreter commands, "
+"including Python statements, can be executed when a specific breakpoint "
+"is encountered.  After running ``commands`` with the breakpoint number as"
+" argument, the debugger prompt changes to ``(com)``.  Enter commands one "
+"a time, and finish the list with ``end`` to save the script and return to"
+" the main debugger prompt."
+msgstr ""
+
+#: ../../source/pdb/index.rst:1325
+msgid ""
+"This feature is especially useful for debugging code that uses a lot of "
+"data structures or variables, since the debugger can be made to print out"
+" all of the values automatically, instead of doing it manually each time "
+"the breakpoint is encountered."
+msgstr ""
+
+#: ../../source/pdb/index.rst:1331
+msgid "Watching Data Change"
+msgstr ""
+
+#: ../../source/pdb/index.rst:1333
+msgid ""
+"It is also possible to watch as values change during the course of "
+"program execution without scripting explicit ``print`` commands by using "
+"the ``display`` command."
+msgstr ""
+
+#: ../../source/pdb/index.rst:1365
+msgid ""
+"Each time execution stops in the frame, the expression is evaluated and "
+"if it changes then the result is printed along with the old value. The "
+"``display`` command with no argument prints a list of the displays active"
+" for the current frame."
+msgstr ""
+
+#: ../../source/pdb/index.rst:1385
+msgid "Remove a display expression with ``undisplay``."
+msgstr ""
+
+#: ../../source/pdb/index.rst:1401
+msgid "Changing Execution Flow"
+msgstr ""
+
+#: ../../source/pdb/index.rst:1403
+msgid ""
+"The ``jump`` command alters the flow of the program at runtime, without "
+"modifying the code.  It can skip forward to avoid running some code, or "
+"backward to run it again.  This sample program generates a list of "
+"numbers."
+msgstr ""
+
+#: ../../source/pdb/index.rst
+msgid "pdb_jump.py"
+msgstr ""
+
+#: ../../source/pdb/index.rst:1414
+msgid ""
+"When run without interference the output is a sequence of increasing "
+"numbers divisible by ``5``."
+msgstr ""
+
+#: ../../source/pdb/index.rst:1430
+msgid "Jump Ahead"
+msgstr ""
+
+#: ../../source/pdb/index.rst:1432
+msgid ""
+"Jumping ahead moves the point of execution past the current location "
+"without evaluating any of the statements in between.  By skipping over "
+"line 13 in the example, the value of ``j`` is not incremented and all of "
+"the subsequent values that depend on it are a little smaller."
+msgstr ""
+
+#: ../../source/pdb/index.rst:1482
+msgid "Jump Back"
+msgstr ""
+
+#: ../../source/pdb/index.rst:1484
+msgid ""
+"Jumps can also move the program execution to a statement that has already"
+" been executed, to run it again.  Here, the value of ``j`` is incremented"
+" an extra time, so the numbers in the result sequence are all larger than"
+" they would otherwise be."
+msgstr ""
+
+#: ../../source/pdb/index.rst:1527
+msgid "Illegal Jumps"
+msgstr ""
+
+#: ../../source/pdb/index.rst:1529
+msgid ""
+"Jumping in and out of certain flow control statements is dangerous or "
+"undefined and therefore not allowed by the debugger."
+msgstr ""
+
+#: ../../source/pdb/index.rst
+msgid "pdb_no_jump.py"
+msgstr ""
+
+#: ../../source/pdb/index.rst:1538
+msgid ""
+"``jump`` can be used to enter a function, but the arguments are not "
+"defined and the code is unlikely to work."
+msgstr ""
+
+#: ../../source/pdb/index.rst:1561
+msgid ""
+"``jump`` will not enter the middle of a block such as a ``for`` loop or "
+"``try:except`` statement."
+msgstr ""
+
+#: ../../source/pdb/index.rst:1582
+msgid ""
+"The code in a ``finally`` block must all be executed, so ``jump`` will "
+"not leave the block."
+msgstr ""
+
+#: ../../source/pdb/index.rst:1604
+msgid ""
+"And the most basic restriction is that jumping is constrained to the "
+"bottom frame on the call stack.  After moving up the stack to examine "
+"variables, the execution flow cannot be changed at that point."
+msgstr ""
+
+#: ../../source/pdb/index.rst:1642
+msgid "Restarting a Program"
+msgstr ""
+
+#: ../../source/pdb/index.rst:1644
+msgid ""
+"When the debugger reaches the end of the program, it automatically starts"
+" it over, but it can also be restarted explicitly without leaving the "
+"debugger and losing the current breakpoints or other settings."
+msgstr ""
+
+#: ../../source/pdb/index.rst
+msgid "pdb_run.py"
+msgstr ""
+
+#: ../../source/pdb/index.rst:1655
+msgid ""
+"Running this program to completion within the debugger prints the name of"
+" the script file, since no other arguments were given on the command "
+"line."
+msgstr ""
+
+#: ../../source/pdb/index.rst:1674
+msgid ""
+"The program can be restarted using ``run``.  Arguments passed to ``run`` "
+"are parsed with :mod:`shlex` and passed to the program as though they "
+"were command line arguments, so the program can be restarted with "
+"different settings."
+msgstr ""
+
+#: ../../source/pdb/index.rst:1696
+msgid ""
+"``run`` can also be used at any other point in processing to restart the "
+"program."
+msgstr ""
+
+#: ../../source/pdb/index.rst:1722
+msgid "Customizing the Debugger with Aliases"
+msgstr ""
+
+#: ../../source/pdb/index.rst:1724
+msgid ""
+"Avoid typing complex commands repeatedly by using ``alias`` to define a "
+"shortcut.  Alias expansion is applied to the first word of each command."
+"  The body of the alias can consist of any command that is legal to type "
+"at the debugger prompt, including other debugger commands and pure Python"
+" expressions.  Recursion is allowed in alias definitions, so one alias "
+"can even invoke another."
+msgstr ""
+
+#: ../../source/pdb/index.rst:1752
+msgid ""
+"Running ``alias`` without any arguments shows the list of defined "
+"aliases.  A single argument is assumed to be the name of an alias, and "
+"its definition is printed."
+msgstr ""
+
+#: ../../source/pdb/index.rst:1766
+msgid ""
+"Arguments to the alias are referenced using ``%n`` where ``n`` is "
+"replaced with a number indicating the position of the argument, starting "
+"with ``1``.  To consume all of the arguments, use ``%*``."
+msgstr ""
+
+#: ../../source/pdb/index.rst:1790
+msgid "Clear the definition of an alias with ``unalias``."
+msgstr ""
+
+#: ../../source/pdb/index.rst:1803
+msgid "Saving Configuration Settings"
+msgstr ""
+
+#: ../../source/pdb/index.rst:1805
+msgid ""
+"Debugging a program involves a lot of repetition: running the code, "
+"observing the output, adjusting the code or inputs, and running it again."
+"  ``pdb`` attempts to cut down on the amount of repetition needed to "
+"control the debugging experience, to let you concentrate on the code "
+"instead of the debugger.  To help reduce the number of times you issue "
+"the same commands to the debugger, ``pdb`` can read a saved configuration"
+" from text files interpreted as it starts."
+msgstr ""
+
+#: ../../source/pdb/index.rst:1813
+msgid ""
+"The file ``~/.pdbrc`` is read first, allowing global personal preferences"
+" for all debugging sessions.  Then ``./.pdbrc`` is read from the current "
+"working directory, to set local preferences for a particular project."
+msgstr ""
+
+#: ../../source/pdb/index.rst:1849
+msgid ""
+"Any configuration commands that can be typed at the debugger prompt can "
+"be saved in one of the start-up files. Some commands that control the "
+"execution (``continue``, ``next``, etc.)  can as well."
+msgstr ""
+
+#: ../../source/pdb/index.rst:1878
+msgid ""
+"Especially useful is ``run``, which means the command line arguments for "
+"a debugging session can be set in ``./.pdbrc`` so they are consistent "
+"across several runs."
+msgstr ""
+
+#: ../../source/pdb/index.rst:1904
+msgid ":pydoc:`pdb`"
+msgstr ""
+
+#: ../../source/pdb/index.rst:1906
+msgid ":mod:`readline` -- Interactive prompt editing library."
+msgstr ""
+
+#: ../../source/pdb/index.rst:1908
+msgid ":mod:`cmd` -- Build interactive programs."
+msgstr ""
+
+#: ../../source/pdb/index.rst:1910
+msgid ":mod:`shlex` -- Shell command line parsing."
+msgstr ""
+
+#: ../../source/pdb/index.rst:1912
+msgid ""
+":pyissue:`26053` -- If the output of ``run`` does not match the values "
+"presented here, refer to this bug for details about a regression in pdb "
+"output between 2.7 and 3.5."
+msgstr ""
+

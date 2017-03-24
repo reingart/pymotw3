@@ -1,0 +1,192 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 18:41-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../source/pprint/index.rst:3
+msgid "pprint --- Pretty-Print Data Structures"
+msgstr ""
+
+#: ../../source/pprint/index.rst:8
+msgid "Pretty-print data structures"
+msgstr ""
+
+#: ../../source/pprint/index.rst:10
+msgid ""
+"The ``pprint`` module contains a \"pretty printer\" for producing "
+"aesthetically pleasing views of data structures.  The formatter produces "
+"representations of data structures that can be parsed correctly by the "
+"interpreter, and that are also easy for a human to read. The output is "
+"kept on a single line, if possible, and indented when split across "
+"multiple lines."
+msgstr ""
+
+#: ../../source/pprint/index.rst:17
+msgid ""
+"The examples in this section all depend on ``pprint_data.py``, which is "
+"shown here."
+msgstr ""
+
+#: ../../source/pprint/index.rst
+msgid "pprint_data.py"
+msgstr ""
+
+#: ../../source/pprint/index.rst:25
+msgid "Printing"
+msgstr ""
+
+#: ../../source/pprint/index.rst:27
+msgid "The simplest way to use the module is through the ``pprint()`` function."
+msgstr ""
+
+#: ../../source/pprint/index.rst
+msgid "pprint_pprint.py"
+msgstr ""
+
+#: ../../source/pprint/index.rst:34
+msgid ""
+"``pprint()`` formats an object and writes it to the data stream passed in"
+" as an argument (or ``sys.stdout`` by default)."
+msgstr ""
+
+#: ../../source/pprint/index.rst:69
+msgid "Formatting"
+msgstr ""
+
+#: ../../source/pprint/index.rst:71
+msgid ""
+"To format a data structure without writing it directly to a stream (for "
+"example, for logging), use ``pformat()`` to build a string "
+"representation."
+msgstr ""
+
+#: ../../source/pprint/index.rst
+msgid "pprint_pformat.py"
+msgstr ""
+
+#: ../../source/pprint/index.rst:79
+msgid "The formatted string can then be printed or logged independently."
+msgstr ""
+
+#: ../../source/pprint/index.rst:107
+msgid "Arbitrary Classes"
+msgstr ""
+
+#: ../../source/pprint/index.rst:109
+msgid ""
+"The ``PrettyPrinter`` class used by ``pprint()`` can also work with "
+"custom classes, if they define a ``__repr__()`` method."
+msgstr ""
+
+#: ../../source/pprint/index.rst
+msgid "pprint_arbitrary_object.py"
+msgstr ""
+
+#: ../../source/pprint/index.rst:116
+msgid ""
+"The representations of the nested objects are combined by the "
+"``PrettyPrinter`` to return the full string representation."
+msgstr ""
+
+#: ../../source/pprint/index.rst:135
+msgid "Recursion"
+msgstr ""
+
+#: ../../source/pprint/index.rst:137
+msgid ""
+"Recursive data structures are represented with a reference to the "
+"original source of the data, given in the format ``<Recursion on typename"
+" with id=number>``."
+msgstr ""
+
+#: ../../source/pprint/index.rst
+msgid "pprint_recursion.py"
+msgstr ""
+
+#: ../../source/pprint/index.rst:145
+msgid ""
+"In this example, the list ``local_data`` is added to itself, creating a "
+"recursive reference."
+msgstr ""
+
+#: ../../source/pprint/index.rst:163
+msgid "Limiting Nested Output"
+msgstr ""
+
+#: ../../source/pprint/index.rst:165
+msgid ""
+"For very deep data structures, it may not be desirable for the output to "
+"include all of the details. The data may not be formatted properly, the "
+"formatted text might be too large to manage, or some of the data may be "
+"extraneous."
+msgstr ""
+
+#: ../../source/pprint/index.rst
+msgid "pprint_depth.py"
+msgstr ""
+
+#: ../../source/pprint/index.rst:174
+msgid ""
+"Use the ``depth`` argument to control how far down into the nested data "
+"structure the pretty printer recurses.  Levels not included in the output"
+" are represented by ellipsis."
+msgstr ""
+
+#: ../../source/pprint/index.rst:193
+msgid "Controlling Output Width"
+msgstr ""
+
+#: ../../source/pprint/index.rst:195
+msgid ""
+"The default output width for the formatted text is 80 columns. To adjust "
+"that width, use the ``width`` argument to ``pprint()``."
+msgstr ""
+
+#: ../../source/pprint/index.rst
+msgid "pprint_width.py"
+msgstr ""
+
+#: ../../source/pprint/index.rst:202
+msgid ""
+"When the width is too small to accommodate the formatted data structure, "
+"the lines are not truncated or wrapped if doing so would introduce "
+"invalid syntax."
+msgstr ""
+
+#: ../../source/pprint/index.rst:263
+msgid ""
+"The ``compact`` flag tells ``pprint()`` to try to fit more data on each "
+"individual line, rather than spreading complex data structures across "
+"lines."
+msgstr ""
+
+#: ../../source/pprint/index.rst
+msgid "pprint_compact.py"
+msgstr ""
+
+#: ../../source/pprint/index.rst:271
+msgid ""
+"This example shows that when a data structure does not fit on a line, it "
+"is split up (as with the second item in the data list). When multiple "
+"elements can fit on a line, as with the third and fourth members, they "
+"are placed that way."
+msgstr ""
+
+#: ../../source/pprint/index.rst:316
+msgid ":pydoc:`pprint`"
+msgstr ""
+

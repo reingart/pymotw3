@@ -1,0 +1,336 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 18:41-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../source/mailbox/index.rst:3
+msgid "mailbox --- Manipulate Email Archives"
+msgstr ""
+
+#: ../../source/mailbox/index.rst:8
+msgid "Work with email messages in various local file formats."
+msgstr ""
+
+#: ../../source/mailbox/index.rst:10
+msgid ""
+"The ``mailbox`` module defines a common API for accessing email messages "
+"stored in local disk formats, including:"
+msgstr ""
+
+#: ../../source/mailbox/index.rst:13 ../../source/mailbox/index.rst:145
+msgid "Maildir"
+msgstr ""
+
+#: ../../source/mailbox/index.rst:14 ../../source/mailbox/index.rst:24
+msgid "mbox"
+msgstr ""
+
+#: ../../source/mailbox/index.rst:15
+msgid "MH"
+msgstr ""
+
+#: ../../source/mailbox/index.rst:16
+msgid "Babyl"
+msgstr ""
+
+#: ../../source/mailbox/index.rst:17
+msgid "MMDF"
+msgstr ""
+
+#: ../../source/mailbox/index.rst:19
+msgid ""
+"There are base classes for ``Mailbox`` and ``Message``, and each mailbox "
+"format includes a corresponding pair of subclasses to implement the "
+"details for that format."
+msgstr ""
+
+#: ../../source/mailbox/index.rst:26
+msgid ""
+"The mbox format is the simplest to show in documentation, since it is "
+"entirely plain text.  Each mailbox is stored as a single file, with all "
+"of the messages concatenated together.  Each time a line starting with "
+"``\"From \"`` (\"From\" followed by a single space) is encountered it is "
+"treated as the beginning of a new message.  Any time those characters "
+"appear at the beginning of a line in the message body, they are escaped "
+"by prefixing the line with ``\">\"``."
+msgstr ""
+
+#: ../../source/mailbox/index.rst:35
+msgid "Creating an mbox Mailbox"
+msgstr ""
+
+#: ../../source/mailbox/index.rst:37
+msgid ""
+"Instantiate the ``mbox`` class by passing the filename to the "
+"constructor.  If the file does not exist, it is created when ``add()`` is"
+" used to append messages."
+msgstr ""
+
+#: ../../source/mailbox/index.rst
+msgid "mailbox_mbox_create.py"
+msgstr ""
+
+#: ../../source/mailbox/index.rst:45
+msgid "The result of this script is a new mailbox file with two email messages."
+msgstr ""
+
+#: ../../source/mailbox/index.rst:80
+msgid "Reading an mbox Mailbox"
+msgstr ""
+
+#: ../../source/mailbox/index.rst:82
+msgid ""
+"To read an existing mailbox, open it and treat the ``mbox`` object like a"
+" dictionary.  The keys are arbitrary values defined by the mailbox "
+"instance and are not necessary meaningful other than as internal "
+"identifiers for message objects."
+msgstr ""
+
+#: ../../source/mailbox/index.rst
+msgid "mailbox_mbox_read.py"
+msgstr ""
+
+#: ../../source/mailbox/index.rst:91
+msgid ""
+"The open mailbox supports the iterator protocol, but unlike true "
+"dictionary objects the default iterator for a mailbox works on the "
+"*values* instead of the *keys*."
+msgstr ""
+
+#: ../../source/mailbox/index.rst:109
+msgid "Removing Messages from an mbox Mailbox"
+msgstr ""
+
+#: ../../source/mailbox/index.rst:111
+msgid ""
+"To remove an existing message from an mbox file, either use its key with "
+":meth:`remove` or use ``del``."
+msgstr ""
+
+#: ../../source/mailbox/index.rst
+msgid "mailbox_mbox_remove.py"
+msgstr ""
+
+#: ../../source/mailbox/index.rst:118
+msgid ""
+"The :meth:`lock` and :meth:`unlock` methods are used to prevent issues "
+"from simultaneous access to the file, and :meth:`flush` forces the "
+"changes to be written to disk."
+msgstr ""
+
+#: ../../source/mailbox/index.rst:147
+msgid ""
+"The Maildir format was created to eliminate the problem of concurrent "
+"modification to an mbox file.  Instead of using a single file, the "
+"mailbox is organized as directory where each message is contained in its "
+"own file.  This also allows mailboxes to be nested, so the API for a "
+"Maildir mailbox is extended with methods to work with sub-folders."
+msgstr ""
+
+#: ../../source/mailbox/index.rst:155
+msgid "Creating a Maildir Mailbox"
+msgstr ""
+
+#: ../../source/mailbox/index.rst:157
+msgid ""
+"The only real difference between creating a ``Maildir`` and ``mbox`` is "
+"that the argument to the constructor is a directory name instead of a "
+"file name.  As before, if the mailbox does not exist, it is created when "
+"messages are added."
+msgstr ""
+
+#: ../../source/mailbox/index.rst
+msgid "mailbox_maildir_create.py"
+msgstr ""
+
+#: ../../source/mailbox/index.rst:166
+msgid ""
+"When messages are added to the mailbox, they go to the ``new`` "
+"subdirectory."
+msgstr ""
+
+#: ../../source/mailbox/index.rst:171
+msgid ""
+"Although it is safe to write to the same maildir from multiple processes,"
+" :meth:`add` is not thread-safe.  Use a semaphore or other locking device"
+" to prevent simultaneous modifications to the mailbox from multiple "
+"threads of the same process."
+msgstr ""
+
+#: ../../source/mailbox/index.rst:217
+msgid ""
+"After they are read, a client could move them to the ``cur`` subdirectory"
+" using the ``set_subdir()`` method of the ``MaildirMessage``."
+msgstr ""
+
+#: ../../source/mailbox/index.rst
+msgid "mailbox_maildir_set_subdir.py"
+msgstr ""
+
+#: ../../source/mailbox/index.rst:225
+msgid ""
+"Although a maildir includes a \"``tmp``\" directory, the only valid "
+"arguments for ``set_subdir()`` are \"``cur``\" and \"``new``\"."
+msgstr ""
+
+#: ../../source/mailbox/index.rst:258
+msgid "Reading a Maildir Mailbox"
+msgstr ""
+
+#: ../../source/mailbox/index.rst:260
+msgid "Reading from an existing Maildir mailbox works just like an mbox mailbox."
+msgstr ""
+
+#: ../../source/mailbox/index.rst
+msgid "mailbox_maildir_read.py"
+msgstr ""
+
+#: ../../source/mailbox/index.rst:267
+msgid "The messages are not guaranteed to be read in any particular order."
+msgstr ""
+
+#: ../../source/mailbox/index.rst:284
+msgid "Removing Messages from a Maildir Mailbox"
+msgstr ""
+
+#: ../../source/mailbox/index.rst:286
+msgid ""
+"To remove an existing message from a Maildir mailbox, either pass its key"
+" to :meth:`remove` or use ``del``."
+msgstr ""
+
+#: ../../source/mailbox/index.rst
+msgid "mailbox_maildir_remove.py"
+msgstr ""
+
+#: ../../source/mailbox/index.rst:293
+msgid ""
+"There is no way to compute the key for a message, so use :meth:`items` or"
+" :meth:`iteritems` to retrieve the key and message object from the "
+"mailbox at the same time."
+msgstr ""
+
+#: ../../source/mailbox/index.rst:330
+msgid "Maildir folders"
+msgstr ""
+
+#: ../../source/mailbox/index.rst:332
+msgid ""
+"Subdirectories or *folders* of a Maildir mailbox can be managed directly "
+"through the methods of the ``Maildir`` class.  Callers can list, "
+"retrieve, create, and remove sub-folders for a given mailbox."
+msgstr ""
+
+#: ../../source/mailbox/index.rst
+msgid "mailbox_maildir_folders.py"
+msgstr ""
+
+#: ../../source/mailbox/index.rst:341
+msgid ""
+"The directory name for the folder is constructed by prefixing the folder "
+"name with a period (``.``)."
+msgstr ""
+
+#: ../../source/mailbox/index.rst:410
+msgid "Message Flags"
+msgstr ""
+
+#: ../../source/mailbox/index.rst:412
+msgid ""
+"Messages in mailboxes have flags for tracking aspects such as whether or "
+"not the message has been read, flagged as important by the reader, or "
+"marked for deletion later. Flags are stored as a sequence of format-"
+"specific letter codes and the ``Message`` classes have methods to "
+"retrieve and change the values of the flags. This example shows the flags"
+" on the messages in the ``Example`` maildir before adding the flag to "
+"indicate that the message is considered important."
+msgstr ""
+
+#: ../../source/mailbox/index.rst
+msgid "mailbox_maildir_add_flag.py"
+msgstr ""
+
+#: ../../source/mailbox/index.rst:424
+msgid ""
+"By default messages have no flags. Adding a flag changes the message in "
+"memory, but does not update the message on disk. To update the message on"
+" disk store the message object in the mailbox using its existing "
+"identifier."
+msgstr ""
+
+#: ../../source/mailbox/index.rst:445
+msgid ""
+"Adding flags with ``add_flag()`` preserves any existing flags. Using "
+"``set_flags()`` writes over any existing set of flags, replacing it with "
+"the new values passed to the method."
+msgstr ""
+
+#: ../../source/mailbox/index.rst
+msgid "mailbox_maildir_set_flags.py"
+msgstr ""
+
+#: ../../source/mailbox/index.rst:453
+msgid ""
+"The ``F`` flag added by the previous example is lost when ``set_flags()``"
+" replaces the flags with ``S`` in this example."
+msgstr ""
+
+#: ../../source/mailbox/index.rst:473
+msgid "Other Formats"
+msgstr ""
+
+#: ../../source/mailbox/index.rst:475
+msgid ""
+"``mailbox`` supports a few other formats, but none are as popular as mbox"
+" or Maildir.  MH is another multi-file mailbox format used by some mail "
+"handlers.  Babyl and MMDF are single-file formats with different message "
+"separators than mbox.  The single-file formats support the same API as "
+"mbox, and MH includes the folder-related methods found in the Maildir "
+"class."
+msgstr ""
+
+#: ../../source/mailbox/index.rst:484
+msgid ":pydoc:`mailbox`"
+msgstr ""
+
+#: ../../source/mailbox/index.rst:486
+msgid ":ref:`Python 2 to 3 porting notes for mailbox <porting-mailbox>`"
+msgstr ""
+
+#: ../../source/mailbox/index.rst:488
+msgid ""
+"`mbox manpage from qmail <http://www.qmail.org/man/man5/mbox.html>`_ -- "
+"Documentation for the mbox format."
+msgstr ""
+
+#: ../../source/mailbox/index.rst:492
+msgid ""
+"`Maildir manpage from qmail "
+"<http://www.qmail.org/man/man5/maildir.html>`_ -- Documentation for the "
+"Maildir format."
+msgstr ""
+
+#: ../../source/mailbox/index.rst:496
+msgid ":mod:`email` -- The ``email`` module."
+msgstr ""
+
+#: ../../source/mailbox/index.rst:498
+msgid ""
+":mod:`imaplib` -- The ``imaplib`` module can work with saved email "
+"messages on an IMAP server."
+msgstr ""
+

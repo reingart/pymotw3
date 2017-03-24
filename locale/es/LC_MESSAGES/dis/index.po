@@ -1,0 +1,387 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 18:41-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../source/dis/index.rst:3
+msgid "dis --- Python Bytecode Disassembler"
+msgstr ""
+
+#: ../../source/dis/index.rst:8
+msgid ""
+"Convert code objects to a human-readable representation of the bytecodes "
+"for analysis."
+msgstr ""
+
+#: ../../source/dis/index.rst:11
+msgid ""
+"The ``dis`` module includes functions for working with Python bytecode by"
+" *disassembling* it into a more human-readable form. Reviewing the "
+"bytecodes being executed by the interpreter is a good way to hand-tune "
+"tight loops and perform other kinds of optimizations. It is also useful "
+"for finding race conditions in multi-threaded applications, since it can "
+"be used to estimate the point in the code where thread control may "
+"switch."
+msgstr ""
+
+#: ../../source/dis/index.rst:21
+msgid ""
+"The use of bytecodes is a version-specific implementation detail of the "
+"CPython interpreter.  Refer to ``Include/opcode.h`` in the source code "
+"for the version of the interpreter you are using to find the canonical "
+"list of bytecodes."
+msgstr ""
+
+#: ../../source/dis/index.rst:27
+msgid "Basic Disassembly"
+msgstr ""
+
+#: ../../source/dis/index.rst:29
+msgid ""
+"The function ``dis()`` prints the disassembled representation of a Python"
+" code source (module, class, method, function, or code object). A module "
+"such as ``dis_simple.py`` can be disassembled by running ``dis`` from the"
+" command line."
+msgstr ""
+
+#: ../../source/dis/index.rst
+msgid "dis_simple.py"
+msgstr ""
+
+#: ../../source/dis/index.rst:40
+msgid ""
+"The output is organized into columns with the original source line "
+"number, the instruction address within the code object, the opcode name, "
+"and any arguments passed to the opcode."
+msgstr ""
+
+#: ../../source/dis/index.rst:61
+msgid ""
+"In this case, the source translates to four different operations to "
+"create and populate the dictionary, then save the results to a local "
+"variable.  Since the Python interpreter is stack-based, the first steps "
+"are to put the constants onto the stack in the correct order with "
+"``LOAD_CONST``, and then use ``BUILD_MAP`` to pop off the new key and "
+"value to be added to the dictionary.  The resulting ``dict`` object is "
+"bound to the name ``my_dict`` with ``STORE_NAME``."
+msgstr ""
+
+#: ../../source/dis/index.rst:72
+msgid "Disassembling Functions"
+msgstr ""
+
+#: ../../source/dis/index.rst:74
+msgid ""
+"Unfortunately, disassembling an entire module does not recurse into "
+"functions automatically."
+msgstr ""
+
+#: ../../source/dis/index.rst
+msgid "dis_function.py"
+msgstr ""
+
+#: ../../source/dis/index.rst:83
+msgid ""
+"The results of disassembling ``dis_function.py`` show the operations for "
+"loading the function's code object onto the stack and then turning it "
+"into a function (``LOAD_CONST``, ``MAKE_FUNCTION``), but *not* the body "
+"of the function."
+msgstr ""
+
+#: ../../source/dis/index.rst:123
+msgid ""
+"To see inside the function, the function itself must be passed to "
+"``dis()``."
+msgstr ""
+
+#: ../../source/dis/index.rst:151
+msgid ""
+"To print a summary of the function, including information about the "
+"arguments and names it uses, call ``show_code()``, passing the function "
+"as the first argument."
+msgstr ""
+
+#: ../../source/dis/index.rst:157
+msgid ""
+"The argument to ``show_code()`` is passed to ``code_info()``, which "
+"returns a nicely formatted summary of the function, method, code string, "
+"or other code object, ready to be printed."
+msgstr ""
+
+#: ../../source/dis/index.rst:188
+msgid "Classes"
+msgstr ""
+
+#: ../../source/dis/index.rst:190
+msgid ""
+"Classes can be passed to ``dis()``, in which case all of the methods are "
+"disassembled in turn."
+msgstr ""
+
+#: ../../source/dis/index.rst
+msgid "dis_class.py"
+msgstr ""
+
+#: ../../source/dis/index.rst:199
+msgid ""
+"The methods are listed in alphabetical order, not the order they appear "
+"in the file."
+msgstr ""
+
+#: ../../source/dis/index.rst:230
+msgid "Source Code"
+msgstr ""
+
+#: ../../source/dis/index.rst:232
+msgid ""
+"It is often more convenient to work with the source code for a program "
+"than with the code objects themselves. The functions in ``dis`` accept "
+"string arguments containing source code, and convert them to code objects"
+" before producing the disassembly or other output."
+msgstr ""
+
+#: ../../source/dis/index.rst
+msgid "dis_string.py"
+msgstr ""
+
+#: ../../source/dis/index.rst:241
+msgid ""
+"Passing a string lets you save the step of compiling the code and holding"
+" a reference to the results yourself, which is more convenient in cases "
+"when statements outside of a function are being examined."
+msgstr ""
+
+#: ../../source/dis/index.rst:282
+msgid "Using Disassembly to Debug"
+msgstr ""
+
+#: ../../source/dis/index.rst:284
+msgid ""
+"Sometimes when debugging an exception it can be useful to see which "
+"bytecode caused a problem.  There are a couple of ways to disassemble the"
+" code around an error.  The first is by using ``dis()`` in the "
+"interactive interpreter to report about the last exception.  If no "
+"argument is passed to ``dis()``, then it looks for an exception and shows"
+" the disassembly of the top of the stack that caused it."
+msgstr ""
+
+#: ../../source/dis/index.rst:312
+msgid ""
+"The ``-->`` after the line number indicates the opcode that caused the "
+"error.  There is no ``i`` variable defined, so the value associated with "
+"the name cannot be loaded onto the stack."
+msgstr ""
+
+#: ../../source/dis/index.rst:316
+msgid ""
+"A program can also print the information about an active traceback by "
+"passing it to ``distb()`` directly.  In this example, there is a "
+"``DivideByZero`` exception, but since the formula has two divisions it "
+"may not be clear which part is zero."
+msgstr ""
+
+#: ../../source/dis/index.rst
+msgid "dis_traceback.py"
+msgstr ""
+
+#: ../../source/dis/index.rst:327
+msgid ""
+"The error is easy to spot when it is loaded onto the stack in the "
+"disassembled version.  The bad operation is highlighted with the ``-->``,"
+" and the previous line pushes the value for ``j`` onto the stack."
+msgstr ""
+
+#: ../../source/dis/index.rst:370
+msgid "Performance Analysis of Loops"
+msgstr ""
+
+#: ../../source/dis/index.rst:372
+msgid ""
+"Besides debugging errors, ``dis`` can also help identify performance "
+"issues. Examining the disassembled code is especially useful with tight "
+"loops where the number of Python instructions is low but they translate "
+"to an inefficient set of bytecodes.  The helpfulness of the disassembly "
+"can be seen by examining a few different implementations of a class, "
+"``Dictionary``, that reads a list of words and groups them by their first"
+" letter."
+msgstr ""
+
+#: ../../source/dis/index.rst
+msgid "dis_test_loop.py"
+msgstr ""
+
+#: ../../source/dis/index.rst:384
+msgid ""
+"The test driver application ``dis_test_loop.py`` can be used to run each "
+"incarnation of the ``Dictionary`` class, starting with a straightforward,"
+" but slow, implementation."
+msgstr ""
+
+#: ../../source/dis/index.rst
+msgid "dis_slow_loop.py"
+msgstr ""
+
+#: ../../source/dis/index.rst:394
+msgid ""
+"Running the test program with this version shows the disassembled program"
+" and the amount of time it takes to run."
+msgstr ""
+
+#: ../../source/dis/index.rst:452
+msgid ""
+"The previous output shows ``dis_slow_loop.py`` taking 0.0568 seconds to "
+"load the 235886 words in the copy of ``/usr/share/dict/words`` on OS X.  "
+"That is not too bad, but the accompanying disassembly shows that the loop"
+" is doing more work than it needs to.  As it enters the loop in opcode "
+"13, it sets up an exception context (``SETUP_EXCEPT``).  Then it takes "
+"six opcodes to find ``self.by_letter[word[0]]`` before appending ``word``"
+" to the list.  If there is an exception because ``word[0]`` is not in the"
+" dictionary yet, the exception handler does all of the same work to "
+"determine ``word[0]`` (three opcodes) and sets "
+"``self.by_letter[word[0]]`` to a new list containing the word."
+msgstr ""
+
+#: ../../source/dis/index.rst:464
+msgid ""
+"One technique to eliminate the exception setup is to pre-populate "
+"``self.by_letter`` with one list for each letter of the alphabet. That "
+"means the list for the new word should always be found, and the value can"
+" be saved after the lookup."
+msgstr ""
+
+#: ../../source/dis/index.rst
+msgid "dis_faster_loop.py"
+msgstr ""
+
+#: ../../source/dis/index.rst:475
+msgid ""
+"The change cuts the number of opcodes in half, but only shaves the time "
+"down to 0.0567 seconds.  Obviously the exception handling had some "
+"overhead, but not a significant amount."
+msgstr ""
+
+#: ../../source/dis/index.rst:511
+msgid ""
+"The performance can be improved further by moving the lookup for "
+"``self.by_letter`` outside of the loop (the value does not change, after "
+"all)."
+msgstr ""
+
+#: ../../source/dis/index.rst
+msgid "dis_fastest_loop.py"
+msgstr ""
+
+#: ../../source/dis/index.rst:521
+msgid ""
+"Opcodes 0-6 now find the value of ``self.by_letter`` and save it as a "
+"local variable ``by_letter``.  Using a local variable only takes a single"
+" opcode, instead of two (statement 22 uses ``LOAD_FAST`` to place the "
+"dictionary onto the stack).  After this change, the run time is down to "
+"0.0473 seconds."
+msgstr ""
+
+#: ../../source/dis/index.rst:562
+msgid ""
+"A further optimization, suggested by Brandon Rhodes, is to eliminate the "
+"Python version of the ``for`` loop entirely. If ``itertools.groupby()`` "
+"is used to arrange the input, the iteration is moved to C.  This is safe "
+"because the inputs are known to be sorted.  If that was not the case, the"
+" program would need to sort them first."
+msgstr ""
+
+#: ../../source/dis/index.rst
+msgid "dis_eliminate_loop.py"
+msgstr ""
+
+#: ../../source/dis/index.rst:575
+#, python-format
+msgid ""
+"The ``itertools`` version takes only 0.0332 seconds to run, about 60% of "
+"the run time for the original."
+msgstr ""
+
+#: ../../source/dis/index.rst:621
+msgid "Compiler Optimizations"
+msgstr ""
+
+#: ../../source/dis/index.rst:623
+msgid ""
+"Disassembling compiled source also exposes some of the optimizations made"
+" by the compiler.  For example, literal expressions are folded during "
+"compilation, when possible."
+msgstr ""
+
+#: ../../source/dis/index.rst
+msgid "dis_constant_folding.py"
+msgstr ""
+
+#: ../../source/dis/index.rst:633
+msgid ""
+"None of the values in the expressions on lines 5-7 can change the way the"
+" operation is performed, so the result of the expressions can be computed"
+" at compilation time and collapsed into single ``LOAD_CONST`` "
+"instructions.  That is not true about lines 10-12. Because a variable is "
+"involved in those expressions, and the variable might refer to an object "
+"that overloads the operator involved, the evaluation has to be delayed to"
+" runtime."
+msgstr ""
+
+#: ../../source/dis/index.rst:686
+msgid ""
+":pydoc:`dis` -- Includes the list of `bytecode instructions "
+"<https://docs.python.org/3.5/library/dis.html#python-bytecode-"
+"instructions>`_."
+msgstr ""
+
+#: ../../source/dis/index.rst:689
+msgid ""
+"``Include/opcode.h`` -- The source code for the CPython interpreter "
+"defines the byte codes in ``opcode.h``."
+msgstr ""
+
+#: ../../source/dis/index.rst:692
+msgid ""
+"*Python Essential Reference*, 4th Edition, David M. Beazley -- "
+"http://www.informit.com/store/product.aspx?isbn=0672329786"
+msgstr ""
+
+#: ../../source/dis/index.rst:695
+msgid ""
+"`thomas.apestaart.org \"Python Disassembly\" "
+"<http://thomas.apestaart.org/log/?p=927>`_ -- A short discussion of the "
+"difference between storing values in a dictionary between Python 2.5 and "
+"2.6."
+msgstr ""
+
+#: ../../source/dis/index.rst:700
+msgid ""
+"`Why is looping over range() in Python faster than using a while loop? "
+"<http://stackoverflow.com/questions/869229/why-is-looping-over-range-in-"
+"python-faster-than-using-a-while-loop>`_ -- A discussion on "
+"StackOverflow.com comparing 2 looping examples via their disassembled "
+"bytecodes."
+msgstr ""
+
+#: ../../source/dis/index.rst:706
+msgid ""
+"`Decorator for binding constants at compile time "
+"<http://code.activestate.com/recipes/277940/>`_ -- Python Cookbook recipe"
+" by Raymond Hettinger and Skip Montanaro with a function decorator that "
+"re-writes the bytecodes for a function to insert global constants to "
+"avoid runtime name lookups."
+msgstr ""
+

@@ -1,0 +1,258 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 18:41-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../source/filecmp/index.rst:3
+msgid "filecmp --- Compare Files"
+msgstr ""
+
+#: ../../source/filecmp/index.rst:8
+msgid "Compare files and directories on the file system."
+msgstr ""
+
+#: ../../source/filecmp/index.rst:10
+msgid ""
+"The ``filecmp`` module includes functions and a class for comparing files"
+" and directories on the file system."
+msgstr ""
+
+#: ../../source/filecmp/index.rst:14
+msgid "Example Data"
+msgstr ""
+
+#: ../../source/filecmp/index.rst:16
+msgid ""
+"The examples in this discussion use a set of test files created by "
+"``filecmp_mkexamples.py``."
+msgstr ""
+
+#: ../../source/filecmp/index.rst
+msgid "filecmp_mkexamples.py"
+msgstr ""
+
+#: ../../source/filecmp/index.rst:33
+msgid ""
+"Running the script produces a tree of files under the directory "
+"``example``:"
+msgstr ""
+
+#: ../../source/filecmp/index.rst:90
+msgid ""
+"The same directory structure is repeated one time under the "
+"\"``common_dir``\" directories to give interesting recursive comparison "
+"options."
+msgstr ""
+
+#: ../../source/filecmp/index.rst:94
+msgid "Comparing Files"
+msgstr ""
+
+#: ../../source/filecmp/index.rst:96
+msgid "``cmp()`` compares two files on the file system."
+msgstr ""
+
+#: ../../source/filecmp/index.rst
+msgid "filecmp_cmp.py"
+msgstr ""
+
+#: ../../source/filecmp/index.rst:102
+msgid ""
+"The ``shallow`` argument tells ``cmp()`` whether to look at the contents "
+"of the file, in addition to its metadata. The default is to perform a "
+"shallow comparison using the information available from ``os.stat()``. If"
+" the stat results are the same, the files are considered the same so "
+"files of the same size created at the same time are reported as the same,"
+" even if their contents differ. When ``shallow`` is ``False``, the "
+"contents of the file are always compared."
+msgstr ""
+
+#: ../../source/filecmp/index.rst:124
+msgid ""
+"To compare a set of files in two directories without recursing, use "
+"``cmpfiles()``. The arguments are the names of the directories and a list"
+" of files to be checked in the two locations. The list of common files "
+"passed in should contain only filenames (directories always result in a "
+"mismatch) and the files must be present in both locations. The next "
+"example shows a simple way to build the common list. The comparison also "
+"takes the ``shallow`` flag, just as with ``cmp()``."
+msgstr ""
+
+#: ../../source/filecmp/index.rst
+msgid "filecmp_cmpfiles.py"
+msgstr ""
+
+#: ../../source/filecmp/index.rst:136
+msgid ""
+"``cmpfiles()`` returns three lists of filenames containing files that "
+"match, files that do not match, and files that could not be compared (due"
+" to permission problems or for any other reason)."
+msgstr ""
+
+#: ../../source/filecmp/index.rst:157
+msgid "Comparing Directories"
+msgstr ""
+
+#: ../../source/filecmp/index.rst:159
+msgid ""
+"The functions described earlier are suitable for relatively simple "
+"comparisons.  For recursive comparison of large directory trees or for "
+"more complete analysis, the ``dircmp`` class is more useful. In its "
+"simplest use case, ``report()`` prints a report comparing two "
+"directories."
+msgstr ""
+
+#: ../../source/filecmp/index.rst
+msgid "filecmp_dircmp_report.py"
+msgstr ""
+
+#: ../../source/filecmp/index.rst:169
+msgid ""
+"The output is a plain-text report showing the results of just the "
+"contents of the directories given, without recursing. In this case, the "
+"file \"``not_the_same``\" is thought to be the same because the contents "
+"are not being compared. There is no way to have :mod:`dircmp` compare the"
+" contents of files like ``cmp()`` does."
+msgstr ""
+
+#: ../../source/filecmp/index.rst:192
+msgid ""
+"For more detail, and a recursive comparison, use "
+"``report_full_closure()``:"
+msgstr ""
+
+#: ../../source/filecmp/index.rst
+msgid "filecmp_dircmp_report_full_closure.py"
+msgstr ""
+
+#: ../../source/filecmp/index.rst:199
+msgid "The output includes comparisons of all parallel subdirectories."
+msgstr ""
+
+#: ../../source/filecmp/index.rst:248
+msgid "Using Differences in a Program"
+msgstr ""
+
+#: ../../source/filecmp/index.rst:250
+msgid ""
+"Besides producing printed reports, ``dircmp`` calculates lists of files "
+"that can be used in programs directly. Each of the following attributes "
+"is calculated only when requested, so creating a ``dircmp`` instance does"
+" not incur overhead for unused data."
+msgstr ""
+
+#: ../../source/filecmp/index.rst
+msgid "filecmp_dircmp_list.py"
+msgstr ""
+
+#: ../../source/filecmp/index.rst:259
+msgid ""
+"The files and subdirectories contained in the directories being compared "
+"are listed in :attr:`left_list` and :attr:`right_list`."
+msgstr ""
+
+#: ../../source/filecmp/index.rst:288
+msgid ""
+"The inputs can be filtered by passing a list of names to ignore to the "
+"constructor. By default the names ``RCS``, ``CVS``, and ``tags`` are "
+"ignored."
+msgstr ""
+
+#: ../../source/filecmp/index.rst
+msgid "filecmp_dircmp_list_filter.py"
+msgstr ""
+
+#: ../../source/filecmp/index.rst:296
+msgid ""
+"In this case, the \"``common_file``\" is left out of the list of files to"
+" be compared."
+msgstr ""
+
+#: ../../source/filecmp/index.rst:323
+msgid ""
+"The names of files common to both input directories are saved in "
+":attr:`common`, and the files unique to each directory are listed in "
+":attr:`left_only`, and :attr:`right_only`."
+msgstr ""
+
+#: ../../source/filecmp/index.rst
+msgid "filecmp_dircmp_membership.py"
+msgstr ""
+
+#: ../../source/filecmp/index.rst:331
+msgid ""
+"The \"left\" directory is the first argument to ``dircmp()`` and the "
+"\"right\" directory is the second."
+msgstr ""
+
+#: ../../source/filecmp/index.rst:353
+msgid ""
+"The common members can be further broken down into files, directories and"
+" \"funny\" items (anything that has a different type in the two "
+"directories or where there is an error from ``os.stat()``)."
+msgstr ""
+
+#: ../../source/filecmp/index.rst
+msgid "filecmp_dircmp_common.py"
+msgstr ""
+
+#: ../../source/filecmp/index.rst:361
+msgid ""
+"In the example data, the item named \"``file_in_dir1``\" is a file in one"
+" directory and a subdirectory in the other, so it shows up in the funny "
+"list."
+msgstr ""
+
+#: ../../source/filecmp/index.rst:387
+msgid "The differences between files are broken down similarly."
+msgstr ""
+
+#: ../../source/filecmp/index.rst
+msgid "filecmp_dircmp_diff.py"
+msgstr ""
+
+#: ../../source/filecmp/index.rst:393
+msgid ""
+"The file ``not_the_same`` is only being compared via ``os.stat()``, and "
+"the contents are not examined, so it is included in the "
+":attr:`same_files` list."
+msgstr ""
+
+#: ../../source/filecmp/index.rst:411
+msgid ""
+"Finally, the subdirectories are also saved to allow easy recursive "
+"comparison."
+msgstr ""
+
+#: ../../source/filecmp/index.rst
+msgid "filecmp_dircmp_subdirs.py"
+msgstr ""
+
+#: ../../source/filecmp/index.rst:418
+msgid ""
+"The attribute :attr:`subdirs` is a dictionary mapping the directory name "
+"to new ``dircmp`` objects."
+msgstr ""
+
+#: ../../source/filecmp/index.rst:436
+msgid ":pydoc:`filecmp`"
+msgstr ""
+
+#: ../../source/filecmp/index.rst:438
+msgid ":mod:`difflib` -- Computing the differences between two sequences."
+msgstr ""
+

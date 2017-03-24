@@ -1,0 +1,324 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 18:41-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../source/time/index.rst:3
+msgid "time --- Clock Time"
+msgstr ""
+
+#: ../../source/time/index.rst:8
+msgid "Functions for manipulating clock time."
+msgstr ""
+
+#: ../../source/time/index.rst:10
+msgid ""
+"The ``time`` module provides access to several different types of clocks,"
+" each useful for different purposes. The standard system calls like "
+"``time()`` report the system \"wall clock\" time. The ``monotonic()`` "
+"clock can be used to measure elapsed time in a long-running process "
+"because it is guaranteed never to move backwards, even if the system time"
+" is changed. For performance testing, ``perf_counter()`` provides access "
+"to the clock with the highest available resolution to make short time "
+"measurements more accurate. The CPU time is available through "
+"``clock()``, and ``process_time()`` returns the combined processor time "
+"and system time."
+msgstr ""
+
+#: ../../source/time/index.rst:24
+msgid ""
+"The implementations expose C library functions for manipulating dates and"
+" times.  Since they are tied to the underlying C implementation, some "
+"details (such as the start of the epoch and maximum date value supported)"
+" are platform-specific.  Refer to the library documentation for complete "
+"details."
+msgstr ""
+
+#: ../../source/time/index.rst:31
+msgid "Comparing Clocks"
+msgstr ""
+
+#: ../../source/time/index.rst:33
+msgid ""
+"Implementation details for the clocks varies by platform. Use "
+"``get_clock_info()`` to access basic information about the current "
+"implementation, including the clock's resolution."
+msgstr ""
+
+#: ../../source/time/index.rst
+msgid "time_get_clock_info.py"
+msgstr ""
+
+#: ../../source/time/index.rst:41
+msgid ""
+"This output for Mac OS X shows that the monotonic and perf_counter clocks"
+" are implemented using the same underlying system call."
+msgstr ""
+
+#: ../../source/time/index.rst:91
+msgid "Wall Clock Time"
+msgstr ""
+
+#: ../../source/time/index.rst:93
+msgid ""
+"One of the core functions of the ``time`` module is ``time()``, which "
+"returns the number of seconds since the start of the \"epoch\" as a "
+"floating point value."
+msgstr ""
+
+#: ../../source/time/index.rst
+msgid "time_time.py"
+msgstr ""
+
+#: ../../source/time/index.rst:101
+msgid ""
+"The epoch is the start of measurement for time, which for Unix systems is"
+" 0:00 on January 1, 1970. Although the value is always a float, actual "
+"precision is platform-dependent."
+msgstr ""
+
+#: ../../source/time/index.rst:117
+msgid ""
+"The float representation is useful when storing or comparing dates, but "
+"not as useful for producing human readable representations. For logging "
+"or printing time ``ctime()`` can be more useful."
+msgstr ""
+
+#: ../../source/time/index.rst
+msgid "time_ctime.py"
+msgstr ""
+
+#: ../../source/time/index.rst:125
+msgid ""
+"The second ``print()`` call in this example shows how to use ``ctime()`` "
+"to format a time value other than the current time."
+msgstr ""
+
+#: ../../source/time/index.rst:144
+msgid "Monotonic Clocks"
+msgstr ""
+
+#: ../../source/time/index.rst:146
+msgid ""
+"Because ``time()`` looks at the system clock, and the system clock can be"
+" changed by the user or system services for synchronizing clocks across "
+"multiple computers, calling ``time()`` repeatedly may produce values that"
+" go forwards and backwards. This can result in unexpected behavior when "
+"trying to measure durations or otherwise use those times for computation."
+" Avoid those situations by using ``monotonic()``, which always returns "
+"values that go forward."
+msgstr ""
+
+#: ../../source/time/index.rst
+msgid "time_monotonic.py"
+msgstr ""
+
+#: ../../source/time/index.rst:158
+msgid ""
+"The start point for the monotonic clock is not defined, so return values "
+"are only useful for doing calculations with other clock values. In this "
+"example the duration of the sleep is measured using ``monotonic()``."
+msgstr ""
+
+#: ../../source/time/index.rst:178
+msgid "Processor Clock Time"
+msgstr ""
+
+#: ../../source/time/index.rst:180
+msgid ""
+"While ``time()`` returns a wall clock time, ``clock()`` returns processor"
+" clock time.  The values returned from ``clock()`` reflect the actual "
+"time used by the program as it runs."
+msgstr ""
+
+#: ../../source/time/index.rst
+msgid "time_clock.py"
+msgstr ""
+
+#: ../../source/time/index.rst:188
+msgid ""
+"In this example, the formatted ``ctime()`` is printed along with the "
+"floating point values from ``time()``, and ``clock()`` for each iteration"
+" through the loop."
+msgstr ""
+
+#: ../../source/time/index.rst:194
+msgid ""
+"If you want to run the example on your system, you may have to add more "
+"cycles to the inner loop or work with a larger amount of data to actually"
+" see a difference in the times."
+msgstr ""
+
+#: ../../source/time/index.rst:214
+msgid ""
+"Typically, the processor clock does not tick if a program is not doing "
+"anything."
+msgstr ""
+
+#: ../../source/time/index.rst
+msgid "time_clock_sleep.py"
+msgstr ""
+
+#: ../../source/time/index.rst:221
+msgid ""
+"In this example, the loop does very little work by going to sleep after "
+"each iteration. The ``time()`` value increases even while the application"
+" is asleep, but the ``clock()`` value does not."
+msgstr ""
+
+#: ../../source/time/index.rst:243
+msgid ""
+"Calling ``sleep()`` yields control from the current thread and asks it to"
+" wait for the system to wake it back up. If a program has only one "
+"thread, this effectively blocks the app and it does no work."
+msgstr ""
+
+#: ../../source/time/index.rst:248
+msgid "Performance Counter"
+msgstr ""
+
+#: ../../source/time/index.rst:250
+msgid ""
+"It is important to have a high-resolution monotonic clock for measuring "
+"performance. Determining the best clock data source requires platform-"
+"specific knowledge, which Python provides in ``perf_counter()``."
+msgstr ""
+
+#: ../../source/time/index.rst
+msgid "time_perf_counter.py"
+msgstr ""
+
+#: ../../source/time/index.rst:259
+msgid ""
+"As with ``monotonic()``, the epoch for ``perf_counter()`` is undefined, "
+"and the values are meant to be used for comparing and computing values, "
+"not as absolute times."
+msgstr ""
+
+#: ../../source/time/index.rst:280
+msgid "Time Components"
+msgstr ""
+
+#: ../../source/time/index.rst:282
+msgid ""
+"Storing times as elapsed seconds is useful in some situations, but there "
+"are times when a program needs to have access to the individual fields of"
+" a date (year, month, etc.). The ``time`` module defines ``struct_time`` "
+"for holding date and time values with components broken out so they are "
+"easy to access. There are several functions that work with "
+"``struct_time`` values instead of floats."
+msgstr ""
+
+#: ../../source/time/index.rst
+msgid "time_struct.py"
+msgstr ""
+
+#: ../../source/time/index.rst:293
+msgid ""
+"The ``gmtime()`` function returns the current time in UTC. "
+"``localtime()`` returns the current time with the current time zone "
+"applied. ``mktime()`` takes a ``struct_time`` and converts it to the "
+"floating point representation."
+msgstr ""
+
+#: ../../source/time/index.rst:335
+msgid "Working with Time Zones"
+msgstr ""
+
+#: ../../source/time/index.rst:337
+msgid ""
+"The functions for determining the current time depend on having the time "
+"zone set, either by the program or by using a default time zone set for "
+"the system. Changing the time zone does not change the actual time, just "
+"the way it is represented."
+msgstr ""
+
+#: ../../source/time/index.rst:342
+msgid ""
+"To change the time zone, set the environment variable ``TZ``, then call "
+"``tzset()``.  The time zone can be specified with a lot of detail, right "
+"down to the start and stop times for daylight savings time. It is usually"
+" easier to use the time zone name and let the underlying libraries derive"
+" the other information, though."
+msgstr ""
+
+#: ../../source/time/index.rst:348
+msgid ""
+"This example program changes the time zone to a few different values and "
+"shows how the changes affect other settings in the time module."
+msgstr ""
+
+#: ../../source/time/index.rst
+msgid "time_timezone.py"
+msgstr ""
+
+#: ../../source/time/index.rst:355
+msgid ""
+"The default time zone on the system used to prepare the examples is "
+"US/Eastern. The other zones in the example change the tzname, daylight "
+"flag, and timezone offset value."
+msgstr ""
+
+#: ../../source/time/index.rst:392
+msgid "Parsing and Formatting Times"
+msgstr ""
+
+#: ../../source/time/index.rst:394
+msgid ""
+"The two functions ``strptime()`` and ``strftime()`` convert between "
+"``struct_time`` and string representations of time values. There is a "
+"long list of formatting instructions available to support input and "
+"output in different styles. The complete list is documented in the "
+"library documentation for the ``time`` module."
+msgstr ""
+
+#: ../../source/time/index.rst:400
+msgid ""
+"This example converts the current time from a string to a ``struct_time``"
+" instance and back to a string."
+msgstr ""
+
+#: ../../source/time/index.rst
+msgid "time_strptime.py"
+msgstr ""
+
+#: ../../source/time/index.rst:407
+msgid ""
+"The output string is not exactly like the input, since the day of the "
+"month is prefixed with a zero."
+msgstr ""
+
+#: ../../source/time/index.rst:437
+msgid ":pydoc:`time`"
+msgstr ""
+
+#: ../../source/time/index.rst:439
+msgid ":ref:`Python 2 to 3 porting notes for time <porting-time>`"
+msgstr ""
+
+#: ../../source/time/index.rst:441
+msgid ""
+":mod:`datetime` -- The ``datetime`` module includes other classes for "
+"doing calculations with dates and times."
+msgstr ""
+
+#: ../../source/time/index.rst:444
+msgid ""
+":mod:`calendar` -- Work with higher-level date functions to produce "
+"calendars or calculate recurring events."
+msgstr ""
+

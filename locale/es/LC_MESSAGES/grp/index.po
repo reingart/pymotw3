@@ -1,0 +1,205 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 18:41-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../source/grp/index.rst:3
+msgid "grp --- Unix Group Database"
+msgstr ""
+
+#: ../../source/grp/index.rst:8
+msgid "Read group data from Unix group database."
+msgstr ""
+
+#: ../../source/grp/index.rst:10
+msgid ""
+"The ``grp`` module can be used to read information about Unix groups from"
+" the group database (usually ``/etc/group``).  The read-only interface "
+"returns tuple-like objects with named attributes for the standard fields "
+"of a group record."
+msgstr ""
+
+#: ../../source/grp/index.rst:16
+msgid "Index"
+msgstr ""
+
+#: ../../source/grp/index.rst:16
+msgid "Attribute"
+msgstr ""
+
+#: ../../source/grp/index.rst:16
+msgid "Meaning"
+msgstr ""
+
+#: ../../source/grp/index.rst:18
+msgid "0"
+msgstr ""
+
+#: ../../source/grp/index.rst:18
+msgid "gr_name"
+msgstr ""
+
+#: ../../source/grp/index.rst:18
+msgid "Name"
+msgstr ""
+
+#: ../../source/grp/index.rst:19
+msgid "1"
+msgstr ""
+
+#: ../../source/grp/index.rst:19
+msgid "gr_passwd"
+msgstr ""
+
+#: ../../source/grp/index.rst:19
+msgid "Password, if any (encrypted)"
+msgstr ""
+
+#: ../../source/grp/index.rst:20
+msgid "2"
+msgstr ""
+
+#: ../../source/grp/index.rst:20
+msgid "gr_gid"
+msgstr ""
+
+#: ../../source/grp/index.rst:20
+msgid "Numerical id (integer)"
+msgstr ""
+
+#: ../../source/grp/index.rst:21
+msgid "3"
+msgstr ""
+
+#: ../../source/grp/index.rst:21
+msgid "gr_mem"
+msgstr ""
+
+#: ../../source/grp/index.rst:21
+msgid "Names of group members"
+msgstr ""
+
+#: ../../source/grp/index.rst:24
+msgid ""
+"The name and password values are both strings, the GID is an integer, and"
+" the members are reported as a list of strings."
+msgstr ""
+
+#: ../../source/grp/index.rst:28
+msgid "Querying All Groups"
+msgstr ""
+
+#: ../../source/grp/index.rst:30
+msgid ""
+"This example prints a report of all of the \"real\" groups on a system, "
+"including their members (where \"real\" is defined as having a name not "
+"starting with \"``_``\").  To load the entire password database, use "
+"``getgrall()``."
+msgstr ""
+
+#: ../../source/grp/index.rst
+msgid "grp_getgrall.py"
+msgstr ""
+
+#: ../../source/grp/index.rst:39
+msgid ""
+"The return value is a list with an undefined order, so it needs to be "
+"sorted before printing the report."
+msgstr ""
+
+#: ../../source/grp/index.rst:93
+msgid "Group Memberships for a User"
+msgstr ""
+
+#: ../../source/grp/index.rst:95
+msgid ""
+"Another common task might be to print a list of all the groups for a "
+"given user:"
+msgstr ""
+
+#: ../../source/grp/index.rst
+msgid "grp_groups_for_user.py"
+msgstr ""
+
+#: ../../source/grp/index.rst:102
+msgid "The set of unique group names is sorted before they are printed."
+msgstr ""
+
+#: ../../source/grp/index.rst:118
+msgid "Finding a Group By Name"
+msgstr ""
+
+#: ../../source/grp/index.rst:120
+msgid ""
+"As with :mod:`pwd`, it is also possible to query for information about a "
+"specific group, either by name or numeric id."
+msgstr ""
+
+#: ../../source/grp/index.rst
+msgid "grp_getgrnam.py"
+msgstr ""
+
+#: ../../source/grp/index.rst:127
+msgid "The ``admin`` group has two members:"
+msgstr ""
+
+#: ../../source/grp/index.rst:145
+msgid "Finding a Group by ID"
+msgstr ""
+
+#: ../../source/grp/index.rst:147
+msgid ""
+"To identify the group running the current process, combine ``getgrgid()``"
+" with ``os.getgid()``."
+msgstr ""
+
+#: ../../source/grp/index.rst
+msgid "grp_getgrgid_process.py"
+msgstr ""
+
+#: ../../source/grp/index.rst:166
+msgid ""
+"And to get the group name based on the permissions on a file, look up the"
+" group returned by ``os.stat()``."
+msgstr ""
+
+#: ../../source/grp/index.rst
+msgid "grp_getgrgid_fileowner.py"
+msgstr ""
+
+#: ../../source/grp/index.rst:173
+msgid ""
+"The file status record includes ownership and permission data for the "
+"file or directory."
+msgstr ""
+
+#: ../../source/grp/index.rst:191
+msgid ":pydoc:`grp`"
+msgstr ""
+
+#: ../../source/grp/index.rst:193
+msgid ":mod:`pwd` -- Read user data from the password database."
+msgstr ""
+
+#: ../../source/grp/index.rst:195
+msgid ":mod:`spwd` -- Read user data from the shadow password database."
+msgstr ""
+
+#: ../../source/grp/index.rst:197
+msgid ":mod:`os` -- Operating system interfaces."
+msgstr ""
+

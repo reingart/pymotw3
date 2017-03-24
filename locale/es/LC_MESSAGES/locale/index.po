@@ -1,0 +1,223 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 18:41-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../source/locale/index.rst:3
+msgid "locale --- Cultural Localization API"
+msgstr ""
+
+#: ../../source/locale/index.rst:8
+msgid "Format and parse values that depend on location or language."
+msgstr ""
+
+#: ../../source/locale/index.rst:10
+msgid ""
+"The ``locale`` module is part of Python's internationalization and "
+"localization support library. It provides a standard way to handle "
+"operations that may depend on the language or location of a user. For "
+"example, it handles formatting numbers as currency, comparing strings for"
+" sorting, and working with dates. It does not cover translation (see the "
+":mod:`gettext` module) or Unicode encoding (see the :mod:`codecs` "
+"module)."
+msgstr ""
+
+#: ../../source/locale/index.rst:20
+msgid ""
+"Changing the locale can have application-wide ramifications, so the "
+"recommended practice is to avoid changing the value in a library and to "
+"let the application set it one time. In the examples in this section, the"
+" locale is changed several times within a short program to highlight the "
+"differences in the settings of various locales. It is far more likely "
+"that an application will set the locale once as it starts up or when a "
+"web request is received and not change it."
+msgstr ""
+
+#: ../../source/locale/index.rst:28
+msgid ""
+"This section covers some of the high-level functions in the ``locale`` "
+"module. There are others which are lower level (``format_string()``) or "
+"which relate to managing the locale for an application "
+"(``resetlocale()``)."
+msgstr ""
+
+#: ../../source/locale/index.rst:34
+msgid "Probing the Current Locale"
+msgstr ""
+
+#: ../../source/locale/index.rst:36
+msgid ""
+"The most common way to let the user change the locale settings for an "
+"application is through an environment variable (``LC_ALL``, ``LC_CTYPE``,"
+" ``LANG``, or ``LANGUAGE``, depending on the platform). The application "
+"then calls ``setlocale()`` without a hard-coded value, and the "
+"environment value is used."
+msgstr ""
+
+#: ../../source/locale/index.rst
+msgid "locale_env.py"
+msgstr ""
+
+#: ../../source/locale/index.rst:46
+msgid ""
+"The ``localeconv()`` method returns a dictionary containing the locale's "
+"conventions.  The full list of value names and definitions is covered in "
+"the standard library documentation."
+msgstr ""
+
+#: ../../source/locale/index.rst:50
+msgid ""
+"A Mac running OS X 10.11.6 with all of the variables unset produces this "
+"output:"
+msgstr ""
+
+#: ../../source/locale/index.rst:96
+msgid ""
+"Running the same script with the ``LANG`` variable set shows how the "
+"locale and default encoding change."
+msgstr ""
+
+#: ../../source/locale/index.rst:99
+msgid "The United States (``en_US``):"
+msgstr ""
+
+#: ../../source/locale/index.rst:144
+msgid "France (``fr_FR``):"
+msgstr ""
+
+#: ../../source/locale/index.rst:190
+msgid "Spain (``es_ES``):"
+msgstr ""
+
+#: ../../source/locale/index.rst:236
+msgid "Portugal (``pt_PT``):"
+msgstr ""
+
+#: ../../source/locale/index.rst:283
+msgid "Poland (``pl_PL``):"
+msgstr ""
+
+#: ../../source/locale/index.rst:331
+msgid "Currency"
+msgstr ""
+
+#: ../../source/locale/index.rst:333
+msgid ""
+"The earlier example output shows that changing the locale updates the "
+"currency symbol setting and the character to separate whole numbers from "
+"decimal fractions.  This example loops through several different locales "
+"to print a positive and negative currency value formatted for each "
+"locale."
+msgstr ""
+
+#: ../../source/locale/index.rst
+msgid "locale_currency.py"
+msgstr ""
+
+#: ../../source/locale/index.rst:343
+msgid "The output is this small table:"
+msgstr ""
+
+#: ../../source/locale/index.rst:362
+msgid "Formatting Numbers"
+msgstr ""
+
+#: ../../source/locale/index.rst:364
+msgid ""
+"Numbers not related to currency are also formatted differently depending "
+"on the locale.  In particular, the ``grouping`` character used to "
+"separate large numbers into readable chunks changes."
+msgstr ""
+
+#: ../../source/locale/index.rst
+msgid "locale_grouping.py"
+msgstr ""
+
+#: ../../source/locale/index.rst:372
+msgid ""
+"To format numbers without the currency symbol, use ``format()`` instead "
+"of ``currency()``."
+msgstr ""
+
+#: ../../source/locale/index.rst:392
+msgid ""
+"To convert locale-formatted numbers to a normalized locale-agnostic "
+"format, use ``delocalize()``."
+msgstr ""
+
+#: ../../source/locale/index.rst
+msgid "locale_delocalize.py"
+msgstr ""
+
+#: ../../source/locale/index.rst:399
+msgid ""
+"Grouping punctuation is removed and the decimal separator is converted to"
+" always be a ``.``."
+msgstr ""
+
+#: ../../source/locale/index.rst:421
+msgid "Parsing Numbers"
+msgstr ""
+
+#: ../../source/locale/index.rst:423
+msgid ""
+"Besides generating output in different formats, the ``locale`` module "
+"helps with parsing input. It includes ``atoi()`` and ``atof()`` functions"
+" for converting the strings to integer and floating point values based on"
+" the locale's numerical formatting conventions."
+msgstr ""
+
+#: ../../source/locale/index.rst
+msgid "locale_atof.py"
+msgstr ""
+
+#: ../../source/locale/index.rst:433
+msgid ""
+"The grouping and decimal separator values of the locale are recognized by"
+" the parser."
+msgstr ""
+
+#: ../../source/locale/index.rst:454
+msgid "Dates and Times"
+msgstr ""
+
+#: ../../source/locale/index.rst:456
+msgid "Another important aspect of localization is date and time formatting."
+msgstr ""
+
+#: ../../source/locale/index.rst
+msgid "locale_date.py"
+msgstr ""
+
+#: ../../source/locale/index.rst:462
+msgid ""
+"This example uses the date formatting string for the locale to print the "
+"current date and time."
+msgstr ""
+
+#: ../../source/locale/index.rst:483
+msgid ":pydoc:`locale`"
+msgstr ""
+
+#: ../../source/locale/index.rst:485
+msgid ":ref:`Python 2 to 3 porting notes for locale <porting-locale>`"
+msgstr ""
+
+#: ../../source/locale/index.rst:487
+msgid ":mod:`gettext` -- Message catalogs for translations."
+msgstr ""
+

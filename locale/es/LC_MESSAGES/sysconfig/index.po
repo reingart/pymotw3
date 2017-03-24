@@ -1,0 +1,326 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 18:41-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../source/sysconfig/index.rst:3
+msgid "sysconfig --- Interpreter Compile-time Configuration"
+msgstr ""
+
+#: ../../source/sysconfig/index.rst:8
+msgid "Access the configuration settings used to build Python."
+msgstr ""
+
+#: ../../source/sysconfig/index.rst:10
+msgid ""
+"The features of ``sysconfig`` have been extracted from :mod:`distutils` "
+"to create a stand-alone module.  It includes functions for determining "
+"the settings used to compile and install the current interpreter."
+msgstr ""
+
+#: ../../source/sysconfig/index.rst:16
+msgid "Configuration Variables"
+msgstr ""
+
+#: ../../source/sysconfig/index.rst:18
+msgid ""
+"Access the build-time configuration settings is provided through two "
+"functions.  ``get_config_vars()`` returns a dictionary mapping the "
+"configuration variable names to values."
+msgstr ""
+
+#: ../../source/sysconfig/index.rst
+msgid "sysconfig_get_config_vars.py"
+msgstr ""
+
+#: ../../source/sysconfig/index.rst:26
+msgid ""
+"The level of detail available through the ``sysconfig`` API depends on "
+"the platform where a program is running.  On POSIX systems such as Linux "
+"and OS X, the ``Makefile`` used to build the interpreter and ``config.h``"
+" header file generated for the build are parsed and all of the variables "
+"found within are available.  On non-POSIX systems such as Windows, the "
+"settings are limited to a few paths, filename extensions, and version "
+"details."
+msgstr ""
+
+#: ../../source/sysconfig/index.rst:71
+msgid ""
+"Passing variable names to ``get_config_vars()`` changes the return value "
+"to a ``list`` created by appending all of the values for those variables "
+"together."
+msgstr ""
+
+#: ../../source/sysconfig/index.rst
+msgid "sysconfig_get_config_vars_by_name.py"
+msgstr ""
+
+#: ../../source/sysconfig/index.rst:79
+msgid ""
+"This example builds a list of all of the installation base directories "
+"where modules can be found on the current system."
+msgstr ""
+
+#: ../../source/sysconfig/index.rst:98
+msgid ""
+"When only a single configuration value is needed, use "
+"``get_config_var()`` to retrieve it."
+msgstr ""
+
+#: ../../source/sysconfig/index.rst
+msgid "sysconfig_get_config_var.py"
+msgstr ""
+
+#: ../../source/sysconfig/index.rst:105
+msgid ""
+"If the variable is not found, ``get_config_var()`` returns ``None`` "
+"instead of raising an exception."
+msgstr ""
+
+#: ../../source/sysconfig/index.rst:123
+msgid "Installation Paths"
+msgstr ""
+
+#: ../../source/sysconfig/index.rst:125
+msgid ""
+"``sysconfig`` is primarily meant to be used by installation and packaging"
+" tools.  As a result, while it provides access to general configuration "
+"settings such as the interpreter version, it is focused on the "
+"information needed to locate parts of the Python distribution currently "
+"installed on a system.  The locations used for installing a package "
+"depend on the *scheme* used."
+msgstr ""
+
+#: ../../source/sysconfig/index.rst:132
+msgid ""
+"A scheme is a set of platform-specific default directories organized "
+"based on the platform's packaging standards and guidelines.  There are "
+"different schemes for installing into a site-wide location or a private "
+"directory owned by the user.  The full set of schemes can be accessed "
+"with ``get_scheme_names()``."
+msgstr ""
+
+#: ../../source/sysconfig/index.rst
+msgid "sysconfig_get_scheme_names.py"
+msgstr ""
+
+#: ../../source/sysconfig/index.rst:142
+msgid ""
+"There is no concept of a \"current scheme\" per se.  The default scheme "
+"depends on the platform, and the actual scheme used depends on options "
+"given to the installation program.  If the current system is running a "
+"POSIX-compliant operating system, the default is ``posix_prefix``. "
+"Otherwise the default is the operating system name, as defined by "
+"``os.name``."
+msgstr ""
+
+#: ../../source/sysconfig/index.rst:166
+msgid ""
+"Each scheme defines a set of paths used for installing packages.  For a "
+"list of the path names, use ``get_path_names()``."
+msgstr ""
+
+#: ../../source/sysconfig/index.rst
+msgid "sysconfig_get_path_names.py"
+msgstr ""
+
+#: ../../source/sysconfig/index.rst:173
+msgid ""
+"Some of the paths may be the same for a given scheme, but installers "
+"should not make any assumptions about what the actual paths are.  Each "
+"name has a particular semantic meaning, so the correct name should be "
+"used to find the path for a given file during installation.  Refer to "
+":table:`Path Names Used in sysconfig` for a complete list of the path "
+"names and their meaning."
+msgstr ""
+
+#: ../../source/sysconfig/index.rst
+msgid "Path Names Used in sysconfig"
+msgstr ""
+
+#: ../../source/sysconfig/index.rst:183
+msgid "Name"
+msgstr ""
+
+#: ../../source/sysconfig/index.rst:183
+msgid "Description"
+msgstr ""
+
+#: ../../source/sysconfig/index.rst:185
+msgid "``stdlib``"
+msgstr ""
+
+#: ../../source/sysconfig/index.rst:185
+msgid "Standard Python library files, not platform-specific"
+msgstr ""
+
+#: ../../source/sysconfig/index.rst:186
+msgid "``platstdlib``"
+msgstr ""
+
+#: ../../source/sysconfig/index.rst:186
+msgid "Standard Python library files, platform-specific"
+msgstr ""
+
+#: ../../source/sysconfig/index.rst:187
+msgid "``platlib``"
+msgstr ""
+
+#: ../../source/sysconfig/index.rst:187
+msgid "Site-specific, platform-specific files"
+msgstr ""
+
+#: ../../source/sysconfig/index.rst:188
+msgid "``purelib``"
+msgstr ""
+
+#: ../../source/sysconfig/index.rst:188
+msgid "Site-specific, non-platform-specific files"
+msgstr ""
+
+#: ../../source/sysconfig/index.rst:189
+msgid "``include``"
+msgstr ""
+
+#: ../../source/sysconfig/index.rst:189
+msgid "Header files, not platform-specific"
+msgstr ""
+
+#: ../../source/sysconfig/index.rst:190
+msgid "``platinclude``"
+msgstr ""
+
+#: ../../source/sysconfig/index.rst:190
+msgid "Header files, platform-specific"
+msgstr ""
+
+#: ../../source/sysconfig/index.rst:191
+msgid "``scripts``"
+msgstr ""
+
+#: ../../source/sysconfig/index.rst:191
+msgid "Executable script files"
+msgstr ""
+
+#: ../../source/sysconfig/index.rst:192
+msgid "``data``"
+msgstr ""
+
+#: ../../source/sysconfig/index.rst:192
+msgid "Data files"
+msgstr ""
+
+#: ../../source/sysconfig/index.rst:213
+msgid ""
+"Use ``get_paths()`` to retrieve the actual directories associated with a "
+"scheme."
+msgstr ""
+
+#: ../../source/sysconfig/index.rst
+msgid "sysconfig_get_paths.py"
+msgstr ""
+
+#: ../../source/sysconfig/index.rst:220
+msgid ""
+"This example shows the difference between the system-wide paths used for "
+"``posix_prefix`` under a framework build on Mac OS X, and the user-"
+"specific values for ``posix_user``."
+msgstr ""
+
+#: ../../source/sysconfig/index.rst:275
+msgid "For an individual path, call ``get_path()``."
+msgstr ""
+
+#: ../../source/sysconfig/index.rst
+msgid "sysconfig_get_path.py"
+msgstr ""
+
+#: ../../source/sysconfig/index.rst:281
+msgid ""
+"Using ``get_path()`` is equivalent to saving the value of ``get_paths()``"
+" and looking up the individual key in the dictionary. If several paths "
+"are needed, ``get_paths()`` is more efficient because it does not "
+"recompute all of the paths each time."
+msgstr ""
+
+#: ../../source/sysconfig/index.rst:308
+msgid "Python Version and Platform"
+msgstr ""
+
+#: ../../source/sysconfig/index.rst:310
+msgid ""
+"While :mod:`sys` includes some basic platform identification (see :ref"
+":`sys-build-time-info`), it is not specific enough to be used for "
+"installing binary packages because ``sys.platform`` does not always "
+"include information about hardware architecture, instruction size, or "
+"other values that effect the compatibility of binary libraries.  For a "
+"more precise platform specifier, use ``get_platform()``."
+msgstr ""
+
+#: ../../source/sysconfig/index.rst
+msgid "sysconfig_get_platform.py"
+msgstr ""
+
+#: ../../source/sysconfig/index.rst:321
+msgid ""
+"The interpreter used to prepare this sample output was compiled for Mac "
+"OS X 10.6 compatibility, so that is the version number included in the "
+"platform string."
+msgstr ""
+
+#: ../../source/sysconfig/index.rst:337
+msgid ""
+"As a convenience, the interpreter version from ``sys.version_info`` is "
+"also available through ``get_python_version()`` in ``sysconfig``."
+msgstr ""
+
+#: ../../source/sysconfig/index.rst
+msgid "sysconfig_get_python_version.py"
+msgstr ""
+
+#: ../../source/sysconfig/index.rst:345
+msgid ""
+"``get_python_version()`` returns a string suitable for use when building "
+"a version-specific path."
+msgstr ""
+
+#: ../../source/sysconfig/index.rst:369
+msgid ":pydoc:`sysconfig`"
+msgstr ""
+
+#: ../../source/sysconfig/index.rst:371
+msgid ""
+":mod:`distutils` -- ``sysconfig`` used to be part of the ``distutils`` "
+"package."
+msgstr ""
+
+#: ../../source/sysconfig/index.rst:374
+msgid ""
+":mod:`site` -- The ``site`` module describes the paths searched when "
+"importing in more detail."
+msgstr ""
+
+#: ../../source/sysconfig/index.rst:377
+msgid ""
+":mod:`os` -- Includes ``os.name``, the name of the current operating "
+"system."
+msgstr ""
+
+#: ../../source/sysconfig/index.rst:380
+msgid ":mod:`sys` -- Includes other build-time information such as the platform."
+msgstr ""
+

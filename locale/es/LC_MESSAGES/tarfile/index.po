@@ -1,0 +1,307 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 18:41-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../source/tarfile/index.rst:3
+msgid "tarfile --- Tar Archive Access"
+msgstr ""
+
+#: ../../source/tarfile/index.rst:8
+msgid "Tar archive access."
+msgstr ""
+
+#: ../../source/tarfile/index.rst:10
+msgid ""
+"The ``tarfile`` module provides read and write access to Unix tar "
+"archives, including compressed files.  In addition to the POSIX "
+"standards, several GNU tar extensions are supported.  Unix special file "
+"types such as hard and soft links, and device nodes are also handled."
+msgstr ""
+
+#: ../../source/tarfile/index.rst:18
+msgid ""
+"Although ``tarfile`` implements a Unix format, it can be used to create "
+"and read tar archives under Microsoft Windows, too."
+msgstr ""
+
+#: ../../source/tarfile/index.rst:22
+msgid "Testing Tar Files"
+msgstr ""
+
+#: ../../source/tarfile/index.rst:24
+msgid ""
+"The ``is_tarfile()`` function returns a boolean indicating whether or not"
+" the filename passed as an argument refers to a valid tar archive."
+msgstr ""
+
+#: ../../source/tarfile/index.rst
+msgid "tarfile_is_tarfile.py"
+msgstr ""
+
+#: ../../source/tarfile/index.rst:31
+msgid "If the file does not exist, ``is_tarfile()`` raises an ``IOError``."
+msgstr ""
+
+#: ../../source/tarfile/index.rst:51
+msgid "Reading Metadata from an Archive"
+msgstr ""
+
+#: ../../source/tarfile/index.rst:53
+msgid ""
+"Use the ``TarFile`` class to work directly with a tar archive. It "
+"supports methods for reading data about existing archives as well as "
+"modifying the archives by adding additional files."
+msgstr ""
+
+#: ../../source/tarfile/index.rst:57
+msgid "To read the names of the files in an existing archive, use ``getnames()``."
+msgstr ""
+
+#: ../../source/tarfile/index.rst
+msgid "tarfile_getnames.py"
+msgstr ""
+
+#: ../../source/tarfile/index.rst:64
+msgid ""
+"The return value is a list of strings with the names of the archive "
+"contents."
+msgstr ""
+
+#: ../../source/tarfile/index.rst:79
+msgid ""
+"In addition to names, metadata about the archive members is available as "
+"instances of ``TarInfo`` objects."
+msgstr ""
+
+#: ../../source/tarfile/index.rst
+msgid "tarfile_getmembers.py"
+msgstr ""
+
+#: ../../source/tarfile/index.rst:86
+msgid "Load the metadata via ``getmembers()`` and ``getmember()``."
+msgstr ""
+
+#: ../../source/tarfile/index.rst:112
+msgid ""
+"If the name of the archive member is known in advance, its ``TarInfo`` "
+"object can be retrieved with ``getmember()``."
+msgstr ""
+
+#: ../../source/tarfile/index.rst
+msgid "tarfile_getmember.py"
+msgstr ""
+
+#: ../../source/tarfile/index.rst:119
+msgid ""
+"If the archive member is not present, ``getmember()`` raises a "
+"``KeyError``."
+msgstr ""
+
+#: ../../source/tarfile/index.rst:136
+msgid "Extracting Files from an Archive"
+msgstr ""
+
+#: ../../source/tarfile/index.rst:138
+msgid ""
+"To access the data from an archive member within a program, use the "
+"``extractfile()`` method, passing the member's name."
+msgstr ""
+
+#: ../../source/tarfile/index.rst
+msgid "tarfile_extractfile.py"
+msgstr ""
+
+#: ../../source/tarfile/index.rst:145
+msgid ""
+"The return value is a file-like object from which the contents of the "
+"archive member can be read."
+msgstr ""
+
+#: ../../source/tarfile/index.rst:164
+msgid ""
+"To unpack the archive and write the files to the file system, use "
+"``extract()`` or ``extractall()`` instead."
+msgstr ""
+
+#: ../../source/tarfile/index.rst
+msgid "tarfile_extract.py"
+msgstr ""
+
+#: ../../source/tarfile/index.rst:171
+msgid ""
+"The member or members are read from the archive and written to the file "
+"system, starting in the directory named in the arguments."
+msgstr ""
+
+#: ../../source/tarfile/index.rst:188
+msgid ""
+"The standard library documentation includes a note stating that "
+"``extractall()`` is safer than ``extract()``, especially for working with"
+" streaming data where rewinding to read an earlier part of the input is "
+"not possible, and it should be used in most cases."
+msgstr ""
+
+#: ../../source/tarfile/index.rst
+msgid "tarfile_extractall.py"
+msgstr ""
+
+#: ../../source/tarfile/index.rst:197
+msgid ""
+"With ``extractall()``, the first argument is the name of the directory "
+"where the files should be written."
+msgstr ""
+
+#: ../../source/tarfile/index.rst:214
+msgid ""
+"To extract specific files from the archive, pass their names or "
+"``TarInfo`` metadata containers to ``extractall()``."
+msgstr ""
+
+#: ../../source/tarfile/index.rst
+msgid "tarfile_extractall_members.py"
+msgstr ""
+
+#: ../../source/tarfile/index.rst:221
+msgid "When a ``members`` list is provided, only the named files are extracted."
+msgstr ""
+
+#: ../../source/tarfile/index.rst:238
+msgid "Creating New Archives"
+msgstr ""
+
+#: ../../source/tarfile/index.rst:240
+msgid "To create a new archive, open the ``TarFile`` with a mode of ``'w'``."
+msgstr ""
+
+#: ../../source/tarfile/index.rst
+msgid "tarfile_add.py"
+msgstr ""
+
+#: ../../source/tarfile/index.rst:247
+msgid ""
+"Any existing file is truncated and a new archive is started. To add "
+"files, use the ``add()`` method."
+msgstr ""
+
+#: ../../source/tarfile/index.rst:269
+msgid "Using Alternate Archive Member Names"
+msgstr ""
+
+#: ../../source/tarfile/index.rst:271
+msgid ""
+"It is possible to add a file to an archive using a name other than the "
+"original filename by constructing a ``TarInfo`` object with an alternate "
+"``arcname`` and passing it to ``addfile()``."
+msgstr ""
+
+#: ../../source/tarfile/index.rst
+msgid "tarfile_addfile.py"
+msgstr ""
+
+#: ../../source/tarfile/index.rst:279
+msgid "The archive includes only the changed filename:"
+msgstr ""
+
+#: ../../source/tarfile/index.rst:298
+msgid "Writing Data from Sources Other Than Files"
+msgstr ""
+
+#: ../../source/tarfile/index.rst:300
+msgid ""
+"Sometimes it is necessary to write data into an archive directly from "
+"memory.  Rather than writing the data to a file, then adding that file to"
+" the archive, you can use ``addfile()`` to add data from an open file-"
+"like handle that returns bytes."
+msgstr ""
+
+#: ../../source/tarfile/index.rst
+msgid "tarfile_addfile_string.py"
+msgstr ""
+
+#: ../../source/tarfile/index.rst:309
+msgid ""
+"By first constructing a ``TarInfo`` object, the archive member can be "
+"given any name desired.  After setting the size, the data is written to "
+"the archive using ``addfile()`` and a :mod:`BytesIO` buffer as a source "
+"of the data."
+msgstr ""
+
+#: ../../source/tarfile/index.rst:329
+msgid "Appending to Archives"
+msgstr ""
+
+#: ../../source/tarfile/index.rst:331
+msgid ""
+"In addition to creating new archives, it is possible to append to an "
+"existing file by using mode ``'a'``."
+msgstr ""
+
+#: ../../source/tarfile/index.rst
+msgid "tarfile_append.py"
+msgstr ""
+
+#: ../../source/tarfile/index.rst:338
+msgid "The resulting archive ends up with two members:"
+msgstr ""
+
+#: ../../source/tarfile/index.rst:358
+msgid "Working with Compressed Archives"
+msgstr ""
+
+#: ../../source/tarfile/index.rst:360
+msgid ""
+"Besides regular tar archive files, the ``tarfile`` module can work with "
+"archives compressed via the gzip or bzip2 protocols.  To open a "
+"compressed archive, modify the mode string passed to ``open()`` to "
+"include ``\":gz\"`` or ``\":bz2\"``, depending on the desired compression"
+" method."
+msgstr ""
+
+#: ../../source/tarfile/index.rst
+msgid "tarfile_compression.py"
+msgstr ""
+
+#: ../../source/tarfile/index.rst:370
+msgid ""
+"When opening an existing archive for reading, specify ``\"r:*\"`` to have"
+" ``tarfile`` determine the compression method to use automatically."
+msgstr ""
+
+#: ../../source/tarfile/index.rst:392
+msgid ":pydoc:`tarfile`"
+msgstr ""
+
+#: ../../source/tarfile/index.rst:394
+msgid ""
+"`GNU tar manual "
+"<http://www.gnu.org/software/tar/manual/html_node/Standard.html>`__ -- "
+"Documentation of the tar format, including extensions."
+msgstr ""
+
+#: ../../source/tarfile/index.rst:398
+msgid ":mod:`zipfile` -- Similar access for ZIP archives."
+msgstr ""
+
+#: ../../source/tarfile/index.rst:400
+msgid ":mod:`gzip` -- GNU zip compression"
+msgstr ""
+
+#: ../../source/tarfile/index.rst:402
+msgid ":mod:`bz2` -- bzip2 compression"
+msgstr ""
+

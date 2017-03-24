@@ -1,0 +1,353 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 18:41-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../source/trace/index.rst:3
+msgid "trace --- Follow Program Flow"
+msgstr ""
+
+#: ../../source/trace/index.rst:8
+msgid ""
+"Monitor which statements and functions are executed as a program runs to "
+"produce coverage and call-graph information."
+msgstr ""
+
+#: ../../source/trace/index.rst:11
+msgid ""
+"The ``trace`` module is useful for understanding the way a program runs."
+"  It watches the statements executed, produces coverage reports, and "
+"helps investigate the relationships between functions that call each "
+"other."
+msgstr ""
+
+#: ../../source/trace/index.rst:17
+msgid "Example Program"
+msgstr ""
+
+#: ../../source/trace/index.rst:19
+msgid ""
+"This program will be used in the examples in the rest of the section. It "
+"imports another module called ``recurse`` and then runs a function from "
+"it."
+msgstr ""
+
+#: ../../source/trace/index.rst
+msgid "trace_example/main.py"
+msgstr ""
+
+#: ../../source/trace/index.rst:27
+msgid ""
+"The ``recurse()`` function invokes itself until the level argument "
+"reaches ``0``."
+msgstr ""
+
+#: ../../source/trace/index.rst
+msgid "trace_example/recurse.py"
+msgstr ""
+
+#: ../../source/trace/index.rst:35
+msgid "Tracing Execution"
+msgstr ""
+
+#: ../../source/trace/index.rst:37
+msgid ""
+"It is easy use ``trace`` directly from the command line.  The statements "
+"being executed as the program runs are printed when the ``--trace`` "
+"option is given. This example also ignores the location of the Python "
+"standard library to avoid tracing into :mod:`importlib` and other modules"
+" that might be more interesting in another example, but that clutter up "
+"the output in this simple example."
+msgstr ""
+
+#: ../../source/trace/index.rst:87
+msgid ""
+"The first part of the output shows the setup operations performed by "
+"``trace``.  The rest of the output shows the entry into each function, "
+"including the module where the function is located, and then the lines of"
+" the source file as they are executed.  ``recurse()`` is entered three "
+"times, as expected based on the way it is called in ``main()``."
+msgstr ""
+
+#: ../../source/trace/index.rst:95
+msgid "Code Coverage"
+msgstr ""
+
+#: ../../source/trace/index.rst:97
+msgid ""
+"Running ``trace`` from the command line with the ``--count`` option will "
+"produce code coverage report information, detailing which lines are run "
+"and which are skipped.  Since a complex program is usually made up of "
+"multiple files, a separate coverage report is produced for each.  By "
+"default the coverage report files are written to the same directory as "
+"the module, named after the module but with a ``.cover`` extension "
+"instead of ``.py``."
+msgstr ""
+
+#: ../../source/trace/index.rst:120
+msgid "Two output files are produced, ``trace_example/main.cover``:"
+msgstr ""
+
+#: ../../source/trace/index.rst
+msgid "trace_example/main.cover"
+msgstr ""
+
+#: ../../source/trace/index.rst:126
+msgid "and ``trace_example/recurse.cover``:"
+msgstr ""
+
+#: ../../source/trace/index.rst
+msgid "trace_example/recurse.cover"
+msgstr ""
+
+#: ../../source/trace/index.rst:134
+msgid ""
+"Although the line ``def recurse(level):`` has a count of ``1``, that does"
+" not mean the function was only run once.  It means the function "
+"*definition* was only executed once. The same applies to ``def "
+"not_called():``, because the function definition is evaluated even though"
+" the function itself is never called."
+msgstr ""
+
+#: ../../source/trace/index.rst:140
+msgid ""
+"It is also possible to run the program several times, perhaps with "
+"different options, to save the coverage data and produce a combined "
+"report. The first time ``trace`` is run with an output file, it reports "
+"an error when it tries to load any existing data to merge with the new "
+"results before creating the file."
+msgstr ""
+
+#: ../../source/trace/index.rst:189
+msgid ""
+"To produce reports once the coverage information is recorded to the "
+"``.cover`` files, use the ``--report`` option."
+msgstr ""
+
+#: ../../source/trace/index.rst:210
+#, python-format
+msgid ""
+"Since the program ran three times, the coverage report shows values three"
+" times higher than the first report.  The ``--summary`` option adds the "
+"percent covered information to the output.  The ``recurse`` module is "
+"only 87% covered.  Looking at the cover file for ``recurse`` shows that "
+"the body of ``not_called`` is indeed never run, indicated by the "
+"``>>>>>>`` prefix."
+msgstr ""
+
+#: ../../source/trace/index.rst
+msgid "coverdir1/trace_example.recurse.cover"
+msgstr ""
+
+#: ../../source/trace/index.rst:222
+msgid "Calling Relationships"
+msgstr ""
+
+#: ../../source/trace/index.rst:224
+msgid ""
+"In addition to coverage information, ``trace`` will collect and report on"
+" the relationships between functions that call each other."
+msgstr ""
+
+#: ../../source/trace/index.rst:227
+msgid "For a simple list of the functions called, use ``--listfuncs``."
+msgstr ""
+
+#: ../../source/trace/index.rst:257
+msgid "For more details about who is doing the calling, use ``--trackcalls``."
+msgstr ""
+
+#: ../../source/trace/index.rst:295
+msgid ""
+"Neither ``--listfuncs`` nor ``--trackcalls`` honors the ``--ignore-dirs``"
+" or ``--ignore-mods`` arguments, so part of the output from this example "
+"is stripped using ``grep`` instead."
+msgstr ""
+
+#: ../../source/trace/index.rst:300
+msgid "Programming Interface"
+msgstr ""
+
+#: ../../source/trace/index.rst:302
+msgid ""
+"For more control over the ``trace`` interface, it can be invoked from "
+"within a program using a ``Trace`` object. ``Trace`` supports setting up "
+"fixtures and other dependencies before running a single function or "
+"executing a Python command to be traced."
+msgstr ""
+
+#: ../../source/trace/index.rst
+msgid "trace_run.py"
+msgstr ""
+
+#: ../../source/trace/index.rst:312
+msgid ""
+"Since the example only traces into the ``recurse()`` function, no "
+"information from ``main.py`` is included in the output."
+msgstr ""
+
+#: ../../source/trace/index.rst:343
+msgid "That same output can be produced with the ``runfunc()`` method, too."
+msgstr ""
+
+#: ../../source/trace/index.rst
+msgid "trace_runfunc.py"
+msgstr ""
+
+#: ../../source/trace/index.rst:350
+msgid ""
+"``runfunc()`` accepts arbitrary positional and keyword arguments, which "
+"are passed to the function when it is called by the tracer."
+msgstr ""
+
+#: ../../source/trace/index.rst:379
+msgid "Saving Result Data"
+msgstr ""
+
+#: ../../source/trace/index.rst:381
+msgid ""
+"Counts and coverage information can be recorded as well, just as with the"
+" command line interface.  The data must be saved explicitly, using the "
+"``CoverageResults`` instance from the ``Trace`` object."
+msgstr ""
+
+#: ../../source/trace/index.rst
+msgid "trace_CoverageResults.py"
+msgstr ""
+
+#: ../../source/trace/index.rst:389
+msgid "This example saves the coverage results to the directory ``coverdir2``."
+msgstr ""
+
+#: ../../source/trace/index.rst:412
+msgid "The output file contains"
+msgstr ""
+
+#: ../../source/trace/index.rst:416
+msgid ""
+"To save the counts data for generating reports, use the ``infile`` and "
+"``outfile`` arguments to ``Trace``."
+msgstr ""
+
+#: ../../source/trace/index.rst
+msgid "trace_report.py"
+msgstr ""
+
+#: ../../source/trace/index.rst:423
+msgid ""
+"Pass a filename to ``infile`` to read previously stored data, and a "
+"filename to ``outfile`` to write new results after tracing.  If "
+"``infile`` and ``outfile`` are the same, it has the effect of updating "
+"the file with cumulative data."
+msgstr ""
+
+#: ../../source/trace/index.rst:446
+msgid "Options"
+msgstr ""
+
+#: ../../source/trace/index.rst:448
+msgid ""
+"The constructor for ``Trace`` takes several optional parameters to "
+"control runtime behavior."
+msgstr ""
+
+#: ../../source/trace/index.rst:451
+msgid "``count``"
+msgstr ""
+
+#: ../../source/trace/index.rst:452
+msgid "Boolean.  Turns on line number counting.  Defaults to True."
+msgstr ""
+
+#: ../../source/trace/index.rst:454
+msgid "``countfuncs``"
+msgstr ""
+
+#: ../../source/trace/index.rst:454
+msgid ""
+"Boolean.  Turns on list of functions called during the run. Defaults to "
+"False."
+msgstr ""
+
+#: ../../source/trace/index.rst:457
+msgid "``countcallers``"
+msgstr ""
+
+#: ../../source/trace/index.rst:457
+msgid "Boolean.  Turns on tracking for callers and callees.  Defaults to False."
+msgstr ""
+
+#: ../../source/trace/index.rst:460
+msgid "``ignoremods``"
+msgstr ""
+
+#: ../../source/trace/index.rst:460
+msgid ""
+"Sequence.  List of modules or packages to ignore when tracking coverage."
+"  Defaults to an empty tuple."
+msgstr ""
+
+#: ../../source/trace/index.rst:463
+msgid "``ignoredirs``"
+msgstr ""
+
+#: ../../source/trace/index.rst:463
+msgid ""
+"Sequence.  List of directories containing modules or packages to be "
+"ignored.  Defaults to an empty tuple."
+msgstr ""
+
+#: ../../source/trace/index.rst:465
+msgid "``infile``"
+msgstr ""
+
+#: ../../source/trace/index.rst:466
+msgid "Name of the file containing cached count values.  Defaults to None."
+msgstr ""
+
+#: ../../source/trace/index.rst:469
+msgid "``outfile``"
+msgstr ""
+
+#: ../../source/trace/index.rst:468
+msgid ""
+"Name of the file to use for storing cached count files.  Defaults to "
+"None, and data is not stored."
+msgstr ""
+
+#: ../../source/trace/index.rst:473
+msgid ":pydoc:`trace`"
+msgstr ""
+
+#: ../../source/trace/index.rst:475
+msgid ""
+":ref:`sys-tracing` -- The ``sys`` module includes facilities for adding a"
+" custom tracing function to the interpreter at run-time."
+msgstr ""
+
+#: ../../source/trace/index.rst:478
+msgid ""
+"`coverage.py <http://nedbatchelder.com/code/modules/coverage.html>`_ -- "
+"Ned Batchelder's coverage module."
+msgstr ""
+
+#: ../../source/trace/index.rst:482
+msgid ""
+"`figleaf <http://darcs.idyll.org/~t/projects/figleaf/doc/>`_ -- Titus "
+"Brown's coverage application."
+msgstr ""
+

@@ -1,0 +1,433 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 18:41-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../source/functools/index.rst:3
+msgid "functools --- Tools for Manipulating Functions"
+msgstr ""
+
+#: ../../source/functools/index.rst:8
+msgid "Functions that operate on other functions."
+msgstr ""
+
+#: ../../source/functools/index.rst:10
+msgid ""
+"The ``functools`` module provides tools for adapting or extending "
+"functions and other callable objects, without completely rewriting them."
+msgstr ""
+
+#: ../../source/functools/index.rst:15
+msgid "Decorators"
+msgstr ""
+
+#: ../../source/functools/index.rst:17
+msgid ""
+"The primary tool supplied by the ``functools`` module is the class "
+"``partial``, which can be used to \"wrap\" a callable object with default"
+" arguments. The resulting object is itself callable and can be treated as"
+" though it is the original function.  It takes all of the same arguments "
+"as the original, and can be invoked with extra positional or named "
+"arguments as well.  A ``partial`` can be used instead of a ``lambda`` to "
+"provide default arguments to a function, while leaving some arguments "
+"unspecified."
+msgstr ""
+
+#: ../../source/functools/index.rst:27
+msgid "Partial Objects"
+msgstr ""
+
+#: ../../source/functools/index.rst:29
+msgid ""
+"This example shows two simple ``partial`` objects for the function "
+"``myfunc()``.  The output of ``show_details()`` includes the "
+":attr:`func`, :attr:`args`, and :attr:`keywords` attributes of the "
+"partial object."
+msgstr ""
+
+#: ../../source/functools/index.rst
+msgid "functools_partial.py"
+msgstr ""
+
+#: ../../source/functools/index.rst:38
+msgid ""
+"At the end of the example, the first ``partial`` created is invoked "
+"without passing a value for ``a``, causing an exception."
+msgstr ""
+
+#: ../../source/functools/index.rst:83
+msgid "Acquiring Function Properties"
+msgstr ""
+
+#: ../../source/functools/index.rst:85
+msgid ""
+"The ``partial`` object does not have :attr:`__name__` or :attr:`__doc__` "
+"attributes by default, and without those attributes, decorated functions "
+"are more difficult to debug. Using ``update_wrapper()``, copies or adds "
+"attributes from the original function to the ``partial`` object."
+msgstr ""
+
+#: ../../source/functools/index.rst
+msgid "functools_update_wrapper.py"
+msgstr ""
+
+#: ../../source/functools/index.rst:95
+msgid ""
+"The attributes added to the wrapper are defined in "
+"``WRAPPER_ASSIGNMENTS``, while ``WRAPPER_UPDATES`` lists values to be "
+"modified."
+msgstr ""
+
+#: ../../source/functools/index.rst:134
+msgid "Other Callables"
+msgstr ""
+
+#: ../../source/functools/index.rst:136
+msgid ""
+"Partials work with any callable object, not just with standalone "
+"functions."
+msgstr ""
+
+#: ../../source/functools/index.rst
+msgid "functools_callable.py"
+msgstr ""
+
+#: ../../source/functools/index.rst:142
+msgid ""
+"This example creates partials from an instance of a class with a "
+"``__call__()`` method."
+msgstr ""
+
+#: ../../source/functools/index.rst:171
+msgid "Methods and Functions"
+msgstr ""
+
+#: ../../source/functools/index.rst:173
+msgid ""
+"While ``partial()`` returns a callable ready to be used directly, "
+"``partialmethod()`` returns a callable ready to be used as an unbound "
+"method of an object. In the following example, the same standalone "
+"function is added as an attribute of ``MyClass`` twice, once using "
+"``partialmethod()`` as ``method1()`` and again using ``partial()`` as "
+"``method2()``."
+msgstr ""
+
+#: ../../source/functools/index.rst
+msgid "functools_partialmethod.py"
+msgstr ""
+
+#: ../../source/functools/index.rst:184
+msgid ""
+"``method1()`` can be called from an instance of ``MyClass``, and the "
+"instance is passed as the first argument just as with methods defined "
+"normally. ``method2()`` is not set up as a bound method, and so the "
+"``self`` argument must be passed explicitly, or the call will result in a"
+" ``TypeError``."
+msgstr ""
+
+#: ../../source/functools/index.rst:213
+msgid "Acquiring Function Properties for Decorators"
+msgstr ""
+
+#: ../../source/functools/index.rst:215
+msgid ""
+"Updating the properties of a wrapped callable is especially useful when "
+"used in a decorator, since the transformed function ends up with "
+"properties of the original \"bare\" function."
+msgstr ""
+
+#: ../../source/functools/index.rst
+msgid "functools_wraps.py"
+msgstr ""
+
+#: ../../source/functools/index.rst:223
+msgid ""
+"``functools`` provides a decorator, ``wraps()``, that applies "
+"``update_wrapper()`` to the decorated function."
+msgstr ""
+
+#: ../../source/functools/index.rst:265
+msgid "Comparison"
+msgstr ""
+
+#: ../../source/functools/index.rst:267
+msgid ""
+"Under Python 2, classes could define a ``__cmp__()`` method that returns "
+"``-1``, ``0``, or ``1`` based on whether the object is less than, equal "
+"to, or greater than the item being compared.  Python 2.1 introduced the "
+"*rich comparison* methods API (``__lt__()``, ``__le__()``, ``__eq__()``, "
+"``__ne__()``, ``__gt__()``, and ``__ge__()``), which perform a single "
+"comparison operation and return a boolean value.  Python 3 deprecated "
+"``__cmp__()`` in favor of these new methods and ``functools`` provides "
+"tools to make it easier to write classes that comply with the new "
+"comparison requirements in Python 3."
+msgstr ""
+
+#: ../../source/functools/index.rst:279
+msgid "Rich Comparison"
+msgstr ""
+
+#: ../../source/functools/index.rst:281
+msgid ""
+"The rich comparison API is designed to allow classes with complex "
+"comparisons to implement each test in the most efficient way possible. "
+"However, for classes where comparison is relatively simple, there is no "
+"point in manually creating each of the rich comparison methods. The "
+"``total_ordering()`` class decorator takes a class that provides some of "
+"the methods, and adds the rest of them."
+msgstr ""
+
+#: ../../source/functools/index.rst
+msgid "functools_total_ordering.py"
+msgstr ""
+
+#: ../../source/functools/index.rst:292
+msgid ""
+"The class must provide implementation of ``__eq__()`` and one other rich "
+"comparison method.  The decorator adds implementations of the rest of the"
+" methods that work by using the comparisons provided. If a comparison "
+"cannot be made, the method should return ``NotImplemented`` so the "
+"comparison can be tried using the reverse comparison operators on the "
+"other object, before failing entirely."
+msgstr ""
+
+#: ../../source/functools/index.rst:343
+msgid "Collation Order"
+msgstr ""
+
+#: ../../source/functools/index.rst:345
+msgid ""
+"Since old-style comparison functions are deprecated in Python 3, the "
+"``cmp`` argument to functions like ``sort()`` are also no longer "
+"supported.  Older programs that use comparison functions can use "
+"``cmp_to_key()`` to convert them to a function that returns a *collation "
+"key*, which is used to determine the position in the final sequence."
+msgstr ""
+
+#: ../../source/functools/index.rst
+msgid "functools_cmp_to_key.py"
+msgstr ""
+
+#: ../../source/functools/index.rst:356
+msgid ""
+"Normally ``cmp_to_key()`` would be used directly, but in this example an "
+"extra wrapper function is introduced to print out more information as the"
+" key function is being called."
+msgstr ""
+
+#: ../../source/functools/index.rst:360
+msgid ""
+"The output shows that ``sorted()`` starts by calling "
+"``get_key_wrapper()`` for each item in the sequence to produce a key.  "
+"The keys returned by ``cmp_to_key()`` are instances of a class defined in"
+" ``functools`` that implements the rich comparison API using the old-"
+"style comparison function passed in.  After all of the keys are created, "
+"the sequence is sorted by comparing the keys."
+msgstr ""
+
+#: ../../source/functools/index.rst:400
+msgid "Caching"
+msgstr ""
+
+#: ../../source/functools/index.rst:402
+msgid ""
+"The ``lru_cache()`` decorator wraps a function in a least-recently-used "
+"cache. Arguments to the function are used to build a hash key, which is "
+"then mapped to the result. Subsequent calls with the same arguments will "
+"fetch the value from the cache instead of calling the function. The "
+"decorator also adds methods to the function to examine the state of the "
+"cache (``cache_info()``) and empty the cache (``cache_clear()``)."
+msgstr ""
+
+#: ../../source/functools/index.rst
+msgid "functools_lru_cache.py"
+msgstr ""
+
+#: ../../source/functools/index.rst:414
+msgid ""
+"This example makes several calls to ``expensive()`` in a set of nested "
+"loops. The second time those calls are made with the same values the "
+"results appear in the cache. When the cache is cleared and the loops are "
+"run again the values must be recomputed."
+msgstr ""
+
+#: ../../source/functools/index.rst:454
+msgid ""
+"To prevent the cache from growing without bounds in a long-running "
+"process, it is given a maximum size. The default is 128 entries, but that"
+" can be changed for each cache using the ``maxsize`` argument."
+msgstr ""
+
+#: ../../source/functools/index.rst
+msgid "functools_lru_cache_expire.py"
+msgstr ""
+
+#: ../../source/functools/index.rst:462
+msgid ""
+"In this example the cache size is set to 2 entries. When the third set of"
+" unique arguments (``3, 4``) is used the oldest item in the cache is "
+"dropped and replaced with the new result."
+msgstr ""
+
+#: ../../source/functools/index.rst:493
+msgid ""
+"The keys for the cache managed by ``lru_cache()`` must be hashable, so "
+"all of the arguments to the function wrapped with the cache lookup must "
+"be hashable."
+msgstr ""
+
+#: ../../source/functools/index.rst
+msgid "functools_lru_cache_arguments.py"
+msgstr ""
+
+#: ../../source/functools/index.rst:501
+msgid ""
+"If any object that can't be hashed is passed in to the function, a "
+"``TypeError`` is raised."
+msgstr ""
+
+#: ../../source/functools/index.rst:519
+msgid "Reducing a Data Set"
+msgstr ""
+
+#: ../../source/functools/index.rst:521
+msgid ""
+"The ``reduce()`` function takes a callable and a sequence of data as "
+"input and produces a single value as output based on invoking the "
+"callable with the values from the sequence and accumulating the resulting"
+" output."
+msgstr ""
+
+#: ../../source/functools/index.rst
+msgid "functools_reduce.py"
+msgstr ""
+
+#: ../../source/functools/index.rst:530
+msgid "This example adds up the numbers in the input sequence."
+msgstr ""
+
+#: ../../source/functools/index.rst:548
+msgid ""
+"The optional ``initializer`` argument is placed at the front of the "
+"sequence and processed along with the other items. This can be used to "
+"update a previously computed value with new inputs."
+msgstr ""
+
+#: ../../source/functools/index.rst
+msgid "functools_reduce_initializer.py"
+msgstr ""
+
+#: ../../source/functools/index.rst:556
+msgid ""
+"In this example a previous sum of ``99`` is used to initialize the value "
+"computed by ``reduce()``."
+msgstr ""
+
+#: ../../source/functools/index.rst:576
+msgid ""
+"Sequences with a single item automatically reduce to that value when no "
+"initializer is present. Empty lists generate an error, unless an "
+"initializer is provided."
+msgstr ""
+
+#: ../../source/functools/index.rst
+msgid "functools_reduce_short_sequences.py"
+msgstr ""
+
+#: ../../source/functools/index.rst:584
+msgid ""
+"Because the initializer argument serves as a default, but is also "
+"combined with the new values if the input sequence is not empty, it is "
+"important to consider carefully whether to use it. When it does not make "
+"sense to combine the default with new values, it is better to catch the "
+"``TypeError`` rather than passing an initializer."
+msgstr ""
+
+#: ../../source/functools/index.rst:607
+msgid "Generic Functions"
+msgstr ""
+
+#: ../../source/functools/index.rst:609
+msgid ""
+"In a dynamically typed language like Python it is common to need to "
+"perform slightly different operation based on the type of an argument, "
+"especially when dealing with the difference between a list of items and a"
+" single item. It is simple enough to check the type of an argument "
+"directly, but in cases where the behavioral difference can be isolated "
+"into separate functions ``functools`` provides the ``singledispatch()`` "
+"decorator to register a set of *generic functions* for automatic "
+"switching based on the type of the first argument to a function."
+msgstr ""
+
+#: ../../source/functools/index.rst
+msgid "functools_singledispatch.py"
+msgstr ""
+
+#: ../../source/functools/index.rst:623
+msgid ""
+"The ``register()`` attribute of the new function serves as another "
+"decorator for registering alternative implementations. The first function"
+" wrapped with ``singledispatch()`` is the default implementation if no "
+"other type-specific function is found, as with the ``float`` case in this"
+" example."
+msgstr ""
+
+#: ../../source/functools/index.rst:647
+msgid ""
+"When no exact match is found for the type, the inheritance order is "
+"evaluated and the closest matching type is used."
+msgstr ""
+
+#: ../../source/functools/index.rst
+msgid "functools_singledispatch_mro.py"
+msgstr ""
+
+#: ../../source/functools/index.rst:654
+msgid ""
+"In this example, classes ``D`` and ``E`` do not match exactly with any "
+"registered generic functions, and the function selected depends on the "
+"class hierarchy."
+msgstr ""
+
+#: ../../source/functools/index.rst:677
+msgid ":pydoc:`functools`"
+msgstr ""
+
+#: ../../source/functools/index.rst:679
+msgid ""
+"`Rich comparison methods "
+"<https://docs.python.org/reference/datamodel.html#object.__lt__>`__ -- "
+"Description of the rich comparison methods from the Python Reference "
+"Guide."
+msgstr ""
+
+#: ../../source/functools/index.rst:684
+msgid ""
+"`Isolated @memoize "
+"<http://nedbatchelder.com/blog/201601/isolated_memoize.html>`__ -- "
+"Article on creating memoizing decorators that work well with unit tests, "
+"by Ned Batchelder."
+msgstr ""
+
+#: ../../source/functools/index.rst:689
+msgid ":pep:`443` -- \"Single-dispatch generic functions\""
+msgstr ""
+
+#: ../../source/functools/index.rst:691
+msgid ":mod:`inspect` -- Introspection API for live objects."
+msgstr ""
+

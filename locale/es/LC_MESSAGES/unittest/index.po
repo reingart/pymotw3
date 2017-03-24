@@ -1,0 +1,434 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 18:41-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../source/unittest/index.rst:3
+msgid "unittest --- Automated Testing Framework"
+msgstr ""
+
+#: ../../source/unittest/index.rst:8
+msgid "Automated testing framework"
+msgstr ""
+
+#: ../../source/unittest/index.rst:10
+msgid ""
+"Python's ``unittest`` module is based on the XUnit framework design by "
+"Kent Beck and Erich Gamma. The same pattern is repeated in many other "
+"languages, including C, Perl, Java, and Smalltalk. The framework "
+"implemented by ``unittest`` supports fixtures, test suites, and a test "
+"runner to enable automated testing."
+msgstr ""
+
+#: ../../source/unittest/index.rst:17
+msgid "Basic Test Structure"
+msgstr ""
+
+#: ../../source/unittest/index.rst:19
+msgid ""
+"Tests, as defined by ``unittest``, have two parts: code to manage test "
+"dependencies (called *fixtures*), and the test itself. Individual tests "
+"are created by subclassing ``TestCase`` and overriding or adding "
+"appropriate methods. In the following example, the ``SimplisticTest`` has"
+" a single ``test()`` method, which would fail if ``a`` is ever different "
+"from ``b``."
+msgstr ""
+
+#: ../../source/unittest/index.rst
+msgid "unittest_simple.py"
+msgstr ""
+
+#: ../../source/unittest/index.rst:31
+msgid "Running Tests"
+msgstr ""
+
+#: ../../source/unittest/index.rst:33
+msgid ""
+"The easiest way to run unittest tests is use the automatic discovery "
+"available through the command line interface."
+msgstr ""
+
+#: ../../source/unittest/index.rst:52
+msgid ""
+"This abbreviated output includes the amount of time the tests took, along"
+" with a status indicator for each test (the \".\" on the first line of "
+"output means that a test passed). For more detailed test results, include"
+" the ``-v`` option."
+msgstr ""
+
+#: ../../source/unittest/index.rst:75
+msgid "Test Outcomes"
+msgstr ""
+
+#: ../../source/unittest/index.rst:77
+msgid "Tests have 3 possible outcomes, described in :table:`Test Case Outcomes`."
+msgstr ""
+
+#: ../../source/unittest/index.rst
+msgid "Test Case Outcomes"
+msgstr ""
+
+#: ../../source/unittest/index.rst:82
+msgid "Outcome"
+msgstr ""
+
+#: ../../source/unittest/index.rst:82
+msgid "Description"
+msgstr ""
+
+#: ../../source/unittest/index.rst:84
+msgid "ok"
+msgstr ""
+
+#: ../../source/unittest/index.rst:84
+msgid "The test passes."
+msgstr ""
+
+#: ../../source/unittest/index.rst:85
+msgid "FAIL"
+msgstr ""
+
+#: ../../source/unittest/index.rst:85
+msgid "The test does not pass, and raises an AssertionError exception."
+msgstr ""
+
+#: ../../source/unittest/index.rst:86
+msgid "ERROR"
+msgstr ""
+
+#: ../../source/unittest/index.rst:86
+msgid "The test raises any exception other than AssertionError."
+msgstr ""
+
+#: ../../source/unittest/index.rst:89
+msgid ""
+"There is no explicit way to cause a test to \"pass\", so a test's status "
+"depends on the presence (or absence) of an exception."
+msgstr ""
+
+#: ../../source/unittest/index.rst
+msgid "unittest_outcomes.py"
+msgstr ""
+
+#: ../../source/unittest/index.rst:96
+msgid ""
+"When a test fails or generates an error, the traceback is included in the"
+" output."
+msgstr ""
+
+#: ../../source/unittest/index.rst:132
+msgid ""
+"In the previous example, ``testFail()`` fails and the traceback shows the"
+" line with the failure code. It is up to the person reading the test "
+"output to look at the code to figure out the meaning of the failed test, "
+"though."
+msgstr ""
+
+#: ../../source/unittest/index.rst
+msgid "unittest_failwithmessage.py"
+msgstr ""
+
+#: ../../source/unittest/index.rst:141
+msgid ""
+"To make it easier to understand the nature of a test failure, the "
+"``fail*()`` and ``assert*()`` methods all accept an argument ``msg``, "
+"which can be used to produce a more detailed error message."
+msgstr ""
+
+#: ../../source/unittest/index.rst:173
+msgid "Asserting Truth"
+msgstr ""
+
+#: ../../source/unittest/index.rst:175
+msgid ""
+"Most tests assert the truth of some condition. There are two different "
+"ways to write truth-checking tests, depending on the perspective of the "
+"test author and the desired outcome of the code being tested."
+msgstr ""
+
+#: ../../source/unittest/index.rst
+msgid "unittest_truth.py"
+msgstr ""
+
+#: ../../source/unittest/index.rst:183
+msgid ""
+"If the code produces a value which can be evaluated as true, the method "
+"``assertTrue()`` should be used. If the code produces a false value, the "
+"method ``assertFalse()`` make more sense."
+msgstr ""
+
+#: ../../source/unittest/index.rst:207
+msgid "Testing Equality"
+msgstr ""
+
+#: ../../source/unittest/index.rst:209
+msgid ""
+"As a special case, ``unittest`` includes methods for testing the equality"
+" of two values."
+msgstr ""
+
+#: ../../source/unittest/index.rst
+msgid "unittest_equality.py"
+msgstr ""
+
+#: ../../source/unittest/index.rst:216
+msgid ""
+"When they fail, these special test methods produce error messages "
+"including the values being compared."
+msgstr ""
+
+#: ../../source/unittest/index.rst:260
+msgid "Almost Equal?"
+msgstr ""
+
+#: ../../source/unittest/index.rst:262
+msgid ""
+"In addition to strict equality, it is possible to test for near equality "
+"of floating point numbers using ``assertAlmostEqual()`` and "
+"``assertNotAlmostEqual()``."
+msgstr ""
+
+#: ../../source/unittest/index.rst
+msgid "unittest_almostequal.py"
+msgstr ""
+
+#: ../../source/unittest/index.rst:270
+msgid ""
+"The arguments are the values to be compared, and the number of decimal "
+"places to use for the test."
+msgstr ""
+
+#: ../../source/unittest/index.rst:299
+msgid "Containers"
+msgstr ""
+
+#: ../../source/unittest/index.rst:302
+msgid ""
+"In addition to the generic ``assertEqual()`` and ``assertNotEqual()``, "
+"there are special methods for comparing containers like ``list``, "
+"``dict``, and ``set`` objects."
+msgstr ""
+
+#: ../../source/unittest/index.rst
+msgid "unittest_equality_container.py"
+msgstr ""
+
+#: ../../source/unittest/index.rst:311
+msgid ""
+"Each method reports inequality using a format that is meaningful for the "
+"input type, making test failures easier to understand and correct."
+msgstr ""
+
+#: ../../source/unittest/index.rst:447
+msgid "Use ``assertIn()`` to test container membership."
+msgstr ""
+
+#: ../../source/unittest/index.rst
+msgid "unittest_in.py"
+msgstr ""
+
+#: ../../source/unittest/index.rst:453
+msgid ""
+"Any object that supports the ``in`` operator or the container API can be "
+"used with ``assertIn()``."
+msgstr ""
+
+#: ../../source/unittest/index.rst:498
+msgid "Testing for Exceptions"
+msgstr ""
+
+#: ../../source/unittest/index.rst:500
+msgid ""
+"As previously mentioned, if a test raises an exception other than "
+"``AssertionError`` it is treated as an error. This is very useful for "
+"uncovering mistakes while modifying code that has existing test coverage."
+" There are circumstances, however, in which the test should verify that "
+"some code does produce an exception. For example, if an invalid value is "
+"given to an attribute of an object. In such cases, ``assertRaises()`` "
+"makes the code more clear than trapping the exception in the test. "
+"Compare these two tests:"
+msgstr ""
+
+#: ../../source/unittest/index.rst
+msgid "unittest_exception.py"
+msgstr ""
+
+#: ../../source/unittest/index.rst:513
+msgid ""
+"The results for both are the same, but the second test using "
+"``assertRaises()`` is more succinct."
+msgstr ""
+
+#: ../../source/unittest/index.rst:536
+msgid "Test Fixtures"
+msgstr ""
+
+#: ../../source/unittest/index.rst:538
+msgid ""
+"Fixtures are outside resources needed by a test. For example, tests for "
+"one class may all need an instance of another class that provides "
+"configuration settings or another shared resource. Other test fixtures "
+"include database connections and temporary files (many people would argue"
+" that using external resources makes such tests not \"unit\" tests, but "
+"they are still tests and still useful)."
+msgstr ""
+
+#: ../../source/unittest/index.rst:545
+msgid ""
+"``unittest`` includes special hooks to configure and clean up any "
+"fixtures needed by tests. To establish fixtures for each individual test "
+"case, override ``setUp()`` on the ``TestCase``. To clean them up, "
+"override ``tearDown()``. To manage one set of fixtures for all instances "
+"of a test class, override the class methods ``setUpClass()`` and "
+"``tearDownClass()`` for the ``TestCase``. And to handle especially "
+"expensive setup operations for all of the tests within a module, use the "
+"module-level functions ``setUpModule()`` and ``tearDownModule()``."
+msgstr ""
+
+#: ../../source/unittest/index.rst
+msgid "unittest_fixtures.py"
+msgstr ""
+
+#: ../../source/unittest/index.rst:559
+msgid ""
+"When this sample test is run, the order of execution of the fixture and "
+"test methods is apparent."
+msgstr ""
+
+#: ../../source/unittest/index.rst:592
+msgid ""
+"The ``tearDown`` methods may not all be invoked if there are errors in "
+"the process of cleaning up fixtures. To ensure that a fixture is always "
+"released correctly, use ``addCleanup()``."
+msgstr ""
+
+#: ../../source/unittest/index.rst
+msgid "unittest_addcleanup.py"
+msgstr ""
+
+#: ../../source/unittest/index.rst:600
+msgid ""
+"This example test creates a temporary directory and then uses "
+":mod:`shutil` to clean it up when the test is done."
+msgstr ""
+
+#: ../../source/unittest/index.rst:630
+msgid "Repeating Tests with Different Inputs"
+msgstr ""
+
+#: ../../source/unittest/index.rst:632
+msgid ""
+"It is frequently useful to run the same test logic with different inputs."
+" Rather than defining a separate test method for each small case, a "
+"common way of doing this is to use one test method containing several "
+"related assertion calls. The problem with this approach is that as soon "
+"as one assertion fails, the rest are skipped. A better solution is to use"
+" ``subTest()`` to create a context for a test within a test method. If "
+"the test fails, the failure is reported and the remaining tests continue."
+msgstr ""
+
+#: ../../source/unittest/index.rst
+msgid "unittest_subtest.py"
+msgstr ""
+
+#: ../../source/unittest/index.rst:645
+msgid ""
+"In this example, the ``test_combined()`` method never runs the assertions"
+" for the patterns ``'c'`` and ``'d'``. The ``test_with_subtest()`` method"
+" does, and correctly reports the additional failure. Note that the test "
+"runner still considers there to only be two test cases, even though there"
+" are three failures reported."
+msgstr ""
+
+#: ../../source/unittest/index.rst:694
+msgid "Skipping Tests"
+msgstr ""
+
+#: ../../source/unittest/index.rst:696
+msgid ""
+"It is frequently useful to be able to skip a test if some external "
+"condition is not met. For example, when writing tests to check behavior "
+"of a library under a specific version of Python there is no reason to run"
+" those tests under other versions of Python. Test classes and methods can"
+" be decorated with ``skip()`` to always skip the tests. The decorators "
+"``skipIf()`` and ``skipUnless()`` can be used to check a condition before"
+" skipping."
+msgstr ""
+
+#: ../../source/unittest/index.rst
+msgid "unittest_skip.py"
+msgstr ""
+
+#: ../../source/unittest/index.rst:708
+msgid ""
+"For complex conditions that are difficult to express in a single "
+"expression to be passed to ``skipIf()`` or ``skipUnless()``, a test case "
+"may raise ``SkipTest`` directly to cause the test to be skipped."
+msgstr ""
+
+#: ../../source/unittest/index.rst:737
+msgid "Ignoring Failing Tests"
+msgstr ""
+
+#: ../../source/unittest/index.rst:739
+msgid ""
+"Rather than deleting tests that are persistently broken, they can be "
+"marked with the ``expectedFailure()`` decorator so the failure is "
+"ignored."
+msgstr ""
+
+#: ../../source/unittest/index.rst
+msgid "unittest_expectedfailure.py"
+msgstr ""
+
+#: ../../source/unittest/index.rst:747
+msgid ""
+"If a test that is expected to fail does in fact pass, that condition is "
+"treated as a special sort of failure and reported as an \"unexpected "
+"success\"."
+msgstr ""
+
+#: ../../source/unittest/index.rst:776
+msgid ":pydoc:`unittest`"
+msgstr ""
+
+#: ../../source/unittest/index.rst:778
+msgid ""
+":mod:`doctest` -- An alternate means of running tests embedded in "
+"docstrings or external documentation files."
+msgstr ""
+
+#: ../../source/unittest/index.rst:781
+msgid ""
+"`nose <https://nose.readthedocs.io/en/latest/>`_ -- Third-party test "
+"runner with sophisticated discovery features."
+msgstr ""
+
+#: ../../source/unittest/index.rst:784
+msgid ""
+"`pytest <http://doc.pytest.org/en/latest/>`_ -- A popular third-party "
+"test runner with support for distributed execution and an alternate "
+"fixture management system."
+msgstr ""
+
+#: ../../source/unittest/index.rst:788
+msgid ""
+"`testrepository <http://testrepository.readthedocs.io/en/latest/>`_ -- "
+"Third-party test runner used by the OpenStack project, with support for "
+"parallel execution andtracking failures."
+msgstr ""
+

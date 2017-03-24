@@ -1,0 +1,210 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 18:41-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../source/platform/index.rst:3
+msgid "platform --- System Version Information"
+msgstr ""
+
+#: ../../source/platform/index.rst:8
+msgid ""
+"Probe the underlying platform's hardware, operating system, and "
+"interpreter version information."
+msgstr ""
+
+#: ../../source/platform/index.rst:11
+msgid ""
+"Although Python is often used as a cross-platform language, it is "
+"occasionally necessary to know what sort of system a program is running "
+"on. Build tools need that information, but an application might also know"
+" that some of the libraries or external commands it uses have different "
+"interfaces on different operating systems. For example, a tool to manage "
+"the network configuration of an operating system can define a portable "
+"representation of network interfaces, aliases, IP addresses, etc. But "
+"when the time comes to edit the configuration files, it must know more "
+"about the host so it can use the correct operating system configuration "
+"commands and files.  The ``platform`` module includes the tools for "
+"learning about the interpreter, operating system, and hardware platform "
+"where a program is running."
+msgstr ""
+
+#: ../../source/platform/index.rst:27
+msgid ""
+"The example output in this section was generated on three systems: a Mac "
+"mini running OS X 10.11.6, a Dell PC running Ubuntu Linux 14.04, and a "
+"VirtualBox VM running Windows 10.  Python was installed on the OS X and "
+"Windows systems using the pre-compiled installers from python.org. The "
+"Linux system is running a version in a system package."
+msgstr ""
+
+#: ../../source/platform/index.rst:40
+msgid "Interpreter"
+msgstr ""
+
+#: ../../source/platform/index.rst:42
+msgid ""
+"There are four functions for getting information about the current Python"
+" interpreter. ``python_version()`` and ``python_version_tuple()`` return "
+"different forms of the interpreter version with major, minor, and patch "
+"level components. ``python_compiler()`` reports on the compiler used to "
+"build the interpreter. And ``python_build()`` gives a version string for "
+"the build of the interpreter."
+msgstr ""
+
+#: ../../source/platform/index.rst
+msgid "platform_python.py"
+msgstr ""
+
+#: ../../source/platform/index.rst:54 ../../source/platform/index.rst:107
+#: ../../source/platform/index.rst:176 ../../source/platform/index.rst:249
+msgid "OS X:"
+msgstr ""
+
+#: ../../source/platform/index.rst:71 ../../source/platform/index.rst:123
+#: ../../source/platform/index.rst:202 ../../source/platform/index.rst:264
+msgid "Linux:"
+msgstr ""
+
+#: ../../source/platform/index.rst:82 ../../source/platform/index.rst:133
+#: ../../source/platform/index.rst:219 ../../source/platform/index.rst:273
+msgid "Windows:"
+msgstr ""
+
+#: ../../source/platform/index.rst:94
+msgid "Platform"
+msgstr ""
+
+#: ../../source/platform/index.rst:96
+msgid ""
+"The ``platform()`` function returns a string containing a general purpose"
+" platform identifier.  The function accepts two optional Boolean "
+"arguments. If ``aliased`` is True, the names in the return value are "
+"converted from a formal name to their more common form. When ``terse`` is"
+" true, a minimal value with some parts dropped is returned instead of the"
+" full string."
+msgstr ""
+
+#: ../../source/platform/index.rst
+msgid "platform_platform.py"
+msgstr ""
+
+#: ../../source/platform/index.rst:144
+msgid "Operating System and Hardware Info"
+msgstr ""
+
+#: ../../source/platform/index.rst:146
+msgid ""
+"More detailed information about the operating system and hardware the "
+"interpreter is running under can be retrieved as well. ``uname()`` "
+"returns a tuple containing the system, node, release, version, machine, "
+"and processor values.  Individual values can be accessed through "
+"functions of the same names, listed in :table:`Platform Information "
+"Functions`."
+msgstr ""
+
+#: ../../source/platform/index.rst
+msgid "Platform Information Functions"
+msgstr ""
+
+#: ../../source/platform/index.rst:157
+msgid "Function"
+msgstr ""
+
+#: ../../source/platform/index.rst:158
+msgid "Return Value"
+msgstr ""
+
+#: ../../source/platform/index.rst:159
+msgid "``system()``"
+msgstr ""
+
+#: ../../source/platform/index.rst:160
+msgid "operating system name"
+msgstr ""
+
+#: ../../source/platform/index.rst:161
+msgid "``node()``"
+msgstr ""
+
+#: ../../source/platform/index.rst:162
+msgid "host name of the server, not fully qualified"
+msgstr ""
+
+#: ../../source/platform/index.rst:163
+msgid "``release()``"
+msgstr ""
+
+#: ../../source/platform/index.rst:164
+msgid "operating system release number"
+msgstr ""
+
+#: ../../source/platform/index.rst:165
+msgid "``version()``"
+msgstr ""
+
+#: ../../source/platform/index.rst:166
+msgid "more detailed system version"
+msgstr ""
+
+#: ../../source/platform/index.rst:167
+msgid "``machine()``"
+msgstr ""
+
+#: ../../source/platform/index.rst:168
+msgid "a hardware-type identifier, such as ``'i386'``"
+msgstr ""
+
+#: ../../source/platform/index.rst:169
+msgid "``processor()``"
+msgstr ""
+
+#: ../../source/platform/index.rst:170
+msgid ""
+"a real identifier for the processor (the same value as ``machine()`` in "
+"many cases)"
+msgstr ""
+
+#: ../../source/platform/index.rst
+msgid "platform_os_info.py"
+msgstr ""
+
+#: ../../source/platform/index.rst:237
+msgid "Executable Architecture"
+msgstr ""
+
+#: ../../source/platform/index.rst:239
+msgid ""
+"Individual program architecture information can be probed using the "
+"``architecture()`` function. The first argument is the path to an "
+"executable program (defaulting to ``sys.executable``, the Python "
+"interpreter). The return value is a tuple containing the bit architecture"
+" and the linkage format used."
+msgstr ""
+
+#: ../../source/platform/index.rst
+msgid "platform_architecture.py"
+msgstr ""
+
+#: ../../source/platform/index.rst:284
+msgid ":pydoc:`platform`"
+msgstr ""
+
+#: ../../source/platform/index.rst:286
+msgid ":ref:`Python 2 to 3 porting notes for platform <porting-platform>`"
+msgstr ""
+

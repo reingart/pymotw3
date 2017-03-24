@@ -1,0 +1,249 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 18:41-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../source/weakref/index.rst:3
+msgid "weakref --- Impermanent References to Objects"
+msgstr ""
+
+#: ../../source/weakref/index.rst:8
+msgid ""
+"Refer to an \"expensive\" object, but allow its memory to be reclaimed by"
+" the garbage collector if there are no other non-weak references."
+msgstr ""
+
+#: ../../source/weakref/index.rst:12
+msgid ""
+"The ``weakref`` module supports weak references to objects. A normal "
+"reference increments the reference count on the object and prevents it "
+"from being garbage collected. This outcome is not always desirable, "
+"especially when a circular reference might be present or when a cache of "
+"objects should be deleted when memory is needed.  A weak reference is a "
+"handle to an object that does not keep it from being cleaned up "
+"automatically."
+msgstr ""
+
+#: ../../source/weakref/index.rst:21
+msgid "References"
+msgstr ""
+
+#: ../../source/weakref/index.rst:23
+msgid ""
+"Weak references to objects are managed through the ``ref`` class. To "
+"retrieve the original object, call the reference object."
+msgstr ""
+
+#: ../../source/weakref/index.rst
+msgid "weakref_ref.py"
+msgstr ""
+
+#: ../../source/weakref/index.rst:30
+msgid ""
+"In this case, since ``obj`` is deleted before the second call to the "
+"reference, the ``ref`` returns ``None``."
+msgstr ""
+
+#: ../../source/weakref/index.rst:52
+msgid "Reference Callbacks"
+msgstr ""
+
+#: ../../source/weakref/index.rst:54
+msgid ""
+"The ``ref`` constructor accepts an optional callback function that is "
+"invoked when the referenced object is deleted."
+msgstr ""
+
+#: ../../source/weakref/index.rst
+msgid "weakref_ref_callback.py"
+msgstr ""
+
+#: ../../source/weakref/index.rst:61
+msgid ""
+"The callback receives the reference object as an argument after the "
+"reference is \"dead\" and no longer refers to the original object. One "
+"use for this feature is to remove the weak reference object from a cache."
+msgstr ""
+
+#: ../../source/weakref/index.rst:86
+msgid "Finalizing Objects"
+msgstr ""
+
+#: ../../source/weakref/index.rst:88
+msgid ""
+"For more robust management of resources when weak references are cleaned "
+"up, use ``finalize`` to associate callbacks with objects. A ``finalize`` "
+"instance is retained until the attached object is deleted, even if the "
+"application does not retain a reference to the finalizer."
+msgstr ""
+
+#: ../../source/weakref/index.rst
+msgid "weakref_finalize.py"
+msgstr ""
+
+#: ../../source/weakref/index.rst:98
+msgid ""
+"The arguments to ``finalize`` are the object to track, a callable to "
+"invoke when the object is garbage collected, and any positional or named "
+"arguments to pass to the callable."
+msgstr ""
+
+#: ../../source/weakref/index.rst:115
+msgid ""
+"The ``finalize`` instance has a writable propertly ``atexit`` to control "
+"whether the callback is invoked as a program is exiting, if it hasn't "
+"already been called."
+msgstr ""
+
+#: ../../source/weakref/index.rst
+msgid "weakref_finalize_atexit.py"
+msgstr ""
+
+#: ../../source/weakref/index.rst:123
+msgid ""
+"The default is to invoke the callback. Setting ``atexit`` to false "
+"disables that behavior."
+msgstr ""
+
+#: ../../source/weakref/index.rst:143
+msgid ""
+"Giving the ``finalize`` instance a reference to the object it tracks "
+"causes a reference to be retained, so the object is never garbage "
+"collected."
+msgstr ""
+
+#: ../../source/weakref/index.rst
+msgid "weakref_finalize_reference.py"
+msgstr ""
+
+#: ../../source/weakref/index.rst:151
+msgid ""
+"As this example shows, even though the explicit reference to ``obj`` is "
+"deleted, the object is retained and visible to the garbage collector "
+"through ``f``."
+msgstr ""
+
+#: ../../source/weakref/index.rst:167
+msgid ""
+"Using a bound method of a tracked object as the callable can also prevent"
+" an object from being finalized properly."
+msgstr ""
+
+#: ../../source/weakref/index.rst
+msgid "weakref_finalize_reference_method.py"
+msgstr ""
+
+#: ../../source/weakref/index.rst:174
+msgid ""
+"Because the callable given to ``finalize`` is a bound method of the "
+"instance ``obj``, the finalize object holds a reference to ``obj``, which"
+" cannot be deleted and garbage collected."
+msgstr ""
+
+#: ../../source/weakref/index.rst:191
+msgid "Proxies"
+msgstr ""
+
+#: ../../source/weakref/index.rst:193
+msgid ""
+"It is sometimes more convenient to use a proxy, rather than a weak "
+"reference.  Proxies can be used as though they were the original object, "
+"and do not need to be called before the object is accessible. As a "
+"consequence, they can be passed to a library that does not know it is "
+"receiving a reference instead of the real object."
+msgstr ""
+
+#: ../../source/weakref/index.rst
+msgid "weakref_proxy.py"
+msgstr ""
+
+#: ../../source/weakref/index.rst:203
+msgid ""
+"If the proxy is accessed after the referent object is removed, a "
+"``ReferenceError`` exception is raised."
+msgstr ""
+
+#: ../../source/weakref/index.rst:226
+msgid "Caching Objects"
+msgstr ""
+
+#: ../../source/weakref/index.rst:228
+msgid ""
+"The ``ref`` and ``proxy`` classes are considered \"low level.\" While "
+"they are useful for maintaining weak references to individual objects and"
+" allowing cycles to be garbage collected, the ``WeakKeyDictionary`` and "
+"``WeakValueDictionary`` classes provide a more appropriate API for "
+"creating a cache of several objects."
+msgstr ""
+
+#: ../../source/weakref/index.rst:234
+msgid ""
+"The ``WeakValueDictionary`` class uses weak references to the values it "
+"holds, allowing them to be garbage collected when other code is not "
+"actually using them.  Using explicit calls to the garbage collector "
+"illustrates the difference between memory handling with a regular "
+"dictionary and ``WeakValueDictionary``:"
+msgstr ""
+
+#: ../../source/weakref/index.rst
+msgid "weakref_valuedict.py"
+msgstr ""
+
+#: ../../source/weakref/index.rst:244
+msgid ""
+"Any loop variables that refer to the values being cached must be cleared "
+"explicitly so the reference count of the object is decremented. "
+"Otherwise, the garbage collector will not remove the objects and they "
+"will remain in the cache. Similarly, the ``all_refs`` variable is used to"
+" hold references to prevent them from being garbage collected "
+"prematurely."
+msgstr ""
+
+#: ../../source/weakref/index.rst:300
+msgid ""
+"The ``WeakKeyDictionary`` works similarly but uses weak references for "
+"the keys instead of the values in the dictionary."
+msgstr ""
+
+#: ../../source/weakref/index.rst:305
+msgid "The library documentation for ``weakref`` contains this warning:"
+msgstr ""
+
+#: ../../source/weakref/index.rst:308
+msgid ""
+"Caution: Because a ``WeakValueDictionary`` is built on top of a Python "
+"dictionary, it must not change size when iterating over it. This can be "
+"difficult to ensure for a ``WeakValueDictionary`` because actions "
+"performed by the program during iteration may cause items in the "
+"dictionary to vanish \"by magic\" (as a side effect of garbage "
+"collection)."
+msgstr ""
+
+#: ../../source/weakref/index.rst:317
+msgid ":pydoc:`weakref`"
+msgstr ""
+
+#: ../../source/weakref/index.rst:319
+msgid ""
+":mod:`gc` -- The ``gc`` module is the interface to the interpreter's "
+"garbage collector."
+msgstr ""
+
+#: ../../source/weakref/index.rst:322
+msgid ":pep:`205` -- \"Weak References\" enhancement proposal."
+msgstr ""
+

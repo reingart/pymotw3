@@ -1,0 +1,1300 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 18:41-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../source/re/index.rst:3
+msgid "re --- Regular Expressions"
+msgstr ""
+
+#: ../../source/re/index.rst:8
+msgid "Searching within and changing text using formal patterns."
+msgstr ""
+
+#: ../../source/re/index.rst:10
+msgid ""
+"*Regular expressions* are text matching patterns described with a formal "
+"syntax.  The patterns are interpreted as a set of instructions, which are"
+" then executed with a string as input to produce a matching subset or "
+"modified version of the original.  The term \"regular expressions\" is "
+"frequently shortened to \"regex\" or \"regexp\" in conversation.  "
+"Expressions can include literal text matching, repetition, pattern "
+"composition, branching, and other sophisticated rules.  A large number of"
+" parsing problems are easier to solve with a regular expression than by "
+"creating a special-purpose lexer and parser."
+msgstr ""
+
+#: ../../source/re/index.rst:21
+msgid ""
+"Regular expressions are typically used in applications that involve a lot"
+" of text processing.  For example, they are commonly used as search "
+"patterns in text editing programs used by developers, including vi, "
+"emacs, and modern IDEs.  They are also an integral part of Unix command-"
+"line utilities such as sed, grep, and awk.  Many programming languages "
+"include support for regular expressions in the language syntax (Perl, "
+"Ruby, Awk, and Tcl).  Other languages, such as C, C++, and Python, "
+"support regular expressions through extension libraries."
+msgstr ""
+
+#: ../../source/re/index.rst:30
+msgid ""
+"Multiple open source implementations of regular expressions exist, each "
+"sharing a common core syntax but with different extensions or "
+"modifications to their advanced features.  The syntax used in Python's "
+"``re`` module is based on the syntax used for regular expressions in "
+"Perl, with a few Python-specific enhancements."
+msgstr ""
+
+#: ../../source/re/index.rst:38
+msgid ""
+"Although the formal definition of \"regular expression\" is limited to "
+"expressions that describe regular languages, some of the extensions "
+"supported by ``re`` go beyond describing regular languages.  The term "
+"\"regular expression\" is used here in a more general sense to mean any "
+"expression that can be evaluated by Python's ``re`` module."
+msgstr ""
+
+#: ../../source/re/index.rst:46
+msgid "Finding Patterns in Text"
+msgstr ""
+
+#: ../../source/re/index.rst:48
+msgid ""
+"The most common use for ``re`` is to search for patterns in text. The "
+"``search()`` function takes the pattern and text to scan, and returns a "
+"``Match`` object when the pattern is found.  If the pattern is not found,"
+" ``search()`` returns ``None``."
+msgstr ""
+
+#: ../../source/re/index.rst:53
+msgid ""
+"Each ``Match`` object holds information about the nature of the match, "
+"including the original input string, the regular expression used, and the"
+" location within the original string where the pattern occurs."
+msgstr ""
+
+#: ../../source/re/index.rst
+msgid "re_simple_match.py"
+msgstr ""
+
+#: ../../source/re/index.rst:62
+msgid ""
+"The ``start()`` and ``end()`` methods give the indexes into the string "
+"showing where the text matched by the pattern occurs."
+msgstr ""
+
+#: ../../source/re/index.rst:80
+msgid "Compiling Expressions"
+msgstr ""
+
+#: ../../source/re/index.rst:82
+msgid ""
+"Although ``re`` includes module-level functions for working with regular "
+"expressions as text strings, it is more efficient to *compile* the "
+"expressions a program uses frequently.  The ``compile()`` function "
+"converts an expression string into a ``RegexObject``."
+msgstr ""
+
+#: ../../source/re/index.rst
+msgid "re_simple_compiled.py"
+msgstr ""
+
+#: ../../source/re/index.rst:91
+msgid ""
+"The module-level functions maintain a cache of compiled expressions, but "
+"the size of the cache is limited and using compiled expressions directly "
+"avoids the overhead associated with cache lookup.  Another advantage of "
+"using compiled expressions is that by precompiling all of the expressions"
+" when the module is loaded, the compilation work is shifted to "
+"application start time, instead of occurring at a point where the program"
+" may be responding to a user action."
+msgstr ""
+
+#: ../../source/re/index.rst:115
+msgid "Multiple Matches"
+msgstr ""
+
+#: ../../source/re/index.rst:117
+msgid ""
+"So far, the example patterns have all used ``search()`` to look for "
+"single instances of literal text strings.  The ``findall()`` function "
+"returns all of the substrings of the input that match the pattern without"
+" overlapping."
+msgstr ""
+
+#: ../../source/re/index.rst
+msgid "re_findall.py"
+msgstr ""
+
+#: ../../source/re/index.rst:126
+msgid "This example input string includes two instances of ``ab``."
+msgstr ""
+
+#: ../../source/re/index.rst:141
+msgid ""
+"The ``finditer()`` function returns an iterator that produces ``Match`` "
+"instances instead of the strings returned by ``findall()``."
+msgstr ""
+
+#: ../../source/re/index.rst
+msgid "re_finditer.py"
+msgstr ""
+
+#: ../../source/re/index.rst:148
+msgid ""
+"This example finds the same two occurrences of ``ab``, and the ``Match`` "
+"instance shows where they are found in the original input."
+msgstr ""
+
+#: ../../source/re/index.rst:165
+msgid "Pattern Syntax"
+msgstr ""
+
+#: ../../source/re/index.rst:167
+msgid ""
+"Regular expressions support more powerful patterns than simple literal "
+"text strings.  Patterns can repeat, can be anchored to different logical "
+"locations within the input, and can be expressed in compact forms that do"
+" not require every literal character to be present in the pattern.  All "
+"of these features are used by combining literal text values with *meta-"
+"characters* that are part of the regular expression pattern syntax "
+"implemented by ``re``."
+msgstr ""
+
+#: ../../source/re/index.rst
+msgid "re_test_patterns.py"
+msgstr ""
+
+#: ../../source/re/index.rst:179
+msgid ""
+"The following examples will use ``test_patterns()`` to explore how "
+"variations in patterns change the way they match the same input text. The"
+" output shows the input text and the substring range from each portion of"
+" the input that matches the pattern."
+msgstr ""
+
+#: ../../source/re/index.rst:202
+msgid "Repetition"
+msgstr ""
+
+#: ../../source/re/index.rst:204
+msgid ""
+"There are five ways to express repetition in a pattern.  A pattern "
+"followed by the meta-character ``*`` is repeated zero or more times "
+"(allowing a pattern to repeat zero times means it does not need to appear"
+" at all to match).  If the ``*`` is replaced with ``+``, the pattern must"
+" appear at least once.  Using ``?`` means the pattern appears zero or one"
+" time.  For a specific number of occurrences, use ``{m}`` after the "
+"pattern, where ``m`` is the number of times the pattern should repeat.  "
+"Finally, to allow a variable but limited number of repetitions, use "
+"``{m,n}``, where ``m`` is the minimum number of repetitions and ``n`` is "
+"the maximum.  Leaving out ``n`` (``{m,}``) means the value must appear at"
+" least ``m`` times, with no maximum."
+msgstr ""
+
+#: ../../source/re/index.rst
+msgid "re_repetition.py"
+msgstr ""
+
+#: ../../source/re/index.rst:220
+msgid "There are more matches for ``ab*`` and ``ab?`` than ``ab+``."
+msgstr ""
+
+#: ../../source/re/index.rst:266
+msgid ""
+"When processing a repetition instruction, ``re`` will usually consume as "
+"much of the input as possible while matching the pattern. This so-called "
+"*greedy* behavior may result in fewer individual matches, or the matches "
+"may include more of the input text than intended.  Greediness can be "
+"turned off by following the repetition instruction with ``?``."
+msgstr ""
+
+#: ../../source/re/index.rst
+msgid "re_repetition_non_greedy.py"
+msgstr ""
+
+#: ../../source/re/index.rst:277
+msgid ""
+"Disabling greedy consumption of the input for any of the patterns where "
+"zero occurrences of ``b`` are allowed means the matched substring does "
+"not include any ``b`` characters."
+msgstr ""
+
+#: ../../source/re/index.rst:326
+msgid "Character Sets"
+msgstr ""
+
+#: ../../source/re/index.rst:328
+msgid ""
+"A *character set* is a group of characters, any one of which can match at"
+" that point in the pattern.  For example, ``[ab]`` would match either "
+"``a`` or ``b``."
+msgstr ""
+
+#: ../../source/re/index.rst
+msgid "re_charset.py"
+msgstr ""
+
+#: ../../source/re/index.rst:336
+msgid ""
+"The greedy form of the expression (``a[ab]+``) consumes the entire string"
+" because the first letter is ``a`` and every subsequent character is "
+"either ``a`` or ``b``."
+msgstr ""
+
+#: ../../source/re/index.rst:375
+msgid ""
+"A character set can also be used to exclude specific characters.  The "
+"carat (``^``) means to look for characters that are not in the set "
+"following the carat."
+msgstr ""
+
+#: ../../source/re/index.rst
+msgid "re_charset_exclude.py"
+msgstr ""
+
+#: ../../source/re/index.rst:383
+msgid ""
+"This pattern finds all of the substrings that do not contain the "
+"characters ``-``, ``.``, or a space."
+msgstr ""
+
+#: ../../source/re/index.rst:407
+msgid ""
+"As character sets grow larger, typing every character that should (or "
+"should not) match becomes tedious.  A more compact format using "
+"*character ranges* can be used to define a character set to include all "
+"of the contiguous characters between the specified start and stop points."
+msgstr ""
+
+#: ../../source/re/index.rst
+msgid "re_charset_ranges.py"
+msgstr ""
+
+#: ../../source/re/index.rst:417
+msgid ""
+"Here the range ``a-z`` includes the lowercase ASCII letters, and the "
+"range ``A-Z`` includes the uppercase ASCII letters.  The ranges can also "
+"be combined into a single character set."
+msgstr ""
+
+#: ../../source/re/index.rst:462
+msgid ""
+"As a special case of a character set, the meta-character dot, or period "
+"(``.``), indicates that the pattern should match any single character in "
+"that position."
+msgstr ""
+
+#: ../../source/re/index.rst
+msgid "re_charset_dot.py"
+msgstr ""
+
+#: ../../source/re/index.rst:470
+msgid ""
+"Combining the dot with repetition can result in very long matches, unless"
+" the non-greedy form is used."
+msgstr ""
+
+#: ../../source/re/index.rst:511
+msgid "Escape Codes"
+msgstr ""
+
+#: ../../source/re/index.rst:513
+msgid ""
+"An even more compact representation uses escape codes for several "
+"predefined character sets.  The escape codes recognized by ``re`` are "
+"listed in :table:`Regular Expression Escape Codes`."
+msgstr ""
+
+#: ../../source/re/index.rst
+msgid "Regular Expression Escape Codes"
+msgstr ""
+
+#: ../../source/re/index.rst:520 ../../source/re/index.rst:639
+msgid "Code"
+msgstr ""
+
+#: ../../source/re/index.rst:520 ../../source/re/index.rst:639
+msgid "Meaning"
+msgstr ""
+
+#: ../../source/re/index.rst:522
+msgid "``\\d``"
+msgstr ""
+
+#: ../../source/re/index.rst:522
+msgid "a digit"
+msgstr ""
+
+#: ../../source/re/index.rst:523
+msgid "``\\D``"
+msgstr ""
+
+#: ../../source/re/index.rst:523
+msgid "a non-digit"
+msgstr ""
+
+#: ../../source/re/index.rst:524
+msgid "``\\s``"
+msgstr ""
+
+#: ../../source/re/index.rst:524
+msgid "whitespace (tab, space, newline, etc.)"
+msgstr ""
+
+#: ../../source/re/index.rst:525
+msgid "``\\S``"
+msgstr ""
+
+#: ../../source/re/index.rst:525
+msgid "non-whitespace"
+msgstr ""
+
+#: ../../source/re/index.rst:526
+msgid "``\\w``"
+msgstr ""
+
+#: ../../source/re/index.rst:526
+msgid "alphanumeric"
+msgstr ""
+
+#: ../../source/re/index.rst:527
+msgid "``\\W``"
+msgstr ""
+
+#: ../../source/re/index.rst:527
+msgid "non-alphanumeric"
+msgstr ""
+
+#: ../../source/re/index.rst:532
+msgid ""
+"Escapes are indicated by prefixing the character with a backslash "
+"(``\\``). Unfortunately, a backslash must itself be escaped in normal "
+"Python strings, and that results in difficult-to-read expressions. Using "
+"*raw* strings, which are created by prefixing the literal value with "
+"``r``, eliminates this problem and maintains readability."
+msgstr ""
+
+#: ../../source/re/index.rst
+msgid "re_escape_codes.py"
+msgstr ""
+
+#: ../../source/re/index.rst:542
+msgid ""
+"These sample expressions combine escape codes with repetition to find "
+"sequences of like characters in the input string."
+msgstr ""
+
+#: ../../source/re/index.rst:598
+msgid ""
+"To match the characters that are part of the regular expression syntax, "
+"escape the characters in the search pattern."
+msgstr ""
+
+#: ../../source/re/index.rst
+msgid "re_escape_escapes.py"
+msgstr ""
+
+#: ../../source/re/index.rst:605
+msgid ""
+"The pattern in this example escapes the backslash and plus characters, "
+"since both are meta-characters and have special meaning in a regular "
+"expression."
+msgstr ""
+
+#: ../../source/re/index.rst:629
+msgid "Anchoring"
+msgstr ""
+
+#: ../../source/re/index.rst:631
+msgid ""
+"In addition to describing the content of a pattern to match, the relative"
+" location can be specified in the input text where the pattern should "
+"appear by using *anchoring* instructions.  :table:`Regular Expression "
+"Anchoring Codes` lists valid anchoring codes."
+msgstr ""
+
+#: ../../source/re/index.rst
+msgid "Regular Expression Anchoring Codes"
+msgstr ""
+
+#: ../../source/re/index.rst:641
+msgid "``^``"
+msgstr ""
+
+#: ../../source/re/index.rst:641
+msgid "start of string, or line"
+msgstr ""
+
+#: ../../source/re/index.rst:642
+msgid "``$``"
+msgstr ""
+
+#: ../../source/re/index.rst:642
+msgid "end of string, or line"
+msgstr ""
+
+#: ../../source/re/index.rst:643
+msgid "``\\A``"
+msgstr ""
+
+#: ../../source/re/index.rst:643
+msgid "start of string"
+msgstr ""
+
+#: ../../source/re/index.rst:644
+msgid "``\\Z``"
+msgstr ""
+
+#: ../../source/re/index.rst:644
+msgid "end of string"
+msgstr ""
+
+#: ../../source/re/index.rst:645
+msgid "``\\b``"
+msgstr ""
+
+#: ../../source/re/index.rst:645
+msgid "empty string at the beginning or end of a word"
+msgstr ""
+
+#: ../../source/re/index.rst:646
+msgid "``\\B``"
+msgstr ""
+
+#: ../../source/re/index.rst:646
+msgid "empty string not at the beginning or end of a word"
+msgstr ""
+
+#: ../../source/re/index.rst
+msgid "re_anchoring.py"
+msgstr ""
+
+#: ../../source/re/index.rst:653
+msgid ""
+"The patterns in the example for matching words at the beginning and the "
+"end of the string are different because the word at the end of the string"
+" is followed by punctuation to terminate the sentence.  The pattern "
+"``\\w+$`` would not match, since ``.`` is not considered an alphanumeric "
+"character."
+msgstr ""
+
+#: ../../source/re/index.rst:715
+msgid "Constraining the Search"
+msgstr ""
+
+#: ../../source/re/index.rst:717
+msgid ""
+"In situations where it is known in advance that only a subset of the full"
+" input should be searched, the regular expression match can be further "
+"constrained by telling ``re`` to limit the search range. For example, if "
+"the pattern must appear at the front of the input, then using ``match()``"
+" instead of ``search()`` will anchor the search without having to "
+"explicitly include an anchor in the search pattern."
+msgstr ""
+
+#: ../../source/re/index.rst
+msgid "re_match.py"
+msgstr ""
+
+#: ../../source/re/index.rst:729
+msgid ""
+"Since the literal text ``is`` does not appear at the start of the input "
+"text, it is not found using ``match()``.  The sequence appears two other "
+"times in the text, though, so ``search()`` finds it."
+msgstr ""
+
+#: ../../source/re/index.rst:748
+msgid ""
+"The ``fullmatch()`` method requires that the entire input string match "
+"the pattern."
+msgstr ""
+
+#: ../../source/re/index.rst
+msgid "re_fullmatch.py"
+msgstr ""
+
+#: ../../source/re/index.rst:755
+msgid ""
+"Here ``search()`` shows that the pattern does appear in the input, but it"
+" does not consume all of the input so ``fullmatch()`` does not report a "
+"match."
+msgstr ""
+
+#: ../../source/re/index.rst:774
+msgid ""
+"The ``search()`` method of a compiled regular expression accepts optional"
+" ``start`` and ``end`` position parameters to limit the search to a "
+"substring of the input."
+msgstr ""
+
+#: ../../source/re/index.rst
+msgid "re_search_substring.py"
+msgstr ""
+
+#: ../../source/re/index.rst:782
+msgid ""
+"This example implements a less efficient form of ``iterall()``. Each time"
+" a match is found, the end position of that match is used for the next "
+"search."
+msgstr ""
+
+#: ../../source/re/index.rst:803
+msgid "Dissecting Matches with Groups"
+msgstr ""
+
+#: ../../source/re/index.rst:805
+msgid ""
+"Searching for pattern matches is the basis of the powerful capabilities "
+"provided by regular expressions.  Adding *groups* to a pattern isolates "
+"parts of the matching text, expanding those capabilities to create a "
+"parser.  Groups are defined by enclosing patterns in parentheses."
+msgstr ""
+
+#: ../../source/re/index.rst
+msgid "re_groups.py"
+msgstr ""
+
+#: ../../source/re/index.rst:815
+msgid ""
+"Any complete regular expression can be converted to a group and nested "
+"within a larger expression.  All of the repetition modifiers can be "
+"applied to a group as a whole, requiring the entire group pattern to "
+"repeat."
+msgstr ""
+
+#: ../../source/re/index.rst:860
+msgid ""
+"To access the substrings matched by the individual groups within a "
+"pattern, use the ``groups()`` method of the ``Match`` object."
+msgstr ""
+
+#: ../../source/re/index.rst
+msgid "re_groups_match.py"
+msgstr ""
+
+#: ../../source/re/index.rst:867
+msgid ""
+"``Match.groups()`` returns a sequence of strings in the order of the "
+"groups within the expression that matches the string."
+msgstr ""
+
+#: ../../source/re/index.rst:899
+msgid ""
+"To ask for the match of a single group, use the ``group()`` method.  This"
+" is useful when grouping is being used to find parts of the string, but "
+"some of the parts matched by groups are not needed in the results."
+msgstr ""
+
+#: ../../source/re/index.rst
+msgid "re_groups_individual.py"
+msgstr ""
+
+#: ../../source/re/index.rst:907
+msgid ""
+"Group ``0`` represents the string matched by the entire expression, and "
+"subgroups are numbered starting with ``1`` in the order that their left "
+"parenthesis appears in the expression."
+msgstr ""
+
+#: ../../source/re/index.rst:927
+msgid ""
+"Python extends the basic grouping syntax to add *named groups*.  Using "
+"names to refer to groups makes it easier to modify the pattern over time,"
+" without having to also modify the code using the match results. To set "
+"the name of a group, use the syntax ``(?P<name>pattern)``."
+msgstr ""
+
+#: ../../source/re/index.rst
+msgid "re_groups_named.py"
+msgstr ""
+
+#: ../../source/re/index.rst:936
+msgid ""
+"Use ``groupdict()`` to retrieve the dictionary mapping group names to "
+"substrings from the match.  Named patterns are included in the ordered "
+"sequence returned by ``groups()`` as well."
+msgstr ""
+
+#: ../../source/re/index.rst:969
+msgid ""
+"An updated version of ``test_patterns()`` that shows the numbered and "
+"named groups matched by a pattern will make the following examples easier"
+" to follow."
+msgstr ""
+
+#: ../../source/re/index.rst
+msgid "re_test_patterns_groups.py"
+msgstr ""
+
+#: ../../source/re/index.rst:977
+msgid ""
+"Since a group is itself a complete regular expression, groups can be "
+"nested within other groups to build even more complicated expressions."
+msgstr ""
+
+#: ../../source/re/index.rst
+msgid "re_groups_nested.py"
+msgstr ""
+
+#: ../../source/re/index.rst:984
+msgid ""
+"In this case, the group ``(a*)`` matches an empty string, so the return "
+"value from ``groups()`` includes that empty string as the matched value."
+msgstr ""
+
+#: ../../source/re/index.rst:1006
+msgid ""
+"Groups are also useful for specifying alternative patterns.  Use the pipe"
+" symbol (``|``) to separate two patterns and indicate that either pattern"
+" should match.  Consider the placement of the pipe carefully, though.  "
+"The first expression in this example matches a sequence of ``a`` followed"
+" by a sequence consisting entirely of a single letter, ``a`` or ``b``. "
+"The second pattern matches ``a`` followed by a sequence that may include "
+"*either* ``a`` or ``b``.  The patterns are similar, but the resulting "
+"matches are completely different."
+msgstr ""
+
+#: ../../source/re/index.rst
+msgid "re_groups_alternative.py"
+msgstr ""
+
+#: ../../source/re/index.rst:1019
+msgid ""
+"When an alternative group is not matched, but the entire pattern does "
+"match, the return value of ``groups()`` includes a ``None`` value at the "
+"point in the sequence where the alternative group should appear."
+msgstr ""
+
+#: ../../source/re/index.rst:1045
+msgid ""
+"Defining a group containing a subpattern is also useful in cases where "
+"the string matching the subpattern is not part of what should be "
+"extracted from the full text.  These kinds of groups are called *non-"
+"capturing*.  Non-capturing groups can be used to describe repetition "
+"patterns or alternatives, without isolating the matching portion of the "
+"string in the value returned.  To create a non-capturing group, use the "
+"syntax ``(?:pattern)``."
+msgstr ""
+
+#: ../../source/re/index.rst
+msgid "re_groups_noncapturing.py"
+msgstr ""
+
+#: ../../source/re/index.rst:1057
+msgid ""
+"In the following example, compare the groups returned for the capturing "
+"and non-capturing forms of a pattern that matches the same results."
+msgstr ""
+
+#: ../../source/re/index.rst:1085
+msgid "Search Options"
+msgstr ""
+
+#: ../../source/re/index.rst:1087
+msgid ""
+"Option flags are used to change the way the matching engine processes an "
+"expression.  The flags can be combined using a bitwise OR operation, then"
+" passed to ``compile()``, ``search()``, ``match()``, and other functions "
+"that accept a pattern for searching."
+msgstr ""
+
+#: ../../source/re/index.rst:1093
+msgid "Case-insensitive Matching"
+msgstr ""
+
+#: ../../source/re/index.rst:1095
+msgid ""
+"``IGNORECASE`` causes literal characters and character ranges in the "
+"pattern to match both uppercase and lowercase characters."
+msgstr ""
+
+#: ../../source/re/index.rst
+msgid "re_flags_ignorecase.py"
+msgstr ""
+
+#: ../../source/re/index.rst:1102
+msgid ""
+"Since the pattern includes the literal ``T``, if ``IGNORECASE`` is not "
+"set, the only match is the word ``This``.  When case is ignored, ``text``"
+" also matches."
+msgstr ""
+
+#: ../../source/re/index.rst:1127
+msgid "Input with Multiple Lines"
+msgstr ""
+
+#: ../../source/re/index.rst:1129
+msgid ""
+"Two flags affect how searching in multi-line input works: ``MULTILINE`` "
+"and ``DOTALL``.  The ``MULTILINE`` flag controls how the pattern matching"
+" code processes anchoring instructions for text containing newline "
+"characters.  When multiline mode is turned on, the anchor rules for ``^``"
+" and ``$`` apply at the beginning and end of each line, in addition to "
+"the entire string."
+msgstr ""
+
+#: ../../source/re/index.rst
+msgid "re_flags_multiline.py"
+msgstr ""
+
+#: ../../source/re/index.rst:1140
+msgid ""
+"The pattern in the example matches the first or last word of the input.  "
+"It matches ``line.`` at the end of the string, even though there is no "
+"newline."
+msgstr ""
+
+#: ../../source/re/index.rst:1167
+msgid ""
+"``DOTALL`` is the other flag related to multiline text.  Normally, the "
+"dot character (``.``) matches everything in the input text except a "
+"newline character.  The flag allows the dot to match newlines as well."
+msgstr ""
+
+#: ../../source/re/index.rst
+msgid "re_flags_dotall.py"
+msgstr ""
+
+#: ../../source/re/index.rst:1175
+msgid ""
+"Without the flag, each line of the input text matches the pattern "
+"separately.  Adding the flag causes the entire string to be consumed."
+msgstr ""
+
+#: ../../source/re/index.rst:1199
+msgid "Unicode"
+msgstr ""
+
+#: ../../source/re/index.rst:1201
+msgid ""
+"Under Python 3, ``str`` objects use the full Unicode character set, and "
+"regular expression processing on a ``str`` assumes that the pattern and "
+"input text are both Unicode.  The escape codes described earlier are "
+"defined in terms of Unicode by default.  Those assumptions mean that the "
+"pattern ``\\w+`` will match both the words \"French\" and \"Français\". "
+"To restrict escape codes to the ASCII character set, as was the default "
+"in Python 2, use the ``ASCII`` flag when compiling the pattern or when "
+"calling the module-level functions ``search()`` and ``match()``."
+msgstr ""
+
+#: ../../source/re/index.rst
+msgid "re_flags_ascii.py"
+msgstr ""
+
+#: ../../source/re/index.rst:1215
+msgid ""
+"The other escape sequences (``\\W``, ``\\b``, ``\\B``, ``\\d``, ``\\D``, "
+"``\\s``, and ``\\S``) are also processed differently for ASCII text. "
+"Instead of consulting the Unicode database to find the properties of each"
+" character, ``re`` uses the ASCII definition of the character set."
+msgstr ""
+
+#: ../../source/re/index.rst:1236
+msgid "Verbose Expression Syntax"
+msgstr ""
+
+#: ../../source/re/index.rst:1238
+msgid ""
+"The compact format of regular expression syntax can become a hindrance as"
+" expressions grow more complicated.  As the number of groups in an "
+"expression increases, it will be more work to keep track of why each "
+"element is needed and how exactly the parts of the expression interact.  "
+"Using named groups helps mitigate these issues, but a better solution is "
+"to use *verbose mode* expressions, which allow comments and extra "
+"whitespace to be embedded in the pattern."
+msgstr ""
+
+#: ../../source/re/index.rst:1246
+msgid ""
+"A pattern to validate email addresses will illustrate how verbose mode "
+"makes working with regular expressions easier.  The first version "
+"recognizes addresses that end in one of three top-level domains: "
+"``.com``, ``.org``, or ``.edu``."
+msgstr ""
+
+#: ../../source/re/index.rst
+msgid "re_email_compact.py"
+msgstr ""
+
+#: ../../source/re/index.rst:1255
+msgid ""
+"This expression is already complex.  There are several character classes,"
+" groups, and repetition expressions."
+msgstr ""
+
+#: ../../source/re/index.rst:1273
+msgid ""
+"Converting the expression to a more verbose format will make it easier to"
+" extend."
+msgstr ""
+
+#: ../../source/re/index.rst
+msgid "re_email_verbose.py"
+msgstr ""
+
+#: ../../source/re/index.rst:1280
+msgid ""
+"The expression matches the same inputs, but in this extended format it is"
+" easier to read.  The comments also help identify different parts of the "
+"pattern so that it can be expanded to match more inputs."
+msgstr ""
+
+#: ../../source/re/index.rst:1299
+msgid ""
+"This expanded version parses inputs that include a person's name and "
+"email address, as might appear in an email header.  The name comes first "
+"and stands on its own, and the email address follows, surrounded by angle"
+" brackets (``<`` and ``>``)."
+msgstr ""
+
+#: ../../source/re/index.rst
+msgid "re_email_with_name.py"
+msgstr ""
+
+#: ../../source/re/index.rst:1308
+msgid ""
+"As with other programming languages, the ability to insert comments into "
+"verbose regular expressions helps with their maintainability. This final "
+"version includes implementation notes to future maintainers and "
+"whitespace to separate the groups from each other and highlight their "
+"nesting level."
+msgstr ""
+
+#: ../../source/re/index.rst:1354
+msgid "Embedding Flags in Patterns"
+msgstr ""
+
+#: ../../source/re/index.rst:1356
+msgid ""
+"In situations where flags cannot be added when compiling an expression, "
+"such as when a pattern is passed as an argument to a library function "
+"that will compile it later, the flags can be embedded inside the "
+"expression string itself.  For example, to turn case-insensitive matching"
+" on, add ``(?i)`` to the beginning of the expression."
+msgstr ""
+
+#: ../../source/re/index.rst
+msgid "re_flags_embedded.py"
+msgstr ""
+
+#: ../../source/re/index.rst:1367
+msgid ""
+"Because the options control the way the entire expression is evaluated or"
+" parsed, they should always appear at the beginning of the expression."
+msgstr ""
+
+#: ../../source/re/index.rst:1384
+msgid ""
+"The abbreviations for all of the flags are listed in :table:`Regular "
+"Expression Flag Abbreviations`."
+msgstr ""
+
+#: ../../source/re/index.rst
+msgid "Regular Expression Flag Abbreviations"
+msgstr ""
+
+#: ../../source/re/index.rst:1390
+msgid "Flag"
+msgstr ""
+
+#: ../../source/re/index.rst:1391
+msgid "Abbreviation"
+msgstr ""
+
+#: ../../source/re/index.rst:1392
+msgid "``ASCII``"
+msgstr ""
+
+#: ../../source/re/index.rst:1393
+msgid "``a``"
+msgstr ""
+
+#: ../../source/re/index.rst:1394
+msgid "``IGNORECASE``"
+msgstr ""
+
+#: ../../source/re/index.rst:1395
+msgid "``i``"
+msgstr ""
+
+#: ../../source/re/index.rst:1396
+msgid "``MULTILINE``"
+msgstr ""
+
+#: ../../source/re/index.rst:1397
+msgid "``m``"
+msgstr ""
+
+#: ../../source/re/index.rst:1398
+msgid "``DOTALL``"
+msgstr ""
+
+#: ../../source/re/index.rst:1399
+msgid "``s``"
+msgstr ""
+
+#: ../../source/re/index.rst:1400
+msgid "``VERBOSE``"
+msgstr ""
+
+#: ../../source/re/index.rst:1401
+msgid "``x``"
+msgstr ""
+
+#: ../../source/re/index.rst:1403
+msgid ""
+"Embedded flags can be combined by placing them within the same group. For"
+" example, ``(?im)`` turns on case-insensitive matching for multiline "
+"strings."
+msgstr ""
+
+#: ../../source/re/index.rst:1408
+msgid "Looking Ahead or Behind"
+msgstr ""
+
+#: ../../source/re/index.rst:1410
+msgid ""
+"In many cases, it is useful to match a part of a pattern only if some "
+"other part will also match.  For example, in the email parsing "
+"expression, the angle brackets were marked as optional. Realistically, "
+"the brackets should be paired, and the expression should match only if "
+"both are present, or neither is.  This modified version of the expression"
+" uses a *positive look ahead* assertion to match the pair.  The look "
+"ahead assertion syntax is ``(?=pattern)``."
+msgstr ""
+
+#: ../../source/re/index.rst
+msgid "re_look_ahead.py"
+msgstr ""
+
+#: ../../source/re/index.rst:1422
+msgid ""
+"There are several important changes in this version of the expression. "
+"First, the name portion is no longer optional.  That means stand-alone "
+"addresses do not match, but it also prevents improperly formatted "
+"name/address combinations from matching.  The positive look ahead rule "
+"after the \"name\" group asserts that either the remainder of the string "
+"is wrapped with a pair of angle brackets, or there is not a mismatched "
+"bracket; either both of or neither of the brackets is present.  The look "
+"ahead is expressed as a group, but the match for a look ahead group does "
+"not consume any of the input text, so the rest of the pattern picks up "
+"from the same spot after the look ahead matches."
+msgstr ""
+
+#: ../../source/re/index.rst:1454
+msgid ""
+"A *negative look ahead* assertion (``(?!pattern)``) says that the pattern"
+" does not match the text following the current point.  For example, the "
+"email recognition pattern could be modified to ignore the ``noreply`` "
+"mailing addresses commonly used by automated systems."
+msgstr ""
+
+#: ../../source/re/index.rst
+msgid "re_negative_look_ahead.py"
+msgstr ""
+
+#: ../../source/re/index.rst:1463
+msgid ""
+"The address starting with ``noreply`` does not match the pattern, since "
+"the look ahead assertion fails."
+msgstr ""
+
+#: ../../source/re/index.rst:1481
+msgid ""
+"Instead of looking ahead for ``noreply`` in the username portion of the "
+"email address, the pattern can alternatively be written using a *negative"
+" look behind* assertion after the username is matched using the syntax "
+"``(?<!pattern)``."
+msgstr ""
+
+#: ../../source/re/index.rst
+msgid "re_negative_look_behind.py"
+msgstr ""
+
+#: ../../source/re/index.rst:1490
+msgid ""
+"Looking backward works a little differently than looking ahead, in that "
+"the expression must use a fixed-length pattern.  Repetitions are allowed,"
+" as long as there is a fixed number of them (no wildcards or ranges)."
+msgstr ""
+
+#: ../../source/re/index.rst:1509
+msgid ""
+"A *positive look behind* assertion can be used to find text following a "
+"pattern using the syntax ``(?<=pattern)``.  In the following example, the"
+" expression finds Twitter handles."
+msgstr ""
+
+#: ../../source/re/index.rst
+msgid "re_look_behind.py"
+msgstr ""
+
+#: ../../source/re/index.rst:1517
+msgid ""
+"The pattern matches sequences of characters that can make up a Twitter "
+"handle, as long as they are preceded by an ``@``."
+msgstr ""
+
+#: ../../source/re/index.rst:1537
+msgid "Self-referencing Expressions"
+msgstr ""
+
+#: ../../source/re/index.rst:1539
+msgid ""
+"Matched values can be used in later parts of an expression.  For example,"
+" the email example can be updated to match only addresses composed of the"
+" first and last names of the person by including back-references to those"
+" groups.  The easiest way to achieve this is by referring to the "
+"previously matched group by ID number, using ``\\num``."
+msgstr ""
+
+#: ../../source/re/index.rst
+msgid "re_refer_to_group.py"
+msgstr ""
+
+#: ../../source/re/index.rst:1550
+msgid ""
+"Although the syntax is simple, creating back-references by numerical ID "
+"has a few disadvantages.  From a practical standpoint, as the expression "
+"changes, the groups must be counted again and every reference may need to"
+" be updated.  Another disadvantage is that only 99 references can be made"
+" using the standard back-reference syntax ``\\n``, because if the ID "
+"number is three digits long, it will be interpreted as an octal character"
+" value instead of a group reference.  Of course, if there are more than "
+"99 groups in an expression, there will be more serious maintenance "
+"challenges than simply not being able to refer to all of them."
+msgstr ""
+
+#: ../../source/re/index.rst:1583
+msgid ""
+"Python's expression parser includes an extension that uses ``(?P=name)`` "
+"to refer to the value of a named group matched earlier in the expression."
+msgstr ""
+
+#: ../../source/re/index.rst
+msgid "re_refer_to_named_group.py"
+msgstr ""
+
+#: ../../source/re/index.rst:1591
+msgid ""
+"The address expression is compiled with the ``IGNORECASE`` flag on, since"
+" proper names are normally capitalized but email addresses are not."
+msgstr ""
+
+#: ../../source/re/index.rst:1617
+msgid ""
+"The other mechanism for using back-references in expressions chooses a "
+"different pattern based on whether a previous group matched. The email "
+"pattern can be corrected so that the angle brackets are required if a "
+"name is present, and not required if the email address is by itself.  The"
+" syntax for testing whether if a group has matched is ``(?(id)yes-"
+"expression|no-expression)``, where ``id`` is the group name or number, "
+"``yes-expression`` is the pattern to use if the group has a value, and "
+"``no-expression`` is the pattern to use otherwise."
+msgstr ""
+
+#: ../../source/re/index.rst
+msgid "re_id.py"
+msgstr ""
+
+#: ../../source/re/index.rst:1630
+msgid ""
+"This version of the email address parser uses two tests.  If the ``name``"
+" group matches, then the look ahead assertion requires both angle "
+"brackets and sets up the ``brackets`` group.  If ``name`` is not matched,"
+" the assertion requires the rest of the text to not have angle brackets "
+"around it.  Later, if the ``brackets`` group is set, the actual pattern "
+"matching code consumes the brackets in the input using literal patterns; "
+"otherwise, it consumes any blank space."
+msgstr ""
+
+#: ../../source/re/index.rst:1663
+msgid "Modifying Strings with Patterns"
+msgstr ""
+
+#: ../../source/re/index.rst:1665
+msgid ""
+"In addition to searching through text, ``re`` supports modifying text "
+"using regular expressions as the search mechanism, and the replacements "
+"can reference groups matched in the pattern as part of the substitution "
+"text.  Use ``sub()`` to replace all occurrences of a pattern with another"
+" string."
+msgstr ""
+
+#: ../../source/re/index.rst
+msgid "re_sub.py"
+msgstr ""
+
+#: ../../source/re/index.rst:1675
+msgid ""
+"References to the text matched by the pattern can be inserted using the "
+"``\\num`` syntax used for back-references."
+msgstr ""
+
+#: ../../source/re/index.rst:1691
+msgid "To use named groups in the substitution, use the syntax ``\\g<name>``."
+msgstr ""
+
+#: ../../source/re/index.rst
+msgid "re_sub_named_groups.py"
+msgstr ""
+
+#: ../../source/re/index.rst:1697
+msgid ""
+"The ``\\g<name>`` syntax also works with numbered references, and using "
+"it eliminates any ambiguity between group numbers and surrounding literal"
+" digits."
+msgstr ""
+
+#: ../../source/re/index.rst:1714
+msgid "Pass a value to ``count`` to limit the number of substitutions performed."
+msgstr ""
+
+#: ../../source/re/index.rst
+msgid "re_sub_count.py"
+msgstr ""
+
+#: ../../source/re/index.rst:1721
+msgid "Only the first substitution is made because ``count`` is ``1``."
+msgstr ""
+
+#: ../../source/re/index.rst:1736
+msgid ""
+"``subn()`` works just like ``sub()`` except that it returns both the "
+"modified string and the count of substitutions made."
+msgstr ""
+
+#: ../../source/re/index.rst
+msgid "re_subn.py"
+msgstr ""
+
+#: ../../source/re/index.rst:1743
+msgid "The search pattern matches twice in the example."
+msgstr ""
+
+#: ../../source/re/index.rst:1759
+msgid "Splitting with Patterns"
+msgstr ""
+
+#: ../../source/re/index.rst:1761
+msgid ""
+"``str.split()`` is one of the most frequently used methods for breaking "
+"apart strings to parse them.  It supports only the use of literal values "
+"as separators, though, and sometimes a regular expression is necessary if"
+" the input is not consistently formatted.  For example, many plain text "
+"markup languages define paragraph separators as two or more newline "
+"(``\\n``) characters.  In this case, ``str.split()`` cannot be used "
+"because of the \"or more\" part of the definition."
+msgstr ""
+
+#: ../../source/re/index.rst:1769
+msgid ""
+"A strategy for identifying paragraphs using ``findall()`` would use a "
+"pattern like ``(.+?)\\n{2,}``."
+msgstr ""
+
+#: ../../source/re/index.rst
+msgid "re_paragraphs_findall.py"
+msgstr ""
+
+#: ../../source/re/index.rst:1776
+msgid ""
+"That pattern fails for paragraphs at the end of the input text, as "
+"illustrated by the fact that \"Paragraph three.\" is not part of the "
+"output."
+msgstr ""
+
+#: ../../source/re/index.rst:1795
+msgid ""
+"Extending the pattern to say that a paragraph ends with two or more "
+"newlines or the end of input fixes the problem, but makes the pattern "
+"more complicated.  Converting to ``re.split()`` instead of "
+"``re.findall()`` handles the boundary condition automatically and keeps "
+"the pattern simpler."
+msgstr ""
+
+#: ../../source/re/index.rst
+msgid "re_split.py"
+msgstr ""
+
+#: ../../source/re/index.rst:1805
+msgid ""
+"The pattern argument to ``split()`` expresses the markup specification "
+"more precisely. Two or more newline characters mark a separator point "
+"between paragraphs in the input string."
+msgstr ""
+
+#: ../../source/re/index.rst:1835
+msgid ""
+"Enclosing the expression in parentheses to define a group causes "
+"``split()`` to work more like ``str.partition()``, so it returns the "
+"separator values as well as the other parts of the string."
+msgstr ""
+
+#: ../../source/re/index.rst
+msgid "re_split_groups.py"
+msgstr ""
+
+#: ../../source/re/index.rst:1843
+msgid ""
+"The output now includes each paragraph, as well as the sequence of "
+"newlines separating them."
+msgstr ""
+
+#: ../../source/re/index.rst:1870
+msgid ":pydoc:`re`"
+msgstr ""
+
+#: ../../source/re/index.rst:1872
+msgid ""
+"`Regular Expression HOWTO "
+"<https://docs.python.org/3.5/howto/regex.html>`__ -- Andrew Kuchling's "
+"introduction to regular expressions for Python developers."
+msgstr ""
+
+#: ../../source/re/index.rst:1877
+msgid ""
+"`Kodos <http://kodos.sourceforge.net/>`_ -- An interactive regular "
+"expression testing tool by Phil Schwartz."
+msgstr ""
+
+#: ../../source/re/index.rst:1880
+msgid ""
+"`pythex <http://pythex.org>`_ -- A web-based tool for testing regular "
+"expressions created by Gabriel Rodríguez.  Inspired by Rubular."
+msgstr ""
+
+#: ../../source/re/index.rst:1884
+msgid ""
+"`Wikipedia: Regular expression "
+"<https://en.wikipedia.org/wiki/Regular_expressions>`__ -- General "
+"introduction to regular expression concepts and techniques."
+msgstr ""
+
+#: ../../source/re/index.rst:1888
+msgid ""
+":mod:`locale` -- Use the ``locale`` module to set the language "
+"configuration when working with Unicode text."
+msgstr ""
+
+#: ../../source/re/index.rst:1891
+msgid ""
+":mod:`unicodedata` -- Programmatic access to the Unicode character "
+"property database."
+msgstr ""
+

@@ -1,0 +1,94 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 18:41-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../source/asyncio/executors.rst:5
+msgid "Combining Coroutines with Threads and Processes"
+msgstr ""
+
+#: ../../source/asyncio/executors.rst:7
+msgid ""
+"A lot of existing libraries are not ready to be used with ``asyncio`` "
+"natively. They may block, or depend on concurrency features not available"
+" through the module. It is still possible to use those libraries in an "
+"application based on ``asyncio`` by using an *executor* from "
+":mod:`concurrent.futures` to run the code either in a separate thread or "
+"a separate process."
+msgstr ""
+
+#: ../../source/asyncio/executors.rst:15
+msgid "Threads"
+msgstr ""
+
+#: ../../source/asyncio/executors.rst:17
+msgid ""
+"The ``run_in_executor()`` method of the event loop takes an executor "
+"instance, a regular callable to invoke, and any arguments to be passed to"
+" the callable. It returns a ``Future`` that can be used to wait for the "
+"function to finish its work and return something. If no executor is "
+"passed in, a ``ThreadPoolExecutor`` is created. This example explicitly "
+"creates an executor to limit the number of worker threads it will have "
+"available."
+msgstr ""
+
+#: ../../source/asyncio/executors.rst:25
+msgid ""
+"A ``ThreadPoolExecutor`` starts its worker threads and then calls each of"
+" the provided functions once in a thread. This example shows how to "
+"combine ``run_in_executor()`` and ``wait()`` to have a coroutine yield "
+"control to the event loop while blocking functions run in separate "
+"threads, and then wake back up when those functions are finished."
+msgstr ""
+
+#: ../../source/asyncio/executors.rst
+msgid "asyncio_executor_thread.py"
+msgstr ""
+
+#: ../../source/asyncio/executors.rst:36
+msgid ""
+"``asyncio_executor_thread.py`` uses :mod:`logging` to conveniently "
+"indicate which thread and function are producing each log message. "
+"Because a separate logger is used in each call to ``blocks()``, the "
+"output clearly shows the same threads being reused to call multiple "
+"copies of the function with different arguments."
+msgstr ""
+
+#: ../../source/asyncio/executors.rst:71
+msgid "Processes"
+msgstr ""
+
+#: ../../source/asyncio/executors.rst:73
+msgid ""
+"A ``ProcessPoolExecutor`` works in much the same way, creating a set of "
+"worker processes instead of threads. Using separate processes requires "
+"more system resources, but for computationally-intensive operations it "
+"can make sense to run a separate task on each CPU core."
+msgstr ""
+
+#: ../../source/asyncio/executors.rst
+msgid "asyncio_executor_process.py"
+msgstr ""
+
+#: ../../source/asyncio/executors.rst:82
+msgid ""
+"The only change needed to move from threads to processes is to create a "
+"different type of executor. This example also changes the logging format "
+"string to include the process id instead of the thread name, to "
+"demonstrate that the tasks are in fact running in separate processes."
+msgstr ""
+

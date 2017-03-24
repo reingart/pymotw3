@@ -1,0 +1,704 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 18:41-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../source/datetime/index.rst:3
+msgid "datetime --- Date and Time Value Manipulation"
+msgstr ""
+
+#: ../../source/datetime/index.rst:8
+msgid ""
+"The datetime module includes functions and classes for doing date and "
+"time parsing, formatting, and arithmetic."
+msgstr ""
+
+#: ../../source/datetime/index.rst:11
+msgid ""
+"``datetime`` contains functions and classes for working with dates and "
+"times, separately and together."
+msgstr ""
+
+#: ../../source/datetime/index.rst:15
+msgid "Times"
+msgstr ""
+
+#: ../../source/datetime/index.rst:17
+msgid ""
+"Time values are represented with the ``time`` class. A ``time`` instance "
+"has attributes for :attr:`hour`, :attr:`minute`, :attr:`second`, and "
+":attr:`microsecond` and can also include time zone information."
+msgstr ""
+
+#: ../../source/datetime/index.rst
+msgid "datetime_time.py"
+msgstr ""
+
+#: ../../source/datetime/index.rst:26
+msgid ""
+"The arguments to initialize a ``time`` instance are optional, but the "
+"default of ``0`` is unlikely to be correct."
+msgstr ""
+
+#: ../../source/datetime/index.rst:46
+msgid ""
+"A ``time`` instance only holds values of time, and not a date associated "
+"with the time."
+msgstr ""
+
+#: ../../source/datetime/index.rst
+msgid "datetime_time_minmax.py"
+msgstr ""
+
+#: ../../source/datetime/index.rst:53
+msgid ""
+"The :attr:`min` and :attr:`max` class attributes reflect the valid range "
+"of times in a single day."
+msgstr ""
+
+#: ../../source/datetime/index.rst:70
+msgid "The resolution for ``time`` is limited to whole microseconds."
+msgstr ""
+
+#: ../../source/datetime/index.rst
+msgid "datetime_time_resolution.py"
+msgstr ""
+
+#: ../../source/datetime/index.rst:76
+msgid "Floating point values for microseconds cause a ``TypeError``."
+msgstr ""
+
+#: ../../source/datetime/index.rst:95
+msgid "Dates"
+msgstr ""
+
+#: ../../source/datetime/index.rst:97
+msgid ""
+"Calendar date values are represented with the ``date`` class. Instances "
+"have attributes for :attr:`year`, :attr:`month`, and :attr:`day`. It is "
+"easy to create a date representing the current date using the ``today()``"
+" class method."
+msgstr ""
+
+#: ../../source/datetime/index.rst
+msgid "datetime_date.py"
+msgstr ""
+
+#: ../../source/datetime/index.rst:106
+msgid "This example prints the current date in several formats:"
+msgstr ""
+
+#: ../../source/datetime/index.rst:134
+msgid ""
+"There are also class methods for creating instances from POSIX timestamps"
+" or integers representing date values from the Gregorian calendar, where "
+"January 1 of the year 1 is ``1`` and each subsequent day increments the "
+"value by 1."
+msgstr ""
+
+#: ../../source/datetime/index.rst
+msgid "datetime_date_fromordinal.py"
+msgstr ""
+
+#: ../../source/datetime/index.rst:143
+msgid ""
+"This example illustrates the different value types used by "
+"``fromordinal()`` and ``fromtimestamp()``."
+msgstr ""
+
+#: ../../source/datetime/index.rst:161
+msgid ""
+"As with ``time``, the range of date values supported can be determined "
+"using the :attr:`min` and :attr:`max` attributes."
+msgstr ""
+
+#: ../../source/datetime/index.rst
+msgid "datetime_date_minmax.py"
+msgstr ""
+
+#: ../../source/datetime/index.rst:168
+msgid "The resolution for dates is whole days."
+msgstr ""
+
+#: ../../source/datetime/index.rst:184
+msgid ""
+"Another way to create new ``date`` instances uses the ``replace()`` "
+"method of an existing ``date``."
+msgstr ""
+
+#: ../../source/datetime/index.rst
+msgid "datetime_date_replace.py"
+msgstr ""
+
+#: ../../source/datetime/index.rst:191
+msgid "This example changes the year, leaving the day and month unmodified."
+msgstr ""
+
+#: ../../source/datetime/index.rst:207
+msgid "timedeltas"
+msgstr ""
+
+#: ../../source/datetime/index.rst:209
+msgid ""
+"Future and past dates can be calculated using basic arithmetic on two "
+"``datetime`` objects, or by combining a ``datetime`` with a "
+"``timedelta``.  Subtracting dates produces a ``timedelta``, and a "
+"``timedelta`` can be added or subtracted from a date to produce another "
+"date. The internal values for a ``timedelta`` are stored in days, "
+"seconds, and microseconds."
+msgstr ""
+
+#: ../../source/datetime/index.rst
+msgid "datetime_timedelta.py"
+msgstr ""
+
+#: ../../source/datetime/index.rst:220
+msgid ""
+"Intermediate level values passed to the constructor are converted into "
+"days, seconds, and microseconds."
+msgstr ""
+
+#: ../../source/datetime/index.rst:241
+msgid ""
+"The full duration of a ``timedelta`` can be retrieved as a number of "
+"seconds using ``total_seconds()``."
+msgstr ""
+
+#: ../../source/datetime/index.rst
+msgid "datetime_timedelta_total_seconds.py"
+msgstr ""
+
+#: ../../source/datetime/index.rst:248
+msgid ""
+"The return value is a floating point number, to accommodate sub-second "
+"durations."
+msgstr ""
+
+#: ../../source/datetime/index.rst:270
+msgid "Date Arithmetic"
+msgstr ""
+
+#: ../../source/datetime/index.rst:272
+msgid "Date math uses the standard arithmetic operators."
+msgstr ""
+
+#: ../../source/datetime/index.rst
+msgid "datetime_date_math.py"
+msgstr ""
+
+#: ../../source/datetime/index.rst:278
+msgid ""
+"This example with date objects illustrates using ``timedelta`` objects to"
+" compute new dates, and subtracting date instances to produce timedeltas "
+"(including a negative delta value)."
+msgstr ""
+
+#: ../../source/datetime/index.rst:300
+msgid ""
+"A ``timedelta`` object also supports arithmetic with integers, floats, "
+"and other ``timedelta`` instances."
+msgstr ""
+
+#: ../../source/datetime/index.rst
+msgid "datetime_timedelta_math.py"
+msgstr ""
+
+#: ../../source/datetime/index.rst:307
+msgid ""
+"In this example, several multiples of a single day are computed, with the"
+" resulting ``timedelta`` holding the appropriate number of days or hours."
+" The final example demonstrates how to compute values by combining two "
+"``timedelta`` objects. In this case, the result is a floating point "
+"number."
+msgstr ""
+
+#: ../../source/datetime/index.rst:330
+msgid "Comparing Values"
+msgstr ""
+
+#: ../../source/datetime/index.rst:332
+msgid ""
+"Both date and time values can be compared using the standard comparison "
+"operators to determine which is earlier or later."
+msgstr ""
+
+#: ../../source/datetime/index.rst
+msgid "datetime_comparing.py"
+msgstr ""
+
+#: ../../source/datetime/index.rst:339
+msgid "All comparison operators are supported."
+msgstr ""
+
+#: ../../source/datetime/index.rst:361
+msgid "Combining Dates and Times"
+msgstr ""
+
+#: ../../source/datetime/index.rst:363
+msgid ""
+"Use the ``datetime`` class to hold values consisting of both date and "
+"time components. As with ``date``, there are several convenient class "
+"methods to make creating ``datetime`` instances from other common values."
+msgstr ""
+
+#: ../../source/datetime/index.rst
+msgid "datetime_datetime.py"
+msgstr ""
+
+#: ../../source/datetime/index.rst:372
+msgid ""
+"As might be expected, the ``datetime`` instance has all of the attributes"
+" of both a ``date`` and a ``time`` object."
+msgstr ""
+
+#: ../../source/datetime/index.rst:396
+msgid ""
+"Just as with ``date``, ``datetime`` provides convenient class methods for"
+" creating new instances. It also includes ``fromordinal()`` and "
+"``fromtimestamp()``."
+msgstr ""
+
+#: ../../source/datetime/index.rst
+msgid "datetime_datetime_combine.py"
+msgstr ""
+
+#: ../../source/datetime/index.rst:404
+msgid ""
+"``combine()`` creates ``datetime`` instances from one ``date`` and one "
+"``time`` instance."
+msgstr ""
+
+#: ../../source/datetime/index.rst:422
+msgid "Formatting and Parsing"
+msgstr ""
+
+#: ../../source/datetime/index.rst:424
+msgid ""
+"The default string representation of a datetime object uses the ISO-8601 "
+"format (``YYYY-MM-DDTHH:MM:SS.mmmmmm``). Alternate formats can be "
+"generated using ``strftime()``."
+msgstr ""
+
+#: ../../source/datetime/index.rst
+msgid "datetime_datetime_strptime.py"
+msgstr ""
+
+#: ../../source/datetime/index.rst:432
+msgid ""
+"Use ``datetime.strptime()`` to convert formatted strings to ``datetime`` "
+"instances."
+msgstr ""
+
+#: ../../source/datetime/index.rst:449
+msgid ""
+"The same formatting codes can be used with Python's `string formatting "
+"mini-language`_ by placing them after the ``:`` in the field "
+"specification of the format string."
+msgstr ""
+
+#: ../../source/datetime/index.rst
+msgid "datetime_format.py"
+msgstr ""
+
+#: ../../source/datetime/index.rst:457
+msgid ""
+"Each datetime format code must still be prefixed with ``%``, and "
+"subsequent colons are treated as literal characters to include in the "
+"output."
+msgstr ""
+
+#: ../../source/datetime/index.rst:477
+msgid ""
+"The following table demonstrates all of the formatting codes for 5:00 PM "
+"January 13, 2016 in the US/Eastern time zone."
+msgstr ""
+
+#: ../../source/datetime/index.rst
+msgid "strptime/strftime format codes"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "Symbol"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "Meaning"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "Example"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "``%a``"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "Abbreviated weekday name"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "``'Wed'``"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "``%A``"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "Full weekday name"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "``'Wednesday'``"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "``%w``"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "Weekday number -- 0 (Sunday) through 6 (Saturday)"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "``'3'``"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+#, python-format
+msgid "``%d``"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "Day of the month (zero padded)"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "``'13'``"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "``%b``"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "Abbreviated month name"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "``'Jan'``"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "``%B``"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "Full month name"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "``'January'``"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "``%m``"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "Month of the year"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "``'01'``"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "``%y``"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "Year without century"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "``'16'``"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "``%Y``"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "Year with century"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "``'2016'``"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "``%H``"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "Hour from 24-hour clock"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "``'17'``"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "``%I``"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "Hour from 12-hour clock"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "``'05'``"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "``%p``"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "AM/PM"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "``'PM'``"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "``%M``"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "Minutes"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "``'00'``"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "``%S``"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "Seconds"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+#, python-format
+msgid "``%f``"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "Microseconds"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "``'000000'``"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "``%z``"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "UTC offset for time zone-aware objects"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "``'-0500'``"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "``%Z``"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "Time Zone name"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "``'EST'``"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "``%j``"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "Day of the year"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "``'013'``"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "``%W``"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "Week of the year"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "``'02'``"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+#, python-format
+msgid "``%c``"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "Date and time representation for the current locale"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "``'Wed Jan 13 17:00:00 2016'``"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+#, python-format
+msgid "``%x``"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "Date representation for the current locale"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "``'01/13/16'``"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+#, python-format
+msgid "``%X``"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "Time representation for the current locale"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "``'17:00:00'``"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+#, python-format
+msgid "``%%``"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "A literal ``%`` character"
+msgstr ""
+
+#: ../../source/datetime/index.rst:1
+msgid "``'%'``"
+msgstr ""
+
+#: ../../source/datetime/index.rst:551
+msgid "Time Zones"
+msgstr ""
+
+#: ../../source/datetime/index.rst:553
+msgid ""
+"Within ``datetime``, time zones are represented by subclasses of "
+"``tzinfo``. Since ``tzinfo`` is an abstract base class, applications need"
+" to define a subclass and provide appropriate implementations for a few "
+"methods to make it useful."
+msgstr ""
+
+#: ../../source/datetime/index.rst:558
+msgid ""
+"``datetime`` does include a somewhat naive implementation in the class "
+"``timezone`` that uses a fixed offset from UTC, and does not support "
+"different offset values on different days of the year, such as where "
+"daylight savings time applies, or where the offset from UTC has changed "
+"over time."
+msgstr ""
+
+#: ../../source/datetime/index.rst
+msgid "datetime_timezone.py"
+msgstr ""
+
+#: ../../source/datetime/index.rst:568
+msgid ""
+"To convert a datetime value from one time zone to another, use "
+"``astimezone()``. In the example above, two separate time zones 6 hours "
+"on either side of UTC are shown, and the ``utc`` instance from "
+"``datetime.timezone`` is also used for reference. The final output line "
+"shows the value in the system timezone, acquired by calling "
+"``astimezone()`` with no argument."
+msgstr ""
+
+#: ../../source/datetime/index.rst:593
+msgid ""
+"The third party module pytz_ is a better implementation for time zones. "
+"It supports named time zones, and the offset database is kept up to date "
+"as changes are made by political bodies around the world."
+msgstr ""
+
+#: ../../source/datetime/index.rst:600
+msgid ":pydoc:`datetime`"
+msgstr ""
+
+#: ../../source/datetime/index.rst:602
+msgid ":ref:`Python 2 to 3 porting notes for datetime <porting-datetime>`"
+msgstr ""
+
+#: ../../source/datetime/index.rst:604
+msgid ":mod:`calendar` -- The ``calendar`` module."
+msgstr ""
+
+#: ../../source/datetime/index.rst:606
+msgid ":mod:`time` -- The ``time`` module."
+msgstr ""
+
+#: ../../source/datetime/index.rst:608
+msgid ""
+"`dateutil <http://labix.org/python-dateutil>`_ -- ``dateutil`` from Labix"
+" extends the ``datetime`` module with additional features."
+msgstr ""
+
+#: ../../source/datetime/index.rst:612
+msgid ""
+"pytz_ -- World Time Zone database and classes for making ``datetime`` "
+"objects time zone-aware."
+msgstr ""
+
+#: ../../source/datetime/index.rst:615
+msgid ""
+"`WikiPedia: Proleptic Gregorian calendar "
+"<https://en.wikipedia.org/wiki/Proleptic_Gregorian_calendar>`_ -- A "
+"description of the Gregorian calendar system."
+msgstr ""
+
+#: ../../source/datetime/index.rst:619
+msgid "`ISO 8601`_ -- The standard for numeric representation of Dates and Time"
+msgstr ""
+

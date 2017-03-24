@@ -1,0 +1,233 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 18:41-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../source/dbm/index.rst:3
+msgid "dbm --- Unix Key-Value Databases"
+msgstr ""
+
+#: ../../source/dbm/index.rst:8
+msgid ""
+"dbm provides a generic dictionary-like interface to DBM-style, string-"
+"keyed databases"
+msgstr ""
+
+#: ../../source/dbm/index.rst:10
+msgid ""
+"``dbm`` is a front-end for DBM-style databases that use simple string "
+"values as keys to access records containing strings.  It uses "
+"``whichdb()`` to identify databases, then opens them with the appropriate"
+" module.  It is used as a back-end for :mod:`shelve`, which stores "
+"objects in a DBM database using :mod:`pickle`."
+msgstr ""
+
+#: ../../source/dbm/index.rst:17
+msgid "Database Types"
+msgstr ""
+
+#: ../../source/dbm/index.rst:19
+msgid ""
+"Python comes with several modules for accessing DBM-style databases. The "
+"default implementation selected depends on the libraries available on the"
+" current system and the options used when Python was compiled. Separate "
+"interfaces to the specific implementations allow Python programs to "
+"exchange data with programs in other languages that do not automatically "
+"switch between available formats, or to write portable data files that "
+"will work on multiple platforms."
+msgstr ""
+
+#: ../../source/dbm/index.rst:28
+msgid "dbm.gnu"
+msgstr ""
+
+#: ../../source/dbm/index.rst:30
+msgid ""
+":mod:`dbm.gnu` is an interface to the version of the ``dbm`` library from"
+" the GNU project.  It works the same as the other DBM implementations "
+"described here, with a few changes to the ``flags`` supported by "
+"``open()``."
+msgstr ""
+
+#: ../../source/dbm/index.rst:35
+msgid ""
+"Besides the standard ``'r'``, ``'w'``, ``'c'``, and ``'n'`` flags, "
+"``dbm.gnu.open()`` supports:"
+msgstr ""
+
+#: ../../source/dbm/index.rst:38
+msgid ""
+"``'f'`` to open the database in *fast* mode. In fast mode, writes to the "
+"database are not synchronized."
+msgstr ""
+
+#: ../../source/dbm/index.rst:40
+msgid ""
+"``'s'`` to open the database in *synchronized* mode. Changes to the "
+"database are written to the file as they are made, rather than being "
+"delayed until the database is closed or synced explicitly."
+msgstr ""
+
+#: ../../source/dbm/index.rst:44
+msgid "``'u'`` to open the database unlocked."
+msgstr ""
+
+#: ../../source/dbm/index.rst:47
+msgid "dbm.ndbm"
+msgstr ""
+
+#: ../../source/dbm/index.rst:49
+msgid ""
+"The :mod:`dbm.ndbm` module provides an interface to the Unix ndbm "
+"implementations of the dbm format, depending on how the module was "
+"configured during compilation.  The module attribute ``library`` "
+"identifies the name of the library ``configure`` was able to find when "
+"the extension module was compiled."
+msgstr ""
+
+#: ../../source/dbm/index.rst:56
+msgid "dbm.dumb"
+msgstr ""
+
+#: ../../source/dbm/index.rst:58
+msgid ""
+"The :mod:`dbm.dumb` module is a portable fallback implementation of the "
+"DBM API when no other implementations are available.  No external "
+"dependencies are required to use :mod:`dbm.dumb`, but it is slower than "
+"most other implementations."
+msgstr ""
+
+#: ../../source/dbm/index.rst:65
+msgid "Creating a New Database"
+msgstr ""
+
+#: ../../source/dbm/index.rst:67
+msgid ""
+"The storage format for new databases is selected by looking for usable "
+"versions of each of the sub-modules in order."
+msgstr ""
+
+#: ../../source/dbm/index.rst:78
+msgid "``dbm.gnu``"
+msgstr ""
+
+#: ../../source/dbm/index.rst:79
+msgid "``dbm.ndbm``"
+msgstr ""
+
+#: ../../source/dbm/index.rst:80
+msgid "``dbm.dumb``"
+msgstr ""
+
+#: ../../source/dbm/index.rst:84
+msgid ""
+"The ``open()`` function takes ``flags`` to control how the database file "
+"is managed.  To create a new database when necessary, use ``'c'``.  Using"
+" ``'n'`` always creates a new database, overwriting an existing file."
+msgstr ""
+
+#: ../../source/dbm/index.rst
+msgid "dbm_new.py"
+msgstr ""
+
+#: ../../source/dbm/index.rst:93
+msgid "In this example, the file is always re-initialized."
+msgstr ""
+
+#: ../../source/dbm/index.rst:108
+msgid "``whichdb()`` reports the type of database that was created."
+msgstr ""
+
+#: ../../source/dbm/index.rst
+msgid "dbm_whichdb.py"
+msgstr ""
+
+#: ../../source/dbm/index.rst:114
+msgid ""
+"Output from the example program will vary, depending on which modules are"
+" installed on the system."
+msgstr ""
+
+#: ../../source/dbm/index.rst:131
+msgid "Opening an Existing Database"
+msgstr ""
+
+#: ../../source/dbm/index.rst:133
+msgid ""
+"To open an existing database, use ``flags`` of either ``'r'`` (for read-"
+"only) or ``'w'`` (for read-write).  Existing databases are automatically "
+"given to ``whichdb()`` to identify, so it as long as a file can be "
+"identified, the appropriate module is used to open it."
+msgstr ""
+
+#: ../../source/dbm/index.rst
+msgid "dbm_existing.py"
+msgstr ""
+
+#: ../../source/dbm/index.rst:142
+msgid ""
+"Once open, ``db`` is a dictionary-like object. New keys are always "
+"converted to byte strings when added to the database, and returned as "
+"byte strings."
+msgstr ""
+
+#: ../../source/dbm/index.rst:163
+msgid "Error Cases"
+msgstr ""
+
+#: ../../source/dbm/index.rst:165
+msgid "The keys of the database need to be strings."
+msgstr ""
+
+#: ../../source/dbm/index.rst
+msgid "dbm_intkeys.py"
+msgstr ""
+
+#: ../../source/dbm/index.rst:171
+msgid "Passing another type results in a ``TypeError``."
+msgstr ""
+
+#: ../../source/dbm/index.rst:185
+msgid "Values must be strings or ``None``."
+msgstr ""
+
+#: ../../source/dbm/index.rst
+msgid "dbm_intvalue.py"
+msgstr ""
+
+#: ../../source/dbm/index.rst:191
+msgid "A similar ``TypeError`` is raised if a value is not a string."
+msgstr ""
+
+#: ../../source/dbm/index.rst:207
+msgid ":pydoc:`dbm`"
+msgstr ""
+
+#: ../../source/dbm/index.rst:209
+msgid ":ref:`Python 2 to 3 porting notes for anydbm <porting-anydbm>`"
+msgstr ""
+
+#: ../../source/dbm/index.rst:211
+msgid ":ref:`Python 2 to 3 porting notes for whichdb <porting-whichdb>`"
+msgstr ""
+
+#: ../../source/dbm/index.rst:213
+msgid ""
+":mod:`shelve` -- Examples for the ``shelve`` module, which uses ``dbm`` "
+"to store data."
+msgstr ""
+

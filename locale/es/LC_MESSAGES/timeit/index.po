@@ -1,0 +1,222 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 18:41-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../source/timeit/index.rst:3
+msgid "timeit --- Time the execution of small bits of Python code."
+msgstr ""
+
+#: ../../source/timeit/index.rst:8
+msgid "Time the execution of small bits of Python code."
+msgstr ""
+
+#: ../../source/timeit/index.rst:10
+msgid ""
+"The ``timeit`` module provides a simple interface for determining the "
+"execution time of small bits of Python code. It uses a platform-specific "
+"time function to provide the most accurate time calculation possible and "
+"reduces the impact of start-up or shutdown costs on the time calculation "
+"by executing the code repeatedly."
+msgstr ""
+
+#: ../../source/timeit/index.rst:17
+msgid "Module Contents"
+msgstr ""
+
+#: ../../source/timeit/index.rst:19
+msgid ""
+"``timeit`` defines a single public class, ``Timer``. The constructor for "
+"``Timer`` takes a statement to be timed and a \"setup\" statement (used "
+"to initialize variables, for example). The Python statements should be "
+"strings and can include embedded newlines."
+msgstr ""
+
+#: ../../source/timeit/index.rst:24
+msgid ""
+"The ``timeit()`` method runs the setup statement one time, then executes "
+"the primary statement repeatedly and returns the amount of time that "
+"passes. The argument to ``timeit()`` controls how many times to run the "
+"statement; the default is 1,000,000."
+msgstr ""
+
+#: ../../source/timeit/index.rst:30
+msgid "Basic Example"
+msgstr ""
+
+#: ../../source/timeit/index.rst:32
+msgid ""
+"To illustrate how the various arguments to ``Timer`` are used, here is a "
+"simple example that prints an identifying value when each statement is "
+"executed."
+msgstr ""
+
+#: ../../source/timeit/index.rst
+msgid "timeit_example.py"
+msgstr ""
+
+#: ../../source/timeit/index.rst:40
+msgid ""
+"When run, the output shows the results of the repeated calls to "
+"``print()``."
+msgstr ""
+
+#: ../../source/timeit/index.rst:71
+msgid ""
+"``timeit()`` runs the setup statement one time, then calls the main "
+"statement ``count`` times. It returns a single floating point value "
+"representing the cumulative amount of time spent running the main "
+"statement."
+msgstr ""
+
+#: ../../source/timeit/index.rst:76
+msgid ""
+"When ``repeat()`` is used, it calls ``timeit()`` several times (3 in this"
+" case) and all of the responses are returned in a list."
+msgstr ""
+
+#: ../../source/timeit/index.rst:81
+msgid "Storing Values in a Dictionary"
+msgstr ""
+
+#: ../../source/timeit/index.rst:83
+msgid ""
+"This more complex example compares the amount of time it takes to "
+"populate a dictionary with a large number of values using a variety of "
+"methods. First, a few constants are needed to configure the ``Timer``.  "
+"The ``setup_statement`` variable initializes a list of tuples containing "
+"strings and integers that will be used by the main statements to build "
+"dictionaries using the strings as keys and storing the integers as the "
+"associated values."
+msgstr ""
+
+#: ../../source/timeit/index.rst:94
+msgid ""
+"A utility function, ``show_results()``, is defined to print the results "
+"in a useful format.  The ``timeit()`` method returns the amount of time "
+"it takes to execute the statement repeatedly. The output of "
+"``show_results()`` converts that into the amount of time it takes per "
+"iteration, and then further reduces the value to the average amount of "
+"time it takes to store one item in the dictionary."
+msgstr ""
+
+#: ../../source/timeit/index.rst:104
+msgid ""
+"To establish a baseline, the first configuration tested uses "
+"``__setitem__()``.  All of the other variations avoid overwriting values "
+"already in the dictionary, so this simple version should be the fastest."
+msgstr ""
+
+#: ../../source/timeit/index.rst:109
+msgid ""
+"The first argument to ``Timer`` is a multi-line string, with white space "
+"preserved to ensure that it parses correctly when run. The second "
+"argument is a constant established to initialize the list of values and "
+"the dictionary."
+msgstr ""
+
+#: ../../source/timeit/index.rst:117
+msgid ""
+"The next variation uses ``setdefault()`` to ensure that values already in"
+" the dictionary are not overwritten."
+msgstr ""
+
+#: ../../source/timeit/index.rst:123
+msgid ""
+"This method adds the value only if a ``KeyError`` exception is raised "
+"when looking for the existing value."
+msgstr ""
+
+#: ../../source/timeit/index.rst:130
+msgid ""
+"And the last method uses \"``in``\" to determine if a dictionary has a "
+"particular key."
+msgstr ""
+
+#: ../../source/timeit/index.rst:136
+msgid "When run, the script produces the following output."
+msgstr ""
+
+#: ../../source/timeit/index.rst:156
+msgid ""
+"Those times are for a MacMini, and will vary depending on what hardware "
+"is used and what other programs are running on the system. Experiment "
+"with the ``range_size`` and ``count`` variables, since different "
+"combinations will produce different results."
+msgstr ""
+
+#: ../../source/timeit/index.rst:162
+msgid "From the Command Line"
+msgstr ""
+
+#: ../../source/timeit/index.rst:164
+msgid ""
+"In addition to the programmatic interface, ``timeit`` provides a command "
+"line interface for testing modules without instrumentation."
+msgstr ""
+
+#: ../../source/timeit/index.rst:167
+msgid ""
+"To run the module, use the ``-m`` option to the Python interpreter to "
+"find the module and treat it as the main program:"
+msgstr ""
+
+#: ../../source/timeit/index.rst:174
+msgid "For example, to get help:"
+msgstr ""
+
+#: ../../source/timeit/index.rst:188
+msgid ""
+"The ``statement`` argument works a little differently on the command line"
+" than the argument to ``Timer``.  Instead of using one long string, pass "
+"each line of the instructions as a separate command line argument. To "
+"indent lines (such as inside a loop), embed spaces in the string by "
+"enclosing it in quotes."
+msgstr ""
+
+#: ../../source/timeit/index.rst:210
+msgid ""
+"It is also possible to define a function with more complex code, then "
+"call the function from the command line."
+msgstr ""
+
+#: ../../source/timeit/index.rst
+msgid "timeit_setitem.py"
+msgstr ""
+
+#: ../../source/timeit/index.rst:217
+msgid ""
+"To run the test, pass in code that imports the modules and runs the test "
+"function."
+msgstr ""
+
+#: ../../source/timeit/index.rst:236
+msgid ":pydoc:`timeit`"
+msgstr ""
+
+#: ../../source/timeit/index.rst:238
+msgid ""
+":mod:`profile` -- The ``profile`` module is also useful for performance "
+"analysis."
+msgstr ""
+
+#: ../../source/timeit/index.rst:241
+msgid ""
+":ref:`time-monotonic` -- Discussion of the monotonic clock from the "
+"``time`` module."
+msgstr ""
+

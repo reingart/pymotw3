@@ -1,0 +1,234 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 18:41-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../source/http.server/index.rst:3
+msgid "http.server --- Base Classes for Implementing Web Servers"
+msgstr ""
+
+#: ../../source/http.server/index.rst:8
+msgid "http.server includes classes that can form the basis of a web server."
+msgstr ""
+
+#: ../../source/http.server/index.rst:11
+msgid ""
+"``http.server`` uses classes from :mod:`socketserver` to create base "
+"classes for making HTTP servers. ``HTTPServer`` can be used directly, but"
+" the ``BaseHTTPRequestHandler`` is intended to be extended to handle each"
+" protocol method (GET, POST, etc.)."
+msgstr ""
+
+#: ../../source/http.server/index.rst:17
+msgid "HTTP GET"
+msgstr ""
+
+#: ../../source/http.server/index.rst:19
+msgid ""
+"To add support for an HTTP method in a request handler class, implement "
+"the method ``do_METHOD()``, replacing ``METHOD`` with the name of the "
+"HTTP method (e.g., ``do_GET()``, ``do_POST()``, etc.). For consistency, "
+"the request handler methods take no arguments. All of the parameters for "
+"the request are parsed by ``BaseHTTPRequestHandler`` and stored as "
+"instance attributes of the request instance."
+msgstr ""
+
+#: ../../source/http.server/index.rst:27
+msgid ""
+"This example request handler illustrates how to return a response to the "
+"client, and some of the local attributes that can be useful in building "
+"the response."
+msgstr ""
+
+#: ../../source/http.server/index.rst
+msgid "http_server_GET.py"
+msgstr ""
+
+#: ../../source/http.server/index.rst:35
+msgid ""
+"The message text is assembled and then written to :attr:`wfile`, the file"
+" handle wrapping the response socket. Each response needs a response "
+"code, set via ``send_response()``. If an error code is used (404, 501, "
+"etc.), an appropriate default error message is included in the header, or"
+" a message can be passed with the error code."
+msgstr ""
+
+#: ../../source/http.server/index.rst:41
+msgid ""
+"To run the request handler in a server, pass it to the constructor of "
+"``HTTPServer``, as in the ``__main__`` processing portion of the sample "
+"script."
+msgstr ""
+
+#: ../../source/http.server/index.rst:45
+msgid "Then start the server:"
+msgstr ""
+
+#: ../../source/http.server/index.rst:53
+msgid "In a separate terminal, use ``curl`` to access it:"
+msgstr ""
+
+#: ../../source/http.server/index.rst:92
+msgid ""
+"The output produced by different versions of ``curl`` may vary. If "
+"running the examples produces different output, check the version number "
+"reported by ``curl``."
+msgstr ""
+
+#: ../../source/http.server/index.rst:99
+msgid "HTTP POST"
+msgstr ""
+
+#: ../../source/http.server/index.rst:101
+msgid ""
+"Supporting POST requests is a little more work, because the base class "
+"does not parse the form data automatically. The :mod:`cgi` module "
+"provides the ``FieldStorage`` class which knows how to parse the form, if"
+" it is given the correct inputs."
+msgstr ""
+
+#: ../../source/http.server/index.rst
+msgid "http_server_POST.py"
+msgstr ""
+
+#: ../../source/http.server/index.rst:110
+msgid "Run the server in one window:"
+msgstr ""
+
+#: ../../source/http.server/index.rst:118
+msgid ""
+"The arguments to ``curl`` can include form data to be posted to the "
+"server by using the ``-F`` option. The last argument, ``-F "
+"datafile=@http_server_GET.py``, posts the contents of the file "
+"``http_server_GET.py`` to illustrate reading file data from the form."
+msgstr ""
+
+#: ../../source/http.server/index.rst:156
+msgid "Threading and Forking"
+msgstr ""
+
+#: ../../source/http.server/index.rst:158
+msgid ""
+"``HTTPServer`` is a simple subclass of ``socketserver.TCPServer``, and "
+"does not use multiple threads or processes to handle requests. To add "
+"threading or forking, create a new class using the appropriate mix-in "
+"from :mod:`socketserver`."
+msgstr ""
+
+#: ../../source/http.server/index.rst
+msgid "http_server_threads.py"
+msgstr ""
+
+#: ../../source/http.server/index.rst:167
+msgid "Run the server in the same way as the other examples."
+msgstr ""
+
+#: ../../source/http.server/index.rst:175
+msgid ""
+"Each time the server receives a request, it starts a new thread or "
+"process to handle it:"
+msgstr ""
+
+#: ../../source/http.server/index.rst:192
+msgid ""
+"Swapping ``ForkingMixIn`` for ``ThreadingMixIn`` would achieve similar "
+"results, using separate processes instead of threads."
+msgstr ""
+
+#: ../../source/http.server/index.rst:196
+msgid "Handling Errors"
+msgstr ""
+
+#: ../../source/http.server/index.rst:198
+msgid ""
+"Handle errors by calling :meth:`send_error`, passing the appropriate "
+"error code and an optional error message.  The entire response (with "
+"headers, status code, and body) is generated automatically."
+msgstr ""
+
+#: ../../source/http.server/index.rst
+msgid "http_server_errors.py"
+msgstr ""
+
+#: ../../source/http.server/index.rst:207
+msgid "In this case, a 404 error is always returned."
+msgstr ""
+
+#: ../../source/http.server/index.rst:215
+msgid ""
+"The error message is reported to the client using an HTML document as "
+"well as the header to indicate an error code."
+msgstr ""
+
+#: ../../source/http.server/index.rst:248
+msgid "Setting Headers"
+msgstr ""
+
+#: ../../source/http.server/index.rst:250
+msgid ""
+"The :mod:`send_header` method adds header data to the HTTP response. It "
+"takes two arguments: the name of the header and the value."
+msgstr ""
+
+#: ../../source/http.server/index.rst
+msgid "http_server_send_header.py"
+msgstr ""
+
+#: ../../source/http.server/index.rst:257
+msgid ""
+"This example sets the ``Last-Modified`` header to the current timestamp, "
+"formatted according to RFC 7231."
+msgstr ""
+
+#: ../../source/http.server/index.rst:272
+msgid "The server logs the request to the terminal, like in the other examples."
+msgstr ""
+
+#: ../../source/http.server/index.rst:283
+msgid "Command Line Use"
+msgstr ""
+
+#: ../../source/http.server/index.rst:285
+msgid ""
+"``http.server`` includes a built-in server for serving files from the "
+"local file system. Start it from the command line using the ``-m`` option"
+" for the Python interpreter."
+msgstr ""
+
+#: ../../source/http.server/index.rst:296
+msgid ""
+"The root directory of the server is the working directory where the "
+"server is started."
+msgstr ""
+
+#: ../../source/http.server/index.rst:313
+msgid ":pydoc:`http.server`"
+msgstr ""
+
+#: ../../source/http.server/index.rst:315
+msgid ""
+":mod:`socketserver` -- The ``socketserver`` module provides the base "
+"class that handles the raw socket connection."
+msgstr ""
+
+#: ../../source/http.server/index.rst:318
+msgid ""
+":rfc:`7231` -- \"Hypertext Transfer Protocol (HTTP/1.1): Semantics and "
+"Content\" includes a specification for the format of HTTP headers and "
+"dates."
+msgstr ""
+

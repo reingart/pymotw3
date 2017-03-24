@@ -1,0 +1,380 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 18:41-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../source/xmlrpc.server/index.rst:3
+msgid "xmlrpc.server --- An XML-RPC server"
+msgstr ""
+
+#: ../../source/xmlrpc.server/index.rst:8
+msgid "Implements an XML-RPC server."
+msgstr ""
+
+#: ../../source/xmlrpc.server/index.rst:10
+msgid ""
+"The ``xmlrpc.server`` module contains classes for creating cross-"
+"platform, language-independent servers using the XML-RPC protocol. Client"
+" libraries exist for many other languages besides Python, making XML-RPC "
+"an easy choice for building RPC-style services."
+msgstr ""
+
+#: ../../source/xmlrpc.server/index.rst:17
+msgid ""
+"All of the examples provided here include a client module as well to "
+"interact with the demonstration server. To run the examples, use two "
+"separate shell windows, one for the server and one for the client."
+msgstr ""
+
+#: ../../source/xmlrpc.server/index.rst:23
+msgid "A Simple Server"
+msgstr ""
+
+#: ../../source/xmlrpc.server/index.rst:25
+msgid ""
+"This simple server example exposes a single function that takes the name "
+"of a directory and returns the contents. The first step is to create the "
+"``SimpleXMLRPCServer`` instance and tell it where to listen for incoming "
+"requests ('localhost' port 9000 in this case). Then a function is defined"
+" to be part of the service, and registered so the server knows how to "
+"call it. The final step is to put the server into an infinite loop "
+"receiving and responding to requests."
+msgstr ""
+
+#: ../../source/xmlrpc.server/index.rst:36
+msgid ""
+"This implementation has obvious security implications.  Do not run it on "
+"a server on the open Internet or in any environment where security might "
+"be an issue."
+msgstr ""
+
+#: ../../source/xmlrpc.server/index.rst
+msgid "xmlrpc_function.py"
+msgstr ""
+
+#: ../../source/xmlrpc.server/index.rst:44
+msgid ""
+"The server can be accessed at the URL ``http://localhost:9000`` using "
+":mod:`xmlrpc.client`.  This client code illustrates how to call the "
+"``list_contents()`` service from Python."
+msgstr ""
+
+#: ../../source/xmlrpc.server/index.rst
+msgid "xmlrpc_function_client.py"
+msgstr ""
+
+#: ../../source/xmlrpc.server/index.rst:52
+msgid ""
+"The ``ServerProxy`` is connected to the server using its base URL, and "
+"then methods are called directly on the proxy. Each method invoked on the"
+" proxy is translated into a request to the server. The arguments are "
+"formatted using XML, and then sent to the server in a POST message. The "
+"server unpacks the XML and determines which function to call based on the"
+" method name invoked from the client. The arguments are passed to the "
+"function, and the return value is translated back to XML to be returned "
+"to the client."
+msgstr ""
+
+#: ../../source/xmlrpc.server/index.rst:61
+msgid "Starting the server gives the following output."
+msgstr ""
+
+#: ../../source/xmlrpc.server/index.rst:69
+msgid ""
+"Running the client in a second window shows the contents of the ``/tmp`` "
+"directory."
+msgstr ""
+
+#: ../../source/xmlrpc.server/index.rst:81
+msgid "After the request is finished, log output appears in the server window."
+msgstr ""
+
+#: ../../source/xmlrpc.server/index.rst:92
+msgid ""
+"The first line of output is from the ``logging.info()`` call inside "
+"``list_contents()``. The second line is from the server logging the "
+"request because ``logRequests`` is ``True``."
+msgstr ""
+
+#: ../../source/xmlrpc.server/index.rst:97
+msgid "Alternate API Names"
+msgstr ""
+
+#: ../../source/xmlrpc.server/index.rst:99
+msgid ""
+"Sometimes the function names used inside a module or library are not the "
+"names that should be used in the external API.  Names may change because "
+"a platform-specific implementation is loaded, the service API is built "
+"dynamically based on a configuration file, or real functions can be "
+"replaced with stubs for testing.  To register a function with an "
+"alternate name, pass the name as the second argument to "
+"``register_function()``."
+msgstr ""
+
+#: ../../source/xmlrpc.server/index.rst
+msgid "xmlrpc_alternate_name.py"
+msgstr ""
+
+#: ../../source/xmlrpc.server/index.rst:111
+msgid ""
+"The client should now use the name ``dir()`` instead of "
+"``list_contents()``."
+msgstr ""
+
+#: ../../source/xmlrpc.server/index.rst
+msgid "xmlrpc_alternate_name_client.py"
+msgstr ""
+
+#: ../../source/xmlrpc.server/index.rst:118
+msgid ""
+"Calling ``list_contents()`` results in an error, since the server no "
+"longer has a handler registered by that name."
+msgstr ""
+
+#: ../../source/xmlrpc.server/index.rst:135
+msgid "Dotted API Names"
+msgstr ""
+
+#: ../../source/xmlrpc.server/index.rst:137
+msgid ""
+"Individual functions can be registered with names that are not normally "
+"legal for Python identifiers. For example, a period (``.``) can be "
+"included in the names to separate the namespace in the service. The next "
+"example extends the \"directory\" service to add \"create\" and "
+"\"remove\" calls. All of the functions are registered using the prefix "
+"\"``dir.``\" so that the same server can provide other services using a "
+"different prefix. One other difference in this example is that some of "
+"the functions return ``None``, so the server has to be told to translate "
+"the ``None`` values to a nil value."
+msgstr ""
+
+#: ../../source/xmlrpc.server/index.rst
+msgid "xmlrpc_dotted_name.py"
+msgstr ""
+
+#: ../../source/xmlrpc.server/index.rst:151
+msgid ""
+"To call the service functions in the client, simply refer to them with "
+"the dotted name."
+msgstr ""
+
+#: ../../source/xmlrpc.server/index.rst
+msgid "xmlrpc_dotted_name_client.py"
+msgstr ""
+
+#: ../../source/xmlrpc.server/index.rst:158
+msgid ""
+"Assuming there is no ``/tmp/EXAMPLE`` file on the current system, the "
+"output for the sample client script is as follows."
+msgstr ""
+
+#: ../../source/xmlrpc.server/index.rst:173
+msgid "Arbitrary API Names"
+msgstr ""
+
+#: ../../source/xmlrpc.server/index.rst:175
+msgid ""
+"Another interesting feature is the ability to register functions with "
+"names that are otherwise invalid Python object attribute names. This "
+"example service registers a function with the name \"``multiply args``\"."
+msgstr ""
+
+#: ../../source/xmlrpc.server/index.rst
+msgid "xmlrpc_arbitrary_name.py"
+msgstr ""
+
+#: ../../source/xmlrpc.server/index.rst:184
+msgid ""
+"Since the registered name contains a space, dot notation cannot be used "
+"to access it directly from the proxy.  Using ``getattr()`` does work, "
+"however."
+msgstr ""
+
+#: ../../source/xmlrpc.server/index.rst
+msgid "xmlrpc_arbitrary_name_client.py"
+msgstr ""
+
+#: ../../source/xmlrpc.server/index.rst:192
+msgid ""
+"Avoid creating services with names like this, though.  This example is "
+"provided not necessarily because it is a good idea, but because existing "
+"services with arbitrary names exist, and new programs may need to be able"
+" to call them."
+msgstr ""
+
+#: ../../source/xmlrpc.server/index.rst:204
+msgid "Exposing Methods of Objects"
+msgstr ""
+
+#: ../../source/xmlrpc.server/index.rst:206
+msgid ""
+"The earlier sections talked about techniques for establishing APIs using "
+"good naming conventions and namespacing. Another way to incorporate "
+"namespacing into an API is to use instances of classes and expose their "
+"methods. The first example can be recreated using an instance with a "
+"single method."
+msgstr ""
+
+#: ../../source/xmlrpc.server/index.rst
+msgid "xmlrpc_instance.py"
+msgstr ""
+
+#: ../../source/xmlrpc.server/index.rst:216
+msgid "A client can call the method directly."
+msgstr ""
+
+#: ../../source/xmlrpc.server/index.rst
+msgid "xmlrpc_instance_client.py"
+msgstr ""
+
+#: ../../source/xmlrpc.server/index.rst:222
+msgid "The output shows the contents of the directory."
+msgstr ""
+
+#: ../../source/xmlrpc.server/index.rst:233
+msgid ""
+"The \"``dir.``\" prefix for the service has been lost, though.  It can be"
+" restored by defining a class to set up a service tree that can be "
+"invoked from clients."
+msgstr ""
+
+#: ../../source/xmlrpc.server/index.rst
+msgid "xmlrpc_instance_dotted_names.py"
+msgstr ""
+
+#: ../../source/xmlrpc.server/index.rst:241
+msgid ""
+"By registering the instance of ``ServiceRoot`` with "
+"``allow_dotted_names`` enabled, the server has permission to walk the "
+"tree of objects when a request comes in to find the named method using "
+"``getattr()``."
+msgstr ""
+
+#: ../../source/xmlrpc.server/index.rst
+msgid "xmlrpc_instance_dotted_names_client.py"
+msgstr ""
+
+#: ../../source/xmlrpc.server/index.rst:250
+msgid ""
+"The output of ``dir.list()`` is the same as with the previous "
+"implementations."
+msgstr ""
+
+#: ../../source/xmlrpc.server/index.rst:264
+msgid "Dispatching Calls"
+msgstr ""
+
+#: ../../source/xmlrpc.server/index.rst:266
+msgid ""
+"By default, ``register_instance()`` finds all callable attributes of the "
+"instance with names not starting with an underscore (\"``_``\") and "
+"registers them with their name. To be more careful about the exposed "
+"methods, custom dispatching logic can be used."
+msgstr ""
+
+#: ../../source/xmlrpc.server/index.rst
+msgid "xmlrpc_instance_with_prefix.py"
+msgstr ""
+
+#: ../../source/xmlrpc.server/index.rst:275
+msgid ""
+"The ``public()`` method of ``MyService`` is marked as exposed to the XML-"
+"RPC service while ``private()`` is not. The ``_dispatch()`` method is "
+"invoked when the client tries to access a function that is part of "
+"``MyService``. It first enforces the use of a prefix (\"``prefix.``\" in "
+"this case, but any string can be used).  Then it requires the function to"
+" have an attribute called ``exposed`` with a true value. The exposed flag"
+" is set on a function using a decorator for convenience. The following "
+"example includes a few sample client calls."
+msgstr ""
+
+#: ../../source/xmlrpc.server/index.rst
+msgid "xmlrpc_instance_with_prefix_client.py"
+msgstr ""
+
+#: ../../source/xmlrpc.server/index.rst:288
+msgid ""
+"The resulting output, with the expected error messages trapped and "
+"reported, follows."
+msgstr ""
+
+#: ../../source/xmlrpc.server/index.rst:303
+msgid ""
+"There are several other ways to override the dispatching mechanism, "
+"including subclassing directly from ``SimpleXMLRPCServer``. Refer to the "
+"docstrings in the module for more details."
+msgstr ""
+
+#: ../../source/xmlrpc.server/index.rst:309
+msgid "Introspection API"
+msgstr ""
+
+#: ../../source/xmlrpc.server/index.rst:311
+msgid ""
+"As with many network services, it is possible to query an XML-RPC server "
+"to ask it what methods it supports and learn how to use them. "
+"``SimpleXMLRPCServer`` includes a set of public methods for performing "
+"this introspection. By default they are turned off, but can be enabled "
+"with ``register_introspection_functions()``.  Support for "
+"``system.listMethods()`` and ``system.methodHelp()`` can be added to a "
+"service by defining ``_listMethods()`` and ``_methodHelp()`` on the "
+"service class."
+msgstr ""
+
+#: ../../source/xmlrpc.server/index.rst
+msgid "xmlrpc_introspection.py"
+msgstr ""
+
+#: ../../source/xmlrpc.server/index.rst:324
+msgid ""
+"In this case, the convenience function ``list_public_methods()`` scans an"
+" instance to return the names of callable attributes that do not start "
+"with underscore (``_``). Redefine ``_listMethods()`` to apply whatever "
+"rules are desired.  Similarly, for this basic example ``_methodHelp()`` "
+"returns the docstring of the function, but could be written to build a "
+"help string from another source."
+msgstr ""
+
+#: ../../source/xmlrpc.server/index.rst:331
+msgid ""
+"This client queries the server and reports on all of the publicly "
+"callable methods."
+msgstr ""
+
+#: ../../source/xmlrpc.server/index.rst
+msgid "xmlrpc_introspection_client.py"
+msgstr ""
+
+#: ../../source/xmlrpc.server/index.rst:338
+msgid "The system methods are included in the results."
+msgstr ""
+
+#: ../../source/xmlrpc.server/index.rst:379
+msgid ":pydoc:`xmlrpc.server`"
+msgstr ""
+
+#: ../../source/xmlrpc.server/index.rst:381
+msgid ":mod:`xmlrpc.client` -- XML-RPC client."
+msgstr ""
+
+#: ../../source/xmlrpc.server/index.rst:383
+msgid ""
+"`XML-RPC How To <http://www.tldp.org/HOWTO/XML-RPC-HOWTO/index.html>`_ --"
+" Describes how to use XML-RPC to implement clients and servers in a "
+"variety of languages."
+msgstr ""
+

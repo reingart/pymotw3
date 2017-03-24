@@ -1,0 +1,654 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 18:41-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../source/os/index.rst:3
+msgid "os --- Portable access to operating system specific features"
+msgstr ""
+
+#: ../../source/os/index.rst:8
+msgid "Portable access to operating system specific features."
+msgstr ""
+
+#: ../../source/os/index.rst:10
+msgid ""
+"The ``os`` module provides a wrapper for platform specific modules such "
+"as :mod:`posix`, :mod:`nt`, and :mod:`mac`. The API for functions "
+"available on all platforms should be the same, so using the ``os`` module"
+" offers some measure of portability. Not all functions are available on "
+"every platform, however. Many of the process management functions "
+"described in this summary are not available for Windows."
+msgstr ""
+
+#: ../../source/os/index.rst:17
+msgid ""
+"The Python documentation for the ``os`` module is subtitled "
+"\"Miscellaneous operating system interfaces\". The module consists mostly"
+" of functions for creating and managing running processes or file system "
+"content (files and directories), with a few other bits of functionality "
+"thrown in besides."
+msgstr ""
+
+#: ../../source/os/index.rst:24
+msgid "Examining the File System Contents"
+msgstr ""
+
+#: ../../source/os/index.rst:26
+msgid ""
+"To prepare a list of the contents of a directory on the file system, use "
+"``listdir()``."
+msgstr ""
+
+#: ../../source/os/index.rst
+msgid "os_listdir.py"
+msgstr ""
+
+#: ../../source/os/index.rst:33
+msgid ""
+"The return value is a list of all of the named members of the directory "
+"given. No distinction is made between files, subdirectories, or symlinks."
+msgstr ""
+
+#: ../../source/os/index.rst:60
+msgid ""
+"The function ``walk()`` traverses a directory recursively and for each "
+"subdirectory generates a ``tuple`` containing the directory path, any "
+"immediate sub-directories of that path, and a list of the names of any "
+"files in that directory."
+msgstr ""
+
+#: ../../source/os/index.rst
+msgid "os_walk.py"
+msgstr ""
+
+#: ../../source/os/index.rst:69
+msgid "This example shows a recursive directory listing."
+msgstr ""
+
+#: ../../source/os/index.rst:102
+msgid ""
+"If more information is needed than the names of the files, it is likely "
+"to be more efficient to use ``scandir()`` than ``listdir()`` because more"
+" information is collected in one system call when the directory is "
+"scanned."
+msgstr ""
+
+#: ../../source/os/index.rst
+msgid "os_scandir.py"
+msgstr ""
+
+#: ../../source/os/index.rst:111
+msgid ""
+"``scandir()`` returns a sequence of ``DirEntry`` instances for the items "
+"in the directory. The object has several attributes and methods for "
+"accessing metadata about the file."
+msgstr ""
+
+#: ../../source/os/index.rst:158
+msgid "Managing File System Permissions"
+msgstr ""
+
+#: ../../source/os/index.rst:160
+msgid ""
+"Detailed information about a file can be accessed using ``stat()`` or "
+"``lstat()`` (for checking the status of something that might be a "
+"symbolic link)."
+msgstr ""
+
+#: ../../source/os/index.rst
+msgid "os_stat.py"
+msgstr ""
+
+#: ../../source/os/index.rst:168
+msgid ""
+"The output will vary depending on how the example code was installed. Try"
+" passing different filenames on the command line to ``os_stat.py``."
+msgstr ""
+
+#: ../../source/os/index.rst:204
+msgid ""
+"On Unix-like systems, file permissions can be changed using ``chmod()``, "
+"passing the mode as an integer. Mode values can be constructed using "
+"constants defined in the :mod:`stat` module.  This example toggles the "
+"user's execute permission bit:"
+msgstr ""
+
+#: ../../source/os/index.rst
+msgid "os_stat_chmod.py"
+msgstr ""
+
+#: ../../source/os/index.rst:213
+msgid ""
+"The script assumes it has the permissions necessary to modify the mode of"
+" the file when run."
+msgstr ""
+
+#: ../../source/os/index.rst:228
+msgid ""
+"The function ``access()`` can be used to test the access rights a process"
+" has for a file."
+msgstr ""
+
+#: ../../source/os/index.rst
+msgid "os_access.py"
+msgstr ""
+
+#: ../../source/os/index.rst:235
+msgid ""
+"The results will vary depending on how the example code is installed, but"
+" the output will be similar to this:"
+msgstr ""
+
+#: ../../source/os/index.rst:254
+msgid ""
+"The library documentation for ``access()`` includes two special warnings."
+" First, there is not much sense in calling ``access()`` to test whether a"
+" file can be opened before actually calling ``open()`` on it. There is a "
+"small, but real, window of time between the two calls during which the "
+"permissions on the file could change. The other warning applies mostly to"
+" networked file systems that extend the POSIX permission semantics. Some "
+"file system types may respond to the POSIX call that a process has "
+"permission to access a file, then report a failure when the attempt is "
+"made using ``open()`` for some reason not tested via the POSIX call. All "
+"in all, it is better to call ``open()`` with the required mode and catch "
+"the ``IOError`` raised if there is a problem."
+msgstr ""
+
+#: ../../source/os/index.rst:270
+msgid "Creating and Deleting Directories"
+msgstr ""
+
+#: ../../source/os/index.rst:272
+msgid ""
+"There are several functions for working with directories on the file "
+"system, including creating, listing contents, and removing them."
+msgstr ""
+
+#: ../../source/os/index.rst
+msgid "os_directories.py"
+msgstr ""
+
+#: ../../source/os/index.rst:279
+msgid ""
+"There are two sets of functions for creating and deleting directories. "
+"When creating a new directory with ``mkdir()``, all of the parent "
+"directories must already exist. When removing a directory with "
+"``rmdir()``, only the leaf directory (the last part of the path) is "
+"actually removed. In contrast, ``makedirs()`` and ``removedirs()`` "
+"operate on all of the nodes in the path. ``makedirs()`` will create any "
+"parts of the path that do not exist, and ``removedirs()`` will remove all"
+" of the parent directories, as long as they are empty."
+msgstr ""
+
+#: ../../source/os/index.rst:304
+msgid "Working with Symbolic Links"
+msgstr ""
+
+#: ../../source/os/index.rst:306
+msgid ""
+"For platforms and file systems that support them, there are functions for"
+" working with symlinks."
+msgstr ""
+
+#: ../../source/os/index.rst
+msgid "os_symlinks.py"
+msgstr ""
+
+#: ../../source/os/index.rst:313
+msgid ""
+"Use ``symlink()`` to create a symbolic link and ``readlink()`` for "
+"reading it to determine the original file pointed to by the link.  The "
+"``lstat()`` function is like ``stat()``, but operates on symbolic links."
+msgstr ""
+
+#: ../../source/os/index.rst:333
+msgid "Safely Replacing an Existing File"
+msgstr ""
+
+#: ../../source/os/index.rst:335
+msgid ""
+"Replacing or renaming an existing file is not idempotent and may expose "
+"applications to race conditions. The ``rename()`` and ``replace()`` "
+"functions implement safe algorithms for these actions, using atomic "
+"operations on POSIX-compliant systems when possible."
+msgstr ""
+
+#: ../../source/os/index.rst
+msgid "os_rename_replace.py"
+msgstr ""
+
+#: ../../source/os/index.rst:344
+msgid ""
+"The ``rename()`` and ``replace()`` functions work across filesystems, "
+"most of the time. Renaming a file may fail if it is being moved to a new "
+"fileystem or if the destination already exists."
+msgstr ""
+
+#: ../../source/os/index.rst:366
+msgid "Detecting and Changing the Process Owner"
+msgstr ""
+
+#: ../../source/os/index.rst:368
+msgid ""
+"The next set of functions provided by ``os`` are used for determining and"
+" changing the process owner ids. These are most frequently used by "
+"authors of daemons or special system programs that need to change "
+"permission level rather than running as ``root``. This section does not "
+"try to explain all of the intricate details of Unix security, process "
+"owners, etc. See the references list at the end of this section for more "
+"details."
+msgstr ""
+
+#: ../../source/os/index.rst:376
+msgid ""
+"The following example shows the real and effective user and group "
+"information for a process, and then changes the effective values. This is"
+" similar to what a daemon would need to do when it starts as root during "
+"a system boot, to lower the privilege level and run as a different user."
+msgstr ""
+
+#: ../../source/os/index.rst:384
+msgid ""
+"Before running the example, change the ``TEST_GID`` and ``TEST_UID`` "
+"values to match a real user defined on the system."
+msgstr ""
+
+#: ../../source/os/index.rst
+msgid "os_process_user_example.py"
+msgstr ""
+
+#: ../../source/os/index.rst:391
+msgid ""
+"When run as user with id of 502 and group 502 on OS X, this output is "
+"produced:"
+msgstr ""
+
+#: ../../source/os/index.rst:413
+msgid ""
+"The values do not change because when it is not running as root, a "
+"process cannot change its effective owner value. Any attempt to set the "
+"effective user id or group id to anything other than that of the current "
+"user causes an ``OSError``.  Running the same script using ``sudo`` so "
+"that it starts out with root privileges is a different story."
+msgstr ""
+
+#: ../../source/os/index.rst:445
+msgid ""
+"In this case, since it starts as root, the script can change the "
+"effective user and group for the process. Once the effective UID is "
+"changed, the process is limited to the permissions of that user. Because "
+"non-root users cannot change their effective group, the program needs to "
+"change the group before changing the user."
+msgstr ""
+
+#: ../../source/os/index.rst:452
+msgid "Managing the Process Environment"
+msgstr ""
+
+#: ../../source/os/index.rst:454
+msgid ""
+"Another feature of the operating system exposed to a program though the "
+"``os`` module is the environment. Variables set in the environment are "
+"visible as strings that can be read through ``os.environ`` or "
+"``getenv()``. Environment variables are commonly used for configuration "
+"values such as search paths, file locations, and debug flags. This "
+"example shows how to retrieve an environment variable, and pass a value "
+"through to a child process."
+msgstr ""
+
+#: ../../source/os/index.rst
+msgid "os_environ_example.py"
+msgstr ""
+
+#: ../../source/os/index.rst:466
+msgid ""
+"The ``os.environ`` object follows the standard Python mapping API for "
+"retrieving and setting values. Changes to ``os.environ`` are exported for"
+" child processes."
+msgstr ""
+
+#: ../../source/os/index.rst:493
+msgid "Managing the Process Working Directory"
+msgstr ""
+
+#: ../../source/os/index.rst:495
+msgid ""
+"Operating systems with hierarchical file systems have a concept of the "
+"*current working directory* -- the directory on the file system the "
+"process uses as the starting location when files are accessed with "
+"relative paths.  The current working directory can be retrieved with "
+"``getcwd()`` and changed with ``chdir()``."
+msgstr ""
+
+#: ../../source/os/index.rst
+msgid "os_cwd_example.py"
+msgstr ""
+
+#: ../../source/os/index.rst:505
+msgid ""
+"``os.curdir`` and ``os.pardir`` are used to refer to the current and "
+"parent directories in a portable manner."
+msgstr ""
+
+#: ../../source/os/index.rst:533
+msgid "Running External Commands"
+msgstr ""
+
+#: ../../source/os/index.rst:537
+msgid ""
+"Many of these functions for working with processes have limited "
+"portability. For a more consistent way to work with processes in a "
+"platform independent manner, see the :mod:`subprocess` module instead."
+msgstr ""
+
+#: ../../source/os/index.rst:542
+msgid ""
+"The most basic way to run a separate command, without interacting with it"
+" at all, is ``system()``. It takes a single string argument, which is the"
+" command line to be executed by a sub-process running a shell."
+msgstr ""
+
+#: ../../source/os/index.rst
+msgid "os_system_example.py"
+msgstr ""
+
+#: ../../source/os/index.rst:550
+msgid ""
+"The return value of ``system()`` is the exit value of the shell running "
+"the program packed into a 16 bit number, with the high byte the exit "
+"status and the low byte the signal number that caused the process to die,"
+" or zero."
+msgstr ""
+
+#: ../../source/os/index.rst:573
+msgid ""
+"Since the command is passed directly to the shell for processing, it can "
+"include shell syntax such as globbing or environment variables."
+msgstr ""
+
+#: ../../source/os/index.rst
+msgid "os_system_shell.py"
+msgstr ""
+
+#: ../../source/os/index.rst:580
+msgid ""
+"The environment variable ``$TMPDIR`` in this string is expanded when the "
+"shell runs the command line."
+msgstr ""
+
+#: ../../source/os/index.rst:596
+msgid ""
+"Unless the command is explicitly run in the background, the call to "
+"``system()`` blocks until it is complete. Standard input, output, and "
+"error from the child process are tied to the appropriate streams owned by"
+" the caller by default, but can be redirected using shell syntax."
+msgstr ""
+
+#: ../../source/os/index.rst
+msgid "os_system_background.py"
+msgstr ""
+
+#: ../../source/os/index.rst:606
+msgid ""
+"This is getting into shell trickery, though, and there are better ways to"
+" accomplish the same thing."
+msgstr ""
+
+#: ../../source/os/index.rst:627
+msgid "Creating Processes with os.fork()"
+msgstr ""
+
+#: ../../source/os/index.rst:629
+msgid ""
+"The POSIX functions ``fork()`` and ``exec()`` (available under Mac OS X, "
+"Linux, and other Unix variants) are exposed via the ``os`` module. Entire"
+" books have been written about reliably using these functions, so check "
+"the library or bookstore for more details than are presented here in this"
+" introduction."
+msgstr ""
+
+#: ../../source/os/index.rst:635
+msgid "To create a new process as a clone of the current process, use ``fork()``:"
+msgstr ""
+
+#: ../../source/os/index.rst
+msgid "os_fork_example.py"
+msgstr ""
+
+#: ../../source/os/index.rst:642
+msgid ""
+"The output will vary based on the state of the system each time the "
+"example is run, but it will look something like:"
+msgstr ""
+
+#: ../../source/os/index.rst:658
+msgid ""
+"After the fork, there are two processes running the same code. For a "
+"program to tell which one it is in, it needs to check the return value of"
+" ``fork()``. If the value is ``0``, the current process is the child.  If"
+" it is not ``0``, the program is running in the parent process and the "
+"return value is the process id of the child process."
+msgstr ""
+
+#: ../../source/os/index.rst
+msgid "os_kill_example.py"
+msgstr ""
+
+#: ../../source/os/index.rst:668
+msgid ""
+"The parent can send signals to the child process using ``kill()`` and the"
+" :mod:`signal` module. First, define a signal handler to be invoked when "
+"the signal is received.  Then ``fork()``, and in the parent pause a short"
+" amount of time before sending a ``USR1`` signal using ``kill()``. This "
+"example uses a short pause to give the child process time to set up the "
+"signal handler. A real application, would not need (or want) to call "
+"``sleep()``.  In the child, set up the signal handler and go to sleep for"
+" a while to give the parent time to send the signal."
+msgstr ""
+
+#: ../../source/os/index.rst:696
+msgid ""
+"A simple way to handle separate behavior in the child process is to check"
+" the return value of ``fork()`` and branch. More complex behavior may "
+"call for more code separation than a simple branch. In other cases, there"
+" may be an existing program that needs to be wrapped. For both of these "
+"situations, the ``exec*()`` series of functions can be used to run "
+"another program."
+msgstr ""
+
+#: ../../source/os/index.rst
+msgid "os_exec_example.py"
+msgstr ""
+
+#: ../../source/os/index.rst:707
+msgid ""
+"When a program is run by ``exec()``, the code from that program replaces "
+"the code from the existing process."
+msgstr ""
+
+#: ../../source/os/index.rst:722
+msgid ""
+"There are many variations of ``exec()``, depending on the form in which "
+"the arguments are available, whether the path and environment of the "
+"parent process should be copied to the child, etc.  For all variations, "
+"the first argument is a path or filename and the remaining arguments "
+"control how that program runs. They are either passed as command line "
+"arguments or override the process \"environment\" (see ``os.environ`` and"
+" ``os.getenv``).  Refer to the library documentation for complete "
+"details."
+msgstr ""
+
+#: ../../source/os/index.rst:732
+msgid "Waiting for Child Processes"
+msgstr ""
+
+#: ../../source/os/index.rst:734
+msgid ""
+"Many computationally intensive programs use multiple processes to work "
+"around the threading limitations of Python and the global interpreter "
+"lock. When starting several processes to run separate tasks, the master "
+"will need to wait for one or more of them to finish before starting new "
+"ones, to avoid overloading the server. There are a few different ways to "
+"do that using ``wait()`` and related functions."
+msgstr ""
+
+#: ../../source/os/index.rst:741
+msgid ""
+"When it does not matter which child process might exit first, use "
+"``wait()``.  It returns as soon as any child process exits."
+msgstr ""
+
+#: ../../source/os/index.rst
+msgid "os_wait_example.py"
+msgstr ""
+
+#: ../../source/os/index.rst:748
+msgid ""
+"The return value from ``wait()`` is a tuple containing the process id and"
+" exit status combined into a 16-bit value.  The low byte is the number of"
+" the signal that killed the process, and the high byte is the status code"
+" returned by the process when it exited."
+msgstr ""
+
+#: ../../source/os/index.rst:774
+msgid "To wait for a specific process, use ``waitpid()``."
+msgstr ""
+
+#: ../../source/os/index.rst
+msgid "os_waitpid_example.py"
+msgstr ""
+
+#: ../../source/os/index.rst:780
+msgid ""
+"Pass the process id of the target process, and ``waitpid()`` blocks until"
+" that process exits."
+msgstr ""
+
+#: ../../source/os/index.rst:804
+msgid ""
+"``wait3()`` and ``wait4()`` work in a similar manner, but return more "
+"detailed information about the child process with the pid, exit status, "
+"and resource usage."
+msgstr ""
+
+#: ../../source/os/index.rst:809
+msgid "Spawning New Processes"
+msgstr ""
+
+#: ../../source/os/index.rst:811
+msgid ""
+"As a convenience, the ``spawn()`` family of functions handles the "
+"``fork()`` and ``exec()`` in one statement:"
+msgstr ""
+
+#: ../../source/os/index.rst
+msgid "os_spawn_example.py"
+msgstr ""
+
+#: ../../source/os/index.rst:818
+msgid ""
+"The first argument is a mode indicating whether or not to wait for the "
+"process to finish before returning.  This example waits.  Use "
+"``P_NOWAIT`` to let the other process start, but then resume in the "
+"current process."
+msgstr ""
+
+#: ../../source/os/index.rst:836
+msgid "Operating System Error Codes"
+msgstr ""
+
+#: ../../source/os/index.rst:838
+msgid ""
+"Error codes defined by the operating system and managed in the "
+":mod:`errno` module can be translated to message strings using "
+"``strerror()``."
+msgstr ""
+
+#: ../../source/os/index.rst
+msgid "os_strerror.py"
+msgstr ""
+
+#: ../../source/os/index.rst:846
+msgid ""
+"This example shows the messages associated with some error codes that "
+"come up frequently."
+msgstr ""
+
+#: ../../source/os/index.rst:865
+msgid ":pydoc:`os`"
+msgstr ""
+
+#: ../../source/os/index.rst:867
+msgid ":ref:`Python 2 to 3 porting notes for os <porting-os>`"
+msgstr ""
+
+#: ../../source/os/index.rst:869
+msgid ""
+":mod:`signal` -- The section on the ``signal`` module goes over signal "
+"handling techniques in more detail."
+msgstr ""
+
+#: ../../source/os/index.rst:872
+msgid ":mod:`subprocess` -- The ``subprocess`` module supersedes ``os.popen()``."
+msgstr ""
+
+#: ../../source/os/index.rst:875
+msgid ""
+":mod:`multiprocessing` -- The ``multiprocessing`` module makes working "
+"with extra processes easier."
+msgstr ""
+
+#: ../../source/os/index.rst:878
+msgid ""
+":mod:`tempfile` -- The ``tempfile`` module for working with temporary "
+"files."
+msgstr ""
+
+#: ../../source/os/index.rst:881
+msgid ""
+":ref:`shutil-directory-functions` -- The :mod:`shutil` module also "
+"includes functions for working with directory trees."
+msgstr ""
+
+#: ../../source/os/index.rst:884
+msgid ""
+"`Speaking UNIX, Part 8. <http://www.ibm.com/developerworks/aix/library"
+"/au-speakingunix8/index.html>`__ -- Learn how UNIX multitasks."
+msgstr ""
+
+#: ../../source/os/index.rst:888
+msgid ""
+"`Standard streams <https://en.wikipedia.org/wiki/Standard_streams>`__ -- "
+"For more discussion of stdin, stdout, and stderr."
+msgstr ""
+
+#: ../../source/os/index.rst:891
+msgid ""
+"`Delve into Unix Process Creation "
+"<http://www.ibm.com/developerworks/aix/library/au-unixprocess.html>`__ --"
+" Explains the life cycle of a Unix process."
+msgstr ""
+
+#: ../../source/os/index.rst:895
+msgid ""
+"*Advanced Programming in the UNIX(R) Environment* By W. Richard Stevens "
+"and Stephen A. Rago.  Published by Addison-Wesley Professional, 2005.  "
+"ISBN-10: 0201433079 -- This book covers working with multiple processes, "
+"such as handling signals, closing duplicated file descriptors, etc."
+msgstr ""
+

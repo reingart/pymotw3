@@ -1,0 +1,159 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 18:41-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../source/statistics/index.rst:3
+msgid "statistics --- Statistical Calculations"
+msgstr ""
+
+#: ../../source/statistics/index.rst:8
+msgid "Implementations of common statistical calculations."
+msgstr ""
+
+#: ../../source/statistics/index.rst:10
+msgid ""
+"The ``statistics`` module implements many common statistical formulas for"
+" efficient calculations using Python's various numerical types (``int``, "
+"``float``, ``Decimal``, and ``Fraction``)."
+msgstr ""
+
+#: ../../source/statistics/index.rst:16
+msgid "Averages"
+msgstr ""
+
+#: ../../source/statistics/index.rst:18
+msgid ""
+"There are three forms of averages supported, the mean, the median, and "
+"the mode. Calculate the arithmetic mean with ``mean()``."
+msgstr ""
+
+#: ../../source/statistics/index.rst
+msgid "statistics_mean.py"
+msgstr ""
+
+#: ../../source/statistics/index.rst:25
+msgid ""
+"The return value for integers and floats is always a ``float``. For "
+"``Decimal`` and ``Fraction`` input data, the result is of the same type "
+"as the inputs."
+msgstr ""
+
+#: ../../source/statistics/index.rst:41
+msgid "Calculate the most common data point in a data set using ``mode()``."
+msgstr ""
+
+#: ../../source/statistics/index.rst
+msgid "statistics_mode.py"
+msgstr ""
+
+#: ../../source/statistics/index.rst:47
+msgid ""
+"The return value is always a member of the input data set. Because "
+"``mode()`` treats the input as a set of discrete values, and counts the "
+"recurrences, the inputs do not actually need to be numerical values."
+msgstr ""
+
+#: ../../source/statistics/index.rst:64
+msgid ""
+"There are four variations for calculating the median, or middle, value. "
+"The first three are straightforward versions of the usual algorithm, with"
+" different solutions for handling data sets with an even number of "
+"elements."
+msgstr ""
+
+#: ../../source/statistics/index.rst
+msgid "statistics_median.py"
+msgstr ""
+
+#: ../../source/statistics/index.rst:73
+msgid ""
+"``median()`` finds the center value, and if the data set has an even "
+"number of values it averages the two middle items. ``median_low()`` "
+"always returns a value from the input data set, using the lower of the "
+"two middle items for data sets with an even number of items. "
+"``median_high()`` similarly returns the higher of the two middle items."
+msgstr ""
+
+#: ../../source/statistics/index.rst:94
+msgid ""
+"The fourth version of the median calculation, ``median_grouped()``, "
+"treats the inputs as continuous data and calculates the 50% percentile "
+"median by first finding the median range using the provided interval "
+"width and then interpolating within that range using the position of the "
+"actual value(s) from the data set that fall in that range."
+msgstr ""
+
+#: ../../source/statistics/index.rst
+msgid "statistics_median_grouped.py"
+msgstr ""
+
+#: ../../source/statistics/index.rst:104
+msgid ""
+"As the interval width increases, the median computed for the same data "
+"set changes."
+msgstr ""
+
+#: ../../source/statistics/index.rst:122
+msgid "Variance"
+msgstr ""
+
+#: ../../source/statistics/index.rst:124
+msgid ""
+"Statistics uses two values to express how disperse a set of values is "
+"relative to the mean. The *variance* is the average of the square of the "
+"difference of each value and the mean, and the *standard deviation* is "
+"the square root of the variance (which is useful because taking the "
+"square root allows the standard deviation to be expressed in the same "
+"units as the input data). Large values for variance or standard deviation"
+" indicate that a set of data is disperse, while small values indicate "
+"that the data is clustered closer to the mean."
+msgstr ""
+
+#: ../../source/statistics/index.rst
+msgid "statistics_variance.py"
+msgstr ""
+
+#: ../../source/statistics/index.rst:137
+msgid ""
+"Python includes two sets of functions for computing variance and standard"
+" deviation, depending on whether the data set represents the entire "
+"population or a sample of the population.  This example uses ``wc`` to "
+"count the number of lines in the input files for all of the example "
+"programs and then uses ``pvariance()`` and ``pstdev()`` to compute the "
+"variance and standard deviation for the entire population before using "
+"``variance()`` and ``stddev()`` to compute the sample variance and "
+"standard deviation for a subset created by using the length of every "
+"second file found."
+msgstr ""
+
+#: ../../source/statistics/index.rst:174
+msgid ":pydoc:`statistics`"
+msgstr ""
+
+#: ../../source/statistics/index.rst:176
+msgid ""
+"`mathtips.com: Median for Discrete and Continuous Frequency Type Data "
+"(grouped data) <http://www.mathstips.com/statistics/median-for-discrete-"
+"and-continuous-frequency-type.html>`__ -- Discussion of median for "
+"continuous data"
+msgstr ""
+
+#: ../../source/statistics/index.rst:181
+msgid ":pep:`450` -- Adding A Statistics Module To The Standard Library"
+msgstr ""
+

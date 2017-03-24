@@ -1,0 +1,191 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 20:09-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+# c60618dff71f4a779f2a58531705818a
+#: ../../source/venv/index.rst:3
+msgid "venv --- Create Virtual Environments"
+msgstr ""
+
+# 810c0d7447a248459fe5e090fbe0641c
+#: ../../source/venv/index.rst:8
+msgid "Create isolated installation and execution contexts."
+msgstr ""
+
+# 63506c544a5644898bfe97abb09ae21e
+#: ../../source/venv/index.rst:10
+msgid ""
+"Python virtual environments, managed by ``venv``, are set up for "
+"installing packages and running programs in a way that isolates them from"
+" other packages installed on the rest of the system. Because each "
+"environment has its own interpreter executable and directory for "
+"installing packages, it is easy to create environments configured with "
+"various combinations of Python and package versions all on the same "
+"computer."
+msgstr ""
+
+# d5549c4132484fbdb7b5ba1725125a70
+#: ../../source/venv/index.rst:19
+msgid "Creating Environments"
+msgstr ""
+
+# 06cec9f653874f54b2f5a55c4229120f
+#: ../../source/venv/index.rst:21
+msgid ""
+"The primary command line interface to ``venv`` relies on Python's ability"
+" to run a \"main\" function in a module using the ``-m`` option."
+msgstr ""
+
+# 8e6cddd4c46e4381bb6495df2499672c
+#: ../../source/venv/index.rst:42
+msgid ""
+"A separate ``pyvenv`` command line application may be installed, "
+"depending on how the Python interpreter was built and packaged. The "
+"following command has the same effect as the previous example."
+msgstr ""
+
+# 3e2cedf795a44512adcf432b881dc8aa
+#: ../../source/venv/index.rst:50
+msgid ""
+"Using ``-m venv`` is preferred because it requires explicitly selecting a"
+" Python interpreter, so there can be no confusion about the version "
+"number or import path assocated with the resulting virtual environment."
+msgstr ""
+
+# 8790e9be5cc7423691dabdd8ec2ffe90
+#: ../../source/venv/index.rst:56
+msgid "Contents of a Virtual Environment"
+msgstr ""
+
+# a2bc872505dd404e838c7b33e5693c09
+#: ../../source/venv/index.rst:58
+msgid ""
+"Each virtual environment contains a ``bin`` directory, where the local "
+"interpreter and any executable scripts are installed, an ``include`` "
+"directory for files related to building C extensions, and a ``lib`` "
+"directory, with a separate ``site-packages`` location for installing "
+"packages."
+msgstr ""
+
+# 406bf2698bdb439dbd36e245ae66e19e
+#: ../../source/venv/index.rst:79
+msgid ""
+"The default ``bin`` directory contains \"activation\" scripts for several"
+" Unix shell variants. These can be used to install the virtual "
+"environment on the shell's search path to ensure the shell picks up "
+"programs installed in the environment. It's not necessary to activate an "
+"environment to use programs installed into it, but it can be more "
+"convenient."
+msgstr ""
+
+# e1f9095691f44b4ea94eb9822bc0c6d5
+#: ../../source/venv/index.rst:107
+msgid ""
+"On platforms that support them, symbolic links are used rather than "
+"copying the executables like the Python interpreter. In this environment,"
+" ``pip`` is installed as a local copy but the interpreter is a symlink."
+msgstr ""
+
+# 30ebd157fad14653a76ce05ae7e24235
+#: ../../source/venv/index.rst:112
+msgid ""
+"Finally, the environment includes a ``pyvenv.cfg`` file with settings "
+"describing how the environment is configured and should behave. The "
+"``home`` variable points to the location of the Python interpreter where "
+"``venv`` was run to create the environment. ``include-system-site-"
+"packages`` is a boolean indicating whether or not the packages installed "
+"outside of the virtual environment, at the system level, should be "
+"visible inside the virtual environment. And ``version`` is the Python "
+"version used to create the environment."
+msgstr ""
+
+# 97a019001d4a45ffbb13a1267a0622bf
+#: ../../source/venv/index.rst
+msgid "pyvenv.cfg"
+msgstr ""
+
+# 9c2941da7aff440581620fd2bdea8284
+#: ../../source/venv/index.rst:133
+msgid ""
+"A virtual environment is more useful with tools like ``pip`` and "
+":mod:`setuptools` available to install other packages, so ``pyvenv`` "
+"installs them by default. To create a bare environment without these "
+"tools, pass ``--without-pip`` on the command line."
+msgstr ""
+
+# 743910e891764a1999ff66fdbd7db8ef
+#: ../../source/venv/index.rst:140
+msgid "Using Virtual Environments"
+msgstr ""
+
+# c592fb37d55a4d04a7e7cc9d6f6b6e52
+#: ../../source/venv/index.rst:142
+msgid ""
+"Virtual environments are commonly used to run different versions of "
+"programs or to test a given version of a program with different versions "
+"of its dependencies. For example, before upgrading from one version of "
+"Sphinx to another, it is useful to test the input documentation files "
+"using both the old and new versions. To start, create two virtual "
+"environments."
+msgstr ""
+
+# bc1072534893469e9f8c4a3b3bda915e
+#: ../../source/venv/index.rst:170
+msgid "Then install the versions of the tools to test."
+msgstr ""
+
+# f9e03816ebf8436b90b3b9c5a501b06e
+#: ../../source/venv/index.rst:244
+msgid ""
+"Then it is possible to run the different versions of Sphinx from the "
+"virtual environments separately, to test them with the same input files."
+msgstr ""
+
+# 39b924f677814ad3b914d19f269b4682
+#: ../../source/venv/index.rst:268
+msgid ":pydoc:`venv`"
+msgstr ""
+
+# cd5b531db8484ba48f54032ce7b422d2
+#: ../../source/venv/index.rst:270
+msgid ":pep:`405` -- Python Virtual Environments"
+msgstr ""
+
+# 3c9a0f8e8ef44353b6e414b36d38942a
+#: ../../source/venv/index.rst:272
+msgid ""
+"`virtualenv <https://pypi.python.org/pypi/virtualenv>`__ -- A version of "
+"Python virtual environments that works for Python 2 and 3."
+msgstr ""
+
+# bf04f48971eb4585bca78554912bd71b
+#: ../../source/venv/index.rst:276
+msgid ""
+"`virtualenvwrapper <https://pypi.python.org/pypi/virtualenvwrapper>`__ --"
+" A set of shell wrappers for virtualenv to make it easier to manage a "
+"large number of environments."
+msgstr ""
+
+# 67078fcab611481d90c8a1755f4f3e35
+#: ../../source/venv/index.rst:281
+msgid ""
+"`Sphinx <http://www.sphinx-doc.org/en/stable/>`__ -- Tool for converting "
+"reStructuredText input files to HTML, LaTeX, and other formats for "
+"consumption."
+msgstr ""
+

@@ -1,0 +1,272 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 18:41-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../source/urllib.request/index.rst:3
+msgid "urllib.request --- Network Resource Access"
+msgstr ""
+
+#: ../../source/urllib.request/index.rst:8
+msgid ""
+"A library for opening URLs that can be extended by defining custom "
+"protocol handlers."
+msgstr ""
+
+#: ../../source/urllib.request/index.rst:11
+msgid ""
+"The ``urllib.request`` module provides an API for using Internet "
+"resources identified by URLs.  It is designed to be extended by "
+"individual applications to support new protocols or add variations to "
+"existing protocols (such as handling HTTP basic authentication)."
+msgstr ""
+
+#: ../../source/urllib.request/index.rst:17
+msgid "HTTP GET"
+msgstr ""
+
+#: ../../source/urllib.request/index.rst:21
+msgid ""
+"The test server for these examples is in ``http_server_GET.py``, from the"
+" examples for the :mod:`http.server` module. Start the server in one "
+"terminal window, then run these examples in another."
+msgstr ""
+
+#: ../../source/urllib.request/index.rst:25
+msgid ""
+"An HTTP GET operation is the simplest use of ``urllib.request``. Pass the"
+" URL to ``urlopen()`` to get a \"file-like\" handle to the remote data."
+msgstr ""
+
+#: ../../source/urllib.request/index.rst
+msgid "urllib_request_urlopen.py"
+msgstr ""
+
+#: ../../source/urllib.request/index.rst:33
+msgid ""
+"The example server accepts the incoming values and formats a plain text "
+"response to send back. The return value from ``urlopen()`` gives access "
+"to the headers from the HTTP server through the ``info()`` method, and "
+"the data for the remote resource via methods like ``read()`` and "
+"``readlines()``."
+msgstr ""
+
+#: ../../source/urllib.request/index.rst:76
+msgid "The file-like object returned by ``urlopen()`` is iterable:"
+msgstr ""
+
+#: ../../source/urllib.request/index.rst
+msgid "urllib_request_urlopen_iterator.py"
+msgstr ""
+
+#: ../../source/urllib.request/index.rst:82
+msgid ""
+"This example strips the trailing newlines and carriage returns before "
+"printing the output."
+msgstr ""
+
+#: ../../source/urllib.request/index.rst:109
+msgid "Encoding Arguments"
+msgstr ""
+
+#: ../../source/urllib.request/index.rst:111
+msgid ""
+"Arguments can be passed to the server by encoding them with "
+"``urllib.parse.urlencode()`` and appending them to the URL."
+msgstr ""
+
+#: ../../source/urllib.request/index.rst
+msgid "urllib_request_http_get_args.py"
+msgstr ""
+
+#: ../../source/urllib.request/index.rst:118
+msgid ""
+"The list of client values returned in the example output contains the "
+"encoded query arguments."
+msgstr ""
+
+#: ../../source/urllib.request/index.rst:146
+msgid "HTTP POST"
+msgstr ""
+
+#: ../../source/urllib.request/index.rst:150
+msgid ""
+"The test server for these examples is in ``http_server_POST.py``, from "
+"the examples for the :mod:`http.server` module. Start the server in one "
+"terminal window, then run these examples in another."
+msgstr ""
+
+#: ../../source/urllib.request/index.rst:154
+msgid ""
+"To send form-encoded data to the remote server using POST instead GET, "
+"pass the encoded query arguments as data to ``urlopen()``."
+msgstr ""
+
+#: ../../source/urllib.request/index.rst
+msgid "urllib_request_urlopen_post.py"
+msgstr ""
+
+#: ../../source/urllib.request/index.rst:161
+msgid ""
+"The server can decode the form data and access the individual values by "
+"name."
+msgstr ""
+
+#: ../../source/urllib.request/index.rst:176
+msgid "Adding Outgoing Headers"
+msgstr ""
+
+#: ../../source/urllib.request/index.rst:178
+msgid ""
+"``urlopen()`` is a convenience function that hides some of the details of"
+" how the request is made and handled. More precise control is possible by"
+" using a ``Request`` instance directly.  For example, custom headers can "
+"be added to the outgoing request to control the format of data returned, "
+"specify the version of a document cached locally, and tell the remote "
+"server the name of the software client communicating with it."
+msgstr ""
+
+#: ../../source/urllib.request/index.rst:186
+msgid ""
+"As the output from the earlier examples shows, the default *User-agent* "
+"header value is made up of the constant ``Python-urllib``, followed by "
+"the Python interpreter version. When creating an application that will "
+"access web resources owned by someone else, it is courteous to include "
+"real user agent information in the requests, so they can identify the "
+"source of the hits more easily. Using a custom agent also allows them to "
+"control crawlers using a ``robots.txt`` file (see the "
+":mod:`http.robotparser` module)."
+msgstr ""
+
+#: ../../source/urllib.request/index.rst
+msgid "urllib_request_request_header.py"
+msgstr ""
+
+#: ../../source/urllib.request/index.rst:199
+msgid ""
+"After creating a ``Request`` object, use ``add_header()`` to set the user"
+" agent value before opening the request.  The last line of the output "
+"shows the custom value."
+msgstr ""
+
+#: ../../source/urllib.request/index.rst:227
+msgid "Posting Form Data from a Request"
+msgstr ""
+
+#: ../../source/urllib.request/index.rst:229
+msgid ""
+"The outgoing data can be specified when building the ``Request`` to have "
+"it posted to the server."
+msgstr ""
+
+#: ../../source/urllib.request/index.rst
+msgid "urllib_request_request_post.py"
+msgstr ""
+
+#: ../../source/urllib.request/index.rst:236
+msgid ""
+"The HTTP method used by the ``Request`` changes from GET to POST "
+"automatically after the data is added."
+msgstr ""
+
+#: ../../source/urllib.request/index.rst:257
+msgid "Uploading Files"
+msgstr ""
+
+#: ../../source/urllib.request/index.rst:259
+msgid ""
+"Encoding files for upload requires a little more work than simple forms."
+"  A complete MIME message needs to be constructed in the body of the "
+"request, so that the server can distinguish incoming form fields from "
+"uploaded files."
+msgstr ""
+
+#: ../../source/urllib.request/index.rst
+msgid "urllib_request_upload_files.py"
+msgstr ""
+
+#: ../../source/urllib.request/index.rst:268
+msgid ""
+"The ``MultiPartForm`` class can represent an arbitrary form as a multi-"
+"part MIME message with attached files."
+msgstr ""
+
+#: ../../source/urllib.request/index.rst:308
+msgid "Creating Custom Protocol Handlers"
+msgstr ""
+
+#: ../../source/urllib.request/index.rst:310
+msgid ""
+"``urllib.request`` has built-in support for HTTP(S), FTP, and local file "
+"access. To add support for other URL types, register another protocol "
+"handler. For example, to support URLs pointing to arbitrary files on "
+"remote NFS servers, without requiring users to mount the path before "
+"accessing the file, create a class derived from ``BaseHandler`` and with "
+"a method ``nfs_open()``."
+msgstr ""
+
+#: ../../source/urllib.request/index.rst:317
+msgid ""
+"The protocol-specific ``open()`` method is given a single argument, the "
+"``Request`` instance, and it should return an object with a ``read()`` "
+"method that can be used to read the data, an ``info()`` method to return "
+"the response headers, and ``geturl()`` to return the actual URL of the "
+"file being read. A simple way to achieve that is to create an instance of"
+" ``urllib.response.addinfourl``, passing the headers, URL, and open file "
+"handle in to the constructor."
+msgstr ""
+
+#: ../../source/urllib.request/index.rst
+msgid "urllib_request_nfs_handler.py"
+msgstr ""
+
+#: ../../source/urllib.request/index.rst:329
+msgid ""
+"The ``FauxNFSHandler`` and ``NFSFile`` classes print messages to "
+"illustrate where a real implementation would add mount and unmount calls."
+" Since this is just a simulation, ``FauxNFSHandler`` is primed with the "
+"name of a temporary directory where it should look for all of its files."
+msgstr ""
+
+#: ../../source/urllib.request/index.rst:364
+msgid ":pydoc:`urllib.request`"
+msgstr ""
+
+#: ../../source/urllib.request/index.rst:366
+msgid ":mod:`urllib.parse` -- Work with the URL string itself."
+msgstr ""
+
+#: ../../source/urllib.request/index.rst:368
+msgid ""
+"`Form content types <http://www.w3.org/TR/REC-"
+"html40/interact/forms.html#h-17.13.4>`_ -- W3C specification for posting "
+"files or large amounts of data via HTTP forms."
+msgstr ""
+
+#: ../../source/urllib.request/index.rst:373
+msgid ":mod:`mimetypes` -- Map filenames to mimetype."
+msgstr ""
+
+#: ../../source/urllib.request/index.rst:375
+msgid ""
+"`requests <https://pypi.python.org/pypi/requests>`_ -- Third-party HTTP "
+"library with better support for secure connections and an easier to use "
+"API. The Python core development team recommends most developers use "
+"``requests``, in part because it receives more frequent security updates "
+"than the standard library."
+msgstr ""
+

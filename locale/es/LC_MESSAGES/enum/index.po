@@ -1,0 +1,239 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 18:41-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../source/enum/index.rst:3
+msgid "enum -- Enumeration Type"
+msgstr ""
+
+#: ../../source/enum/index.rst:8
+msgid ""
+"The ``enum`` module defines an enumeration type with iteration and "
+"comparison capabilities. It can be used to create well-defined symbols "
+"for values, instead of using literal integers or strings."
+msgstr ""
+
+#: ../../source/enum/index.rst:13
+msgid "Creating Enumerations"
+msgstr ""
+
+#: ../../source/enum/index.rst:15
+msgid ""
+"A new enumeration is defined using the ``class`` syntax by subclassing "
+"``Enum`` and adding class attributes describing the values."
+msgstr ""
+
+#: ../../source/enum/index.rst
+msgid "enum_create.py"
+msgstr ""
+
+#: ../../source/enum/index.rst:22
+msgid ""
+"The members of the ``Enum`` are converted to instances as the class is "
+"parsed. Each instance has a ``name`` property corresponding to the member"
+" name and a ``value`` property corresponding to the value assigned to the"
+" name in the class definition."
+msgstr ""
+
+#: ../../source/enum/index.rst:42
+msgid "Iteration"
+msgstr ""
+
+#: ../../source/enum/index.rst:44
+msgid ""
+"Iterating over the enum *class* produces the individual members of the "
+"enumeration."
+msgstr ""
+
+#: ../../source/enum/index.rst
+msgid "enum_iterate.py"
+msgstr ""
+
+#: ../../source/enum/index.rst:51
+msgid ""
+"The members are produced in the order they are declared in the class "
+"definition. The names and values are not used to sort them in any way."
+msgstr ""
+
+#: ../../source/enum/index.rst:73
+msgid "Comparing Enums"
+msgstr ""
+
+#: ../../source/enum/index.rst:75
+msgid ""
+"Because enumeration members are not ordered, they support only comparison"
+" by identity and equality."
+msgstr ""
+
+#: ../../source/enum/index.rst
+msgid "enum_comparison.py"
+msgstr ""
+
+#: ../../source/enum/index.rst:82
+msgid ""
+"The greater-than and less-than comparison operators raise ``TypeError`` "
+"exceptions."
+msgstr ""
+
+#: ../../source/enum/index.rst:100
+msgid ""
+"Use the ``IntEnum`` class for enumerations where the members need to "
+"behave more like numbers---for example, to support comparisons."
+msgstr ""
+
+#: ../../source/enum/index.rst
+msgid "enum_intenum.py"
+msgstr ""
+
+#: ../../source/enum/index.rst:127
+msgid "Unique Enumeration Values"
+msgstr ""
+
+#: ../../source/enum/index.rst:129
+msgid ""
+"Enum members with the same value are tracked as alias references to the "
+"same member object. Aliases do not cause repeated values to be present in"
+" the iterator for the ``Enum``."
+msgstr ""
+
+#: ../../source/enum/index.rst
+msgid "enum_aliases.py"
+msgstr ""
+
+#: ../../source/enum/index.rst:137
+msgid ""
+"Because ``by_design`` and ``closed`` are aliases for other members, they "
+"do not appear separately in the output when iterating over the ``Enum``. "
+"The canonical name for a member is the first name attached to the value."
+msgstr ""
+
+#: ../../source/enum/index.rst:163
+msgid ""
+"To require all members to have unique values, add the ``@unique`` "
+"decorator to the ``Enum``."
+msgstr ""
+
+#: ../../source/enum/index.rst
+msgid "enum_unique_enforce.py"
+msgstr ""
+
+#: ../../source/enum/index.rst:170
+msgid ""
+"Members with repeated values trigger a ``ValueError`` exception when the "
+"``Enum`` class is being interpreted."
+msgstr ""
+
+#: ../../source/enum/index.rst:193
+msgid "Creating Enumerations Programmatically"
+msgstr ""
+
+#: ../../source/enum/index.rst:195
+msgid ""
+"In some cases, it is more convenient to create enumerations "
+"programmatically, rather than hard-coding them in a class definition. For"
+" those situations, ``Enum`` also supports passing the member names and "
+"values to the class constructor."
+msgstr ""
+
+#: ../../source/enum/index.rst
+msgid "enum_programmatic_create.py"
+msgstr ""
+
+#: ../../source/enum/index.rst:204
+msgid ""
+"The ``value`` argument is the name of the enumeration, which is used to "
+"build the representation of members. The ``names`` argument lists the "
+"members of the enumeration. When a single string is passed, it is split "
+"on whitespace and commas, and the resulting tokens are used as names for "
+"the members, which are automatically assigned values starting with ``1``."
+msgstr ""
+
+#: ../../source/enum/index.rst:232
+msgid ""
+"For more control over the values associated with members, the ``names`` "
+"string can be replaced with a sequence of two-part tuples or a dictionary"
+" mapping names to values."
+msgstr ""
+
+#: ../../source/enum/index.rst
+msgid "enum_programmatic_mapping.py"
+msgstr ""
+
+#: ../../source/enum/index.rst:240
+msgid ""
+"In this example, a list of two-part tuples is given instead of a single "
+"string containing only the member names. This makes it possible to "
+"reconstruct the ``BugStatus`` enumeration with the members in the same "
+"order as the version defined in ``enum_create.py``."
+msgstr ""
+
+#: ../../source/enum/index.rst:265
+msgid "Non-integer Member Values"
+msgstr ""
+
+#: ../../source/enum/index.rst:267
+msgid ""
+"Enum member values are not restricted to integers. In fact, any type of "
+"object can be associated with a member. If the value is a tuple, the "
+"members are passed as individual arguments to ``__init__()``."
+msgstr ""
+
+#: ../../source/enum/index.rst
+msgid "enum_tuple_values.py"
+msgstr ""
+
+#: ../../source/enum/index.rst:275
+msgid ""
+"In this example, each member value is a tuple containing the numerical ID"
+" (such as might be stored in a database) and a list of valid transitions "
+"away from the current state."
+msgstr ""
+
+#: ../../source/enum/index.rst:294
+msgid ""
+"For more complex cases, tuples might become unwieldy. Since member values"
+" can be any type of object, dictionaries can be used for cases where "
+"there are a lot of separate attributes to track for each enum value. "
+"Complex values are passed directly to ``__init__()`` as the only argument"
+" other than ``self``."
+msgstr ""
+
+#: ../../source/enum/index.rst
+msgid "enum_complex_values.py"
+msgstr ""
+
+#: ../../source/enum/index.rst:304
+msgid ""
+"This example expresses the same data as the previous example, using "
+"dictionaries rather than tuples."
+msgstr ""
+
+#: ../../source/enum/index.rst:324
+msgid ":pydoc:`enum`"
+msgstr ""
+
+#: ../../source/enum/index.rst:326
+msgid ":pep:`435` -- Adding an Enum type to the Python standard library"
+msgstr ""
+
+#: ../../source/enum/index.rst:328
+msgid ""
+"`flufl.enum <http://pythonhosted.org/flufl.enum/>`_ -- The original "
+"inspiration for ``enum``, by Barry Warsaw."
+msgstr ""
+

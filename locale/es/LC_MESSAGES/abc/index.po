@@ -1,0 +1,302 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 18:41-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../source/abc/index.rst:3
+msgid "abc --- Abstract Base Classes"
+msgstr ""
+
+#: ../../source/abc/index.rst:8
+msgid "Define and use abstract base classes for interface verification."
+msgstr ""
+
+#: ../../source/abc/index.rst:11
+msgid "Why use Abstract Base Classes?"
+msgstr ""
+
+#: ../../source/abc/index.rst:13
+msgid ""
+"Abstract base classes are a form of interface checking more strict than "
+"individual ``hasattr()`` checks for particular methods.  By defining an "
+"abstract base class, a common API can be established for a set of "
+"subclasses.  This capability is especially useful in situations where "
+"someone less familiar with the source for an application is going to "
+"provide plug-in extensions, but can also help when working on a large "
+"team or with a large code-base where keeping track of all of the classes "
+"at the same time is difficult or not possible."
+msgstr ""
+
+#: ../../source/abc/index.rst:23
+msgid "How ABCs Work"
+msgstr ""
+
+#: ../../source/abc/index.rst:25
+msgid ""
+"``abc`` works by marking methods of the base class as abstract, and then "
+"registering concrete classes as implementations of the abstract base.  If"
+" an application or library requires a particular API, ``issubclass()`` or"
+" ``isinstance()`` can be used to check an object against the abstract "
+"class."
+msgstr ""
+
+#: ../../source/abc/index.rst:31
+msgid ""
+"To start, define an abstract base class to represent the API of a set of "
+"plug-ins for saving and loading data.  Set the metaclass for the new base"
+" class to ``ABCMeta``, and use decorators to establish the public API for"
+" the class.  The following examples use ``abc_base.py``."
+msgstr ""
+
+#: ../../source/abc/index.rst
+msgid "abc_base.py"
+msgstr ""
+
+#: ../../source/abc/index.rst:43
+msgid "Registering a Concrete Class"
+msgstr ""
+
+#: ../../source/abc/index.rst:45
+msgid ""
+"There are two ways to indicate that a concrete class implements an "
+"abstract API: either explicitly register the class or create a new "
+"subclass directly from the abstract base.  Use the ``register()`` class "
+"method as a decorator on a concrete class to add it explicitly when the "
+"class provides the required API, but is not part of the inheritance tree "
+"of the abstract base class."
+msgstr ""
+
+#: ../../source/abc/index.rst
+msgid "abc_register.py"
+msgstr ""
+
+#: ../../source/abc/index.rst:56
+msgid ""
+"In this example the ``RegisteredImplementation`` is derived from "
+"``LocalBaseClass``, but is registered as implementing the ``PluginBase`` "
+"API so ``issubclass()`` and ``isinstance()`` treat it as though it is "
+"derived from ``PluginBase``."
+msgstr ""
+
+#: ../../source/abc/index.rst:76
+msgid "Implementation Through Subclassing"
+msgstr ""
+
+#: ../../source/abc/index.rst:78
+msgid ""
+"Subclassing directly from the base avoids the need to register the class "
+"explicitly."
+msgstr ""
+
+#: ../../source/abc/index.rst
+msgid "abc_subclass.py"
+msgstr ""
+
+#: ../../source/abc/index.rst:85
+msgid ""
+"In this case, normal Python class management features are used to "
+"recognize ``SubclassImplementation`` as implementing the abstract "
+"``PluginBase``."
+msgstr ""
+
+#: ../../source/abc/index.rst:102
+msgid ""
+"A side effect of using direct subclassing is it is possible to find all "
+"of the implementations of a plug-in by asking the base class for the list"
+" of known classes derived from it (this is not an ``abc`` feature, all "
+"classes can do this)."
+msgstr ""
+
+#: ../../source/abc/index.rst
+msgid "abc_find_subclasses.py"
+msgstr ""
+
+#: ../../source/abc/index.rst:111
+msgid ""
+"Even though ``abc_register()`` is imported, ``RegisteredImplementation`` "
+"is not among the list of subclasses because it is not actually derived "
+"from the base."
+msgstr ""
+
+#: ../../source/abc/index.rst:128
+msgid "Helper Base Class"
+msgstr ""
+
+#: ../../source/abc/index.rst:130
+msgid ""
+"Forgetting to set the metaclass properly means the concrete "
+"implementations do not have their APIs enforced. To make it easier to set"
+" up the abstract class properly, a base class is provided that sets the "
+"metaclass automatically."
+msgstr ""
+
+#: ../../source/abc/index.rst
+msgid "abc_abc_base.py"
+msgstr ""
+
+#: ../../source/abc/index.rst:139
+msgid "To create a new abstract class, simply inherit from ``ABC``."
+msgstr ""
+
+#: ../../source/abc/index.rst:155
+msgid "Incomplete Implementations"
+msgstr ""
+
+#: ../../source/abc/index.rst:157
+msgid ""
+"Another benefit of subclassing directly from the abstract base class is "
+"that the subclass cannot be instantiated unless it fully implements the "
+"abstract portion of the API."
+msgstr ""
+
+#: ../../source/abc/index.rst
+msgid "abc_incomplete.py"
+msgstr ""
+
+#: ../../source/abc/index.rst:165
+msgid ""
+"This keeps incomplete implementations from triggering unexpected errors "
+"at runtime."
+msgstr ""
+
+#: ../../source/abc/index.rst:188
+msgid "Concrete Methods in ABCs"
+msgstr ""
+
+#: ../../source/abc/index.rst:190
+msgid ""
+"Although a concrete class must provide implementations of all abstract "
+"methods, the abstract base class can also provide implementations that "
+"can be invoked via ``super()``.  This allows common logic to be reused by"
+" placing it in the base class, but forces subclasses to provide an "
+"overriding method with (potentially) custom logic."
+msgstr ""
+
+#: ../../source/abc/index.rst
+msgid "abc_concrete_method.py"
+msgstr ""
+
+#: ../../source/abc/index.rst:200
+msgid ""
+"Since ``ABCWithConcreteImplementation()`` is an abstract base class, it "
+"is not possible to instantiate it to use it directly.  Subclasses *must* "
+"provide an override for ``retrieve_values()``, and in this case the "
+"concrete class sorts the data before returning it."
+msgstr ""
+
+#: ../../source/abc/index.rst:223
+msgid "Abstract Properties"
+msgstr ""
+
+#: ../../source/abc/index.rst:225
+msgid ""
+"If an API specification includes attributes in addition to methods, it "
+"can require the attributes in concrete classes by combining "
+"``abstractmethod()`` with ``property()``."
+msgstr ""
+
+#: ../../source/abc/index.rst
+msgid "abc_abstractproperty.py"
+msgstr ""
+
+#: ../../source/abc/index.rst:233
+msgid ""
+"The ``Base`` class in the example cannot be instantiated because it has "
+"only an abstract version of the property getter methods for ``value`` and"
+" ``constant``.  The ``value`` property is given a concrete getter in "
+"``Implementation`` and ``constant`` is defined using a class attribute."
+msgstr ""
+
+#: ../../source/abc/index.rst:255
+msgid "Abstract read-write properties can also be defined."
+msgstr ""
+
+#: ../../source/abc/index.rst
+msgid "abc_abstractproperty_rw.py"
+msgstr ""
+
+#: ../../source/abc/index.rst:261
+msgid ""
+"The concrete property must be defined the same way as the abstract "
+"property, as either read-write or read-only.  Overriding a read-write "
+"property in ``PartialImplementation`` with one that is read-only leaves "
+"the property read-only -- the property's setter method from the base "
+"class is not reused."
+msgstr ""
+
+#: ../../source/abc/index.rst:285
+msgid ""
+"To use the decorator syntax with read-write abstract properties, the "
+"methods to get and set the value must be named the same."
+msgstr ""
+
+#: ../../source/abc/index.rst:289
+msgid "Abstract Class and Static Methods"
+msgstr ""
+
+#: ../../source/abc/index.rst:291
+msgid "Class and static methods can also be marked as abstract."
+msgstr ""
+
+#: ../../source/abc/index.rst
+msgid "abc_class_static.py"
+msgstr ""
+
+#: ../../source/abc/index.rst:297
+msgid ""
+"Although the class method is invoked on the class rather than an "
+"instance, it still prevents the class from being instantiated if it is "
+"not defined."
+msgstr ""
+
+#: ../../source/abc/index.rst:317
+msgid ":pydoc:`abc`"
+msgstr ""
+
+#: ../../source/abc/index.rst:319
+msgid ":pep:`3119` -- Introducing Abstract Base Classes"
+msgstr ""
+
+#: ../../source/abc/index.rst:321
+msgid ""
+":mod:`collections` -- The collections module includes abstract base "
+"classes for several collection types."
+msgstr ""
+
+#: ../../source/abc/index.rst:324
+msgid ":pep:`3141` -- A Type Hierarchy for Numbers"
+msgstr ""
+
+#: ../../source/abc/index.rst:326
+msgid ""
+"`Wikipedia: Strategy Pattern "
+"<https://en.wikipedia.org/wiki/Strategy_pattern>`_ -- Description and "
+"examples of the strategy pattern, a common plug-in implementation "
+"pattern."
+msgstr ""
+
+#: ../../source/abc/index.rst:331
+msgid ""
+"`Dynamic Code Patterns: Extending Your Applications With Plugins "
+"<http://pyvideo.org/pycon-us-2013/dynamic-code-patterns-extending-your-"
+"application.html>`__ -- PyCon 2013 presentation by Doug Hellmann"
+msgstr ""
+
+#: ../../source/abc/index.rst:335
+msgid ":ref:`Python 2 to 3 porting notes for abc <porting-abc>`"
+msgstr ""
+

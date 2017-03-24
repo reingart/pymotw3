@@ -1,0 +1,122 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 18:41-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../source/resource/index.rst:3
+msgid "resource --- System Resource Management"
+msgstr ""
+
+#: ../../source/resource/index.rst:8
+msgid "Manage the system resource limits for a Unix program."
+msgstr ""
+
+#: ../../source/resource/index.rst:10
+msgid ""
+"The functions in ``resource`` probe the current system resources consumed"
+" by a process, and place limits on them to control how much load a "
+"program can impose on a system."
+msgstr ""
+
+#: ../../source/resource/index.rst:15
+msgid "Current Usage"
+msgstr ""
+
+#: ../../source/resource/index.rst:17
+msgid ""
+"Use ``getrusage()`` to probe the resources used by the current process "
+"and/or its children.  The return value is a data structure containing "
+"several resource metrics based on the current state of the system."
+msgstr ""
+
+#: ../../source/resource/index.rst:24
+msgid ""
+"Not all of the resource values gathered are displayed here.  Refer to the"
+" standard library documentation for ``resource`` for a more complete "
+"list."
+msgstr ""
+
+#: ../../source/resource/index.rst
+msgid "resource_getrusage.py"
+msgstr ""
+
+#: ../../source/resource/index.rst:32
+msgid ""
+"Because the test program is extremely simple, it does not use very many "
+"resources."
+msgstr ""
+
+#: ../../source/resource/index.rst:55
+msgid "Resource Limits"
+msgstr ""
+
+#: ../../source/resource/index.rst:57
+msgid ""
+"Separate from the current actual usage, it is possible to check the "
+"*limits* imposed on the application, and then change them."
+msgstr ""
+
+#: ../../source/resource/index.rst
+msgid "resource_getrlimit.py"
+msgstr ""
+
+#: ../../source/resource/index.rst:64
+msgid ""
+"The return value for each limit is a tuple containing the *soft* limit "
+"imposed by the current configuration and the *hard* limit imposed by the "
+"operating system."
+msgstr ""
+
+#: ../../source/resource/index.rst:89
+msgid "The limits can be changed with ``setrlimit()``."
+msgstr ""
+
+#: ../../source/resource/index.rst
+msgid "resource_setrlimit_nofile.py"
+msgstr ""
+
+#: ../../source/resource/index.rst:95
+msgid ""
+"This example uses ``RLIMIT_NOFILE`` to control the number of open files "
+"allowed, changing it to a smaller soft limit than the default."
+msgstr ""
+
+#: ../../source/resource/index.rst:113
+msgid ""
+"It can also be useful to limit the amount of CPU time a process should "
+"consume, to avoid using too much.  When the process runs past the "
+"allotted amount of time, it sent a ``SIGXCPU`` signal."
+msgstr ""
+
+#: ../../source/resource/index.rst
+msgid "resource_setrlimit_cpu.py"
+msgstr ""
+
+#: ../../source/resource/index.rst:121
+msgid ""
+"Normally the signal handler should flush all open files and close them, "
+"but in this case it just prints a message and exits."
+msgstr ""
+
+#: ../../source/resource/index.rst:143
+msgid ":pydoc:`resource`"
+msgstr ""
+
+#: ../../source/resource/index.rst:145
+msgid ":mod:`signal` -- For details on registering signal handlers."
+msgstr ""
+

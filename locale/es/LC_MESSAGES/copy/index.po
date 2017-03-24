@@ -1,0 +1,191 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 18:41-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../source/copy/index.rst:3
+msgid "copy --- Duplicate Objects"
+msgstr ""
+
+#: ../../source/copy/index.rst:8
+msgid ""
+"Provides functions for duplicating objects using shallow or deep copy "
+"semantics."
+msgstr ""
+
+#: ../../source/copy/index.rst:10
+msgid ""
+"The ``copy`` module includes two functions, ``copy()`` and "
+"``deepcopy()``, for duplicating existing objects."
+msgstr ""
+
+#: ../../source/copy/index.rst:14
+msgid "Shallow Copies"
+msgstr ""
+
+#: ../../source/copy/index.rst:16
+msgid ""
+"The *shallow copy* created by ``copy()`` is a new container populated "
+"with references to the contents of the original object. When making a "
+"shallow copy of a ``list`` object, a new ``list`` is constructed and the "
+"elements of the original object are appended to it."
+msgstr ""
+
+#: ../../source/copy/index.rst
+msgid "copy_shallow.py"
+msgstr ""
+
+#: ../../source/copy/index.rst:26
+msgid ""
+"For a shallow copy, the ``MyClass`` instance is not duplicated, so the "
+"reference in the ``dup`` list is to the same object that is in "
+"``my_list``."
+msgstr ""
+
+#: ../../source/copy/index.rst:49
+msgid "Deep Copies"
+msgstr ""
+
+#: ../../source/copy/index.rst:51
+msgid ""
+"The *deep copy* created by ``deepcopy()`` is a new container populated "
+"with copies of the contents of the original object. To make a deep copy "
+"of a ``list``, a new ``list`` is constructed, the elements of the "
+"original list are copied, and then those copies are appended to the new "
+"list."
+msgstr ""
+
+#: ../../source/copy/index.rst:57
+msgid ""
+"Replacing the call to ``copy()`` with ``deepcopy()`` makes the difference"
+" in the output apparent."
+msgstr ""
+
+#: ../../source/copy/index.rst
+msgid "copy_deep.py"
+msgstr ""
+
+#: ../../source/copy/index.rst:65
+msgid ""
+"The first element of the list is no longer the same object reference, but"
+" when the two objects are compared they still evaluate as being equal."
+msgstr ""
+
+#: ../../source/copy/index.rst:88
+msgid "Customizing Copy Behavior"
+msgstr ""
+
+#: ../../source/copy/index.rst:90
+msgid ""
+"It is possible to control how copies are made using the ``__copy__()`` "
+"and ``__deepcopy__()`` special methods."
+msgstr ""
+
+#: ../../source/copy/index.rst:93
+msgid ""
+"``__copy__()`` is called without any arguments and should return a "
+"shallow copy of the object."
+msgstr ""
+
+#: ../../source/copy/index.rst:96
+msgid ""
+"``__deepcopy__()`` is called with a memo dictionary and should return a "
+"deep copy of the object. Any member attributes that need to be deep-"
+"copied should be passed to ``copy.deepcopy()``, along with the memo "
+"dictionary, to control for recursion. (The memo dictionary is explained "
+"in more detail later.)"
+msgstr ""
+
+#: ../../source/copy/index.rst:102
+msgid "The following example illustrates how the methods are called."
+msgstr ""
+
+#: ../../source/copy/index.rst
+msgid "copy_hooks.py"
+msgstr ""
+
+#: ../../source/copy/index.rst:108
+msgid ""
+"The memo dictionary is used to keep track of the values that have been "
+"copied already, so as to avoid infinite recursion."
+msgstr ""
+
+#: ../../source/copy/index.rst:126
+msgid "Recursion in Deep Copy"
+msgstr ""
+
+#: ../../source/copy/index.rst:128
+msgid ""
+"To avoid problems with duplicating recursive data structures, "
+"``deepcopy()`` uses a dictionary to track objects that have already been "
+"copied. This dictionary is passed to the ``__deepcopy__()`` method so it "
+"can be examined there as well."
+msgstr ""
+
+#: ../../source/copy/index.rst:133
+msgid ""
+"The next example shows how an interconnected data structure such as a "
+"directed graph can help protect against recursion by implementing a "
+"``__deepcopy__()`` method."
+msgstr ""
+
+#: ../../source/copy/index.rst
+msgid "copy_recursion.py"
+msgstr ""
+
+#: ../../source/copy/index.rst:141
+msgid ""
+"The ``Graph`` class includes a few basic directed graph methods. An "
+"instance can be initialized with a name and a list of existing nodes to "
+"which it is connected. The ``add_connection()`` method is used to set up "
+"bidirectional connections. It is also used by the deep copy operator."
+msgstr ""
+
+#: ../../source/copy/index.rst:147
+msgid ""
+"The ``__deepcopy__()`` method prints messages to show how it is called, "
+"and manages the memo dictionary contents as needed. Instead of copying "
+"the entire connection list wholesale, it creates a new list and appends "
+"copies of the individual connections to it. That ensures that the memo "
+"dictionary is updated as each new node is duplicated, and it avoids "
+"recursion issues or extra copies of nodes. As before, the method returns "
+"the copied object when it is done."
+msgstr ""
+
+#: ../../source/copy/index.rst
+msgid "Deep Copy for an Object Graph with Cycles"
+msgstr ""
+
+#: ../../source/copy/index.rst:165
+msgid ""
+"The graph shown in :figure:`Deep Copy for an Object Graph with Cycles` "
+"includes several cycles, but handling the recursion with the memo "
+"dictionary prevents the traversal from causing a stack overflow error. "
+"When the *root* node is copied, it produces the following output."
+msgstr ""
+
+#: ../../source/copy/index.rst:206
+msgid ""
+"The second time the *root* node is encountered, while the *a* node is "
+"being copied, ``__deepcopy__()`` detects the recursion and reuses the "
+"existing value from the memo dictionary instead of creating a new object."
+msgstr ""
+
+#: ../../source/copy/index.rst:213
+msgid ":pydoc:`copy`"
+msgstr ""
+

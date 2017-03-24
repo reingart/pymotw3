@@ -1,0 +1,312 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 18:41-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../source/xmlrpc.client/index.rst:3
+msgid "xmlrpc.client --- Client Library for XML-RPC"
+msgstr ""
+
+#: ../../source/xmlrpc.client/index.rst:8
+msgid "Client-side library for XML-RPC communication."
+msgstr ""
+
+#: ../../source/xmlrpc.client/index.rst:10
+msgid ""
+"XML-RPC is a lightweight remote procedure call protocol built on top of "
+"HTTP and XML.  The :mod:`xmlrpclib` module lets a Python program "
+"communicate with an XML-RPC server written in any language."
+msgstr ""
+
+#: ../../source/xmlrpc.client/index.rst:14
+msgid ""
+"All of the examples in this section use the server defined in "
+"``xmlrpc_server.py``, available in the source distribution and included "
+"here for reference."
+msgstr ""
+
+#: ../../source/xmlrpc.client/index.rst
+msgid "xmlrpc_server.py"
+msgstr ""
+
+#: ../../source/xmlrpc.client/index.rst:23
+msgid "Connecting to a Server"
+msgstr ""
+
+#: ../../source/xmlrpc.client/index.rst:25
+msgid ""
+"The simplest way to connect a client to a server is to instantiate a "
+"``ServerProxy`` object, giving it the URI of the server. For example, the"
+" demo server runs on port 9000 of localhost."
+msgstr ""
+
+#: ../../source/xmlrpc.client/index.rst
+msgid "xmlrpc_ServerProxy.py"
+msgstr ""
+
+#: ../../source/xmlrpc.client/index.rst:33
+msgid ""
+"In this case, the ``ping()`` method of the service takes no arguments and"
+" returns a single Boolean value."
+msgstr ""
+
+#: ../../source/xmlrpc.client/index.rst:42
+msgid ""
+"Other options are available to support alternate transport. Both HTTP and"
+" HTTPS are supported out of the box, both with basic authentication. To "
+"implement a new communication channel, only a new transport class is "
+"needed.  It could be an interesting exercise, for example, to implement "
+"XML-RPC over SMTP."
+msgstr ""
+
+#: ../../source/xmlrpc.client/index.rst
+msgid "xmlrpc_ServerProxy_verbose.py"
+msgstr ""
+
+#: ../../source/xmlrpc.client/index.rst:52
+msgid ""
+"The ``verbose`` option gives debugging information useful for resolving "
+"communication errors."
+msgstr ""
+
+#: ../../source/xmlrpc.client/index.rst:71
+msgid ""
+"The default encoding can be changed from UTF-8 if an alternate system is "
+"needed."
+msgstr ""
+
+#: ../../source/xmlrpc.client/index.rst
+msgid "xmlrpc_ServerProxy_encoding.py"
+msgstr ""
+
+#: ../../source/xmlrpc.client/index.rst:78
+msgid "The server automatically detects the correct encoding."
+msgstr ""
+
+#: ../../source/xmlrpc.client/index.rst:87
+msgid ""
+"The ``allow_none`` option controls whether Python's ``None`` value is "
+"automatically translated to a nil value or if it causes an error."
+msgstr ""
+
+#: ../../source/xmlrpc.client/index.rst
+msgid "xmlrpc_ServerProxy_allow_none.py"
+msgstr ""
+
+#: ../../source/xmlrpc.client/index.rst:94
+msgid ""
+"The error is raised locally if the client does not allow ``None``, but "
+"can also be raised from within the server if it is not configured to "
+"allow ``None``."
+msgstr ""
+
+#: ../../source/xmlrpc.client/index.rst:106
+msgid "Data Types"
+msgstr ""
+
+#: ../../source/xmlrpc.client/index.rst:108
+msgid ""
+"The XML-RPC protocol recognizes a limited set of common data types. The "
+"types can be passed as arguments or return values and combined to create "
+"more complex data structures."
+msgstr ""
+
+#: ../../source/xmlrpc.client/index.rst
+msgid "xmlrpc_types.py"
+msgstr ""
+
+#: ../../source/xmlrpc.client/index.rst:116
+msgid "The simple types are"
+msgstr ""
+
+#: ../../source/xmlrpc.client/index.rst:147
+msgid ""
+"The supported types can be nested to create values of arbitrary "
+"complexity."
+msgstr ""
+
+#: ../../source/xmlrpc.client/index.rst
+msgid "xmlrpc_types_nested.py"
+msgstr ""
+
+#: ../../source/xmlrpc.client/index.rst:154
+msgid ""
+"This program passes a list of dictionaries containing all of the "
+"supported types to the sample server, which returns the data.  Tuples are"
+" converted to lists and ``datetime`` instances are converted to "
+"``DateTime`` objects, but otherwise the data is unchanged."
+msgstr ""
+
+#: ../../source/xmlrpc.client/index.rst:209
+msgid ""
+"XML-RPC supports dates as a native type, and :mod:`xmlrpclib` can use one"
+" of two classes to represent the date values in the outgoing proxy or "
+"when they are received from the server."
+msgstr ""
+
+#: ../../source/xmlrpc.client/index.rst
+msgid "xmlrpc_ServerProxy_use_datetime.py"
+msgstr ""
+
+#: ../../source/xmlrpc.client/index.rst:217
+msgid ""
+"By default an internal version of ``DateTime`` is used, but the "
+"``use_datetime`` option turns on support for using the classes in the "
+":mod:`datetime` module."
+msgstr ""
+
+#: ../../source/xmlrpc.client/index.rst:229
+msgid "Passing Objects"
+msgstr ""
+
+#: ../../source/xmlrpc.client/index.rst:231
+msgid ""
+"Instances of Python classes are treated as structures and passed as a "
+"dictionary, with the attributes of the object as values in the "
+"dictionary."
+msgstr ""
+
+#: ../../source/xmlrpc.client/index.rst
+msgid "xmlrpc_types_object.py"
+msgstr ""
+
+#: ../../source/xmlrpc.client/index.rst:239
+msgid ""
+"When the value is sent back to the client from the server the result is a"
+" dictionary on the client, since there is nothing encoded in the values "
+"to tell the server (or client) that it should be instantiated as part of "
+"a class."
+msgstr ""
+
+#: ../../source/xmlrpc.client/index.rst:259
+msgid "Binary Data"
+msgstr ""
+
+#: ../../source/xmlrpc.client/index.rst:261
+msgid ""
+"All values passed to the server are encoded and escaped automatically. "
+"However, some data types may contain characters that are not valid XML. "
+"For example, binary image data may include byte values in the ASCII "
+"control range 0 to 31.  To pass binary data, it is best to use the "
+"``Binary`` class to encode it for transport."
+msgstr ""
+
+#: ../../source/xmlrpc.client/index.rst
+msgid "xmlrpc_Binary.py"
+msgstr ""
+
+#: ../../source/xmlrpc.client/index.rst:271
+msgid ""
+"If the string containing a NULL byte is passed to ``show_type()``, an "
+"exception is raised in the XML parser as it processes the response."
+msgstr ""
+
+#: ../../source/xmlrpc.client/index.rst:283
+msgid ""
+"``Binary`` objects can also be used to send objects using :mod:`pickle`. "
+"The normal security issues related to sending what amounts to executable "
+"code over the wire apply here (i.e., do not do this unless the "
+"communication channel is secure)."
+msgstr ""
+
+#: ../../source/xmlrpc.client/index.rst:292
+msgid ""
+"The data attribute of the ``Binary`` instance contains the pickled "
+"version of the object, so it has to be unpickled before it can be used. "
+"That results in a different object (with a new id value)."
+msgstr ""
+
+#: ../../source/xmlrpc.client/index.rst:311
+msgid "Exception Handling"
+msgstr ""
+
+#: ../../source/xmlrpc.client/index.rst:313
+msgid ""
+"Since the XML-RPC server might be written in any language, exception "
+"classes cannot be transmitted directly. Instead, exceptions raised in the"
+" server are converted to ``Fault`` objects and raised as exceptions "
+"locally in the client."
+msgstr ""
+
+#: ../../source/xmlrpc.client/index.rst
+msgid "xmlrpc_exception.py"
+msgstr ""
+
+#: ../../source/xmlrpc.client/index.rst:322
+msgid ""
+"The original error message is saved in the :attr:`faultString` attribute,"
+" and :attr:`faultCode` is set to an XML-RPC error number."
+msgstr ""
+
+#: ../../source/xmlrpc.client/index.rst:333
+msgid "Combining Calls Into One Message"
+msgstr ""
+
+#: ../../source/xmlrpc.client/index.rst:335
+msgid ""
+"Multicall is an extension to the XML-RPC protocol that allows more than "
+"one call to be sent at the same time, with the responses collected and "
+"returned to the caller."
+msgstr ""
+
+#: ../../source/xmlrpc.client/index.rst
+msgid "xmlrpc_MultiCall.py"
+msgstr ""
+
+#: ../../source/xmlrpc.client/index.rst:343
+msgid ""
+"To use a ``MultiCall`` instance, invoke the methods on it as with a "
+"``ServerProxy``, then call the object with no arguments to actually run "
+"the remote functions. The return value is an iterator that yields the "
+"results from all of the calls."
+msgstr ""
+
+#: ../../source/xmlrpc.client/index.rst:356
+msgid ""
+"If one of the calls causes a ``Fault``, the exception is raised when the "
+"result is produced from the iterator and no more results are available."
+msgstr ""
+
+#: ../../source/xmlrpc.client/index.rst
+msgid "xmlrpc_MultiCall_exception.py"
+msgstr ""
+
+#: ../../source/xmlrpc.client/index.rst:364
+msgid ""
+"Since the third response, from ``raises_exception()``, generates an "
+"exception, the response from ``show_type()`` is not accessible."
+msgstr ""
+
+#: ../../source/xmlrpc.client/index.rst:377
+msgid ":pydoc:`xmlrpc.client`"
+msgstr ""
+
+#: ../../source/xmlrpc.client/index.rst:379
+msgid ":mod:`xmlrpc.server` -- An XML-RPC server implementation."
+msgstr ""
+
+#: ../../source/xmlrpc.client/index.rst:381
+msgid ":mod:`http.server` -- An HTTP server implementation."
+msgstr ""
+
+#: ../../source/xmlrpc.client/index.rst:383
+msgid ""
+"`XML-RPC How To <http://www.tldp.org/HOWTO/XML-RPC-HOWTO/index.html>`_ --"
+" Describes how to use XML-RPC to implement clients and servers in a "
+"variety of languages."
+msgstr ""
+

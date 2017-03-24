@@ -1,0 +1,195 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 18:41-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../source/base64/index.rst:3
+msgid "base64 --- Encode Binary Data with ASCII"
+msgstr ""
+
+#: ../../source/base64/index.rst:8
+msgid ""
+"The base64 module contains functions for translating binary data into a "
+"subset of ASCII suitable for transmission using plaintext protocols."
+msgstr ""
+
+#: ../../source/base64/index.rst:12
+msgid ""
+"The base64, base32, base16, and base85 encodings convert 8 bit bytes to "
+"values that fit inside the ASCII range of printable characters, trading "
+"more bits to represent the data for compatibility with systems that only "
+"support ASCII data, such as SMTP.  The *base* values correspond to the "
+"length of the alphabet used in each encoding.  There are also URL-safe "
+"variations of the original encodings that use slightly different "
+"alphabets."
+msgstr ""
+
+#: ../../source/base64/index.rst:21
+msgid "Base 64 Encoding"
+msgstr ""
+
+#: ../../source/base64/index.rst:23
+msgid "This is a basic example of encoding some text."
+msgstr ""
+
+#: ../../source/base64/index.rst
+msgid "base64_b64encode.py"
+msgstr ""
+
+#: ../../source/base64/index.rst:29
+msgid ""
+"The input must be a byte string, so the unicode string is first encoded "
+"to UTF-8. The output shows the 185 bytes of the UTF-8 source expand to "
+"248 bytes after being encoded."
+msgstr ""
+
+#: ../../source/base64/index.rst:35
+msgid ""
+"There are no carriage returns in the encoded data produced by the "
+"library, but the output has been wrapped artificially to make it fit "
+"better on the page."
+msgstr ""
+
+#: ../../source/base64/index.rst:60
+msgid "Base 64 Decoding"
+msgstr ""
+
+#: ../../source/base64/index.rst:62
+msgid ""
+"``b64decode()`` converts an encoded string back to the original form by "
+"taking four bytes and converting them to the original three, using a "
+"lookup table."
+msgstr ""
+
+#: ../../source/base64/index.rst
+msgid "base64_b64decode.py"
+msgstr ""
+
+#: ../../source/base64/index.rst:70
+msgid ""
+"The encoding process looks at each sequence of 24 bits in the input "
+"(three bytes) and encodes those same 24 bits spread over four bytes in "
+"the output.  The equal signs at the end of the output are padding "
+"inserted because the number of bits in the original string was not evenly"
+" divisible by 24, in this example."
+msgstr ""
+
+#: ../../source/base64/index.rst:89
+msgid ""
+"The value returned from ``b64decode()`` is a byte string. If the contents"
+" are known to be text, the byte string can be converted to a unicode "
+"object. However, the point of using base 64 encoding is to be able to "
+"transmit binary data, and so it is not always safe to assume that the "
+"decoded value is text."
+msgstr ""
+
+#: ../../source/base64/index.rst:96
+msgid "URL-safe Variations"
+msgstr ""
+
+#: ../../source/base64/index.rst:98
+msgid ""
+"Because the default base64 alphabet may use ``+`` and ``/``, and those "
+"two characters are used in URLs, it is often necessary to use an "
+"alternate encoding with substitutes for those characters."
+msgstr ""
+
+#: ../../source/base64/index.rst
+msgid "base64_urlsafe.py"
+msgstr ""
+
+#: ../../source/base64/index.rst:106
+msgid ""
+"The ``+`` is replaced with a ``-``, and ``/`` is replaced with underscore"
+" (``_``).  Otherwise, the alphabet is the same."
+msgstr ""
+
+#: ../../source/base64/index.rst:130
+msgid "Other Encodings"
+msgstr ""
+
+#: ../../source/base64/index.rst:132
+msgid ""
+"Besides Base64, the module provides functions for working with Base85, "
+"Base32, and Base16 (hex) encoded data."
+msgstr ""
+
+#: ../../source/base64/index.rst
+msgid "base64_base32.py"
+msgstr ""
+
+#: ../../source/base64/index.rst:139
+msgid ""
+"The Base32 alphabet includes the 26 uppercase letters from the ASCII set "
+"and the digits 2 through 7."
+msgstr ""
+
+#: ../../source/base64/index.rst:157
+msgid "The Base16 functions work with the hexadecimal alphabet."
+msgstr ""
+
+#: ../../source/base64/index.rst
+msgid "base64_base16.py"
+msgstr ""
+
+#: ../../source/base64/index.rst:163
+msgid ""
+"Each time the number of encoding bits goes down, the output in the "
+"encoded format takes up more space."
+msgstr ""
+
+#: ../../source/base64/index.rst:181
+msgid ""
+"The Base85 functions use an expanded alphabet that is more space-"
+"efficient than base 64."
+msgstr ""
+
+#: ../../source/base64/index.rst
+msgid "base64_base85.py"
+msgstr ""
+
+#: ../../source/base64/index.rst:188
+msgid ""
+"There are several Base85 encodings and different variations are used in "
+"Mercurial, git, and the PDF file format. Python includes two "
+"implementations, ``b85encode()`` implements the version used in Git and "
+"Mercurial while ``a85encode()`` implements the Ascii85 variant used by "
+"PDF files."
+msgstr ""
+
+#: ../../source/base64/index.rst:214
+msgid ":pydoc:`base64`"
+msgstr ""
+
+#: ../../source/base64/index.rst:216
+msgid ":rfc:`3548` -- The Base16, Base32, and Base64 Data Encodings"
+msgstr ""
+
+#: ../../source/base64/index.rst:218
+msgid ""
+":rfc:`1924` -- A Compact Representation of IPv6 Addresses (suggests "
+"base-85 encoding for IPv6 network addresses)"
+msgstr ""
+
+#: ../../source/base64/index.rst:221
+msgid "`Ascii85 <https://en.wikipedia.org/wiki/Ascii85>`__"
+msgstr ""
+
+#: ../../source/base64/index.rst:223
+msgid ":ref:`Python 2 to 3 porting notes for base64 <porting-base64>`"
+msgstr ""
+

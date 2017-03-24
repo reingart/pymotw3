@@ -1,0 +1,427 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 18:41-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../source/random/index.rst:3
+msgid "random --- Pseudorandom Number Generators"
+msgstr ""
+
+#: ../../source/random/index.rst:8
+msgid "Implements several types of pseudorandom number generators."
+msgstr ""
+
+#: ../../source/random/index.rst:10
+msgid ""
+"The ``random`` module provides a fast pseudorandom number generator based"
+" on the *Mersenne Twister* algorithm.  Originally developed to produce "
+"inputs for Monte Carlo simulations, Mersenne Twister generates numbers "
+"with nearly uniform distribution and a large period, making it suited for"
+" a wide range of applications."
+msgstr ""
+
+#: ../../source/random/index.rst:17
+msgid "Generating Random Numbers"
+msgstr ""
+
+#: ../../source/random/index.rst:19
+msgid ""
+"The ``random()`` function returns the next random floating point value "
+"from the generated sequence.  All of the return values fall within the "
+"range ``0 <= n < 1.0``."
+msgstr ""
+
+#: ../../source/random/index.rst
+msgid "random_random.py"
+msgstr ""
+
+#: ../../source/random/index.rst:27
+msgid "Running the program repeatedly produces different sequences of numbers."
+msgstr ""
+
+#: ../../source/random/index.rst:47
+msgid ""
+"To generate numbers in a specific numerical range, use ``uniform()`` "
+"instead."
+msgstr ""
+
+#: ../../source/random/index.rst
+msgid "random_uniform.py"
+msgstr ""
+
+#: ../../source/random/index.rst:54
+msgid ""
+"Pass minimum and maximum values, and ``uniform()`` adjusts the return "
+"values from ``random()`` using the formula ``min + (max - min) * "
+"random()``."
+msgstr ""
+
+#: ../../source/random/index.rst:72
+msgid "Seeding"
+msgstr ""
+
+#: ../../source/random/index.rst:74
+msgid ""
+"``random()`` produces different values each time it is called and has a "
+"very large period before it repeats any numbers.  This is useful for "
+"producing unique values or variations, but there are times when having "
+"the same data set available to be processed in different ways is useful."
+"  One technique is to use a program to generate random values and save "
+"them to be processed by a separate step.  That may not be practical for "
+"large amounts of data, though, so ``random`` includes the ``seed()`` "
+"function for initializing the pseudorandom generator so that it produces "
+"an expected set of values."
+msgstr ""
+
+#: ../../source/random/index.rst
+msgid "random_seed.py"
+msgstr ""
+
+#: ../../source/random/index.rst:88
+msgid ""
+"The seed value controls the first value produced by the formula used to "
+"produce pseudorandom numbers, and since the formula is deterministic it "
+"also sets the full sequence produced after the seed is changed.  The "
+"argument to ``seed()`` can be any hashable object. The default is to use "
+"a platform-specific source of randomness, if one is available.  "
+"Otherwise, the current time is used."
+msgstr ""
+
+#: ../../source/random/index.rst:114
+msgid "Saving State"
+msgstr ""
+
+#: ../../source/random/index.rst:116
+msgid ""
+"The internal state of the pseudorandom algorithm used by ``random()`` can"
+" be saved and used to control the numbers produced in subsequent runs.  "
+"Restoring the previous state before continuing reduces the likelihood of "
+"repeating values or sequences of values from the earlier input.  The "
+"``getstate()`` function returns data that can be used to re-initialize "
+"the random number generator later with ``setstate()``."
+msgstr ""
+
+#: ../../source/random/index.rst
+msgid "random_state.py"
+msgstr ""
+
+#: ../../source/random/index.rst:128
+msgid ""
+"The data returned by ``getstate()`` is an implementation detail, so this "
+"example saves the data to a file with :mod:`pickle` but otherwise treats "
+"it as a black box.  If the file exists when the program starts, it loads "
+"the old state and continues.  Each run produces a few numbers before and "
+"after saving the state, to show that restoring the state causes the "
+"generator to produce the same values again."
+msgstr ""
+
+#: ../../source/random/index.rst:163
+msgid "Random Integers"
+msgstr ""
+
+#: ../../source/random/index.rst:165
+msgid ""
+"``random()`` generates floating point numbers.  It is possible to convert"
+" the results to integers, but using ``randint()`` to generate integers "
+"directly is more convenient."
+msgstr ""
+
+#: ../../source/random/index.rst
+msgid "random_randint.py"
+msgstr ""
+
+#: ../../source/random/index.rst:173
+msgid ""
+"The arguments to ``randint()`` are the ends of the inclusive range for "
+"the values.  The numbers can be positive or negative, but the first value"
+" should be less than the second."
+msgstr ""
+
+#: ../../source/random/index.rst:190
+msgid "``randrange()`` is a more general form of selecting values from a range."
+msgstr ""
+
+#: ../../source/random/index.rst
+msgid "random_randrange.py"
+msgstr ""
+
+#: ../../source/random/index.rst:197
+msgid ""
+"``randrange()`` supports a ``step`` argument, in addition to start and "
+"stop values, so it is fully equivalent to selecting a random value from "
+"``range(start, stop, step)``.  It is more efficient, because the range is"
+" not actually constructed."
+msgstr ""
+
+#: ../../source/random/index.rst:216
+msgid "Picking Random Items"
+msgstr ""
+
+#: ../../source/random/index.rst:218
+msgid ""
+"One common use for random number generators is to select a random item "
+"from a sequence of enumerated values, even if those values are not "
+"numbers.  ``random`` includes the ``choice()`` function for making a "
+"random selection from a sequence.  This example simulates flipping a coin"
+" 10,000 times to count how many times it comes up heads and how many "
+"times tails."
+msgstr ""
+
+#: ../../source/random/index.rst
+msgid "random_choice.py"
+msgstr ""
+
+#: ../../source/random/index.rst:229
+msgid ""
+"There are only two outcomes allowed, so rather than use numbers and "
+"convert them the words \"heads\" and \"tails\" are used with "
+"``choice()``.  The results are tabulated in a dictionary using the "
+"outcome names as keys."
+msgstr ""
+
+#: ../../source/random/index.rst:249
+msgid "Permutations"
+msgstr ""
+
+#: ../../source/random/index.rst:251
+msgid ""
+"A simulation of a card game needs to mix up the deck of cards and then "
+"deal them to the players, without using the same card more than once.  "
+"Using ``choice()`` could result in the same card being dealt twice, so "
+"instead, the deck can be mixed up with ``shuffle()`` and then individual "
+"cards removed as they are dealt."
+msgstr ""
+
+#: ../../source/random/index.rst
+msgid "random_shuffle.py"
+msgstr ""
+
+#: ../../source/random/index.rst:261
+msgid ""
+"The cards are represented as strings with the face value and a letter "
+"indicating the suit.  The dealt \"hands\" are created by adding one card "
+"at a time to each of four lists, and removing it from the deck so it "
+"cannot be dealt again."
+msgstr ""
+
+#: ../../source/random/index.rst:300
+msgid "Sampling"
+msgstr ""
+
+#: ../../source/random/index.rst:302
+msgid ""
+"Many simulations need random samples from a population of input values.  "
+"The ``sample()`` function generates samples without repeating values and "
+"without modifying the input sequence.  This example prints a random "
+"sample of words from the system dictionary."
+msgstr ""
+
+#: ../../source/random/index.rst
+msgid "random_sample.py"
+msgstr ""
+
+#: ../../source/random/index.rst:311
+msgid ""
+"The algorithm for producing the result set takes into account the sizes "
+"of the input and the sample requested to produce the result as "
+"efficiently as possible."
+msgstr ""
+
+#: ../../source/random/index.rst:342
+msgid "Multiple Simultaneous Generators"
+msgstr ""
+
+#: ../../source/random/index.rst:344
+msgid ""
+"In addition to module-level functions, ``random`` includes a ``Random`` "
+"class to manage the internal state for several random number generators."
+"  All of the functions described earlier are available as methods of the "
+"``Random`` instances, and each instance can be initialized and used "
+"separately, without interfering with the values returned by other "
+"instances."
+msgstr ""
+
+#: ../../source/random/index.rst
+msgid "random_random_class.py"
+msgstr ""
+
+#: ../../source/random/index.rst:355
+msgid ""
+"On a system with good native random value seeding, the instances start "
+"out in unique states.  However, if there is no good platform random value"
+" generator, the instances are likely to have been seeded with the current"
+" time, and therefore produce the same values."
+msgstr ""
+
+#: ../../source/random/index.rst:383
+msgid "SystemRandom"
+msgstr ""
+
+#: ../../source/random/index.rst:385
+msgid ""
+"Some operating systems provide a random number generator that has access "
+"to more sources of entropy that can be introduced into the generator.  "
+"``random`` exposes this feature through the ``SystemRandom`` class, which"
+" has the same API as ``Random`` but uses ``os.urandom()`` to generate the"
+" values that form the basis of all of the other algorithms."
+msgstr ""
+
+#: ../../source/random/index.rst
+msgid "random_system_random.py"
+msgstr ""
+
+#: ../../source/random/index.rst:396
+msgid ""
+"Sequences produced by ``SystemRandom`` are not reproducible because the "
+"randomness is coming from the system, rather than software state (in "
+"fact, ``seed()`` and ``setstate()`` have no effect at all)."
+msgstr ""
+
+#: ../../source/random/index.rst:425
+msgid "Non-uniform Distributions"
+msgstr ""
+
+#: ../../source/random/index.rst:427
+msgid ""
+"While the uniform distribution of the values produced by ``random()`` is "
+"useful for a lot of purposes, other distributions more accurately model "
+"specific situations.  The ``random`` module includes functions to produce"
+" values in those distributions, too. They are listed here, but not "
+"covered in detail because their uses tend to be specialized and require "
+"more complex examples."
+msgstr ""
+
+#: ../../source/random/index.rst:435
+msgid "Normal"
+msgstr ""
+
+#: ../../source/random/index.rst:437
+msgid ""
+"The *normal* distribution is commonly used for non-uniform continuous "
+"values such as grades, heights, weights, etc.  The curve produced by the "
+"distribution has a distinctive shape which has lead to it being nicknamed"
+" a \"bell curve.\"  ``random`` includes two functions for generating "
+"values with a normal distribution, ``normalvariate()`` and the slightly "
+"faster ``gauss()`` (the normal distribution is also called the Gaussian "
+"distribution)."
+msgstr ""
+
+#: ../../source/random/index.rst:445
+msgid ""
+"The related function, ``lognormvariate()`` produces pseudorandom values "
+"where the logarithm of the values is distributed normally. Log-normal "
+"distributions are useful for values that are the product of several "
+"random variables which do not interact."
+msgstr ""
+
+#: ../../source/random/index.rst:451
+msgid "Approximation"
+msgstr ""
+
+#: ../../source/random/index.rst:453
+msgid ""
+"The *triangular* distribution is used as an approximate distribution for "
+"small sample sizes.  The \"curve\" of a triangular distribution has low "
+"points at known minimum and maximum values, and a high point at the mode,"
+" which is estimated based on a \"most likely\" outcome (reflected by the "
+"mode argument to ``triangular()``)."
+msgstr ""
+
+#: ../../source/random/index.rst:460
+msgid "Exponential"
+msgstr ""
+
+#: ../../source/random/index.rst:462
+msgid ""
+"``expovariate()`` produces an exponential distribution useful for "
+"simulating arrival or interval time values for in homogeneous Poisson "
+"processes such as the rate of radioactive decay or requests coming into a"
+" web server."
+msgstr ""
+
+#: ../../source/random/index.rst:467
+msgid ""
+"The Pareto, or power law, distribution matches many observable phenomena "
+"and was popularized by *The Long Tail*, by Chris Anderson. The "
+"``paretovariate()`` function is useful for simulating allocation of "
+"resources to individuals (wealth to people, demand for musicians, "
+"attention to blogs, etc.)."
+msgstr ""
+
+#: ../../source/random/index.rst:474
+msgid "Angular"
+msgstr ""
+
+#: ../../source/random/index.rst:476
+msgid ""
+"The von Mises, or circular normal, distribution (produced by "
+"``vonmisesvariate()``) is used for computing probabilities of cyclic "
+"values such as angles, calendar days, and times."
+msgstr ""
+
+#: ../../source/random/index.rst:481
+msgid "Sizes"
+msgstr ""
+
+#: ../../source/random/index.rst:483
+msgid ""
+"``betavariate()`` generates values with the Beta distribution, which is "
+"commonly used in Bayesian statistics and applications such as task "
+"duration modeling."
+msgstr ""
+
+#: ../../source/random/index.rst:487
+msgid ""
+"The Gamma distribution produced by ``gammavariate()`` is used for "
+"modeling the sizes of things such as waiting times, rainfall, and "
+"computational errors."
+msgstr ""
+
+#: ../../source/random/index.rst:491
+msgid ""
+"The Weibull distribution computed by ``weibullvariate()`` is used in "
+"failure analysis, industrial engineering, and weather forecasting.  It "
+"describes the distribution of sizes of particles or other discrete "
+"objects."
+msgstr ""
+
+#: ../../source/random/index.rst:499
+msgid ":pydoc:`random`"
+msgstr ""
+
+#: ../../source/random/index.rst:501
+msgid ""
+"\"Mersenne Twister: A 623-dimensionally equidistributed uniform "
+"pseudorandom number generator\" -- Article by M. Matsumoto and T. "
+"Nishimura from *ACM Transactions on Modeling and Computer Simulation* "
+"Vol. 8, No. 1, January pp.3-30 1998."
+msgstr ""
+
+#: ../../source/random/index.rst:506
+msgid ""
+"`Wikipedia: Mersenne Twister "
+"<https://en.wikipedia.org/wiki/Mersenne_twister>`_ -- Article about the "
+"pseudorandom generator algorithm used by Python."
+msgstr ""
+
+#: ../../source/random/index.rst:510
+msgid ""
+"`Wikipedia: Uniform distribution "
+"<https://en.wikipedia.org/wiki/Uniform_distribution_(continuous)>`_ -- "
+"Article about continuous uniform distributions in statistics."
+msgstr ""
+

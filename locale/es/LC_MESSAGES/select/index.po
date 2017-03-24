@@ -1,0 +1,459 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 18:41-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../source/select/index.rst:3
+msgid "select --- Wait for I/O Efficiently"
+msgstr ""
+
+#: ../../source/select/index.rst:8
+msgid "Wait for notification that an input or output channel is ready."
+msgstr ""
+
+#: ../../source/select/index.rst:10
+msgid ""
+"The ``select`` module provides access to platform-specific I/O monitoring"
+" functions.  The most portable interface is the POSIX function "
+"``select()``, which is available on Unix and Windows.  The module also "
+"includes ``poll()``, a Unix-only API, and several options that only work "
+"with specific variants of Unix."
+msgstr ""
+
+#: ../../source/select/index.rst:18
+msgid ""
+"The new :mod:`selectors` module provides a higher-level interface built "
+"on top of the APIs in ``select``. It is easier to build portable code "
+"using ``selectors``, so use that module unless the low-level APIs "
+"provided by ``select`` are somehow required."
+msgstr ""
+
+#: ../../source/select/index.rst:24
+msgid "Using select()"
+msgstr ""
+
+#: ../../source/select/index.rst:26
+msgid ""
+"Python's ``select()`` function is a direct interface to the underlying "
+"operating system implementation.  It monitors sockets, open files, and "
+"pipes (anything with a ``fileno()`` method that returns a valid file "
+"descriptor) until they become readable or writable or a communication "
+"error occurs.  ``select()`` makes it easier to monitor multiple "
+"connections at the same time, and is more efficient than writing a "
+"polling loop in Python using socket timeouts, because the monitoring "
+"happens in the operating system network layer, instead of the "
+"interpreter."
+msgstr ""
+
+#: ../../source/select/index.rst:38
+msgid ""
+"Using Python's file objects with ``select()`` works for Unix, but is not "
+"supported under Windows."
+msgstr ""
+
+#: ../../source/select/index.rst:41
+msgid ""
+"The echo server example from the :mod:`socket` section can be extended to"
+" watch for more than one connection at a time by using ``select()``.  The"
+" new version starts out by creating a non-blocking TCP/IP socket and "
+"configuring it to listen on an address."
+msgstr ""
+
+#: ../../source/select/index.rst
+msgid "select_echo_server.py"
+msgstr ""
+
+#: ../../source/select/index.rst:50
+msgid ""
+"The arguments to ``select()`` are three lists containing communication "
+"channels to monitor.  The first is a list of the objects to be checked "
+"for incoming data to be read, the second contains objects that will "
+"receive outgoing data when there is room in their buffer, and the third "
+"those that may have an error (usually a combination of the input and "
+"output channel objects).  The next step in the server is to set up the "
+"lists containing input sources and output destinations to be passed to "
+"``select()``."
+msgstr ""
+
+#: ../../source/select/index.rst:62
+msgid ""
+"Connections are added to and removed from these lists by the server main "
+"loop.  Since this version of the server is going to wait for a socket to "
+"become writable before sending any data (instead of immediately sending "
+"the reply), each output connection needs a queue to act as a buffer for "
+"the data to be sent through it."
+msgstr ""
+
+#: ../../source/select/index.rst:71
+msgid ""
+"The main portion of the server program loops, calling ``select()`` to "
+"block and wait for network activity."
+msgstr ""
+
+#: ../../source/select/index.rst:77
+msgid ""
+"``select()`` returns three new lists, containing subsets of the contents "
+"of the lists passed in.  All of the sockets in the ``readable`` list have"
+" incoming data buffered and available to be read.  All of the sockets in "
+"the ``writable`` list have free space in their buffer and can be written "
+"to.  The sockets returned in ``exceptional`` have had an error (the "
+"actual definition of \"exceptional condition\" depends on the platform)."
+msgstr ""
+
+#: ../../source/select/index.rst:85
+msgid ""
+"The \"readable\" sockets represent three possible cases.  If the socket "
+"is the main \"server\" socket, the one being used to listen for "
+"connections, then the \"readable\" condition means it is ready to accept "
+"another incoming connection.  In addition to adding the new connection to"
+" the list of inputs to monitor, this section sets the client socket to "
+"not block."
+msgstr ""
+
+#: ../../source/select/index.rst:95
+msgid ""
+"The next case is an established connection with a client that has sent "
+"data.  The data is read with ``recv()``, then placed on the queue so it "
+"can be sent through the socket and back to the client."
+msgstr ""
+
+#: ../../source/select/index.rst:102
+msgid ""
+"A readable socket *without* data available is from a client that has "
+"disconnected, and the stream is ready to be closed."
+msgstr ""
+
+#: ../../source/select/index.rst:108
+msgid ""
+"There are fewer cases for the writable connections.  If there is data in "
+"the queue for a connection, the next message is sent.  Otherwise, the "
+"connection is removed from the list of output connections so that the "
+"next time through the loop ``select()`` does not indicate that the socket"
+" is ready to send data."
+msgstr ""
+
+#: ../../source/select/index.rst:117
+msgid "Finally, if there is an error with a socket, it is closed."
+msgstr ""
+
+#: ../../source/select/index.rst:122
+msgid ""
+"The example client program uses two sockets to demonstrate how the server"
+" with ``select()`` manages multiple connections at the same time.  The "
+"client starts by connecting each TCP/IP socket to the server."
+msgstr ""
+
+#: ../../source/select/index.rst
+msgid "select_echo_multiclient.py"
+msgstr ""
+
+#: ../../source/select/index.rst:131
+msgid ""
+"Then it sends one piece of the message at a time via each socket and "
+"reads all responses available after writing new data."
+msgstr ""
+
+#: ../../source/select/index.rst:137
+msgid ""
+"Run the server in one window and the client in another.  The output will "
+"look like this, with different port numbers."
+msgstr ""
+
+#: ../../source/select/index.rst:181
+msgid ""
+"The client output shows the data being sent and received using both "
+"sockets."
+msgstr ""
+
+#: ../../source/select/index.rst:202
+msgid "Non-blocking I/O With Timeouts"
+msgstr ""
+
+#: ../../source/select/index.rst:204
+msgid ""
+"``select()`` also takes an optional fourth parameter, which is the number"
+" of seconds to wait before breaking off monitoring if no channels have "
+"become active.  Using a timeout value lets a main program call "
+"``select()`` as part of a larger processing loop, taking other actions in"
+" between checking for network input."
+msgstr ""
+
+#: ../../source/select/index.rst:210
+msgid ""
+"When the timeout expires, ``select()`` returns three empty lists. "
+"Updating the server example to use a timeout requires adding the extra "
+"argument to the ``select()`` call and handling the empty lists after "
+"``select()`` returns."
+msgstr ""
+
+#: ../../source/select/index.rst
+msgid "select_echo_server_timeout.py"
+msgstr ""
+
+#: ../../source/select/index.rst:219
+msgid ""
+"This \"slow\" version of the client program pauses after sending each "
+"message, to simulate latency or other delay in transmission."
+msgstr ""
+
+#: ../../source/select/index.rst
+msgid "select_echo_slow_client.py"
+msgstr ""
+
+#: ../../source/select/index.rst:226
+msgid "Running the new server with the slow client produces:"
+msgstr ""
+
+#: ../../source/select/index.rst:259
+msgid "And this is the client output:"
+msgstr ""
+
+#: ../../source/select/index.rst:273
+msgid "Using poll()"
+msgstr ""
+
+#: ../../source/select/index.rst:275
+msgid ""
+"The ``poll()`` function provides similar features to ``select()``, but "
+"the underlying implementation is more efficient.  The trade-off is that "
+"``poll()`` is not supported under Windows, so programs using ``poll()`` "
+"are less portable."
+msgstr ""
+
+#: ../../source/select/index.rst:280
+msgid ""
+"An echo server built on ``poll()`` starts with the same socket "
+"configuration code used in the other examples."
+msgstr ""
+
+#: ../../source/select/index.rst
+msgid "select_poll_echo_server.py"
+msgstr ""
+
+#: ../../source/select/index.rst:287
+msgid ""
+"The timeout value passed to ``poll()`` is represented in milliseconds, "
+"instead of seconds, so in order to pause for a full second the timeout "
+"must be set to ``1000``."
+msgstr ""
+
+#: ../../source/select/index.rst:294
+msgid ""
+"Python implements ``poll()`` with a class that manages the registered "
+"data channels being monitored.  Channels are added by calling "
+"``register()`` with flags indicating which events are interesting for "
+"that channel.  The full set of flags is listed in :table:`Event Flags for"
+" poll()`."
+msgstr ""
+
+#: ../../source/select/index.rst
+msgid "Event Flags for poll()"
+msgstr ""
+
+#: ../../source/select/index.rst:303
+msgid "Event"
+msgstr ""
+
+#: ../../source/select/index.rst:304
+msgid "Description"
+msgstr ""
+
+#: ../../source/select/index.rst:305
+msgid "``POLLIN``"
+msgstr ""
+
+#: ../../source/select/index.rst:306
+msgid "Input ready"
+msgstr ""
+
+#: ../../source/select/index.rst:307
+msgid "``POLLPRI``"
+msgstr ""
+
+#: ../../source/select/index.rst:308
+msgid "Priority input ready"
+msgstr ""
+
+#: ../../source/select/index.rst:309
+msgid "``POLLOUT``"
+msgstr ""
+
+#: ../../source/select/index.rst:310
+msgid "Able to receive output"
+msgstr ""
+
+#: ../../source/select/index.rst:311
+msgid "``POLLERR``"
+msgstr ""
+
+#: ../../source/select/index.rst:312
+msgid "Error"
+msgstr ""
+
+#: ../../source/select/index.rst:313
+msgid "``POLLHUP``"
+msgstr ""
+
+#: ../../source/select/index.rst:314
+msgid "Channel closed"
+msgstr ""
+
+#: ../../source/select/index.rst:315
+msgid "``POLLNVAL``"
+msgstr ""
+
+#: ../../source/select/index.rst:316
+msgid "Channel not open"
+msgstr ""
+
+#: ../../source/select/index.rst:318
+msgid ""
+"The echo server will be setting up some sockets just for reading and "
+"others to be read from or written to.  The appropriate combinations of "
+"flags are saved to the local variables ``READ_ONLY`` and ``READ_WRITE``."
+msgstr ""
+
+#: ../../source/select/index.rst:326
+msgid ""
+"The ``server`` socket is registered so that any incoming connections or "
+"data triggers an event."
+msgstr ""
+
+#: ../../source/select/index.rst:332
+msgid ""
+"Since ``poll()`` returns a list of tuples containing the file descriptor "
+"for the socket and the event flag, a mapping from file descriptor numbers"
+" to objects is needed to retrieve the ``socket`` to read or write from "
+"it."
+msgstr ""
+
+#: ../../source/select/index.rst:340
+msgid ""
+"The server's loop calls ``poll()`` and then processes the \"events\" "
+"returned by looking up the socket and taking action based on the flag in "
+"the event."
+msgstr ""
+
+#: ../../source/select/index.rst:347
+msgid ""
+"As with ``select()``, when the main server socket is \"readable,\" that "
+"really means there is a pending connection from a client.  The new "
+"connection is registered with the ``READ_ONLY`` flags to watch for new "
+"data to come through it."
+msgstr ""
+
+#: ../../source/select/index.rst:355
+msgid ""
+"Sockets other than the server are existing clients and ``recv()`` is used"
+" to access the data waiting to be read."
+msgstr ""
+
+#: ../../source/select/index.rst:361
+msgid ""
+"If ``recv()`` returns any data, it is placed into the outgoing queue for "
+"the socket, and the flags for that socket are changed using ``modify()`` "
+"so ``poll()`` will watch for the socket to be ready to receive data."
+msgstr ""
+
+#: ../../source/select/index.rst:369
+msgid ""
+"An empty string returned by ``recv()`` means the client disconnected, so "
+"``unregister()`` is used to tell the ``poll`` object to ignore the "
+"socket."
+msgstr ""
+
+#: ../../source/select/index.rst:376
+msgid ""
+"The ``POLLHUP`` flag indicates a client that \"hung up\" the connection "
+"without closing it cleanly.  The server stops polling clients that "
+"disappear."
+msgstr ""
+
+#: ../../source/select/index.rst:383
+msgid ""
+"The handling for writable sockets looks like the version used in the "
+"example for ``select()``, except that ``modify()`` is used to change the "
+"flags for the socket in the poller, instead of removing it from the "
+"output list."
+msgstr ""
+
+#: ../../source/select/index.rst:391
+msgid ""
+"And, finally, any events with ``POLLERR`` cause the server to close the "
+"socket."
+msgstr ""
+
+#: ../../source/select/index.rst:397
+msgid ""
+"When the poll-based server is run together with "
+"``select_echo_multiclient.py`` (the client program that uses multiple "
+"sockets), this is the output."
+msgstr ""
+
+#: ../../source/select/index.rst:448
+msgid "Platform-specific Options"
+msgstr ""
+
+#: ../../source/select/index.rst:450
+msgid ""
+"Less portable options provided by ``select`` are ``epoll``, the *edge "
+"polling* API supported by Linux; ``kqueue``, which uses BSD's *kernel "
+"queue*; and ``kevent``, BSD's *kernel event* interface.  Refer to the "
+"operating system library documentation for more detail about how they "
+"work."
+msgstr ""
+
+#: ../../source/select/index.rst:458
+msgid ":pydoc:`select`"
+msgstr ""
+
+#: ../../source/select/index.rst:460
+msgid ":mod:`selectors` -- Higher-level abstraction on top of ``select``."
+msgstr ""
+
+#: ../../source/select/index.rst:463
+msgid ""
+"`Socket Programming HOWOTO "
+"<https://docs.python.org/howto/sockets.html>`__ -- An instructional guide"
+" by Gordon McMillan, included in the standard library documentation."
+msgstr ""
+
+#: ../../source/select/index.rst:468
+msgid ":mod:`socket` -- Low-level network communication."
+msgstr ""
+
+#: ../../source/select/index.rst:470
+msgid ":mod:`SocketServer` -- Framework for creating network server applications."
+msgstr ""
+
+#: ../../source/select/index.rst:473
+msgid ":mod:`asyncio` -- Asynchronous I/O framework"
+msgstr ""
+
+#: ../../source/select/index.rst:475
+msgid ""
+"*Unix Network Programming, Volume 1: The Sockets Networking API, 3/E* By "
+"W. Richard Stevens, Bill Fenner, and Andrew M. Rudoff. Published by "
+"Addison-Wesley Professional, 2004. ISBN-10: 0131411551"
+msgstr ""
+
+#: ../../source/select/index.rst:480
+msgid ""
+"*Foundations of Python Network Programminng, 3/E* By Brandon Rhodes and "
+"John Goerzen. Published by Apress, 2014. ISBN-10: 1430258543"
+msgstr ""
+

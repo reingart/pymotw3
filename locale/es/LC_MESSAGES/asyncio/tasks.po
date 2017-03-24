@@ -1,0 +1,113 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 18:41-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../source/asyncio/tasks.rst:3
+msgid "Executing Tasks Concurrently"
+msgstr ""
+
+#: ../../source/asyncio/tasks.rst:5
+msgid ""
+"Tasks are one of the primary ways to interact with the event loop. Tasks "
+"wrap coroutines and track when they are complete. Tasks are subclasses of"
+" ``Future``, so other coroutines can wait for them and each has a result "
+"that can be retrieved after the task completes."
+msgstr ""
+
+#: ../../source/asyncio/tasks.rst:12
+msgid "Starting a Task"
+msgstr ""
+
+#: ../../source/asyncio/tasks.rst:14
+msgid ""
+"To start a task, use ``create_task()`` to create a ``Task`` instance. The"
+" resulting task will run as part of the concurrent operations managed by "
+"the event loop as long as the loop is running and the coroutine does not "
+"return."
+msgstr ""
+
+#: ../../source/asyncio/tasks.rst
+msgid "asyncio_create_task.py"
+msgstr ""
+
+#: ../../source/asyncio/tasks.rst:23
+msgid ""
+"This example waits for the task to return a result before the ``main()`` "
+"function exits."
+msgstr ""
+
+#: ../../source/asyncio/tasks.rst:45
+msgid "Canceling a Task"
+msgstr ""
+
+#: ../../source/asyncio/tasks.rst:47
+msgid ""
+"By retaining the ``Task`` object returned from ``create_task()``, it is "
+"possible to cancel the operation of the task before it completes."
+msgstr ""
+
+#: ../../source/asyncio/tasks.rst
+msgid "asyncio_cancel_task.py"
+msgstr ""
+
+#: ../../source/asyncio/tasks.rst:55
+msgid ""
+"This example creates and then cancels a task before starting the event "
+"loop. The result is a ``CancelledError`` exception from "
+"``run_until_complete()``."
+msgstr ""
+
+#: ../../source/asyncio/tasks.rst:75
+msgid ""
+"If a task is canceled while it is waiting for another concurrent "
+"operation, the task is notified of its cancellation by having a "
+"``CancelledError`` exception raised at the point where it is waiting."
+msgstr ""
+
+#: ../../source/asyncio/tasks.rst
+msgid "asyncio_cancel_task2.py"
+msgstr ""
+
+#: ../../source/asyncio/tasks.rst:84
+msgid ""
+"Catching the exception provides an opportunity to clean up work already "
+"done, if necessary."
+msgstr ""
+
+#: ../../source/asyncio/tasks.rst:105
+msgid "Creating Tasks from Coroutines"
+msgstr ""
+
+#: ../../source/asyncio/tasks.rst:107
+msgid ""
+"The ``ensure_future()`` function returns a ``Task`` tied to the execution"
+" of a coroutine. That ``Task`` instance can then be passed to other code,"
+" which can wait for it without knowing how the original coroutine was "
+"constructed or called."
+msgstr ""
+
+#: ../../source/asyncio/tasks.rst
+msgid "asyncio_ensure_future.py"
+msgstr ""
+
+#: ../../source/asyncio/tasks.rst:116
+msgid ""
+"Note that the coroutine given to ``ensure_future()`` is not started until"
+" something uses ``await`` to allow it to be executed."
+msgstr ""
+

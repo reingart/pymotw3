@@ -1,0 +1,111 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 18:41-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../source/sys/exceptions.rst:5
+msgid "Exception Handling"
+msgstr ""
+
+#: ../../source/sys/exceptions.rst:7
+msgid "``sys`` includes features for trapping and working with exceptions."
+msgstr ""
+
+#: ../../source/sys/exceptions.rst:12
+msgid "Unhandled Exceptions"
+msgstr ""
+
+#: ../../source/sys/exceptions.rst:14
+msgid ""
+"Many applications are structured with a main loop that wraps execution in"
+" a global exception handler to trap errors not handled at a lower level."
+"  Another way to achieve the same thing is by setting the "
+"``sys.excepthook`` to a function that takes three arguments (the error "
+"type, error value, and traceback) and let it deal with unhandled errors."
+msgstr ""
+
+#: ../../source/sys/exceptions.rst
+msgid "sys_excepthook.py"
+msgstr ""
+
+#: ../../source/sys/exceptions.rst:25
+msgid ""
+"Since there is no ``try:except`` block around the line where the "
+"exception is raised the following call to ``print()`` is not run, even "
+"though the except hook is set."
+msgstr ""
+
+#: ../../source/sys/exceptions.rst:45
+msgid "Current Exception"
+msgstr ""
+
+#: ../../source/sys/exceptions.rst:47
+msgid ""
+"There are times when an explicit exception handler is preferred, either "
+"for code clarity or to avoid conflicts with libraries that try to install"
+" their own ``excepthook``.  In these cases, a common handler function can"
+" be created that does not need to have the exception object passed to it "
+"explicitly by calling ``exc_info()`` to retrieve the current exception "
+"for a thread."
+msgstr ""
+
+#: ../../source/sys/exceptions.rst:54
+msgid ""
+"The return value of ``exc_info()`` is a three member tuple containing the"
+" exception class, an exception instance, and a traceback.  Using "
+"``exc_info()`` is preferred over the old form (with ``exc_type``, "
+"``exc_value``, and ``exc_traceback``) because it is thread-safe."
+msgstr ""
+
+#: ../../source/sys/exceptions.rst
+msgid "sys_exc_info.py"
+msgstr ""
+
+#: ../../source/sys/exceptions.rst:64
+msgid ""
+"This example avoids introducing a circular reference between the "
+"traceback object and a local variable in the current frame by ignoring "
+"that part of the return value from ``exc_info()``.  If the traceback is "
+"needed (for example, so it can be logged), explicitly delete the local "
+"variable (using ``del``) to avoid cycles."
+msgstr ""
+
+#: ../../source/sys/exceptions.rst:87
+msgid "Previous Interactive Exception"
+msgstr ""
+
+#: ../../source/sys/exceptions.rst:89
+msgid ""
+"In the interactive interpreter, there is only one thread of interaction."
+"  Unhandled exceptions in that thread are saved to three variables in "
+"``sys`` (``last_type``, ``last_value``, and ``last_traceback``) to make "
+"it easy to retrieve them for debugging.  Using the postmortem debugger in"
+" :mod:`pdb` avoids any need to use the values directly."
+msgstr ""
+
+#: ../../source/sys/exceptions.rst:121
+msgid ":mod:`exceptions` -- Built-in errors"
+msgstr ""
+
+#: ../../source/sys/exceptions.rst:123
+msgid ":mod:`pdb` -- Python debugger"
+msgstr ""
+
+#: ../../source/sys/exceptions.rst:125
+msgid ":mod:`traceback` -- Module for working with tracebacks"
+msgstr ""
+

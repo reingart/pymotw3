@@ -1,0 +1,405 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 18:41-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../source/xml.etree.ElementTree/parse.rst:4
+msgid "Parsing an XML Document"
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst:6
+msgid ""
+"Parsed XML documents are represented in memory by ``ElementTree`` and "
+"``Element`` objects connected in a tree structure based on the way the "
+"nodes in the XML document are nested."
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst:10
+msgid ""
+"Parsing an entire document with ``parse()`` returns an ``ElementTree`` "
+"instance.  The tree knows about all of the data in the input document, "
+"and the nodes of the tree can be searched or manipulated in place.  While"
+" this flexibility can make working with the parsed document more "
+"convenient, it typically takes more memory than an event-based parsing "
+"approach since the entire document must be loaded at one time."
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst:18
+msgid ""
+"The memory footprint of small, simple documents such as this list of "
+"podcasts represented as an OPML outline is not significant:"
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst
+msgid "podcasts.opml"
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst:27
+msgid "To parse the file, pass an open file handle to ``parse()``."
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst
+msgid "ElementTree_parse_opml.py"
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst:33
+msgid ""
+"It will read the data, parse the XML, and return an ``ElementTree`` "
+"object."
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst:49
+msgid "Traversing the Parsed Tree"
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst:51
+msgid ""
+"To visit all of the children in order, use ``iter()`` to create a "
+"generator that iterates over the ``ElementTree`` instance."
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst
+msgid "ElementTree_dump_opml.py"
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst:58
+msgid "This example prints the entire tree, one tag at a time."
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst:82
+msgid ""
+"To print only the groups of names and feed URLs for the podcasts, leaving"
+" out of all of the data in the header section by iterating over only the "
+"``outline`` nodes and print the ``text`` and ``xmlUrl`` attributes by "
+"looking up the values in the :attr:`attrib` dictionary."
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst
+msgid "ElementTree_show_feed_urls.py"
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst:92
+msgid ""
+"The ``'outline'`` argument to ``iter()`` means processing is limited to "
+"only nodes with the tag ``'outline'``."
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst:115
+msgid "Finding Nodes in a Document"
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst:117
+msgid ""
+"Walking the entire tree like this, searching for relevant nodes, can be "
+"error prone.  The previous example had to look at each outline node to "
+"determine if it was a group (nodes with only a :attr:`text` attribute) or"
+" podcast (with both :attr:`text` and :attr:`xmlUrl`).  To produce a "
+"simple list of the podcast feed URLs, without names or groups, the logic "
+"could be simplified using ``findall()`` to look for nodes with more "
+"descriptive search characteristics."
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst:125
+msgid ""
+"As a first pass at converting the first version, an XPath argument can be"
+" used to look for all outline nodes."
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst
+msgid "ElementTree_find_feeds_by_tag.py"
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst:132
+msgid ""
+"The logic in this version is not substantially different than the version"
+" using ``getiterator()``.  It still has to check for the presence of the "
+"URL, except that it does not print the group name when the URL is not "
+"found."
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst:151
+msgid ""
+"It is possible to take advantage of the fact that the outline nodes are "
+"only nested two levels deep.  Changing the search path to "
+"``.//outline/outline`` means the loop will process only the second level "
+"of outline nodes."
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst
+msgid "ElementTree_find_feeds_by_structure.py"
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst:160
+msgid ""
+"All of the outline nodes nested two levels deep in the input are expected"
+" to have the ``xmlURL`` attribute referring to the podcast feed, so the "
+"loop can skip checking for the attribute before using it."
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst:178
+msgid ""
+"This version is limited to the existing structure, though, so if the "
+"outline nodes are ever rearranged into a deeper tree, it will stop "
+"working."
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst:183
+msgid "Parsed Node Attributes"
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst:185
+msgid ""
+"The items returned by ``findall()`` and ``iter()`` are ``Element`` "
+"objects, each representing a node in the XML parse tree.  Each "
+"``Element`` has attributes for accessing data pulled out of the XML.  "
+"This can be illustrated with a somewhat more contrived example input "
+"file, ``data.xml``."
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst
+msgid "data.xml"
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst:198
+msgid ""
+"The XML attributes of a node are available in the :attr:`attrib` "
+"property, which acts like a dictionary."
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst
+msgid "ElementTree_node_attributes.py"
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst:205
+msgid ""
+"The node on line five of the input file has two attributes, :attr:`name` "
+"and :attr:`foo`."
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst:222
+msgid ""
+"The text content of the nodes is available, along with the *tail* text, "
+"which comes after the end of a close tag."
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst
+msgid "ElementTree_node_text.py"
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst:229
+msgid ""
+"The ``child`` node on line three contains embedded text, and the node on "
+"line four has text with a tail (including whitespace)."
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst:251
+msgid ""
+"XML entity references embedded in the document are converted to the "
+"appropriate characters before values are returned."
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst
+msgid "ElementTree_entity_references.py"
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst:258
+msgid ""
+"The automatic conversion means the implementation detail of representing "
+"certain characters in an XML document can be ignored."
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst:277
+msgid "Watching Events While Parsing"
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst:279
+msgid ""
+"The other API for processing XML documents is event-based.  The parser "
+"generates ``start`` events for opening tags and ``end`` events for "
+"closing tags.  Data can be extracted from the document during the parsing"
+" phase by iterating over the event stream, which is convenient if it is "
+"not necessary to manipulate the entire document afterwards and there is "
+"no need to hold the entire parsed document in memory."
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst:286
+msgid "Events can be one of:"
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst:289
+msgid "``start``"
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst:289
+msgid ""
+"A new tag has been encountered.  The closing angle bracket of the tag was"
+" processed, but not the contents."
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst:292
+msgid "``end``"
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst:292
+msgid ""
+"The closing angle bracket of a closing tag has been processed.  All of "
+"the children were already processed."
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst:294
+msgid "``start-ns``"
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst:295
+msgid "Start a namespace declaration."
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst:297
+msgid "``end-ns``"
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst:297
+msgid "End a namespace declaration."
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst:299
+msgid ""
+"``iterparse()`` returns an iterable that produces tuples containing the "
+"name of the event and the node triggering the event."
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst
+msgid "ElementTree_show_all_events.py"
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst:306
+msgid ""
+"By default, only ``end`` events are generated.  To see other events, pass"
+" the list of desired event names to ``iterparse()``, as in this example."
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst:343
+msgid ""
+"The event-style of processing is more natural for some operations, such "
+"as converting XML input to some other format.  This technique can be used"
+" to convert list of podcasts from the earlier examples from an XML file "
+"to a CSV file, so they can be loaded into a spreadsheet or database "
+"application."
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst
+msgid "ElementTree_write_podcast_csv.py"
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst:353
+msgid ""
+"This conversion program does not need to hold the entire parsed input "
+"file in memory, and processing each node as it is encountered in the "
+"input is more efficient."
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst:377
+msgid ""
+"The output from ``ElementTree_write_podcast_csv.py`` has been reformatted"
+" to fit on this page.  The output lines ending with ``\\`` indicate an "
+"artificial line break."
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst:382
+msgid "Creating a Custom Tree Builder"
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst:384
+msgid ""
+"A potentially more efficient means of handling parse events is to replace"
+" the standard tree builder behavior with a custom version.  The "
+"``XMLParser`` parser uses a ``TreeBuilder`` to process the XML and call "
+"methods on a target class to save the results.  The usual output is an "
+"``ElementTree`` instance created by the default ``TreeBuilder`` class.  "
+"Replacing ``TreeBuilder`` with another class allows it to receive the "
+"events before the ``Element`` nodes are instantiated, saving that portion"
+" of the overhead."
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst:394
+msgid ""
+"The XML-to-CSV converter from the previous section can be re-implemented "
+"as a tree builder."
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst
+msgid "ElementTree_podcast_csv_treebuilder.py"
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst:401
+msgid ""
+"``PodcastListToCSV`` implements the ``TreeBuilder`` protocol.  Each time "
+"a new XML tag is encountered, ``start()`` is called with the tag name and"
+" attributes.  When a closing tag is seen, ``end()`` is called with the "
+"name.  In between, ``data()`` is called when a node has content (the tree"
+" builder is expected to keep up with the \"current\" node).  When all of "
+"the input is processed, ``close()`` is called.  It can return a value, "
+"which will be returned to the user of the ``TreeBuilder``."
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst:431
+msgid ""
+"The output from ``ElementTree_podcast_csv_treebuidler.py`` has been "
+"reformatted to fit on this page.  The output lines ending with ``\\`` "
+"indicate an artificial line break."
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst:437
+msgid "Parsing Strings"
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst:439
+msgid ""
+"To work with smaller bits of XML text, especially string literals that "
+"might be embedded in the source of a program, use ``XML()`` and the "
+"string containing the XML to be parsed as the only argument."
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst
+msgid "ElementTree_XML.py"
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst:447
+msgid ""
+"Unlike with ``parse()``, the return value is an ``Element`` instance "
+"instead of an ``ElementTree``.  An ``Element`` supports the iterator "
+"protocol directly, so there is no need to call ``getiterator()``."
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst:475
+msgid ""
+"For structured XML that uses the :attr:`id` attribute to identify unique "
+"nodes of interest, ``XMLID()`` is a convenient way to access the parse "
+"results."
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst
+msgid "ElementTree_XMLID.py"
+msgstr ""
+
+#: ../../source/xml.etree.ElementTree/parse.rst:483
+msgid ""
+"``XMLID()`` returns the parsed tree as an ``Element`` object, along with "
+"a dictionary mapping the :attr:`id` attribute strings to the individual "
+"nodes in the tree."
+msgstr ""
+

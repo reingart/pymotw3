@@ -1,0 +1,221 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Doug Hellmann
+# This file is distributed under the same license as the PyMOTW-3 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyMOTW-3 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-24 18:41-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ../../source/operator/index.rst:3
+msgid "operator --- Functional Interface to Built-in Operators"
+msgstr ""
+
+#: ../../source/operator/index.rst:8
+msgid "Functional interface to built-in operators."
+msgstr ""
+
+#: ../../source/operator/index.rst:10
+msgid ""
+"Programming using iterators occasionally requires creating small "
+"functions for simple expressions. Sometimes, these can be implemented as "
+"``lambda`` functions, but for some operations new functions are not "
+"needed at all.  The ``operator`` module defines functions that correspond"
+" to built-in operations for arithmetic, comparison, and other operations "
+"corresponding to standard object APIs."
+msgstr ""
+
+#: ../../source/operator/index.rst:18
+msgid "Logical Operations"
+msgstr ""
+
+#: ../../source/operator/index.rst:20
+msgid ""
+"There are functions for determining the boolean equivalent for a value, "
+"negating it to create the opposite boolean value, and comparing objects "
+"to see if they are identical."
+msgstr ""
+
+#: ../../source/operator/index.rst
+msgid "operator_boolean.py"
+msgstr ""
+
+#: ../../source/operator/index.rst:28
+msgid ""
+"``not_()`` includes the trailing underscore because ``not`` is a Python "
+"keyword.  ``truth()`` applies the same logic used when testing an "
+"expression in an ``if`` statement or converting an expression to a "
+"``bool``.  ``is_()`` implements the same check used by the ``is`` "
+"keyword, and ``is_not()`` does the same test and returns the opposite "
+"answer."
+msgstr ""
+
+#: ../../source/operator/index.rst:55
+msgid "Comparison Operators"
+msgstr ""
+
+#: ../../source/operator/index.rst:57
+msgid "All of the rich comparison operators are supported."
+msgstr ""
+
+#: ../../source/operator/index.rst
+msgid "operator_comparisons.py"
+msgstr ""
+
+#: ../../source/operator/index.rst:63
+msgid ""
+"The functions are equivalent to the expression syntax using ``<``, "
+"``<=``, ``==``, ``>=``, and ``>``."
+msgstr ""
+
+#: ../../source/operator/index.rst:87
+msgid "Arithmetic Operators"
+msgstr ""
+
+#: ../../source/operator/index.rst:89
+msgid ""
+"The arithmetic operators for manipulating numerical values are also "
+"supported."
+msgstr ""
+
+#: ../../source/operator/index.rst
+msgid "operator_math.py"
+msgstr ""
+
+#: ../../source/operator/index.rst:96
+msgid ""
+"There are two separate division operators: ``floordiv()`` (integer "
+"division as implemented in Python before version 3.0) and ``truediv()`` "
+"(floating point division)."
+msgstr ""
+
+#: ../../source/operator/index.rst:144
+msgid "Sequence Operators"
+msgstr ""
+
+#: ../../source/operator/index.rst:146
+msgid ""
+"The operators for working with sequences can be divided into four groups:"
+" building up sequences, searching for items, accessing contents, and "
+"removing items from sequences."
+msgstr ""
+
+#: ../../source/operator/index.rst
+msgid "operator_sequences.py"
+msgstr ""
+
+#: ../../source/operator/index.rst:154
+msgid ""
+"Some of these operations, such as ``setitem()`` and ``delitem()``, modify"
+" the sequence in place and do not return a value."
+msgstr ""
+
+#: ../../source/operator/index.rst:191
+msgid "In-place Operators"
+msgstr ""
+
+#: ../../source/operator/index.rst:193
+msgid ""
+"In addition to the standard operators, many types of objects support "
+"\"in-place\" modification through special operators such as ``+=``. There"
+" are equivalent functions for in-place modifications, too:"
+msgstr ""
+
+#: ../../source/operator/index.rst
+msgid "operator_inplace.py"
+msgstr ""
+
+#: ../../source/operator/index.rst:202
+msgid ""
+"These examples only demonstrate a few of the functions. Refer to the "
+"standard library documentation for complete details."
+msgstr ""
+
+#: ../../source/operator/index.rst:225
+msgid "Attribute and Item \"Getters\""
+msgstr ""
+
+#: ../../source/operator/index.rst:227
+msgid ""
+"One of the most unusual features of the ``operator`` module is the "
+"concept of *getters*. These are callable objects constructed at runtime "
+"to retrieve attributes of objects or contents from sequences. Getters are"
+" especially useful when working with iterators or generator sequences, "
+"where they are intended to incur less overhead than a ``lambda`` or "
+"Python function."
+msgstr ""
+
+#: ../../source/operator/index.rst
+msgid "operator_attrgetter.py"
+msgstr ""
+
+#: ../../source/operator/index.rst:238
+msgid "Attribute getters work like ``lambda x, n='attrname': getattr(x, n)``:"
+msgstr ""
+
+#: ../../source/operator/index.rst:255
+msgid "Item getters work like ``lambda x, y=5: x[y]``:"
+msgstr ""
+
+#: ../../source/operator/index.rst
+msgid "operator_itemgetter.py"
+msgstr ""
+
+#: ../../source/operator/index.rst:261
+msgid "Item getters work with mappings as well as sequences."
+msgstr ""
+
+#: ../../source/operator/index.rst:284
+msgid "Combining Operators and Custom Classes"
+msgstr ""
+
+#: ../../source/operator/index.rst:286
+msgid ""
+"The functions in the ``operator`` module work via the standard Python "
+"interfaces for their operations, so they work with user-defined classes "
+"as well as the built-in types."
+msgstr ""
+
+#: ../../source/operator/index.rst
+msgid "operator_classes.py"
+msgstr ""
+
+#: ../../source/operator/index.rst:294
+msgid ""
+"Refer to the Python reference guide for a complete list of the special "
+"methods used by each operator."
+msgstr ""
+
+#: ../../source/operator/index.rst:318
+msgid ":pydoc:`operator`"
+msgstr ""
+
+#: ../../source/operator/index.rst:320
+msgid ""
+":mod:`functools` -- Functional programming tools, including the "
+"``total_ordering()`` decorator for adding rich comparison methods to a "
+"class."
+msgstr ""
+
+#: ../../source/operator/index.rst:324
+msgid ":mod:`itertools` -- Iterator operations."
+msgstr ""
+
+#: ../../source/operator/index.rst:326
+msgid ":mod:`collections` -- Abstract types for collections."
+msgstr ""
+
+#: ../../source/operator/index.rst:328
+msgid ":mod:`numbers` -- Abstract types for numerical values."
+msgstr ""
+
