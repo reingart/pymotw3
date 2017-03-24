@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,107 +17,86 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/fnmatch/index.rst:3
-# 24d12345825b4cb89fae23d885e683d8
 msgid "fnmatch --- Unix-style Glob Pattern Matching"
 msgstr ""
 
 #: ../../source/fnmatch/index.rst:8
-# 4e36995ac6954a2f90c4feca84b8ca23
 msgid "Handle Unix-style filename comparisons."
 msgstr ""
 
 #: ../../source/fnmatch/index.rst:10
-# 3eda60502872472280da89b1e56aaeef
 msgid "The ``fnmatch`` module is used to compare filenames against glob-style patterns such as used by Unix shells."
 msgstr ""
 
 #: ../../source/fnmatch/index.rst:14
-# 99cb369841ba43fc8e3c62a00690679d
 msgid "Simple Matching"
 msgstr ""
 
 #: ../../source/fnmatch/index.rst:16
-# 53f072c8b6164dd08e35c5ab5a916945
 msgid "``fnmatch()`` compares a single filename against a pattern and returns a boolean, indicating whether or not they match. The comparison is case-sensitive when the operating system uses a case-sensitive file system."
 msgstr ""
 
 #: ../../source/fnmatch/index.rst:0
-# f24c303a49a94b79a1df7309600519e6
 msgid "fnmatch_fnmatch.py"
 msgstr ""
 
 #: ../../source/fnmatch/index.rst:25
-# 15d7e5a8726846d8802f074de6678cb1
 msgid "In this example, the pattern matches all files starting with ``'fnmatch_'`` and ending in ``'.py'``."
 msgstr ""
 
 #: ../../source/fnmatch/index.rst:46
-# 17e21111b6c24e04a0d35f99c173ea9f
 msgid "To force a case-sensitive comparison, regardless of the file system and operating system settings, use ``fnmatchcase()``."
 msgstr ""
 
 #: ../../source/fnmatch/index.rst:0
-# 69e3bec8ac8b4a2683e79c25fff1d557
 msgid "fnmatch_fnmatchcase.py"
 msgstr ""
 
 #: ../../source/fnmatch/index.rst:53
-# 4268ac52cc9f41d8a346157435852620
 msgid "Since the OS X system used to test this program uses a case-sensitive file system, no files match the modified pattern."
 msgstr ""
 
 #: ../../source/fnmatch/index.rst:75
-# 97700036571a48ad9e52a69da44d3267
 msgid "Filtering"
 msgstr ""
 
 #: ../../source/fnmatch/index.rst:77
-# 031135c7927c452c85673ca50d29049f
 msgid "To test a sequence of filenames, use ``filter()``, which returns a list of the names that match the pattern argument."
 msgstr ""
 
 #: ../../source/fnmatch/index.rst:0
-# b43aed2800994aa2b31db5f98a0b4baf
 msgid "fnmatch_filter.py"
 msgstr ""
 
 #: ../../source/fnmatch/index.rst:84
-# d20503526f8c41c896f9ca21ad4c31ea
 msgid "In this example, ``filter()`` returns the list of names of the example source files associated with this section."
 msgstr ""
 
 #: ../../source/fnmatch/index.rst:113
-# c9652788bb844833844affb321efdb21
 msgid "Translating Patterns"
 msgstr ""
 
 #: ../../source/fnmatch/index.rst:115
-# 146585a0f78242168548712c60493778
 msgid "Internally, ``fnmatch`` converts the glob pattern to a regular expression and uses the :mod:`re` module to compare the name and pattern. The ``translate()`` function is the public API for converting glob patterns to regular expressions."
 msgstr ""
 
 #: ../../source/fnmatch/index.rst:0
-# 9b6ae7ff9cf941e895d0fe9541a20d33
 msgid "fnmatch_translate.py"
 msgstr ""
 
 #: ../../source/fnmatch/index.rst:124
-# 54d2f16e80774567af29bf81db121e99
 msgid "Some of the characters are escaped to make a valid expression."
 msgstr ""
 
 #: ../../source/fnmatch/index.rst:141
-# d6725910db4e43cc8f7889e7baef0457
 msgid ":pydoc:`fnmatch`"
 msgstr ""
 
 #: ../../source/fnmatch/index.rst:143
-# b614c0ae164c4a348eff14ab009de162
 msgid ":mod:`glob` -- The glob module combines ``fnmatch`` matching with ``os.listdir()`` to produce lists of files and directories matching patterns."
 msgstr ""
 
 #: ../../source/fnmatch/index.rst:147
-# 4566d330a5534c6d8549bb731ca5edc0
 msgid ":mod:`re` -- Regular expression pattern matching."
 msgstr ""
 

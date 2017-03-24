@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,237 +17,190 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/difflib/index.rst:3
-# 3a96cac0ba124d5d963ace470d9fc1c5
 msgid "difflib --- Compare Sequences"
 msgstr ""
 
 #: ../../source/difflib/index.rst:8
-# 79c03392fab14f46bfbd44fb3066b011
 msgid "Compare sequences, especially lines of text."
 msgstr ""
 
 #: ../../source/difflib/index.rst:10
-# 87580cc1a9f84768836f53a83eec7c63
 msgid "The ``difflib`` module contains tools for computing and working with differences between sequences.  It is especially useful for comparing text, and includes functions that produce reports using several common difference formats."
 msgstr ""
 
 #: ../../source/difflib/index.rst:15
-# 29fffac71aec4348972c7f2f40448931
 msgid "The examples in this section will all use this common test data in the ``difflib_data.py`` module:"
 msgstr ""
 
 #: ../../source/difflib/index.rst:0
-# 49aacccebedd45fab3a7788569cf8f35
 msgid "difflib_data.py"
 msgstr ""
 
 #: ../../source/difflib/index.rst:23
-# 614dc60954b4444d8344ebcfe0a799e7
 msgid "Comparing Bodies of Text"
 msgstr ""
 
 #: ../../source/difflib/index.rst:25
-# e83d7d47b6db4e64bda740071dca43dc
 msgid "The ``Differ`` class works on sequences of text lines and produces human-readable *deltas*, or change instructions, including differences within individual lines.  The default output produced by ``Differ`` is similar to the ``diff`` command-line tool under Unix.  It includes the original input values from both lists, including common values, and markup data to indicate which changes were made."
 msgstr ""
 
 #: ../../source/difflib/index.rst:33
-# 8861b54e89e84393aae83c553ff13533
 msgid "Lines prefixed with ``-`` were in the first sequence, but not the second."
 msgstr ""
 
 #: ../../source/difflib/index.rst:35
-# 06e2153898ea477f8a6fe23515728e72
 msgid "Lines prefixed with ``+`` were in the second sequence, but not the first."
 msgstr ""
 
 #: ../../source/difflib/index.rst:37
-# 351b4c0584ed42b4a71c61bf468164d8
 msgid "If a line has an incremental difference between versions, an extra line prefixed with ``?`` is used to highlight the change within the new version."
 msgstr ""
 
 #: ../../source/difflib/index.rst:40
-# d3c0bcf27d7047c689b6230cafa3f99c
 msgid "If a line has not changed, it is printed with an extra blank space on the left column so that it is aligned with the other output that may have differences."
 msgstr ""
 
 #: ../../source/difflib/index.rst:44
-# 211118a01abf4a068e97642cd6f0d528
 msgid "Breaking the text up into a sequence of individual lines before passing it to ``compare()`` produces more readable output than passing in large strings."
 msgstr ""
 
 #: ../../source/difflib/index.rst:0
-# 97fb0dabbdd5465bb7dd668ceb7799c6
 msgid "difflib_differ.py"
 msgstr ""
 
 #: ../../source/difflib/index.rst:58
-# 2d3e23506e7a4de9ba0a74f24c3eb2b0
 msgid "The beginning of both text segments in the sample data is the same, so the first line is printed without any extra annotation."
 msgstr ""
 
 #: ../../source/difflib/index.rst:64
-# 6ab9d860f077494b8ae0284ebcbd0348
 msgid "The third line of the data has been changed to include a comma in the modified text. Both versions of the line are printed, with the extra information on line 5 showing the column where the text was modified, including the fact that the ``,`` character was added."
 msgstr ""
 
 #: ../../source/difflib/index.rst:73
-# 3834251d5dd64ac1a45289b9ff3e558e
 msgid "The next few lines of the output show that an extra space was removed."
 msgstr ""
 
 #: ../../source/difflib/index.rst:79
-# 59046e3fdd1d4b3ca1c5c918e11fa6c0
 msgid "Next, a more complex change was made, replacing several words in a phrase."
 msgstr ""
 
 #: ../../source/difflib/index.rst:85
-# a9ab059a7e124633b7ae4c04c1f9856f
 msgid "The last sentence in the paragraph was changed significantly, so the difference is represented by removing the old version and adding the new."
 msgstr ""
 
 #: ../../source/difflib/index.rst:93
-# d7c63099168340cd8264ecec0c024437
 msgid "The ``ndiff()`` function produces essentially the same output. The processing is specifically tailored for working with text data and eliminating \"noise\" in the input."
 msgstr ""
 
 #: ../../source/difflib/index.rst:98
-# 7c680c069ab2462ba2aa0192225d0f6f
 msgid "Other Output Formats"
 msgstr ""
 
 #: ../../source/difflib/index.rst:100
-# 4fe7d2d584594b9ba7e51b74b894ca14
 msgid "While the ``Differ`` class shows all of the input lines, a *unified diff* includes only the modified lines and a bit of context. The ``unified_diff()`` function produces this sort of output."
 msgstr ""
 
 #: ../../source/difflib/index.rst:0
-# 5c882a456f7141c39e7c7ecc6e265a8a
 msgid "difflib_unified.py"
 msgstr ""
 
 #: ../../source/difflib/index.rst:108
-# 413870204fe64ae5863065a043ce3e78
 msgid "The ``lineterm`` argument is used to tell ``unified_diff()`` to skip appending newlines to the control lines that it returns because the input lines do not include them.  Newlines are added to all of the lines when they are printed.  The output should look familiar to users of many popular version-control tools."
 msgstr ""
 
 #: ../../source/difflib/index.rst:145
-# afe991b247704a2da72b3fe957d79ef6
 msgid "Using ``context_diff()`` produces similar readable output."
 msgstr ""
 
 #: ../../source/difflib/index.rst:148
-# f3ee010bfc8745ea8619513d623170f7
 msgid "Junk Data"
 msgstr ""
 
 #: ../../source/difflib/index.rst:150
-# e716737dee9546b29f2dc02f203106dc
 msgid "All of the functions that produce difference sequences accept arguments to indicate which lines should be ignored and which characters within a line should be ignored. These parameters can be used to skip over markup or whitespace changes in two versions of a file, for example."
 msgstr ""
 
 #: ../../source/difflib/index.rst:0
-# ed6538a95635495bb247a919f67432fb
 msgid "difflib_junk.py"
 msgstr ""
 
 #: ../../source/difflib/index.rst:160
-# f5aeff83f1b244ef9cba4cd91cf6f5ab
 msgid "The default for ``Differ`` is to not ignore any lines or characters explicitly, but rather to rely on the ability of ``SequenceMatcher`` to detect noise. The default for ``ndiff()`` is to ignore space and tab characters."
 msgstr ""
 
 #: ../../source/difflib/index.rst:194
-# c6a4304ade7744c7bd314243ab305109
 msgid "Comparing Arbitrary Types"
 msgstr ""
 
 #: ../../source/difflib/index.rst:196
-# bedd725868134078a75f7e3666b137fa
 msgid "The ``SequenceMatcher`` class compares two sequences of any types, as long as the values are hashable. It uses an algorithm to identify the longest contiguous matching blocks from the sequences, eliminating \"junk\" values that do not contribute to the real data."
 msgstr ""
 
 #: ../../source/difflib/index.rst:201
-# cc376bb9e4c346189082b5273e8948e8
 msgid "The funct ``get_opcodes()`` returns a list of instructions for modifying the first sequence to make it match the second. The instructions are encoded as five-element tuples, including a string instruction (the \"opcode\", see :table:`difflib.get_opcodes() Instructions`) and two pairs of start and stop indexes into the sequences (denoted as ``i1``, ``i2``, ``j1``, and ``j2``)."
 msgstr ""
 
 #: ../../source/difflib/index.rst:0
-# ac35a175ffdc4d698a417f11e6f1045a
 msgid "difflib.get_opcodes() Instructions"
 msgstr ""
 
 #: ../../source/difflib/index.rst:211
-# 4e90c3c7b8564ed8bd0f2e371bba7d8d
 msgid "Opcode"
 msgstr ""
 
 #: ../../source/difflib/index.rst:212
-# 437d67f69e23442ab5be70e638048514
 msgid "Definition"
 msgstr ""
 
 #: ../../source/difflib/index.rst:213
-# d1056ad96b30442cbeac149b3a3a4f43
 msgid "``'replace'``"
 msgstr ""
 
 #: ../../source/difflib/index.rst:214
-# a44b793ae460475898501f1deaeff3de
 msgid "Replace ``a[i1:i2]`` with ``b[j1:j2]``"
 msgstr ""
 
 #: ../../source/difflib/index.rst:215
-# 458ffc2538fd440f939c88df228c09d5
 msgid "``'delete'``"
 msgstr ""
 
 #: ../../source/difflib/index.rst:216
-# cbfe98af4fdc4ccfa87a1621314f9266
 msgid "Remove ``a[i1:i2]`` entirely"
 msgstr ""
 
 #: ../../source/difflib/index.rst:217
-# ce38bdc243034b27993526805dfba7f8
 msgid "``'insert'``"
 msgstr ""
 
 #: ../../source/difflib/index.rst:218
-# 7aae9ef6d63743d3849cd10ee339836a
 msgid "Insert ``b[j1:j2]`` at ``a[i1:i1]``"
 msgstr ""
 
 #: ../../source/difflib/index.rst:219
-# a86a2e0964b141ffb60fbdba5ea73774
 msgid "``'equal'``"
 msgstr ""
 
 #: ../../source/difflib/index.rst:220
-# d0808820a4c94b4ca1067091f97d608c
 msgid "The subsequences are already equal"
 msgstr ""
 
 #: ../../source/difflib/index.rst:0
-# 4edd0f1cb4fb4232aceb7b49781f9c04
 msgid "difflib_seq.py"
 msgstr ""
 
 #: ../../source/difflib/index.rst:226
-# 77d15f59f5064c2ebba1298569f95558
 msgid "This example compares two lists of integers and uses ``get_opcodes()`` to derive the instructions for converting the original list into the newer version.  The modifications are applied in reverse order so that the list indexes remain accurate after items are added and removed."
 msgstr ""
 
 #: ../../source/difflib/index.rst:267
-# 1b0c245c1af6436c846bd27a52dc74c6
 msgid "``SequenceMatcher`` works with custom classes, as well as built-in types, as long as they are hashable."
 msgstr ""
 
 #: ../../source/difflib/index.rst:272
-# 89fd67becd7c433c9f5c2dc60db4ecf7
 msgid ":pydoc:`difflib`"
 msgstr ""
 
 #: ../../source/difflib/index.rst:274
-# 8aaff8788e2b4ec39897ded657d6593e
 msgid "`\"Pattern Matching: The Gestalt Approach\" <http://www.drdobbs.com/database/pattern-matching-the-gestalt-approach/184407970>`__ -- Discussion of a similar algorithm by John W. Ratcliff and D. E. Metzener published in *Dr. Dobb’s Journal* in July, 1988."
 msgstr ""
 

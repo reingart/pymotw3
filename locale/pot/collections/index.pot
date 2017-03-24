@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,37 +17,30 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/collections/index.rst:3
-# f82eaddf4f5f4f6ebdb005377f766ee6
 msgid "collections --- Container Data Types"
 msgstr ""
 
 #: ../../source/collections/index.rst:8
-# 572d6ec61c2e47d896aae39a66a53cf6
 msgid "Container data types."
 msgstr ""
 
 #: ../../source/collections/index.rst:10
-# 6879154c35344af78a7a2e1ba468e0a2
 msgid "The ``collections`` module includes container data types beyond the built-in types ``list``, ``dict``, and ``tuple``."
 msgstr ""
 
 #: ../../source/collections/index.rst:26
-# dc2dacd8b7ba45608130e0b6ad5b9005
 msgid ":pydoc:`collections`"
 msgstr ""
 
 #: ../../source/collections/index.rst:28
-# 50fb1f34ec7c4a558d6398e6bf5e344f
 msgid ":ref:`Python 2 to 3 porting notes for collections <porting-collections>`"
 msgstr ""
 
 #: ../../source/collections/index.rst:30
-# 3b2249dd66024b69bde3198956b0d975
 msgid ":pep:`342` -- Coroutines via Enhanced Generators"
 msgstr ""
 
 #: ../../source/collections/index.rst:32
-# d0b34a0f269f4d8394dadec502d5f975
 msgid ":pep:`492` -- Coroutines with async and await syntax"
 msgstr ""
 

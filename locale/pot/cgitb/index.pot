@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,192 +17,154 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/cgitb/index.rst:3
-# ee82431e821a4c23bad5571a60ff178e
 msgid "cgitb --- Detailed Traceback Reports"
 msgstr ""
 
 #: ../../source/cgitb/index.rst:8
-# 29d335a6784f48fc8361c274d0512164
 msgid "cgitb provides more detailed traceback information than :mod:`traceback`."
 msgstr ""
 
 #: ../../source/cgitb/index.rst:10
-# 9899a202c3fa44c5b6a775b5b0534dec
 msgid "``cgitb`` is a valuable debugging tool in the standard library.  It was originally designed for showing errors and debugging information in web applications and was later updated to include plain-text output as well, but unfortunately was never renamed.  This has led to obscurity, and the module is not used as often as it could be."
 msgstr ""
 
 #: ../../source/cgitb/index.rst:17
-# fed91bc1601c4dbfaba249ba7914eb51
 msgid "Standard Traceback Dumps"
 msgstr ""
 
 #: ../../source/cgitb/index.rst:19
-# 3605c67cb8ea480ba8a9d850cf19fa35
 msgid "Python's default exception handling behavior is to print a traceback to the standard error output stream with the call stack leading up to the error position.  This basic output frequently contains enough information to understand the cause of the exception and permit a fix."
 msgstr ""
 
 #: ../../source/cgitb/index.rst:0
-# f3f416fd0ec040b49b94f11d4aa98cec
 msgid "cgitb_basic_traceback.py"
 msgstr ""
 
 #: ../../source/cgitb/index.rst:28
-# 56d50ad7fe614b868b5d862015ec3cf1
 msgid "This sample program has a subtle error in ``func2()``."
 msgstr ""
 
 #: ../../source/cgitb/index.rst:50
-# 293f00ef96a145269577f9fc2f3c32b9
 msgid "Enabling Detailed Tracebacks"
 msgstr ""
 
 #: ../../source/cgitb/index.rst:52
-# 980f19f27a4745b58ee843da369840cf
 msgid "While the basic traceback includes enough information to spot the error, enabling ``cgitb`` gives more detail.  ``cgitb`` replaces ``sys.excepthook`` with a function that gives extended tracebacks."
 msgstr ""
 
 #: ../../source/cgitb/index.rst:0
-# cb69201a75224e8490be8c35d31f3d1a
 msgid "cgitb_local_vars.py"
 msgstr ""
 
 #: ../../source/cgitb/index.rst:61
-# 7e27842541084092917c113a9043b85e
 msgid "The error report from this example is much more extensive than the original.  Each frame of the stack is listed, along with:"
 msgstr ""
 
 #: ../../source/cgitb/index.rst:64
-# e2d2c42081664ac18c7c6955b59342d2
 msgid "The full path to the source file, instead of just the base name"
 msgstr ""
 
 #: ../../source/cgitb/index.rst:65
-# ba0e228334c54603a22e6ef8797e582a
 msgid "The values of the arguments to each function in the stack"
 msgstr ""
 
 #: ../../source/cgitb/index.rst:66
-# 8e208cde2eab469ea589ccc59a9bd03a
 msgid "A few lines of source context from around the line in the error path"
 msgstr ""
 
 #: ../../source/cgitb/index.rst:67
-# c8d6132acec543a28e43412417138810
 msgid "The values of variables in the expression causing the error"
 msgstr ""
 
 #: ../../source/cgitb/index.rst:69
-# c5f644755bac4460890b19bdcf493701
 msgid "Having access to the variables involved in the error stack can help find a logical error that occurs somewhere higher in the stack than the line where the actual exception is generated."
 msgstr ""
 
 #: ../../source/cgitb/index.rst:188
-# 0ef9e709acde4798a0dafb56221f1641
 msgid "In the case of this code with a ``ZeroDivisionError``, it is apparent that the problem is introduced in the computation of the value of ``c`` in ``func1()``, rather than where the value is used in ``func2()``."
 msgstr ""
 
 #: ../../source/cgitb/index.rst:193
-# 88ed9532214b4c819c1e17bec2fbf48a
 msgid "The end of the output also includes the full details of the exception object (in case it has attributes other than ``message`` that would be useful for debugging) and the original form of a traceback dump."
 msgstr ""
 
 #: ../../source/cgitb/index.rst:198
-# 60ea91410d8f4fd9bb80b983ee9ae226
 msgid "Local Variables in Tracebacks"
 msgstr ""
 
 #: ../../source/cgitb/index.rst:200
-# 9a8c760cbf7b45719e26c3c8319fbe3a
 msgid "The code in ``cgitb`` that examines the variables used in the stack frame leading to the error is smart enough to evaluate object attributes to display them, too."
 msgstr ""
 
 #: ../../source/cgitb/index.rst:0
-# f52a136491864956bec74182e28cf3f3
 msgid "cgitb_with_classes.py"
 msgstr ""
 
 #: ../../source/cgitb/index.rst:208
-# c7502f40dfb5446f83e418f57226b479
 msgid "If a function or method includes a lot of in-line comments, whitespace, or other code that makes it very long, then having the default of five lines of context may not provide enough direction. When the body of the function is pushed out of the code window displayed, there is not enough context to understand the location of the error.  Using a larger context value with ``cgitb`` solves this problem.  Passing an integer as the ``context`` argument to ``enable()`` controls the amount of code displayed for each line of the traceback."
 msgstr ""
 
 #: ../../source/cgitb/index.rst:218
-# 8f3d275fb7d647f4bbda98cc587596fd
 msgid "This output shows that ``self.a`` and ``self.b`` are involved in the error-prone code."
 msgstr ""
 
 #: ../../source/cgitb/index.rst:343
-# 2ae29380dae6424f8f6481cf0325f0ee
 msgid "Exception Properties"
 msgstr ""
 
 #: ../../source/cgitb/index.rst:345
-# 5d7f0f497ba84669a2e8dfedc9e275fc
 msgid "In addition to the local variables from each stack frame, ``cgitb`` shows all properties of the exception object.  Extra properties on custom exception types are printed as part of the error report."
 msgstr ""
 
 #: ../../source/cgitb/index.rst:0
-# 7059705fc191432caabbdcfb41d1345f
 msgid "cgitb_exception_properties.py"
 msgstr ""
 
 #: ../../source/cgitb/index.rst:353
-# edd539d60eb049e49572b0aea45db5cf
 msgid "In this example, the ``bad_value`` property is included along with the standard ``message`` and ``args`` values."
 msgstr ""
 
 #: ../../source/cgitb/index.rst:443
-# d78f7de856c24561be0a0a798eed6dff
 msgid "HTML Output"
 msgstr ""
 
 #: ../../source/cgitb/index.rst:445
-# 3e84d5472c7844cda19539d0a65eae58
 msgid "Because ``cgitb`` was originally developed for handling exceptions in web applications, no discussion would be complete without mentioning its original HTML output format.  The earlier examples all shows plain text output.  To produce HTML instead, leave out the ``format`` argument (or specify ``\"html\"``).  Most modern web applications are constructed using a framework that includes an error reporting facility, so the HTML form is largely obsolete."
 msgstr ""
 
 #: ../../source/cgitb/index.rst:454
-# ee30aeeec1d442a7a40f929eac1c2f8b
 msgid "Logging Tracebacks"
 msgstr ""
 
 #: ../../source/cgitb/index.rst:456
-# b45aacba2e374423b7cd6be7876e45d1
 msgid "For many situations, printing the traceback details to standard error is the best resolution.  In a production system, however, logging the errors is even better.  The ``enable()`` function includes an optional argument, ``logdir``, to enable error logging.  When a directory name is provided, each exception is logged to its own file in the given directory."
 msgstr ""
 
 #: ../../source/cgitb/index.rst:0
-# 1010423a921d4c259ab77801aec2dcc4
 msgid "cgitb_log_exception.py"
 msgstr ""
 
 #: ../../source/cgitb/index.rst:467
-# 249ecef6be454771b06c03a1865b3b5a
 msgid "Even though the error display is suppressed, a message is printed describing where to go to find the error log."
 msgstr ""
 
 #: ../../source/cgitb/index.rst:587
-# eb54d5205a2540e48dd04d2ca9ecd945
 msgid ":pydoc:`cgitb`"
 msgstr ""
 
 #: ../../source/cgitb/index.rst:589
-# a00c4a4966da4449a1306e4bfee19d70
 msgid ":mod:`traceback` -- Standard library module for working with tracebacks."
 msgstr ""
 
 #: ../../source/cgitb/index.rst:592
-# 287d5bd596a0479d9774b2aa16eb103e
 msgid ":mod:`inspect` -- The ``inspect`` module includes more functions for examining the stack."
 msgstr ""
 
 #: ../../source/cgitb/index.rst:595
-# 8a290264b562455f8210d6976682818c
 msgid ":mod:`sys` -- The ``sys`` module provides access to the current exception value and the ``excepthook`` handler invoked when an exception occurs."
 msgstr ""
 
 #: ../../source/cgitb/index.rst:599
-# 2eb1b985b5904b3c966f443eb92f5d64
 msgid "`Improved traceback module <http://thread.gmane.org/gmane.comp.python.devel/110326>`_ -- Discussion on the Python development mailing list about improvements to the traceback module and related enhancements other developers use locally."
 msgstr ""
 

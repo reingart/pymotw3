@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,297 +17,238 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/logging/index.rst:3
-# e3ab50ab8b984b7aa89877d1e8960b73
 msgid "logging --- Report Status, Error, and Informational Messages"
 msgstr ""
 
 #: ../../source/logging/index.rst:8
-# 658d08cfad034983bfcdbdf0b2fd26c1
 msgid "Report status, error, and informational messages."
 msgstr ""
 
 #: ../../source/logging/index.rst:10
-# 67f1e28a4522473e8e7f40459540a730
 msgid "The ``logging`` module defines a standard API for reporting errors and status information from applications and libraries. The key benefit of having the logging API provided by a standard library module is that all Python modules can participate in logging, so an application's log can include messages from third-party modules."
 msgstr ""
 
 #: ../../source/logging/index.rst:17
-# 1c476ec8e8114c479461c5d7fd677b65
 msgid "Logging Components"
 msgstr ""
 
 #: ../../source/logging/index.rst:19
-# 6d6c9511a4f24a78b97034939893cfe1
 msgid "The logging system is made up of four interacting types of objects. Each module or application that wants to log uses a ``Logger`` instance to add information to the logs. Invoking the logger creates a ``LogRecord``, which is used to hold the information in memory until it is processed. A ``Logger`` may have a number of ``Handler`` objects configured to receive and process log records. The ``Handler`` uses a ``Formatter`` to turn the log records into output messages."
 msgstr ""
 
 #: ../../source/logging/index.rst:29
-# 85a4df126aee4764ace0d82ca173b187
 msgid "Logging in Applications vs. Libraries"
 msgstr ""
 
 #: ../../source/logging/index.rst:31
-# 5d6b2d3ad3bc4488b8844ebcae77e077
 msgid "Application developers and library authors can both use ``logging``, but each audience has different considerations to keep in mind."
 msgstr ""
 
 #: ../../source/logging/index.rst:35
-# 8dba1878a7aa437aa88e689622401172
 msgid "Application developers configure the ``logging`` module, directing the messages to appropriate output channels.  It is possible to log messages with different verbosity levels or to different destinations. Handlers for writing log messages to files, HTTP GET/POST locations, email via SMTP, generic sockets, or OS-specific logging mechanisms are all included, and it is possible to create custom log destination classes for special requirements not handled by any of the built-in classes."
 msgstr ""
 
 #: ../../source/logging/index.rst:44
-# dac5557b4142491c8360e2457d8e3f7c
 msgid "Developers of libraries can also use ``logging`` and have even less work to do.  Simply create a logger instance for each context, using an appropriate name, and then log messages using the standard levels. As long as a library uses the logging API with consistent naming and level selections, the application can be configured to show or hide messages from the library, as desired."
 msgstr ""
 
 #: ../../source/logging/index.rst:52
-# d3742da6baef4cbf943960660b0dfa32
 msgid "Logging to a File"
 msgstr ""
 
 #: ../../source/logging/index.rst:54
-# 1910472facaa4a15b9411aadc2969583
 msgid "Most applications are configured to log to a file. Use the ``basicConfig()`` function to set up the default handler so that debug messages are written to a file."
 msgstr ""
 
 #: ../../source/logging/index.rst:0
-# 2e14a0a1a5e14d2e96b992aeac22faea
 msgid "logging_file_example.py"
 msgstr ""
 
 #: ../../source/logging/index.rst:62
-# ffc4595e01804cc6b2416ae74219ff32
 msgid "After running the script, the log message is written to ``logging_example.out``:"
 msgstr ""
 
 #: ../../source/logging/index.rst:81
-# ddf68d43fc80498f8ab42d353b3ebc93
 msgid "Rotating Log Files"
 msgstr ""
 
 #: ../../source/logging/index.rst:83
-# d362e43703884e1e9b84bb7b966656b9
 msgid "Running the script repeatedly causes more messages to be appended to the file. To create a new file each time the program runs, pass a ``filemode`` argument to ``basicConfig()`` with a value of ``'w'``. Rather than managing the creation of files this way, though, it is better to use a ``RotatingFileHandler``, which creates new files automatically and preserves the old log file at the same time."
 msgstr ""
 
 #: ../../source/logging/index.rst:0
-# 55e4cbc303d447a3b45da0227f2cedbf
 msgid "logging_rotatingfile_example.py"
 msgstr ""
 
 #: ../../source/logging/index.rst:94
-# 86ac2a3c2e2f43b883991be335c13377
 msgid "The result is six separate files, each with part of the log history for the application."
 msgstr ""
 
 #: ../../source/logging/index.rst:115
-# 50857d20287349e5b33e1178e67c3513
 msgid "The most current file is always ``logging_rotatingfile_example.out``, and each time it reaches the size limit it is renamed with the suffix ``.1``. Each of the existing backup files is renamed to increment the suffix (``.1`` becomes ``.2``, etc.) and the ``.5`` file is erased."
 msgstr ""
 
 #: ../../source/logging/index.rst:122
-# e217e61e06cb4a41b637cc21c4906a7f
 msgid "Obviously, this example sets the log length much too small as an extreme example. Set ``maxBytes`` to a more appropriate value in a real program."
 msgstr ""
 
 #: ../../source/logging/index.rst:127
-# ac6b0544c6e24db299cfe5285a226083
 msgid "Verbosity Levels"
 msgstr ""
 
 #: ../../source/logging/index.rst:129
-# 1e11a5ae1d83447386aa03ccd1d1c7f6
 msgid "Another useful feature of the ``logging`` API is the ability to produce different messages at different *log levels*. This means code can be instrumented with debug messages, for example, and the log level can be set so that those debug messages are not written on a production system.  :table:`Logging Levels` lists the logging levels defined by ``logging``."
 msgstr ""
 
 #: ../../source/logging/index.rst:0
-# 166519a0e68c42f9bfb5044f4578dfb0
 msgid "Logging Levels"
 msgstr ""
 
 #: ../../source/logging/index.rst:139
-# 05113a60255243a493da09fb3d1a1496
 msgid "Level"
 msgstr ""
 
 #: ../../source/logging/index.rst:139
-# 83de115d427840bb92b550701041be4a
 msgid "Value"
 msgstr ""
 
 #: ../../source/logging/index.rst:141
-# 1642168e3d8a4269a970726f334bb37c
 msgid "CRITICAL"
 msgstr ""
 
 #: ../../source/logging/index.rst:141
-# ff62c321a91b45b68f7a1e44299813ff
 msgid "50"
 msgstr ""
 
 #: ../../source/logging/index.rst:142
-# e5915b25007a484aafa0fd2c6cbf51aa
 msgid "ERROR"
 msgstr ""
 
 #: ../../source/logging/index.rst:142
-# edab77edfb25416bbe793b20cf7b1a8a
 msgid "40"
 msgstr ""
 
 #: ../../source/logging/index.rst:143
-# 6570e5c0936f4004803aa67f89bd11be
 msgid "WARNING"
 msgstr ""
 
 #: ../../source/logging/index.rst:143
-# 0301be6662e541d4a72bab2949417a34
 msgid "30"
 msgstr ""
 
 #: ../../source/logging/index.rst:144
-# ecac22a5946343519efd5d4f4a755c7a
 msgid "INFO"
 msgstr ""
 
 #: ../../source/logging/index.rst:144
-# 8bb2c3e3ad664db281260306b418bbae
 msgid "20"
 msgstr ""
 
 #: ../../source/logging/index.rst:145
-# f15f494ddac6455291ff3d50c3a472c5
 msgid "DEBUG"
 msgstr ""
 
 #: ../../source/logging/index.rst:145
-# 8d847fe012d44fa685f2a359f3259e19
 msgid "10"
 msgstr ""
 
 #: ../../source/logging/index.rst:146
-# b72f7c99339d4ddaafd1981a174e5938
 msgid "UNSET"
 msgstr ""
 
 #: ../../source/logging/index.rst:146
-# e1e0dbb23a5e43daa8ab8e24c2c702e7
 msgid "0"
 msgstr ""
 
 #: ../../source/logging/index.rst:149
-# 82da125895054cc482d0b6b90fd8a744
 msgid "The log message is only emitted if the handler and logger are configured to emit messages of that level or higher. For example, if a message is ``CRITICAL``, and the logger is set to ``ERROR``, the message is emitted (50 > 40). If a message is a ``WARNING``, and the logger is set to produce only messages set to ``ERROR``, the message is not emitted (30 < 40)."
 msgstr ""
 
 #: ../../source/logging/index.rst:0
-# f74f69008c9345ada97d1c42bc26a633
 msgid "logging_level_example.py"
 msgstr ""
 
 #: ../../source/logging/index.rst:160
-# e5d0fa0c57c646b0a5d0515e816fc567
 msgid "Run the script with an argument like 'debug' or 'warning' to see which messages show up at different levels:"
 msgstr ""
 
 #: ../../source/logging/index.rst:188
-# 02140fc3718d4ed2a72300b8912f73f7
 msgid "Naming Logger Instances"
 msgstr ""
 
 #: ../../source/logging/index.rst:190
-# 8555f32aa1ca46cb9dd661b5aac957fb
 msgid "All of the previous log messages all have 'root' embedded in them because the code uses the root logger.  An easy way to tell where a specific log message comes from is to use a separate logger object for each module. Log messages sent to a logger include the name of that logger. Here is an example of how to log from different modules so it is easy to trace the source of the message."
 msgstr ""
 
 #: ../../source/logging/index.rst:0
-# cbe172ca4c3e45f9b0f641a717651cdf
 msgid "logging_modules_example.py"
 msgstr ""
 
 #: ../../source/logging/index.rst:201
-# 246f8450f2764486912e36e468b6ac0a
 msgid "The output shows the different module names for each output line."
 msgstr ""
 
 #: ../../source/logging/index.rst:217
-# 1a7f0081d8244173bca17fc779499c82
 msgid "The Logging Tree"
 msgstr ""
 
 #: ../../source/logging/index.rst:219
-# 9b27b5c9f8a747fab6a96e098b98181b
 msgid "The ``Logger`` instances are configured in a tree structure, based on their names, as illustrated in :figure:`Example Logger Tree`. Typically each application or library defines a base name, with loggers for individual modules set as children. The root logger has no name."
 msgstr ""
 
 #: ../../source/logging/index.rst:0
-# e47382f04aeb4a05b01cc6ea403ed935
 msgid "Example Logger Tree"
 msgstr ""
 
 #: ../../source/logging/index.rst:228
-# 836b3bd6017b4b7a9fadabe00718622e
 msgid "The tree structure is useful for configuring logging because it means each logger does not need its own set of handlers. If a logger does not have any handlers, the message is handed to its parent for processing. This means that for most applications it is only necessary to configure handlers on the root logger, and all log information will be collected and sent to the same place, as shown in :figure:`One Logging Handler`."
 msgstr ""
 
 #: ../../source/logging/index.rst:0
-# 7cc9d515fc7e4226ad2a377981d91035
 msgid "One Logging Handler"
 msgstr ""
 
 #: ../../source/logging/index.rst:239
-# d710067c16b1489385768eb7cba187f3
 msgid "The tree structure also allows different verbosity levels, handlers, and formatters to be set for different parts of the application or library to control which messages are logged and where they go, as in :figure:`Different Levels and Handlers`."
 msgstr ""
 
 #: ../../source/logging/index.rst:0
-# c367c383bc9442b29e1cc703c5ceff86
 msgid "Different Levels and Handlers"
 msgstr ""
 
 #: ../../source/logging/index.rst:248
-# ef0a533b83bc4be4b0c57ec5064805c9
 msgid "Integration with the warnings Module"
 msgstr ""
 
 #: ../../source/logging/index.rst:250
-# 7ef89dc07c4f4c5993876e5da5086c81
 msgid "The logging module integrates with :mod:`warnings` through ``captureWarnings()``, which configures ``warnings`` to send messages through the logging system instead of outputting them directly."
 msgstr ""
 
 #: ../../source/logging/index.rst:0
-# 9ba59bc789ec4a4f9fbe49c5c5bee058
 msgid "logging_capture_warnings.py"
 msgstr ""
 
 #: ../../source/logging/index.rst:259
-# 0df92ddaea284246bbd044dc125be0b2
 msgid "The warning message is sent to a logger named ``py.warnings`` using the ``WARNING`` level."
 msgstr ""
 
 #: ../../source/logging/index.rst:282
-# 4c266f987f304ea8b86cd8905a910e8f
 msgid ":pydoc:`logging` -- The documentation for ``logging`` is extensive, and includes tutorials and reference material that goes beyond the exmaples presented here."
 msgstr ""
 
 #: ../../source/logging/index.rst:286
-# b111827719234bfbb7b90ede97f2f7b6
 msgid ":ref:`Python 2 to 3 porting notes for logging <porting-logging>`"
 msgstr ""
 
 #: ../../source/logging/index.rst:288
-# 2d76785971944f8abe16aa118bf7e073
 msgid ":mod:`warnings` -- Non-fatal alerts."
 msgstr ""
 
 #: ../../source/logging/index.rst:290
-# 71ea069400284167862da58825835898
 msgid "`logging_tree <https://pypi.python.org/pypi/logging_tree>`__ -- Third-party package by Brandon Rhodes for showing the logger tree for an application."
 msgstr ""
 
 #: ../../source/logging/index.rst:294
-# be7624bfa870463bb14ed074165a2022
 msgid "`Logging Cookbook <https://docs.python.org/3.5/howto/logging-cookbook.html>`__ -- Part of the standard library documentation, with examples of using ``logging`` for different tasks."
 msgstr ""
 

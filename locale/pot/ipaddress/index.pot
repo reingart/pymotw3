@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,147 +17,118 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/ipaddress/index.rst:3
-# 9024ff5653604acfa1eeb257a77b30b9
 msgid "ipaddress --- Internet Addresses"
 msgstr ""
 
 #: ../../source/ipaddress/index.rst:9
-# 2762c002a6ec4dddaea00ccb0f5b0742
 msgid "Classes for working with Internet Protocol (IP) addresses."
 msgstr ""
 
 #: ../../source/ipaddress/index.rst:11
-# 228c5df7d48242eeaae7e398fbfa0a0f
 msgid "The ``ipaddress`` module includes classes for working with IPv4 and IPv6 network addresses. The classes support validation, finding addresses and hosts on a network, and other common operations."
 msgstr ""
 
 #: ../../source/ipaddress/index.rst:16
-# 27d4e35af21343989542ffff317b8e6a
 msgid "Addresses"
 msgstr ""
 
 #: ../../source/ipaddress/index.rst:18
-# 18205a0f9e284f3a9402ba317577a13f
 msgid "The most basic object represents the network address itself. Pass a string, integer, or byte sequence to ``ip_address()`` to construct an address. The return value will be a ``IPv4Address`` or ``IPv6Address`` instance, depending on the type of address being used."
 msgstr ""
 
 #: ../../source/ipaddress/index.rst:0
-# e6e104598eae41199c13bb28ff377e27
 msgid "ipaddress_addresses.py"
 msgstr ""
 
 #: ../../source/ipaddress/index.rst:28
-# 0173d03aa34c4887a711f42b08652725
 msgid "Both classes can provide various representations of the address for different purposes, as well as answer basic assertions such as whether the address is reserved for multicast communication or if it is on a private network."
 msgstr ""
 
 #: ../../source/ipaddress/index.rst:57
-# 20ccf3cd7c594e1fba2b58bddbd7d878
 msgid "Networks"
 msgstr ""
 
 #: ../../source/ipaddress/index.rst:59
-# cab5163104bd42f48925b8db94664b36
 msgid "A network is defined by a range of addresses. It is usually expressed with a base address and a mask indicating which portions of the address represent the network, and which portions are remaining to represent addresses on that network. The mask can be expressed explicitly, or using a prefix length value as in the example below."
 msgstr ""
 
 #: ../../source/ipaddress/index.rst:0
-# b030158584784d4fb88bd9928127bd3f
 msgid "ipaddress_networks.py"
 msgstr ""
 
 #: ../../source/ipaddress/index.rst:69
-# 13c24476296748b0bf3bac69a770c1d4
 msgid "As with addresses, there are two network classes for IPv4 and IPv6 networks. Each class provides properties or methods for accessing values associated with the network such as the broadcast address and the addresses on the network available for hosts to use."
 msgstr ""
 
 #: ../../source/ipaddress/index.rst:101
-# 169e573c769143cc87568b5e74edbeb5
 msgid "A network instance is iterable, and yields the addresses on the network."
 msgstr ""
 
 #: ../../source/ipaddress/index.rst:0
-# 880c4aa9ffa54fec87cdbda37fdb2884
 msgid "ipaddress_network_iterate.py"
 msgstr ""
 
 #: ../../source/ipaddress/index.rst:108
-# eb929bd6e016437694b32b8f4d078126
 msgid "This example only prints a few of the addresses, because an IPv6 network can contain far more addresses than fit in the output."
 msgstr ""
 
 #: ../../source/ipaddress/index.rst:132
-# 4f47043e65d6411997bdc7288d5d1aad
 msgid "Iterating over the network yields addresses, but not all of them are valid for hosts. For example, the base address of the network and the broadcast address are both included. To find the addresses that can be used by regular hosts on the network, use the ``hosts()`` method, which produces a generator."
 msgstr ""
 
 #: ../../source/ipaddress/index.rst:0
-# 55f40ad67160440ba98d674bb920bf3a
 msgid "ipaddress_network_iterate_hosts.py"
 msgstr ""
 
 #: ../../source/ipaddress/index.rst:142
-# be174658b8624a92b00631627e394c85
 msgid "Comparing the output of this example with the previous example shows that the host addresses do not include the first values produced when iterating over the entire network."
 msgstr ""
 
 #: ../../source/ipaddress/index.rst:167
-# 6e521eb97926443e9cf902ecdb87f1ed
 msgid "In addition to the iterator protocol, networks support the ``in`` operator to determine if an address is part of a network."
 msgstr ""
 
 #: ../../source/ipaddress/index.rst:0
-# 808b2e7612c64bdc82d1e0e9e96e5090
 msgid "ipaddress_network_membership.py"
 msgstr ""
 
 #: ../../source/ipaddress/index.rst:174
-# cfa2cdb595c8452dae139dd6018e98a9
 msgid "The implementation of ``in`` uses the network mask to test the address, so it is much more efficient than expanding the full list of addresses on the network."
 msgstr ""
 
 #: ../../source/ipaddress/index.rst:202
-# 671e6301aa7f4d35baa3dab37a1c5e71
 msgid "Interfaces"
 msgstr ""
 
 #: ../../source/ipaddress/index.rst:204
-# 137f9e8fe2324e708858128746ec56d4
 msgid "A network interface represents a specific address on a network and can be represented by a host address and a network prefix or netmask."
 msgstr ""
 
 #: ../../source/ipaddress/index.rst:0
-# 6c4062d6adc6410ebe60965d3648ef64
 msgid "ipaddress_interfaces.py"
 msgstr ""
 
 #: ../../source/ipaddress/index.rst:211
-# 794529f4f282468bb0605e4c049b2b5e
 msgid "The interface object has properties to access the full network and address separately, as well as several different ways to express the interface and network mask."
 msgstr ""
 
 #: ../../source/ipaddress/index.rst:254
-# 6fc85a1bbba142c6a04374441d9e63f1
 msgid ":pydoc:`ipaddress`"
 msgstr ""
 
 #: ../../source/ipaddress/index.rst:256
-# 1cade82f8319477ba4dedf0a28ef0147
 msgid ":pep:`3144` -- IP Address Manipulation Library for the Python Standard Library"
 msgstr ""
 
 #: ../../source/ipaddress/index.rst:259
-# d1624e8144f0459f8e96b376bf40a12f
 msgid "`An introduction to the ipaddress module <https://docs.python.org/3.5/howto/ipaddress.html#ipaddress-howto>`__"
 msgstr ""
 
 #: ../../source/ipaddress/index.rst:262
-# f6d3add4d34d488ba11dea484aba7d89
 msgid "`Wikipedia: IP address <https://en.wikipedia.org/wiki/IP_address>`__ -- An introduction to IP addresses and networks."
 msgstr ""
 
 #: ../../source/ipaddress/index.rst:266
-# a8a642588b8c47cf94b432b0f0469e0c
 msgid "*Computer Networks (5th Edition)* -- By Andrew S. Tanenbaum and David J. Wetherall. Published by Pearson, 2010. ISBN-10: 0132126958"
 msgstr ""
 

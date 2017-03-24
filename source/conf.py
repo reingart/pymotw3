@@ -73,7 +73,7 @@ source_suffix = '.rst'
 # Sphinx internationalization details:
 locale_dirs = ['../locale/']    # path outside PyMOTW source directory
 gettext_compact = False         # optional.
-gettext_uuid = True             # add uid line and calculate similarity
+gettext_uuid = False            # add uid line and calculate similarity
 language = "en"                 # target translation
 
 # The encoding of source files.

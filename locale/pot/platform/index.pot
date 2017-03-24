@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,37 +17,30 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/platform/index.rst:3
-# ef16e253eb8d4a42bc636b012aec9f58
 msgid "platform --- System Version Information"
 msgstr ""
 
 #: ../../source/platform/index.rst:8
-# c1ef855506d149a1be20c108e190a457
 msgid "Probe the underlying platform's hardware, operating system, and interpreter version information."
 msgstr ""
 
 #: ../../source/platform/index.rst:11
-# e92139779d22484da57f83e112c2772d
 msgid "Although Python is often used as a cross-platform language, it is occasionally necessary to know what sort of system a program is running on. Build tools need that information, but an application might also know that some of the libraries or external commands it uses have different interfaces on different operating systems. For example, a tool to manage the network configuration of an operating system can define a portable representation of network interfaces, aliases, IP addresses, etc. But when the time comes to edit the configuration files, it must know more about the host so it can use the correct operating system configuration commands and files.  The ``platform`` module includes the tools for learning about the interpreter, operating system, and hardware platform where a program is running."
 msgstr ""
 
 #: ../../source/platform/index.rst:27
-# e6a66896d4254c52a864b36daf7e3481
 msgid "The example output in this section was generated on three systems: a Mac mini running OS X 10.11.6, a Dell PC running Ubuntu Linux 14.04, and a VirtualBox VM running Windows 10.  Python was installed on the OS X and Windows systems using the pre-compiled installers from python.org. The Linux system is running a version in a system package."
 msgstr ""
 
 #: ../../source/platform/index.rst:40
-# 6e7fb416e63e4dd894be739f2ca154dc
 msgid "Interpreter"
 msgstr ""
 
 #: ../../source/platform/index.rst:42
-# 9d5c4ee5a93d4ba3957bfca4bd4ce8b4
 msgid "There are four functions for getting information about the current Python interpreter. ``python_version()`` and ``python_version_tuple()`` return different forms of the interpreter version with major, minor, and patch level components. ``python_compiler()`` reports on the compiler used to build the interpreter. And ``python_build()`` gives a version string for the build of the interpreter."
 msgstr ""
 
 #: ../../source/platform/index.rst:0
-# 9e2303843aae4797972724e4a3e43951
 msgid "platform_python.py"
 msgstr ""
 
@@ -55,10 +48,6 @@ msgstr ""
 #: ../../source/platform/index.rst:107
 #: ../../source/platform/index.rst:176
 #: ../../source/platform/index.rst:249
-# b4fde099f7714c4cbb2c60497cc5e00d
-# cda8c3d4889440388721b579dcdb5324
-# bf9b8497f4194302b1cc916486ea7c06
-# 35b760e167ca449388627a68ceade1d4
 msgid "OS X:"
 msgstr ""
 
@@ -66,10 +55,6 @@ msgstr ""
 #: ../../source/platform/index.rst:123
 #: ../../source/platform/index.rst:202
 #: ../../source/platform/index.rst:264
-# c8357e0723df46d2968e7fa6bdb20c1a
-# 1ac5c4fe05ec47368efa7cc1a67a3ef9
-# d6cc64c7742446deaffa219454fb0584
-# 6bb8e1a0f4054bd984edbf74c66e9912
 msgid "Linux:"
 msgstr ""
 
@@ -77,140 +62,110 @@ msgstr ""
 #: ../../source/platform/index.rst:133
 #: ../../source/platform/index.rst:219
 #: ../../source/platform/index.rst:273
-# c73ad7742ab9444e9da46f21349b93e4
-# 75c998d60b1c4a54b12b28217a11dfaf
-# 941b1f9123b2484b9c78b786a33c428b
-# 94f2f875a3a64ba1a717eb11f4255981
 msgid "Windows:"
 msgstr ""
 
 #: ../../source/platform/index.rst:94
-# 864fac77a27f4212821cbc417bea2c3a
 msgid "Platform"
 msgstr ""
 
 #: ../../source/platform/index.rst:96
-# 2b4c778054f7458fa88993ede84e3811
 msgid "The ``platform()`` function returns a string containing a general purpose platform identifier.  The function accepts two optional Boolean arguments. If ``aliased`` is True, the names in the return value are converted from a formal name to their more common form. When ``terse`` is true, a minimal value with some parts dropped is returned instead of the full string."
 msgstr ""
 
 #: ../../source/platform/index.rst:0
-# 2d3bdd39d75542fea1853b1d4a6e66e3
 msgid "platform_platform.py"
 msgstr ""
 
 #: ../../source/platform/index.rst:144
-# 7ed93d2abd9e4d0393f3495974034127
 msgid "Operating System and Hardware Info"
 msgstr ""
 
 #: ../../source/platform/index.rst:146
-# 2b0fdf93e6a245d9a1bb3c82165caf81
 msgid "More detailed information about the operating system and hardware the interpreter is running under can be retrieved as well. ``uname()`` returns a tuple containing the system, node, release, version, machine, and processor values.  Individual values can be accessed through functions of the same names, listed in :table:`Platform Information Functions`."
 msgstr ""
 
 #: ../../source/platform/index.rst:0
-# 55664663245c4312ae162860db332be6
 msgid "Platform Information Functions"
 msgstr ""
 
 #: ../../source/platform/index.rst:157
-# 74fea457afaa4547aa07ef69c0668a1f
 msgid "Function"
 msgstr ""
 
 #: ../../source/platform/index.rst:158
-# 0a0c3c40eae24b078446ef90013ca55d
 msgid "Return Value"
 msgstr ""
 
 #: ../../source/platform/index.rst:159
-# cc28c929efb94f898c8c8728fe0a7e94
 msgid "``system()``"
 msgstr ""
 
 #: ../../source/platform/index.rst:160
-# cdc519ac0acc452cab83f342fb37803b
 msgid "operating system name"
 msgstr ""
 
 #: ../../source/platform/index.rst:161
-# 290fd07de1544c4da90c4248898d8190
 msgid "``node()``"
 msgstr ""
 
 #: ../../source/platform/index.rst:162
-# c5c1ba1506784ae7b54e8247773bbeb1
 msgid "host name of the server, not fully qualified"
 msgstr ""
 
 #: ../../source/platform/index.rst:163
-# 374440bf10674d16bcb4080ec6131a29
 msgid "``release()``"
 msgstr ""
 
 #: ../../source/platform/index.rst:164
-# ec7c70a74a5a4d2ba84d3b99b2a4ae6c
 msgid "operating system release number"
 msgstr ""
 
 #: ../../source/platform/index.rst:165
-# 4b6e04f518b84674ba2f06b907fa17af
 msgid "``version()``"
 msgstr ""
 
 #: ../../source/platform/index.rst:166
-# 70f6d99738c74ed3b36d855ee7f623ab
 msgid "more detailed system version"
 msgstr ""
 
 #: ../../source/platform/index.rst:167
-# 92240473f0f6474aaab7e6412cb99382
 msgid "``machine()``"
 msgstr ""
 
 #: ../../source/platform/index.rst:168
-# d8af7fb8b35047e4a29c8305948e1fbf
 msgid "a hardware-type identifier, such as ``'i386'``"
 msgstr ""
 
 #: ../../source/platform/index.rst:169
-# 9a9ff69a891740ea84b2a2374adb5520
 msgid "``processor()``"
 msgstr ""
 
 #: ../../source/platform/index.rst:170
-# 87a43118072b41019d3bebdc0bbdee20
 msgid "a real identifier for the processor (the same value as ``machine()`` in many cases)"
 msgstr ""
 
 #: ../../source/platform/index.rst:0
-# 1ca32df238cf43e991656e68e55c6ed8
 msgid "platform_os_info.py"
 msgstr ""
 
 #: ../../source/platform/index.rst:237
-# f286708edaa6439ebfdc44d289c3f209
 msgid "Executable Architecture"
 msgstr ""
 
 #: ../../source/platform/index.rst:239
-# 2db68a5f36dc4c96a6bf7cd81d1f87cf
 msgid "Individual program architecture information can be probed using the ``architecture()`` function. The first argument is the path to an executable program (defaulting to ``sys.executable``, the Python interpreter). The return value is a tuple containing the bit architecture and the linkage format used."
 msgstr ""
 
 #: ../../source/platform/index.rst:0
-# abc1755a2adf4cadaf3a362684ae809d
 msgid "platform_architecture.py"
 msgstr ""
 
 #: ../../source/platform/index.rst:284
-# 0da4d92e3c174ddabb6b1b4837809d7f
 msgid ":pydoc:`platform`"
 msgstr ""
 
 #: ../../source/platform/index.rst:286
-# efd0dc93808a410fa9808c40f4ddc5e5
 msgid ":ref:`Python 2 to 3 porting notes for platform <porting-platform>`"
 msgstr ""
 

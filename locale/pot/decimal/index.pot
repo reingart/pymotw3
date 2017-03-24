@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,347 +17,278 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/decimal/index.rst:3
-# d1d325445e374a24b052d963b3ba43aa
 msgid "decimal --- Fixed and Floating Point Math"
 msgstr ""
 
 #: ../../source/decimal/index.rst:8
-# b591a75c565940e3af5267d7dab6134c
 msgid "Decimal arithmetic using fixed and floating point numbers"
 msgstr ""
 
 #: ../../source/decimal/index.rst:10
-# 3c3eba176305460dbbe9f5315eb96d17
 msgid "The ``decimal`` module implements fixed and floating point arithmetic using the model familiar to most people, rather than the IEEE floating point version implemented by most computer hardware and familiar to programmers.  A ``Decimal`` instance can represent any number exactly, round up or down, and apply a limit to the number of significant digits."
 msgstr ""
 
 #: ../../source/decimal/index.rst:18
-# bbe28d69a0c0418da14348ec9ddac47d
 msgid "Decimal"
 msgstr ""
 
 #: ../../source/decimal/index.rst:20
-# e4d764fe9c88430f9abd195e6f601a67
 msgid "Decimal values are represented as instances of the ``Decimal`` class.  The constructor takes as argument one integer or string. Floating point numbers can be converted to a string before being used to create a ``Decimal``, letting the caller explicitly deal with the number of digits for values that cannot be expressed exactly using hardware floating point representations.  Alternately, the class method ``from_float()`` converts to the exact decimal representation."
 msgstr ""
 
 #: ../../source/decimal/index.rst:0
-# a4e7a5196506430c997e95216e40a45b
 msgid "decimal_create.py"
 msgstr ""
 
 #: ../../source/decimal/index.rst:33
-# 52e662ea071f4865a3e4daa4a3825f0d
 msgid "The floating point value of ``0.1`` is not represented as an exact value in binary, so the representation as a ``float`` is different from the ``Decimal`` value.  The full string representation is truncated to 25 characters in the last line of this output."
 msgstr ""
 
 #: ../../source/decimal/index.rst:56
-# 3baa306f163742e5b29ff0f37b918572
 msgid "``Decimals`` can also be created from tuples containing a sign flag (``0`` for positive, ``1`` for negative), a ``tuple`` of digits, and an integer exponent."
 msgstr ""
 
 #: ../../source/decimal/index.rst:0
-# 9ccdfe96c6284586a4cd12294332f06d
 msgid "decimal_tuple.py"
 msgstr ""
 
 #: ../../source/decimal/index.rst:64
-# 37177387256b42f3961a7dd79a6ad42e
 msgid "The tuple-based representation is less convenient to create, but does offer a portable way of exporting decimal values without losing precision.  The tuple form can be transmitted through the network or stored in a database that does not support accurate decimal values, then turned back into a ``Decimal`` instance later."
 msgstr ""
 
 #: ../../source/decimal/index.rst:84
-# 2a583705a0d24282adfff8b2b154ba7c
 msgid "Formatting"
 msgstr ""
 
 #: ../../source/decimal/index.rst:86
-# 5d466e21fa2a44289157d7621751e342
 msgid "``Decimal`` responds to Python's `string formatting protocol`_, using the same syntax and options as other numerical types."
 msgstr ""
 
 #: ../../source/decimal/index.rst:0
-# 3de040c5a97b49a4b30171ab9a7be205
 msgid "decimal_format.py"
 msgstr ""
 
 #: ../../source/decimal/index.rst:95
-# 59f2350930c44a20811f77f0e39b633d
 msgid "The format strings can control the width of the output, the precision (number of significant digits), and how to pad the value to fill the width."
 msgstr ""
 
 #: ../../source/decimal/index.rst:128
-# 45ec41500a244b55940d090ab6a38a7c
 msgid "Arithmetic"
 msgstr ""
 
 #: ../../source/decimal/index.rst:130
-# dd1aa3bbba2d41389b404db74125742b
 msgid "``Decimal`` overloads the simple arithmetic operators so instances can be manipulated in much the same way as the built-in numeric types."
 msgstr ""
 
 #: ../../source/decimal/index.rst:0
-# 3ae7130d200e4e46bb206fe4a0d2b085
 msgid "decimal_operators.py"
 msgstr ""
 
 #: ../../source/decimal/index.rst:138
-# a2cb49d4e2664cfb8c8cffb0fe5deb56
 msgid "``Decimal`` operators also accept integer arguments, but floating point values must be converted to ``Decimal`` instances."
 msgstr ""
 
 #: ../../source/decimal/index.rst:170
-# cda069abe637485d91a73385d5a6d915
 msgid "Beyond basic arithmetic, ``Decimal`` includes the methods to find the base 10 and natural logarithms.  The return values from ``log10()`` and ``ln()`` are ``Decimal`` instances, so they can be used directly in formulas with other values."
 msgstr ""
 
 #: ../../source/decimal/index.rst:176
-# a0e5b864792f48658affdb4fa463ef41
 msgid "Special Values"
 msgstr ""
 
 #: ../../source/decimal/index.rst:178
-# cef3417e49974398be1eb7c452ed49c8
 msgid "In addition to the expected numerical values, ``Decimal`` can represent several special values, including positive and negative values for infinity, \"not a number\", and zero."
 msgstr ""
 
 #: ../../source/decimal/index.rst:0
-# 80083383e533472c8729e010124a40c0
 msgid "decimal_special.py"
 msgstr ""
 
 #: ../../source/decimal/index.rst:186
-# 0218bdb9734e4113be10f90ca231f977
 msgid "Adding to infinite values returns another infinite value.  Comparing for equality with ``NaN`` always returns false and comparing for inequality always returns true.  Comparing for sort order against ``NaN`` is undefined and results in an error."
 msgstr ""
 
 #: ../../source/decimal/index.rst:212
-# eb3ea1f629f2440d80d3f24ccaffa3f6
 msgid "Context"
 msgstr ""
 
 #: ../../source/decimal/index.rst:214
-# f5b502c488ed4cd69f97731c5d368315
 msgid "So far, all of the examples have used the default behaviors of the ``decimal`` module. It is possible to override settings such as the precision maintained, how rounding is performed, error handling, etc. by using a *context*.  Contexts can be applied for all ``Decimal`` instances in a thread or locally within a small code region."
 msgstr ""
 
 #: ../../source/decimal/index.rst:222
-# 2397e7f153b944bc8020c06b2aa1d5ea
 msgid "Current Context"
 msgstr ""
 
 #: ../../source/decimal/index.rst:224
-# 384654d879c2441ebaa4d54e0c46910b
 msgid "To retrieve the current global context, use ``getcontext``."
 msgstr ""
 
 #: ../../source/decimal/index.rst:0
-# 92f51b3fa0544a78a88cad23ae5af3b2
 msgid "decimal_getcontext.py"
 msgstr ""
 
 #: ../../source/decimal/index.rst:230
-# 57545a43a04b44babdbd6087101166f5
 msgid "This example script shows the public properties of a ``Context``."
 msgstr ""
 
 #: ../../source/decimal/index.rst:270
-# 8b5aaea02377465e83fd85f892c4373e
 msgid "Precision"
 msgstr ""
 
 #: ../../source/decimal/index.rst:272
-# ba83e1955ffd4e119c8b20f7a3e5f26b
 msgid "The :attr:`prec` attribute of the context controls the precision maintained for new values created as a result of arithmetic.  Literal values are maintained as described."
 msgstr ""
 
 #: ../../source/decimal/index.rst:0
-# 97ed4c413f144180ae862269ee3f801e
 msgid "decimal_precision.py"
 msgstr ""
 
 #: ../../source/decimal/index.rst:280
-# 31d067298d934e2ea06e9facae3e3060
 msgid "To change the precision, assign a new value between ``1`` and ``decimal.MAX_PREC`` directly to the attribute."
 msgstr ""
 
 #: ../../source/decimal/index.rst:300
-# 6666fea0bae74968b71e0aa187582c11
 msgid "Rounding"
 msgstr ""
 
 #: ../../source/decimal/index.rst:302
-# bd050dc66ba94c1aa6b2b93a3418cf02
 msgid "There are several options for rounding to keep values within the desired precision."
 msgstr ""
 
 #: ../../source/decimal/index.rst:306
-# bcabbc11539d498c941de0748aee64cb
 msgid "``ROUND_CEILING``"
 msgstr ""
 
 #: ../../source/decimal/index.rst:306
-# 21805779d41c4bd1b14fb8baa100d3e6
 msgid "Always round upwards towards infinity."
 msgstr ""
 
 #: ../../source/decimal/index.rst:309
-# 64e645daba7a469a9cfea8d051ec0b24
 msgid "``ROUND_DOWN``"
 msgstr ""
 
 #: ../../source/decimal/index.rst:309
-# 9ca7dae69e68445cb214aef307a69050
 msgid "Always round toward zero."
 msgstr ""
 
 #: ../../source/decimal/index.rst:312
-# c3e24975c6fe4f539d54260a7e71e40a
 msgid "``ROUND_FLOOR``"
 msgstr ""
 
 #: ../../source/decimal/index.rst:312
-# ec6277ff162a4ae5b5b92c0659d81e86
 msgid "Always round down towards negative infinity."
 msgstr ""
 
 #: ../../source/decimal/index.rst:316
-# 65fd1edceeb542b1ad4aaffd6974ddfe
 msgid "``ROUND_HALF_DOWN``"
 msgstr ""
 
 #: ../../source/decimal/index.rst:315
-# 7d5bcf0f8c964fe1b8d99afc34e9ef72
 msgid "Rounds away from zero if the last significant digit is greater than or equal to 5, otherwise toward zero."
 msgstr ""
 
 #: ../../source/decimal/index.rst:321
-# 78ade23d51324be9ae5be7bcebc05c0d
 msgid "``ROUND_HALF_EVEN``"
 msgstr ""
 
 #: ../../source/decimal/index.rst:319
-# 7a8c15f13a294d32b6970a62d6cac41d
 msgid "Like ``ROUND_HALF_DOWN`` except that if the value is 5 then the preceding digit is examined.  Even values cause the result to be rounded down and odd digits cause the result to be rounded up."
 msgstr ""
 
 #: ../../source/decimal/index.rst:325
-# 5a203152dd144b38905f20c7fb2a08d8
 msgid "``ROUND_HALF_UP``"
 msgstr ""
 
 #: ../../source/decimal/index.rst:324
-# 0a6bc09cffde460384d00a7d2d1b9a6d
 msgid "Like ``ROUND_HALF_DOWN`` except if the last significant digit is 5 the value is rounded away from zero."
 msgstr ""
 
 #: ../../source/decimal/index.rst:328
-# 4be256aa41b44b6aa4b4cfe8b08b3700
 msgid "``ROUND_UP``"
 msgstr ""
 
 #: ../../source/decimal/index.rst:328
-# 626cf51183cb482696a26e5826116116
 msgid "Round away from zero."
 msgstr ""
 
 #: ../../source/decimal/index.rst:332
-# 795df38fb29141ee8a133b9d2963e2a3
 msgid "``ROUND_05UP``"
 msgstr ""
 
 #: ../../source/decimal/index.rst:331
-# 2d6b3958b4c8466b8af5bb43bd6a3a24
 msgid "Round away from zero if the last digit is ``0`` or ``5``, otherwise towards zero."
 msgstr ""
 
 #: ../../source/decimal/index.rst:0
-# c48e60ac69ff4a36a70f2b9b0796ff52
 msgid "decimal_rounding.py"
 msgstr ""
 
 #: ../../source/decimal/index.rst:338
-# 9dd95bfd57984e7cbc058cfe23137718
 msgid "This program shows the effect of rounding the same value to different levels of precision using the different algorithms."
 msgstr ""
 
 #: ../../source/decimal/index.rst:370
-# 55c865e455254c17a2221e39cfa7debd
 msgid "Local Context"
 msgstr ""
 
 #: ../../source/decimal/index.rst:372
-# 536cbe00033b4ab6af6fb05a8b63901a
 msgid "The context can be applied to a block of code using the ``with`` statement."
 msgstr ""
 
 #: ../../source/decimal/index.rst:0
-# 594918ed8e474eb9964919385713d682
 msgid "decimal_context_manager.py"
 msgstr ""
 
 #: ../../source/decimal/index.rst:379
-# 4c2c31173a8d4ac88e055ddd44d12aa5
 msgid "The ``Context`` supports the context manager API used by ``with``, so the settings only apply within the block."
 msgstr ""
 
 #: ../../source/decimal/index.rst:399
-# 7aa96d255652469985716c38f076ca67
 msgid "Per-Instance Context"
 msgstr ""
 
 #: ../../source/decimal/index.rst:401
-# f99bfadda96d476f82d57c1510f553eb
 msgid "Contexts also can be used to construct ``Decimal`` instances, which then inherit the precision and rounding arguments to the conversion from the context."
 msgstr ""
 
 #: ../../source/decimal/index.rst:0
-# a51cf42b53ee43afbaf070b1a7e15676
 msgid "decimal_instance_context.py"
 msgstr ""
 
 #: ../../source/decimal/index.rst:409
-# b3bfa1e9e8ac4d3ca0fb4c08f27b4802
 msgid "This lets an application select the precision of constant values separately from the precision of user data, for example."
 msgstr ""
 
 #: ../../source/decimal/index.rst:427
-# 438fe3f2fde9434b873d1d589c47d1a3
 msgid "Threads"
 msgstr ""
 
 #: ../../source/decimal/index.rst:429
-# e862838a28a74d51a39f2e42d4ae69f4
 msgid "The \"global\" context is actually thread-local, so each thread can potentially be configured using different values."
 msgstr ""
 
 #: ../../source/decimal/index.rst:0
-# 65161b34ae9746ecb8c0a560defc5b80
 msgid "decimal_thread_context.py"
 msgstr ""
 
 #: ../../source/decimal/index.rst:436
-# 2c9c3b3be7e84e57885569b8ccfaf187
 msgid "This example creates a new context using the specified, then installs it within each thread."
 msgstr ""
 
 #: ../../source/decimal/index.rst:458
-# 80c83d65ddb0453b9b6010e493477fd2
 msgid ":pydoc:`decimal`"
 msgstr ""
 
 #: ../../source/decimal/index.rst:460
-# 192ba2bd2eff4cb0ae6ca2754d316da9
 msgid ":ref:`Python 2 to 3 porting notes for decimal <porting-decimal>`"
 msgstr ""
 
 #: ../../source/decimal/index.rst:462
-# d928b53004e14c65bc02569ed3b39c1a
 msgid "`Wikipedia: Floating Point <https://en.wikipedia.org/wiki/Floating_point>`_ -- Article on floating point representations and arithmetic."
 msgstr ""
 
 #: ../../source/decimal/index.rst:466
-# 87904f0f576a4db6aafc6c3d16e00965
 msgid "`Floating Point Arithmetic: Issues and Limitations <https://docs.python.org/tutorial/floatingpoint.html>`__ -- Article from the Python tutorial describing floating point math representation issues."
 msgstr ""
 

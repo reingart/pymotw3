@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,342 +17,274 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/functools/index.rst:3
-# 2b623c899fc443929d8934d5fa95c579
 msgid "functools --- Tools for Manipulating Functions"
 msgstr ""
 
 #: ../../source/functools/index.rst:8
-# 20726d1d174a48d9b8378765b87c0d5c
 msgid "Functions that operate on other functions."
 msgstr ""
 
 #: ../../source/functools/index.rst:10
-# 2e28ecf0e0694eaf8b3d34f9798f47f2
 msgid "The ``functools`` module provides tools for adapting or extending functions and other callable objects, without completely rewriting them."
 msgstr ""
 
 #: ../../source/functools/index.rst:15
-# c0fbfdc41914479faa4f6af27a6a1873
 msgid "Decorators"
 msgstr ""
 
 #: ../../source/functools/index.rst:17
-# 9118ec1cbd8f4ead82a1312bb5efb8c6
 msgid "The primary tool supplied by the ``functools`` module is the class ``partial``, which can be used to \"wrap\" a callable object with default arguments. The resulting object is itself callable and can be treated as though it is the original function.  It takes all of the same arguments as the original, and can be invoked with extra positional or named arguments as well.  A ``partial`` can be used instead of a ``lambda`` to provide default arguments to a function, while leaving some arguments unspecified."
 msgstr ""
 
 #: ../../source/functools/index.rst:27
-# 1386fa4503f14bb7a7ce0959c31019c1
 msgid "Partial Objects"
 msgstr ""
 
 #: ../../source/functools/index.rst:29
-# 5768c473f06c4eb79d9c89d048df687c
 msgid "This example shows two simple ``partial`` objects for the function ``myfunc()``.  The output of ``show_details()`` includes the :attr:`func`, :attr:`args`, and :attr:`keywords` attributes of the partial object."
 msgstr ""
 
 #: ../../source/functools/index.rst:0
-# bb20151276384d13bf06075f5234c577
 msgid "functools_partial.py"
 msgstr ""
 
 #: ../../source/functools/index.rst:38
-# 951237a599f04db999e92d95a414db74
 msgid "At the end of the example, the first ``partial`` created is invoked without passing a value for ``a``, causing an exception."
 msgstr ""
 
 #: ../../source/functools/index.rst:83
-# 06fda91cacae40f3905d58d9fc3c85ee
 msgid "Acquiring Function Properties"
 msgstr ""
 
 #: ../../source/functools/index.rst:85
-# 946de8cc8e1743ffb3ecf062b7dcebfa
 msgid "The ``partial`` object does not have :attr:`__name__` or :attr:`__doc__` attributes by default, and without those attributes, decorated functions are more difficult to debug. Using ``update_wrapper()``, copies or adds attributes from the original function to the ``partial`` object."
 msgstr ""
 
 #: ../../source/functools/index.rst:0
-# 2742cb7211f64e3fac4f5b6de6686d86
 msgid "functools_update_wrapper.py"
 msgstr ""
 
 #: ../../source/functools/index.rst:95
-# 6510aefde5464e4a959440854b59f635
 msgid "The attributes added to the wrapper are defined in ``WRAPPER_ASSIGNMENTS``, while ``WRAPPER_UPDATES`` lists values to be modified."
 msgstr ""
 
 #: ../../source/functools/index.rst:134
-# 24b76b9e993b41538331776695968e2e
 msgid "Other Callables"
 msgstr ""
 
 #: ../../source/functools/index.rst:136
-# 7858ba0cde844c4499a01d74117c86d7
 msgid "Partials work with any callable object, not just with standalone functions."
 msgstr ""
 
 #: ../../source/functools/index.rst:0
-# 638890bd669b47fbbede2a0fab396d2b
 msgid "functools_callable.py"
 msgstr ""
 
 #: ../../source/functools/index.rst:142
-# 0cd5b46348e84141a24e46a7863c88e7
 msgid "This example creates partials from an instance of a class with a ``__call__()`` method."
 msgstr ""
 
 #: ../../source/functools/index.rst:171
-# c5a3eab7907a4411b8f888daaf72e900
 msgid "Methods and Functions"
 msgstr ""
 
 #: ../../source/functools/index.rst:173
-# 5c08cc2a59124488b6a3b77019aaa236
 msgid "While ``partial()`` returns a callable ready to be used directly, ``partialmethod()`` returns a callable ready to be used as an unbound method of an object. In the following example, the same standalone function is added as an attribute of ``MyClass`` twice, once using ``partialmethod()`` as ``method1()`` and again using ``partial()`` as ``method2()``."
 msgstr ""
 
 #: ../../source/functools/index.rst:0
-# e80fe570ee99497baac0834bd0cc8030
 msgid "functools_partialmethod.py"
 msgstr ""
 
 #: ../../source/functools/index.rst:184
-# 52295fc24acb477182cfbb1a436f8b5e
 msgid "``method1()`` can be called from an instance of ``MyClass``, and the instance is passed as the first argument just as with methods defined normally. ``method2()`` is not set up as a bound method, and so the ``self`` argument must be passed explicitly, or the call will result in a ``TypeError``."
 msgstr ""
 
 #: ../../source/functools/index.rst:213
-# d6cd0c4feaff40bdbcee87d0eeebf3a6
 msgid "Acquiring Function Properties for Decorators"
 msgstr ""
 
 #: ../../source/functools/index.rst:215
-# 3e5bdff37a874a98a8d8b8619dcb7f25
 msgid "Updating the properties of a wrapped callable is especially useful when used in a decorator, since the transformed function ends up with properties of the original \"bare\" function."
 msgstr ""
 
 #: ../../source/functools/index.rst:0
-# ca87e0d945f04d0bb16d42bb1d577667
 msgid "functools_wraps.py"
 msgstr ""
 
 #: ../../source/functools/index.rst:223
-# 973aea06bb054d85bd41e23b34c39698
 msgid "``functools`` provides a decorator, ``wraps()``, that applies ``update_wrapper()`` to the decorated function."
 msgstr ""
 
 #: ../../source/functools/index.rst:265
-# 2b8fe8d6860a433391e23fe92890429c
 msgid "Comparison"
 msgstr ""
 
 #: ../../source/functools/index.rst:267
-# f13c71a858b24a4a87c76bd900f636a3
 msgid "Under Python 2, classes could define a ``__cmp__()`` method that returns ``-1``, ``0``, or ``1`` based on whether the object is less than, equal to, or greater than the item being compared.  Python 2.1 introduced the *rich comparison* methods API (``__lt__()``, ``__le__()``, ``__eq__()``, ``__ne__()``, ``__gt__()``, and ``__ge__()``), which perform a single comparison operation and return a boolean value.  Python 3 deprecated ``__cmp__()`` in favor of these new methods and ``functools`` provides tools to make it easier to write classes that comply with the new comparison requirements in Python 3."
 msgstr ""
 
 #: ../../source/functools/index.rst:279
-# 81313d799e474cee8f66d8544ae3745f
 msgid "Rich Comparison"
 msgstr ""
 
 #: ../../source/functools/index.rst:281
-# f90b6f9e907d49eab9bb8457c767d159
 msgid "The rich comparison API is designed to allow classes with complex comparisons to implement each test in the most efficient way possible. However, for classes where comparison is relatively simple, there is no point in manually creating each of the rich comparison methods. The ``total_ordering()`` class decorator takes a class that provides some of the methods, and adds the rest of them."
 msgstr ""
 
 #: ../../source/functools/index.rst:0
-# 88822468887c497886000516771e868b
 msgid "functools_total_ordering.py"
 msgstr ""
 
 #: ../../source/functools/index.rst:292
-# d7a6bf1783554c0cbac63c5dcc56ba5d
 msgid "The class must provide implementation of ``__eq__()`` and one other rich comparison method.  The decorator adds implementations of the rest of the methods that work by using the comparisons provided. If a comparison cannot be made, the method should return ``NotImplemented`` so the comparison can be tried using the reverse comparison operators on the other object, before failing entirely."
 msgstr ""
 
 #: ../../source/functools/index.rst:343
-# f42b05c6dd9444a7b33b7eb05784e437
 msgid "Collation Order"
 msgstr ""
 
 #: ../../source/functools/index.rst:345
-# 252338d45030470698ecdc103cc2bf88
 msgid "Since old-style comparison functions are deprecated in Python 3, the ``cmp`` argument to functions like ``sort()`` are also no longer supported.  Older programs that use comparison functions can use ``cmp_to_key()`` to convert them to a function that returns a *collation key*, which is used to determine the position in the final sequence."
 msgstr ""
 
 #: ../../source/functools/index.rst:0
-# 018967b3cf2d4e02b3c77fcdf93dac79
 msgid "functools_cmp_to_key.py"
 msgstr ""
 
 #: ../../source/functools/index.rst:356
-# 9794423b06ef44288295566462cefedf
 msgid "Normally ``cmp_to_key()`` would be used directly, but in this example an extra wrapper function is introduced to print out more information as the key function is being called."
 msgstr ""
 
 #: ../../source/functools/index.rst:360
-# 63a655abda2344028f91d2a5b47b5bb4
 msgid "The output shows that ``sorted()`` starts by calling ``get_key_wrapper()`` for each item in the sequence to produce a key.  The keys returned by ``cmp_to_key()`` are instances of a class defined in ``functools`` that implements the rich comparison API using the old-style comparison function passed in.  After all of the keys are created, the sequence is sorted by comparing the keys."
 msgstr ""
 
 #: ../../source/functools/index.rst:400
-# 26f431a93a424c1a8c56a21e3952c634
 msgid "Caching"
 msgstr ""
 
 #: ../../source/functools/index.rst:402
-# 62e161a7b63d41a0a6674f9eb33b750a
 msgid "The ``lru_cache()`` decorator wraps a function in a least-recently-used cache. Arguments to the function are used to build a hash key, which is then mapped to the result. Subsequent calls with the same arguments will fetch the value from the cache instead of calling the function. The decorator also adds methods to the function to examine the state of the cache (``cache_info()``) and empty the cache (``cache_clear()``)."
 msgstr ""
 
 #: ../../source/functools/index.rst:0
-# 148542d7d4b94dad8c53ee72f24baed4
 msgid "functools_lru_cache.py"
 msgstr ""
 
 #: ../../source/functools/index.rst:414
-# 1469c6c98cb04db1b1bfaff7897a65d0
 msgid "This example makes several calls to ``expensive()`` in a set of nested loops. The second time those calls are made with the same values the results appear in the cache. When the cache is cleared and the loops are run again the values must be recomputed."
 msgstr ""
 
 #: ../../source/functools/index.rst:454
-# 92e97a5dc31b4250b6d06c51fe77cd90
 msgid "To prevent the cache from growing without bounds in a long-running process, it is given a maximum size. The default is 128 entries, but that can be changed for each cache using the ``maxsize`` argument."
 msgstr ""
 
 #: ../../source/functools/index.rst:0
-# 34deb4feedd04e55ab45489112508d30
 msgid "functools_lru_cache_expire.py"
 msgstr ""
 
 #: ../../source/functools/index.rst:462
-# 269f1b95b9664e59b309707b8e0c59df
 msgid "In this example the cache size is set to 2 entries. When the third set of unique arguments (``3, 4``) is used the oldest item in the cache is dropped and replaced with the new result."
 msgstr ""
 
 #: ../../source/functools/index.rst:493
-# 0be36dbb3b754a99b38b6e48bb6182a0
 msgid "The keys for the cache managed by ``lru_cache()`` must be hashable, so all of the arguments to the function wrapped with the cache lookup must be hashable."
 msgstr ""
 
 #: ../../source/functools/index.rst:0
-# 2220deb12e6b4c35a5342d534cc818cb
 msgid "functools_lru_cache_arguments.py"
 msgstr ""
 
 #: ../../source/functools/index.rst:501
-# 2f78629d55424aea9c106560cf025424
 msgid "If any object that can't be hashed is passed in to the function, a ``TypeError`` is raised."
 msgstr ""
 
 #: ../../source/functools/index.rst:519
-# 75c6d699ed8f4a128a675a4d21cae8aa
 msgid "Reducing a Data Set"
 msgstr ""
 
 #: ../../source/functools/index.rst:521
-# 6d901ebba3bb4bc3a0ac1c5156abefd0
 msgid "The ``reduce()`` function takes a callable and a sequence of data as input and produces a single value as output based on invoking the callable with the values from the sequence and accumulating the resulting output."
 msgstr ""
 
 #: ../../source/functools/index.rst:0
-# a8d2b3fece364550aa3e1b42b7753143
 msgid "functools_reduce.py"
 msgstr ""
 
 #: ../../source/functools/index.rst:530
-# 7d7ca7321a0749a3ae81136244d70d0e
 msgid "This example adds up the numbers in the input sequence."
 msgstr ""
 
 #: ../../source/functools/index.rst:548
-# c9dbe08730a84503aa096424bbb1ded2
 msgid "The optional ``initializer`` argument is placed at the front of the sequence and processed along with the other items. This can be used to update a previously computed value with new inputs."
 msgstr ""
 
 #: ../../source/functools/index.rst:0
-# 4f6af3e4048f4d7c97a117ea5a1fdf0a
 msgid "functools_reduce_initializer.py"
 msgstr ""
 
 #: ../../source/functools/index.rst:556
-# a306f64bf2654ec6b164a6f5af290416
 msgid "In this example a previous sum of ``99`` is used to initialize the value computed by ``reduce()``."
 msgstr ""
 
 #: ../../source/functools/index.rst:576
-# 40641df80fee452fa2ccd42860fc1072
 msgid "Sequences with a single item automatically reduce to that value when no initializer is present. Empty lists generate an error, unless an initializer is provided."
 msgstr ""
 
 #: ../../source/functools/index.rst:0
-# e4ce7953f5ae4041a6333e1e19bbe123
 msgid "functools_reduce_short_sequences.py"
 msgstr ""
 
 #: ../../source/functools/index.rst:584
-# af57c7944ebf469f9d804bf5ff865af6
 msgid "Because the initializer argument serves as a default, but is also combined with the new values if the input sequence is not empty, it is important to consider carefully whether to use it. When it does not make sense to combine the default with new values, it is better to catch the ``TypeError`` rather than passing an initializer."
 msgstr ""
 
 #: ../../source/functools/index.rst:607
-# 4f737b6799bf4fa48348406baadabca7
 msgid "Generic Functions"
 msgstr ""
 
 #: ../../source/functools/index.rst:609
-# ccdc78ad8d9b45a9b9b314adb11c4553
 msgid "In a dynamically typed language like Python it is common to need to perform slightly different operation based on the type of an argument, especially when dealing with the difference between a list of items and a single item. It is simple enough to check the type of an argument directly, but in cases where the behavioral difference can be isolated into separate functions ``functools`` provides the ``singledispatch()`` decorator to register a set of *generic functions* for automatic switching based on the type of the first argument to a function."
 msgstr ""
 
 #: ../../source/functools/index.rst:0
-# fad234600e324b5a85cf50927b1b8896
 msgid "functools_singledispatch.py"
 msgstr ""
 
 #: ../../source/functools/index.rst:623
-# f2ba20dbf09747069e4634076c3ea4d2
 msgid "The ``register()`` attribute of the new function serves as another decorator for registering alternative implementations. The first function wrapped with ``singledispatch()`` is the default implementation if no other type-specific function is found, as with the ``float`` case in this example."
 msgstr ""
 
 #: ../../source/functools/index.rst:647
-# 61bdf119292b43a5b1dc3605001ade53
 msgid "When no exact match is found for the type, the inheritance order is evaluated and the closest matching type is used."
 msgstr ""
 
 #: ../../source/functools/index.rst:0
-# d0ef723e1fa54314b85d8b641f6f7c8a
 msgid "functools_singledispatch_mro.py"
 msgstr ""
 
 #: ../../source/functools/index.rst:654
-# 52a0f2ed83db41249556dee495d4d35f
 msgid "In this example, classes ``D`` and ``E`` do not match exactly with any registered generic functions, and the function selected depends on the class hierarchy."
 msgstr ""
 
 #: ../../source/functools/index.rst:677
-# 8d52b4c7eb4f4cf890a80714e3f01702
 msgid ":pydoc:`functools`"
 msgstr ""
 
 #: ../../source/functools/index.rst:679
-# dae97fe363884e1ca468a49b7da18129
 msgid "`Rich comparison methods <https://docs.python.org/reference/datamodel.html#object.__lt__>`__ -- Description of the rich comparison methods from the Python Reference Guide."
 msgstr ""
 
 #: ../../source/functools/index.rst:684
-# 9e79c64e8317444e8261a5f974bec1b3
 msgid "`Isolated @memoize <http://nedbatchelder.com/blog/201601/isolated_memoize.html>`__ -- Article on creating memoizing decorators that work well with unit tests, by Ned Batchelder."
 msgstr ""
 
 #: ../../source/functools/index.rst:689
-# ad204e66015643bca4c1820c6149ce72
 msgid ":pep:`443` -- \"Single-dispatch generic functions\""
 msgstr ""
 
 #: ../../source/functools/index.rst:691
-# 9f920b108b1e4f87b8b685fe5d8a28cf
 msgid ":mod:`inspect` -- Introspection API for live objects."
 msgstr ""
 

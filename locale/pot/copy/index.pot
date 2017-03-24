@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,147 +17,118 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/copy/index.rst:3
-# a3f0333caba643029af6978d8b40288e
 msgid "copy --- Duplicate Objects"
 msgstr ""
 
 #: ../../source/copy/index.rst:8
-# 4ced1d0f86b54604a7685eff4c3f79ae
 msgid "Provides functions for duplicating objects using shallow or deep copy semantics."
 msgstr ""
 
 #: ../../source/copy/index.rst:10
-# dd3a2b18fd574a8dbd0eb18c98938cc8
 msgid "The ``copy`` module includes two functions, ``copy()`` and ``deepcopy()``, for duplicating existing objects."
 msgstr ""
 
 #: ../../source/copy/index.rst:14
-# b9635bcdfdda4eb291a95788640ec3d6
 msgid "Shallow Copies"
 msgstr ""
 
 #: ../../source/copy/index.rst:16
-# 85d6e6617e554e7e81e81231f78d7f2d
 msgid "The *shallow copy* created by ``copy()`` is a new container populated with references to the contents of the original object. When making a shallow copy of a ``list`` object, a new ``list`` is constructed and the elements of the original object are appended to it."
 msgstr ""
 
 #: ../../source/copy/index.rst:0
-# f54f14bc0e0d43d5b575b6dba4dc0e75
 msgid "copy_shallow.py"
 msgstr ""
 
 #: ../../source/copy/index.rst:26
-# 4bf6f180b51246f1add3aa3407b6d2a5
 msgid "For a shallow copy, the ``MyClass`` instance is not duplicated, so the reference in the ``dup`` list is to the same object that is in ``my_list``."
 msgstr ""
 
 #: ../../source/copy/index.rst:49
-# e23f645a6d554e4d8d924a4ba99b5c6c
 msgid "Deep Copies"
 msgstr ""
 
 #: ../../source/copy/index.rst:51
-# 1cee512f5bc749cf86354da377937685
 msgid "The *deep copy* created by ``deepcopy()`` is a new container populated with copies of the contents of the original object. To make a deep copy of a ``list``, a new ``list`` is constructed, the elements of the original list are copied, and then those copies are appended to the new list."
 msgstr ""
 
 #: ../../source/copy/index.rst:57
-# 3a5c30180deb4effacc1237bdfbaf55a
 msgid "Replacing the call to ``copy()`` with ``deepcopy()`` makes the difference in the output apparent."
 msgstr ""
 
 #: ../../source/copy/index.rst:0
-# 3417e351e73342c6936b54e4f4129f18
 msgid "copy_deep.py"
 msgstr ""
 
 #: ../../source/copy/index.rst:65
-# 1f396b296bc643578d9ab9445c7a0fe3
 msgid "The first element of the list is no longer the same object reference, but when the two objects are compared they still evaluate as being equal."
 msgstr ""
 
 #: ../../source/copy/index.rst:88
-# 3642fbb0ea3d4d58a108fad497fe767f
 msgid "Customizing Copy Behavior"
 msgstr ""
 
 #: ../../source/copy/index.rst:90
-# ae46e2cc3a664dfcb7c10ec61046871c
 msgid "It is possible to control how copies are made using the ``__copy__()`` and ``__deepcopy__()`` special methods."
 msgstr ""
 
 #: ../../source/copy/index.rst:93
-# 91cde0e8dac147cdb0788b6aca4de8de
 msgid "``__copy__()`` is called without any arguments and should return a shallow copy of the object."
 msgstr ""
 
 #: ../../source/copy/index.rst:96
-# 239b7a6d9c5c40d6b8748caf1900d442
 msgid "``__deepcopy__()`` is called with a memo dictionary and should return a deep copy of the object. Any member attributes that need to be deep-copied should be passed to ``copy.deepcopy()``, along with the memo dictionary, to control for recursion. (The memo dictionary is explained in more detail later.)"
 msgstr ""
 
 #: ../../source/copy/index.rst:102
-# 39d09a23d4d94c21aa38f5bd73f6ca40
 msgid "The following example illustrates how the methods are called."
 msgstr ""
 
 #: ../../source/copy/index.rst:0
-# dc9e1dfc7c9c47b09b26618ed1703fba
 msgid "copy_hooks.py"
 msgstr ""
 
 #: ../../source/copy/index.rst:108
-# 5ddb93f93ef1437facfd622307120fb4
 msgid "The memo dictionary is used to keep track of the values that have been copied already, so as to avoid infinite recursion."
 msgstr ""
 
 #: ../../source/copy/index.rst:126
-# 11f0953d3c23498d918d047410d9e2fd
 msgid "Recursion in Deep Copy"
 msgstr ""
 
 #: ../../source/copy/index.rst:128
-# e54563948cd94a4a8978415d0b15f14d
 msgid "To avoid problems with duplicating recursive data structures, ``deepcopy()`` uses a dictionary to track objects that have already been copied. This dictionary is passed to the ``__deepcopy__()`` method so it can be examined there as well."
 msgstr ""
 
 #: ../../source/copy/index.rst:133
-# a91eabe8721b430984d05504af773188
 msgid "The next example shows how an interconnected data structure such as a directed graph can help protect against recursion by implementing a ``__deepcopy__()`` method."
 msgstr ""
 
 #: ../../source/copy/index.rst:0
-# ed77bd4aef3741c28790d34dcecb1637
 msgid "copy_recursion.py"
 msgstr ""
 
 #: ../../source/copy/index.rst:141
-# 19756f43eb4e4b7e8e8a2087661501ac
 msgid "The ``Graph`` class includes a few basic directed graph methods. An instance can be initialized with a name and a list of existing nodes to which it is connected. The ``add_connection()`` method is used to set up bidirectional connections. It is also used by the deep copy operator."
 msgstr ""
 
 #: ../../source/copy/index.rst:147
-# 04a6b20333e54f588c93281b8b2854f6
 msgid "The ``__deepcopy__()`` method prints messages to show how it is called, and manages the memo dictionary contents as needed. Instead of copying the entire connection list wholesale, it creates a new list and appends copies of the individual connections to it. That ensures that the memo dictionary is updated as each new node is duplicated, and it avoids recursion issues or extra copies of nodes. As before, the method returns the copied object when it is done."
 msgstr ""
 
 #: ../../source/copy/index.rst:0
-# c1caa3ac580f447da14fef4e1eb35dcf
 msgid "Deep Copy for an Object Graph with Cycles"
 msgstr ""
 
 #: ../../source/copy/index.rst:165
-# 2f82691470e84c37b6d01f9b1c28bb13
 msgid "The graph shown in :figure:`Deep Copy for an Object Graph with Cycles` includes several cycles, but handling the recursion with the memo dictionary prevents the traversal from causing a stack overflow error. When the *root* node is copied, it produces the following output."
 msgstr ""
 
 #: ../../source/copy/index.rst:206
-# 7881351114ae47df82bf69ee1d26db1d
 msgid "The second time the *root* node is encountered, while the *a* node is being copied, ``__deepcopy__()`` detects the recursion and reuses the existing value from the memo dictionary instead of creating a new object."
 msgstr ""
 
 #: ../../source/copy/index.rst:213
-# fc29e8c5ed87432bb92e8ec0799bdad6
 msgid ":pydoc:`copy`"
 msgstr ""
 

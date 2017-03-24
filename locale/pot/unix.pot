@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,12 +17,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/unix.rst:3
-# 280d0d6df734486db3f4302687d016a4
 msgid "Unix-specific Services"
 msgstr ""
 
 #: ../../source/unix.rst:5
-# 2f50b21d80d44a689285adf5328c542b
 msgid "Although the Python interpreter is very portable, and many of the standard library modules support multiple platforms, there are some modules that provide access to platform-specific features. The modules described in this section access features only available on Unix-based systems such as Linux, macOS, FreeBSD, and OpenBSD."
 msgstr ""
 

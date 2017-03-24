@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,757 +17,606 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/argparse/index.rst:3
-# e414710a00b6450c837b1b2bd51d97d5
 msgid "argparse --- Command-Line Option and Argument Parsing"
 msgstr ""
 
 #: ../../source/argparse/index.rst:8
-# 26df9d15f8b64547b405bcef6dd7f855
 msgid "Command-line option and argument parsing."
 msgstr ""
 
 #: ../../source/argparse/index.rst:10
-# 9c0ebe48444941dc8f9840a4aaab5202
 msgid "The ``argparse`` module includes tools for building command line argument and option processors. It was added to Python 2.7 as a replacement for :mod:`optparse`.  The implementation of ``argparse`` supports features that would not have been easy to add to :mod:`optparse`, and that would have required backwards-incompatible API changes, so a new module was brought into the library instead. :mod:`optparse` is now deprecated."
 msgstr ""
 
 #: ../../source/argparse/index.rst:19
-# 0aa413b6b54f4546b8291acdea582e82
 msgid "Setting Up a Parser"
 msgstr ""
 
 #: ../../source/argparse/index.rst:21
-# dc2acff959d847b4aecf8747052fe204
 msgid "The first step when using ``argparse`` is to create a parser object and tell it what arguments to expect.  The parser can then be used to process the command-line arguments when the program runs.  The constructor for the parser class (``ArgumentParser``) takes several arguments to set up the description used in the help text for the program and other global behaviors or settings."
 msgstr ""
 
 #: ../../source/argparse/index.rst:37
-# 9305c311af7a436fa3b70cae0e8c515a
 msgid "Defining Arguments"
 msgstr ""
 
 #: ../../source/argparse/index.rst:39
-# 20b9c4732bf94d5d87bc6c816f5cfdc4
 msgid "``argparse`` is a complete argument processing library. Arguments can trigger different actions, specified by the ``action`` argument to ``add_argument()``. Supported actions include storing the argument (singly, or as part of a list), storing a constant value when the argument is encountered (including special handling for true/false values for Boolean switches), counting the number of times an argument is seen, and calling a callback to use custom processing instructions."
 msgstr ""
 
 #: ../../source/argparse/index.rst:47
-# e4177f91cf5a487583bd7ba2c0a4d2dc
 msgid "The default action is to store the argument value. If a type is provided, the value is converted to that type before it is stored. If the ``dest`` argument is provided, the value is saved using that name when the command-line arguments are parsed."
 msgstr ""
 
 #: ../../source/argparse/index.rst:53
-# 61d5e5ce8a0d44ccba9e5777a21911ef
 msgid "Parsing a Command-Line"
 msgstr ""
 
 #: ../../source/argparse/index.rst:55
-# 119383c97fa54b15a71932f54a58a4d0
 msgid "After all of the arguments are defined, parse the command-line by passing a sequence of argument strings to ``parse_args()``. By default, the arguments are taken from ``sys.argv[1:]``, but any list of strings can be used. The options are processed using the GNU/POSIX syntax, so option and argument values can be mixed in the sequence."
 msgstr ""
 
 #: ../../source/argparse/index.rst:61
-# 5f1d6e1a59c04f28863d929b0529cfcb
 msgid "The return value from ``parse_args()`` is a ``Namespace`` containing the arguments to the command. The object holds the argument values as attributes, so if the argument's ``dest`` is set to ``\"myoption\"``, the value is accessible as ``args.myoption``."
 msgstr ""
 
 #: ../../source/argparse/index.rst:67
-# afb32528fab94abda6fee88696126692
 msgid "Simple Examples"
 msgstr ""
 
 #: ../../source/argparse/index.rst:69
-# c4f87b0af8ba4b49b10b29bf7b2c9fbc
 msgid "Here is a simple example with three different options: a Boolean option (``-a``), a simple string option (``-b``), and an integer option (``-c``)."
 msgstr ""
 
 #: ../../source/argparse/index.rst:0
-# 8b4c4f88d9f94ccbb8d8fa0d69a5c82c
 msgid "argparse_short.py"
 msgstr ""
 
 #: ../../source/argparse/index.rst:77
-# aa4efdd500b044cd8ada563bd689f52e
 msgid "There are a few ways to pass values to single character options. The previous example uses two different forms, ``-bval`` and ``-c val``."
 msgstr ""
 
 #: ../../source/argparse/index.rst:92
-# 13a33e921d644f0a8d2a37b7ea83de44
 msgid "The type of the value associated with ``'c'`` in the output is an integer, since the ``ArgumentParser`` was told to convert the argument before storing it."
 msgstr ""
 
 #: ../../source/argparse/index.rst:96
-# 1a75c169564e485caf4990f663343c8b
 msgid "\"Long\" option names, with more than a single character in their name, are handled in the same way."
 msgstr ""
 
 #: ../../source/argparse/index.rst:0
-# 5c7f6a7d120949508e1adf24024ea01c
 msgid "argparse_long.py"
 msgstr ""
 
 #: ../../source/argparse/index.rst:103
-# 90d197a92e8d43f8b6fea4fa396b9ccf
 msgid "The results are similar."
 msgstr ""
 
 #: ../../source/argparse/index.rst:117
-# b396fcaaff2d47748854b85106facd2c
 msgid "``argparse`` is a full command-line argument parser tool, and handles both optional and required arguments."
 msgstr ""
 
 #: ../../source/argparse/index.rst:0
-# 615b505cbaeb4e7f899d740bbac9c565
 msgid "argparse_arguments.py"
 msgstr ""
 
 #: ../../source/argparse/index.rst:124
-# 692ae47423ba4c948747c2688066a5ca
 msgid "In this example, the \"count\" argument is an integer and the \"units\" argument is saved as a string.  If either is left off of the command-line, or the value given cannot be converted to the right type, an error is reported."
 msgstr ""
 
 #: ../../source/argparse/index.rst:160
-# 35df7b7d1be94153994738b6c26356e7
 msgid "Argument Actions"
 msgstr ""
 
 #: ../../source/argparse/index.rst:162
-# 67ca236c01bb495ca4e53781e2a38833
 msgid "Any of six built-in actions can be triggered when an argument is encountered."
 msgstr ""
 
 #: ../../source/argparse/index.rst:167
-# 8080b8d088f942e081790a6ebd141a1e
 msgid "``store``"
 msgstr ""
 
 #: ../../source/argparse/index.rst:166
-# 0b3524c069e54249bb72f02d8c16f5bd
 msgid "Save the value, after optionally converting it to a different type. This is the default action taken if none is specified explicitly."
 msgstr ""
 
 #: ../../source/argparse/index.rst:172
-# 7e2dbb2af10a42d9ac75e66f6962bb20
 msgid "``store_const``"
 msgstr ""
 
 #: ../../source/argparse/index.rst:170
-# 255e428452a74f9b86ce8ff4e9bd0168
 msgid "Save a value defined as part of the argument specification, rather than a value that comes from the arguments being parsed.  This is typically used to implement command-line flags that are not Booleans."
 msgstr ""
 
 #: ../../source/argparse/index.rst:176
-# 34e624f5235f42fc96611e7c6d18dc07
 msgid "``store_true`` / ``store_false``"
 msgstr ""
 
 #: ../../source/argparse/index.rst:175
-# b0dd1ac6183549029db8dce50a96b2a2
 msgid "Save the appropriate Boolean value.  These actions are used to implement Boolean switches."
 msgstr ""
 
 #: ../../source/argparse/index.rst:180
-# bfaadc7764b8485abbf7b108c2e5f123
 msgid "``append``"
 msgstr ""
 
 #: ../../source/argparse/index.rst:179
-# e3ede3b2898f463a86dda95502a1e663
 msgid "Save the value to a list.  Multiple values are saved if the argument is repeated."
 msgstr ""
 
 #: ../../source/argparse/index.rst:183
-# a037be51dda941c9b974738b10cf531a
 msgid "``append_const``"
 msgstr ""
 
 #: ../../source/argparse/index.rst:183
-# 577b7ce14907427ebc34fb3fe87b3a4d
 msgid "Save a value defined in the argument specification to a list."
 msgstr ""
 
 #: ../../source/argparse/index.rst:186
-# 4c29ab6fd37446d58fbef14f29b27478
 msgid "``version``"
 msgstr ""
 
 #: ../../source/argparse/index.rst:186
-# cc9bde8b6eaf49c8a25f2038ca0267ee
 msgid "Prints version details about the program and then exits."
 msgstr ""
 
 #: ../../source/argparse/index.rst:188
-# 9db794977e3c41538375e68896aa8c61
 msgid "This example program demonstrates each action type, with the minimum configuration needed for each to work."
 msgstr ""
 
 #: ../../source/argparse/index.rst:0
-# 6b122a95e22c47e39e836e1070d9656f
 msgid "argparse_action.py"
 msgstr ""
 
 #: ../../source/argparse/index.rst:195
-# 0901ee456db94c9781113aeb182520ac
 msgid "The ``-t`` and ``-f`` options are configured to modify different option values, each storing either True or False.  The ``dest`` values for ``-A`` and ``-B`` are the same so that their constant values are appended to the same list."
 msgstr ""
 
 #: ../../source/argparse/index.rst:291
-# d5b37624336b4521a087f397ba1daeab
 msgid "Option Prefixes"
 msgstr ""
 
 #: ../../source/argparse/index.rst:293
-# 196e37d4d87947d997c0bcc5a8eb53d7
 msgid "The default syntax for options is based on the Unix convention of signifying command-line switches using a dash prefix (\"``-``\"). ``argparse`` supports other prefixes, so a program can conform to the local platform default (i.e., use \"``/``\" on Windows) or follow a different convention."
 msgstr ""
 
 #: ../../source/argparse/index.rst:0
-# b2980b04f28c43cbb3c2e39bf44e9c26
 msgid "argparse_prefix_chars.py"
 msgstr ""
 
 #: ../../source/argparse/index.rst:303
-# 1b5a1c23c46a4a7ba9d34bf1dbb33a14
 msgid "Set the ``prefix_chars`` parameter for the ``ArgumentParser`` to a string containing all of the characters that should be allowed to signify options.  It is important to understand that although ``prefix_chars`` establishes the allowed switch characters, the individual argument definitions specify the syntax for a given switch. This gives explicit control over whether options using different prefixes are aliases (such as might be the case for platform-independent command-line syntax) or alternatives (e.g., using \"``+``\" to indicate turning a switch on and \"``-``\" to turn it off). In the previous example, ``+a`` and ``-a`` are separate arguments, and ``//noarg`` can also be given as ``++noarg``, but not ``--noarg``."
 msgstr ""
 
 #: ../../source/argparse/index.rst:363
-# 53c2a1fca03d4c748b6060065d2e20df
 msgid "Sources of Arguments"
 msgstr ""
 
 #: ../../source/argparse/index.rst:365
-# f4d2923a3c654748ab8f34ce0fc7f952
 msgid "In the examples so far, the list of arguments given to the parser has come from a list passed in explicitly, or were taken implicitly from ``sys.argv``.  Passing the list explicitly is useful when using ``argparse`` to process command-line-like instructions that do not come from the command-line (such as in a configuration file)."
 msgstr ""
 
 #: ../../source/argparse/index.rst:0
-# b451353ec1a04b59905546986ef7be85
 msgid "argparse_with_shlex.py"
 msgstr ""
 
 #: ../../source/argparse/index.rst:376
-# f0011a4004e44ad3ab640ab0a9d1fdd2
 msgid "This example uses :mod:`configparser` to read a configuration file."
 msgstr ""
 
 #: ../../source/argparse/index.rst:380
-# 62f647f82a0a42a18f4ade2c910bfad3
 msgid ":mod:`shlex` makes it easy to split the string stored in the configuration file."
 msgstr ""
 
 #: ../../source/argparse/index.rst:397
-# 1b9fac3e54224b379c0310c8d91846af
 msgid "An alternative to processing the configuration file in application code is to tell ``argparse`` how to recognize an argument that specifies an input file containing a set of arguments to be processed using ``fromfile_prefix_chars``."
 msgstr ""
 
 #: ../../source/argparse/index.rst:0
-# e151c29280ec4ffebec42ab5f3bbeba3
 msgid "argparse_fromfile_prefix_chars.py"
 msgstr ""
 
 #: ../../source/argparse/index.rst:406
-# 38e026d1f05447cdb65190815b8f5ef6
 msgid "This example stops when it finds an argument prefixed with ``@``, then reads the named file to find more arguments.  The file should contain one argument per line, as in this example."
 msgstr ""
 
 #: ../../source/argparse/index.rst:0
-# d8e156cc9a224ec98cce74792adb23a8
 msgid "argparse_fromfile_prefix_chars.txt"
 msgstr ""
 
 #: ../../source/argparse/index.rst:413
-# 0ba7fd26f62f41e4abf8a93dbff106da
 msgid "The output produced when processing ``argparse_from_prefix_chars.txt`` follows."
 msgstr ""
 
 #: ../../source/argparse/index.rst:429
-# dc2686d1511e43f9ae6fac8297e0df9b
 msgid "Help Output"
 msgstr ""
 
 #: ../../source/argparse/index.rst:432
-# 1b5fa5719ecb48108597a48b0cb09ece
 msgid "Automatically Generated Help"
 msgstr ""
 
 #: ../../source/argparse/index.rst:434
-# f1d07c1887474743ab416b76bac44323
 msgid "``argparse`` will automatically add options to generate help, if configured to do so.  The ``add_help`` argument to ``ArgumentParser`` controls the help-related options."
 msgstr ""
 
 #: ../../source/argparse/index.rst:0
-# 63ea9e39d7434c17bcd08897b7e1c6ed
 msgid "argparse_with_help.py"
 msgstr ""
 
 #: ../../source/argparse/index.rst:442
-# e609d6990edd48c8a04ca0fec1eda69e
 msgid "The help options (``-h`` and ``--help``) are added by default, but can be disabled by setting ``add_help`` to false."
 msgstr ""
 
 #: ../../source/argparse/index.rst:0
-# ecd71e9254914089a4d2b3215acbb902
 msgid "argparse_without_help.py"
 msgstr ""
 
 #: ../../source/argparse/index.rst:449
-# b14a6248485449e3a54adc8b8ba46a44
 msgid "Although ``-h`` and ``--help`` are defacto standard option names for requesting help, some applications or uses of ``argparse`` either do not need to provide help or need to use those option names for other purposes."
 msgstr ""
 
 #: ../../source/argparse/index.rst:480
-# 3d0a3bf8c08e4237989364eca6fb1ff0
 msgid "Customizing Help"
 msgstr ""
 
 #: ../../source/argparse/index.rst:482
-# 63216338f822478bbdcf0c9e621166f8
 msgid "For applications that need to handle the help output directly, some of the utility methods of ``ArgumentParser`` will be useful in creating :ref:`custom actions <argparse-custom-actions>` to print help with extra information."
 msgstr ""
 
 #: ../../source/argparse/index.rst:0
-# 6ebf26c78bb846079d5a25689faa2085
 msgid "argparse_custom_help.py"
 msgstr ""
 
 #: ../../source/argparse/index.rst:491
-# 541329c36c0340c0841597cd412d0410
 msgid ":meth:`print_usage` prints the short usage message for an argument parser, and :meth:`print_help` prints the full help output."
 msgstr ""
 
 #: ../../source/argparse/index.rst:516
-# 31a19011fe1f4d41bdaa7317ef28b2b5
 msgid "The ``ArgumentParser`` uses a formatter class to control the appearance of the help output. To change the class, pass ``formatter_class`` when instantiating the ``ArgumentParser``."
 msgstr ""
 
 #: ../../source/argparse/index.rst:521
-# 36217f636611436a993ab9bbdc507097
 msgid "For example, the ``RawDescriptionHelpFormatter`` bypasses the line wrapping provided by the default formatter."
 msgstr ""
 
 #: ../../source/argparse/index.rst:0
-# d419562cbdda4d73a95a08a061da5910
 msgid "argparse_raw_description_help_formatter.py"
 msgstr ""
 
 #: ../../source/argparse/index.rst:528
-# 04c242242a5f4836b91c7a81c3cc0e52
 msgid "All text in the description and epilog of the command will be left unchanged."
 msgstr ""
 
 #: ../../source/argparse/index.rst:555
-# d3d6c965f1b347f6bf34a384e6b3e0c2
 msgid "The ``RawTextHelpFormatter`` treats all help text as pre-formatted."
 msgstr ""
 
 #: ../../source/argparse/index.rst:0
-# 1ded14624be14fe8bc431262b65ec4d7
 msgid "argparse_raw_text_help_formatter.py"
 msgstr ""
 
 #: ../../source/argparse/index.rst:561
-# 5ca8df72e2bc48739dc45697273c2061
 msgid "The help text for the ``-a`` argument is no longer wrapped neatly."
 msgstr ""
 
 #: ../../source/argparse/index.rst:590
-# 26c868f0b918495aae7923b7f457d4df
 msgid "Raw formatters may be useful for applications with examples in the description or epilog, where changing the format of the text may make the examples invalid."
 msgstr ""
 
 #: ../../source/argparse/index.rst:594
-# 81ff600e47314b9e811a3a1d915c39a9
 msgid "The ``MetavarTypeHelpFormatter`` prints the name of the type for each option, instead of the destination variable, which can be useful for applications with a lot of options of different types."
 msgstr ""
 
 #: ../../source/argparse/index.rst:0
-# 452a9dd334c04c2b84d65e51e53c612f
 msgid "argparse_metavar_type_help_formatter.py"
 msgstr ""
 
 #: ../../source/argparse/index.rst:602
-# 9e6d2ccf22f94bcfb0a9df08353396e1
 msgid "Rather than display the value of ``dest``, the name of the type associated with the option is printed."
 msgstr ""
 
 #: ../../source/argparse/index.rst:626
-# 90bc4e187d8845728897614e80b81f81
 msgid "Parser Organization"
 msgstr ""
 
 #: ../../source/argparse/index.rst:628
-# 367d1613e62748f9aff1f063f455b145
 msgid "``argparse`` includes several features for organizing argument parsers, to make implementation easier or to improve the usability of the help output."
 msgstr ""
 
 #: ../../source/argparse/index.rst:633
-# 01992c0940454c58a6812bbf09d06730
 msgid "Sharing Parser Rules"
 msgstr ""
 
 #: ../../source/argparse/index.rst:635
-# ce3c6c2acd2d4395a19667e2b590cfb2
 msgid "Programmers commonly need to implement a suite of command-line tools that all take a set of arguments, and then specialize in some way. For example, if the programs all need to authenticate the user before taking any real action, they would all need to support ``--user`` and ``--password`` options.  Rather than add the options explicitly to every ``ArgumentParser``, it is possible to define a parent parser with the shared options, and then have the parsers for the individual programs inherit from its options."
 msgstr ""
 
 #: ../../source/argparse/index.rst:644
-# 7f1f1b9f21b5409d93e019aa2bba4f19
 msgid "The first step is to set up the parser with the shared argument definitions.  Since each subsequent user of the parent parser is going to try to add the same help options, causing an exception, automatic help generation is turned off in the base parser."
 msgstr ""
 
 #: ../../source/argparse/index.rst:0
-# 8833b638bf82439bae2248042316b3c2
 msgid "argparse_parent_base.py"
 msgstr ""
 
 #: ../../source/argparse/index.rst:653
-# 5ffa16240e3a4221a39f592f9c1504ef
 msgid "Next, create another parser with ``parents`` set:"
 msgstr ""
 
 #: ../../source/argparse/index.rst:0
-# d213c30d9ef745e7a6e50d971992f350
 msgid "argparse_uses_parent.py"
 msgstr ""
 
 #: ../../source/argparse/index.rst:659
-# da0ed58c48214ce0883aaf48c7846701
 msgid "And the resulting program takes all three options:"
 msgstr ""
 
 #: ../../source/argparse/index.rst:680
-# a1972335f4cd40e5a79db848919c2f1e
 msgid "Conflicting Options"
 msgstr ""
 
 #: ../../source/argparse/index.rst:682
-# ab843fc0712547369ac04cc5befd6ac2
 msgid "The previous example pointed out that adding two argument handlers to a parser using the same argument name causes an exception.  The conflict resolution behavior can be changed by passing a ``conflict_handler``.  The two built-in handlers are ``error`` (the default), and ``resolve``, which picks a handler based on the order they are added."
 msgstr ""
 
 #: ../../source/argparse/index.rst:0
-# 6ca190d986184f23b5e301f4cfd05234
 msgid "argparse_conflict_handler_resolve.py"
 msgstr ""
 
 #: ../../source/argparse/index.rst:693
-# 29f3c2256c734488b7149ef62383e016
 msgid "Since the last handler with a given argument name is used, in this example, the stand-alone option ``-b`` is masked by the alias for ``--long-b``."
 msgstr ""
 
 #: ../../source/argparse/index.rst:713
-# fafaffe1e0c442a2917fca69b5819339
 msgid "Switching the order of the calls to ``add_argument()`` unmasks the stand-alone option:"
 msgstr ""
 
 #: ../../source/argparse/index.rst:0
-# 1b7ecc019538480cabc467e84331aef7
 msgid "argparse_conflict_handler_resolve2.py"
 msgstr ""
 
 #: ../../source/argparse/index.rst:720
-# 137a18a3a04f43f2bffae57f973e9cd1
 msgid "Now both options can be used together."
 msgstr ""
 
 #: ../../source/argparse/index.rst:740
-# 0fc8b495d4c0441da8042444d0da0b18
 msgid "Argument Groups"
 msgstr ""
 
 #: ../../source/argparse/index.rst:742
-# 1aed9f9ec103406b9e7fbfb3a56c1652
 msgid "``argparse`` combines the argument definitions into \"groups.\"  By default, it uses two groups, with one for options and another for required position-based arguments."
 msgstr ""
 
 #: ../../source/argparse/index.rst:0
-# 4c84ed5170ab4fecb94f5e9e7cc55b04
 msgid "argparse_default_grouping.py"
 msgstr ""
 
 #: ../../source/argparse/index.rst:750
-# 9421f65650e3449a98be2e1dcba56fc8
 msgid "The grouping is reflected in the separate \"positional arguments\" and \"optional arguments\" sections of the help output."
 msgstr ""
 
 #: ../../source/argparse/index.rst:774
-# 5470165c632547c7b6fc203bc626e1d1
 msgid "The grouping can be adjusted to make it more logical in the help, so that related options or values are documented together.  The shared-option example from earlier could be written using custom grouping so that the authentication options are shown together in the help."
 msgstr ""
 
 #: ../../source/argparse/index.rst:780
-# aaff276f2eb54b098596232529e467a5
 msgid "Create the \"authentication\" group with ``add_argument_group()`` and then add each of the authentication-related options to the group, instead of the base parser."
 msgstr ""
 
 #: ../../source/argparse/index.rst:0
-# 1024a18fb5c24fd78b7d25743c24cdd8
 msgid "argparse_parent_with_group.py"
 msgstr ""
 
 #: ../../source/argparse/index.rst:788
-# cb4d90b5b9fc40c191ebba8d4c168911
 msgid "The program using the group-based parent lists it in the ``parents`` value, just as before."
 msgstr ""
 
 #: ../../source/argparse/index.rst:0
-# 2177fc287d1c45f9a63ee16254dc0de5
 msgid "argparse_uses_parent_with_group.py"
 msgstr ""
 
 #: ../../source/argparse/index.rst:795
-# bacc5614c41f45f49324944218c1ba4f
 msgid "The help output now shows the authentication options together."
 msgstr ""
 
 #: ../../source/argparse/index.rst:817
-# d2131971d6be468289c5c2f3e06a82f6
 msgid "Mutually Exclusive Options"
 msgstr ""
 
 #: ../../source/argparse/index.rst:819
-# 060908669d164c31b5a1694b41a80405
 msgid "Defining mutually exclusive options is a special case of the option grouping feature, and uses ``add_mutually_exclusive_group()`` instead of ``add_argument_group()``."
 msgstr ""
 
 #: ../../source/argparse/index.rst:0
-# 5186b237f0364f5f81a72e5fce69731a
 msgid "argparse_mutually_exclusive.py"
 msgstr ""
 
 #: ../../source/argparse/index.rst:827
-# 57871b81c81d4800848c9cb475747bf1
 msgid "``argparse`` enforces the mutual exclusivity, so that only one of the options from the group can be given."
 msgstr ""
 
 #: ../../source/argparse/index.rst:867
-# 1bd1d0c70b4b4b878d6017366df3f64a
 msgid "Nesting Parsers"
 msgstr ""
 
 #: ../../source/argparse/index.rst:869
-# 991ab8112ea64890a02f6c3a9b30b855
 msgid "The parent parser approach described earlier is one way to share options between related commands.  An alternate approach is to combine the commands into a single program, and use sub-parsers to handle each portion of the command-line.  The result works in the way ``svn``, ``hg``, and other programs with multiple command-line actions, or sub-commands, does."
 msgstr ""
 
 #: ../../source/argparse/index.rst:876
-# c43bd4a304e3462c9a381bb285b2c900
 msgid "A program to work with directories on the file system might define commands for creating, deleting, and listing the contents of a directory."
 msgstr ""
 
 #: ../../source/argparse/index.rst:0
-# b07e4e03f65b47adb4a528c04f77fc13
 msgid "argparse_subparsers.py"
 msgstr ""
 
 #: ../../source/argparse/index.rst:884
-# 75f43849e28d4f53a29fbb65692632df
 msgid "The help output shows the named sub-parsers as \"commands\" that can be specified on the command-line as positional arguments."
 msgstr ""
 
 #: ../../source/argparse/index.rst:908
-# 22b402a58a5b40dfa8f4764097068cdd
 msgid "Each sub-parser also has its own help, describing the arguments and options for that command."
 msgstr ""
 
 #: ../../source/argparse/index.rst:931
-# 66474c4f8151468dbd83487a4bded3e1
 msgid "And when the arguments are parsed, the ``Namespace`` object returned by ``parse_args()`` includes only the values related to the command specified."
 msgstr ""
 
 #: ../../source/argparse/index.rst:949
-# 9d0c1e99fb2d42daa52728414d13eda4
 msgid "Advanced Argument Processing"
 msgstr ""
 
 #: ../../source/argparse/index.rst:951
-# 13f722e4a76042299d7ddf31e7b2827b
 msgid "The examples so far have shown simple Boolean flags, options with string or numerical arguments, and positional arguments. ``argparse`` also supports sophisticated argument specification for variable-length argument list, enumerations, and constant values."
 msgstr ""
 
 #: ../../source/argparse/index.rst:957
-# d010ebb87ac94e00999862055bbafbde
 msgid "Variable Argument Lists"
 msgstr ""
 
 #: ../../source/argparse/index.rst:959
-# eb237015e97940dc8ad9be793689ed80
 msgid "A single argument definition can be configured to consume multiple arguments on the command-line being parsed.  Set ``nargs`` to one of the flag values from :table:`Flags for Variable Argument Definitions in argparse`, based on the number of required or expected arguments."
 msgstr ""
 
 #: ../../source/argparse/index.rst:0
-# 04dce394daa24332a37117f084963506
 msgid "Flags for Variable Argument Definitions in argparse"
 msgstr ""
 
 #: ../../source/argparse/index.rst:967
-# 629f48d44c284cebba574b8efc9d1daf
 msgid "Value"
 msgstr ""
 
 #: ../../source/argparse/index.rst:967
-# 77e8e5fbad164456b9f7978c473f8cd7
 msgid "Meaning"
 msgstr ""
 
 #: ../../source/argparse/index.rst:969
-# 3bcc746017794c44b361cf7fcfcc9583
 msgid "``N``"
 msgstr ""
 
 #: ../../source/argparse/index.rst:969
-# 6850d1b37b8d40558b6bf6b651ef901f
 msgid "The absolute number of arguments (e.g., ``3``)."
 msgstr ""
 
 #: ../../source/argparse/index.rst:970
-# b16096f1dd4d48979c8927d36764a9d4
 msgid "``?``"
 msgstr ""
 
 #: ../../source/argparse/index.rst:970
-# a542858cef8043ad9640ad787dddcde3
 msgid "0 or 1 arguments"
 msgstr ""
 
 #: ../../source/argparse/index.rst:971
-# 42898b09af3e4056949a4aa0156c134f
 msgid "``*``"
 msgstr ""
 
 #: ../../source/argparse/index.rst:971
-# 3019719974fd422db02322573282a32c
 msgid "0 or all arguments"
 msgstr ""
 
 #: ../../source/argparse/index.rst:972
-# 6b391499d17545879547eee451818b4e
 msgid "``+``"
 msgstr ""
 
 #: ../../source/argparse/index.rst:972
-# 2e89fea3e3a1419ea1671ca58aa97f5b
 msgid "All, and at least one, argument"
 msgstr ""
 
 #: ../../source/argparse/index.rst:0
-# c0190e15f6a1489f969e846317f428da
 msgid "argparse_nargs.py"
 msgstr ""
 
 #: ../../source/argparse/index.rst:979
-# f68cedc07e554082981bb38d074bfb0a
 msgid "The parser enforces the argument count instructions and generates an accurate syntax diagram as part of the command help text."
 msgstr ""
 
 #: ../../source/argparse/index.rst:1062
-# dc9ef715217049c5a3d4577198cd73c2
 msgid "Argument Types"
 msgstr ""
 
 #: ../../source/argparse/index.rst:1064
-# 4b43d3f085c042008c843ce577e29df9
 msgid "``argparse`` treats all argument values as strings, unless it is told to convert the string to another type.  The ``type`` parameter to ``add_argument()`` defines a converter function, which is used by the ``ArgumentParser`` to transform the argument value from a string to some other type."
 msgstr ""
 
 #: ../../source/argparse/index.rst:0
-# 81c6f1799e804a2696232d44484e12ec
 msgid "argparse_type.py"
 msgstr ""
 
 #: ../../source/argparse/index.rst:1074
-# db846349c09e4a5aac6967d697105ea3
 msgid "Any callable that takes a single string argument can be passed as ``type``, including built-in types like ``int`` and ``float`` or even ``open()``."
 msgstr ""
 
 #: ../../source/argparse/index.rst:1102
-# 4e6fdd9a73b44addb20069ee15020241
 msgid "If the type conversion fails, ``argparse`` raises an exception. ``TypeError`` and ``ValueError`` exceptions are trapped automatically and converted to a simple error message for the user. Other exceptions, such as the ``IOError`` in the next example where the input file does not exist, must be handled by the caller."
 msgstr ""
 
 #: ../../source/argparse/index.rst:1139
-# 6b7435d0e34e4d70bb4cf8cb1d721faf
 msgid "To limit an input argument to a value within a pre-defined set, use the ``choices`` parameter."
 msgstr ""
 
 #: ../../source/argparse/index.rst:0
-# 13c9b8db4de44f08b7f85aea64c7b08b
 msgid "argparse_choices.py"
 msgstr ""
 
 #: ../../source/argparse/index.rst:1146
-# e7dc8642004c4f1d8cfc94a71d2b36ac
 msgid "If the argument to ``--mode`` is not one of the allowed values, an error is generated and processing stops."
 msgstr ""
 
 #: ../../source/argparse/index.rst:1180
-# da2f61898d4b4596afc0b31b4806a40b
 msgid "File Arguments"
 msgstr ""
 
 #: ../../source/argparse/index.rst:1182
-# 8fc49be74c7b49679bf63a77380798de
 msgid "Although ``file`` objects can be instantiated with a single string argument, that does not include the access mode argument. ``FileType`` provides a more flexible way of specifying that an argument should be a file, including the mode and buffer size."
 msgstr ""
 
 #: ../../source/argparse/index.rst:0
-# 0099bfdefd48433abdfebe3a49e612a3
 msgid "argparse_FileType.py"
 msgstr ""
 
 #: ../../source/argparse/index.rst:1191
-# b9b8b80644d44a5bba2d34de0823b9b7
 msgid "The value associated with the argument name is the open file handle. The application is responsible for closing the file when it is no longer being used."
 msgstr ""
 
 #: ../../source/argparse/index.rst:1236
-# 86c6a080c1cc4ccf9013696cb9bd9b7a
 msgid "Custom Actions"
 msgstr ""
 
 #: ../../source/argparse/index.rst:1238
-# 0228fbde74994a76a521d4f10d9c79d1
 msgid "In addition to the built-in actions described earlier, custom actions can be defined by providing an object that implements the Action API. The object passed to ``add_argument()`` as ``action`` should take parameters describing the argument being defined (all the same arguments given to ``add_argument()``) and return a callable object that takes as parameters the ``parser`` processing the arguments, the ``namespace`` holding the parse results, the ``value`` of the argument being acted on, and the ``option_string`` that triggered the action."
 msgstr ""
 
 #: ../../source/argparse/index.rst:1247
-# cf88ec67c2a149ccbf5acaa820209779
 msgid "A class ``Action`` is provided as a convenient starting point for defining new actions.  The constructor handles the argument definitions, so only ``__call__()`` needs to be overridden in the subclass."
 msgstr ""
 
 #: ../../source/argparse/index.rst:0
-# 877fa5eeee5244389fb1cc9de787f88c
 msgid "argparse_custom_action.py"
 msgstr ""
 
 #: ../../source/argparse/index.rst:1256
-# 57d8a554c8c64c268be6311ae32febdd
 msgid "The type of ``values`` depends on the value of ``nargs``.  If the argument allows multiple values, ``values`` will be a list even if it only contains one item."
 msgstr ""
 
 #: ../../source/argparse/index.rst:1260
-# 5c57332f64184d0a803c9160f9482f45
 msgid "The value of ``option_string`` also depends on the original argument specification.  For positional required arguments, ``option_string`` is always ``None``."
 msgstr ""
 
 #: ../../source/argparse/index.rst:1299
-# b7578c832246488684af47d4c745a6f4
 msgid ":pydoc:`argparse`"
 msgstr ""
 
 #: ../../source/argparse/index.rst:1301
-# 84f695d31fd24bffad3c48c9d551d778
 msgid ":mod:`configparser` -- Read and write configuration files."
 msgstr ""
 
 #: ../../source/argparse/index.rst:1303
-# 3194331bd057439d951e022ccef07e66
 msgid ":mod:`shlex` -- Parse shell-like syntaxes."
 msgstr ""
 
 #: ../../source/argparse/index.rst:1305
-# ab1e215240824e3ca12733a9dc879a63
 msgid ":ref:`Python 2 to 3 porting notes for argparse <porting-argparse>`"
 msgstr ""
 

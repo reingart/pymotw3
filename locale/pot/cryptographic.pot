@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,12 +17,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/cryptographic.rst:3
-# 7277160fb4ec4f36a3cc27a54986f814
 msgid "Cryptography"
 msgstr ""
 
 #: ../../source/cryptographic.rst:5
-# 723fe1c3807c4c40bfd8519b48c10a84
 msgid "Encryption secures messages so that they can be verified as accurate and protected from interception.  Python's cryptography support includes :mod:`hashlib` for generating signatures of message content using standard algorithms such as MD5 and SHA, and :mod:`hmac` for verifying that a message has not been altered in transmission."
 msgstr ""
 

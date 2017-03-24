@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,72 +17,58 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/bisect/index.rst:3
-# 19e13fed7bce4e35b2c4e8727f529834
 msgid "bisect --- Maintain Lists in Sorted Order"
 msgstr ""
 
 #: ../../source/bisect/index.rst:9
-# ba059a2f93c5448bb262af0a81426b82
 msgid "Maintains a list in sorted order without having to call sort each time an item is added to the list."
 msgstr ""
 
 #: ../../source/bisect/index.rst:12
-# a2508c4b30a74b5b959dd6ccd3cbcc8f
 msgid "The ``bisect`` module implements an algorithm for inserting elements into a list while maintaining the list in sorted order."
 msgstr ""
 
 #: ../../source/bisect/index.rst:16
-# 156ad8dbe8ac4006ae2afccc0bc29a89
 msgid "Inserting in Sorted Order"
 msgstr ""
 
 #: ../../source/bisect/index.rst:18
-# 495874157d0244f4a8c79bac800edbb6
 msgid "Here is a simple example in which ``insort()`` is used to insert items into a list in sorted order."
 msgstr ""
 
 #: ../../source/bisect/index.rst:0
-# ce2d624cbf2b458e8663088c43e3cab0
 msgid "bisect_example.py"
 msgstr ""
 
 #: ../../source/bisect/index.rst:25
-# 80b337f6056641f099ff16daabed52f1
 msgid "The first column of the output shows the new random number. The second column shows the position where the number will be inserted into the list. The remainder of each line is the current sorted list."
 msgstr ""
 
 #: ../../source/bisect/index.rst:55
-# 6a3db70c6c74494794d7fdc01806f0f5
 msgid "This is a simple example,. In fact, given the amount of data being manipulated, it might be faster to simply build the list and then sort it once. By contrast, for long lists, significant time and memory savings can be achieved using an insertion sort algorithm such as this, especially when the operation to compare two members of the list requires expensive computation."
 msgstr ""
 
 #: ../../source/bisect/index.rst:63
-# ec678d1cffa24dec8cc84bb819c7f3c0
 msgid "Handling Duplicates"
 msgstr ""
 
 #: ../../source/bisect/index.rst:65
-# f42888f118f24a158914ca412abcf6ec
 msgid "The result set shown previously includes a repeated value, ``77``. The ``bisect`` module provides two ways to handle repeats: New values can be inserted either to the left of existing values, or to the right. The ``insort()`` function is actually an alias for ``insort_right()``, which inserts an item after the existing value. The corresponding function ``insort_left()`` inserts an item before the existing value."
 msgstr ""
 
 #: ../../source/bisect/index.rst:0
-# a1adb19de21f4ce9b454a1196f105e36
 msgid "bisect_example2.py"
 msgstr ""
 
 #: ../../source/bisect/index.rst:77
-# 2aaada147c344139a45deb699f77f513
 msgid "When the same data is manipulated using ``bisect_left()`` and ``insort_left()``, the results are the same sorted list but the insert positions are different for the duplicate values."
 msgstr ""
 
 #: ../../source/bisect/index.rst:110
-# 504ba6bed22b4a22854ad62673152a3b
 msgid ":pydoc:`bisect`"
 msgstr ""
 
 #: ../../source/bisect/index.rst:112
-# 2940f452c92744ed8e597d6130273eff
 msgid "`Wikipedia: Insertion Sort <https://en.wikipedia.org/wiki/Insertion_sort>`_ -- A description of the insertion sort algorithm."
 msgstr ""
 

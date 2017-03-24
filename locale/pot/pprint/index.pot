@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,167 +17,134 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/pprint/index.rst:3
-# 4d563cab7ce94478bcba21d69bbee073
 msgid "pprint --- Pretty-Print Data Structures"
 msgstr ""
 
 #: ../../source/pprint/index.rst:8
-# 758324fef49b45aca1bacb68dad75d0c
 msgid "Pretty-print data structures"
 msgstr ""
 
 #: ../../source/pprint/index.rst:10
-# c17bd7f8ee614d33a7f677e7fe22dc03
 msgid "The ``pprint`` module contains a \"pretty printer\" for producing aesthetically pleasing views of data structures.  The formatter produces representations of data structures that can be parsed correctly by the interpreter, and that are also easy for a human to read. The output is kept on a single line, if possible, and indented when split across multiple lines."
 msgstr ""
 
 #: ../../source/pprint/index.rst:17
-# a01368efc82e4f98b58a425a20b55579
 msgid "The examples in this section all depend on ``pprint_data.py``, which is shown here."
 msgstr ""
 
 #: ../../source/pprint/index.rst:0
-# e01498083c9a4466a70525a1c9439f40
 msgid "pprint_data.py"
 msgstr ""
 
 #: ../../source/pprint/index.rst:25
-# 1001694c02284f74b1a43f4531172d54
 msgid "Printing"
 msgstr ""
 
 #: ../../source/pprint/index.rst:27
-# 29d5e76a84694c3b8ec31c21be7355f5
 msgid "The simplest way to use the module is through the ``pprint()`` function."
 msgstr ""
 
 #: ../../source/pprint/index.rst:0
-# 8fb9a452e95e45d18de4d42874d92dcb
 msgid "pprint_pprint.py"
 msgstr ""
 
 #: ../../source/pprint/index.rst:34
-# 70c0092a6d0144fe860c0ec5c2c1589f
 msgid "``pprint()`` formats an object and writes it to the data stream passed in as an argument (or ``sys.stdout`` by default)."
 msgstr ""
 
 #: ../../source/pprint/index.rst:69
-# 1bd7fa1419d246d5ab81be1b80f73676
 msgid "Formatting"
 msgstr ""
 
 #: ../../source/pprint/index.rst:71
-# 949c295d1202438e87b4b7c41abf5c04
 msgid "To format a data structure without writing it directly to a stream (for example, for logging), use ``pformat()`` to build a string representation."
 msgstr ""
 
 #: ../../source/pprint/index.rst:0
-# f00807c6e2f14a388e918886cffc9324
 msgid "pprint_pformat.py"
 msgstr ""
 
 #: ../../source/pprint/index.rst:79
-# 3b3e7b352ca544388857d2aab0bf051b
 msgid "The formatted string can then be printed or logged independently."
 msgstr ""
 
 #: ../../source/pprint/index.rst:107
-# 385aedf8dcb245fca340af46980eea76
 msgid "Arbitrary Classes"
 msgstr ""
 
 #: ../../source/pprint/index.rst:109
-# d9c7a36207754f7db4dd6aa8db19e255
 msgid "The ``PrettyPrinter`` class used by ``pprint()`` can also work with custom classes, if they define a ``__repr__()`` method."
 msgstr ""
 
 #: ../../source/pprint/index.rst:0
-# c4b27f7c32d942328733607c36f366e4
 msgid "pprint_arbitrary_object.py"
 msgstr ""
 
 #: ../../source/pprint/index.rst:116
-# 9b24a6ba70c945bf8452a723c88e434b
 msgid "The representations of the nested objects are combined by the ``PrettyPrinter`` to return the full string representation."
 msgstr ""
 
 #: ../../source/pprint/index.rst:135
-# 8a270b9231284b05850153d78a26c903
 msgid "Recursion"
 msgstr ""
 
 #: ../../source/pprint/index.rst:137
-# 765d5cbe736f477cadaaa50e5502a4ca
 msgid "Recursive data structures are represented with a reference to the original source of the data, given in the format ``<Recursion on typename with id=number>``."
 msgstr ""
 
 #: ../../source/pprint/index.rst:0
-# 67a9d07f6dfd45a09d0f043c4831484e
 msgid "pprint_recursion.py"
 msgstr ""
 
 #: ../../source/pprint/index.rst:145
-# 7e7a2f40178d4c86b871e30e6df54f58
 msgid "In this example, the list ``local_data`` is added to itself, creating a recursive reference."
 msgstr ""
 
 #: ../../source/pprint/index.rst:163
-# e3f340ec3c8b490b99bddc6b12f2d91b
 msgid "Limiting Nested Output"
 msgstr ""
 
 #: ../../source/pprint/index.rst:165
-# 8ecac73efaf54928b0fbe877a5e4f8f9
 msgid "For very deep data structures, it may not be desirable for the output to include all of the details. The data may not be formatted properly, the formatted text might be too large to manage, or some of the data may be extraneous."
 msgstr ""
 
 #: ../../source/pprint/index.rst:0
-# be5caa48dc9f43bda68617883d16c13b
 msgid "pprint_depth.py"
 msgstr ""
 
 #: ../../source/pprint/index.rst:174
-# d8a2007af0a34f73974794b3e20a657f
 msgid "Use the ``depth`` argument to control how far down into the nested data structure the pretty printer recurses.  Levels not included in the output are represented by ellipsis."
 msgstr ""
 
 #: ../../source/pprint/index.rst:193
-# ec124bdec48d495fab4ae7e8911677b9
 msgid "Controlling Output Width"
 msgstr ""
 
 #: ../../source/pprint/index.rst:195
-# 947312eb43cf4f0091eeef3a2cf6014b
 msgid "The default output width for the formatted text is 80 columns. To adjust that width, use the ``width`` argument to ``pprint()``."
 msgstr ""
 
 #: ../../source/pprint/index.rst:0
-# 1161c74cff554911908d712fff5ca82c
 msgid "pprint_width.py"
 msgstr ""
 
 #: ../../source/pprint/index.rst:202
-# afb80624ff9d435ba41809b60192af50
 msgid "When the width is too small to accommodate the formatted data structure, the lines are not truncated or wrapped if doing so would introduce invalid syntax."
 msgstr ""
 
 #: ../../source/pprint/index.rst:263
-# 6e9a34c0786b41beb2be7b31a4675cc2
 msgid "The ``compact`` flag tells ``pprint()`` to try to fit more data on each individual line, rather than spreading complex data structures across lines."
 msgstr ""
 
 #: ../../source/pprint/index.rst:0
-# 702147c68a014116be09862e9b5ceb63
 msgid "pprint_compact.py"
 msgstr ""
 
 #: ../../source/pprint/index.rst:271
-# dc750f2e366c4e28be7af0d184717916
 msgid "This example shows that when a data structure does not fit on a line, it is split up (as with the second item in the data list). When multiple elements can fit on a line, as with the third and fourth members, they are placed that way."
 msgstr ""
 
 #: ../../source/pprint/index.rst:316
-# c8d3b34304254b168cdbe96c6a9d85bc
 msgid ":pydoc:`pprint`"
 msgstr ""
 

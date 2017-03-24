@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,394 +17,315 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/csv/index.rst:3
-# 69a05f82090944dcb640403b0a4e5ea2
 msgid "csv --- Comma-separated Value Files"
 msgstr ""
 
 #: ../../source/csv/index.rst:8
-# 7c615247d07943ad881c97c2941bd11a
 msgid "Read and write comma separated value files."
 msgstr ""
 
 #: ../../source/csv/index.rst:10
-# ea6455d743e24a65b4d656f2879fa172
 msgid "The ``csv`` module can be used to work with data exported from spreadsheets and databases into text files formatted with fields and records, commonly referred to as *comma-separated value* (CSV) format because commas are often used to separate the fields in a record."
 msgstr ""
 
 #: ../../source/csv/index.rst:16
-# fce85eb41a454f2d801731f2fd6e1e01
 msgid "Reading"
 msgstr ""
 
 #: ../../source/csv/index.rst:18
-# 196c399534d545a893477592ec086af0
 msgid "Use ``reader()`` to create a an object for reading data from a CSV file.  The reader can be used as an iterator to process the rows of the file in order. For example"
 msgstr ""
 
 #: ../../source/csv/index.rst:0
-# 103d24ab182a4c05bdf2715e28815ba5
 msgid "csv_reader.py"
 msgstr ""
 
 #: ../../source/csv/index.rst:26
-# 9ae62b9e486a41759e2adb886e5079ae
 msgid "The first argument to ``reader()`` is the source of text lines. In this case, it is a file, but any iterable is accepted (a :mod:`StringIO` instance, ``list``, etc.).  Other optional arguments can be given to control how the input data is parsed."
 msgstr ""
 
 #: ../../source/csv/index.rst:33
-# 6d4e05f87a30444ea42c53c1dddcb904
 msgid "As it is read, each row of the input data is parsed and converted to a ``list`` of strings."
 msgstr ""
 
 #: ../../source/csv/index.rst:51
-# 8027d1fb084644d6901a2bae62b01b69
 msgid "The parser handles line breaks embedded within strings in a row, which is why a \"row\" is not always the same as a \"line\" of input from the file."
 msgstr ""
 
 #: ../../source/csv/index.rst:57
-# 66d19376f6784b5c97d89fa3c1bbf4f0
 msgid "Fields with line breaks in the input retain the internal line breaks when they are returned by the parser."
 msgstr ""
 
 #: ../../source/csv/index.rst:74
-# ae49dda533a04adabdb556810d41d494
 msgid "Writing"
 msgstr ""
 
 #: ../../source/csv/index.rst:76
-# 0c252d36abe14b4d907d7c4a53f664f2
 msgid "Writing CSV files is just as easy as reading them. Use ``writer()`` to create an object for writing, then iterate over the rows, using ``writerow()`` to print them."
 msgstr ""
 
 #: ../../source/csv/index.rst:0
-# e560cca63268401e9e9d1b04bb0d8b96
 msgid "csv_writer.py"
 msgstr ""
 
 #: ../../source/csv/index.rst:84
-# 73b79a86cf5f476fb6b0282f42f1cf50
 msgid "The output does not look exactly like the exported data used in the reader example because it lacks quotes around some of the values."
 msgstr ""
 
 #: ../../source/csv/index.rst:106
-# a5c55962f1424ca6b751e887985c6ae7
 msgid "Quoting"
 msgstr ""
 
 #: ../../source/csv/index.rst:108
-# 63d10d09462d47c3bc94714fe4f62a9d
 msgid "The default quoting behavior is different for the writer, so the second and third columns in the previous example are not quoted. To add quoting, set the ``quoting`` argument to one of the other quoting modes."
 msgstr ""
 
 #: ../../source/csv/index.rst:117
-# 4172d684423647878ee879a59b2a3c82
 msgid "In this case, ``QUOTE_NONNUMERIC`` adds quotes around all columns that contain values that are not numbers."
 msgstr ""
 
 #: ../../source/csv/index.rst:136
-# 690ec843968b43c5bc98b15e2fad6bbb
 msgid "There are four different quoting options, defined as constants in the csv module."
 msgstr ""
 
 #: ../../source/csv/index.rst:140
-# f930c25923534f51ba90a2180b18d936
 msgid "``QUOTE_ALL``"
 msgstr ""
 
 #: ../../source/csv/index.rst:140
-# d44a926b188f4ee2875ec956743f6093
 msgid "Quote everything, regardless of type."
 msgstr ""
 
 #: ../../source/csv/index.rst:144
 #: ../../source/csv/index.rst:253
-# 33a88031a2b14e53b3e8f34fc3f3e963
-# 5ed19943fa584e0b82648f009e6d1ab7
 msgid "``QUOTE_MINIMAL``"
 msgstr ""
 
 #: ../../source/csv/index.rst:143
-# b113ba8243af460997b95261cfa1f083
 msgid "Quote fields with special characters (anything that would confuse a parser configured with the same dialect and options). This is the default"
 msgstr ""
 
 #: ../../source/csv/index.rst:148
-# 7229ef70edff4a8b83274e9ec81c150a
 msgid "``QUOTE_NONNUMERIC``"
 msgstr ""
 
 #: ../../source/csv/index.rst:147
-# dbd77a8138bc4acebc419478c5f2c073
 msgid "Quote all fields that are not integers or floats. When used with the reader, input fields that are not quoted are converted to floats."
 msgstr ""
 
 #: ../../source/csv/index.rst:154
-# 9b090eae59734247a3efc4099a8aed4a
 msgid "``QUOTE_NONE``"
 msgstr ""
 
 #: ../../source/csv/index.rst:151
-# 7fb703521c414517a0e69340cc8e3ffa
 msgid "Do not quote anything on output. When used with the reader, quote characters are included in the field values (normally, they are treated as delimiters and stripped)."
 msgstr ""
 
 #: ../../source/csv/index.rst:157
-# e4a925d685224997b64a3b20263835dd
 msgid "Dialects"
 msgstr ""
 
 #: ../../source/csv/index.rst:159
-# 2b8f80847765424e804e221a734af90c
 msgid "There is no well-defined standard for comma-separated value files, so the parser needs to be flexible.  This flexibility means there are many parameters to control how ``csv`` parses or writes data. Rather than passing each of these parameters to the reader and writer separately, they are grouped together into a *dialect* object."
 msgstr ""
 
 #: ../../source/csv/index.rst:165
-# 5e9d08f3c06a4214aed43b69f66b1203
 msgid "Dialect classes can be registered by name, so that callers of the ``csv`` module do not need to know the parameter settings in advance.  The complete list of registered dialects can be retrieved with ``list_dialects()``."
 msgstr ""
 
 #: ../../source/csv/index.rst:0
-# 2156408646a447c28af34ea677acf7d2
 msgid "csv_list_dialects.py"
 msgstr ""
 
 #: ../../source/csv/index.rst:174
-# 205f549527714cc38788a048ca5fd0d8
 msgid "The standard library includes three dialects: ``excel``, ``excel-tabs``, and ``unix``. The ``excel`` dialect is for working with data in the default export format for Microsoft Excel, and also works with LibreOffice_. The ``unix`` dialect quotes all fields with double-quotes and uses ``\\n`` as the record separator."
 msgstr ""
 
 #: ../../source/csv/index.rst:193
-# d717cab489514685ba5e85970ced3958
 msgid "Creating a Dialect"
 msgstr ""
 
 #: ../../source/csv/index.rst:195
-# 81caf178f02f4406838092591aa5d907
 msgid "If, instead of using commas to delimit fields, the input file uses pipes (``|``), like this"
 msgstr ""
 
 #: ../../source/csv/index.rst:200
-# eb2678b53d284b47ad14a7377357118e
 msgid "a new dialect can be registered using the appropriate delimiter."
 msgstr ""
 
 #: ../../source/csv/index.rst:0
-# 07d8e4d99e0c481cac9346c0760a8c2a
 msgid "csv_dialect.py"
 msgstr ""
 
 #: ../../source/csv/index.rst:206
-# 86b5efb026bf44f191c6172be219ee7b
 msgid "Using the \"pipes\" dialect, the file can be read just as with the comma-delimited file."
 msgstr ""
 
 #: ../../source/csv/index.rst:223
-# 65298092a4bf432eac1605a305ba116b
 msgid "Dialect Parameters"
 msgstr ""
 
 #: ../../source/csv/index.rst:225
-# 3694959db2b74c028a6d4af0d471a661
 msgid "A dialect specifies all of the tokens used when parsing or writing a data file.  :table:`CSV Dialect Parameters` lists the aspects of the file format that can be specified, from the way columns are delimited to the character used to escape a token."
 msgstr ""
 
 #: ../../source/csv/index.rst:0
-# 09cf98c8e27e44c3bf5f30609f844b15
 msgid "CSV Dialect Parameters"
 msgstr ""
 
 #: ../../source/csv/index.rst:234
-# db03c027574642a09d2388d28bc0d3b7
 msgid "Attribute"
 msgstr ""
 
 #: ../../source/csv/index.rst:235
-# f16a8c9bd2074869beec2e7fceb209db
 msgid "Default"
 msgstr ""
 
 #: ../../source/csv/index.rst:236
-# eb2797c2c9e44ced841e06afae492322
 msgid "Meaning"
 msgstr ""
 
 #: ../../source/csv/index.rst:237
-# 1878af1014d640e7b2f430aca9706fc3
 msgid "delimiter"
 msgstr ""
 
 #: ../../source/csv/index.rst:238
-# dbc6f12131594677929fd3af4f8cddb2
 msgid "``,``"
 msgstr ""
 
 #: ../../source/csv/index.rst:239
-# 4c866c079df6418a865322d6c78e3578
 msgid "Field separator (one character)"
 msgstr ""
 
 #: ../../source/csv/index.rst:240
-# 622fbf4aa0b44035b59ee8e92acc6e29
 msgid "doublequote"
 msgstr ""
 
 #: ../../source/csv/index.rst:241
-# 885fb9d5838747b6bd747f8e795a8c90
 msgid "True"
 msgstr ""
 
 #: ../../source/csv/index.rst:242
-# 4ee9379087114a6295c902e29ac61c83
 msgid "Flag controlling whether quotechar instances are doubled"
 msgstr ""
 
 #: ../../source/csv/index.rst:243
-# 3c72cc2080734c6a8a4936706e04b69f
 msgid "escapechar"
 msgstr ""
 
 #: ../../source/csv/index.rst:244
-# f94309a37e404f0789286967103fe121
 msgid "None"
 msgstr ""
 
 #: ../../source/csv/index.rst:245
-# 20611f7fd0fe45078fad71edffc734f6
 msgid "Character used to indicate an escape sequence"
 msgstr ""
 
 #: ../../source/csv/index.rst:246
-# 1a4b819aba00426f80c41ebaa0011568
 msgid "lineterminator"
 msgstr ""
 
 #: ../../source/csv/index.rst:247
-# f4794c071b7b4c0c9f0a71493aefa8fb
 msgid "``\\r\\n``"
 msgstr ""
 
 #: ../../source/csv/index.rst:248
-# c5f62e1d26a34b9a91fa31e16992314c
 msgid "String used by writer to terminate a line"
 msgstr ""
 
 #: ../../source/csv/index.rst:249
-# 817ccbbd72e04764b0cc8c12895fcb5c
 msgid "quotechar"
 msgstr ""
 
 #: ../../source/csv/index.rst:250
-# 357c29eb8e6d446886affac31230fba4
 msgid "``\"``"
 msgstr ""
 
 #: ../../source/csv/index.rst:251
-# c920c5cbd41c423faa5254ba659fd95c
 msgid "String to surround fields containing special values (one character)"
 msgstr ""
 
 #: ../../source/csv/index.rst:252
-# 2cbec10fc96f49638b0008a60e779076
 msgid "quoting"
 msgstr ""
 
 #: ../../source/csv/index.rst:254
-# 6fc600d2e2034cb581a94ebf187e989c
 msgid "Controls quoting behavior described earlier"
 msgstr ""
 
 #: ../../source/csv/index.rst:255
-# dc0f75ac5b0b4e7a872fb3a6ef2eee81
 msgid "skipinitialspace"
 msgstr ""
 
 #: ../../source/csv/index.rst:256
-# 6874b42103ca43ab9c0fe204de579a48
 msgid "False"
 msgstr ""
 
 #: ../../source/csv/index.rst:257
-# 59723ee11680432e90e0dc018de28d85
 msgid "Ignore whitespace after the field delimiter"
 msgstr ""
 
 #: ../../source/csv/index.rst:0
-# 8e283fd62ec84c4293efa307be24a3fe
 msgid "csv_dialect_variations.py"
 msgstr ""
 
 #: ../../source/csv/index.rst:263
-# 17d44eb9c68846028f00d5b79a72fc88
 msgid "This program shows how the same data appears when formatted using several different dialects."
 msgstr ""
 
 #: ../../source/csv/index.rst:323
-# 7dd61925510141e9823c1a4804913e55
 msgid "Automatically Detecting Dialects"
 msgstr ""
 
 #: ../../source/csv/index.rst:325
-# 0874968ad5e94fe69f87fbe32636b9d3
 msgid "The best way to configure a dialect for parsing an input file is to know the correct settings in advance.  For data where the dialect parameters are unknown, the ``Sniffer`` class can be used to make an educated guess.  The ``sniff()`` method takes a sample of the input data and an optional argument giving the possible delimiter characters."
 msgstr ""
 
 #: ../../source/csv/index.rst:0
-# d6fe10a4f1e043f3945f9ae2492957a0
 msgid "csv_dialect_sniffer.py"
 msgstr ""
 
 #: ../../source/csv/index.rst:336
-# 671e1410bfb34239b50e817fc2bde67e
 msgid "``sniff()`` returns a ``Dialect`` instance with the settings to be used for parsing the data.  The results are not always perfect, as demonstrated by the \"escaped\" dialect in the example."
 msgstr ""
 
 #: ../../source/csv/index.rst:394
-# 6b1b0c112a704fac9102220711214692
 msgid "Using Field Names"
 msgstr ""
 
 #: ../../source/csv/index.rst:396
-# 3a57f1d70c9d40229f73eec6dc91fcdf
 msgid "In addition to working with sequences of data, the ``csv`` module includes classes for working with rows as dictionaries so that the fields can be named. The ``DictReader`` and ``DictWriter`` classes translate rows to dictionaries instead of lists. Keys for the dictionary can be passed in, or inferred from the first row in the input (when the row contains headers)."
 msgstr ""
 
 #: ../../source/csv/index.rst:0
-# 61fca99aeaef42e9926072fe39a6fd24
 msgid "csv_dictreader.py"
 msgstr ""
 
 #: ../../source/csv/index.rst:407
-# 9561454b064a47bfbc4b397b970b5f22
 msgid "The dictionary-based reader and writer are implemented as wrappers around the sequence-based classes, and use the same methods and arguments. The only difference in the reader API is that rows are returned as dictionaries instead of lists or tuples."
 msgstr ""
 
 #: ../../source/csv/index.rst:429
-# d73980f8c21648f98fa4f309b810af24
 msgid "The ``DictWriter`` must be given a list of field names so it knows how to order the columns in the output."
 msgstr ""
 
 #: ../../source/csv/index.rst:0
-# bf8b05a3b0fb4732baa4fd632266b408
 msgid "csv_dictwriter.py"
 msgstr ""
 
 #: ../../source/csv/index.rst:436
-# 4dad2d46ae2d44d4a7240490ed1f13b9
 msgid "The field names are not written to the file automatically, but they can be written explicitly using the ``writeheader()`` method."
 msgstr ""
 
 #: ../../source/csv/index.rst:457
-# a9eb211ce5084b658025387bb513dfe1
 msgid ":pydoc:`csv`"
 msgstr ""
 
 #: ../../source/csv/index.rst:459
-# b1b7f11421ef42c39c22575d13831ca3
 msgid ":pep:`305` -- CSV File API"
 msgstr ""
 
 #: ../../source/csv/index.rst:461
-# 50c05db7f52541bcae75a195846ce13d
 msgid ":ref:`Python 2 to 3 porting notes for csv <porting-csv>`"
 msgstr ""
 

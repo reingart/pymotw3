@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,332 +17,266 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/json/index.rst:3
-# 64233bfc60f144b6b184c17681a76eeb
 msgid "json --- JavaScript Object Notation"
 msgstr ""
 
 #: ../../source/json/index.rst:8
-# 0220105fa33f478a8c93d2f061bea6a2
 msgid "Encode Python objects as JSON strings, and decode JSON strings into Python objects."
 msgstr ""
 
 #: ../../source/json/index.rst:11
-# f81c0ed13d4b46c7b0c5451a9065a822
 msgid "The ``json`` module provides an API similar to :mod:`pickle` for converting in-memory Python objects to a serialized representation known as JavaScript Object Notation (JSON).  Unlike pickle, JSON has the benefit of having implementations in many languages (especially JavaScript).  It is most widely used for communicating between the web server and client in a REST API, but is also useful for other inter-application communication needs."
 msgstr ""
 
 #: ../../source/json/index.rst:20
-# 25f50f93730b4da59eb56387319f3013
 msgid "Encoding and Decoding Simple Data Types"
 msgstr ""
 
 #: ../../source/json/index.rst:22
-# 08c134d1855a491b9e7ca4e88a42e226
 msgid "The encoder understands Python's native types by default (``str``, ``int``, ``float``, ``list``, ``tuple``, and ``dict``)."
 msgstr ""
 
 #: ../../source/json/index.rst:0
-# fa191b7def244fe39eb1588b42618730
 msgid "json_simple_types.py"
 msgstr ""
 
 #: ../../source/json/index.rst:30
-# e534b0d4146e4b4eaad6273361cc8e2b
 msgid "Values are encoded in a manner superficially similar to Python's ``repr()`` output."
 msgstr ""
 
 #: ../../source/json/index.rst:46
-# 1b582af1dd5d4092abdf2e024c760728
 msgid "Encoding, then re-decoding may not give exactly the same type of object."
 msgstr ""
 
 #: ../../source/json/index.rst:0
-# 5561ad5f6dd64b6c989e46853d966f1b
 msgid "json_simple_types_decode.py"
 msgstr ""
 
 #: ../../source/json/index.rst:53
-# c7c9564bdd534a998adf674ba50dffc1
 msgid "In particular, tuples become lists."
 msgstr ""
 
 #: ../../source/json/index.rst:72
-# 08995bd97b064febadf7157d368a5345
 msgid "Human-consumable vs. Compact Output"
 msgstr ""
 
 #: ../../source/json/index.rst:74
-# 60cd070a363f4856afce1abc64003549
 msgid "Another benefit of JSON over :mod:`pickle` is that the results are human-readable.  The ``dumps()`` function accepts several arguments to make the output even nicer.  For example, the ``sort_keys`` flag tells the encoder to output the keys of a dictionary in sorted, instead of random, order."
 msgstr ""
 
 #: ../../source/json/index.rst:0
-# c1832c185fa64491be18e9aa2d867da4
 msgid "json_sort_keys.py"
 msgstr ""
 
 #: ../../source/json/index.rst:84
-# 30a90584838b4461bf8f07d33cb0cd90
 msgid "Sorting makes it easier to scan the results by eye, and also makes it possible to compare JSON output in tests."
 msgstr ""
 
 #: ../../source/json/index.rst:103
-# 5bdb3c6523d948778d6666fb7ab27b19
 msgid "For highly-nested data structures, specify a value for ``indent`` so the output is formatted nicely as well."
 msgstr ""
 
 #: ../../source/json/index.rst:0
-# 3828fbf976064497ac447b5ec63cb1e6
 msgid "json_indent.py"
 msgstr ""
 
 #: ../../source/json/index.rst:110
-# 3ce71b0e30904743bb95004ffa354f44
 msgid "When indent is a non-negative integer, the output more closely resembles that of :mod:`pprint`, with leading spaces for each level of the data structure matching the indent level."
 msgstr ""
 
 #: ../../source/json/index.rst:137
-# bd61dda3b0764e26a409b6d9a94f9b79
 msgid "Verbose output like this increases the number of bytes needed to transmit the same amount of data, however, so it is not intended for use in a production environment.  In fact, it is possible to adjust the settings for separating data in the encoded output to make it even more compact than the default."
 msgstr ""
 
 #: ../../source/json/index.rst:0
-# 7b0342f2e61c4d0abadf1c0da5a56b4a
 msgid "json_compact_encoding.py"
 msgstr ""
 
 #: ../../source/json/index.rst:147
-# 99d6af1575124c5a9849da0e3ae69fb7
 msgid "The ``separators`` argument to ``dumps()`` should be a tuple containing the strings to separate items in a list and keys from values in a dictionary.  The default is ``(', ', ': ')``. By removing the whitespace, a more compact output is produced."
 msgstr ""
 
 #: ../../source/json/index.rst:169
-# 97c00234c16d4e588aa89b85c0746c7c
 msgid "Encoding Dictionaries"
 msgstr ""
 
 #: ../../source/json/index.rst:171
-# a52cd0a4f6e0419d990f710bb34be469
 msgid "The JSON format expects the keys to a dictionary to be strings. Trying to encode a dictionary with non-string types as keys produces a ``TypeError``. One way to work around that limitation is to tell the encoder to skip over non-string keys using the ``skipkeys`` argument:"
 msgstr ""
 
 #: ../../source/json/index.rst:0
-# dad98e9918334ac6a2539f180f4c9e22
 msgid "json_skipkeys.py"
 msgstr ""
 
 #: ../../source/json/index.rst:181
-# ce2070eabeb1407ea82cef4001ffe0de
 msgid "Rather than raising an exception, the non-string key is ignored."
 msgstr ""
 
 #: ../../source/json/index.rst:200
-# f15d4493db8148b7a9f2876bcad792b7
 msgid "Working with Custom Types"
 msgstr ""
 
 #: ../../source/json/index.rst:202
-# 8d07ddda92f04caa886343059e77f241
 msgid "All of the examples so far have used Pythons built-in types because those are supported by ``json`` natively.  It is common to need to encode custom classes, as well, and there are two ways to do that."
 msgstr ""
 
 #: ../../source/json/index.rst:206
-# 7c04f14d92134d41a27fe807459366df
 msgid "Given this class to encode:"
 msgstr ""
 
 #: ../../source/json/index.rst:0
-# 8f9919dc1bc1433f987867119ed87144
 msgid "json_myobj.py"
 msgstr ""
 
 #: ../../source/json/index.rst:212
-# 4322b89ed4624db2b48bdc5494235cf7
 msgid "The simple way of encoding a ``MyObj`` instance is to define a function to convert an unknown type to a known type.  It does not need to do the encoding, so it should just convert one object to another."
 msgstr ""
 
 #: ../../source/json/index.rst:0
-# 4e51608f79d541e295b3f97f7ed8bc1e
 msgid "json_dump_default.py"
 msgstr ""
 
 #: ../../source/json/index.rst:220
-# b9b22164d52e416f90c697ef8948a5e6
 msgid "In ``convert_to_builtin_type()``, instances of classes not recognized by ``json`` are converted to dictionaries with enough information to re-create the object if a program has access to the Python modules necessary."
 msgstr ""
 
 #: ../../source/json/index.rst:244
-# 57f84077133d40ff8d8ca4680d9ecd60
 msgid "To decode the results and create a ``MyObj()`` instance, use the ``object_hook`` argument to ``loads()`` to tie in to the decoder so the class can be imported from the module and used to create the instance."
 msgstr ""
 
 #: ../../source/json/index.rst:249
-# 63488d5ef15d4e07b95acba558b21712
 msgid "The ``object_hook`` is called for each dictionary decoded from the incoming data stream, providing a chance to convert the dictionary to another type of object.  The hook function should return the object the calling application should receive instead of the dictionary."
 msgstr ""
 
 #: ../../source/json/index.rst:0
-# 1ba7d3b2822e402580f7adf521417449
 msgid "json_load_object_hook.py"
 msgstr ""
 
 #: ../../source/json/index.rst:258
-# 5a586ee41e744748b0bc123d74c46f42
 msgid "Since ``json`` converts string values to unicode objects, they need to be re-encoded as ASCII strings before they can be used as keyword arguments to the class constructor."
 msgstr ""
 
 #: ../../source/json/index.rst:277
-# e61d8ca30cc4443d937acac697a431a0
 msgid "Similar hooks are available for the built-in types integers (``parse_int``), floating point numbers (``parse_float``), and constants (``parse_constant``)."
 msgstr ""
 
 #: ../../source/json/index.rst:282
-# 8a165eb8b2874771b80f5189e6fe9a70
 msgid "Encoder and Decoder Classes"
 msgstr ""
 
 #: ../../source/json/index.rst:284
-# cf19d9e6d5b64beea6caf20b0ca90f7b
 msgid "Besides the convenience functions already covered, the ``json`` module provides classes for encoding and decoding.  Using the classes directly gives access to extra APIs for customizing their behavior."
 msgstr ""
 
 #: ../../source/json/index.rst:288
-# 5d263e73adac44a982e4159847e75936
 msgid "The ``JSONEncoder`` uses an iterable interface for producing \"chunks\" of encoded data, making it easier to write to files or network sockets without having to represent an entire data structure in memory."
 msgstr ""
 
 #: ../../source/json/index.rst:0
-# 15e5048c6c8f473b96f65e4f9ebd51e9
 msgid "json_encoder_iterable.py"
 msgstr ""
 
 #: ../../source/json/index.rst:297
-# f24f0aea47ae40f0a61c8bb47c43d327
 msgid "The output is generated in logical units, rather than being based on any size value."
 msgstr ""
 
 #: ../../source/json/index.rst:328
-# 04a5c45d7389414283b8b71e199b9152
 msgid "The ``encode()`` method is basically equivalent to ``''.join(encoder.iterencode())``, with some extra error checking up front."
 msgstr ""
 
 #: ../../source/json/index.rst:332
-# 30f54c8249e44d1db87c71fe31cb0ff5
 msgid "To encode arbitrary objects, override the ``default()`` method with an implementation similar to the one used in ``convert_to_builtin_type()``."
 msgstr ""
 
 #: ../../source/json/index.rst:0
-# 557606e5036546dab5cb7f02c0dfbcc8
 msgid "json_encoder_default.py"
 msgstr ""
 
 #: ../../source/json/index.rst:340
-# 211bd533ff774e3d9d5c1af5c39d4a91
 msgid "The output is the same as the previous implementation."
 msgstr ""
 
 #: ../../source/json/index.rst:358
-# fee951bb8bca40cbba976543c9e12250
 msgid "Decoding text, then converting the dictionary into an object takes a little more work to set up than the previous implementation, but not much."
 msgstr ""
 
 #: ../../source/json/index.rst:0
-# 2786a11a89f94fc492e234732f1e1b73
 msgid "json_decoder_object_hook.py"
 msgstr ""
 
 #: ../../source/json/index.rst:366
-# ae28acccfcdf425e8aa1784314488a6a
 msgid "And the output is the same as the earlier example."
 msgstr ""
 
 #: ../../source/json/index.rst:384
-# 489ae83db8154054a20ce0a472b1e7d2
 msgid "Working with Streams and Files"
 msgstr ""
 
 #: ../../source/json/index.rst:386
-# 89c2ecc6ba1d4ef596282ae16724286f
 msgid "All of the examples so far have assumed that the encoded version of the entire data structure could be held in memory at one time.  With large data structures, it may be preferable to write the encoding directly to a file-like object.  The convenience functions ``load()`` and ``dump()`` accept references to a file-like object to use for reading or writing."
 msgstr ""
 
 #: ../../source/json/index.rst:0
-# 2039770b4f184c4ba4579bc1e273a9f6
 msgid "json_dump_file.py"
 msgstr ""
 
 #: ../../source/json/index.rst:397
-# 71ac1169d2cc4f28905800b596104c00
 msgid "A socket or normal file handle would work the same way as the ``StringIO`` buffer used in this example."
 msgstr ""
 
 #: ../../source/json/index.rst:412
-# d81a7f3443cd41f78cfc06d08f449665
 msgid "Although it is not optimized to read only part of the data at a time, the ``load()`` function still offers the benefit of encapsulating the logic of generating objects from stream input."
 msgstr ""
 
 #: ../../source/json/index.rst:0
-# 03e64722c4c84d5ba9ebb9f283205395
 msgid "json_load_file.py"
 msgstr ""
 
 #: ../../source/json/index.rst:420
-# f2b42c2c56cd45eba037b6cad27c13d8
 msgid "Just as for ``dump()``, any file-like object can be passed to ``load()``."
 msgstr ""
 
 #: ../../source/json/index.rst:437
-# 403648d8d37a44319a5415f08685f3d5
 msgid "Mixed Data Streams"
 msgstr ""
 
 #: ../../source/json/index.rst:439
-# bf856dbf3e4849c99b2dae46550fc76d
 msgid "``JSONDecoder`` includes ``raw_decode()``, a method for decoding a data structure followed by more data, such as JSON data with trailing text.  The return value is the object created by decoding the input data, and an index into that data indicating where decoding left off."
 msgstr ""
 
 #: ../../source/json/index.rst:0
-# 5819468803fb44468adce519e1c30f18
 msgid "json_mixed_data.py"
 msgstr ""
 
 #: ../../source/json/index.rst:449
-# 7c15acbcb9584512b5acab797e51224f
 msgid "Unfortunately, this only works if the object appears at the beginning of the input."
 msgstr ""
 
 #: ../../source/json/index.rst:471
-# 0170511981274d9e99b2fbd0d372a27f
 msgid "JSON at the Command Line"
 msgstr ""
 
 #: ../../source/json/index.rst:473
-# 5f70de0787a0471eabab7b50a9c70db1
 msgid "The ``json.tool`` module implements a command line program for reformatting JSON data to be easier to read."
 msgstr ""
 
 #: ../../source/json/index.rst:478
-# 8a05cbc97cdb4f169a6e887b71412a43
 msgid "The input file ``example.json`` contains a mapping with the keys out of alphabetical order. The first example below shows the data reformatted in order, and the second example uses ``--sort-keys`` to sort the mapping keys before printing the output."
 msgstr ""
 
 #: ../../source/json/index.rst:522
-# 2192526a2f8a4115bdbe11a771f70957
 msgid ":pydoc:`json`"
 msgstr ""
 
 #: ../../source/json/index.rst:524
-# ba38323352174cb6b8b36a1bb5d3f9ca
 msgid ":ref:`Python 2 to 3 porting notes for json <porting-json>`"
 msgstr ""
 
 #: ../../source/json/index.rst:526
-# 6f8ce8c859df4c1288fe235cd8e020ae
 msgid "`JavaScript Object Notation`_ -- JSON home, with documentation and implementations in other languages."
 msgstr ""
 
 #: ../../source/json/index.rst:529
-# 0cae1d955f79428dbece10f9ddc1babb
 msgid "`jsonpickle <http://code.google.com/p/jsonpickle/>`_ -- ``jsonpickle`` allows for any Python object to be serialized into JSON."
 msgstr ""
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,197 +17,158 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/http.server/index.rst:3
-# 55a6360eb1eb4d3ba0fb23e32a9ccc2c
 msgid "http.server --- Base Classes for Implementing Web Servers"
 msgstr ""
 
 #: ../../source/http.server/index.rst:8
-# 732b6627bebd46e8887f1a1f5833bff3
 msgid "http.server includes classes that can form the basis of a web server."
 msgstr ""
 
 #: ../../source/http.server/index.rst:11
-# f46c2eb03cbd4617b4e64694c8e955cc
 msgid "``http.server`` uses classes from :mod:`socketserver` to create base classes for making HTTP servers. ``HTTPServer`` can be used directly, but the ``BaseHTTPRequestHandler`` is intended to be extended to handle each protocol method (GET, POST, etc.)."
 msgstr ""
 
 #: ../../source/http.server/index.rst:17
-# fb47a71182e0470a8fe71bfc17fd75d1
 msgid "HTTP GET"
 msgstr ""
 
 #: ../../source/http.server/index.rst:19
-# a6e4d540400647569312df89b00103ce
 msgid "To add support for an HTTP method in a request handler class, implement the method ``do_METHOD()``, replacing ``METHOD`` with the name of the HTTP method (e.g., ``do_GET()``, ``do_POST()``, etc.). For consistency, the request handler methods take no arguments. All of the parameters for the request are parsed by ``BaseHTTPRequestHandler`` and stored as instance attributes of the request instance."
 msgstr ""
 
 #: ../../source/http.server/index.rst:27
-# 5289a468c80a4e35bf8e56426ad8ce3a
 msgid "This example request handler illustrates how to return a response to the client, and some of the local attributes that can be useful in building the response."
 msgstr ""
 
 #: ../../source/http.server/index.rst:0
-# 98d3fd676a3343c19b49f389ef4e7975
 msgid "http_server_GET.py"
 msgstr ""
 
 #: ../../source/http.server/index.rst:35
-# efd75ebe1cf04292b894fc9c9364ffef
 msgid "The message text is assembled and then written to :attr:`wfile`, the file handle wrapping the response socket. Each response needs a response code, set via ``send_response()``. If an error code is used (404, 501, etc.), an appropriate default error message is included in the header, or a message can be passed with the error code."
 msgstr ""
 
 #: ../../source/http.server/index.rst:41
-# a5eb26c95cd943f5ae0b6bb38f74f6b0
 msgid "To run the request handler in a server, pass it to the constructor of ``HTTPServer``, as in the ``__main__`` processing portion of the sample script."
 msgstr ""
 
 #: ../../source/http.server/index.rst:45
-# 689d7c56e9ea49dd8ca6d82bfcd221c9
 msgid "Then start the server:"
 msgstr ""
 
 #: ../../source/http.server/index.rst:53
-# 6518c82edb854e0fb58e285a3b9af395
 msgid "In a separate terminal, use ``curl`` to access it:"
 msgstr ""
 
 #: ../../source/http.server/index.rst:92
-# d5a812fba31d426b9495be6baaa88abe
 msgid "The output produced by different versions of ``curl`` may vary. If running the examples produces different output, check the version number reported by ``curl``."
 msgstr ""
 
 #: ../../source/http.server/index.rst:99
-# f55dd05bcfa7480a8c3193563bc55a1f
 msgid "HTTP POST"
 msgstr ""
 
 #: ../../source/http.server/index.rst:101
-# 80adfc979d4c4dfc8b68e474e89caf92
 msgid "Supporting POST requests is a little more work, because the base class does not parse the form data automatically. The :mod:`cgi` module provides the ``FieldStorage`` class which knows how to parse the form, if it is given the correct inputs."
 msgstr ""
 
 #: ../../source/http.server/index.rst:0
-# b52d3e84e7594c73ae26af1e36be083a
 msgid "http_server_POST.py"
 msgstr ""
 
 #: ../../source/http.server/index.rst:110
-# a049c10eb2ce46529c971f8312e531a7
 msgid "Run the server in one window:"
 msgstr ""
 
 #: ../../source/http.server/index.rst:118
-# cc0290c220d7456d9ffad1fc4389ab6b
 msgid "The arguments to ``curl`` can include form data to be posted to the server by using the ``-F`` option. The last argument, ``-F datafile=@http_server_GET.py``, posts the contents of the file ``http_server_GET.py`` to illustrate reading file data from the form."
 msgstr ""
 
 #: ../../source/http.server/index.rst:156
-# 2a8974628219403aa1494985d02ddc7c
 msgid "Threading and Forking"
 msgstr ""
 
 #: ../../source/http.server/index.rst:158
-# 1ff6a4abb20a49059d168203c0dcc7ee
 msgid "``HTTPServer`` is a simple subclass of ``socketserver.TCPServer``, and does not use multiple threads or processes to handle requests. To add threading or forking, create a new class using the appropriate mix-in from :mod:`socketserver`."
 msgstr ""
 
 #: ../../source/http.server/index.rst:0
-# 9e395cea210348e4afeffb0af461741a
 msgid "http_server_threads.py"
 msgstr ""
 
 #: ../../source/http.server/index.rst:167
-# 73344842a4be4f7fb44f24ec1aff2640
 msgid "Run the server in the same way as the other examples."
 msgstr ""
 
 #: ../../source/http.server/index.rst:175
-# 767d07496a2949d3afafc8c64213d459
 msgid "Each time the server receives a request, it starts a new thread or process to handle it:"
 msgstr ""
 
 #: ../../source/http.server/index.rst:192
-# e517a62581ea4caf80407b383e437073
 msgid "Swapping ``ForkingMixIn`` for ``ThreadingMixIn`` would achieve similar results, using separate processes instead of threads."
 msgstr ""
 
 #: ../../source/http.server/index.rst:196
-# dda5bfca427342179102ee9945755a54
 msgid "Handling Errors"
 msgstr ""
 
 #: ../../source/http.server/index.rst:198
-# 58c0e3328d5d43cd9c936c56c78db9cf
 msgid "Handle errors by calling :meth:`send_error`, passing the appropriate error code and an optional error message.  The entire response (with headers, status code, and body) is generated automatically."
 msgstr ""
 
 #: ../../source/http.server/index.rst:0
-# 784e992df9ce454e8ff656f7f4ffe26a
 msgid "http_server_errors.py"
 msgstr ""
 
 #: ../../source/http.server/index.rst:207
-# 22f1dafc0fae4a369eac3f0f941b540f
 msgid "In this case, a 404 error is always returned."
 msgstr ""
 
 #: ../../source/http.server/index.rst:215
-# 6d08eb1fc1cc4261bbd39e565dbd20cc
 msgid "The error message is reported to the client using an HTML document as well as the header to indicate an error code."
 msgstr ""
 
 #: ../../source/http.server/index.rst:248
-# 78ca92f229a44d24a4c69336d33562b3
 msgid "Setting Headers"
 msgstr ""
 
 #: ../../source/http.server/index.rst:250
-# 0a3b9e1499a444e7b80ab52566826586
 msgid "The :mod:`send_header` method adds header data to the HTTP response. It takes two arguments: the name of the header and the value."
 msgstr ""
 
 #: ../../source/http.server/index.rst:0
-# 65693a586e0f477fb97ba8c19b393d3c
 msgid "http_server_send_header.py"
 msgstr ""
 
 #: ../../source/http.server/index.rst:257
-# 0e505b29c0b24429b8294fd4c4a5ac31
 msgid "This example sets the ``Last-Modified`` header to the current timestamp, formatted according to RFC 7231."
 msgstr ""
 
 #: ../../source/http.server/index.rst:272
-# 0b34bdd8cc4f4ac2ae5de255641ce472
 msgid "The server logs the request to the terminal, like in the other examples."
 msgstr ""
 
 #: ../../source/http.server/index.rst:283
-# 25d32550ab5346e290f304741c9c81f8
 msgid "Command Line Use"
 msgstr ""
 
 #: ../../source/http.server/index.rst:285
-# 03bbaa75950148629cee4ca5907b0a31
 msgid "``http.server`` includes a built-in server for serving files from the local file system. Start it from the command line using the ``-m`` option for the Python interpreter."
 msgstr ""
 
 #: ../../source/http.server/index.rst:296
-# 6c9026e0285b479ea0d2af430c1825ed
 msgid "The root directory of the server is the working directory where the server is started."
 msgstr ""
 
 #: ../../source/http.server/index.rst:313
-# 2c6f7171942b4ca7a64ce48a49aab16b
 msgid ":pydoc:`http.server`"
 msgstr ""
 
 #: ../../source/http.server/index.rst:315
-# 4e4914454d5a47a3be6a34a8cc71edca
 msgid ":mod:`socketserver` -- The ``socketserver`` module provides the base class that handles the raw socket connection."
 msgstr ""
 
 #: ../../source/http.server/index.rst:318
-# 76e023487e2942ac834d594884bce0f3
 msgid ":rfc:`7231` -- \"Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content\" includes a specification for the format of HTTP headers and dates."
 msgstr ""
 

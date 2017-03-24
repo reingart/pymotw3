@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,322 +17,258 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/cmd/index.rst:5
-# 037f1fc5154a4ab199103cfa746c582a
 msgid "cmd --- Line-oriented Command Processors"
 msgstr ""
 
 #: ../../source/cmd/index.rst:10
-# 52fce2408eed4803baa449a100ab081e
 msgid "Create line-oriented command processors."
 msgstr ""
 
 #: ../../source/cmd/index.rst:12
-# 0c9a3b9588fe4296a77bf8b7ad55def9
 msgid "The ``cmd`` module contains one public class, ``Cmd``, designed to be used as a base class for interactive shells and other command interpreters. By default it uses :mod:`readline` for interactive prompt handling, command line editing, and command completion."
 msgstr ""
 
 #: ../../source/cmd/index.rst:19
-# 023c9642c46a46eebc8b927245c890d9
 msgid "Processing Commands"
 msgstr ""
 
 #: ../../source/cmd/index.rst:21
-# e44ee763f2cd4f99be6993b00a5940ea
 msgid "A command interpreter created with ``cmd`` uses a loop to read all lines from its input, parse them, and then dispatch the command to an appropriate *command handler*. Input lines are parsed into two parts: the command, and any other text on the line. If the user enters ``foo bar``, and the interpreter class includes a method named ``do_foo()``, it is called with ``\"bar\"`` as the only argument."
 msgstr ""
 
 #: ../../source/cmd/index.rst:28
-# 96610eb2472c422f8c502f1b38cdbc34
 msgid "The end-of-file marker is dispatched to ``do_EOF()``. If a command handler returns a true value, the program will exit cleanly. So to give a clean way to exit the interpreter, make sure to implement ``do_EOF()`` and have it return True."
 msgstr ""
 
 #: ../../source/cmd/index.rst:33
-# 4fcca848add24cf190838cd623170a16
 msgid "This simple example program supports the \"greet\" command:"
 msgstr ""
 
 #: ../../source/cmd/index.rst:0
-# 7248a8a717044f2d85da852fadf588bf
 msgid "cmd_simple.py"
 msgstr ""
 
 #: ../../source/cmd/index.rst:39
-# 102120129fb947179782a147b6ceea23
 msgid "Running it interactively demonstrates how commands are dispatched and shows of some of the features included in ``Cmd``."
 msgstr ""
 
 #: ../../source/cmd/index.rst:50
-# 6af25427c79a483eb4c8dd753c64c187
 msgid "The first thing to notice is the command prompt, ``(Cmd)``. The prompt can be configured through the attribute ``prompt``. The prompt value is dynamic, and if a command handler changes the prompt attribute the new value is used to query for the next command."
 msgstr ""
 
 #: ../../source/cmd/index.rst:65
-# 1c86f066fe1e482aaf3658adef93dc31
 msgid "The ``help`` command is built into ``Cmd``. With no arguments, ``help`` shows the list of commands available. If the input includes a command name, the output is more verbose and restricted to details of that command, when available."
 msgstr ""
 
 #: ../../source/cmd/index.rst:70
-# 3e2ac5e2fa024d4fa2ec2541669ecb99
 msgid "If the command is ``greet``, ``do_greet()`` is invoked to handle it:"
 msgstr ""
 
 #: ../../source/cmd/index.rst:78
-# a98980c595024dab80d0c6bbde90d1e4
 msgid "If the class does not include a specific handler for a command, the method ``default()`` is called with the entire input line as an argument. The built-in implementation of ``default()`` reports an error."
 msgstr ""
 
 #: ../../source/cmd/index.rst:88
-# ea1d96e98a0e47999765919342755d65
 msgid "Since ``do_EOF()`` returns True, typing Ctrl-D causes the interpreter to exit."
 msgstr ""
 
 #: ../../source/cmd/index.rst:95
-# 83eb13e35e334b9b9eba7cdc122d5837
 msgid "No newline is printed on exit, so the results are a little messy."
 msgstr ""
 
 #: ../../source/cmd/index.rst:98
-# af452ea2747b49b98238b4686e17297c
 msgid "Command Arguments"
 msgstr ""
 
 #: ../../source/cmd/index.rst:100
-# e968a350e80949cd9e530538757a4d95
 msgid "This example includes a few enhancements to eliminate some of the annoyances and add help for the ``greet`` command."
 msgstr ""
 
 #: ../../source/cmd/index.rst:0
-# d763358b816d489d8414b3dd46cf76a8
 msgid "cmd_arguments.py"
 msgstr ""
 
 #: ../../source/cmd/index.rst:107
-# 24d11157afb949ff8f88f6635a9ef8d9
 msgid "The docstring added to ``do_greet()`` becomes the help text for the command:"
 msgstr ""
 
 #: ../../source/cmd/index.rst:128
-# 404df99a884f4716a9c9d0684fb252c6
 msgid "The output shows one optional argument to ``greet``, ``person``. Although the argument is optional to the command, there is a distinction between the command and the callback method. The method always takes the argument, but sometimes the value is an empty string. It is left up to the command handler to determine if an empty argument is valid, or do any further parsing and processing of the command. In this example, if a person's name is provided then the greeting is personalized."
 msgstr ""
 
 #: ../../source/cmd/index.rst:144
-# 943593baed1949f096aa53fcbc8a8d10
 msgid "Whether an argument is given by the user or not, the value passed to the command handler does not include the command itself. That simplifies parsing in the command handler, especially if multiple arguments are needed."
 msgstr ""
 
 #: ../../source/cmd/index.rst:150
-# dda7ef5803cb465b92dd61f9b9307c96
 msgid "Live Help"
 msgstr ""
 
 #: ../../source/cmd/index.rst:152
-# cdb141a0093f42d6a6ded8a3c67cb6a0
 msgid "In the previous example, the formatting of the help text leaves something to be desired. Since it comes from the docstring, it retains the indentation from the source file. The source could be changed to remove the extra white-space, but that would leave the application code looking poorly formatted. A better solution is to implement a help handler for the ``greet`` command, named ``help_greet()``. The help handler is called to produce help text for the named command."
 msgstr ""
 
 #: ../../source/cmd/index.rst:0
-# 10148e6726cd4a438da67210af10f0a9
 msgid "cmd_do_help.py"
 msgstr ""
 
 #: ../../source/cmd/index.rst:165
-# d4b474cf39d44020b246a76543aca801
 msgid "In this example, the text is static but formatted more nicely. It would also be possible to use previous command state to tailor the contents of the help text to the current context."
 msgstr ""
 
 #: ../../source/cmd/index.rst:177
-# 7047f75081014204909a80d4c553274b
 msgid "It is up to the help handler to actually output the help message, and not simply return the help text for handling elsewhere."
 msgstr ""
 
 #: ../../source/cmd/index.rst:181
-# f144309a434b4a0789bd50aec8d339f5
 msgid "Auto-Completion"
 msgstr ""
 
 #: ../../source/cmd/index.rst:183
-# 29c8dbf168b3436481962ce1de57ab38
 msgid "``Cmd`` includes support for command completion based on the names of the commands with handler methods. The user triggers completion by hitting the tab key at an input prompt. When multiple completions are possible, pressing tab twice prints a list of the options."
 msgstr ""
 
 #: ../../source/cmd/index.rst:191
-# 18b232e9f15e489b8e2752f6f297c6cf
 msgid "The GNU libraries needed for ``readline`` are not available on all platforms by default. In those cases, tab completion may not work. See :mod:`readline` for tips on installing the necessary libraries if your Python installation does not have them."
 msgstr ""
 
 #: ../../source/cmd/index.rst:205
-# 03b0c579801f4e4d8499cb3f0508a5bf
 msgid "Once the command is known, argument completion is handled by methods with the prefix ``complete_``. This allows new completion handlers to assemble a list of possible completions using arbitrary criteria (i.e., querying a database or looking at a file or directory on the file system). In this case, the program has a hard-coded set of \"friends\" who receive a less formal greeting than named or anonymous strangers. A real program would probably save the list somewhere, and read it once then cache the contents to be scanned as needed."
 msgstr ""
 
 #: ../../source/cmd/index.rst:0
-# f2741ee773fa4a828cc555cff28d02ee
 msgid "cmd_arg_completion.py"
 msgstr ""
 
 #: ../../source/cmd/index.rst:218
-# 5fed6ebd67b444da96b9535603b6e81e
 msgid "When there is input text, ``complete_greet()`` returns a list of friends that match. Otherwise, the full list of friends is returned."
 msgstr ""
 
 #: ../../source/cmd/index.rst:233
-# 8d4ecd2f1c2c422cbd7c869422012d69
 msgid "If the name given is not in the list of friends, the formal greeting is given."
 msgstr ""
 
 #: ../../source/cmd/index.rst:242
-# bdbdaf45e62141d98803d7dd673628f6
 msgid "Overriding Base Class Methods"
 msgstr ""
 
 #: ../../source/cmd/index.rst:244
-# 06a86b1698cb4dc796d36470bb251bd5
 msgid "``Cmd`` includes several methods that can be overridden as hooks for taking actions or altering the base class behavior. This example is not exhaustive, but contains many of the methods commonly useful."
 msgstr ""
 
 #: ../../source/cmd/index.rst:0
-# b4c537b0c537424391c177512e4fedb3
 msgid "cmd_illustrate_methods.py"
 msgstr ""
 
 #: ../../source/cmd/index.rst:252
-# 530addfe99324c62bff65e0da4f26139
 msgid "``cmdloop()`` is the main processing loop of the interpreter. Overriding it is usually not necessary, since the ``preloop()`` and ``postloop()`` hooks are available."
 msgstr ""
 
 #: ../../source/cmd/index.rst:256
-# 6f049d37873c44c2a6b8716b55465df0
 msgid "Each iteration through ``cmdloop()`` calls ``onecmd()`` to dispatch the command to its handler. The actual input line is parsed with ``parseline()`` to create a tuple containing the command, and the remaining portion of the line."
 msgstr ""
 
 #: ../../source/cmd/index.rst:261
-# bf5d5cf2e9c449f8a770bc2234d35d10
 msgid "If the line is empty, ``emptyline()`` is called. The default implementation runs the previous command again. If the line contains a command, first ``precmd()`` is called then the handler is looked up and invoked. If none is found, ``default()`` is called instead. Finally ``postcmd()`` is called."
 msgstr ""
 
 #: ../../source/cmd/index.rst:267
-# 03c1846df4bc44abb7507694da39e015
 msgid "Here is an example session with ``print`` statements added:"
 msgstr ""
 
 #: ../../source/cmd/index.rst:290
-# 0fafb373d8ce4805a40b32c80ce839cf
 msgid "Configuring Cmd Through Attributes"
 msgstr ""
 
 #: ../../source/cmd/index.rst:292
-# 35e88e4276184927a348e4d9c4f95d2e
 msgid "In addition to the methods described earlier, there are several attributes for controlling command interpreters.  :attr:`prompt` can be set to a string to be printed each time the user is asked for a new command.  :attr:`intro` is the \"welcome\" message printed at the start of the program. ``cmdloop()`` takes an argument for this value, or it can be set on the class directly.  When printing help, the :attr:`doc_header`, :attr:`misc_header`, :attr:`undoc_header`, and :attr:`ruler` attributes are used to format the output."
 msgstr ""
 
 #: ../../source/cmd/index.rst:0
-# c9e0e77fb9154bb3ab49a96b7a958fde
 msgid "cmd_attributes.py"
 msgstr ""
 
 #: ../../source/cmd/index.rst:305
-# 818429f88d6d48d1861671450d6854d3
 msgid "This example class shows a command handler to let the user control the prompt for the interactive session."
 msgstr ""
 
 #: ../../source/cmd/index.rst:328
-# a84d10763b764239a0afe76bc552ba01
 msgid "Running Shell Commands"
 msgstr ""
 
 #: ../../source/cmd/index.rst:330
-# 12a4e930de034f5492b2cbb5e106ee8b
 msgid "To supplement the standard command processing, ``Cmd`` includes two special command prefixes. A question mark (``?``) is equivalent to the built-in ``help`` command, and can be used in the same way. An exclamation point (``!``) maps to ``do_shell()``, and is intended for \"shelling out\" to run other commands, as in this example."
 msgstr ""
 
 #: ../../source/cmd/index.rst:0
-# 176ea81d97154f2e894f3992b099cf65
 msgid "cmd_do_shell.py"
 msgstr ""
 
 #: ../../source/cmd/index.rst:340
-# 18b8a8b8810b44aa876ca062d3786c5e
 msgid "This ``echo`` command implementation replaces the string ``$out`` in its argument with the output from the previous shell command."
 msgstr ""
 
 #: ../../source/cmd/index.rst:375
-# 8a1ebd4ed58f4d44a983688b0af61a85
 msgid "Alternative Inputs"
 msgstr ""
 
 #: ../../source/cmd/index.rst:377
-# a0b2eeed30694844961f05d159eed435
 msgid "While the default mode for ``Cmd()`` is to interact with the user through the :mod:`readline` library, it is also possible to pass a series of commands in to standard input using standard Unix shell redirection."
 msgstr ""
 
 #: ../../source/cmd/index.rst:397
-# 203f9470386241178536f9aa8f03ecba
 msgid "To have the program read a script file directly, a few other changes may be needed. Since :mod:`readline` interacts with the terminal/tty device, rather than the standard input stream, it should be disabled when the script is going to be reading from a file. Also, to avoid printing superfluous prompts, the prompt can be set to an empty string. This example shows how to open a file and pass it as input to a modified version of the ``HelloWorld`` example."
 msgstr ""
 
 #: ../../source/cmd/index.rst:0
-# 3d720de539894b6197aea01af16226f2
 msgid "cmd_file.py"
 msgstr ""
 
 #: ../../source/cmd/index.rst:409
-# 6a37404980bc4019abbf8d65686d3fea
 msgid "With ``use_rawinput`` set to False and ``prompt`` set to an empty string, the script can be called on an input file with one command on each line."
 msgstr ""
 
 #: ../../source/cmd/index.rst:0
-# aeaabe9c617649a8b5fb115ff816010f
 msgid "cmd_file.txt"
 msgstr ""
 
 #: ../../source/cmd/index.rst:416
-# 2b14e9edb54b43cb9c96ff9804ba49d0
 msgid "Running the example script with the example input produces the following output."
 msgstr ""
 
 #: ../../source/cmd/index.rst:427
-# 0aea6e562cd94f9d8da1d5453a3628bf
 msgid "Commands from sys.argv"
 msgstr ""
 
 #: ../../source/cmd/index.rst:429
-# 71eece53b90949f3ba79fbd47967736b
 msgid "Command line arguments to the program can also be processed as commands for the interpreter class, instead of reading commands from the console or a file.  To use the command line arguments, call ``onecmd()`` directly, as in this example."
 msgstr ""
 
 #: ../../source/cmd/index.rst:0
-# ce7234546c5a4a4680bfb7f572d7283f
 msgid "cmd_argv.py"
 msgstr ""
 
 #: ../../source/cmd/index.rst:438
-# 9ed473e0d9b84005b8625056dd8e176d
 msgid "Since ``onecmd()`` takes a single string as input, the arguments to the program need to be joined together before being passed in."
 msgstr ""
 
 #: ../../source/cmd/index.rst:455
-# 0da48ff46e514c5f8a3e1705642a1861
 msgid ":pydoc:`cmd`"
 msgstr ""
 
 #: ../../source/cmd/index.rst:457
-# 5c6d66967f514be998b7444dba0f3a06
 msgid "`cmd2 <http://pypi.python.org/pypi/cmd2>`__ -- Drop-in replacement for ``cmd`` with additional features."
 msgstr ""
 
 #: ../../source/cmd/index.rst:460
-# 3138ce6099904f4ea35f33142522ef0c
 msgid "`GNU readline`_ -- The GNU Readline library provides functions that allow users to edit input lines as they are typed."
 msgstr ""
 
 #: ../../source/cmd/index.rst:463
-# 40e6df0a7bc743b7b4f41d890bc53a6a
 msgid ":mod:`readline` -- The Python standard library interface to readline."
 msgstr ""
 
 #: ../../source/cmd/index.rst:466
-# 27a3ec74021d4fb4805bf31281722214
 msgid ":mod:`subprocess` -- Managing other processes and their output."
 msgstr ""
 

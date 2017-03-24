@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,27 +17,22 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/sys/index.rst:3
-# 5fca72179b8142bb815a9d217f0069ef
 msgid "sys --- System-specific Configuration"
 msgstr ""
 
 #: ../../source/sys/index.rst:8
-# 5ee58f57a7554aa3988cda3e5e0a8f93
 msgid "Provides system-specific configuration and operations."
 msgstr ""
 
 #: ../../source/sys/index.rst:10
-# f39aff6564e644408184512d03200326
 msgid "The ``sys`` module includes a collection of services for probing or changing the configuration of the interpreter at runtime and resources for interacting with the operating environment outside of the current program."
 msgstr ""
 
 #: ../../source/sys/index.rst:28
-# 073cb685eb5743fc8daec5ca977be139
 msgid ":pydoc:`sys`"
 msgstr ""
 
 #: ../../source/sys/index.rst:30
-# a6852edd90d7421ca2d133312c68dfc8
 msgid ":ref:`Python 2 to 3 porting notes for sys <porting-sys>`"
 msgstr ""
 

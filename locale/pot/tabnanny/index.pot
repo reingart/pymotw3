@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,82 +17,66 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/tabnanny/index.rst:3
-# 7e3c1ef1ce674b4fb8fff45790dacffd
 msgid "tabnanny --- Indentation validator"
 msgstr ""
 
 #: ../../source/tabnanny/index.rst:8
-# e098fcdf43054701acf77b496dbf6d5e
 msgid "Scan Python source code looking for suspicious indentation."
 msgstr ""
 
 #: ../../source/tabnanny/index.rst:10
-# 00cc5e824d5e47a99d41c85963433d88
 msgid "Consistent use of indentation is important in a langauge like Python, where white-space is significant.  The ``tabnanny`` module provides a scanner to report on ambiguous use of indentation."
 msgstr ""
 
 #: ../../source/tabnanny/index.rst:15
-# 1ea2a7615da049f296707b983ada3fd0
 msgid "Running from the Command Line"
 msgstr ""
 
 #: ../../source/tabnanny/index.rst:17
-# 3501adb158584a0fbc4f53e85e98f208
 msgid "The simplest way to use ``tabnanny`` is to run it from the command line, passing the names of files to check.  If you pass directory names, the directories are scanned recursively to find ``.py`` files to check."
 msgstr ""
 
 #: ../../source/tabnanny/index.rst:22
-# 3186344f67864204902752e4b85cc614
 msgid "Running tabnanny across the PyMOTW source code exposed one old module with tabs instead of spaces."
 msgstr ""
 
 #: ../../source/tabnanny/index.rst:31
-# 21937727563f4f5c8a67b0258aead94c
 msgid "Line 65 of ``fetch_podcasts.py`` had two tabs instead of 8 spaces. This wasn't apparent in a text editor, which was configured to with tabstops set to 4 spaces, so visually there was no difference."
 msgstr ""
 
 #: ../../source/tabnanny/index.rst:38
-# e20621c77bee4af29489cead6c389e99
 msgid "Correcting line 65 and running tabnanny again showed another error on line 66.  One last problem showed up on line 67."
 msgstr ""
 
 #: ../../source/tabnanny/index.rst:41
-# b71afbf215c24f78893853c9e7b4f4ae
 msgid "If you want to scan files, but not see the details about the error, use the ``-q`` option to suppress all information except the filename."
 msgstr ""
 
 #: ../../source/tabnanny/index.rst:49
-# fbc8d9be650445f09e0596c85b4de2d9
 msgid "To see more information about the files being scanned, use the ``-v`` option."
 msgstr ""
 
 #: ../../source/tabnanny/index.rst:66
-# 7b6a32d19239461a8d9cac754e06dea6
 msgid "Running these examples against the PyMOTW source files won't report the same errors, since the issues have been fixed."
 msgstr ""
 
 #: ../../source/tabnanny/index.rst:71
-# e03a2dbb98f34b3b8c62a2169c6cdb75
 msgid ":pydoc:`tabnanny`"
 msgstr ""
 
 #: ../../source/tabnanny/index.rst:73
-# d082fa8082fc476dbecb3e55180b5407
 msgid ":mod:`tokenize` -- Lexical scanner for Python source code."
 msgstr ""
 
 #: ../../source/tabnanny/index.rst:75
-# 51a5058d001b461ba8dcd32bb75d46bc
 msgid "`flake8 <https://pypi.python.org/pypi/flake8>`__ -- modular source code checker"
 msgstr ""
 
 #: ../../source/tabnanny/index.rst:78
-# 07ccf26f82d54f868a8bbd9a6702a428
 msgid "`pycodestyle <https://pycodestyle.readthedocs.io/en/latest/>`__ -- Python style guide checker"
 msgstr ""
 
 #: ../../source/tabnanny/index.rst:81
-# 3ffe94faed7f4037b3ec6292b85ee9a7
 msgid "`pylint <https://pypi.python.org/pypi/pylint>`__ -- python code static checker"
 msgstr ""
 

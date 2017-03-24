@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,272 +17,218 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/socket/addressing.rst:3
-# f0dd1a41ff9f4d5da2884fc9a06b7b1a
 msgid "Addressing, Protocol Families and Socket Types"
 msgstr ""
 
 #: ../../source/socket/addressing.rst:5
-# 3fa27c86e8e64b098cbee561acb2b7e8
 msgid "A *socket* is one endpoint of a communication channel used by programs to pass data back and forth locally or across the Internet.  Sockets have two primary properties controlling the way they send data: the *address family* controls the OSI network layer protocol used and the *socket type* controls the transport layer protocol."
 msgstr ""
 
 #: ../../source/socket/addressing.rst:11
-# abc7cf48fcd647cd8eb7f62d1e0c9c78
 msgid "Python supports three address families.  The most common, ``AF_INET``, is used for IPv4 Internet addressing.  IPv4 addresses are four bytes long and are usually represented as a sequence of four numbers, one per octet, separated by dots (e.g., ``10.1.1.5`` and ``127.0.0.1``).  These values are more commonly referred to as \"IP addresses.\"  Almost all Internet networking is done using IP version 4 at this time."
 msgstr ""
 
 #: ../../source/socket/addressing.rst:19
-# 573802433035406a874677deeec7cd3d
 msgid "``AF_INET6`` is used for IPv6 Internet addressing.  IPv6 is the \"next generation\" version of the Internet protocol, and supports 128-bit addresses, traffic shaping, and routing features not available under IPv4.  Adoption of IPv6 continues to grow, especially with the proliferation of cloud computing and the extra devices being added to the network because of Internet-of-things projects."
 msgstr ""
 
 #: ../../source/socket/addressing.rst:26
-# 958517c5fa23457ab611dff59954f8fc
 msgid "``AF_UNIX`` is the address family for Unix Domain Sockets (UDS), an inter-process communication protocol available on POSIX-compliant systems.  The implementation of UDS typically allows the operating system to pass data directly from process to process, without going through the network stack.  This is more efficient than using ``AF_INET``, but because the file system is used as the namespace for addressing, UDS is restricted to processes on the same system. The appeal of using UDS over other IPC mechanisms such as named pipes or shared memory is that the programming interface is the same as for IP networking, so the application can take advantage of efficient communication when running on a single host, but use the same code when sending data across the network."
 msgstr ""
 
 #: ../../source/socket/addressing.rst:41
-# b4b4a96d5e734c69900fc6568a47a2ea
 msgid "The ``AF_UNIX`` constant is only defined on systems where UDS is supported."
 msgstr ""
 
 #: ../../source/socket/addressing.rst:44
-# 8d35cffd66b94de8b0e8cf29631a03b6
 msgid "The socket type is usually either ``SOCK_DGRAM`` for message-oriented datagram transport or ``SOCK_STREAM`` for stream-oriented transport. Datagram sockets are most often associated with UDP, the *user datagram protocol*. They provide unreliable delivery of individual messages. Stream-oriented sockets are associated with TCP, *transmission control protocol*. They provide byte streams between the client and server, ensuring message delivery or failure notification through timeout management, retransmission, and other features."
 msgstr ""
 
 #: ../../source/socket/addressing.rst:53
-# 889b9ea001b240d89211fa59956a20c9
 msgid "Most application protocols that deliver a large amount of data, such as HTTP, are built on top of TCP because it makes it simpler to create complex applications when message ordering and delivery is handled automatically. UDP is commonly used for protocols where order is less important (since the messages are self-contained and often small, such as name look-ups via DNS), or for *multicasting* (sending the same data to several hosts). Both UDP and TCP can be used with either IPv4 or IPv6 addressing."
 msgstr ""
 
 #: ../../source/socket/addressing.rst:64
-# d87712e943e149c6ae11bbb3bbcf7f06
 msgid "Python's ``socket`` module supports other socket types but they are less commonly used, so are not covered here.  Refer to the standard library documentation for more details."
 msgstr ""
 
 #: ../../source/socket/addressing.rst:69
-# 1bad05b655ee44ae8fcc5e2f266ab6fb
 msgid "Looking up Hosts on the Network"
 msgstr ""
 
 #: ../../source/socket/addressing.rst:71
-# 568b4f740e0a45ceba6ac31bb00a68d0
 msgid "``socket`` includes functions to interface with the domain name services on the network so a program can convert the host name of a server into its numerical network address.  Applications do not need to convert addresses explicitly before using them to connect to a server, but it can be useful when reporting errors to include the numerical address as well as the name value being used."
 msgstr ""
 
 #: ../../source/socket/addressing.rst:78
-# a9bc79c8043447d0b2be27ae56befc9d
 msgid "To find the official name of the current host, use ``gethostname()``."
 msgstr ""
 
 #: ../../source/socket/addressing.rst:0
-# 53588edaba75441eb01cfd119fe378ff
 msgid "socket_gethostname.py"
 msgstr ""
 
 #: ../../source/socket/addressing.rst:85
-# 1c34f927b5414f3b8ed46a30048248bf
 msgid "The name returned will depend on the network settings for the current system, and may change if it is on a different network (such as a laptop attached to a wireless LAN)."
 msgstr ""
 
 #: ../../source/socket/addressing.rst:97
-# 1d789846421c4575a83bb2e8cbccc409
 msgid "Use ``gethostbyname()`` to consult the operating system hostname resolution API and convert the name of a server to its numerical address."
 msgstr ""
 
 #: ../../source/socket/addressing.rst:0
-# 03027a1fae274373bd2f0a5d31f44fc5
 msgid "socket_gethostbyname.py"
 msgstr ""
 
 #: ../../source/socket/addressing.rst:105
-# 007d8a00184a41f5be7b831f3efa97ce
 msgid "If the DNS configuration of the current system includes one or more domains in the search, the name argument does not need to be a fully qualified name (i.e., it does not need to include the domain name as well as the base hostname).  If the name cannot be found, an exception of type ``socket.error`` is raised."
 msgstr ""
 
 #: ../../source/socket/addressing.rst:127
-# 93a065abff4e4ab49798242e2e1bb559
 msgid "For access to more naming information about a server, use ``gethostbyname_ex()``.  It returns the canonical hostname of the server, any aliases, and all of the available IP addresses that can be used to reach it."
 msgstr ""
 
 #: ../../source/socket/addressing.rst:0
-# f02a074931a44fdba0dd5196e8570e74
 msgid "socket_gethostbyname_ex.py"
 msgstr ""
 
 #: ../../source/socket/addressing.rst:136
-# 3a613c3b87de4dcb863656607670aa73
 msgid "Having all known IP addresses for a server lets a client implement its own load balancing or fail-over algorithms."
 msgstr ""
 
 #: ../../source/socket/addressing.rst:168
-# 8ed0536e8677462a9805ff8af22a6bc1
 msgid "Use ``getfqdn()`` to convert a partial name to a fully qualified domain name."
 msgstr ""
 
 #: ../../source/socket/addressing.rst:0
-# f0cac6074ff34c1988124e91d0af0a56
 msgid "socket_getfqdn.py"
 msgstr ""
 
 #: ../../source/socket/addressing.rst:175
-# a636757051dd4c32a11920da50c3378b
 msgid "The name returned will not necessarily match the input argument in any way if the input is an alias, such as ``www`` is here."
 msgstr ""
 
 #: ../../source/socket/addressing.rst:191
-# 3b8a585f63fa4720a787f3d8d83a1e74
 msgid "When the address of a server is available, use ``gethostbyaddr()`` to do a \"reverse\" lookup for the name."
 msgstr ""
 
 #: ../../source/socket/addressing.rst:0
-# 51272702985c4c9d9970562314eaa04a
 msgid "socket_gethostbyaddr.py"
 msgstr ""
 
 #: ../../source/socket/addressing.rst:198
-# 2c9661524bdd4edd86547829367b55df
 msgid "The return value is a tuple containing the full hostname, any aliases, and all IP addresses associated with the name."
 msgstr ""
 
 #: ../../source/socket/addressing.rst:216
-# d7f39023e57b47729298cf4acbe718ec
 msgid "Finding Service Information"
 msgstr ""
 
 #: ../../source/socket/addressing.rst:218
-# 350553a435814d2fb97789be824418a2
 msgid "In addition to an IP address, each socket address includes an integer *port number*.  Many applications can run on the same host, listening on a single IP address, but only one socket at a time can use a port at that address.  The combination of IP address, protocol, and port number uniquely identify a communication channel and ensure that messages sent through a socket arrive at the correct destination."
 msgstr ""
 
 #: ../../source/socket/addressing.rst:225
-# b5ee319c6884476181e5d56402c6cf6e
 msgid "Some of the port numbers are pre-allocated for a specific protocol. For example, communication between email servers using SMTP occurs over port number 25 using TCP, and web clients and servers use port 80 for HTTP.  The port numbers for network services with standardized names can be looked up with ``getservbyname()``."
 msgstr ""
 
 #: ../../source/socket/addressing.rst:0
-# bbf5fb225f374716a9a20501845f7980
 msgid "socket_getservbyname.py"
 msgstr ""
 
 #: ../../source/socket/addressing.rst:235
-# f98cb44343e147cd98d5e0a05a8178ba
 msgid "Although a standardized service is unlikely to change ports, looking up the value with a system call instead of hard-coding it is more flexible when new services are added in the future."
 msgstr ""
 
 #: ../../source/socket/addressing.rst:259
-# a844b39b94984dff8f9a60380a23a810
 msgid "To reverse the service port lookup, use ``getservbyport()``."
 msgstr ""
 
 #: ../../source/socket/addressing.rst:0
-# b7ec5573c7c74978917e6d381f427dc0
 msgid "socket_getservbyport.py"
 msgstr ""
 
 #: ../../source/socket/addressing.rst:265
-# e359c6678fb04556b51c296d7cf312e9
 msgid "The reverse lookup is useful for constructing URLs to services from arbitrary addresses."
 msgstr ""
 
 #: ../../source/socket/addressing.rst:288
-# 2756f38ee96e4751aed64b213e306738
 msgid "The number assigned to a transport protocol can be retrieved with ``getprotobyname()``."
 msgstr ""
 
 #: ../../source/socket/addressing.rst:0
-# 5f8fa259e17e4bf68137f39b8fe87cb3
 msgid "socket_getprotobyname.py"
 msgstr ""
 
 #: ../../source/socket/addressing.rst:295
-# d283803eabc542f49b9b5861c06c5c7a
 msgid "The values for protocol numbers are standardized, and defined as constants in ``socket`` with the prefix ``IPPROTO_``."
 msgstr ""
 
 #: ../../source/socket/addressing.rst:314
-# 4d17867b5ff54129953aedbd967b0028
 msgid "Looking Up Server Addresses"
 msgstr ""
 
 #: ../../source/socket/addressing.rst:316
-# 588146a5b90e4894a3219788147e4fe0
 msgid "``getaddrinfo()`` converts the basic address of a service into a list of tuples with all of the information necessary to make a connection.  The contents of each tuple will vary, containing different network families or protocols."
 msgstr ""
 
 #: ../../source/socket/addressing.rst:0
-# 142d9b97197346e9986be7d1b811c2b1
 msgid "socket_getaddrinfo.py"
 msgstr ""
 
 #: ../../source/socket/addressing.rst:325
-# 8bcc0af7f60049cbaecd0aedb184ccec
 msgid "This program demonstrates how to look up the connection information for ``www.python.org``."
 msgstr ""
 
 #: ../../source/socket/addressing.rst:363
-# 5db9cef8323143649ccc8b0456cd81ae
 msgid "``getaddrinfo()`` takes several arguments for filtering the result list. The ``host`` and ``port`` values given in the example are required arguments.  The optional arguments are ``family``, ``socktype``, ``proto``, and ``flags``.  The optional values should be either ``0`` or one of the constants defined by ``socket``."
 msgstr ""
 
 #: ../../source/socket/addressing.rst:0
-# 26f57beefc7140c79beb4a03ebd8516a
 msgid "socket_getaddrinfo_extra_args.py"
 msgstr ""
 
 #: ../../source/socket/addressing.rst:373
-# 5ab943f191d545bba1efec03217c9120
 msgid "Since ``flags`` includes ``AI_CANONNAME``, the canonical name of the server, which may be different from the value used for the lookup if the host has any aliases, is included in the results this time. Without the flag, the canonical name value is left empty."
 msgstr ""
 
 #: ../../source/socket/addressing.rst:397
-# 3a4659be166443c6b3c9d66baabf6968
 msgid "IP Address Representations"
 msgstr ""
 
 #: ../../source/socket/addressing.rst:399
-# 93a03c40d14a405681c9c858c8be285b
 msgid "Network programs written in C use the data type ``struct sockaddr`` to represent IP addresses as binary values (instead of the string addresses usually found in Python programs).  To convert IPv4 addresses between the Python representation and the C representation, use ``inet_aton()`` and ``inet_ntoa()``."
 msgstr ""
 
 #: ../../source/socket/addressing.rst:0
-# 29ab463ccfa64a67b1ef6d2583691df3
 msgid "socket_address_packing.py"
 msgstr ""
 
 #: ../../source/socket/addressing.rst:409
-# 17644fc00e8b4117ae1b4a64d8b6ce22
 msgid "The four bytes in the packed format can be passed to C libraries, transmitted safely over the network, or saved to a database compactly."
 msgstr ""
 
 #: ../../source/socket/addressing.rst:431
-# 4a9bf727663e4093a76e10646de8d642
 msgid "The related functions ``inet_pton()`` and ``inet_ntop()`` work with both IPv4 and IPv6 addresses, producing the appropriate format based on the address family parameter passed in."
 msgstr ""
 
 #: ../../source/socket/addressing.rst:0
-# 6699c6e51d62465e9952173c86897772
 msgid "socket_ipv6_address_packing.py"
 msgstr ""
 
 #: ../../source/socket/addressing.rst:439
-# f176fccfb15f4bf39465e4c12a98778f
 msgid "An IPv6 address is already a hexadecimal value, so converting the packed version to a series of hex digits produces a string similar to the original value."
 msgstr ""
 
 #: ../../source/socket/addressing.rst:459
-# 6b7509d1ae6744a991c9908fe13377ff
 msgid "`Wikipedia: IPv6 <https://en.wikipedia.org/wiki/IPv6>`__ -- Article discussing Internet Protocol Version 6 (IPv6)."
 msgstr ""
 
 #: ../../source/socket/addressing.rst:462
-# 0a7dbf728cec4241b3ab0235e3fa569f
 msgid "`Wikipedia: OSI Networking Model <https://en.wikipedia.org/wiki/OSI_model>`__ -- Article describing the seven layer model of networking implementation."
 msgstr ""
 
 #: ../../source/socket/addressing.rst:466
-# bcb21d5d8a974346aa17761f6e712547
 msgid "`Assigned Internet Protocol Numbers <http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xml>`__ -- List of standard protocol names and numbers."
 msgstr ""
 

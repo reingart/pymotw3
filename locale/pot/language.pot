@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,32 +17,26 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/language.rst:3
-# df911a6a7c6245a39b9384815cca1042
 msgid "Language Tools"
 msgstr ""
 
 #: ../../source/language.rst:5
-# 6ba825a1b0dc4719b66b6e3c0d5b4a48
 msgid "In addition to the developer tools covered in an earlier chapter, Python also includes modules that provide access to its internal features.  This chapter covers some of the tools for working in Python, regardless of the application area."
 msgstr ""
 
 #: ../../source/language.rst:10
-# ba5319977aa946cfa471da7c415fa708
 msgid "The :mod:`warnings` module is used to report non-fatal conditions or recoverable errors.  A common example of a warning is the ``DeprecationWarning`` generated when a feature of the standard library has been superseded by a new class, interface, or module.  Use ``warnings`` to report conditions that may need user attention, but are not fatal."
 msgstr ""
 
 #: ../../source/language.rst:17
-# ff66657eae27427e806a7f2c2c726b41
 msgid "Defining a set of classes that conform to a common API can be a challenge when the API is defined by someone else or uses a lot of methods.  A common way to work around this problem is to derive all of the new classes from a common base class, but it is not always obvious which methods should be overridden and which can fall back on the default behavior.  Abstract base classes from the :mod:`abc` module formalize an API by explicitly marking the methods a class must provide in a way that prevents the class from being instantiated if it is not completely implemented.  For example, many of Python's container types have abstract base classes defined in ``abc`` or :mod:`collections`."
 msgstr ""
 
 #: ../../source/language.rst:29
-# e536c8af4ea14668b47126cfb197c3f4
 msgid "The :mod:`dis` module can be used to disassemble the byte-code version of a program to understand the steps the interpreter takes to run it. Looking at disassembled code can be useful when debugging performance or concurrency issues, since it exposes the atomic operations executed by the interpreter for each statement in a program."
 msgstr ""
 
 #: ../../source/language.rst:35
-# 01d4b8163dfd452e9e9ec4087a2214e2
 msgid "The :mod:`inspect` module provides introspection support for all objects in the current process.  That includes imported modules, class and function definitions, and the objects instantiated from them. Introspection can be used to generate documentation for source code, adapt behavior at runtime dynamically, or examine the execution environment for a program."
 msgstr ""
 

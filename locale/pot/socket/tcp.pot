@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,152 +17,122 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/socket/tcp.rst:3
-# e064afb940254ab2a242369d59188703
 msgid "TCP/IP Client and Server"
 msgstr ""
 
 #: ../../source/socket/tcp.rst:5
-# 311625f63b83415a9436dba95803d80c
 msgid "Sockets can be configured to act as a *server* and listen for incoming messages, or connect to other applications as a *client*.  After both ends of a TCP/IP socket are connected, communication is bi-directional."
 msgstr ""
 
 #: ../../source/socket/tcp.rst:11
-# a610dc9c53ad4c65bf80d9a5add04022
 msgid "Echo Server"
 msgstr ""
 
 #: ../../source/socket/tcp.rst:13
-# 208d319deff949ab87b4e58c1c0d8295
 msgid "This sample program, based on the one in the standard library documentation, receives incoming messages and echos them back to the sender.  It starts by creating a TCP/IP socket, then ``bind()`` is used to associate the socket with the server address.  In this case, the address is ``localhost``, referring to the current server, and the port number is 10000."
 msgstr ""
 
 #: ../../source/socket/tcp.rst:0
-# 1d27687e0a6c4e51901f13fbfbe984a5
 msgid "socket_echo_server.py"
 msgstr ""
 
 #: ../../source/socket/tcp.rst:25
-# e6bbae02da074df19ad9e860491920ba
 msgid "Calling ``listen()`` puts the socket into server mode, and ``accept()`` waits for an incoming connection.  The integer argument is the number of connections the system should queue up in the background before rejecting new clients.  This example only expects to work with one connection at a time."
 msgstr ""
 
 #: ../../source/socket/tcp.rst:31
-# 4c4dd6a366be492993ad62e604848ee7
 msgid "``accept()`` returns an open connection between the server and client, along with the address of the client.  The connection is actually a different socket on another port (assigned by the kernel). Data is read from the connection with ``recv()`` and transmitted with ``sendall()``."
 msgstr ""
 
 #: ../../source/socket/tcp.rst:37
-# 0ba50a125d4b4e61b0a0418c68584508
 msgid "When communication with a client is finished, the connection needs to be cleaned up using ``close()``.  This example uses a ``try:finally`` block to ensure that ``close()`` is always called, even in the event of an error."
 msgstr ""
 
 #: ../../source/socket/tcp.rst:43
-# cc4f341a547a40d89490609652ec4e98
 msgid "Echo Client"
 msgstr ""
 
 #: ../../source/socket/tcp.rst:45
-# e1f9725945ce453fa2811efd6eec32ca
 msgid "The client program sets up its ``socket`` differently from the way a server does.  Instead of binding to a port and listening, it uses ``connect()`` to attach the socket directly to the remote address."
 msgstr ""
 
 #: ../../source/socket/tcp.rst:0
-# 646d94267e7242198b63d8316140c58b
 msgid "socket_echo_client.py"
 msgstr ""
 
 #: ../../source/socket/tcp.rst:54
-# 68485c6f1ebe452394aa78a953618983
 msgid "After the connection is established, data can be sent through the ``socket`` with ``sendall()`` and received with ``recv()``, just as in the server. When the entire message is sent and a copy received, the socket is closed to free up the port."
 msgstr ""
 
 #: ../../source/socket/tcp.rst:60
-# ca50d616002e4a2886308321ed189cd7
 msgid "Client and Server Together"
 msgstr ""
 
 #: ../../source/socket/tcp.rst:62
-# 1fd7953856c84f1d9516a600fa1a17ec
 msgid "The client and server should be run in separate terminal windows, so they can communicate with each other.  The server output shows the incoming connection and data, as well as the response sent back to the client."
 msgstr ""
 
 #: ../../source/socket/tcp.rst:85
-# d2ede6e4aa73440aa46e3f6a134953a4
 msgid "The client output shows the outgoing message and the response from the server."
 msgstr ""
 
 #: ../../source/socket/tcp.rst:101
-# 0d81ceaa4dcd4fb0887dbb6fd6f606a5
 msgid "Easy Client Connections"
 msgstr ""
 
 #: ../../source/socket/tcp.rst:103
-# 73ffa1a82b8f4249b39a3407e3706f18
 msgid "TCP/IP clients can save a few steps by using the convenience function ``create_connection()`` to connect to a server.  The function takes one argument, a two-value tuple containing the address of the server, and derives the best address to use for the connection."
 msgstr ""
 
 #: ../../source/socket/tcp.rst:0
-# cb55dbd42a1543439cf54b902c610f2c
 msgid "socket_echo_client_easy.py"
 msgstr ""
 
 #: ../../source/socket/tcp.rst:112
-# bf1b70f53af040c493e4e17e3c40648e
 msgid "``create_connection()`` uses ``getaddrinfo()`` to find candidate connection parameters, and returns a ``socket`` opened with the first configuration that creates a successful connection.  The :attr:`family`, :attr:`type`, and :attr:`proto` attributes can be examined to determine the type of ``socket`` being returned."
 msgstr ""
 
 #: ../../source/socket/tcp.rst:134
-# 98d3b5e6fc7141d39c84a290bb608135
 msgid "Choosing an Address for Listening"
 msgstr ""
 
 #: ../../source/socket/tcp.rst:136
-# 58ab9bd2201e4aecaa7ce56a9c07c573
 msgid "It is important to bind a server to the correct address, so that clients can communicate with it.  The previous examples all used ``'localhost'`` as the IP address, which limits connections to clients running on the same server.  Use a public address of the server, such as the value returned by ``gethostname()``, to allow other hosts to connect.  This example modifies the echo server to listen on an address specified via a command line argument."
 msgstr ""
 
 #: ../../source/socket/tcp.rst:0
-# 67c5b17994474833a528efb2b5fabc76
 msgid "socket_echo_server_explicit.py"
 msgstr ""
 
 #: ../../source/socket/tcp.rst:148
-# 4972fe7aa58444b9b3d4a7f18eb45644
 msgid "A similar modification to the client program is needed before the server can be tested."
 msgstr ""
 
 #: ../../source/socket/tcp.rst:0
-# a5b81db4af144f70b63e0ea9a8365c69
 msgid "socket_echo_client_explicit.py"
 msgstr ""
 
 #: ../../source/socket/tcp.rst:155
-# 10cae168ab1d424aaaab4d884838742a
 msgid "After starting the server with the argument ``hubert``, the ``netstat`` command shows it listening on the address for the named host."
 msgstr ""
 
 #: ../../source/socket/tcp.rst:175
-# d8a2196c172049d5bef6b1927c587c8d
 msgid "Running the client on another host, passing ``hubert.hellfly.net`` as the host where the server is running, produces:"
 msgstr ""
 
 #: ../../source/socket/tcp.rst:194
-# c9d1551ef4bf42e8aa4c16c6a3a79f3c
 msgid "And the server output is:"
 msgstr ""
 
 #: ../../source/socket/tcp.rst:213
-# 39e0ff224cd043c0a2181b1ad8b4c8d8
 msgid "Many servers have more than one network interface, and therefore more than one IP address.  Rather than running separate copies of a service bound to each IP address, use the special address ``INADDR_ANY`` to listen on all addresses at the same time.  Although ``socket`` defines a constant for ``INADDR_ANY``, it is an integer value and must be converted to a dotted-notation string address before it can be passed to ``bind()``.  As a shortcut, use \"``0.0.0.0``\" or an empty string (``''``) instead of doing the conversion."
 msgstr ""
 
 #: ../../source/socket/tcp.rst:0
-# 28f9728e504345cab2c88c3143213cbe
 msgid "socket_echo_server_any.py"
 msgstr ""
 
 #: ../../source/socket/tcp.rst:226
-# 9aa5a0d249cc435ba472badcf7c26f17
 msgid "To see the actual address being used by a socket, call its ``getsockname()`` method.  After starting the service, running ``netstat`` again shows it listening for incoming connections on any address."
 msgstr ""
 

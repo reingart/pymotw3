@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,107 +17,86 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/getpass/index.rst:5
-# 14a758fdf7574e488748335a4da9c5f3
 msgid "getpass --- Secure Password Prompt"
 msgstr ""
 
 #: ../../source/getpass/index.rst:10
-# 1a92e29bf2c1493e89070254e9417e52
 msgid "Prompt the user for a value, usually a password, without echoing what they type to the console."
 msgstr ""
 
 #: ../../source/getpass/index.rst:12
-# fe0a8b4651ff460da999e40b5f6c2fc1
 msgid "Many programs that interact with the user via the terminal need to ask the user for password values without showing what the user types on the screen.  The ``getpass`` module provides a portable way to handle such password prompts securely."
 msgstr ""
 
 #: ../../source/getpass/index.rst:18
-# 7d68b1fa9c7f41ccbad0fb755378f4ef
 msgid "Example"
 msgstr ""
 
 #: ../../source/getpass/index.rst:20
-# 23a9c53e8a8e4ae5a01573c9af315fec
 msgid "The ``getpass()`` function prints a prompt, then reads input from the user until they press return. The input is returned as a string to the caller."
 msgstr ""
 
 #: ../../source/getpass/index.rst:0
-# 441e331c6fa24469849527779dfffa89
 msgid "getpass_defaults.py"
 msgstr ""
 
 #: ../../source/getpass/index.rst:28
-# 100934c5f9274e63ae1bef5de3191029
 msgid "The default prompt, if none is specified by the caller, is \"``Password:``\"."
 msgstr ""
 
 #: ../../source/getpass/index.rst:38
-# 463d9b9ecee64dde9e230591b1dc5264
 msgid "The prompt can be changed to any value needed."
 msgstr ""
 
 #: ../../source/getpass/index.rst:0
-# 81f924ef3a1c49d6ae74fbce699d4277
 msgid "getpass_prompt.py"
 msgstr ""
 
 #: ../../source/getpass/index.rst:44
-# 237ed8e1ebe54b56a0b303efd6ccf935
 msgid "Some programs ask for a pass phrase instead of a simple password, to give better security."
 msgstr ""
 
 #: ../../source/getpass/index.rst:59
-# 68edf46a154d48a09621ec115d5d96b6
 msgid "By default, ``getpass()`` uses ``sys.stdout`` to print the prompt string. For a program that may produce useful output on ``sys.stdout``, it is frequently better to send the prompt to another stream such as ``sys.stderr``."
 msgstr ""
 
 #: ../../source/getpass/index.rst:0
-# e4fe8ab62438460cbe4b67430dab39e1
 msgid "getpass_stream.py"
 msgstr ""
 
 #: ../../source/getpass/index.rst:68
-# 57c1aa5d50da44a2bcd9a83387093bee
 msgid "Using ``sys.stderr`` for the prompt means standard output can be redirected (to a pipe or file) without seeing the password prompt. The value entered by the user is still not echoed back to the screen."
 msgstr ""
 
 #: ../../source/getpass/index.rst:79
-# 32e699eb3ac340a69781dfde538f87e0
 msgid "Using getpass Without a Terminal"
 msgstr ""
 
 #: ../../source/getpass/index.rst:81
-# 7aa0d20ecdc543149b4772095d8c0b7c
 msgid "Under Unix, ``getpass()`` always requires a tty it can control via :mod:`termios`, so input echoing can be disabled. This means values will not be read from a non-terminal stream redirected to standard input. Instead, ``getpass`` tries to get to the tty for a process, and no error is raised if they can access it."
 msgstr ""
 
 #: ../../source/getpass/index.rst:94
-# 66f76a42e61e4c488b66592f93ed54e8
 msgid "It is up to the caller to detect when the input stream is not a tty, and use an alternate method for reading in that case."
 msgstr ""
 
 #: ../../source/getpass/index.rst:0
-# 1b9f49157d4d45f1bc825c73d5ad7a54
 msgid "getpass_noterminal.py"
 msgstr ""
 
 #: ../../source/getpass/index.rst:101
-# ed278b213ad843ff868c5cfd830758d9
 msgid "With a tty:"
 msgstr ""
 
 #: ../../source/getpass/index.rst:110
-# c8e837d7796f47e29d487ea824110873
 msgid "Without a tty:"
 msgstr ""
 
 #: ../../source/getpass/index.rst:121
-# 6c80193d00324293a91ad661ced58b88
 msgid ":pydoc:`getpass`"
 msgstr ""
 
 #: ../../source/getpass/index.rst:123
-# 7d04b7616f814ee9b509497e85b92258
 msgid ":mod:`readline` -- Interactive prompt library."
 msgstr ""
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,122 +17,98 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/collections/chainmap.rst:3
-# 060e5c1c149f4ffbacf46210343c796e
 msgid "ChainMap --- Search Multiple Dictionaries"
 msgstr ""
 
 #: ../../source/collections/chainmap.rst:5
-# 6373634c72ee45988882f3f58ecc43be
 msgid "The ``ChainMap`` class manages a sequence of dictionaries, and searches through them in the order they are given to find values associated with keys. A ``ChainMap`` makes a good \"context\" container, since it can be treated as a stack for which changes happen as the stack grows, with these changes being discarded again as the stack shrinks."
 msgstr ""
 
 #: ../../source/collections/chainmap.rst:12
-# 441ebc27079c46a881a29c840234a676
 msgid "Accessing Values"
 msgstr ""
 
 #: ../../source/collections/chainmap.rst:14
-# 4e512b99aae14434a98b38f6020c665c
 msgid "The ``ChainMap`` supports the same API as a regular dictionary for accessing existing values."
 msgstr ""
 
 #: ../../source/collections/chainmap.rst:0
-# 1e8c51b47b7f4e039da8aa1f254bac8d
 msgid "collections_chainmap_read.py"
 msgstr ""
 
 #: ../../source/collections/chainmap.rst:21
-# 3f22246034d14ffc9e1e1708254d2329
 msgid "The child mappings are searched in the order they are passed to the constructor, so the value reported for the key ``'c'`` comes from the ``a`` dictionary."
 msgstr ""
 
 #: ../../source/collections/chainmap.rst:51
-# 09c417c89b064da398a35d6bb02ccd93
 msgid "Reordering"
 msgstr ""
 
 #: ../../source/collections/chainmap.rst:53
-# 810572c8938b42b692a175d168353fd6
 msgid "The ``ChainMap`` stores the list of mappings over which it searches in a list in its :attr:`maps` attribute. This list is mutable, so it is possible to add new mappings directly or to change the order of the elements to control lookup and update behavior."
 msgstr ""
 
 #: ../../source/collections/chainmap.rst:0
-# 00c28acc89d24d2eb118a29d9cd3d544
 msgid "collections_chainmap_reorder.py"
 msgstr ""
 
 #: ../../source/collections/chainmap.rst:62
-# 6ce883ff984249e9b34eb3de59d55a8c
 msgid "When the list of mappings is reversed, the value associated with ``'c'`` changes."
 msgstr ""
 
 #: ../../source/collections/chainmap.rst:82
-# f4c24064eb6a47ec82c07502d30bae06
 msgid "Updating Values"
 msgstr ""
 
 #: ../../source/collections/chainmap.rst:84
-# f05eca8e0b8744be9cdd13e51534c0d7
 msgid "A ``ChainMap`` does not cache the values in the child mappings. Thus, if their contents are modified, the results are reflected when the ``ChainMap`` is accessed."
 msgstr ""
 
 #: ../../source/collections/chainmap.rst:0
-# 613cb282bff9444aa2e38a4738373085
 msgid "collections_chainmap_update_behind.py"
 msgstr ""
 
 #: ../../source/collections/chainmap.rst:92
-# a9c3a878390f4514ad16f0462d18a5f7
 msgid "Changing the values associated with existing keys and adding new elements works the same way."
 msgstr ""
 
 #: ../../source/collections/chainmap.rst:108
-# 794a37abd9b64ccd99d80e5d591c5a91
 msgid "It is also possible to set values through the ``ChainMap`` directly, although only the first mapping in the chain is actually modified."
 msgstr ""
 
 #: ../../source/collections/chainmap.rst:0
-# 0163d486b6ca4db19b8ee8afbfa03c01
 msgid "collections_chainmap_update_directly.py"
 msgstr ""
 
 #: ../../source/collections/chainmap.rst:116
-# 966d990cf57047f29712ecb42b883987
 msgid "When the new value is stored using ``m``, the ``a`` mapping is updated."
 msgstr ""
 
 #: ../../source/collections/chainmap.rst:133
-# 9aaf25b109c7418681fd18b029f3ae8c
 msgid "``ChainMap`` provides a convenience method for creating a new instance with one extra mapping at the front of the :attr:`maps` list to make it easy to avoid modifying the existing underlying data structures."
 msgstr ""
 
 #: ../../source/collections/chainmap.rst:0
-# 7ba4e5483a07443baf0b0f9bc5d897bb
 msgid "collections_chainmap_new_child.py"
 msgstr ""
 
 #: ../../source/collections/chainmap.rst:142
-# f93b33ed32a549528f653801ca26850a
 msgid "This stacking behavior is what makes it convenient to use ``ChainMap`` instances as template or application contexts. Specifically, it is easy to add or update values in one iteration, then discard the changes for the next iteration."
 msgstr ""
 
 #: ../../source/collections/chainmap.rst:164
-# 2accf4a1bd9547348cd8819712dc1f70
 msgid "For situations where the new context is known or built in advance, it is also possible to pass a mapping to ``new_child()``."
 msgstr ""
 
 #: ../../source/collections/chainmap.rst:0
-# 254752bf572b4ad19ff22c9de86b598e
 msgid "collections_chainmap_new_child_explicit.py"
 msgstr ""
 
 #: ../../source/collections/chainmap.rst:171
-# 87a711ae1bca4293a7cf81d90778e437
 msgid "This is the equivalent of"
 msgstr ""
 
 #: ../../source/collections/chainmap.rst:177
-# c4833aed4a24481d89aa7b359efdc74d
 msgid "and produces"
 msgstr ""
 

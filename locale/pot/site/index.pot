@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,262 +17,210 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/site/index.rst:3
-# 3b4d02dbc36d452992c572a7383bfb5a
 msgid "site --- Site-wide Configuration"
 msgstr ""
 
 #: ../../source/site/index.rst:8
-# 9f71709eb33746209c411263ff8d73aa
 msgid "The ``site`` module handles site-specific configuration, especially the import path."
 msgstr ""
 
 #: ../../source/site/index.rst:12
-# d9d733c54dd54d798aa50d1013328348
 msgid "Import Path"
 msgstr ""
 
 #: ../../source/site/index.rst:14
-# 2b629daf518b4800bed74aa28403baa8
 msgid "``site`` is automatically imported each time the interpreter starts up.  On import, it extends ``sys.path`` with site-specific names constructed by combining the prefix values ``sys.prefix`` and ``sys.exec_prefix`` with several suffixes.  The prefix values used are saved in the module-level variable ``PREFIXES`` for reference later.  Under Windows, the suffixes are an empty string and ``lib/site-packages``.  For Unix-like platforms, the values are ``lib/python$version/site-packages`` (where ``$version`` is replaced by the major and minor version number of the interpreter, such as ``3.5``) and ``lib/site-python``."
 msgstr ""
 
 #: ../../source/site/index.rst:0
-# cae4d91c16434a279be6424e350a25e3
 msgid "site_import_path.py"
 msgstr ""
 
 #: ../../source/site/index.rst:29
-# b83ede10b5ef44eab33de49402658b25
 msgid "Each of the paths resulting from the combinations is tested, and those that exist are added to ``sys.path``.  This output shows the framework version of Python installed on a Mac OS X system."
 msgstr ""
 
 #: ../../source/site/index.rst:54
-# efca747cf5e24089a2e41f809ceec678
 msgid "User Directories"
 msgstr ""
 
 #: ../../source/site/index.rst:56
-# 6bed972111204e2daaa1c7b2c766cad6
 msgid "In addition to the global site-packages paths, ``site`` is responsible for adding the user-specific locations to the import path. The user-specific paths are all based on the ``USER_BASE`` directory, which usually located in a part of the file system owned (and writable) by the current user. Inside the ``USER_BASE`` directory is a ``site-packages`` directory, with the path accessible as ``USER_SITE``."
 msgstr ""
 
 #: ../../source/site/index.rst:0
-# 153c515d60344fb7bdcccb74b9ad343d
 msgid "site_user_base.py"
 msgstr ""
 
 #: ../../source/site/index.rst:68
-# 7b56b811dd6141de868976b59739533a
 msgid "The ``USER_SITE`` path name is created using the same platform-specific suffix values described earlier."
 msgstr ""
 
 #: ../../source/site/index.rst:84
-# 5cd254a97c844405a3368d47312bb780
 msgid "The user base directory can be set through the ``PYTHONUSERBASE`` environment variable, and has platform-specific defaults (``~/Python$version/site-packages`` for Windows and ``~/.local`` for non-Windows)."
 msgstr ""
 
 #: ../../source/site/index.rst:102
-# 8034b58819544de881416299d31aa903
 msgid "The user directory is disabled under some circumstances that would pose security issues (for example, if the process is running with a different effective user or group id than the actual user that started it).  An application can check the setting by examining ``ENABLE_USER_SITE``."
 msgstr ""
 
 #: ../../source/site/index.rst:0
-# bde96ad1b45a416aa0dbe5febe2188f9
 msgid "site_enable_user_site.py"
 msgstr ""
 
 #: ../../source/site/index.rst:112
-# 16f4aff612884fee84ee76dfc29ac4cd
 msgid "The user directory can also be explicitly disabled on the command line with ``-s``."
 msgstr ""
 
 #: ../../source/site/index.rst:131
-# c99c172aef5f44178233a5a2e3078cd1
 msgid "Path Configuration Files"
 msgstr ""
 
 #: ../../source/site/index.rst:133
-# 7745b171aa1b44479efc4fc8c1d7841f
 msgid "As paths are added to the import path, they are also scanned for *path configuration files*.  A path configuration file is a plain text file with the extension ``.pth``.  Each line in the file can take one of four forms."
 msgstr ""
 
 #: ../../source/site/index.rst:138
-# 744cff1231224689bd63d4461821949e
 msgid "A full or relative path to another location that should be added to the import path."
 msgstr ""
 
 #: ../../source/site/index.rst:140
-# dd1d4d2d8c0d48ce88f801536e3da9f9
 msgid "A Python statement to be executed.  All such lines must begin with an ``import`` statement."
 msgstr ""
 
 #: ../../source/site/index.rst:142
-# 2c376f098597492e8d3a6ce95d734c9a
 msgid "Blank lines are ignored."
 msgstr ""
 
 #: ../../source/site/index.rst:143
-# 4f6834871fca41278ccfdab4ff37fa6c
 msgid "A line starting with ``#`` is treated as a comment and ignored."
 msgstr ""
 
 #: ../../source/site/index.rst:145
-# 5d825d6139484f8cb753008804857f54
 msgid "Path configuration files can be used to extend the import path to look in locations that would not have been added automatically.  For example, the ``setuptools`` package adds a path to ``easy-install.pth`` when it installs a package in development mode using ``python setup.py develop``."
 msgstr ""
 
 #: ../../source/site/index.rst:151
-# e4b045d72ddb41a2b6ac4455e142e717
 msgid "The function for extending ``sys.path`` is public, and it can be used in example programs to show how the path configuration files work. Given a directory named ``with_modules`` containing the file ``mymodule.py`` with this ``print`` statement showing how the module was imported:"
 msgstr ""
 
 #: ../../source/site/index.rst:0
-# cfa55e0ec84b4c9188a3365786574e64
 msgid "with_modules/mymodule.py"
 msgstr ""
 
 #: ../../source/site/index.rst:160
-# f26be553c5d74453acc29b3e78cfdf3c
 msgid "This script shows how ``addsitedir()`` extends the import path so the interpreter can find the desired module."
 msgstr ""
 
 #: ../../source/site/index.rst:0
-# 32f8688d5f1e4faaa19eba3ff54c0e5d
 msgid "site_addsitedir.py"
 msgstr ""
 
 #: ../../source/site/index.rst:167
-# d5f169cc0f864fa8bffe31aeee76cac3
 msgid "After the directory containing the module is added to ``sys.path``, the script can import ``mymodule`` without issue."
 msgstr ""
 
 #: ../../source/site/index.rst:188
-# 26728791b7424487ad47180b28498f59
 msgid "The path changes by ``addsitedir()`` go beyond simply appending the argument to ``sys.path``.  If the directory given to ``addsitedir()`` includes any files matching the pattern ``*.pth``, they are loaded as path configuration files. Given a directory structure like the following"
 msgstr ""
 
 #: ../../source/site/index.rst:202
-# 75d83a58997d42cd801c1a735aa12052
 msgid "If ``with_pth/pymotw.pth`` contains"
 msgstr ""
 
 #: ../../source/site/index.rst:206
-# fa582f7bfc864c4ba7a4bbc4d8ba8d88
 msgid "then ``with_pth/subdir/mymodule.py`` can be imported by adding ``with_pth`` as a site directory, even though the module is not in that directory because both ``with_pth`` and ``with_pth/subdir`` are added to the import path."
 msgstr ""
 
 #: ../../source/site/index.rst:229
-# 37a5e69619104706ad162baa4ad2d618
 msgid "If a site directory contains multiple ``.pth`` files, they are processed in alphabetical order."
 msgstr ""
 
 #: ../../source/site/index.rst:257
-# 4d797f9b5ddb42939e221fcdee07211d
 msgid "In this case, the module is found in ``multiple_pth/from_a`` because ``a.pth`` is read before ``b.pth``."
 msgstr ""
 
 #: ../../source/site/index.rst:284
-# 585d063b01194489a33f59437db9bb55
 msgid "Customizing Site Configuration"
 msgstr ""
 
 #: ../../source/site/index.rst:286
-# 588abdf8035044eba2a1b4cdb70e4306
 msgid "The ``site`` module is also responsible for loading site-wide customization defined by the local site owner in a ``sitecustomize`` module.  Uses for ``sitecustomize`` include extending the import path and enabling coverage, profiling, or other development tools."
 msgstr ""
 
 #: ../../source/site/index.rst:292
-# 11434f87f2ab416982f33754f095725e
 msgid "For example, this ``sitecustomize.py`` script extends the import path with a directory based on the current platform.  The platform-specific path in ``/opt/python`` is added to the import path, so any packages installed there can be imported.  A system like this is useful for sharing packages containing compiled extension modules between hosts on a network via a shared file system.  Only the ``sitecustomize.py`` script needs to be installed on each host, and the other packages can be accessed from the file server."
 msgstr ""
 
 #: ../../source/site/index.rst:0
-# 3243e3d590e64d3e9b505ff7764a4000
 msgid "with_sitecustomize/sitecustomize.py"
 msgstr ""
 
 #: ../../source/site/index.rst:305
-# 5e033210c2644b1d9407ac07b48714c8
 msgid "A simple script can be used to show that ``sitecustomize.py`` is imported before Python starts running your own code."
 msgstr ""
 
 #: ../../source/site/index.rst:0
-# b5654a10672040f4a5a153306b456369
 msgid "with_sitecustomize/site_sitecustomize.py"
 msgstr ""
 
 #: ../../source/site/index.rst:312
-# d21eb616bdce4a4d8c9ec7148bcb4e5f
 msgid "Since ``sitecustomize`` is meant for system-wide configuration, it should be installed somewhere in the default path (usually in the ``site-packages`` directory).  This example sets ``PYTHONPATH`` explicitly to ensure the module is picked up."
 msgstr ""
 
 #: ../../source/site/index.rst:338
-# 71436ef77dfe4a5bae27f7070b199e5d
 msgid "Customizing User Configuration"
 msgstr ""
 
 #: ../../source/site/index.rst:340
-# b3cd3fa77f9348bcbf41dff17eddae2d
 msgid "Similar to ``sitecustomize``, the ``usercustomize`` module can be used to set up user-specific settings each time the interpreter starts up.  ``usercustomize`` is loaded after ``sitecustomize``, so site-wide customizations can be overridden."
 msgstr ""
 
 #: ../../source/site/index.rst:345
-# 6465aca157f54399aec1d8c79a1af229
 msgid "In environments where a user's home directory is shared on several servers running different operating systems or versions, the standard user directory mechanism may not work for user-specific installations of packages.  In these cases, a platform-specific directory tree can be used instead."
 msgstr ""
 
 #: ../../source/site/index.rst:0
-# 420ada8665044176b6d1f65fad21c2b4
 msgid "with_usercustomize/usercustomize.py"
 msgstr ""
 
 #: ../../source/site/index.rst:355
-# 587af6409038433eba41866f91e8b0c1
 msgid "Another simple script, similar to the one used for ``sitecustomize``, can be used to show that ``usercustomize.py`` is imported before Python starts running other code."
 msgstr ""
 
 #: ../../source/site/index.rst:0
-# c3c0412eacd24850b7f80cc536afc5e4
 msgid "with_usercustomize/site_usercustomize.py"
 msgstr ""
 
 #: ../../source/site/index.rst:363
-# 3de185fd734146329c1a1e1223ac9981
 msgid "Since ``usercustomize`` is meant for user-specific configuration for a user, it should be installed somewhere in the user's default path, but not on the site-wide path. The default ``USER_BASE`` directory is a good location.  This example sets ``PYTHONPATH`` explicitly to ensure the module is picked up."
 msgstr ""
 
 #: ../../source/site/index.rst:385
-# 8f28c7559cf943c99055a523310a706a
 msgid "When the user site directory feature is disabled, ``usercustomize`` is not imported, whether it is located in the user site directory or elsewhere."
 msgstr ""
 
 #: ../../source/site/index.rst:404
-# 17df1ba9aa1045dfa729370a9ee46f29
 msgid "Disabling the site Module"
 msgstr ""
 
 #: ../../source/site/index.rst:406
-# 8146e3d1ce5b4f6fb0029ae21458a877
 msgid "To maintain backwards-compatibility with versions of Python from before the automatic import was added, the interpreter accepts an ``-S`` option."
 msgstr ""
 
 #: ../../source/site/index.rst:436
-# f903f46a0cab46cb858fe8bdd04a0ff6
 msgid ":pydoc:`site`"
 msgstr ""
 
 #: ../../source/site/index.rst:438
-# 8821d2fe32c04e14a55163f061e202c4
 msgid ":ref:`sys-imports` -- Description of how the import path defined in ``sys`` works."
 msgstr ""
 
 #: ../../source/site/index.rst:441
-# 8b9adb08fd6e40448369519678e06539
 msgid "`setuptools <https://setuptools.readthedocs.io/en/latest/index.html>`__ -- Packaging library and installation tool ``easy_install``."
 msgstr ""
 
 #: ../../source/site/index.rst:445
-# 5341a59d4b964c2cb167a80f82f6c1ef
 msgid "`Running code at Python startup <http://nedbatchelder.com/blog/201001/running_code_at_python_startup.html>`__ -- Post from Ned Batchelder discussing ways to cause the Python interpreter to run custom initialization code before starting the main program execution."
 msgstr ""
 

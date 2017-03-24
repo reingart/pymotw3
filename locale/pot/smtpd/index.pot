@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,192 +17,154 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/smtpd/index.rst:3
-# 7116e80500f94ed0a1d4e220335f826f
 msgid "smtpd --- Sample Mail Servers"
 msgstr ""
 
 #: ../../source/smtpd/index.rst:8
-# 09b281fb15724e8fbdde10a95f9944eb
 msgid "Includes classes for implementing SMTP servers."
 msgstr ""
 
 #: ../../source/smtpd/index.rst:10
-# 6d6ac87d71324e9982f1eeb2372db6f5
 msgid "The ``smtpd`` module includes classes for building simple mail transport protocol servers.  It is the server-side of the protocol used by :mod:`smtplib`."
 msgstr ""
 
 #: ../../source/smtpd/index.rst:15
-# 6b2cfaa93bb54226969ad6b8cf4cd0f2
 msgid "Mail Server Base Class"
 msgstr ""
 
 #: ../../source/smtpd/index.rst:17
-# 9797a37056bd4a1a8fe65b010d03e16c
 msgid "The base class for all of the provided example servers is ``SMTPServer``.  It handles communicating with the client, receiving incoming data, and provides a convenient hook to override to process the message once it is fully available."
 msgstr ""
 
 #: ../../source/smtpd/index.rst:22
-# b7a9f622c52244e8872ced7c52a1058b
 msgid "The constructor arguments are the local address to listen for connections and the remote address where proxied messages should be delivered.  The method ``process_message()`` is provided as a hook to be overridden by a derived class.  It is called when the message is completely received, and given these arguments:"
 msgstr ""
 
 #: ../../source/smtpd/index.rst:28
-# 112c86771174420798ab833524129353
 msgid "``peer``"
 msgstr ""
 
 #: ../../source/smtpd/index.rst:30
-# 8877ef7b200e4ca6af6161d82a4150de
 msgid "The client's address, a tuple containing IP and incoming port."
 msgstr ""
 
 #: ../../source/smtpd/index.rst:32
-# 8bba2fbd1af54ddba7ea5626408d85e9
 msgid "``mailfrom``"
 msgstr ""
 
 #: ../../source/smtpd/index.rst:34
-# f8938a65502744369753962f58313c03
 msgid "The \"from\" information out of the message envelope, given to the server by the client when the message is delivered.  This does not necessarily match the ``From`` header in all cases."
 msgstr ""
 
 #: ../../source/smtpd/index.rst:38
-# f4d4670f74bf4d3fb200456c04c12f39
 msgid "``rcpttos``"
 msgstr ""
 
 #: ../../source/smtpd/index.rst:40
-# b3b674ad3e824b2aa6d4a41d670353c8
 msgid "The list of recipients from the message envelope.  Again, this does not always match the ``To`` header, especially if a recipient is being blind carbon copied."
 msgstr ""
 
 #: ../../source/smtpd/index.rst:44
-# 45f763497d77456b99c033229c256d2d
 msgid "``data``"
 msgstr ""
 
 #: ../../source/smtpd/index.rst:46
-# ddcf33249af7479889ea97dffdb529f7
 msgid "The full RFC 5322 message body."
 msgstr ""
 
 #: ../../source/smtpd/index.rst:48
-# 23e689926c4f44b7b5d606126bce7af4
 msgid "The default implementation of ``process_message()`` raises ``NotImplementedError``.  The next example defines a subclass that overrides the method to print information about the messages it receives."
 msgstr ""
 
 #: ../../source/smtpd/index.rst:0
-# f7bcbfaef3d642b39f7df615616b8254
 msgid "smtpd_custom.py"
 msgstr ""
 
 #: ../../source/smtpd/index.rst:57
-# aadb5b40b03b401cabb861f544127301
 msgid "``SMTPServer`` uses :mod:`asyncore`, so to run the server call ``asyncore.loop()``."
 msgstr ""
 
 #: ../../source/smtpd/index.rst:60
-# 272942ecb775463e9bd09848a971fe83
 msgid "A client is needed to demonstrate the server.  One of the examples from the section on :mod:`smtplib` can be adapted to create a client to send data to the test server running locally on port 1025."
 msgstr ""
 
 #: ../../source/smtpd/index.rst:0
-# e49c5c3aeee04336b21c31ab5df7cbb6
 msgid "smtpd_senddata.py"
 msgstr ""
 
 #: ../../source/smtpd/index.rst:68
-# 978dc7cd3e70485aabe585f277456e47
 msgid "To test the programs, run ``smtpd_custom.py`` in one terminal and ``smtpd_senddata.py`` in another."
 msgstr ""
 
 #: ../../source/smtpd/index.rst:82
-# dae5178a962d40f094f3076752fb8731
 msgid "The debug output from ``smtpd_senddata.py`` shows all of the communication with the server."
 msgstr ""
 
 #: ../../source/smtpd/index.rst:123
-# c4edfb49569341c49841901dfed9e6b5
 msgid "To stop the server, press ``Ctrl-C``."
 msgstr ""
 
 #: ../../source/smtpd/index.rst:127
-# 36ed58714be4461dbfb0455e83502518
 msgid "Debugging Server"
 msgstr ""
 
 #: ../../source/smtpd/index.rst:129
-# d51af1250f064f8ea0b49309b73af520
 msgid "The previous example shows the arguments to ``process_message()``, but ``smtpd`` also includes a server specifically designed for more complete debugging, called ``DebuggingServer``.  It prints the entire incoming message to the console and then stops processing (it does not proxy the message to a real mail server)."
 msgstr ""
 
 #: ../../source/smtpd/index.rst:0
-# e859f0b8ff424075a64844464ab5bb0b
 msgid "smtpd_debug.py"
 msgstr ""
 
 #: ../../source/smtpd/index.rst:139
-# 485dfc40a08e442eb0a201fd5fd0b17c
 msgid "Using the ``smtpd_senddata.py`` client program from earlier, the output of the ``DebuggingServer`` is:"
 msgstr ""
 
 #: ../../source/smtpd/index.rst:159
-# 274d524f62da4cfc835d5dfebd65320f
 msgid "Proxy Server"
 msgstr ""
 
 #: ../../source/smtpd/index.rst:161
-# e99ec754b9664e6e855711e4d993735a
 msgid "The ``PureProxy`` class implements a straightforward proxy server.  Incoming messages are forwarded upstream to the server given as argument to the constructor."
 msgstr ""
 
 #: ../../source/smtpd/index.rst:167
-# 4727fad4e1124a95a7299b417b663b5b
 msgid "The standard library documentation for ``smtpd`` says, \"running this has a good chance to make you into an open relay, so please be careful.\""
 msgstr ""
 
 #: ../../source/smtpd/index.rst:171
-# 3b5ee635cadb4b448d0fb455859854c6
 msgid "The steps for setting up the proxy server are similar to the debug server."
 msgstr ""
 
 #: ../../source/smtpd/index.rst:0
-# 7f6c766fd00945a3b019421a690a08c2
 msgid "smtpd_proxy.py"
 msgstr ""
 
 #: ../../source/smtpd/index.rst:178
-# 0a832faa81c34edf8c35c386aa9a28d8
 msgid "It prints no output, though, so to verify that it is working look at the mail server logs."
 msgstr ""
 
 #: ../../source/smtpd/index.rst:193
-# 0a35de67267e48618be853843cb9386f
 msgid ":pydoc:`smtpd`"
 msgstr ""
 
 #: ../../source/smtpd/index.rst:195
-# 47f9f1b353534c2ab3a996a16b3339e6
 msgid ":mod:`smtplib` -- Provides a client interface."
 msgstr ""
 
 #: ../../source/smtpd/index.rst:197
-# ab70ae483bc54c819cc01b3a30c9e060
 msgid ":mod:`email` -- Parses email messages."
 msgstr ""
 
 #: ../../source/smtpd/index.rst:199
-# a2ff8eafd6df42579018ff72823e3bb2
 msgid ":mod:`asyncore` -- Base module for writing asynchronous servers."
 msgstr ""
 
 #: ../../source/smtpd/index.rst:201
-# 39ffd7d5f34a4199946b28dc286428fc
 msgid ":rfc:`2822` -- *Internet Message Format*, defines the email message format."
 msgstr ""
 
 #: ../../source/smtpd/index.rst:204
-# 074ac3a870cf406aa7c88eec3dc571be
 msgid ":rfc:`5322` -- Replacement for RFC 2822."
 msgstr ""
 

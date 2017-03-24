@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,132 +17,106 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/linecache/index.rst:3
-# 5f9cf5bceb504fc1932608f64d6f4bed
 msgid "linecache --- Read Text Files Efficiently"
 msgstr ""
 
 #: ../../source/linecache/index.rst:8
-# 349b192b6f904b2b98bb5e4d3865bebb
 msgid "Retrieve lines of text from files or imported Python modules, holding a cache of the results to make reading many lines from the same file more efficient."
 msgstr ""
 
 #: ../../source/linecache/index.rst:12
-# 7b37ca97b41c4d98b5776147cf0805e5
 msgid "The ``linecache`` module is used within other parts of the Python standard library when dealing with Python source files. The implementation of the cache holds the contents of files, parsed into separate lines, in memory. The API returns the requested line(s) by indexing into a ``list``, and saves time over repeatedly reading the file and parsing lines to find the one desired. This is especially useful when looking for multiple lines from the same file, such as when producing a traceback for an error report."
 msgstr ""
 
 #: ../../source/linecache/index.rst:22
-# 4effd1d3bfac45459fee88ee59f25b5c
 msgid "Test Data"
 msgstr ""
 
 #: ../../source/linecache/index.rst:24
-# 7a7918f5dcb54a59bf342cd85249c4fd
 msgid "This text produced by a Lorem Ipsum generator is used as sample input."
 msgstr ""
 
 #: ../../source/linecache/index.rst:0
-# 8a4307937e214d3781ca51169f67d9b5
 msgid "linecache_data.py"
 msgstr ""
 
 #: ../../source/linecache/index.rst:31
-# db91a1ba8a9d4df9be3deebf98876e9d
 msgid "Reading Specific Lines"
 msgstr ""
 
 #: ../../source/linecache/index.rst:33
-# 12ccc9d3a16548d99abd91e6f870ce90
 msgid "The line numbers of files read by the ``linecache`` module start with 1, but normally lists start indexing the array from 0."
 msgstr ""
 
 #: ../../source/linecache/index.rst:0
-# d73701d3244b4beba0613fed3c104300
 msgid "linecache_getline.py"
 msgstr ""
 
 #: ../../source/linecache/index.rst:40
-# 01dc60d8ff7542918737e8733b0ba41e
 msgid "Each line returned includes a trailing newline."
 msgstr ""
 
 #: ../../source/linecache/index.rst:59
-# ca62012cda954c1f82811b477328984c
 msgid "Handling Blank Lines"
 msgstr ""
 
 #: ../../source/linecache/index.rst:61
-# 55638805d00242589852977acbe72e72
 msgid "The return value always includes the newline at the end of the line, so if the line is empty the return value is just the newline."
 msgstr ""
 
 #: ../../source/linecache/index.rst:0
-# 0d166c2e28334a328391814c720dfab2
 msgid "linecache_empty_line.py"
 msgstr ""
 
 #: ../../source/linecache/index.rst:68
-# a4149562d05a4f7e87d804272bb92d63
 msgid "Line eight of the input file contains no text."
 msgstr ""
 
 #: ../../source/linecache/index.rst:83
-# 423c0450b57845cb908fbcfedc3aa281
 msgid "Error Handling"
 msgstr ""
 
 #: ../../source/linecache/index.rst:85
-# 6adc685940544cb48b437a39fe014eea
 msgid "If the requested line number falls out of the range of valid lines in the file, ``getline()`` returns an empty string."
 msgstr ""
 
 #: ../../source/linecache/index.rst:0
-# e98996f86d50486f92d0e1951a17cf3c
 msgid "linecache_out_of_range.py"
 msgstr ""
 
 #: ../../source/linecache/index.rst:92
-# eb39660e546944f5a366c8dd06e4a938
 msgid "The input file only has 15 lines, so requesting line 500 is like trying to read past the end of the file."
 msgstr ""
 
 #: ../../source/linecache/index.rst:107
-# 3ba88c9056bf4580905a82603e85cfd9
 msgid "Reading from a file that does not exist is handled in the same way."
 msgstr ""
 
 #: ../../source/linecache/index.rst:0
-# 15b13e1c7d0c410f8b039e35abfc98c1
 msgid "linecache_missing_file.py"
 msgstr ""
 
 #: ../../source/linecache/index.rst:113
-# 5781cc99db4a42f5a5639b46c87a004e
 msgid "The module never raises an exception when the caller tries to read data."
 msgstr ""
 
 #: ../../source/linecache/index.rst:128
-# bb53cf5d97cc40f99c3db595bd53ae0d
 msgid "Reading Python Source Files"
 msgstr ""
 
 #: ../../source/linecache/index.rst:130
-# 03b6e9e0af5e49bcbeefeba1b7829b64
 msgid "Since ``linecache`` is used so heavily when producing tracebacks, one of its key features is the ability to find Python source modules in the import path by specifying the base name of the module."
 msgstr ""
 
 #: ../../source/linecache/index.rst:0
-# d902d78198ec4ac9b0068c4ab7648d1e
 msgid "linecache_path_search.py"
 msgstr ""
 
 #: ../../source/linecache/index.rst:138
-# a18b3994a07f4fa48d3f4674a1d1e730
 msgid "The cache population code in ``linecache`` searches ``sys.path`` for the named module if it cannot find a file with that name in the current directory.  This example looks for ``linecache.py``.  Since there is no copy in the current directory, the file from the standard library is found instead."
 msgstr ""
 
 #: ../../source/linecache/index.rst:165
-# cbfd22c006c447f9bee4a386bfb1800c
 msgid ":pydoc:`linecache`"
 msgstr ""
 

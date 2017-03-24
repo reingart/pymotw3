@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,292 +17,234 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/multiprocessing/basics.rst:2
-# 636d4d0a897644fb914795f017703ac3
 msgid "multiprocessing Basics"
 msgstr ""
 
 #: ../../source/multiprocessing/basics.rst:4
-# b340bf41ff5747b7b2b5ebefacfd8bb8
 msgid "The simplest way to spawn a second process is to instantiate a ``Process`` object with a target function and call ``start()`` to let it begin working."
 msgstr ""
 
 #: ../../source/multiprocessing/basics.rst:0
-# fd56261faba643c093753ea0352ba91e
 msgid "multiprocessing_simple.py"
 msgstr ""
 
 #: ../../source/multiprocessing/basics.rst:12
-# a2edff5484f746f893e8f3126ee10c04
 msgid "The output includes the word \"Worker\" printed five times, although it may not come out entirely clean, depending on the order of execution, because each process is competing for access to the output stream."
 msgstr ""
 
 #: ../../source/multiprocessing/basics.rst:33
-# 8c6570dc21094ec7ad237721a729faa7
 msgid "It usually more useful to be able to spawn a process with arguments to tell it what work to do.  Unlike with ``threading``, in order to pass arguments to a ``multiprocessing`` ``Process`` the arguments must be able to be serialized using :mod:`pickle`.  This example passes each worker a number to be printed."
 msgstr ""
 
 #: ../../source/multiprocessing/basics.rst:0
-# a1592fa8d5c54558beda309137f8d0a9
 msgid "multiprocessing_simpleargs.py"
 msgstr ""
 
 #: ../../source/multiprocessing/basics.rst:43
-# 6fba9dd4f08440128fb729803ed8423a
 msgid "The integer argument is now included in the message printed by each worker."
 msgstr ""
 
 #: ../../source/multiprocessing/basics.rst:63
-# 94528210e91c4de98fedf6540507cc5a
 msgid "Importable Target Functions"
 msgstr ""
 
 #: ../../source/multiprocessing/basics.rst:65
-# 1dd1c4caffde4eecb0c7eade69054da5
 msgid "One difference between the ``threading`` and ``multiprocessing`` examples is the extra protection for ``__main__`` used in the ``multiprocessing`` examples.  Due to the way the new processes are started, the child process needs to be able to import the script containing the target function.  Wrapping the main part of the application in a check for ``__main__`` ensures that it is not run recursively in each child as the module is imported.  Another approach is to import the target function from a separate script.  For example, ``multiprocessing_import_main.py`` uses a worker function defined in a second module."
 msgstr ""
 
 #: ../../source/multiprocessing/basics.rst:0
-# 7685ccc08d9f43458224dad7af933919
 msgid "multiprocessing_import_main.py"
 msgstr ""
 
 #: ../../source/multiprocessing/basics.rst:80
-# 3cf762dbe45f43e491e429874b828944
 msgid "The worker function is defined in ``multiprocessing_import_worker.py``."
 msgstr ""
 
 #: ../../source/multiprocessing/basics.rst:0
-# c5c9f4a943d64b7497faf7b7dc3a3b20
 msgid "multiprocessing_import_worker.py"
 msgstr ""
 
 #: ../../source/multiprocessing/basics.rst:86
-# e76eac31df1340dcbdc873db2ddf82c7
 msgid "Calling the main program produces output similar to the first example."
 msgstr ""
 
 #: ../../source/multiprocessing/basics.rst:105
-# 15a1c225bd0c4513a466b10152ab16f9
 msgid "Determining the Current Process"
 msgstr ""
 
 #: ../../source/multiprocessing/basics.rst:107
-# 9d20e9838b314e069347f604342de647
 msgid "Passing arguments to identify or name the process is cumbersome, and unnecessary.  Each ``Process`` instance has a name with a default value that can be changed as the process is created. Naming processes is useful for keeping track of them, especially in applications with multiple types of processes running simultaneously."
 msgstr ""
 
 #: ../../source/multiprocessing/basics.rst:0
-# bc4245e434434d61b62a0743151eeb8a
 msgid "multiprocessing_names.py"
 msgstr ""
 
 #: ../../source/multiprocessing/basics.rst:117
-# d2fd1d50e15f49be8e576410319aeafb
 msgid "The debug output includes the name of the current process on each line. The lines with ``Process-3`` in the name column correspond to the unnamed process ``worker_1``."
 msgstr ""
 
 #: ../../source/multiprocessing/basics.rst:140
-# f6a2a9a0c7d2461dbf7ea800ece62a4a
 msgid "Daemon Processes"
 msgstr ""
 
 #: ../../source/multiprocessing/basics.rst:142
-# d1e0b98ef67042dda689d74d1793badd
 msgid "By default, the main program will not exit until all of the children have exited. There are times when starting a background process that runs without blocking the main program from exiting is useful, such as in services where there may not be an easy way to interrupt the worker, or where letting it die in the middle of its work does not lose or corrupt data (for example, a task that generates \"heart beats\" for a service monitoring tool)."
 msgstr ""
 
 #: ../../source/multiprocessing/basics.rst:150
-# 9a847c4741ed40feb1060f2bffc765d8
 msgid "To mark a process as a daemon, set its :attr:`daemon` attribute to ``True``. The default is for processes to not be daemons."
 msgstr ""
 
 #: ../../source/multiprocessing/basics.rst:0
-# a61a4c53aa98418c8bdd64ddbd60d3a7
 msgid "multiprocessing_daemon.py"
 msgstr ""
 
 #: ../../source/multiprocessing/basics.rst:157
-# 25d7a30aee404d92a82b6de14c6913b1
 msgid "The output does not include the \"Exiting\" message from the daemon process, since all of the non-daemon processes (including the main program) exit before the daemon process wakes up from its two second sleep."
 msgstr ""
 
 #: ../../source/multiprocessing/basics.rst:176
-# abb211a6cc164f019dde0f4be888e059
 msgid "The daemon process is terminated automatically before the main program exits, which avoids leaving orphaned processes running.  This can be verified by looking for the process id value printed when the program runs, and then checking for that process with a command like ``ps``."
 msgstr ""
 
 #: ../../source/multiprocessing/basics.rst:183
-# e8aee8175b4c48c693f7b72521aed579
 msgid "Waiting for Processes"
 msgstr ""
 
 #: ../../source/multiprocessing/basics.rst:185
-# 5789b273cef7446d86854bb47abcfcc8
 msgid "To wait until a process has completed its work and exited, use the ``join()`` method."
 msgstr ""
 
 #: ../../source/multiprocessing/basics.rst:0
-# 5c662225a880454a994ed9c6fa137452
 msgid "multiprocessing_daemon_join.py"
 msgstr ""
 
 #: ../../source/multiprocessing/basics.rst:192
-# 67f6c4d9430e495a80fc6e97a8b1c831
 msgid "Since the main process waits for the daemon to exit using ``join()``, the \"Exiting\" message is printed this time."
 msgstr ""
 
 #: ../../source/multiprocessing/basics.rst:210
-# d664fa88813e41748f3510380610e77c
 msgid "By default, ``join()`` blocks indefinitely. It is also possible to pass a timeout argument (a float representing the number of seconds to wait for the process to become inactive). If the process does not complete within the timeout period, ``join()`` returns anyway."
 msgstr ""
 
 #: ../../source/multiprocessing/basics.rst:0
-# ff590b4027c04e26a45e6a77db1eb77b
 msgid "multiprocessing_daemon_join_timeout.py"
 msgstr ""
 
 #: ../../source/multiprocessing/basics.rst:219
-# e50e21a740ac4108ab04cb682dae3b75
 msgid "Since the timeout passed is less than the amount of time the daemon sleeps, the process is still \"alive\" after ``join()`` returns."
 msgstr ""
 
 #: ../../source/multiprocessing/basics.rst:237
-# 302d291556cc422893f774cd935fdf67
 msgid "Terminating Processes"
 msgstr ""
 
 #: ../../source/multiprocessing/basics.rst:239
-# fd78260ff2354b858fcc8a17b4fbddd6
 msgid "Although it is better to use the *poison pill* method of signaling to a process that it should exit (see :ref:`multiprocessing-queues`, later in this chapter), if a process appears hung or deadlocked it can be useful to be able to kill it forcibly.  Calling ``terminate()`` on a process object kills the child process."
 msgstr ""
 
 #: ../../source/multiprocessing/basics.rst:0
-# b5d3750e87e945e980fd61dc2718cb11
 msgid "multiprocessing_terminate.py"
 msgstr ""
 
 #: ../../source/multiprocessing/basics.rst:251
-# c5c6763cac2f4e59816935818fc26993
 msgid "It is important to ``join()`` the process after terminating it in order to give the process management code time to update the status of the object to reflect the termination."
 msgstr ""
 
 #: ../../source/multiprocessing/basics.rst:272
-# d7848fc00b504e2e84d603e72dc0616d
 msgid "Process Exit Status"
 msgstr ""
 
 #: ../../source/multiprocessing/basics.rst:274
-# cbe5144bad0644ff9149526439bb49a6
 msgid "The status code produced when the process exits can be accessed via the :attr:`exitcode` attribute.  The ranges allowed are listed in :table:`Multiprocessing Exit Codes`."
 msgstr ""
 
 #: ../../source/multiprocessing/basics.rst:0
-# 0fdee8b39e2f413c8d740fbab8d10b0c
 msgid "Multiprocessing Exit Codes"
 msgstr ""
 
 #: ../../source/multiprocessing/basics.rst:281
-# ca6fed73fe1747ce97ad5cddf9432118
 msgid "Exit Code"
 msgstr ""
 
 #: ../../source/multiprocessing/basics.rst:281
-# 796f60f4dfb24c5b8410d7a5b2549d31
 msgid "Meaning"
 msgstr ""
 
 #: ../../source/multiprocessing/basics.rst:283
-# 389c15bf8a9049f89c5b9d4581b475f5
 msgid "``== 0``"
 msgstr ""
 
 #: ../../source/multiprocessing/basics.rst:283
-# 8df7ae874fa74deeaaaafd6544a0adca
 msgid "no error was produced"
 msgstr ""
 
 #: ../../source/multiprocessing/basics.rst:284
-# 884111d421b54d03b844e3217ffb24e3
 msgid "``> 0``"
 msgstr ""
 
 #: ../../source/multiprocessing/basics.rst:284
-# 9eb66718bda04920a94e86c95be265a6
 msgid "the process had an error, and exited with that code"
 msgstr ""
 
 #: ../../source/multiprocessing/basics.rst:285
-# aa32ab67c6e0442eb440d7e6f3347585
 msgid "``< 0``"
 msgstr ""
 
 #: ../../source/multiprocessing/basics.rst:285
-# d869a97abd4e489080a56fcb88d0a94a
 msgid "the process was killed with a signal of ``-1 * exitcode``"
 msgstr ""
 
 #: ../../source/multiprocessing/basics.rst:0
-# cae5bbdfddb34c62a168bbd2f997981a
 msgid "multiprocessing_exitcode.py"
 msgstr ""
 
 #: ../../source/multiprocessing/basics.rst:292
-# 7394fb01e7fb4e5fa4f87d5fc5d388a9
 msgid "Processes that raise an exception automatically get an :attr:`exitcode` of 1."
 msgstr ""
 
 #: ../../source/multiprocessing/basics.rst:329
-# 2d7fb13cd6c043cd99353e60dc196117
 msgid "Logging"
 msgstr ""
 
 #: ../../source/multiprocessing/basics.rst:331
-# df4754ac7a654f7a80ef7a0cdc8ab3ee
 msgid "When debugging concurrency issues, it can be useful to have access to the internals of the objects provided by ``multiprocessing``. There is a convenient module-level function to enable logging called ``log_to_stderr()``.  It sets up a logger object using :mod:`logging` and adds a handler so that log messages are sent to the standard error channel."
 msgstr ""
 
 #: ../../source/multiprocessing/basics.rst:0
-# 549e881610c84e11863c612220cc6e9d
 msgid "multiprocessing_log_to_stderr.py"
 msgstr ""
 
 #: ../../source/multiprocessing/basics.rst:342
-# 321771be160c4c2bbc6fa96795f7fd20
 msgid "By default, the logging level is set to ``NOTSET`` so no messages are produced.  Pass a different level to initialize the logger to the level of detail desired."
 msgstr ""
 
 #: ../../source/multiprocessing/basics.rst:368
-# fd736cdca2104fa2af54241f8d0267c0
 msgid "To manipulate the logger directly (change its level setting or add handlers), use ``get_logger()``."
 msgstr ""
 
 #: ../../source/multiprocessing/basics.rst:0
-# 43dfa822fc1f44ca9e153c627f0b8dbf
 msgid "multiprocessing_get_logger.py"
 msgstr ""
 
 #: ../../source/multiprocessing/basics.rst:375
-# 8281cf6389754636800a98e0f23358d2
 msgid "The logger can also be configured through the ``logging`` configuration file API, using the name \"``multiprocessing``\"."
 msgstr ""
 
 #: ../../source/multiprocessing/basics.rst:396
-# 267739753a3a435f920059146bb952b9
 msgid "Subclassing Process"
 msgstr ""
 
 #: ../../source/multiprocessing/basics.rst:398
-# 87bdb3b9f3b44684b55d776c4e432f24
 msgid "Although the simplest way to start a job in a separate process is to use ``Process`` and pass a target function, it is also possible to use a custom subclass."
 msgstr ""
 
 #: ../../source/multiprocessing/basics.rst:0
-# c3b4060bf5ec40cabb7e517ac31145ba
 msgid "multiprocessing_subclass.py"
 msgstr ""
 
 #: ../../source/multiprocessing/basics.rst:406
-# ab95b784e4af4679a66eb1f4c520ec1e
 msgid "The derived class should override :meth:`run` to do its work."
 msgstr ""
 

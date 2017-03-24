@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,182 +17,146 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/zlib/index.rst:3
-# 9317633b7c5a4b0ab8b2785466921e10
 msgid "zlib --- GNU zlib Compression"
 msgstr ""
 
 #: ../../source/zlib/index.rst:8
-# abeb7450f4904665bec9f1602f41a446
 msgid "Low-level access to GNU zlib compression library"
 msgstr ""
 
 #: ../../source/zlib/index.rst:10
-# 7ec63e8749444b9ea120b8c23c1a1459
 msgid "The ``zlib`` module provides a lower-level interface to many of the functions in the ``zlib`` compression library from the GNU project."
 msgstr ""
 
 #: ../../source/zlib/index.rst:14
-# 70a41bd02e644057b7a6cbd7b4a96110
 msgid "Working with Data in Memory"
 msgstr ""
 
 #: ../../source/zlib/index.rst:16
-# 9d557b9673da445f9bd22c0c79142557
 msgid "The simplest way to work with ``zlib`` requires holding all of the data to be compressed or decompressed in memory."
 msgstr ""
 
 #: ../../source/zlib/index.rst:0
-# 0736f4f073e84103a4716bb7c182d8fb
 msgid "zlib_memory.py"
 msgstr ""
 
 #: ../../source/zlib/index.rst:23
-# 16a5744c6a8d4be1887e302f23abce37
 msgid "The ``compress()`` and ``decompress()`` functions both take a byte sequence argument and return a byte sequence."
 msgstr ""
 
 #: ../../source/zlib/index.rst:41
-# eed1772e5bf24c94be9c2786f1396f4e
 msgid "The previous example demonstrates that the compressed version of small amounts of data can be larger than the uncompressed version.  While the actual results depend on the input data, it is interesting to observe the compression overhead for small data sets"
 msgstr ""
 
 #: ../../source/zlib/index.rst:0
-# d477034b09164b5095899530f96055da
 msgid "zlib_lengths.py"
 msgstr ""
 
 #: ../../source/zlib/index.rst:50
-# 1e55cf027b6c40d1a892c5ffe78f2a58
 msgid "The ``*`` in the output highlight the lines where the compressed data takes up more memory than the uncompressed version."
 msgstr ""
 
 #: ../../source/zlib/index.rst:71
-# aa30235b917b4ba2aee376f892d96916
 msgid "``zlib`` supports several different compression levels, allowing a balance between computational cost and the amount of space reduction. The default compression level, ``zlib.Z_DEFAULT_COMPRESSION`` is ``-1`` and corresponds to a hard-coded value that compromises between performance and compression outcome. This currently corresponds to level ``6``."
 msgstr ""
 
 #: ../../source/zlib/index.rst:0
-# e5759749316e4a118ec452dbe0b9a9ee
 msgid "zlib_compresslevel.py"
 msgstr ""
 
 #: ../../source/zlib/index.rst:82
-# 5c25157e0e7841759d908f239bea1e9b
 msgid "A level of 0 means no compression at all. A level of 9 requires the most computation and produces the smallest output. As this example shows, the same size reduction may be achieved with multiple compression levels for a given input."
 msgstr ""
 
 #: ../../source/zlib/index.rst:112
-# d06f4e34c0344eff8e32cf78efd2b5d5
 msgid "Incremental Compression and Decompression"
 msgstr ""
 
 #: ../../source/zlib/index.rst:114
-# 8efb365ead1647448ae2979acc0cf7dd
 msgid "The in-memory approach has drawbacks that make it impractical for real-world use cases, primarily that the system needs enough memory to hold both the uncompressed and compressed versions resident in memory at the same time.  The alternative is to use ``Compress`` and ``Decompress`` objects to manipulate data incrementally, so that the entire data set does not have to fit into memory."
 msgstr ""
 
 #: ../../source/zlib/index.rst:0
-# 3445ea2949bf4de780bca6e1bc4676c8
 msgid "zlib_incremental.py"
 msgstr ""
 
 #: ../../source/zlib/index.rst:125
-# e9848ab027044b7098040e1aa3459149
 msgid "This example reads small blocks of data from a plain text file and passes it to ``compress()``.  The compressor maintains an internal buffer of compressed data.  Since the compression algorithm depends on checksums and minimum block sizes, the compressor may not be ready to return data each time it receives more input.  If it does not have an entire compressed block ready, it returns an empty byte string.  When all of the data is fed in, the ``flush()`` method forces the compressor to close the final block and return the rest of the compressed data."
 msgstr ""
 
 #: ../../source/zlib/index.rst:160
-# b72a7de3914b4249985a5141be894786
 msgid "Mixed Content Streams"
 msgstr ""
 
 #: ../../source/zlib/index.rst:162
-# 53c9093901f24771ad547efec858f0e8
 msgid "The ``Decompress`` class returned by ``decompressobj()`` can also be used in situations where compressed and uncompressed data is mixed together."
 msgstr ""
 
 #: ../../source/zlib/index.rst:0
-# 748688a2c4824160af0883ef9e9f610f
 msgid "zlib_mixed.py"
 msgstr ""
 
 #: ../../source/zlib/index.rst:170
-# 152a4f42b91a40eb9025fdf6dcb2e960
 msgid "After decompressing all of the data, the ``unused_data`` attribute contains any data not used."
 msgstr ""
 
 #: ../../source/zlib/index.rst:187
-# a2ab286baeaa4ec89189e9855667d651
 msgid "Checksums"
 msgstr ""
 
 #: ../../source/zlib/index.rst:189
-# 7d68e2ebc78a40e087845760f3ccae1b
 msgid "In addition to compression and decompression functions, ``zlib`` includes two functions for computing checksums of data, ``adler32()`` and ``crc32()``.  Neither checksum is cryptographically secure, and they are only intended for use for data integrity verification."
 msgstr ""
 
 #: ../../source/zlib/index.rst:0
-# 136df2bda1a74e7e903ff6a7fdcacbf0
 msgid "zlib_checksums.py"
 msgstr ""
 
 #: ../../source/zlib/index.rst:199
-# 6b29a820cdfe4309be4260845cea28fc
 msgid "Both functions take the same arguments, a byte string containing the data and an optional value to be used as a starting point for the checksum.  They return a 32-bit signed integer value which can also be passed back on subsequent calls as a new starting point argument to produce a *running* checksum."
 msgstr ""
 
 #: ../../source/zlib/index.rst:221
-# d81f979aff6e494aa9c7a37fb51181fa
 msgid "Compressing Network Data"
 msgstr ""
 
 #: ../../source/zlib/index.rst:223
-# 8c89a1af38fb4d62b876273f64140550
 msgid "The server in the next listing uses the stream compressor to respond to requests consisting of filenames by writing a compressed version of the file to the socket used to communicate with the client."
 msgstr ""
 
 #: ../../source/zlib/index.rst:0
-# 9449220cb3c248e98db70e86cb8fe2f6
 msgid "zlib_server.py"
 msgstr ""
 
 #: ../../source/zlib/index.rst:231
-# 33d78da8df744f2aa19bd436d1c42661
 msgid "It has some artificial chunking in place to illustrate the buffering behavior that happens when the data passed to ``compress()`` or ``decompress()`` does not result in a complete block of compressed or uncompressed output."
 msgstr ""
 
 #: ../../source/zlib/index.rst:236
-# 87167afd00ae485d8aa44809f73f6942
 msgid "The client connects to the socket and requests a file.  Then it loops, receiving blocks of compressed data.  Since a block may not contain enough information to decompress it entirely, the remainder of any data received earlier is combined with the new data and passed to the decompressor.  As the data is decompressed, it is appended to a buffer, which is compared against the file contents at the end of the processing loop."
 msgstr ""
 
 #: ../../source/zlib/index.rst:246
-# 07cb0c9592f94844b479841f5711c86f
 msgid "This server has obvious security implications.  Do not run it on a system on the open Internet or in any environment where security might be an issue."
 msgstr ""
 
 #: ../../source/zlib/index.rst:319
-# 4bb6972c8b924a5292f93a5bc80eff66
 msgid ":pydoc:`zlib`"
 msgstr ""
 
 #: ../../source/zlib/index.rst:321
-# b3f605915e40476a870d30351379ea6e
 msgid ":mod:`gzip` -- The ``gzip`` module includes a higher level (file-based) interface to the zlib library."
 msgstr ""
 
 #: ../../source/zlib/index.rst:324
-# 613fb3eeacfc4a2d803b5002a6588c88
 msgid "http://www.zlib.net/ -- Home page for zlib library."
 msgstr ""
 
 #: ../../source/zlib/index.rst:326
-# 4cb1145270d9408cb048b9175e7f129b
 msgid "http://www.zlib.net/manual.html -- Complete zlib documentation."
 msgstr ""
 
 #: ../../source/zlib/index.rst:328
-# 78f96f6205bf4ad19c470a44466c2711
 msgid ":mod:`bz2` -- The ``bz2`` module provides a similar interface to the bzip2 compression library."
 msgstr ""
 

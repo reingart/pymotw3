@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,382 +17,306 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/contextlib/index.rst:3
-# 36c4da43b5444a03b9daff191126d1ce
 msgid "contextlib --- Context Manager Utilities"
 msgstr ""
 
 #: ../../source/contextlib/index.rst:8
-# 0c2e6940810c4be398ca46dc6ebbfd57
 msgid "Utilities for creating and working with context managers."
 msgstr ""
 
 #: ../../source/contextlib/index.rst:10
-# 4dc84fca8f9443fb953c2bbf4cd2e5b8
 msgid "The ``contextlib`` module contains utilities for working with context managers and the ``with`` statement."
 msgstr ""
 
 #: ../../source/contextlib/index.rst:14
-# 22abf47e1bd34d7f858f811ebe931481
 msgid "Context Manager API"
 msgstr ""
 
 #: ../../source/contextlib/index.rst:16
-# acb1101d73ac4069bb4ae82940d47743
 msgid "A *context manager* is responsible for a resource within a code block, possibly creating it when the block is entered and then cleaning it up after the block is exited.  For example, files support the context manager API to make it easy to ensure they are closed after all reading or writing is done."
 msgstr ""
 
 #: ../../source/contextlib/index.rst:0
-# 976e4a6b06a44a55a46d2f447169378e
 msgid "contextlib_file.py"
 msgstr ""
 
 #: ../../source/contextlib/index.rst:26
-# b8b65f2a61b842f9b00f8d987ee7ecb5
 msgid "A context manager is enabled by the ``with`` statement, and the API involves two methods.  The ``__enter__()`` method is run when execution flow enters the code block inside the ``with``.  It returns an object to be used within the context.  When execution flow leaves the ``with`` block, the ``__exit__()`` method of the context manager is called to clean up any resources being used."
 msgstr ""
 
 #: ../../source/contextlib/index.rst:0
-# 204b21e9a69d48d9a2009ebed16b02a3
 msgid "contextlib_api.py"
 msgstr ""
 
 #: ../../source/contextlib/index.rst:37
-# c9b7cf496f894882917fef74af75652d
 msgid "Combining a context manager and the ``with`` statement is a more compact way of writing a ``try:finally`` block, since the context manager's ``__exit__()`` method is always called, even if an exception is raised."
 msgstr ""
 
 #: ../../source/contextlib/index.rst:57
-# 654c6c4aabe84ba58be1103092d013b5
 msgid "The ``__enter__()`` method can return any object to be associated with a name specified in the ``as`` clause of the ``with`` statement.  In this example, the ``Context`` returns an object that uses the open context."
 msgstr ""
 
 #: ../../source/contextlib/index.rst:0
-# 2eb8ac57194d45c388688a9e8980c3be
 msgid "contextlib_api_other_object.py"
 msgstr ""
 
 #: ../../source/contextlib/index.rst:66
-# 95926d170653464ca51ed5008ceb20ae
 msgid "The value associated with the variable ``c`` is the object returned by ``__enter__()``, which is not necessarily the ``Context`` instance created in the ``with`` statement."
 msgstr ""
 
 #: ../../source/contextlib/index.rst:87
-# 9832098621b24569ab71aa4ccd712eb1
 msgid "The ``__exit__()`` method receives arguments containing details of any exception raised in the ``with`` block."
 msgstr ""
 
 #: ../../source/contextlib/index.rst:0
-# a94b2de93cde417ba726f2e725af802d
 msgid "contextlib_api_error.py"
 msgstr ""
 
 #: ../../source/contextlib/index.rst:94
-# ea7a056bee6d40d69329b81ed0135471
 msgid "If the context manager can handle the exception, ``__exit__()`` should return a true value to indicate that the exception does not need to be propagated.  Returning false causes the exception to be re-raised after ``__exit__()`` returns."
 msgstr ""
 
 #: ../../source/contextlib/index.rst:128
-# 1511156176244aa4a220cc625f2ea342
 msgid "Context Managers as Function Decorators"
 msgstr ""
 
 #: ../../source/contextlib/index.rst:130
-# dfb4124e18714878b0ac07884c3a16f6
 msgid "The class ``ContextDecorator`` adds support to regular context manager classes to let them be used as function decorators as well as context managers."
 msgstr ""
 
 #: ../../source/contextlib/index.rst:0
-# 31ddfac367334801b04da1242cf47ea5
 msgid "contextlib_decorator.py"
 msgstr ""
 
 #: ../../source/contextlib/index.rst:138
-# c82c1ff696e14abda1169a2bd5c196db
 msgid "One difference with using the context manager as a decorator is that the value returned by ``__enter__()`` is not available inside the function being decorated, unlike when using ``with`` and ``as``. Arguments passed to the decorated function are available in the usual way."
 msgstr ""
 
 #: ../../source/contextlib/index.rst:168
-# 22309f5a62ea4ddfb616667acab652bd
 msgid "From Generator to Context Manager"
 msgstr ""
 
 #: ../../source/contextlib/index.rst:170
-# 532c835a72124308b26971820d6b4052
 msgid "Creating context managers the traditional way, by writing a class with ``__enter__()`` and ``__exit__()`` methods, is not difficult. But sometimes writing everything out fully is extra overhead for a trivial bit of context. In those sorts of situations, use the ``contextmanager()`` decorator to convert a generator function into a context manager."
 msgstr ""
 
 #: ../../source/contextlib/index.rst:0
-# 177d7b0160724db9814153af18feb9c8
 msgid "contextlib_contextmanager.py"
 msgstr ""
 
 #: ../../source/contextlib/index.rst:181
-# 0242f0ff951043558bc854c42dc0d108
 msgid "The generator should initialize the context, yield exactly one time, then clean up the context. The value yielded, if any, is bound to the variable in the ``as`` clause of the ``with`` statement. Exceptions from within the ``with`` block are re-raised inside the generator, so they can be handled there."
 msgstr ""
 
 #: ../../source/contextlib/index.rst:216
-# 6014a53541834094a6e047a209f21af7
 msgid "The context manager returned by ``contextmanager()`` is derived from ``ContextDecorator``, so it also works as a function decorator."
 msgstr ""
 
 #: ../../source/contextlib/index.rst:0
-# d8374d7e4ab14b57950a75df88fd648c
 msgid "contextlib_contextmanager_decorator.py"
 msgstr ""
 
 #: ../../source/contextlib/index.rst:223
-# 79b846f65fd74e17a321831df6221f5b
 msgid "As in the ``ContextDecorator`` example above, when the context manager is used as a decorator the value yielded by the generator is not available inside the function being decorated. Arguments passed to the decorated function are still available, as demonstrated by ``throw_error()`` in this example."
 msgstr ""
 
 #: ../../source/contextlib/index.rst:265
-# d82be27828d54f05a5c1afdd908e24f8
 msgid "Closing Open Handles"
 msgstr ""
 
 #: ../../source/contextlib/index.rst:267
-# 5cfd0194a78b4908ab9ec55607fb43f0
 msgid "The ``file`` class supports the context manager API directly, but some other objects that represent open handles do not. The example given in the standard library documentation for ``contextlib`` is the object returned from ``urllib.urlopen()``.  There are other legacy classes that use a ``close()`` method but do not support the context manager API. To ensure that a handle is closed, use ``closing()`` to create a context manager for it."
 msgstr ""
 
 #: ../../source/contextlib/index.rst:0
-# 1bfa7d6ade374ca1b49dafbd93b4d951
 msgid "contextlib_closing.py"
 msgstr ""
 
 #: ../../source/contextlib/index.rst:279
-# 85d5359205ae4e7bb88888e8ae2594c6
 msgid "The handle is closed whether there is an error in the ``with`` block or not."
 msgstr ""
 
 #: ../../source/contextlib/index.rst:305
-# b8d0ba9bdb3745c7b7d3f04f06a56926
 msgid "Ignoring Exceptions"
 msgstr ""
 
 #: ../../source/contextlib/index.rst:307
-# 99f16bebd2024754a40efeaf197f9570
 msgid "It is frequently useful to ignore exceptions raised by libraries, because the error indicates that the desired state has already been achieved, or it can otherwise be ignored. The most common way to ignore exceptions is with a ``try:except`` statement with only a ``pass`` statement in the ``except`` block."
 msgstr ""
 
 #: ../../source/contextlib/index.rst:0
-# 9c7a2d2f391d49b589bb536fd9ae035b
 msgid "contextlib_ignore_error.py"
 msgstr ""
 
 #: ../../source/contextlib/index.rst:317
-# 7467f40439a945f9ac0e6184b7d7a5da
 msgid "In this case, the operation fails and the error is ignored."
 msgstr ""
 
 #: ../../source/contextlib/index.rst:332
-# e6b6e6fe81f1452eaa13b02cd7f45713
 msgid "The ``try:except`` form can be replaced with ``contextlib.suppress()`` to more explicitly suppress a class of exceptions happening anywhere in the ``with`` block."
 msgstr ""
 
 #: ../../source/contextlib/index.rst:0
-# a0bd89cd2683490aaa5f9ac3b916bd30
 msgid "contextlib_suppress.py"
 msgstr ""
 
 #: ../../source/contextlib/index.rst:340
-# d60f997ec1ad476d9dae48d225cac3cb
 msgid "In this updated version, the exception is discarded entirely."
 msgstr ""
 
 #: ../../source/contextlib/index.rst:356
-# 5a64180b6493475c827223a85258ad0d
 msgid "Redirecting Output Streams"
 msgstr ""
 
 #: ../../source/contextlib/index.rst:358
-# d66695ca38c14f95b99571bdfb772c0d
 msgid "Poorly designed library code may write directly to ``sys.stdout`` or ``sys.stderr``, without providing arguments to configure different output destinations. The ``redirect_stdout()`` and ``redirect_stderr()`` context managers can be used to capture output from functions like this, for which the source cannot be changed to accept a new output argument."
 msgstr ""
 
 #: ../../source/contextlib/index.rst:0
-# c43ca226fa6841528ed9efd8137f1de7
 msgid "contextlib_redirect.py"
 msgstr ""
 
 #: ../../source/contextlib/index.rst:369
-# 75dc1367653f4d4895ac75165a5243c6
 msgid "In this example, ``misbehaving_function()`` writes to both ``stdout`` and ``stderr``, but the two context managers send that output to the same ``io.StringIO`` instance where it is saved to be used later."
 msgstr ""
 
 #: ../../source/contextlib/index.rst:389
-# d99a6baff9e545b18df368315396065c
 msgid "Both ``redirect_stdout()`` and ``redirect_stderr()`` modify global state by replacing objects in the :mod:`sys` module, and should be used with care. The functions are not thread-safe, and may interfere with other operations that expect the standard output streams to be attached to terminal devices."
 msgstr ""
 
 #: ../../source/contextlib/index.rst:396
-# 33f90230b8a04e7da8ea802c878a87f3
 msgid "Dynamic Context Manager Stacks"
 msgstr ""
 
 #: ../../source/contextlib/index.rst:398
-# 23fe7f41235745b4a4b113fafe491db1
 msgid "Most context managers operate on one object at a time, such as a single file or database handle. In these cases, the object is known in advance and the code using the context manager can be built around that one object. In other cases, a program may need to create an unknown number of objects in a context, while wanting all of them to be cleaned up when control flow exits the context. ``ExitStack`` was created to handle these more dynamic cases."
 msgstr ""
 
 #: ../../source/contextlib/index.rst:406
-# 0217cfa77b7e4b6abf69d1c7cc465574
 msgid "An ``ExitStack`` instance maintains a stack data structure of cleanup callbacks. The callbacks are populated explicitly within the context, and any registered callbacks are called in the reverse order when control flow exits the context. The result is like having multple nested ``with`` statements, except they are established dynamically."
 msgstr ""
 
 #: ../../source/contextlib/index.rst:414
-# c0719afb210d488d8903a829111c00b4
 msgid "Stacking Context Managers"
 msgstr ""
 
 #: ../../source/contextlib/index.rst:416
-# d83723c4d2034bb3bc770287134e90f0
 msgid "There are several ways to populate the ``ExitStack``.  This example uses ``enter_context()`` to add a new context manager to the stack."
 msgstr ""
 
 #: ../../source/contextlib/index.rst:0
-# 75e071397a35440abcb02489e2727044
 msgid "contextlib_exitstack_enter_context.py"
 msgstr ""
 
 #: ../../source/contextlib/index.rst:424
-# b8680a3cf8db4688a33b36c7c2e51ec3
 msgid "``enter_context()`` first calls ``__enter__()`` on the context manager, and then registers its ``__exit__()`` method as a callback to be invoked as the stack is undone."
 msgstr ""
 
 #: ../../source/contextlib/index.rst:445
-# 2fef45710a9a404e8a2b4cc3a95bde35
 msgid "The context managers given to ``ExitStack`` are treated as though they are in a series of nested ``with`` statements. Errors that happen anywhere within the context propagate through the normal error handling of the context managers. These context manager classes illustrate the way errors propagate."
 msgstr ""
 
 #: ../../source/contextlib/index.rst:0
-# eda8ba7e1a264f6ab6b0e5a9d2831ff5
 msgid "contextlib_context_managers.py"
 msgstr ""
 
 #: ../../source/contextlib/index.rst:455
-# fdb73e573ca9479b896ae06c1a959e2b
 msgid "The examples using these classes are based around ``variable_stack()``, which uses the context managers passed to construct an ``ExitStack``, building up the overall context one by one. The examples below pass different context managers to explore the error handling behavior. First, the normal case of no exceptions."
 msgstr ""
 
 #: ../../source/contextlib/index.rst:464
-# 2fdb470284cb45108f75dce94e424bef
 msgid "Then, an example of handling exceptions within the context managers at the end of the stack, in which all of the open contexts are closed as the stack is unwound."
 msgstr ""
 
 #: ../../source/contextlib/index.rst:471
-# 1e893a8dcd2543938fe3b6b02fc03946
 msgid "Next, an example of handling exceptions within the context managers in the middle of the stack, in which the error does not occur until some contexts are already closed, so those contexts do not see the error."
 msgstr ""
 
 #: ../../source/contextlib/index.rst:478
-# 601416a241974875a905169b8e22e03e
 msgid "Finally, an example of the exception remaining unhandled and propagating up to the calling code."
 msgstr ""
 
 #: ../../source/contextlib/index.rst:484
-# bce2723694d44066a38a5ea5410243cf
 msgid "If any context manager in the stack receives an exception and returns a ``True`` value, it prevents that exception from propagating up to any other context managers."
 msgstr ""
 
 #: ../../source/contextlib/index.rst:537
-# 83059dc0ccd0400592b4a0011e8240fc
 msgid "Arbitrary Context Callbacks"
 msgstr ""
 
 #: ../../source/contextlib/index.rst:539
-# 07c76bd4cd15436d95fb45797853cc14
 msgid "``ExitStack`` also supports arbitrary callbacks for closing a context, making it easy to clean up resources that are not controlled via a context manager."
 msgstr ""
 
 #: ../../source/contextlib/index.rst:0
-# 100939ada00349869432fdf9c1dab12a
 msgid "contextlib_exitstack_callbacks.py"
 msgstr ""
 
 #: ../../source/contextlib/index.rst:547
-# d1f908f0d8c241a6bc808fdae8a6a14d
 msgid "Just as with the ``__exit__()`` methods of full context managers, the callbacks are invoked in the reverse order that they are registered."
 msgstr ""
 
 #: ../../source/contextlib/index.rst:564
-# 432ce8186e164241ac848f5377152714
 msgid "The callbacks are invoked regardless of whether an error occurred, and they are not given any information about whether an error occurred. Their return value is ignored."
 msgstr ""
 
 #: ../../source/contextlib/index.rst:0
-# 3e83935303114c32ac8f67f3cd4477b5
 msgid "contextlib_exitstack_callbacks_error.py"
 msgstr ""
 
 #: ../../source/contextlib/index.rst:572
-# 2076f3f15e49487bbaf5eb22ead03542
 msgid "Because they do not have access to the error, callbacks are unable to suppress exceptions from propagating through the rest of the stack of context managers."
 msgstr ""
 
 #: ../../source/contextlib/index.rst:590
-# aa36396cb3bc45b196c047ce0ddbb8fd
 msgid "Callbacks make a convenient way to clearly define cleanup logic without the overhead of creating a new context manager class. To improve code readability, that logic can be encapsulated in an inline function, and ``callback()`` can be used as a decorator."
 msgstr ""
 
 #: ../../source/contextlib/index.rst:0
-# c4466f880b684b0a8fb6c39c37161623
 msgid "contextlib_exitstack_callbacks_decorator.py"
 msgstr ""
 
 #: ../../source/contextlib/index.rst:599
-# 7e09243cc8484ebbb8d446de05cace95
 msgid "There is no way to specify the arguments for functions registered using the decorator form of ``callback()``. However, if the cleanup callback is defined inline, scope rules give it access to variables defined in the calling code."
 msgstr ""
 
 #: ../../source/contextlib/index.rst:619
-# 651f88bf9df44eb48d4c8ed7a3c6f4a3
 msgid "Partial Stacks"
 msgstr ""
 
 #: ../../source/contextlib/index.rst:621
-# 870c32827c91421fb785bc36c7fcce83
 msgid "Sometimes when building complex contexts it is useful to be able to abort an operation if the context cannot be completely constructed, but to delay the cleanup of all resources until a later time if they can all be set up properly. For example, if an operation needs several long-lived network connections, it may be best to not start the operation if one connection fails. However, if all of the connections can be opened they need to stay open longer than the duration of a single context manager. The ``pop_all()`` method of ``ExitStack`` can be used in this scenario."
 msgstr ""
 
 #: ../../source/contextlib/index.rst:631
-# d75da929d83b475686369faf061941ca
 msgid "``pop_all()`` clears all of the context managers and callbacks from the stack on which it is called, and returns a new stack pre-populated with those same context managers and callbacks. The ``close()`` method of the new stack can be invoked later, after the original stack is gone, to clean up the resources."
 msgstr ""
 
 #: ../../source/contextlib/index.rst:0
-# a3221c9b80954f928ce90d40c0651207
 msgid "contextlib_exitstack_pop_all.py"
 msgstr ""
 
 #: ../../source/contextlib/index.rst:641
-# e113c9c5e80141039c2cf17858510d09
 msgid "This example uses the same context manager classes defined earlier, with the difference that ``ErrorOnEnter`` produces an error on ``__enter__()`` instead of ``__exit__()``. Inside ``variable_stack()``, if all of the contexts are entered without error then the ``close()`` method of a new ``ExitStack`` is returned. If a handled error occurs, ``variable_stack()`` returns ``None`` to indicate that the cleanup work is already done. And if an unhandled error occurs, the partial stack is cleaned up and the error is propagated."
 msgstr ""
 
 #: ../../source/contextlib/index.rst:685
-# 6d460a67d3bf4e889280d50845a490e0
 msgid ":pydoc:`contextlib`"
 msgstr ""
 
 #: ../../source/contextlib/index.rst:687
-# eb7ccd0c5600409c9d5916db5e42e9d4
 msgid ":pep:`343` -- The ``with`` statement."
 msgstr ""
 
 #: ../../source/contextlib/index.rst:689
-# c0a5cef218e745f68e5f81cea561bf8d
 msgid "`Context Manager Types <https://docs.python.org/library/stdtypes.html#typecontextmanager>`__ -- Description of the context manager API from the standard library documentation."
 msgstr ""
 
 #: ../../source/contextlib/index.rst:694
-# f62f7c59b8d444c99b80cb1863fcf5ec
 msgid "`With Statement Context Managers <https://docs.python.org/reference/datamodel.html#context-managers>`__ -- Description of the context manager API from the Python Reference Guide."
 msgstr ""
 
 #: ../../source/contextlib/index.rst:699
-# dcc42b8863ff4286a8b15a2d9e2a9fb8
 msgid "`Resource management in Python 3.3, or contextlib.ExitStack FTW! <http://www.wefearchange.org/2013/05/resource-management-in-python-33-or.html>`__ -- Description of using ``ExitStack`` to deploy safe code from Barry Warsaw."
 msgstr ""
 

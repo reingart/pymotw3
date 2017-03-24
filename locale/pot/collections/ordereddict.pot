@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,67 +17,54 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/collections/ordereddict.rst:3
-# 42906615d4134e2f982480e8d00067aa
 msgid "OrderedDict --- Remember the Order Keys are Added to a Dictionary"
 msgstr ""
 
 #: ../../source/collections/ordereddict.rst:5
-# c1890ca6fed04d89adce4191243f907e
 msgid "An ``OrderedDict`` is a dictionary subclass that remembers the order in which its contents are added."
 msgstr ""
 
 #: ../../source/collections/ordereddict.rst:0
-# 63872dd51a9b4da1974100185fb04b6c
 msgid "collections_ordereddict_iter.py"
 msgstr ""
 
 #: ../../source/collections/ordereddict.rst:12
-# 29bb0b65981448128ca51a757e5ec1df
 msgid "A regular ``dict`` does not track the insertion order, and iterating over it produces the values in order based on how the keys are stored in the hash table, which is in turn influenced by a random value to reduce collisions.  In an ``OrderedDict``, by contrast, the order in which the items are inserted is remembered and used when creating an iterator."
 msgstr ""
 
 #: ../../source/collections/ordereddict.rst:40
-# 012e6604f0de4519b03ba0f97bee20ec
 msgid "Equality"
 msgstr ""
 
 #: ../../source/collections/ordereddict.rst:42
-# 19739941df374bc0a41c273a368ca85c
 msgid "A regular ``dict`` looks at its contents when testing for equality. An ``OrderedDict`` also considers the order in which the items were added."
 msgstr ""
 
 #: ../../source/collections/ordereddict.rst:0
-# f055963ee6604d24921745de21b35967
 msgid "collections_ordereddict_equality.py"
 msgstr ""
 
 #: ../../source/collections/ordereddict.rst:50
-# c44463300dc046f0a3859f3fa08d1939
 msgid "In this case, since the two ordered dictionaries are created from values in a different order, they are considered to be different."
 msgstr ""
 
 #: ../../source/collections/ordereddict.rst:67
-# 74f340700b3f477ab764bd3f82aa01a4
 msgid "Reordering"
 msgstr ""
 
 #: ../../source/collections/ordereddict.rst:69
-# e489d4ff0b7343d3957fc7ea8eae8c57
 msgid "It is possible to change the order of the keys in an ``OrderedDict`` by moving them to either the beginning or the end of the sequence using ``move_to_end()``."
 msgstr ""
 
 #: ../../source/collections/ordereddict.rst:0
-# bc8f00e1be844455835d2162efb16556
 msgid "collections_ordereddict_move_to_end.py"
 msgstr ""
 
 #: ../../source/collections/ordereddict.rst:77
-# beb9e87a8b7247d0b0e7dc300d6eefe2
 msgid "The ``last`` argument tells ``move_to_end()`` whether to move the item to be the last item in the key sequence (when ``True``) or the first (when ``False``)."
 msgstr ""
 
 #: ../../source/collections/ordereddict.rst:110
-# fbe6f39fb9574e8184859879b83e71e1
 msgid "`PYTHONHASHSEED <https://docs.python.org/3.5/using/cmdline.html#envvar-PYTHONHASHSEED>`__ -- Environment variable to control the random seed value added to the hash algorithm for key locations in the dictionary."
 msgstr ""
 

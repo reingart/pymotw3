@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,72 +17,58 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/asyncio/scheduling.rst:3
-# 19fed5b46150437d82f1cb4a1ad91104
 msgid "Scheduling Calls to Regular Functions"
 msgstr ""
 
 #: ../../source/asyncio/scheduling.rst:5
-# 56e2f5a4801c4353a02c0c1584b90eff
 msgid "In addition to managing coroutines and I/O callbacks, the ``asyncio`` event loop can schedule calls to regular functions based on the timer value kept in the loop."
 msgstr ""
 
 #: ../../source/asyncio/scheduling.rst:10
-# 5bfaf120d1594fcb8382a635edf13ce5
 msgid "Scheduling a Callback \"Soon\""
 msgstr ""
 
 #: ../../source/asyncio/scheduling.rst:12
-# 5894287a583b4138986755314570c364
 msgid "If the timing of the callback does not matter, ``call_soon()`` can be used to schedule the call for the next iteration of the loop. Any extra positional arguments after the function are passed to the callback when it is invoked. To pass keyword arguments to the callback, use ``partial()`` from the :mod:`functools` module."
 msgstr ""
 
 #: ../../source/asyncio/scheduling.rst:0
-# b229d880a97f4dd296d305c283925606
 msgid "asyncio_call_soon.py"
 msgstr ""
 
 #: ../../source/asyncio/scheduling.rst:22
-# 660a15197f7e443397cb980b32f8c603
 msgid "The callbacks are invoked in the order they are scheduled."
 msgstr ""
 
 #: ../../source/asyncio/scheduling.rst:41
-# 09dd62452a3f4741b425333109b15144
 msgid "Scheduling a Callback with a Delay"
 msgstr ""
 
 #: ../../source/asyncio/scheduling.rst:43
-# 7782c268ee054d489f5de03e5fa27766
 msgid "To postpone a callback until some time in the future, use ``call_later()``. The first argument is the delay in seconds and the second argument is the callback."
 msgstr ""
 
 #: ../../source/asyncio/scheduling.rst:0
-# 4bc9ecdbf0e84f91a087a71e1958955f
 msgid "asyncio_call_later.py"
 msgstr ""
 
 #: ../../source/asyncio/scheduling.rst:51
-# fa5bfda53e274fe093be3f81d846a00d
 msgid "In this example, the same callback function is scheduled for several different times with different arguments. The final instance, using ``call_soon()``, results in the callback being invoked with the argument ``3`` before any of the time-scheduled instances, showing that \"soon\" usually implies a minimal delay."
 msgstr ""
 
 #: ../../source/asyncio/scheduling.rst:75
-# cbf755d642ea40c69d429e7a30aa8fbf
 msgid "Scheduling a Callback for a Specific Time"
 msgstr ""
 
 #: ../../source/asyncio/scheduling.rst:77
-# d907292bb05b4953a026b312f84e4854
 msgid "It is also possible to schedule a call to occur at a specific time. The loop uses a monotonic clock, rather than a wall-clock time, to ensure that the value of \"now\" never regresses. To choose a time for a scheduled callback it is necessary to start from the internal state of that clock using the loop's ``time()`` method."
 msgstr ""
 
 #: ../../source/asyncio/scheduling.rst:0
-# e7c5788c92cb4858a013804ddec2184c
 msgid "asyncio_call_at.py"
 msgstr ""
 
 #: ../../source/asyncio/scheduling.rst:87
-# 1a49aae3952444019f1d57ffd714067e
 msgid "Note that the time according to the loop does not match the value returned by ``time.time()``."
 msgstr ""
 

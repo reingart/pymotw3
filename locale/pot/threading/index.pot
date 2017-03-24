@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,457 +17,366 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/threading/index.rst:3
-# 7cca972948994468b356aeb29ef60e65
 msgid "threading --- Manage Concurrent Operations Within a Process"
 msgstr ""
 
 #: ../../source/threading/index.rst:8
-# 3a6c63ac5d3b4c1189f1c0eb8c1cb312
 msgid "Manage several threads of execution."
 msgstr ""
 
 #: ../../source/threading/index.rst:10
-# 014f74cb36b343b8b5a709bd690b99b0
 msgid "Using threads allows a program to run multiple operations concurrently in the same process space."
 msgstr ""
 
 #: ../../source/threading/index.rst:14
-# d669dc826ce047dbb118fbe3e8df1933
 msgid "Thread Objects"
 msgstr ""
 
 #: ../../source/threading/index.rst:16
-# 5bfff035b69b4de49a66f6a2fd024e0c
 msgid "The simplest way to use a ``Thread`` is to instantiate it with a target function and call ``start()`` to let it begin working."
 msgstr ""
 
 #: ../../source/threading/index.rst:0
-# 3e4071a7a8e2413d9f87bfbc80e4807f
 msgid "threading_simple.py"
 msgstr ""
 
 #: ../../source/threading/index.rst:23
-# a1f6020a1f664f53930e3a5a31efef59
 msgid "The output is five lines with ``\"Worker\"`` on each."
 msgstr ""
 
 #: ../../source/threading/index.rst:41
-# acbe7289231a4b99844e3706f0a24d5a
 msgid "It is useful to be able to spawn a thread and pass it arguments to tell it what work to do. Any type of object can be passed as argument to the thread.  This example passes a number, which the thread then prints."
 msgstr ""
 
 #: ../../source/threading/index.rst:0
-# 515a3fd6daea426eb3fd9b82b930d69f
 msgid "threading_simpleargs.py"
 msgstr ""
 
 #: ../../source/threading/index.rst:50
-# 205757c48986454398d68758b50ddee4
 msgid "The integer argument is now included in the message printed by each thread."
 msgstr ""
 
 #: ../../source/threading/index.rst:70
-# 1a825cea12c14a59915cad60a754e31b
 msgid "Determining the Current Thread"
 msgstr ""
 
 #: ../../source/threading/index.rst:72
-# e78369c4343d4d468dca29d56f936c23
 msgid "Using arguments to identify or name the thread is cumbersome and unnecessary.  Each ``Thread`` instance has a name with a default value that can be changed as the thread is created. Naming threads is useful in server processes with multiple service threads handling different operations."
 msgstr ""
 
 #: ../../source/threading/index.rst:0
-# 7c9cbd85f2c64190a5cb3e289bc7196c
 msgid "threading_names.py"
 msgstr ""
 
 #: ../../source/threading/index.rst:82
-# 3b8fcc98ad634e8ea0f995dbbac4065e
 msgid "The debug output includes the name of the current thread on each line. The lines with ``\"Thread-1\"`` in the thread name column correspond to the unnamed thread ``w2``."
 msgstr ""
 
 #: ../../source/threading/index.rst:103
-# 226bb03922c3408cb48d8c06da0d0794
 msgid "Most programs do not use ``print`` to debug. The :mod:`logging` module supports embedding the thread name in every log message using the formatter code ``%(threadName)s``. Including thread names in log messages makes it possible to trace those messages back to their source."
 msgstr ""
 
 #: ../../source/threading/index.rst:0
-# c8a16a9e28e44f94be43cd143104efe1
 msgid "threading_names_log.py"
 msgstr ""
 
 #: ../../source/threading/index.rst:113
-# 64dcbb63105a47bb820f3de074131ae8
 msgid ":mod:`logging` is also thread-safe, so messages from different threads are kept distinct in the output."
 msgstr ""
 
 #: ../../source/threading/index.rst:134
-# 78aa943bff744e528efe95d426d21f6b
 msgid "Daemon vs. Non-Daemon Threads"
 msgstr ""
 
 #: ../../source/threading/index.rst:136
-# 8134bc3b21e14154bdbe950aad24aa6d
 msgid "Up to this point, the example programs have implicitly waited to exit until all threads have completed their work. Sometimes programs spawn a thread as a *daemon* that runs without blocking the main program from exiting. Using daemon threads is useful for services where there may not be an easy way to interrupt the thread, or where letting the thread die in the middle of its work does not lose or corrupt data (for example, a thread that generates \"heart beats\" for a service monitoring tool). To mark a thread as a daemon, pass ``daemon=True`` when constructing it or call its ``set_daemon()`` method with ``True``.  The default is for threads to not be daemons."
 msgstr ""
 
 #: ../../source/threading/index.rst:0
-# f8908a0c58af46e9a4c3f1aac0ee0b38
 msgid "threading_daemon.py"
 msgstr ""
 
 #: ../../source/threading/index.rst:151
-# d9ee6143ce29413a85b416ebb307ec4c
 msgid "The output does not include the ``\"Exiting\"`` message from the daemon thread, since all of the non-daemon threads (including the main thread) exit before the daemon thread wakes up from the ``sleep()`` call."
 msgstr ""
 
 #: ../../source/threading/index.rst:170
-# 58689f39a3b043f7864a54b92ec54d46
 msgid "To wait until a daemon thread has completed its work, use the ``join()`` method."
 msgstr ""
 
 #: ../../source/threading/index.rst:0
-# 72bf97e0648d49a59b55816a50cc6d40
 msgid "threading_daemon_join.py"
 msgstr ""
 
 #: ../../source/threading/index.rst:177
-# f922edadd7f64c5bbe6712776cab1103
 msgid "Waiting for the daemon thread to exit using ``join()`` means it has a chance to produce its ``\"Exiting\"`` message."
 msgstr ""
 
 #: ../../source/threading/index.rst:195
-# 8dc53360ac54414898dae17abe56d7a0
 msgid "By default, ``join()`` blocks indefinitely. It is also possible to pass a float value representing the number of seconds to wait for the thread to become inactive. If the thread does not complete within the timeout period, ``join()`` returns anyway."
 msgstr ""
 
 #: ../../source/threading/index.rst:0
-# 5e65748e3ef8453e8165abeea750c3ae
 msgid "threading_daemon_join_timeout.py"
 msgstr ""
 
 #: ../../source/threading/index.rst:204
-# 5e7ae7ef004f44e0a153849c48b16e68
 msgid "Since the timeout passed is less than the amount of time the daemon thread sleeps, the thread is still \"alive\" after ``join()`` returns."
 msgstr ""
 
 #: ../../source/threading/index.rst:224
-# d5f82e7b3c184e7886eb05862a18d031
 msgid "Enumerating All Threads"
 msgstr ""
 
 #: ../../source/threading/index.rst:226
-# bcbf6ff5a11146f3a6d957bbbf083823
 msgid "It is not necessary to retain an explicit handle to all of the daemon threads in order to ensure they have completed before exiting the main process. ``enumerate()`` returns a list of active ``Thread`` instances. The list includes the current thread, and since joining the current thread introduces a deadlock situation, it must be skipped."
 msgstr ""
 
 #: ../../source/threading/index.rst:0
-# 3e4d0378b3f344c996b9177e5d8e01cf
 msgid "threading_enumerate.py"
 msgstr ""
 
 #: ../../source/threading/index.rst:236
-# bf428b81b0784501a1ea859bb6479e03
 msgid "Because the worker is sleeping for a random amount of time, the output from this program may vary."
 msgstr ""
 
 #: ../../source/threading/index.rst:260
-# 7b791ad2a18f490c9e5636cfd401a0ca
 msgid "Subclassing Thread"
 msgstr ""
 
 #: ../../source/threading/index.rst:262
-# f81f269b4788479fa030d0a227164936
 msgid "At start-up, a ``Thread`` does some basic initialization and then calls its ``run()`` method, which calls the target function passed to the constructor. To create a subclass of ``Thread``, override ``run()`` to do whatever is necessary."
 msgstr ""
 
 #: ../../source/threading/index.rst:0
-# e3842485ef3940bf8f906d556afebb04
 msgid "threading_subclass.py"
 msgstr ""
 
 #: ../../source/threading/index.rst:271
-# 4918b08dfa5a4ff7b41160279edfa615
 msgid "The return value of ``run()`` is ignored."
 msgstr ""
 
 #: ../../source/threading/index.rst:289
-# f96dba8e08e041868eed914de46677f3
 msgid "Because the ``args`` and ``kwargs`` values passed to the ``Thread`` constructor are saved in private variables using names prefixed with ``'__'``, they are not easily accessed from a subclass.  To pass arguments to a custom thread type, redefine the constructor to save the values in an instance attribute that can be seen in the subclass."
 msgstr ""
 
 #: ../../source/threading/index.rst:0
-# 95df5b60fc0b4579ac5ef116ed8e82e6
 msgid "threading_subclass_args.py"
 msgstr ""
 
 #: ../../source/threading/index.rst:299
-# a845b127c8aa428a922dbb7eb28da3b7
 msgid "``MyThreadWithArgs`` uses the same API as ``Thread``, but another class could easily change the constructor method to take more or different arguments more directly related to the purpose of the thread, as with any other class."
 msgstr ""
 
 #: ../../source/threading/index.rst:322
-# a79a9b7c25ca4edfbb28fd4d24edbc4d
 msgid "Timer Threads"
 msgstr ""
 
 #: ../../source/threading/index.rst:324
-# cacf5177775f4660a7637a2240538762
 msgid "One example of a reason to subclass ``Thread`` is provided by ``Timer``, also included in ``threading``. A ``Timer`` starts its work after a delay, and can be canceled at any point within that delay time period."
 msgstr ""
 
 #: ../../source/threading/index.rst:0
-# 9bb7344b37a4419f9d2e52f90312de63
 msgid "threading_timer.py"
 msgstr ""
 
 #: ../../source/threading/index.rst:333
-# 58206f7d0e4b43cf9cbbdf9070231173
 msgid "The second timer in this example is never run, and the first timer appears to run after the rest of the main program is done. Since it is not a daemon thread, it is joined implicitly when the main thread is done."
 msgstr ""
 
 #: ../../source/threading/index.rst:355
-# 7a1fba64906544479d4ecfd571a6df4f
 msgid "Signaling Between Threads"
 msgstr ""
 
 #: ../../source/threading/index.rst:357
-# ef4695820a954a48a58a7e40ffdd93b9
 msgid "Although the point of using multiple threads is to run separate operations concurrently, there are times when it is important to be able to synchronize the operations in two or more threads.  Event objects are a simple way to communicate between threads safely.  An ``Event`` manages an internal flag that callers can control with the ``set()`` and ``clear()`` methods. Other threads can use ``wait()`` to pause until the flag is set, effectively blocking progress until allowed to continue."
 msgstr ""
 
 #: ../../source/threading/index.rst:0
-# f74625014d9f43f4bc312508da0aa9eb
 msgid "threading_event.py"
 msgstr ""
 
 #: ../../source/threading/index.rst:370
-# 74ded495117c4bdf9029d499ee47819e
 msgid "The ``wait()`` method takes an argument representing the number of seconds to wait for the event before timing out.  It returns a Boolean indicating whether or not the event is set, so the caller knows why ``wait()`` returned.  The ``is_set()`` method can be used separately on the event without fear of blocking."
 msgstr ""
 
 #: ../../source/threading/index.rst:376
-# c763bf2f50db4d5a8ca67bc9a02d6320
 msgid "In this example, ``wait_for_event_timeout()`` checks the event status without blocking indefinitely.  The ``wait_for_event()`` blocks on the call to ``wait()``, which does not return until the event status changes."
 msgstr ""
 
 #: ../../source/threading/index.rst:400
-# 6dbea2f182924dac8314df083a9b5033
 msgid "Controlling Access to Resources"
 msgstr ""
 
 #: ../../source/threading/index.rst:402
-# 2fd8311f5fc24136ad71796623cea102
 msgid "In addition to synchronizing the operations of threads, it is also important to be able to control access to shared resources to prevent corruption or missed data. Python's built-in data structures (lists, dictionaries, etc.) are thread-safe as a side-effect of having atomic byte-codes for manipulating them (the global interpreter lock used to protect Python's internal data structures is not released in the middle of an update). Other data structures implemented in Python, or simpler types like integers and floats, do not have that protection. To guard against simultaneous access to an object, use a ``Lock`` object."
 msgstr ""
 
 #: ../../source/threading/index.rst:0
-# b0e03c6561d1456d8d8d2ecf9f885820
 msgid "threading_lock.py"
 msgstr ""
 
 #: ../../source/threading/index.rst:417
-# 1928b24adb05488fbd021ffe5d34b372
 msgid "In this example, the ``worker()`` function increments a ``Counter`` instance, which manages a ``Lock`` to prevent two threads from changing its internal state at the same time. If the ``Lock`` was not used, there is a possibility of missing a change to the value attribute."
 msgstr ""
 
 #: ../../source/threading/index.rst:450
-# a125cd2e2eba4b7eb01cd79ce956f482
 msgid "To find out whether another thread has acquired the lock without holding up the current thread, pass ``False`` for the ``blocking`` argument to ``acquire()``. In the next example, ``worker()`` tries to acquire the lock three separate times and counts how many attempts it has to make to do so. In the mean time, ``lock_holder()`` cycles between holding and releasing the lock, with short pauses in each state used to simulate load."
 msgstr ""
 
 #: ../../source/threading/index.rst:0
-# cf4b60730ea548d59535233f1aa29b63
 msgid "threading_lock_noblock.py"
 msgstr ""
 
 #: ../../source/threading/index.rst:462
-# b8c96f2366ac4afa8afea5546274b848
 msgid "It takes ``worker()`` more than three iterations to acquire the lock three separate times."
 msgstr ""
 
 #: ../../source/threading/index.rst:496
-# 5319bb79b83846008982528a057816c7
 msgid "Re-entrant Locks"
 msgstr ""
 
 #: ../../source/threading/index.rst:498
-# c5737e885c2241baa00135858493964b
 msgid "Normal ``Lock`` objects cannot be acquired more than once, even by the same thread. This can introduce undesirable side-effects if a lock is accessed by more than one function in the same call chain."
 msgstr ""
 
 #: ../../source/threading/index.rst:0
-# 22d65c1410e04494b93c4617ed7442f5
 msgid "threading_lock_reacquire.py"
 msgstr ""
 
 #: ../../source/threading/index.rst:506
-# 387f0284a33748d6a36f08015cf7a6f9
 msgid "In this case, the second call to ``acquire()`` is given a zero timeout to prevent it from blocking because the lock has been obtained by the first call."
 msgstr ""
 
 #: ../../source/threading/index.rst:523
-# 45eb4298a8b344fca826ba6d1842e35a
 msgid "In a situation where separate code from the same thread needs to \"re-acquire\" the lock, use an ``RLock`` instead."
 msgstr ""
 
 #: ../../source/threading/index.rst:0
-# 46f0ff97ea534d0b89082732bfb9eb02
 msgid "threading_rlock.py"
 msgstr ""
 
 #: ../../source/threading/index.rst:530
-# 1ce6ddea6cc5449a9cac7a83254a4acb
 msgid "The only change to the code from the previous example was substituting ``RLock`` for ``Lock``."
 msgstr ""
 
 #: ../../source/threading/index.rst:547
-# f0883a817f23418b9be7f6e4d31cb4b9
 msgid "Locks as Context Managers"
 msgstr ""
 
 #: ../../source/threading/index.rst:549
-# 98fc7bd8ada540d897de23a813556f2e
 msgid "Locks implement the context manager API and are compatible with the ``with`` statement.  Using ``with`` removes the need to explicitly acquire and release the lock."
 msgstr ""
 
 #: ../../source/threading/index.rst:0
-# b72e7abdb03d46989ad0bdb8550ed694
 msgid "threading_lock_with.py"
 msgstr ""
 
 #: ../../source/threading/index.rst:557
-# 761f237e85a64ddd82768963151cf2a4
 msgid "The two functions ``worker_with()`` and ``worker_no_with()`` manage the lock in equivalent ways."
 msgstr ""
 
 #: ../../source/threading/index.rst:574
-# 7086dde6cbdc42ab8c364a56f4f6b55a
 msgid "Synchronizing Threads"
 msgstr ""
 
 #: ../../source/threading/index.rst:576
-# 2a45e8b50dcc43068c1a0cd2b31ec07f
 msgid "In addition to using ``Events``, another way of synchronizing threads is through using a ``Condition`` object. Because the ``Condition`` uses a ``Lock``, it can be tied to a shared resource, allowing multiple threads to wait for the resource to be updated.  In this example, the ``consumer()`` threads wait for the ``Condition`` to be set before continuing. The ``producer()`` thread is responsible for setting the condition and notifying the other threads that they can continue."
 msgstr ""
 
 #: ../../source/threading/index.rst:0
-# 90b00a16aecc40fe8229c4ce76519a3e
 msgid "threading_condition.py"
 msgstr ""
 
 #: ../../source/threading/index.rst:589
-# 21bd5be51c504d79b309c09dd4f7b21e
 msgid "The threads use ``with`` to acquire the lock associated with the ``Condition``. Using the ``acquire()`` and ``release()`` methods explicitly also works."
 msgstr ""
 
 #: ../../source/threading/index.rst:610
-# ad8bb2ae57a34ce7bee0f651664a10e8
 msgid "Barriers are another thread synchronization mechanism. A ``Barrier`` establishes a control point and all participating threads block until all of the participating \"parties\" have reached that point. It lets threads start up separately and then pause until they are all ready to proceed."
 msgstr ""
 
 #: ../../source/threading/index.rst:0
-# 3a64c81c11ae45afbbca7ffdb5be2eeb
 msgid "threading_barrier.py"
 msgstr ""
 
 #: ../../source/threading/index.rst:620
-# cb5a00647b4a4ddab6138d8c03557c88
 msgid "In this example, the ``Barrier`` is configured to block until three threads are waiting. When the condition is met, all of the threads are released past the control point at the same time. The return value from ``wait()`` indicates the number of the party being released, and can be used to limit some threads from taking an action like cleaning up a shared resource."
 msgstr ""
 
 #: ../../source/threading/index.rst:647
-# 7dafd666b3b04754a6425c1769bff018
 msgid "The ``abort()`` method of ``Barrier`` causes all of the waiting threads to receive a ``BrokenBarrierError``. This allows threads to clean up if processing is stopped while they are blocked on ``wait()``."
 msgstr ""
 
 #: ../../source/threading/index.rst:0
-# 4f6482b135774c3ab06450ad5bf9f056
 msgid "threading_barrier_abort.py"
 msgstr ""
 
 #: ../../source/threading/index.rst:656
-# 59b25950ed3243bf9c7a441bf807d63d
 msgid "This example configures the ``Barrier`` to expect one more participating thread than is actually started so that processing in all of the threads is blocked. The ``abort()`` call raises an exception in each blocked thread."
 msgstr ""
 
 #: ../../source/threading/index.rst:682
-# 1de92ff15dbe42b7a04c713d6426ad55
 msgid "Limiting Concurrent Access to Resources"
 msgstr ""
 
 #: ../../source/threading/index.rst:684
-# ca08d7ae04a54ed4ba4d7c070657a05c
 msgid "Sometimes it is useful to allow more than one worker access to a resource at a time, while still limiting the overall number. For example, a connection pool might support a fixed number of simultaneous connections, or a network application might support a fixed number of concurrent downloads. A ``Semaphore`` is one way to manage those connections."
 msgstr ""
 
 #: ../../source/threading/index.rst:0
-# 11e7ac21f9754532b47191ff4e94922b
 msgid "threading_semaphore.py"
 msgstr ""
 
 #: ../../source/threading/index.rst:695
-# dddaa627444f4064aeacb9f1bb58c571
 msgid "In this example, the ``ActivePool`` class simply serves as a convenient way to track which threads are able to run at a given moment. A real resource pool would allocate a connection or some other value to the newly active thread, and reclaim the value when the thread is done. Here, it is just used to hold the names of the active threads to show that at most two are running concurrently."
 msgstr ""
 
 #: ../../source/threading/index.rst:726
-# b695463843a04e26bd8d12aca161b227
 msgid "Thread-specific Data"
 msgstr ""
 
 #: ../../source/threading/index.rst:728
-# c329b8325585429d943056eb77c5ceca
 msgid "While some resources need to be locked so multiple threads can use them, others need to be protected so that they are hidden from threads that do not own them. The ``local()`` class creates an object capable of hiding values from view in separate threads."
 msgstr ""
 
 #: ../../source/threading/index.rst:0
-# afc3b1bdc77548438b213078e9cb5c62
 msgid "threading_local.py"
 msgstr ""
 
 #: ../../source/threading/index.rst:737
-# 2a583623c9ab4d8081beffa3c731fefc
 msgid "The attribute ``local_data.value`` is not present for any thread until it is set in that thread."
 msgstr ""
 
 #: ../../source/threading/index.rst:757
-# 37de885a38984a6cbb4fbcbb9d46c25e
 msgid "To initialize the settings so all threads start with the same value, use a subclass and set the attributes in ``__init__()``."
 msgstr ""
 
 #: ../../source/threading/index.rst:0
-# 87f01c591a4b47fdb60b9d36cc1244ad
 msgid "threading_local_defaults.py"
 msgstr ""
 
 #: ../../source/threading/index.rst:764
-# 3c5e238f309d47029ad43365bdc4230c
 msgid "``__init__()`` is invoked on the same object (note the ``id()`` value), once in each thread to set the default values."
 msgstr ""
 
 #: ../../source/threading/index.rst:791
-# 8ced8a19a9e044d68efeb610171cede8
 msgid ":pydoc:`threading`"
 msgstr ""
 
 #: ../../source/threading/index.rst:793
-# b335e7e066584cea8deadc5ba87c5d0a
 msgid ":ref:`Python 2 to 3 porting notes for threading <porting-threading>`"
 msgstr ""
 
 #: ../../source/threading/index.rst:795
-# 8889e65062c9407589aceb9c77b7bb77
 msgid ":mod:`thread` -- Lower level thread API."
 msgstr ""
 
 #: ../../source/threading/index.rst:797
-# f70e7f4d11dd4965930a136338cfabfe
 msgid ":mod:`Queue` -- Thread-safe queue, useful for passing messages between threads."
 msgstr ""
 
 #: ../../source/threading/index.rst:800
-# 842fe4053dcc4d2d9f4c5ff9af2190b7
 msgid ":mod:`multiprocessing` -- An API for working with processes that mirrors the ``threading`` API."
 msgstr ""
 

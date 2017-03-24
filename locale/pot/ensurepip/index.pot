@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,67 +17,54 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/ensurepip/index.rst:3
-# 80d7a62721da433aa5d8a0bb36d8e138
 msgid "ensurepip --- Install the Python Package Installer"
 msgstr ""
 
 #: ../../source/ensurepip/index.rst:8
-# 50349bf196f04b48ad6b70ef387909c7
 msgid "Install pip, the Python package installer."
 msgstr ""
 
 #: ../../source/ensurepip/index.rst:10
-# 15ea1254db044386ba59a591f00b46f0
 msgid "While Python is the \"Batteries Included\" programming language and comes with a wide variety of modules in the standard library, there are even more libraries, frameworks, and tools available to be installed from the `Python Package Index`_. To install those packages, a developer needs the installer tool ``pip``. Installing a tool meant to install tools presents an interesting bootstrapping issue, which ``ensurepip`` solves."
 msgstr ""
 
 #: ../../source/ensurepip/index.rst:19
-# 3846fc9a8a104052a8ef1bfbd8dc0c2f
 msgid "Installing ``pip``"
 msgstr ""
 
 #: ../../source/ensurepip/index.rst:21
-# e7df74f11e7a46448c685896b1b03845
 msgid "This example uses a virtual environment configured without ``pip`` installed."
 msgstr ""
 
 #: ../../source/ensurepip/index.rst:49
-# 6c393a9c8ed24344b61368992bd42888
 msgid "Run ``ensurepip`` from the command line using the ``-m`` option to the Python interpreter. By default a copy of pip that is delivered with the standard library is installed. This version can then be used to install an updated version of pip.  To ensure a recent version of ``pip`` is installed immediately, use the ``--upgrade`` option with ``ensurepip``."
 msgstr ""
 
 #: ../../source/ensurepip/index.rst:72
-# ec5c7b888f344e908ae3c050ecec1e0e
 msgid "This installs ``pip3`` and ``pip3.5`` as commands in the virtual environment, with the ``setuptools`` dependency needed to support those commands."
 msgstr ""
 
 #: ../../source/ensurepip/index.rst:98
-# bf79f00f7d2f491d83ff750bb35e3577
 msgid ":pydoc:`ensurepip`"
 msgstr ""
 
 #: ../../source/ensurepip/index.rst:100
-# 0a31bb18032147e3b9015921feb4be4a
 msgid ":mod:`venv` -- Virtual environments"
 msgstr ""
 
 #: ../../source/ensurepip/index.rst:102
-# 5c10ee7114664c2bb149d6946fbc5abd
 msgid ":pep:`453` -- Explicit bootstrapping of pip in Python installations"
 msgstr ""
 
 #: ../../source/ensurepip/index.rst:104
-# eb8a17c4f07c439ba72f52273bc6bdcc
 msgid "`Installing Python Modules <https://docs.python.org/3.5/installing/index.html#installing-index>`__ -- Instructions for installing extra packages for use with Python."
 msgstr ""
 
 #: ../../source/ensurepip/index.rst:109
-# cde534178f254a48b8a30a6f7f4dfa53
 msgid "`Python Package Index`_ -- Hosting site for extension modules for Python programmers."
 msgstr ""
 
 #: ../../source/ensurepip/index.rst:112
-# 8382cfadf7ab43448b627c2f0adbb765
 msgid "`pip <https://pypi.python.org/pypi/pip>`__ -- Tool for installing Python packages."
 msgstr ""
 

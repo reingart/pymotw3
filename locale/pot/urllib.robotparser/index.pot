@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,94 +17,75 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/urllib.robotparser/index.rst:3
-# 4d4ab99660364082b1fc03f9fa97ff1a
 msgid "urllib.robotparser --- Internet Spider Access Control"
 msgstr ""
 
 #: ../../source/urllib.robotparser/index.rst:8
-# 6a1e49f023b7491aa48a61d055ca3907
 msgid "Parse ``robots.txt`` file used to control Internet spiders"
 msgstr ""
 
 #: ../../source/urllib.robotparser/index.rst:10
-# 068e1a8e0e334f638f389917d7413398
 msgid ":mod:`robotparser` implements a parser for the ``robots.txt`` file format, including a function that checks if a given user agent can access a resource.  It is intended for use in well-behaved spiders, or other crawler applications that need to either be throttled or otherwise restricted."
 msgstr ""
 
 #: ../../source/urllib.robotparser/index.rst:17
 #: ../../source/urllib.robotparser/index.rst:0
-# fe1ca10f6ed147be983f3f8a9ced710f
-# ec02fd5f12a144d2b6bf94689c38e5a2
 msgid "robots.txt"
 msgstr ""
 
 #: ../../source/urllib.robotparser/index.rst:19
-# 863ee4a36836427db3be0f318b53d04b
 msgid "The ``robots.txt`` file format is a simple text-based access control system for computer programs that automatically access web resources (\"spiders\", \"crawlers\", etc.).  The file is made up of records that specify the user agent identifier for the program followed by a list of URLs (or URL prefixes) the agent may not access."
 msgstr ""
 
 #: ../../source/urllib.robotparser/index.rst:25
-# 57d46a07207e4f128b9a71635a48a142
 msgid "This is the ``robots.txt`` file for ``https://pymotw.com/``:"
 msgstr ""
 
 #: ../../source/urllib.robotparser/index.rst:30
-# 0f46fe960b5e4d4bb5ae6bdb060e79e3
 msgid "It prevents access to some of the parts of the site that are expensive to compute and would overload the server if a search engine tried to index them.  For a more complete set of examples of ``robots.txt``, refer to `The Web Robots Page`_."
 msgstr ""
 
 #: ../../source/urllib.robotparser/index.rst:36
-# 3f5db0ae7a7f4d83910f47b6fd46f305
 msgid "Testing Access Permissions"
 msgstr ""
 
 #: ../../source/urllib.robotparser/index.rst:38
-# 3be1aceb891d45cb8d8b677c63f4da06
 msgid "Using the data presented earlier, a simple crawler can test whether it is allowed to download a page using ``RobotFileParser.can_fetch()``."
 msgstr ""
 
 #: ../../source/urllib.robotparser/index.rst:0
-# 3a168773e1af42368a519508d28dca45
 msgid "urllib_robotparser_simple.py"
 msgstr ""
 
 #: ../../source/urllib.robotparser/index.rst:45
-# 52a0a693eec74e4cae51d5aa4698ebc3
 msgid "The URL argument to ``can_fetch()`` can be a path relative to the root of the site, or full URL."
 msgstr ""
 
 #: ../../source/urllib.robotparser/index.rst:72
-# 320df654f69b4bb99a2914340fb0f83e
 msgid "Long-lived Spiders"
 msgstr ""
 
 #: ../../source/urllib.robotparser/index.rst:74
-# be6c742e5ed046bdbd5290cfe5cc7f7a
 msgid "An application that takes a long time to process the resources it downloads or that is throttled to pause between downloads should check for new ``robots.txt`` files periodically based on the age of the content it has downloaded already.  The age is not managed automatically, but there are convenience methods to make tracking it easier."
 msgstr ""
 
 #: ../../source/urllib.robotparser/index.rst:0
-# 9963741ca3d843328a52d1730f69a3d2
 msgid "urllib_robotparser_longlived.py"
 msgstr ""
 
 #: ../../source/urllib.robotparser/index.rst:85
-# 7db9b330b60745f1ae4d581b57b4f2e7
 msgid "This extreme example downloads a new ``robots.txt`` file if the one it has is more than one second old."
 msgstr ""
 
 #: ../../source/urllib.robotparser/index.rst:111
-# 223cf864b39344b6b3b894ee46736aef
 msgid "A nicer version of the long-lived application might request the modification time for the file before downloading the entire thing. On the other hand, ``robots.txt`` files are usually fairly small, so it is not that much more expensive to just retrieve the entire document again."
 msgstr ""
 
 #: ../../source/urllib.robotparser/index.rst:120
-# 0a514a98f1754750bea66c99ed1aa4a8
 msgid ":pydoc:`urllib.robotparser`"
 msgstr ""
 
 #: ../../source/urllib.robotparser/index.rst:122
-# c952198e96434012b67e37ca3889e1a4
 msgid "`The Web Robots Page`_ -- Description of ``robots.txt`` format."
 msgstr ""
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,222 +17,178 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/gc/index.rst:3
-# b2133ee07d564a1a94dacfaded71d1f3
 msgid "gc --- Garbage Collector"
 msgstr ""
 
 #: ../../source/gc/index.rst:8
-# e801dad1fadf40a3b038de4472dc9446
 msgid "Manages memory used by Python objects"
 msgstr ""
 
 #: ../../source/gc/index.rst:10
-# 4d153a3a948e490f9abbb8977f5bac90
 msgid "``gc`` exposes the underlying memory management mechanism of Python, the automatic garbage collector.  The module includes functions for controlling how the collector operates and to examine the objects known to the system, either pending collection or stuck in reference cycles and unable to be freed."
 msgstr ""
 
 #: ../../source/gc/index.rst:17
-# 5543672302a64e2a8c338c5072c7a490
 msgid "Tracing References"
 msgstr ""
 
 #: ../../source/gc/index.rst:19
-# 2706ad9e388e425f97be806c9987c33a
 msgid "With ``gc`` the incoming and outgoing references between objects can be used to find cycles in complex data structures.  If a data structure is known to have a cycle, custom code can be used to examine its properties.  If the cycle is in unknown code, the ``get_referents()`` and ``get_referrers()`` functions can be used to build generic debugging tools."
 msgstr ""
 
 #: ../../source/gc/index.rst:26
-# c22e408b7cda475895867c938751bf9c
 msgid "For example, ``get_referents()`` shows the objects *referred to* by the input arguments."
 msgstr ""
 
 #: ../../source/gc/index.rst:0
-# 2cd084d0428840aa812d0e3003ccb7b3
 msgid "gc_get_referents.py"
 msgstr ""
 
 #: ../../source/gc/index.rst:33
-# f4400083bfa34111b946f669e5f6c736
 msgid "In this case, the ``Graph`` instance ``three`` holds references to its instance dictionary (in the ``__dict__`` attribute) and its class."
 msgstr ""
 
 #: ../../source/gc/index.rst:55
-# c41500c7d7944fc8835dad1527cd0533
 msgid "The next example uses a :mod:`Queue` to perform a breadth-first traversal of all of the object references looking for cycles.  The items inserted into the queue are tuples containing the reference chain so far and the next object to examine.  It starts with ``three``, and looks at everything it refers to.  Skipping classes avoids looking at methods, modules, etc."
 msgstr ""
 
 #: ../../source/gc/index.rst:0
-# 33ee74bdbf5c47e79120d717cd30a1ab
 msgid "gc_get_referents_cycles.py"
 msgstr ""
 
 #: ../../source/gc/index.rst:66
-# c75dc010c97f48188492aaeca0e3757d
 msgid "The cycle in the nodes is easily found by watching for objects that have already been processed.  To avoid holding references to those objects, their ``id()`` values are cached in a set.  The dictionary objects found in the cycle are the ``__dict__`` values for the ``Graph`` instances, and hold their instance attributes."
 msgstr ""
 
 #: ../../source/gc/index.rst:102
-# 55981709865d41be90b905fe6b3923fc
 msgid "Forcing Garbage Collection"
 msgstr ""
 
 #: ../../source/gc/index.rst:104
-# 5d056d84564447edbe949ad140df9566
 msgid "Although the garbage collector runs automatically as the interpreter executes a program, it can be triggered to run at a specific time when there are a lot of objects to free or there is not much work happening and the collector will not hurt application performance.  Trigger collection using ``collect()``."
 msgstr ""
 
 #: ../../source/gc/index.rst:0
-# d0fea7f88e3f4cf98cff344296da4ed1
 msgid "gc_collect.py"
 msgstr ""
 
 #: ../../source/gc/index.rst:114
-# 69f4a890b07a4a618e2fbc7407dfce9a
 msgid "In this example, the cycle is cleared as soon as collection runs the first time, since nothing refers to the ``Graph`` nodes except themselves.  ``collect()`` returns the number of \"unreachable\" objects it found.  In this case, the value is ``6`` because there are three objects with their instance attribute dictionaries."
 msgstr ""
 
 #: ../../source/gc/index.rst:143
-# 0ee1984dbec64ac682d61b6d87a9c4dc
 msgid "Finding References to Objects that Cannot be Collected"
 msgstr ""
 
 #: ../../source/gc/index.rst:145
-# 87a5dc2e25644eec8d566618b2d9396c
 msgid "Looking for the object holding a reference to another object is a little trickier than seeing what an object references.  Because the code asking about the reference needs to hold a reference itself, some of the referrers need to be ignored.  This example creates a graph cycle, then works through the ``Graph`` instances and removes the reference in the \"parent\" node."
 msgstr ""
 
 #: ../../source/gc/index.rst:0
-# bf7ccb0d4e3f4e53ac104a75e9304e21
 msgid "gc_get_referrers.py"
 msgstr ""
 
 #: ../../source/gc/index.rst:156
-# 3f55f0af215a4e06bf1a180ad9968ae6
 msgid "This sort of logic is overkill if the cycles are understood, but for an unexplained cycle in data using ``get_referrers()`` can expose the unexpected relationship."
 msgstr ""
 
 #: ../../source/gc/index.rst:202
-# d24e454ef9e8484da07bfb4e5dbe6758
 msgid "Collection Thresholds and Generations"
 msgstr ""
 
 #: ../../source/gc/index.rst:204
-# cd0702111e5a49f1b3a1539d5c1a326c
 msgid "The garbage collector maintains three lists of objects it sees as it runs, one for each \"generation\" tracked by the collector.  As objects are examined in each generation, they are either collected or they age into subsequent generations until they finally reach the stage where they are kept permanently."
 msgstr ""
 
 #: ../../source/gc/index.rst:210
-# e1886cfe443c46c4aeb7a3d7159e084b
 msgid "The collector routines can be tuned to occur at different frequencies based on the difference between the number of object allocations and deallocations between runs.  When the number of allocations minus the number of deallocations is greater than the threshold for the generation, the garbage collector is run.  The current thresholds can be examined with ``get_threshold()``."
 msgstr ""
 
 #: ../../source/gc/index.rst:0
-# 33427fe5f36c42f29192edd77fd9500d
 msgid "gc_get_threshold.py"
 msgstr ""
 
 #: ../../source/gc/index.rst:221
-# fbf4e8d174114acaa77c0cdf05548dc1
 msgid "The return value is a tuple with the threshold for each generation."
 msgstr ""
 
 #: ../../source/gc/index.rst:235
-# de79aafc22db4e3ab676a6fb08129f5a
 msgid "The thresholds can be changed with ``set_threshold()``.  This example program uses a command line argument to set the threshold for generation ``0`` then allocates a series of objects."
 msgstr ""
 
 #: ../../source/gc/index.rst:0
-# aa4a0b06ddd9460090d03125f49bc840
 msgid "gc_threshold.py"
 msgstr ""
 
 #: ../../source/gc/index.rst:243
-# fad93276d3bd4d089db7be701a881b23
 msgid "Different threshold values introduce the garbage collection sweeps at different times, shown here because debugging is enabled."
 msgstr ""
 
 #: ../../source/gc/index.rst:293
-# 521bca89fdb44064b4e51d19bed81323
 msgid "A smaller threshold causes the sweeps to run more frequently."
 msgstr ""
 
 #: ../../source/gc/index.rst:355
-# 43af14fb8c054ca58e5955eb00b917f3
 msgid "Debugging"
 msgstr ""
 
 #: ../../source/gc/index.rst:357
-# acca8f0ee5bf435db12a557771860403
 msgid "Debugging memory leaks can be challenging.  ``gc`` includes several options to expose the inner workings to make the job easier.  The options are bit-flags meant to be combined and passed to ``set_debug()`` to configure the garbage collector while the program is running.  Debugging information is printed to ``sys.stderr``."
 msgstr ""
 
 #: ../../source/gc/index.rst:363
-# 107a1fbc04cd4865bfb9e8613a66cecb
 msgid "The ``DEBUG_STATS`` flag turns on statistics reporting, causing the garbage collector to report when it is running, the number of objects tracked for each generation, and the amount of time it took to perform the sweep."
 msgstr ""
 
 #: ../../source/gc/index.rst:0
-# 95b0641e606843878ae4d22f4cf3ed97
 msgid "gc_debug_stats.py"
 msgstr ""
 
 #: ../../source/gc/index.rst:372
-# d299e24e5b21480c8dbdd1f244bd8dc4
 msgid "This example output shows two separate runs of the collector because it runs once when it is invoked explicitly, and a second time when the interpreter exits."
 msgstr ""
 
 #: ../../source/gc/index.rst:400
-# d1a3d11e5a9f4b8789172196d007811b
 msgid "Enabling ``DEBUG_COLLECTABLE`` and ``DEBUG_UNCOLLECTABLE`` causes the collector to report on whether each object it examines can or cannot be collected.  If seeing the objects that cannot be collected is not enough information to understand where data is being retained, enable ``DEBUG_SAVEALL`` to cause ``gc`` to preserve all objects it finds without any references in the :obj:`garbage` list."
 msgstr ""
 
 #: ../../source/gc/index.rst:0
-# 42bd747b47914f789202e82e21033e93
 msgid "gc_debug_saveall.py"
 msgstr ""
 
 #: ../../source/gc/index.rst:411
-# 884c4b1c0357473c94346db17210124a
 msgid "This allows the objects to be examined after garbage collection, which is helpful if, for example, the constructor cannot be changed to print the object id when each object is created."
 msgstr ""
 
 #: ../../source/gc/index.rst:443
-# 95218be459234bc5b1a66322412b1118
 msgid "For simplicity, ``DEBUG_LEAK`` is defined as a combination of all of the other options."
 msgstr ""
 
 #: ../../source/gc/index.rst:0
-# 98910691ad3a427596cf0d9aa5c2c7f5
 msgid "gc_debug_leak.py"
 msgstr ""
 
 #: ../../source/gc/index.rst:450
-# 368f4337fb3f4315b3fd2967bde08cfa
 msgid "Keep in mind that because ``DEBUG_SAVEALL`` is enabled by ``DEBUG_LEAK``, even the unreferenced objects that would normally have been collected and deleted are retained."
 msgstr ""
 
 #: ../../source/gc/index.rst:485
-# ab1031340a9e4cc88c6766c5db8a8056
 msgid ":pydoc:`gc`"
 msgstr ""
 
 #: ../../source/gc/index.rst:487
-# 8678a069648a4f92b31338984827205f
 msgid ":ref:`Python 2 to 3 porting notes for gc <porting-gc>`"
 msgstr ""
 
 #: ../../source/gc/index.rst:489
-# 3397cc807178413b97b7b8d99e420485
 msgid ":mod:`weakref` -- The ``weakref`` module provides a way to create references to objects without increasing their reference count, so they can still be garbage collected."
 msgstr ""
 
 #: ../../source/gc/index.rst:493
-# f1fc6ffa64614fbabdf0867624ee02be
 msgid "`Supporting Cyclic Garbage Collection <https://docs.python.org/3/c-api/gcsupport.html>`__ -- Background material from Python's C API documentation."
 msgstr ""
 
 #: ../../source/gc/index.rst:497
-# 1c93c4cc1ad3492caa697f1c28245f54
 msgid "`How does Python manage memory? <http://effbot.org/pyfaq/how-does-python-manage-memory.htm>`__ -- An article on Python memory management by Fredrik Lundh."
 msgstr ""
 

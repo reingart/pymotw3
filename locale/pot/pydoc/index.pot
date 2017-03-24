@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,67 +17,54 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/pydoc/index.rst:3
-# 1b68f96728d24faaa493552c336eeadb
 msgid "pydoc --- Online Help for Modules"
 msgstr ""
 
 #: ../../source/pydoc/index.rst:8
-# 2a032c2926be4beaab6fa609d14a5b3a
 msgid "Generates help for Python modules and classes from the code."
 msgstr ""
 
 #: ../../source/pydoc/index.rst:10
-# 38f6c959d60c4d56b06720b46d01d002
 msgid "The ``pydoc`` module imports a Python module and uses the contents to generate help text at runtime. The output includes docstrings for any objects that have them, and all of the classes, methods, and functions of the module are described."
 msgstr ""
 
 #: ../../source/pydoc/index.rst:16
-# c685652b89cc409e96590e93316106c7
 msgid "Plain Text Help"
 msgstr ""
 
 #: ../../source/pydoc/index.rst:18
-# 7509104f491d4e4b98dacafcda167f3b
 msgid "Running ``pydoc`` as a command line program and passing the name of a module produces help text for the module and its contents on the console, using a pager program if one is configured. For example, to see the help text for the :mod:`atexit` module, run ``pydoc atexit``."
 msgstr ""
 
 #: ../../source/pydoc/index.rst:62
-# f872164c689a4145945f1de7c5510ca5
 msgid "HTML Help"
 msgstr ""
 
 #: ../../source/pydoc/index.rst:64
-# 9660e8d29d14444b8e8f13dedc27d11a
 msgid "``pydoc`` will also generate HTML output, either writing a static file to a local directory or starting a web server to browse documentation online."
 msgstr ""
 
 #: ../../source/pydoc/index.rst:72
-# 341101135e8c40e6b4746f3117222333
 msgid "Creates ``atexit.html`` in the current directory."
 msgstr ""
 
 #: ../../source/pydoc/index.rst:82
-# 01e254f171d0462a83f7fa81dcddb427
 msgid "Starts a web server listening at ``http://localhost:5000/``. The server generates documentation on the fly as you browse. Use the ``b`` command to open a browser window automatically, and ``q`` to stop the server."
 msgstr ""
 
 #: ../../source/pydoc/index.rst:88
-# 44fb5540cb3f4c04ac83b63ca2292ef5
 msgid "Interactive Help"
 msgstr ""
 
 #: ../../source/pydoc/index.rst:90
-# b1f8fb98bb2e413799177a3a54382441
 msgid "``pydoc`` also adds a function ``help()`` to the ``__builtins__`` so the same information can be accessed from the Python interpreter prompt."
 msgstr ""
 
 #: ../../source/pydoc/index.rst:113
-# 3bef0b30ddaf4a59b0cf1acafe8387c3
 msgid ":pydoc:`pydoc`"
 msgstr ""
 
 #: ../../source/pydoc/index.rst:115
-# 80fa943469ef4f71a95e16f27e9ab590
 msgid ":mod:`inspect` -- The ``inspect`` module can be used to retrieve the docstrings for an object programmatically."
 msgstr ""
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,82 +17,66 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/sys/runtime.rst:5
-# 7803b5a28c9643ecacacde6e63704792
 msgid "Runtime Environment"
 msgstr ""
 
 #: ../../source/sys/runtime.rst:7
-# fcbfea0c255942c68b1ea5a868bc3db1
 msgid "``sys`` provides low-level APIs for interacting with the system outside of an application, by accepting command line arguments, accessing user input, and passing messages and status values to the user."
 msgstr ""
 
 #: ../../source/sys/runtime.rst:15
-# dfa0c0b1f5f0475e9ba0ac282baa72be
 msgid "Command Line Arguments"
 msgstr ""
 
 #: ../../source/sys/runtime.rst:17
-# 524b11a9ef0f48079c7779839c817642
 msgid "The arguments captured by the interpreter are processed there and not passed to the program being run.  Any remaining options and arguments, including the name of the script itself, are saved to ``sys.argv`` in case the program does need to use them."
 msgstr ""
 
 #: ../../source/sys/runtime.rst:0
-# dd5c7269e79c4173acc9b50ebde31507
 msgid "sys_argv.py"
 msgstr ""
 
 #: ../../source/sys/runtime.rst:26
-# a4829d272b204f3d8712a7948356fe01
 msgid "In the third example, the ``-u`` option is understood by the interpreter, and is not passed to the program being run."
 msgstr ""
 
 #: ../../source/sys/runtime.rst:53
-# 6c93a2b4a5aa4512842ce3b784dd0cbb
 msgid ":mod:`argparse` -- Module for parsing command line arguments."
 msgstr ""
 
 #: ../../source/sys/runtime.rst:58
-# 26860f3b715d4f1ea3bd88b67b4930b9
 msgid "Input and Output Streams"
 msgstr ""
 
 #: ../../source/sys/runtime.rst:60
-# d680759ab00b482f8bb5dd0474503a77
 msgid "Following the Unix paradigm, Python programs can access three file descriptors by default."
 msgstr ""
 
 #: ../../source/sys/runtime.rst:0
-# 6c686ec56d7144638388055b5c16c7cc
 msgid "sys_stdio.py"
 msgstr ""
 
 #: ../../source/sys/runtime.rst:67
-# 28b43f35d57d4959b4815c7dc0fe150e
 msgid "``stdin`` is the standard way to read input, usually from a console but also from other programs via a pipeline.  ``stdout`` is the standard way to write output for a user (to the console) or to be sent to the next program in a pipeline.  ``stderr`` is intended for use with warning or error messages."
 msgstr ""
 
 #: ../../source/sys/runtime.rst:105
-# 390fd0abefff420cb608a14b26936fe8
 msgid ":mod:`subprocess` and :mod:`pipes` -- Both subprocess and pipes have features for pipelining programs together."
 msgstr ""
 
 #: ../../source/sys/runtime.rst:109
-# b900f3aedbd34774826bf3e61695b5bb
 msgid "Returning Status"
 msgstr ""
 
 #: ../../source/sys/runtime.rst:111
-# 313653d34aff41aca06ba08da1a4266f
 msgid "To return an exit code from a program, pass an integer value to ``sys.exit()``."
 msgstr ""
 
 #: ../../source/sys/runtime.rst:0
-# 30d8059b3c464104a517a38c7ffbaf62
 msgid "sys_exit.py"
 msgstr ""
 
 #: ../../source/sys/runtime.rst:118
-# 4dbd43bf19eb41b699208c4b92be99e2
 msgid "A nonzero value means the program exited with an error."
 msgstr ""
 

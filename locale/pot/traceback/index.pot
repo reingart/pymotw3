@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,242 +17,194 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/traceback/index.rst:3
-# db0aad59662140ec842b6e78e2899407
 msgid "traceback --- Exceptions and Stack Traces"
 msgstr ""
 
 #: ../../source/traceback/index.rst:8
-# 293afd9aecc84aafa00fcfa382ca08c2
 msgid "Extract, format, and print exceptions and stack traces."
 msgstr ""
 
 #: ../../source/traceback/index.rst:10
-# 776272ff981e4aa5a29c0602af115198
 msgid "The ``traceback`` module works with the call stack to produce error messages. A *traceback* is a stack trace from the point of an exception handler down the call chain to the point where the exception was raised. Tracebacks also can be accessed from the current call stack up from the point of a call (and without the context of an error), which is useful for finding out the paths being followed into a function."
 msgstr ""
 
 #: ../../source/traceback/index.rst:18
-# e0ebcd949c9a41d4bdb858dbc4b696f4
 msgid "The high-level API in ``traceback`` uses ``StackSummary`` and ``FrameSummary`` instances to hold the representation of the stack. These classes can be constructed from a traceback or the current execution stack, and then processed in the same ways."
 msgstr ""
 
 #: ../../source/traceback/index.rst:23
-# fb88bbcc97e5424ba674cfd7b475655e
 msgid "The low-level functions in ``traceback`` fall into several common categories.  There are functions for extracting raw tracebacks from the current runtime environment (either an exception handler for a traceback, or the regular stack). The extracted stack trace is a sequence of tuples containing the filename, line number, function name, and text of the source line."
 msgstr ""
 
 #: ../../source/traceback/index.rst:30
-# 54f3c8e4ea6546dbb908eddca395b218
 msgid "Once extracted, the stack trace can be formatted using functions like ``format_exception()``, ``format_stack()``, etc. The format functions return a list of strings with messages formatted to be printed. There are shorthand functions for printing the formatted values, as well."
 msgstr ""
 
 #: ../../source/traceback/index.rst:36
-# 6e3c4ce58b41410e8780548c07f8e028
 msgid "Although the functions in ``traceback`` mimic the behavior of the interactive interpreter by default, they also are useful for handling exceptions in situations where dumping the full stack trace to the console is not desirable. For example, a web application may need to format the traceback so it looks good in HTML and an IDE may convert the elements of the stack trace into a clickable list that lets the user browse the source."
 msgstr ""
 
 #: ../../source/traceback/index.rst:45
-# 7798906af70b41159527939de523cc96
 msgid "Supporting Functions"
 msgstr ""
 
 #: ../../source/traceback/index.rst:47
-# f7ed925afa37470a9f7480e8d5191e3d
 msgid "The examples in this section use the module ``traceback_example.py``."
 msgstr ""
 
 #: ../../source/traceback/index.rst:0
-# 50ad41d730cb46b6af8c6bcfaa01c0eb
 msgid "traceback_example.py"
 msgstr ""
 
 #: ../../source/traceback/index.rst:54
-# 53ae13afb0b041aba92442a18726174e
 msgid "Examining the Stack"
 msgstr ""
 
 #: ../../source/traceback/index.rst:56
-# 7cf683b4d11f42cfb6d6f64d20a4ec82
 msgid "To examine the current stack, construct a ``StackSummary`` from ``walk_stack()``."
 msgstr ""
 
 #: ../../source/traceback/index.rst:0
-# 94d69086f96c4c97b3f81d6546a520fb
 msgid "traceback_stacksummary.py"
 msgstr ""
 
 #: ../../source/traceback/index.rst:63
-# c740abf4e3da480ea3a9083787d9a7a9
 msgid "The ``format()`` method produces a sequence of formatted strings ready to be printed."
 msgstr ""
 
 #: ../../source/traceback/index.rst:96
-# 776f334815604aa9b54c2e00b8ec49fe
 msgid "The ``StackSummary`` is an iterable container holding ``FrameSummary`` instances."
 msgstr ""
 
 #: ../../source/traceback/index.rst:0
-# 6f4875184df845a5a0c9e99de0f520cf
 msgid "traceback_framesummary.py"
 msgstr ""
 
 #: ../../source/traceback/index.rst:103
-# 432a823adcf94b3a84d9df969661f88e
 msgid "Each ``FrameSummary`` describes a frame of the stack, including information about where in the program source files the execution context is."
 msgstr ""
 
 #: ../../source/traceback/index.rst:138
-# 6c9d5763bffa41aa90f441c85775549d
 msgid "TracebackException"
 msgstr ""
 
 #: ../../source/traceback/index.rst:140
-# cae1992865e94d32af952b8fd3113121
 msgid "The ``TracebackException`` class is a high-level interface for building a ``StackSummary`` while processing a traceback."
 msgstr ""
 
 #: ../../source/traceback/index.rst:0
-# 5b1f411ba1344397be6679edd08652e1
 msgid "traceback_tracebackexception.py"
 msgstr ""
 
 #: ../../source/traceback/index.rst:147
-# e8b3d497fbe94604a757e484b3ee4cb7
 msgid "The ``format()`` method produces a formatted version of the full traceback, while ``format_exception_only()`` shows only the exception message."
 msgstr ""
 
 #: ../../source/traceback/index.rst:183
-# 411997ec931d4373aef338affd1c3b6c
 msgid "Low-level Exception APIs"
 msgstr ""
 
 #: ../../source/traceback/index.rst:185
-# 771594f55d994c26b872a5d8d4305854
 msgid "Another way to handle exception reporting is with ``print_exc()``. It uses ``sys.exc_info()`` to obtain the exception information for the current thread, formats the results, and prints the text to a file handle (``sys.stderr``, by default)."
 msgstr ""
 
 #: ../../source/traceback/index.rst:0
-# d9b56e2933244e0e83cfa2a37bb0d2a1
 msgid "traceback_print_exc.py"
 msgstr ""
 
 #: ../../source/traceback/index.rst:195
-# 77e0d57b33474fe3948d4785001841b4
 msgid "In this example, the file handle for ``sys.stdout`` is substituted so the informational and traceback messages are mingled correctly:"
 msgstr ""
 
 #: ../../source/traceback/index.rst:229
-# da2dfa2060194099bdf18611102d5b3c
 msgid "``print_exc()`` is just a shortcut for ``print_exception()``, which requires explicit arguments."
 msgstr ""
 
 #: ../../source/traceback/index.rst:0
-# 60443a3fe80940f6b67ded5bce9fc4f0
 msgid "traceback_print_exception.py"
 msgstr ""
 
 #: ../../source/traceback/index.rst:236
-# 3922638231e34795bcce643ca0582643
 msgid "The arguments to ``print_exception()`` are produced by ``sys.exc_info()``."
 msgstr ""
 
 #: ../../source/traceback/index.rst:261
-# 711710e9c9a94a558e317321d9368661
 msgid "``print_exception()`` uses ``format_exception()`` to prepare the text."
 msgstr ""
 
 #: ../../source/traceback/index.rst:0
-# 5f879aee6bb44f4cba167d06cc9137a3
 msgid "traceback_format_exception.py"
 msgstr ""
 
 #: ../../source/traceback/index.rst:268
-# a8511e7f8f6643a6aed9ce9559545872
 msgid "The same three arguments, exception type, exception value, and traceback, are used with ``format_exception()``."
 msgstr ""
 
 #: ../../source/traceback/index.rst:300
-# c4ae33dd0c30464289ffb29432345d5f
 msgid "To process the traceback in some other way, such as formatting it differently, use ``extract_tb()`` to get the data in a usable form."
 msgstr ""
 
 #: ../../source/traceback/index.rst:0
-# d72733e899964beea7989f29e25dcf3b
 msgid "traceback_extract_tb.py"
 msgstr ""
 
 #: ../../source/traceback/index.rst:307
-# 935806eb447947269d4d95807ae33496
 msgid "The return value is a list of entries from each level of the stack represented by the traceback.  Each entry is a tuple with four parts: the name of the source file, the line number in that file, the name of the function, and the source text from that line with whitespace stripped (if the source is available)."
 msgstr ""
 
 #: ../../source/traceback/index.rst:336
-# a0226457e37c4fc38587fbb2f225a7e6
 msgid "Low-level Stack APIs"
 msgstr ""
 
 #: ../../source/traceback/index.rst:338
-# af95b1fd7ed24eee833af95ea359c1a3
 msgid "There are a similar set of functions for performing the same operations with the current call stack instead of a traceback. ``print_stack()`` prints the current stack, without generating an exception."
 msgstr ""
 
 #: ../../source/traceback/index.rst:0
-# 30a1a8a7f0494444a1af333ce6504909
 msgid "traceback_print_stack.py"
 msgstr ""
 
 #: ../../source/traceback/index.rst:347
-# 09d37fd8081440d1bc49026213311b75
 msgid "The output look like a traceback without an error message."
 msgstr ""
 
 #: ../../source/traceback/index.rst:377
-# 94e228825fc14d9e8bab15ac0f3e81ac
 msgid "``format_stack()`` prepares the stack trace in the same way that ``format_exception()`` prepares the traceback."
 msgstr ""
 
 #: ../../source/traceback/index.rst:0
-# 345b282985e8448db3e94919e040c50e
 msgid "traceback_format_stack.py"
 msgstr ""
 
 #: ../../source/traceback/index.rst:384
-# 86e7d09946b34b9b8e89720bf72af873
 msgid "It returns a list of strings, each of which makes up one line of the output."
 msgstr ""
 
 #: ../../source/traceback/index.rst:414
-# f2dd137b6e1b40eabf02452ee7503f14
 msgid "The ``extract_stack()`` function works like ``extract_tb()``."
 msgstr ""
 
 #: ../../source/traceback/index.rst:0
-# bf53991a4a554bbdb126ca1b8559ab93
 msgid "traceback_extract_stack.py"
 msgstr ""
 
 #: ../../source/traceback/index.rst:420
-# fce758d96c94430cafb4ec60a2338d07
 msgid "It also accepts arguments, not shown here, to start from an alternate place in the stack frame or to limit the depth of traversal."
 msgstr ""
 
 #: ../../source/traceback/index.rst:446
-# 8ba83a3e54424530a32dc38ad406ee10
 msgid ":pydoc:`traceback`"
 msgstr ""
 
 #: ../../source/traceback/index.rst:448
-# 3ecf4b8213b64d9380692c9b6e156dcc
 msgid ":mod:`sys` -- The ``sys`` module includes singletons that hold the current exception."
 msgstr ""
 
 #: ../../source/traceback/index.rst:451
-# e33d59e7e9bc42649bc0f1bf7bf5f2ff
 msgid ":mod:`inspect` -- The ``inspect`` module includes other functions for probing the frames on the stack."
 msgstr ""
 
 #: ../../source/traceback/index.rst:454
-# aea2a930b8f54d95b8dae4bdcb4161b4
 msgid ":mod:`cgitb` -- Another module for formatting tracebacks nicely."
 msgstr ""
 

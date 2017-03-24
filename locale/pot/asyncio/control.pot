@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,87 +17,70 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/asyncio/control.rst:3
-# b30dcfa166fb429aac678988aac79810
 msgid "Composing Coroutines with Control Structures"
 msgstr ""
 
 #: ../../source/asyncio/control.rst:5
-# d6bea346d8e444c18516596ecfa6293c
 msgid "Linear control flow between a series of coroutines is easy to manage with the built-in language keyword ``await``. More complicated structures allowing one coroutine to wait for several others to complete in parallel are also possible using tools in ``asyncio``."
 msgstr ""
 
 #: ../../source/asyncio/control.rst:11
-# fd64816df5f24e9ea13f9dc923228829
 msgid "Waiting for Multiple Coroutines"
 msgstr ""
 
 #: ../../source/asyncio/control.rst:13
-# 2f8d3b1a6a524a67aa2ccfbd17bb3de5
 msgid "It is often useful to divide one operation into many parts and execute them separately. For example, downloading several remote resources or querying remote APIs. In situations where the order of execution doesn't matter, and where there may be an arbitrary number of operations, ``wait()`` can be used to pause one coroutine until the other background operations complete."
 msgstr ""
 
 #: ../../source/asyncio/control.rst:0
-# aca061c1ffcc48cb8cee9be4698066d3
 msgid "asyncio_wait.py"
 msgstr ""
 
 #: ../../source/asyncio/control.rst:24
-# a326ecadeca14770951bb50bad297fa9
 msgid "Internally, ``wait()`` uses a ``set`` to hold the ``Task`` instances it creates. This results in them starting, and finishing, in an unpredictable order.  The return value from ``wait()`` is a tuple containing two sets holding the finished and pending tasks."
 msgstr ""
 
 #: ../../source/asyncio/control.rst:49
-# 86a461ae9bea4ef6ab192bea8e064176
 msgid "There will only be pending operations left if ``wait()`` is used with a timeout value."
 msgstr ""
 
 #: ../../source/asyncio/control.rst:0
-# de19b93f8b8c42cd94a0431f805624c3
 msgid "asyncio_wait_timeout.py"
 msgstr ""
 
 #: ../../source/asyncio/control.rst:56
-# 1328b2ff01cc4cc592334658be1f87d7
 msgid "Those remaining background operations should either be cancelled or finished by waiting for them. Leaving them pending while the event loop continues will let them execute further, which may not be desirable if the overall operation is considered aborted. Leaving them pending at the end of the process will result in warnings being reported."
 msgstr ""
 
 #: ../../source/asyncio/control.rst:86
-# 5cc31e2d886749aa9cd76b0286f366fd
 msgid "Gathering Results from Coroutines"
 msgstr ""
 
 #: ../../source/asyncio/control.rst:88
-# 7d44c1c9d58e40e5bf0d3d9271413dab
 msgid "If the background phases are well-defined, and only the results of those phases matter, then ``gather()`` may be more useful for waiting for multiple operations."
 msgstr ""
 
 #: ../../source/asyncio/control.rst:0
-# 3da16ef3c6864252b353db4761ab2ab5
 msgid "asyncio_gather.py"
 msgstr ""
 
 #: ../../source/asyncio/control.rst:96
-# 173e4b1986cd4318a5570a67ccb9adf1
 msgid "The tasks created by gather are not exposed, so they cannot be cancelled. The return value is a list of results in the same order as the arguments passed to ``gather()``, regardless of the order the background operations actually completed."
 msgstr ""
 
 #: ../../source/asyncio/control.rst:120
-# 4632204b465047ce9c6b74ebc6ee976a
 msgid "Handling Background Operations as They Finish"
 msgstr ""
 
 #: ../../source/asyncio/control.rst:122
-# 59ee2bb15cc1475283efc3be049b0352
 msgid "``as_completed()`` is a generator that manages the execution of a list of coroutines given to it and produces their results one at a time as they finish running. As with ``wait()``, order is not guaranteed by ``as_completed()``, but it is not necessary to wait for all of the background operations to complete before taking other action."
 msgstr ""
 
 #: ../../source/asyncio/control.rst:0
-# 4780ef77523445f4b65826c9ff6ad7d7
 msgid "asyncio_as_completed.py"
 msgstr ""
 
 #: ../../source/asyncio/control.rst:133
-# 43da595683ae48498f01efb05ded896c
 msgid "This example starts several background phases that finish in the reverse order from which they start. As the generator is consumed, the loop waits for the result of the coroutine using ``await``."
 msgstr ""
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,12 +17,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/index.rst:3
-# e845ecab871447cfbd3f3716899c6519
 msgid "Python 3 Module of the Week"
 msgstr ""
 
 #: ../../source/index.rst:5
-# a8a2dfd85506451dac41008823dfd65e
 msgid "PyMOTW-3 is a series of articles written by `Doug Hellmann`_ to demonstrate how to use the modules of the Python_ 3 standard library. It is based on the original PyMOTW_ series, which covered Python 2.7.  See :doc:`about` for details including the version of Python and tools used."
 msgstr ""
 

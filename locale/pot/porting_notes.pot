@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,1673 +17,1334 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/porting_notes.rst:12
-# 7d3d22f6625e43b297b3a4569b38ccca
 msgid "Porting Notes"
 msgstr ""
 
 #: ../../source/porting_notes.rst:14
-# 7ac6df5a391c4d838f668c4c10a776cc
 msgid "This section includes notes and tips for updating from Python 2 to Python 3, including summaries of and references for the changes in each module."
 msgstr ""
 
 #: ../../source/porting_notes.rst:19
-# c35f099216f3428d9533745367017d76
 msgid "References"
 msgstr ""
 
 #: ../../source/porting_notes.rst:21
-# d5afef4a4f124ff4bd307d22f3235053
 msgid "The notes in this section are based on the *What's New* documents prepared by the Python development team and release manager for each release."
 msgstr ""
 
 #: ../../source/porting_notes.rst:25
-# 6150ad18bc444ae7b050fc62958b4fff
 msgid "`What's New In Python 3.0 <https://docs.python.org/3.0/whatsnew/3.0.html>`__"
 msgstr ""
 
 #: ../../source/porting_notes.rst:26
-# b563239e43414943b902f1124e07287f
 msgid "`What's New In Python 3.1 <https://docs.python.org/3.1/whatsnew/3.1.html>`__"
 msgstr ""
 
 #: ../../source/porting_notes.rst:27
-# 47a5cc8f3f784f69a95cb04d7396df28
 msgid "`What's New In Python 3.2 <https://docs.python.org/3.2/whatsnew/3.2.html>`__"
 msgstr ""
 
 #: ../../source/porting_notes.rst:28
-# 94becbd02de6440eaed95f68e722e6a2
 msgid "`What's New In Python 3.3 <https://docs.python.org/3.3/whatsnew/3.3.html>`__"
 msgstr ""
 
 #: ../../source/porting_notes.rst:29
-# 3b7f8dd3640540e6b5efbf75a6ad6f0c
 msgid "`What's New In Python 3.4 <https://docs.python.org/3.4/whatsnew/3.4.html>`__"
 msgstr ""
 
 #: ../../source/porting_notes.rst:30
-# aedd091e5b8c4027bd6a44d2d69511b2
 msgid "`What's New In Python 3.5 <https://docs.python.org/3.5/whatsnew/3.5.html>`__"
 msgstr ""
 
 #: ../../source/porting_notes.rst:32
-# a611c41f4a8946b38a7e2359673393d4
 msgid "For more information about porting to Python 3, refer to"
 msgstr ""
 
 #: ../../source/porting_notes.rst:34
-# 43cbe7a7680e4fb8a2d8b586f9b7dd37
 msgid "`Porting Python 2 Code to Python 3 <https://docs.python.org/3/howto/pyporting.html>`__ on ``docs.python.org``."
 msgstr ""
 
 #: ../../source/porting_notes.rst:37
-# 28e335d9cd574d9d9b625ae57181f2b9
 msgid "`Porting to Python 3 <http://python3porting.com/>`__, by Lennart Regebro."
 msgstr ""
 
 #: ../../source/porting_notes.rst:39
-# 651fd5a45e1b4baf86eb0a6692d56cdf
 msgid "The `python-porting <http://mail.python.org/mailman/listinfo/python-porting>`__ mailing list."
 msgstr ""
 
 #: ../../source/porting_notes.rst:44
-# 7d9ac50090964b88a9affd140af6d091
 msgid "New Modules"
 msgstr ""
 
 #: ../../source/porting_notes.rst:46
-# e4596a58f72c49a0a709d8ac19775d2a
 msgid "Python 3 includes a number of new modules, providing features not present in Python 2."
 msgstr ""
 
 #: ../../source/porting_notes.rst:50
-# a73ead60e41f4a0fb3d964b69335ea07
 msgid ":mod:`asyncio`"
 msgstr ""
 
 #: ../../source/porting_notes.rst:50
-# cfdb9ab24903404681b0f3ca34efad5d
 msgid "Asynchronous I/O, event loop, and other concurrency tools"
 msgstr ""
 
 #: ../../source/porting_notes.rst:53
-# c2b6fb3c08aa47258222edccc950fd0b
 msgid ":mod:`concurrent.futures`"
 msgstr ""
 
 #: ../../source/porting_notes.rst:53
-# 6d44b3fc010d4e35a5a75ac0039efa18
 msgid "Managing Pools of Concurrent Tasks"
 msgstr ""
 
 #: ../../source/porting_notes.rst:56
-# 2e449831f28040bf9a77cb8f97aeb788
 msgid ":mod:`ensurepip`"
 msgstr ""
 
 #: ../../source/porting_notes.rst:56
-# 7544d9a9c6de4554a2627b7b70c55e89
 msgid "Install the Python Package Installer, pip"
 msgstr ""
 
 #: ../../source/porting_notes.rst:59
-# 38f9f46a4df84055921b082ba7a20ebc
 msgid ":mod:`enum`"
 msgstr ""
 
 #: ../../source/porting_notes.rst:59
-# eb3735597bd54b0e802116b4f0339267
 msgid "Defines enumeration type"
 msgstr ""
 
 #: ../../source/porting_notes.rst:62
-# cdd4cdbc417246c0b8b896a767257a49
 msgid ":mod:`ipaddress`"
 msgstr ""
 
 #: ../../source/porting_notes.rst:62
-# 0f9a23ec8ddd4964ae9a47d0a71a778d
 msgid "Classes for working with Internet Protocol (IP) addresses"
 msgstr ""
 
 #: ../../source/porting_notes.rst:65
-# 94b6783fc62e4f0bb0ba22d6efb3415d
 msgid ":mod:`pathlib`"
 msgstr ""
 
 #: ../../source/porting_notes.rst:65
-# cc42659ce8d543a99e5fb706ea61d882
 msgid "An object-oriented API for working with filesystem paths"
 msgstr ""
 
 #: ../../source/porting_notes.rst:68
-# 6ee6b724ea3148bfa1488b02d2ab6fc4
 msgid ":mod:`selectors`"
 msgstr ""
 
 #: ../../source/porting_notes.rst:68
-# 74323d5950724921afb088398befabca
 msgid "I/O Multiplexing Abstractions"
 msgstr ""
 
 #: ../../source/porting_notes.rst:71
-# c8d667ebc53c43f3860a83b2de90b030
 msgid ":mod:`statistics`"
 msgstr ""
 
 #: ../../source/porting_notes.rst:71
-# 46d2677228a645ce90a4c7eb15592812
 msgid "Statistical Calculations"
 msgstr ""
 
 #: ../../source/porting_notes.rst:75
-# 1152bddef40e46e293244cb7cac309b6
 msgid ":mod:`venv`"
 msgstr ""
 
 #: ../../source/porting_notes.rst:74
-# 18b7e0cab0e14af69ac829da9d50fc27
 msgid "Create isolated installation and execution contexts"
 msgstr ""
 
 #: ../../source/porting_notes.rst:78
 #: ../../source/porting_notes.rst:0
-# e6bf24d78015471e98996dd8d4a6c948
-# 4f4e279339614d9ab2a43671a8093187
 msgid "Renamed Modules"
 msgstr ""
 
 #: ../../source/porting_notes.rst:80
-# 5ce6995a5bb94895bb63c5643e371c1b
 msgid "Many standard library modules were renamed between Python 2 and 3 as part of PEP 3108. All of the new module names use consistent lower case, and some have been moved into packages to better organize related modules. Often, code using these modules can be updated to work with Python 3 just by fixing the import statements. A complete list of the renames can be found in the dictionary ``lib2to3.fixes.fix_imports.MAPPING`` (the keys are the Python 2 name and the values are the Python 3 name) and in :table:`Renamed Modules`."
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# cd7cfaae946b47c280e88bb8a81e9c14
 msgid "Python 2 Name"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# 7d9352efa5f0410d97e1ce01263ab056
 msgid "Python 3 Name"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# 1bf6ad4e4c3142079b28ae1b61e345e0
 msgid "``__builtin__``"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# 01763b426c2d4f548827b64a482fed14
 msgid ":mod:`builtins`"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# e3ce518c21494a8598f3a67554724c44
 msgid "``_winreg``"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# c3a85e242b244b91bbc6a2a8798c7798
 msgid ":mod:`winreg`"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# dd7d085a45bf4459b5fde4909634b8ce
 msgid "``BaseHTTPServer``"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
 #: ../../source/porting_notes.rst:1
 #: ../../source/porting_notes.rst:1
-# 922ed866ef464f0eb11b31f3661e73ca
-# 5b0e83f858ec49c9a7abc82f1e53a0ca
-# bb4a2df36edc45fa816803937bede5ce
 msgid ":mod:`http.server`"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# 2454aaa46eba4db993d3842b85d59936
 msgid "``CGIHTTPServer``"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# afa3dc9254444beb9e95f657ccca8b14
 msgid "``commands``"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# fad42f0f4f0249ff8375d404ecad77a2
 msgid ":mod:`subprocess`"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# 486c6e40edaf43048aacabc8c1fa2e72
 msgid "``ConfigParser``"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# 06414a85f9f048ebb9ea249a968808ca
 msgid ":mod:`configparser`"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# b33d1313a2b3483a9b90fcedafe415ec
 msgid "``Cookie``"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# 12746d377edf4cac977f8e82b7176dde
 msgid ":mod:`http.cookies`"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# 13394c9dcd6a481cbc47ff3e1d2dcc10
 msgid "``cookielib``"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# 03047a83f2f44030a336d946ef8d5280
 msgid ":mod:`http.cookiejar`"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# 6a077fc63f1e4063bc66a08ab9079912
 msgid "``copy_reg``"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# 7256279d3de64e47aabe511af700311a
 msgid ":mod:`copyreg`"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# c0d3258380b04a8c83bd2fff4019d22b
 msgid "``cPickle``"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# b2f7a58ec92a423c9ade1a7780a128c4
 msgid ":mod:`pickle`"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# 6e3b78ce694042ba824deec9e4a1d3f0
 msgid "``cStringIO``"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
 #: ../../source/porting_notes.rst:1
-# 2c74cfc276264ddeb6898550234bb45c
-# 6051dae2da314a658f85b7b79cff88b8
 msgid ":mod:`io`"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# b4db67a5d205483898a57dfaca1f47d5
 msgid "``dbhash``"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# 22a05fa420214d839608a6aa790f4ac6
 msgid ":mod:`dbm.bsd`"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# 129b65d9b1b74d8689085707ed4b05fd
 msgid "``dbm``"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# 9559d36954a34a42b14b6868eb7ed223
 msgid ":mod:`dbm.ndbm`"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# 93e90cb108204ae38a561f276b0c718e
 msgid "``Dialog``"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# 8ec39e5f26f1407ca4e71d495a6515e5
 msgid ":mod:`tkinter.dialog`"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# c8abf166ebfb416ba2d51a690936b1de
 msgid "``DocXMLRPCServer``"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
 #: ../../source/porting_notes.rst:1
-# 3f1562175f6a4cd19bc660fc74d29660
-# e71c3944ce3b4ea0851a509a9a004ade
 msgid ":mod:`xmlrpc.server`"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# 2b747e84527f4a9980a11ba5346d5a57
 msgid "``dumbdbm``"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# 184088fcc5ab4053b0f9605a69c82a47
 msgid ":mod:`dbm.dumb`"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# 0740b2672d8a4b9d9f3da7d496838840
 msgid "``FileDialog``"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
 #: ../../source/porting_notes.rst:1
-# 5c20b1e98c244227b12ea9a91253ec39
-# 8cab291990c949ce8ebdbcdd47e23bb5
 msgid ":mod:`tkinter.filedialog`"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# 2e2fd5ab74b443829be66fecc6d27f6e
 msgid "``gdbm``"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# c353e77151da44ceb3477218c2ee48db
 msgid ":mod:`dbm.gnu`"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# 8572d1a0a3204d398f662ff848514925
 msgid "``htmlentitydefs``"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# a547b8e9ac244d01af6317568461f573
 msgid ":mod:`html.entities`"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# 8b45cdeec76b42fdb69393dd19f6c521
 msgid "``HTMLParser``"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# abc3bb25e7814430821e2fd81f898319
 msgid ":mod:`html.parser`"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# d1b92266765d47d2a5efe892f9cbe660
 msgid "``httplib``"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# 26aa839a300c4755b60f8827ab2df6c0
 msgid ":mod:`http.client`"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# d953035c84174253bc46abc9d997e07e
 msgid "``Queue``"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# e2b965a67adf48c885c891fb891a0327
 msgid ":mod:`queue`"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# 1da302380f93461188706a7d24384be3
 msgid "``repr``"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# ff2a0a9edb15405a951537e920d56a57
 msgid ":mod:`reprlib`"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# a357203021784005956b559144b13a89
 msgid "``robotparser``"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# bfaa778f1fdf43a1ba856fef37215874
 msgid ":mod:`urllib.robotparser`"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# 2b1cfe608a2347028c215cb263a4bf67
 msgid "``ScrolledText``"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# 24fe7e925e334713a398a7c163936f09
 msgid ":mod:`tkinter.scrolledtext`"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# 728cb7c2833c47fca67fdce74527f61d
 msgid "``SimpleDialog``"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
 #: ../../source/porting_notes.rst:1
-# 43a5e10486744cc4ada192a8f9e49f1f
-# 8b0e18744df043e39ef5932892b83d59
 msgid ":mod:`tkinter.simpledialog`"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# a821628f7f0446cba9b6ab66e9f0cb1f
 msgid "``SimpleHTTPServer``"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# 74c4e5ad536b4121b67aced5c9b3c4f1
 msgid "``SimpleXMLRPCServer``"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# 70cc76f4768e453dbf6b201ad6355713
 msgid "``SocketServer``"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# d9b38ee17e3448c9bfbfacda32357057
 msgid ":mod:`socketserver`"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# c9a5ecaea4d048b4985da365a3200bcd
 msgid "``StringIO``"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# 4a1b1ec5d69b477c8cec1bc9c9a6f87a
 msgid "``Tix``"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# a0b457bfd815468eb6b2c4bfe86170f5
 msgid ":mod:`tkinter.tix`"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# caa42aec904a4c989381d0a90dc31ab5
 msgid "``tkColorChooser``"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# c9394efb9f344d6eb4f272a7f819ada6
 msgid ":mod:`tkinter.colorchooser`"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# bffa779a905d464e83b0500c75d28231
 msgid "``tkCommonDialog``"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# 1e0982fe4e7a4846b3a69b9f7206dacb
 msgid ":mod:`tkinter.commondialog`"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# 5a8a5dfb0e4e4c548ebdf00b74bf2b75
 msgid "``Tkconstants``"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# 530d1f7a3b3b48c7bbefcff1d092e2fc
 msgid ":mod:`tkinter.constants`"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# 66b29d6451f94da6b87bc66cf8a4884e
 msgid "``Tkdnd``"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# c3d3f9135eac4bbab20756435b19e188
 msgid ":mod:`tkinter.dnd`"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# 22364bc545fc4585a90f4f3a8552f8a4
 msgid "``tkFileDialog``"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# 70f1d4595d6c4907946dd2483a1d573c
 msgid "``tkFont``"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# a5d8271ddc6c434d954de4a345c73e67
 msgid ":mod:`tkinter.font`"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# 7ab1874fcd714d228411496248a81a0d
 msgid "``Tkinter``"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# 3c37d604eb8449669b4c60067dddb5f8
 msgid ":mod:`tkinter`"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# 1827fd8c4e2c4def84edc36e65bbbbc7
 msgid "``tkMessageBox``"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# 391b1adce0904cdab7c3d287a04260d3
 msgid ":mod:`tkinter.messagebox`"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# 9376260076814d5abede8e11f4655ae9
 msgid "``tkSimpleDialog``"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# 333cdbc41ca746309828f67e2804021e
 msgid "``ttk``"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# b97550bd0256417e9230fcb75236da8d
 msgid ":mod:`tkinter.ttk`"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# 099f3fd876754a7b822d1434e18a990b
 msgid "``urlparse``"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# 9a41283c088d4a198ce1edf480952422
 msgid ":mod:`urllib.parse`"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# bb5050be335a4e448988ab07825ea366
 msgid "``UserList``"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
 #: ../../source/porting_notes.rst:1
-# 74b1a02450ca4f1e8814cdd4f837bd3a
-# 2550347a196f47c9836f6f38d27be5fe
 msgid ":mod:`collections`"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# e1dfefe1952a4555a2d668285a194b76
 msgid "``UserString``"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# e1b6ec38bd0e45bba5720ee94863d9e6
 msgid "``xmlrpclib``"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1
-# b536ad7eb4804f7d83593856237413a8
 msgid ":mod:`xmlrpc.client`"
 msgstr ""
 
 #: ../../source/porting_notes.rst:161
-# a12470fabbee496884970abbd1a209c3
 msgid "The six_ package is useful for writing code that runs under both Python 2 and 3. In particular, the ``six.moves`` module allows your code to import renamed modules using a single import statement, automatically redirecting the import to the correct version of the name depending on the version of Python."
 msgstr ""
 
 #: ../../source/porting_notes.rst:167
-# 7561496b8a61467fb77c18f9a4f6c529
 msgid ":pep:`3108` -- Standard Library Reorganization"
 msgstr ""
 
 #: ../../source/porting_notes.rst:172
-# 84f5313ce0b84e14b021e4e4de75e406
 msgid "Removed Modules"
 msgstr ""
 
 #: ../../source/porting_notes.rst:177
-# ea57f2a020fe4cd0b998c20248ff9c90
 msgid "These modules are either no longer present at all, or have had their features merged into other existing modules."
 msgstr ""
 
 #: ../../source/porting_notes.rst:181
-# 8274c44ea5dc43f6bee4f64c323bf8cc
 msgid "bsddb"
 msgstr ""
 
 #: ../../source/porting_notes.rst:183
-# 4ce30222175f4643886d41270b19f2ab
 msgid "The :mod:`bsddb` and :mod:`dbm.bsd` modules have been removed. Bindings for Berkeley DB are now maintained outside of the standard library as `bsddb3 <https://pypi.python.org/pypi/bsddb3>`__."
 msgstr ""
 
 #: ../../source/porting_notes.rst:188
-# cdc484d0da00474da8f56af66fed86e6
 msgid "commands"
 msgstr ""
 
 #: ../../source/porting_notes.rst:193
-# 45da11c5ee9a4b70b321c4f9f1e511c8
 msgid "The :mod:`commands` module was deprecated in Python 2.6 and removed in Python 3.0. See :mod:`subprocess` instead."
 msgstr ""
 
 #: ../../source/porting_notes.rst:197
-# 8f14430585ef4944b575baaf4302605b
 msgid "compiler"
 msgstr ""
 
 #: ../../source/porting_notes.rst:202
-# fabc79ab187a4e048116a257fc0f1bb3
 msgid "The :mod:`compiler` module has been removed. See :mod:`ast` instead."
 msgstr ""
 
 #: ../../source/porting_notes.rst:205
-# 80fa2b13f63147198cc12835080c7b7d
 msgid "dircache"
 msgstr ""
 
 #: ../../source/porting_notes.rst:207
-# a0eaa3472a9547428e4b56c101c501fe
 msgid "The :mod:`dircache` module has been removed, without a replacement."
 msgstr ""
 
 #: ../../source/porting_notes.rst:210
-# 6d8c6851eeba430b839249186674df0d
 msgid "EasyDialogs"
 msgstr ""
 
 #: ../../source/porting_notes.rst:215
-# a15be758024e471d9635fec49b454147
 msgid "The :mod:`EasyDialogs` module has been removed. See :mod:`tkinter` instead."
 msgstr ""
 
 #: ../../source/porting_notes.rst:219
-# 215270569bab417990fbf0e8c1d81f25
 msgid "exceptions"
 msgstr ""
 
 #: ../../source/porting_notes.rst:221
-# a3a89d1c2e024e1a961331e82216b672
 msgid "The :mod:`exceptions` module has been removed because all of the exceptions defined there are available as built-in classes."
 msgstr ""
 
 #: ../../source/porting_notes.rst:225
-# 7405771ef5ac40909c1ac7de3543acea
 msgid "htmllib"
 msgstr ""
 
 #: ../../source/porting_notes.rst:230
-# e5c2b337eb04462a88fb38fb9ac882c3
 msgid "The :mod:`htmllib` module has been removed. See :mod:`html.parser` instead."
 msgstr ""
 
 #: ../../source/porting_notes.rst:234
-# fa6a1f3b529242cd939d67b7d5dc9e38
 msgid "md5"
 msgstr ""
 
 #: ../../source/porting_notes.rst:239
-# 4cf85bd0e3d748f4b2637d7e4ea71209
 msgid "The implementation of the MD5 message digest algorithm has moved to :mod:`hashlib`."
 msgstr ""
 
 #: ../../source/porting_notes.rst:243
-# 85e1a3a315c9445685dd57de38261d70
 msgid "mimetools, MimeWriter, mimify, multifile, and rfc822"
 msgstr ""
 
 #: ../../source/porting_notes.rst:248
-# 01447ccbd041411fbae291384a960cac
 msgid "The :mod:`mimetools`, :mod:`MimeWriter`, :mod:`mimify`, :mod:`multifile`, and :mod:`rfc822` modules have been removed. See :mod:`email` instead."
 msgstr ""
 
 #: ../../source/porting_notes.rst:253
-# 3d3c841aca07436c8bfe06efb6ee494e
 msgid "popen2"
 msgstr ""
 
 #: ../../source/porting_notes.rst:258
-# 24f63c0187f542368d4564925dd7c59d
 msgid "The :mod:`popen2` module has been removed. See :mod:`subprocess` instead."
 msgstr ""
 
 #: ../../source/porting_notes.rst:262
-# 926124c97d8a4fb697c0c0a8698fdc98
 msgid "posixfile"
 msgstr ""
 
 #: ../../source/porting_notes.rst:267
-# e27076ae1fd74ab58667d1e7d986544b
 msgid "The :mod:`posixfile` module has been removed. See :mod:`io` instead."
 msgstr ""
 
 #: ../../source/porting_notes.rst:270
-# e21a938754814683bd933768d5d23261
 msgid "sets"
 msgstr ""
 
 #: ../../source/porting_notes.rst:272
-# 013c148677f04d8bb2b848cf3d1209ef
 msgid "The :mod:`sets` module was deprecated in Python 2.6 and removed in Python 3.0. Use the built-in types ``set`` and ``orderedset`` instead."
 msgstr ""
 
 #: ../../source/porting_notes.rst:277
-# a978f09c921a4c069281d1f7d387db1f
 msgid "sha"
 msgstr ""
 
 #: ../../source/porting_notes.rst:282
-# 4682874f49094b14b72adcc03623d97d
 msgid "The implementation of the SHA-1 message digest algorithm has moved to :mod:`hashlib`."
 msgstr ""
 
 #: ../../source/porting_notes.rst:286
-# b0944977a529488f9828007ac17678ce
 msgid "sre"
 msgstr ""
 
 #: ../../source/porting_notes.rst:291
-# 8d9fb9ce76424bc7813baf750c83d12f
 msgid "The :mod:`sre` module was deprecated in Python 2.5 and removed in Python 3.0. Use :mod:`re` instead."
 msgstr ""
 
 #: ../../source/porting_notes.rst:295
-# 48c84bfdc8854d4b85728ecabd9e2e7c
 msgid "statvfs"
 msgstr ""
 
 #: ../../source/porting_notes.rst:300
-# 1409953c23b3456a8f175a9b8e35997e
 msgid "The :mod:`statvfs` module was deprecated in Python 2.6 and removed in Python 3.0. See ``os.statvfs()`` in the :mod:`os` module instead."
 msgstr ""
 
 #: ../../source/porting_notes.rst:306
-# f1c74002e9b542008659c1eaeb8f1846
 msgid "thread"
 msgstr ""
 
 #: ../../source/porting_notes.rst:311
-# b578d2fc3e064b879f808eebef3c040b
 msgid "The :mod:`thread` module has been removed.  Use the higher-level API in :mod:`threading` instead."
 msgstr ""
 
 #: ../../source/porting_notes.rst:315
-# 576cf8f68cf34782b373a0ef8c7055d5
 msgid "user"
 msgstr ""
 
 #: ../../source/porting_notes.rst:320
-# c307f554824f421792c96c775e762c15
 msgid "The :mod:`user` module was deprecated in Python 2.6 and removed in Python 3.0. See user-customization features provided by the :mod:`site` module instead."
 msgstr ""
 
 #: ../../source/porting_notes.rst:325
-# 6d33b66caf594c04824419b8a887b550
 msgid "Deprecated Modules"
 msgstr ""
 
 #: ../../source/porting_notes.rst:330
-# f17ce1a0143f4cb588c47d47a931ba9c
 msgid "These modules are still present in the standard library, but are deprecated and should not be used in new Python 3 programs."
 msgstr ""
 
 #: ../../source/porting_notes.rst:334
-# 83f890eda4344062bf6ebea3dea187d7
 msgid "asyncore and asynchat"
 msgstr ""
 
 #: ../../source/porting_notes.rst:340
-# a2af413a426e4546bb6e084c120fec68
 msgid "Asynchronous I/O and protocol handlers. See :mod:`asyncio` instead."
 msgstr ""
 
 #: ../../source/porting_notes.rst:343
-# e09758652e494f1b80400a246e0e5aa9
 msgid "formatter"
 msgstr ""
 
 #: ../../source/porting_notes.rst:348
-# 284ec24749b545a58bbf0119954a083c
 msgid "Generic output formatter and device interface. See :pyissue:`18716` for details."
 msgstr ""
 
 #: ../../source/porting_notes.rst:352
-# 66be6d9b17664eb8bbbcad21346e7c0c
 msgid "imp"
 msgstr ""
 
 #: ../../source/porting_notes.rst:358
-# 3342743e2aa04aa492b27c5a686f2a5e
 msgid "Access the implementation of the import statement. See :mod:`importlib` instead."
 msgstr ""
 
 #: ../../source/porting_notes.rst:362
-# d10d7a458ced417aa2d733a8fc3b4435
 msgid "optparse"
 msgstr ""
 
 #: ../../source/porting_notes.rst:368
-# 3c65c22ab6bf4f10b81d0d12e686c6cd
 msgid "Command-line option parsing library. The API for :mod:`argparse` is similar to the one provided by :mod:`optparse`, and in many cases :mod:`argparse` can be used as a straightforward replacement by updating the names of the classes and methods used."
 msgstr ""
 
 #: ../../source/porting_notes.rst:375
-# 39725423bf3a418ebfba82a8a282b735
 msgid "Summary of Changes to Modules"
 msgstr ""
 
 #: ../../source/porting_notes.rst:383
-# f4ac0f552b90471faa2715d8376b2c07
 msgid "abc"
 msgstr ""
 
 #: ../../source/porting_notes.rst:388
-# ba823be840f94274b987729b6ca08b69
 msgid "The ``abstractproperty()``, ``abstractclassmethod()``, and ``abstractstaticmethod()`` decorators are deprecated. Combining ``abstractmethod()`` with the ``property()``, ``classmethod()``, and ``staticmethod()`` decorators works as expected (:pyissue:`11610`)."
 msgstr ""
 
 #: ../../source/porting_notes.rst:397
-# d39938578cdb4497afbcb2adbf596ee3
 msgid "anydbm"
 msgstr ""
 
 #: ../../source/porting_notes.rst:403
-# 44609fbe92d541a6b2d245ab18e41297
 msgid "The ``anydbm`` module has been renamed :mod:`dbm` in Python 3."
 msgstr ""
 
 #: ../../source/porting_notes.rst:408
-# d059fd597c804e26b6d6944d98b99634
 msgid "argparse"
 msgstr ""
 
 #: ../../source/porting_notes.rst:413
-# 34afe51c1734485bb09385eec4dc7de5
 msgid "The ``version`` argument to ``ArgumentParser`` has been removed in favor of a special ``action`` type (:pyissue:`13248`)."
 msgstr ""
 
 #: ../../source/porting_notes.rst:416
-# ecb2736822de43ac9e73619d7bd47203
 msgid "The old form passed ``version`` as an argument."
 msgstr ""
 
 #: ../../source/porting_notes.rst:422
-# 63ae6e5dda1642eb8492431fdf76e8d4
 msgid "The new form requires adding an explicit argument definition."
 msgstr ""
 
 #: ../../source/porting_notes.rst:430
-# 96994ecc0cd1436d87fb6c2f7a080ef1
 msgid "The option name and version format string can be modified to suit the needs of the application."
 msgstr ""
 
 #: ../../source/porting_notes.rst:433
-# 44c74f1440d34971ad089ff60d5f5ff7
 msgid "In Python 3.4, the version action was changed to print the version string to stdout instead of stderr (:pyissue:`18920`)."
 msgstr ""
 
 #: ../../source/porting_notes.rst:439
-# e538e8471c664377bab72bcf8d70f12b
 msgid "array"
 msgstr ""
 
 #: ../../source/porting_notes.rst:444
-# d2f6bd2e0b82420698e332df820e4067
 msgid "The ``'c'`` type used for character bytes in early version of Python 2 has been removed. Use ``'b'`` or ``'B'`` for bytes instead."
 msgstr ""
 
 #: ../../source/porting_notes.rst:447
-# a255b1cb918744d69a3cfa978e0673e7
 msgid "The ``'u'`` type for characters from Unicode strings has been deprecated and will be removed in Python 4.0."
 msgstr ""
 
 #: ../../source/porting_notes.rst:450
-# 10a4faf2da7b4e8ea121b4ba1054cf45
 msgid "The methods ``tostring()`` and ``fromstring()`` have been renamed ``tobytes()`` and ``frombytes()`` to remove ambiguity (:pyissue:`8990`)."
 msgstr ""
 
 #: ../../source/porting_notes.rst:457
-# adec30a5abeb4a6a8d330dac6828f00e
 msgid "atexit"
 msgstr ""
 
 #: ../../source/porting_notes.rst:462
-# 4e0897f400d844f58d02f9448cb2fc5c
 msgid "When :mod:`atexit` was updated to include a C implementation (:pyissue:`1680961`), a regression was introduced in the error handling logic that caused only the summary of the exception to be shown, without the traceback. This regression was fixed in Python 3.3 (:pyissue:`18776`)."
 msgstr ""
 
 #: ../../source/porting_notes.rst:471
-# 2dd09974e48e4c3885f85c1ffd8fc797
 msgid "base64"
 msgstr ""
 
 #: ../../source/porting_notes.rst:476
-# 8138009768494d0ba6dfef198b9f0e58
 msgid "The ``encodestring()`` and ``decodestring()`` have been renamed ``encodebytes()`` and ``decodebytes()`` respectively. The old names still work as aliases, but are deprecated (:pyissue:`3613`)."
 msgstr ""
 
 #: ../../source/porting_notes.rst:480
-# 90c3c2c21d64419285a5b42b8edf878d
 msgid "Two new encodings using 85-character alphabets have been added. ``b85encode()`` implements an encoding used in Mercurial and git, while ``a85encode()`` implements the Ascii85 format used by PDF files (:pyissue:`17618`)."
 msgstr ""
 
 #: ../../source/porting_notes.rst:488
-# 61d9d50757ce4b089e01a34204726bf4
 msgid "bz2"
 msgstr ""
 
 #: ../../source/porting_notes.rst:493
-# b9bd8c3eb18c48008594b57036dd82a1
 msgid "``BZ2File`` instances now support the context manager protocol, and do not need to be wrapped with ``contextlib.closing()``."
 msgstr ""
 
 #: ../../source/porting_notes.rst:499
-# 4646cb0dbec14ec7ad1a13bc53e8a220
 msgid "collections"
 msgstr ""
 
 #: ../../source/porting_notes.rst:504
-# 14526094e0da4a83a3440f51d2bcbaff
 msgid "The abstract base classes formerly defined in :mod:`collections` moved to :mod:`collections.abc`, with backwards-compatibility imports in :mod:`collections`, for now (:pyissue:`11085`)."
 msgstr ""
 
 #: ../../source/porting_notes.rst:511
-# 41dabc8852784444bd1ef09a426b77a2
 msgid "comands"
 msgstr ""
 
 #: ../../source/porting_notes.rst:517
-# 63a4f2e18aa845748f51de67d48519ca
 msgid "The functions ``getoutput()`` and ``getstatusoutput()`` have been moved to :mod:`subprocess` and :mod:`commands` has been deleted."
 msgstr ""
 
 #: ../../source/porting_notes.rst:523
-# b6cc3cb5ab124e3fafc2c3e644cd343e
 msgid "configparser"
 msgstr ""
 
 #: ../../source/porting_notes.rst:528
-# d603c795bea04f45bf6e92e31225cdb2
 msgid "The old ``ConfigParser`` module has been renamed to :mod:`configparser`."
 msgstr ""
 
 #: ../../source/porting_notes.rst:531
-# 75a8af21fbbf42cabe612d79934a7988
 msgid "The old ``ConfigParser`` class was removed in favor of ``SafeConfigParser`` which has in turn been renamed to ``ConfigParser``. The deprecated interpolation behavior is available via ``LegacyInterpolation``."
 msgstr ""
 
 #: ../../source/porting_notes.rst:536
-# 17527b10f9724a79bdbb369ae1113874
 msgid "The ``read()`` method now supports an ``encoding`` argument, so it is no longer necessary to use :mod:`codecs` to read configuration files with Unicode values in them."
 msgstr ""
 
 #: ../../source/porting_notes.rst:540
-# 2ea1e514a3a44a758c9385b5650be8c5
 msgid "Using the old ``RawConfigParser`` is discouraged. New projects should use ``ConfigParser(interpolation=None)`` instead to achieve the same behavior."
 msgstr ""
 
 #: ../../source/porting_notes.rst:547
-# 4bf4bc114a9047f3a314c4afb37e58ce
 msgid "contextlib"
 msgstr ""
 
 #: ../../source/porting_notes.rst:552
-# f91a860f37d8460980958373fe90b4c3
 msgid "``contextlib.nested()`` has been removed. Pass multiple context managers to the same ``with`` statement instead."
 msgstr ""
 
 #: ../../source/porting_notes.rst:558
-# 6775868fa494474faeabe13de1a4b3f6
 msgid "csv"
 msgstr ""
 
 #: ../../source/porting_notes.rst:563
-# e06f8b1b7ae24f3fb788c0ec0f55d4ae
 msgid "Instead of using the ``next()`` method of a reader directly, use the built-in ``next()`` function to invoke the iterator properly."
 msgstr ""
 
 #: ../../source/porting_notes.rst:569
-# 246c1e8afa844e2dad169577c7d23e3f
 msgid "datetime"
 msgstr ""
 
 #: ../../source/porting_notes.rst:574
-# dfc4994d836b4804917325f39f91d234
 msgid "Starting with Python 3.3, equality comparisons between naive and timezone-aware ``datetime`` instances return ``False`` instead of raising ``TypeError`` (:pyissue:`15006`)."
 msgstr ""
 
 #: ../../source/porting_notes.rst:578
-# b41d8807d5964355871652a5f7cf9161
 msgid "Prior to Python 3.5, a ``datetime.time`` object representing midnight evaluated to ``False`` when converted to a Boolean. This behavior has been removed in Python 3.5 (:pyissue:`13936`)."
 msgstr ""
 
 #: ../../source/porting_notes.rst:585
-# 2ce52b1cc56346e7aad1fa52916ae627
 msgid "decimal"
 msgstr ""
 
 #: ../../source/porting_notes.rst:590
-# e00fda21e5d0496a94a5615b081030ca
 msgid "Python 3.3 incorporated a C implementation of :mod:`decimal` based on ``libmpdec``. This change improved performance, but also includes some API changes and behavior differences from the pure-Python implementation. See `the Python 3.3 release notes <https://docs.python.org/3.3/whatsnew/3.3.html#decimal>`__ for details."
 msgstr ""
 
 #: ../../source/porting_notes.rst:600
-# d5e7c54e69054a1eb2ef068ee482d9e6
 msgid "fractions"
 msgstr ""
 
 #: ../../source/porting_notes.rst:605
-# d92658278176466d8d75a8b9615d1cdf
 msgid "The ``from_float()`` and ``from_decimal()`` class methods are no longer needed. Floating point and ``Decimal`` values can be passed directly to the ``Fraction`` constructor."
 msgstr ""
 
 #: ../../source/porting_notes.rst:612
-# b7808bf5bc7c465a9fe6ef403e56f156
 msgid "gc"
 msgstr ""
 
 #: ../../source/porting_notes.rst:617
-# 185c9c483b42418fad3d4e813ae3bb21
 msgid "The flags ``DEBUG_OBJECT`` and ``DEBUG_INSTANCE`` have been removed. They are no longer needed to differentiate between new and old-style classes."
 msgstr ""
 
 #: ../../source/porting_notes.rst:625
-# 71a9275d2a57415987849eb33742d4ab
 msgid "gettext"
 msgstr ""
 
 #: ../../source/porting_notes.rst:630
-# c32c2be7f2724a858043c2586204b79b
 msgid "All of the translation functions in :mod:`gettext` assume Unicode input and output, and the Unicode variants such as ``ugettext()`` have been removed."
 msgstr ""
 
 #: ../../source/porting_notes.rst:638
-# ec3e85176a364db487406736cd89ac83
 msgid "glob"
 msgstr ""
 
 #: ../../source/porting_notes.rst:643
-# 86cb23841ad64b4c9b24ee9344a6f769
 msgid "The new function ``escape()`` implements a work-around for searching for files with meta-characters in the name (:pyissue:`8402`)."
 msgstr ""
 
 #: ../../source/porting_notes.rst:649
-# cfc725d1716a46edbf4112d09a1c60d6
 msgid "http.cookies"
 msgstr ""
 
 #: ../../source/porting_notes.rst:654
-# ed851e589f644dfb8a1049ff8afa6d1d
 msgid "In addition to escaping quotes, SimpleCookie also encodes commas and semi-colons in values to better reflect behavior in real browsers (:pyissue:`9824`)."
 msgstr ""
 
 #: ../../source/porting_notes.rst:662
-# ef7ff74e0e254b148d5445b4e7e448d9
 msgid "imaplib"
 msgstr ""
 
 #: ../../source/porting_notes.rst:667
-# e1d19c1cc45344aba88bcb73de3a80ac
 msgid "Under Python 3, :mod:`imaplib` returns byte-strings encoded as UTF-8. There is support for accepting Unicode strings and encoding them automatically as outgoing commands are sent or as the username and password for logging in to the server."
 msgstr ""
 
 #: ../../source/porting_notes.rst:675
-# 88f1be4661f1450886c0fed4594abea5
 msgid "inspect"
 msgstr ""
 
 #: ../../source/porting_notes.rst:680
-# 5e5225830ef24e2e9158f82749a975e4
 msgid "The functions ``getargspec()``, ``getfullargspec()``, ``getargvalues()``, ``getcallargs()``, ``getargvalues()``, ``formatargspec()``, and ``formatargvalues()`` have been deprecated in favor of ``signature()`` (:pyissue:`20438`)."
 msgstr ""
 
 #: ../../source/porting_notes.rst:688
-# 1b9a033d1daf4cd7a3b99ecb1ac66c67
 msgid "itertools"
 msgstr ""
 
 #: ../../source/porting_notes.rst:693
-# 3b05ee37504146c98d76708373265eee
 msgid "The functions ``imap()``, ``izip()``, and ``ifilter()`` have been replaced with versions of the built-in functions that return iterables instead of ``list`` objects (``map()``, ``zip()``, and ``filter:()`` respectively)."
 msgstr ""
 
 #: ../../source/porting_notes.rst:698
-# 236fe02f80db4cef864ee5381d6076c3
 msgid "The function ``ifilterfalse()`` has been renamed ``filterfalse()``."
 msgstr ""
 
 #: ../../source/porting_notes.rst:704
-# 9e72d00b1ff74a8892e3a47b22a097af
 msgid "json"
 msgstr ""
 
 #: ../../source/porting_notes.rst:709
-# d16fc0100ee445c384f6e6a47f343faa
 msgid "The :mod:`json` API was updated to only support ``str`` and not with ``bytes`` because the JSON specification is defined using Unicode."
 msgstr ""
 
 #: ../../source/porting_notes.rst:716
-# ee832bd24b6442e5b9db862460c889f8
 msgid "locale"
 msgstr ""
 
 #: ../../source/porting_notes.rst:721
-# 0f694dee0ea34164a8d321fe689fec0f
 msgid "The normalized version of the name of the UTF-8 encoding has changed from \"UTF8\" to \"UTF-8\" because Mac OS X and OpenBSD do not support the use of \"UTF8\" (:pyissue:`10154` and :pyissue:`10090`)."
 msgstr ""
 
 #: ../../source/porting_notes.rst:728
-# a30748544d6842acb855c58cb8dea451
 msgid "logging"
 msgstr ""
 
 #: ../../source/porting_notes.rst:733
-# 54d7a31c4a1a4ea5b4d0426cf9704cd7
 msgid "The :mod:`logging` module now includes a ``lastResort`` logger that is used if no other logging configuration is performed by an application. This eliminates the need to configure logging in an application solely to avoid having a user see error messages in case a library imported by an application uses logging but the application itself does not."
 msgstr ""
 
 #: ../../source/porting_notes.rst:743
-# e3a8888ad67d40debdfe11e86ddbfa12
 msgid "mailbox"
 msgstr ""
 
 #: ../../source/porting_notes.rst:748
-# ec44966fecfe45c2aca7a15444c28f26
 msgid "mailbox reads and writes mailbox files in binary mode, relying on the email package to parse messages.  StringIO and text file input is deprecated (:pyissue:`9124`)."
 msgstr ""
 
 #: ../../source/porting_notes.rst:755
-# 07bcd0b710c24bc09be675ab51392560
 msgid "mmap"
 msgstr ""
 
 #: ../../source/porting_notes.rst:760
-# 2273aeaebb24466c9f92a2571256ceab
 msgid "Values returned from read APIs are byte strings, and need to be decoded before being treated as text."
 msgstr ""
 
 #: ../../source/porting_notes.rst:766
-# 1ace27609f7b4d5ab1810f0c3d2e5603
 msgid "operator"
 msgstr ""
 
 #: ../../source/porting_notes.rst:771
-# 9bfdb0c368a74d369e6f569f32d337d1
 msgid "The ``div()`` function has been removed. Use either ``floordiv()`` or ``truediv()``, depending on the desired semantics."
 msgstr ""
 
 #: ../../source/porting_notes.rst:774
-# 642b7e61231540769551440c72a262fa
 msgid "The ``repeat()`` function is removed. Use ``mul()`` instead."
 msgstr ""
 
 #: ../../source/porting_notes.rst:776
-# 3815447c3c31409994937cb4feddbfd6
 msgid "The functions ``getslice()``, ``setslice()``, and ``delslice()`` are removed. Use ``getitem()``, ``setitem()``, and ``delitem()`` with slice indexes instead."
 msgstr ""
 
 #: ../../source/porting_notes.rst:780
-# c98b4557a951494399113d0cc050fa24
 msgid "The function ``isCallable()`` has been removed. Use the abstract base class ``collections.Callable`` instead."
 msgstr ""
 
 #: ../../source/porting_notes.rst:787
-# 830ac81960c441359b26ab8703452743
 msgid "The type checking functions ``isMappingType()``, ``isSequenceType()``, and ``isNumberType()`` have been removed. Use the relevant abstract base classes from :mod:`collections` or :mod:`numbers` instead."
 msgstr ""
 
 #: ../../source/porting_notes.rst:798
-# 26b4f9ee1ddc4f879c38ea9f1d6ad4b7
 msgid "The ``sequenceIncludes()`` function has been removed. Use ``contains()`` instead."
 msgstr ""
 
 #: ../../source/porting_notes.rst:804
-# 28c9cee22a9e400db671f5e65d26e883
 msgid "os"
 msgstr ""
 
 #: ../../source/porting_notes.rst:809
-# be75086e578b4e24b7e6bbc85601d085
 msgid "The functions ``popen2()``, ``popen3()``, and ``popen4()`` have been removed.  ``popen()`` is still present but deprecated and emits warnings if used.  Code using these functions should be rewritten to use :mod:`subprocess` instead to be more portable across operating systems."
 msgstr ""
 
 #: ../../source/porting_notes.rst:815
-# 52c6f80765b1478b8bd16176ddb75e14
 msgid "The functions ``os.tmpnam()``, ``os.tempnam()`` and ``os.tmpfile()`` have been removed. Use the :mod:`tempfile` module instead."
 msgstr ""
 
 #: ../../source/porting_notes.rst:819
-# faff64f80d7c49338eb70facf4e75fc6
 msgid "The function ``os.stat_float_times()`` is deprecated (:pyissue:`14711`)."
 msgstr ""
 
 #: ../../source/porting_notes.rst:822
-# 860e7a12732a421a94810e233bf3010e
 msgid "``os.unsetenv()`` no longer ignores errors (:pyissue:`13415`)."
 msgstr ""
 
 #: ../../source/porting_notes.rst:827
-# 40c76c6420e94bcda9d5e0512307151c
 msgid "os.path"
 msgstr ""
 
 #: ../../source/porting_notes.rst:832
-# a9b9898e4fb1405e992ac8fe47724ff1
 msgid "``os.path.walk()`` has been removed. Use ``os.walk()`` instead."
 msgstr ""
 
 #: ../../source/porting_notes.rst:838
-# 92c90217da3442e4b5716476fd7346d1
 msgid "pdb"
 msgstr ""
 
 #: ../../source/porting_notes.rst:843
-# 853d5fbc389c4ff4a05cea5bca11501c
 msgid "The ``print`` command alias has been removed so that it does not shadow the ``print()`` function (:pyissue:`18764`). The ``p`` shortcut is retained."
 msgstr ""
 
 #: ../../source/porting_notes.rst:850
-# 72ec5a410cd64d10927f39118f8e4773
 msgid "pickle"
 msgstr ""
 
 #: ../../source/porting_notes.rst:855
-# 9bff83d4a1da4142bf34e6d69d3dd591
 msgid "The C implementation of the pickle module from Python 2 has been moved to a new module that is automatically used to replace the Python implementation when possible. The old import idiom of looking for ``cPickle`` before ``pickle`` is no longer needed."
 msgstr ""
 
 #: ../../source/porting_notes.rst:867
-# 26fe5550e31b454e9fc7195fbdefc95c
 msgid "With the automatic import of the C implementation, it is only necessary to import the ``pickle`` module directly."
 msgstr ""
 
 #: ../../source/porting_notes.rst:874
-# 934f543ad23445eba7d75b91c9196b6e
 msgid "Interoperability between Python 2.x and 3.x has been improved for pickled data using the level 2 protocol or lower to resolve an issue introduced when a large number of standard library modules were renamed during the transition to Python 3. Because pickled data includes references to class and type names, and those names changed, it was difficult to exchange pickled data between Python 2 and 3 programs. Now for data pickled using protocol level 2 or older, the old names of the classes are automatically used when writing to and reading from a pickle stream."
 msgstr ""
 
 #: ../../source/porting_notes.rst:884
-# 8ecf83d00e70450e92d802febc181dd9
 msgid "This behavior is available by default, and can be turned off using the ``fix_imports`` option. This change improves the situation, but does not eliminate incompatibilities entirely. In particular, it is possible that data pickled under Python 3.1 can't be read under Python 3.0. To ensure maximum portability between Python 3 applications, use protocol level 3, which does not include this compatibility feature."
 msgstr ""
 
 #: ../../source/porting_notes.rst:891
-# ae12b4bf41ab4b578fabd6509868579e
 msgid "The default protocol version has changed from ``0``, the human-readable version, to ``3``, the binary format with the best interoperability when shared between Python 3 applications."
 msgstr ""
 
 #: ../../source/porting_notes.rst:895
-# 783b5a90bc024b238e5ba9ca9ca65779
 msgid "Byte string data written to a pickle by a Python 2.x application is decoded when it is read back to create a Unicode string object. The encoding for the transformation defaults to ASCII, and can be changed by passing values to the ``Unpickler``."
 msgstr ""
 
 #: ../../source/porting_notes.rst:903
-# 0a87a0a19d984c339f66b58501734f97
 msgid "pipes"
 msgstr ""
 
 #: ../../source/porting_notes.rst:908
-# 0f29bb620ecc4eaf90bf1a8273b91a5e
 msgid "``pipes.quote()`` has moved to :mod:`shlex` (:pyissue:`9723`)."
 msgstr ""
 
 #: ../../source/porting_notes.rst:913
-# c686592aa4f64ee4b07ffb8560b88a72
 msgid "platform"
 msgstr ""
 
 #: ../../source/porting_notes.rst:918
-# 2bac2babebee42b89e626209f0bccb0a
 msgid "``platform.popen()`` has been deprecated. Use ``subprocess.popen()`` instead (:pyissue:`11377`)."
 msgstr ""
 
 #: ../../source/porting_notes.rst:921
-# f3b5b0a7fe4540829de7f81937b4f82a
 msgid "``platform.uname()`` now returns a ``namedtuple``."
 msgstr ""
 
 #: ../../source/porting_notes.rst:923
-# 63125f3192224f1092378d3821657a05
 msgid "Because Linux distributions do not have a consistent way to describe themselves, the functions for getting the descriptions (``platform.dist()`` and ``platform.linux_distribution()``) are deprecated and scheduled to be removed in Python 3.7 (:pyissue:`1322`)."
 msgstr ""
 
 #: ../../source/porting_notes.rst:932
-# f65136e7480844109fbfd7d2ecd524b0
 msgid "random"
 msgstr ""
 
 #: ../../source/porting_notes.rst:937
-# bfb954ff364e449cb0a4ad5f41ff638b
 msgid "The function ``jumpahead()`` was removed in Python 3.0."
 msgstr ""
 
 #: ../../source/porting_notes.rst:943
-# 7879444a0c09492bad86ad24df30968a
 msgid "re"
 msgstr ""
 
 #: ../../source/porting_notes.rst:948
-# 48f44a6495de44d48e27b0a4cb82fa5c
 msgid "The ``UNICODE`` flag represents the default behavior. To restore the ASCII-specific behavior from Python 2, use the ``ASCII`` flag."
 msgstr ""
 
 #: ../../source/porting_notes.rst:956
-# 626f6c214da14f99be8261004a6761e5
 msgid "shelve"
 msgstr ""
 
 #: ../../source/porting_notes.rst:961
-# 6953f70c064e47a7999cbc8896a3b817
 msgid "The default output format for :mod:`shelve` may create a file with a ``.db`` extension added to the name given to ``shelve.open()``."
 msgstr ""
 
 #: ../../source/porting_notes.rst:967
-# 6eca1a1febf547f4a02cb6d6b5433e99
 msgid "signal"
 msgstr ""
 
 #: ../../source/porting_notes.rst:972
-# 17c914e1b2b24c03b5a0f2d9a816bd47
 msgid ":pep:`475` means that system calls interrupted and returning with ``EINTR`` are retried. This changes the behavior of signal handlers and other system calls, since now after the signal handler returns the interrupted call will be retried, unless the signal handler raises an exception. Refer to the PEP documentation for complete details."
 msgstr ""
 
 #: ../../source/porting_notes.rst:981
-# 9e6699e908d94f1c986311a7001e0630
 msgid "socket"
 msgstr ""
 
 #: ../../source/porting_notes.rst:986
-# 52e61c7398fc4acf8179e8c6bf1974e8
 msgid "Under Python 2 typically ``str`` objects could be sent directly over a socket. Because ``str`` replaces ``unicode``, in Python 3 the values must be encoded before being sent. The examples in the :mod:`socket` section use byte strings, which are already encoded."
 msgstr ""
 
 #: ../../source/porting_notes.rst:994
-# 700e80726c074363a34fec4a24581b62
 msgid "socketserver"
 msgstr ""
 
 #: ../../source/porting_notes.rst:999
-# f02c78228e224ab5894db20dfc2fa538
 msgid "The :mod:`socketserver` module was named ``SocketServer`` under Python 2."
 msgstr ""
 
 #: ../../source/porting_notes.rst:1006
-# b159df3b2ccb4eeabed54b76441fd04a
 msgid "string"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1011
-# 23635ab0555a441fa8a2b2f58335a163
 msgid "All functions from the :mod:`string` module that are also methods of ``str`` objects have been removed."
 msgstr ""
 
 #: ../../source/porting_notes.rst:1014
-# e4b60f6aabff4ad098f74e13145a896e
 msgid "The constants ``letters``, ``lowercase``, and ``uppercase`` have been removed. The new constants with similar names are limited to the ASCII character set."
 msgstr ""
 
 #: ../../source/porting_notes.rst:1018
-# 1db1936674544697850eef035c2df155
 msgid "The ``maketrans()`` function has been replaced by methods on ``str``, ``bytes``, and ``bytearray`` to clarify which input types are supported by each translation table."
 msgstr ""
 
 #: ../../source/porting_notes.rst:1026
-# 57d325349e9f49b6957af7eba6c2c742
 msgid "struct"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1031
-# 88474ba6056b45f39a653579e5a12096
 msgid "``struct.pack()`` now only supports byte strings when using the ``s`` string pack code, and no longer implicitly encodes string objects to UTF-8 (:pyissue:`10783`)."
 msgstr ""
 
 #: ../../source/porting_notes.rst:1038
-# 139e81903e664950a983683f0041d1bf
 msgid "subprocess"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1043
-# 74c3a1fac5b94f1dabf8e4f1e6d96ba8
 msgid "The default value for the ``close_fds`` argument to ``subprocess.Popen`` has changed from always being ``False``. It always defaults to ``True`` under Unix. It defaults to ``True`` under Windows if the standard I/O stream arguments are set to ``None``, otherwise it defaults to ``False``."
 msgstr ""
 
 #: ../../source/porting_notes.rst:1052
-# 5d77a75cad244ea0840fc5542351c940
 msgid "sys"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1059
-# 443f9793797540b3b2ff8f46ed4b73d5
 msgid "The variable ``sys.exitfunc`` is no longer checked for a clean-up action to be run when a program exits. Use :mod:`atexit` instead."
 msgstr ""
 
 #: ../../source/porting_notes.rst:1062
-# ba238f0a4a954da781c01d477281d3ac
 msgid "The variable ``sys.subversion`` is no longer defined."
 msgstr ""
 
 #: ../../source/porting_notes.rst:1064
-# b20f9b4c03354a58b018a5a1852161d9
 msgid "Flags ``sys.flags.py3k_warning``, ``sys.flags.division_warning``, ``sys.flags.division_new``, ``sys.flags.tabcheck``, and ``sys.flags.unicode`` are no longer defined."
 msgstr ""
 
 #: ../../source/porting_notes.rst:1069
-# ee72ea8285e74b2094f601f74695024f
 msgid "The variable ``sys.maxint`` is no longer defined, use ``sys.maxsize`` instead. See :pep:`237` (Unifying Long Integers and Integers)."
 msgstr ""
 
 #: ../../source/porting_notes.rst:1073
-# c586e1324090419fbafed5daa7d1c429
 msgid "The global exception tracking variables ``sys.exc_type``, ``sys.exc_value``, and ``sys.exc_traceback`` have been removed. The function ``sys.exc_clear()`` has also been removed."
 msgstr ""
 
 #: ../../source/porting_notes.rst:1077
-# 3bdf1f7208e14d7cb1d3e0b9329047d9
 msgid "The variable ``sys.version_info`` is now a :py``namedtuple`` instance with attributes ``major``, ``minor``, ``micro``, ``releaselevel``, and ``serial`` (:pyissue:`4285`)."
 msgstr ""
 
 #: ../../source/porting_notes.rst:1083
-# 06e74391658940eeb95f1875f81d1655
 msgid "The check interval feature, controlling the number of opcodes to execute before allowing a thread context switch has been replaced with an absolute time value instead, managed with ``sys.setswitchinterval()``. The old functions for managing the check interval, ``sys.getcheckinterval()`` and ``sys.setcheckinterval()``, are deprecated."
 msgstr ""
 
 #: ../../source/porting_notes.rst:1092
-# 4d2a57d4a525461cb1793fe9814c7ed6
 msgid "The ``sys.meta_path`` and ``sys.path_hooks`` variables now expose all of the path finders and entry hooks for importing modules. In earlier versions, only finders and hooks explicitly added to the path were exposed, and the C import used values in its implementation that could not be modified from the outside."
 msgstr ""
 
 #: ../../source/porting_notes.rst:1098
-# ee8ec9daf0dd4c49a4a75249f1bd6a9a
 msgid "For Linux systems, ``sys.platform`` no longer includes the version number. The value is now just ``linux`` and not ``linux2`` or ``linux3``."
 msgstr ""
 
 #: ../../source/porting_notes.rst:1105
-# 094a644574694905b2a6a26dea5d98c8
 msgid "threading"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1111
-# be752c5af6144e4894a086c6c9646890
 msgid "The ``thread`` module is deprecated in favor of the API in :mod:`threading`."
 msgstr ""
 
 #: ../../source/porting_notes.rst:1114
-# dd3278c4d66345da9d967630fd83d104
 msgid "The debugging features of :mod:`threading`, including the \"verbose\" argument has been removed from the APIs (:pyissue:`13550`)."
 msgstr ""
 
 #: ../../source/porting_notes.rst:1117
-# c603125662e94683a9499e6a64d3e5af
 msgid "Older implementations of :mod:`threading` used factory functions for some of the classes because they were implemented in C as extension types and could not be subclassed. That limitation of the language has been removed, and so many of the old factory functions have been converted to standard classes, which allow subclassing (:pyissue:`10968`)."
 msgstr ""
 
 #: ../../source/porting_notes.rst:1124
-# 4a8682b7920e4e1db27f6d44a8c61e38
 msgid "The public symbols exported from :mod:`threading` have been renamed to be :pep:`8` compliant. The old names are retained for backwards compatibility, but they will be removed in a future release."
 msgstr ""
 
 #: ../../source/porting_notes.rst:1131
-# c33a21aa4f624c919f82bef8e7cbb774
 msgid "time"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1136
-# ff4aa49715ed4bddb6382013f3ee6df6
 msgid "``time.asctime()`` and ``time.ctime()`` have been reimplemented to not use the system functions of the same time to allow larger years to be used. ``time.ctime()`` now supports years from 1900 through ``maxint``, although for values higher than ``9999`` the output string is longer than the standard 24 characters to allow for the extra year digits (:pyissue:`8013`)."
 msgstr ""
 
 #: ../../source/porting_notes.rst:1146
-# a5afd251bf8e4f5dbb127bc757288c45
 msgid "unittest"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1151
-# 8e4a44fc94804e85ac5b5b8ce52ba9ca
 msgid "The ``TestCase`` methods starting with \"fail\" (``failIf()``, ``failUnless()``, etc.) have been deprecated. Use the alternate form of the assert methods instead."
 msgstr ""
 
 #: ../../source/porting_notes.rst:1155
-# 788c591d13df42c3a3bed63556256be7
 msgid "Several older method aliases have been deprecated and replaced with preferred names. Using the deprecated names produces a warning (:pyissue:`9424`). See :table:`Deprecated unittest.TestCase Methods` for a mapping between the old and new names."
 msgstr ""
 
 #: ../../source/porting_notes.rst:0
-# 9e5bba1688c647b5a3338c08c8d3b602
 msgid "Deprecated unittest.TestCase Methods"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1163
-# b7fe51979121457ea5114caa81277233
 msgid "Deprecated Name"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1164
-# da1ce696f3ae4a9b9a8a820b5330ecfa
 msgid "Preferred Name"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1165
-# d993caef2e8d45449cc9ace79581490c
 msgid "``assert_()``"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1166
-# b05209c0737344f78b24d6d99b69146d
 msgid "``assertTrue()``"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1167
-# b49dfcc499fa432088cd3fa5b1cc5c91
 msgid "``assertEquals()``"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1168
-# 477756c3e13c496eb102c73316b4845e
 msgid "``assertEqual()``"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1169
-# 0829c7cf42e5486b8e1c0560b406e877
 msgid "``assertNotEquals()``"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1170
-# 7229aadf27d94c0e8fb9db8bf1ea4efc
 msgid "``assertNotEqual()``"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1171
-# b19ba95f155a4ee081c3380658e043ef
 msgid "``assertAlmostEquals()``"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1172
-# fe270d8b399c46e1bfc99505b1699a08
 msgid "``assertAlmostEqual()``"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1173
-# 08c9146884ab4c979291d81ab70c001d
 msgid "``assertNotAlmostEquals()``"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1174
-# d383a0783e41453484c9cf39eb2e96ab
 msgid "``assertNotAlmostEqual()``"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1177
-# 7ed37ab1881740c3921055096a167a6e
 msgid "UserDict, UserList, and UserString"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1184
-# 5f7a7c198c2c4f969175b73470f63dbe
 msgid "The UserDict, UserList, and UserString classes have been moved out of their own modules into the :mod:`collections` module. ``dict``, ``list``, and ``str`` can be subclassed directly, but the classes in :mod:`collections` may make implementing the subclass simpler because the content of the container is available directly through an instance attribute. The abstract classes in :mod:`collections.abc` are also useful for creating custom containers that follow the APIs of the built-in types."
 msgstr ""
 
 #: ../../source/porting_notes.rst:1196
-# cfe19c754da34867a6960d54594d6229
 msgid "uuid"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1201
-# 715b5dfd25884e428c90ec025aaa6638
 msgid "``uuid.getnode()`` now uses the ``PATH`` environment variable to find programs that can report the MAC address of the host under Unix (:pyissue:`19855`). It falls back to looking in ``/sbin`` and ``/usr/sbin`` if no program is found on the search path. This search behavior may give different results than with earlier versions of Python if alternate versions of programs like ``netstat``, ``ifconfig``, ``ip``, and ``arp`` are present and produce different output."
 msgstr ""
 
 #: ../../source/porting_notes.rst:1213
-# bae0264867d7401eb46ff104ee01c13c
 msgid "whichdb"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1218
-# e2d765885a3b48f990f1f95813112af6
 msgid "The functionality of ``whichdb`` has moved to the :mod:`dbm` module."
 msgstr ""
 
 #: ../../source/porting_notes.rst:1223
-# 44925f862d0e4ba5bb3f7253e4f7e39f
 msgid "xml.etree.ElementTree"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1228
-# 8f1297bec6da4342991f10d2c8a83a41
 msgid "``XMLTreeBuilder`` has been renamed ``TreeBuilder``, and the API has undergone several changes."
 msgstr ""
 
 #: ../../source/porting_notes.rst:1231
-# 1c1ac9829ebc45ab9ef39420a07a6a7e
 msgid "``ElementTree.getchildren()`` has been deprecated. Use ``list(elem)`` to build a list of the children."
 msgstr ""
 
 #: ../../source/porting_notes.rst:1234
-# 178c9bca19a64df18f1084ef9ab305ef
 msgid "``ElementTree.getiterator()`` has been deprecated. Use ``iter()`` to create an iterator using the normal iterator protocol instead."
 msgstr ""
 
 #: ../../source/porting_notes.rst:1238
-# 5de99b6aeb014d76846486ca5d9fed95
 msgid "When parsing fails, rather than raising ``xml.parsers.expat.ExpatError``, ``XMLParser`` now raises ``xml.etree.ElementTree.ParseError``."
 msgstr ""
 
 #: ../../source/porting_notes.rst:1245
-# 13078a7d1d5945fabaa92efe861cfabe
 msgid "zipimport"
 msgstr ""
 
 #: ../../source/porting_notes.rst:1250
-# 1f0bd35cdcb944f0a2aee68f45713d28
 msgid "The data returned from ``get_data()`` is a byte string, and needs to be decoded before being used as a unicode string."
 msgstr ""
 

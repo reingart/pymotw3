@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,127 +17,102 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/collections/deque.rst:5
-# 73fe1e25be7143ba9b34b7b6ff75ee37
 msgid "deque --- Double-Ended Queue"
 msgstr ""
 
 #: ../../source/collections/deque.rst:7
-# 7d0cff52395942b68ac63ed076743375
 msgid "A double-ended queue, or ``deque``, supports adding and removing elements from either end of the queue. The more commonly used stacks and queues are degenerate forms of deques, where the inputs and outputs are restricted to a single end."
 msgstr ""
 
 #: ../../source/collections/deque.rst:0
-# f9136611f7a1483f9540c363f9f832a4
 msgid "collections_deque.py"
 msgstr ""
 
 #: ../../source/collections/deque.rst:16
-# 565318aab2ef492287e0f39506243d7f
 msgid "Since deques are a type of sequence container, they support some of the same operations as ``list``, such as examining the contents with ``__getitem__()``, determining length, and removing elements from the middle of the queue by matching identity."
 msgstr ""
 
 #: ../../source/collections/deque.rst:38
-# 4390fcb0cacc4329adfe5d11db6a5741
 msgid "Populating"
 msgstr ""
 
 #: ../../source/collections/deque.rst:40
-# a7c0ce9c4a0b431c88c1d156e23ea6a7
 msgid "A deque can be populated from either end, termed \"left\" and \"right\" in the Python implementation."
 msgstr ""
 
 #: ../../source/collections/deque.rst:0
-# 26cb13aea727472ea2def0709e942f08
 msgid "collections_deque_populating.py"
 msgstr ""
 
 #: ../../source/collections/deque.rst:47
-# 4cf6c33a7c1e4e66a290431184cc6d3a
 msgid "The ``extendleft()`` function iterates over its input and performs the equivalent of an ``appendleft()`` for each item. The end result is that the ``deque`` contains the input sequence in reverse order."
 msgstr ""
 
 #: ../../source/collections/deque.rst:67
-# 83e9348ce8b94cb89a7f298d50b7e553
 msgid "Consuming"
 msgstr ""
 
 #: ../../source/collections/deque.rst:69
-# 138e2cbb68fb40e1a4d6b0c5928afb47
 msgid "Similarly, the elements of the ``deque`` can be consumed from both ends or either end, depending on the algorithm being applied."
 msgstr ""
 
 #: ../../source/collections/deque.rst:0
-# cc1a17b08bc446468f54f1787d77e07d
 msgid "collections_deque_consuming.py"
 msgstr ""
 
 #: ../../source/collections/deque.rst:76
-# a107cc79796b42dd9de7915f323f4d76
 msgid "Use ``pop()`` to remove an item from the \"right\" end of the ``deque`` and ``popleft()`` to take an item from the \"left\" end."
 msgstr ""
 
 #: ../../source/collections/deque.rst:95
-# a23816731b264547854d0065b04a2fb8
 msgid "Since deques are thread-safe, the contents can even be consumed from both ends at the same time from separate threads."
 msgstr ""
 
 #: ../../source/collections/deque.rst:0
-# efcaaabccb5e491e9bbaca8c75b513d3
 msgid "collections_deque_both_ends.py"
 msgstr ""
 
 #: ../../source/collections/deque.rst:102
-# 4a8979a37dc44557b45872a975180596
 msgid "The threads in this example alternate between each end, removing items until the ``deque`` is empty."
 msgstr ""
 
 #: ../../source/collections/deque.rst:121
-# 5eae75a432e64edc82ba60346b9fc6f5
 msgid "Rotating"
 msgstr ""
 
 #: ../../source/collections/deque.rst:123
-# 0f8643236d0d4346bd65dd9db9046e5d
 msgid "Another useful aspect of the ``deque`` is the ability to rotate it in either direction, so as to skip over some items."
 msgstr ""
 
 #: ../../source/collections/deque.rst:0
-# 0bf6eac026e34999ad37eaa78a8e249d
 msgid "collections_deque_rotate.py"
 msgstr ""
 
 #: ../../source/collections/deque.rst:130
-# f6bf8b1a4ce04212a8178eb15147ffa9
 msgid "Rotating the ``deque`` to the right (using a positive rotation) takes items from the right end and moves them to the left end. Rotating to the left (with a negative value) takes items from the left end and moves them to the right end.  It may help to visualize the items in the deque as being engraved along the edge of a dial."
 msgstr ""
 
 #: ../../source/collections/deque.rst:151
-# 6d67ea2740e24821843cdc08b3284503
 msgid "Constraining the Queue Size"
 msgstr ""
 
 #: ../../source/collections/deque.rst:153
-# fb66a191224e47079c52c5cd5d6abb4c
 msgid "A ``deque`` instance can be configured with a maximum length so that it never grows beyond that size. When the queue reaches the specified length, existing items are discarded as new items are added. This behavior is useful for finding the last *n* items in a stream of undetermined length."
 msgstr ""
 
 #: ../../source/collections/deque.rst:0
-# 27fc9dc551f04352945bd84ff3c11f3f
 msgid "collections_deque_maxlen.py"
 msgstr ""
 
 #: ../../source/collections/deque.rst:163
-# 58f1c53a9d294939ad586989e4b6d2f0
 msgid "The deque length is maintained regardless of which end the items are added to."
 msgstr ""
 
 #: ../../source/collections/deque.rst:196
-# f107801e1c7141558a64fa247c671d19
 msgid "`Wikipedia: Deque <https://en.wikipedia.org/wiki/Deque>`_ -- A discussion of the deque data structure."
 msgstr ""
 
 #: ../../source/collections/deque.rst:199
-# da8c96e91d194bec913963fd32996875
 msgid "`Deque Recipes <https://docs.python.org/3.5/library/collections.html#deque-recipes>`_ -- Examples of using deques in algorithms from the standard library documentation."
 msgstr ""
 

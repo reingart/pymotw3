@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,182 +17,146 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/string/index.rst:3
-# a2c2825ed7074bf9a153f162f9bc4b26
 msgid "string --- Text Constants and Templates"
 msgstr ""
 
 #: ../../source/string/index.rst:8
-# 347bb7a599a948f7840dbaca7d5325a4
 msgid "Contains constants and classes for working with text."
 msgstr ""
 
 #: ../../source/string/index.rst:10
-# ca5932de72244bbea1017f225ddcd63d
 msgid "The ``string`` module dates from the earliest versions of Python. Many of the functions previously implemented in this module have been moved to methods of ``str`` objects. The ``string`` module retains several useful constants and classes for working with ``str`` objects. This discussion will concentrate on them."
 msgstr ""
 
 #: ../../source/string/index.rst:17
-# 34d7dfe52c7a44aa9dc49f3e6250bbf6
 msgid "Functions"
 msgstr ""
 
 #: ../../source/string/index.rst:19
-# 441dc2c8f813413180e10a0843cb2c3a
 msgid "The function ``capwords()`` capitalizes all of the words in a string."
 msgstr ""
 
 #: ../../source/string/index.rst:0
-# 5202290b54654925b127251fffa0a3b3
 msgid "string_capwords.py"
 msgstr ""
 
 #: ../../source/string/index.rst:26
-# c6e7e65a393641f0a55c4ab821dd067f
 msgid "The results are the same as those obtained by calling ``split()``, capitalizing the words in the resulting list, and then calling ``join()`` to combine the results."
 msgstr ""
 
 #: ../../source/string/index.rst:44
-# 2c65f6e2f8be4782a4b42d3c91de53f5
 msgid "Templates"
 msgstr ""
 
 #: ../../source/string/index.rst:46
-# c52a1bb127de458b8daccf6249b34555
 msgid "String templates were added as part of :pep:`292` and are intended as an alternative to the built-in interpolation syntax. With ``string.Template`` interpolation, variables are identified by prefixing the name with ``$`` (e.g., ``$var``). Alternatively, if necessary to set them off from surrounding text, they can also be wrapped with curly braces (e.g., ``${var}``)."
 msgstr ""
 
 #: ../../source/string/index.rst:53
-# d33fbe3199ed4f41b408f65e6e7d3cc5
 msgid "This example compares a simple template with similar string interpolation using the ``%`` operator and the new format string syntax using ``str.format()``."
 msgstr ""
 
 #: ../../source/string/index.rst:0
-# 63a765cc446f43539ae4560048223789
 msgid "string_template.py"
 msgstr ""
 
 #: ../../source/string/index.rst:61
-# d1561b550d4244cd847fc35ba8823574
 msgid "In the first two cases, the trigger character (``$`` or ``%``) is escaped by repeating it twice. For the format syntax, both ``{`` and ``}`` need to be escaped by repeating them."
 msgstr ""
 
 #: ../../source/string/index.rst:91
-# f16143e75d5544ac908c15c86a0fb601
 msgid "One key difference between templates and string interpolation or formatting is that the type of the arguments is not taken into account. The values are converted to strings, and the strings are inserted into the result. No formatting options are available. For example, there is no way to control the number of digits used to represent a floating-point value."
 msgstr ""
 
 #: ../../source/string/index.rst:98
-# 9337766c41bc45a4970ebc7e42762c89
 msgid "A benefit, though, is that use of the ``safe_substitute()`` method makes it possible to avoid exceptions if not all of the values needed by the template are provided as arguments."
 msgstr ""
 
 #: ../../source/string/index.rst:0
-# 04a5ea10bc0a4f68a0123e4af594bc62
 msgid "string_template_missing.py"
 msgstr ""
 
 #: ../../source/string/index.rst:106
-# 33c11f3ef0e4497f95cf8a2fae903e5d
 msgid "Since there is no value for ``missing`` in the values dictionary, a ``KeyError`` is raised by ``substitute()``. Instead of raising the error, ``safe_substitute()`` catches it and leaves the variable expression alone in the text."
 msgstr ""
 
 #: ../../source/string/index.rst:125
-# bdf261bec9584f4cbc78b9be331f4912
 msgid "Advanced Templates"
 msgstr ""
 
 #: ../../source/string/index.rst:127
-# b343094a99594357b6bcd1ad5571618a
 msgid "The default syntax for ``string.Template`` can be changed by adjusting the regular expression patterns it uses to find the variable names in the template body. A simple way to do that is to change the :attr:`delimiter` and :attr:`idpattern` class attributes."
 msgstr ""
 
 #: ../../source/string/index.rst:0
-# 108900ad9a09413296f5a3dbb552a587
 msgid "string_template_advanced.py"
 msgstr ""
 
 #: ../../source/string/index.rst:136
-# 3ea13f6c6cff4ed39e7bec9c6ec27c2e
 msgid "In this example, the substitution rules are changed so that the delimiter is ``%`` instead of ``$`` and variable names must include an underscore somewhere in the middle.  The pattern ``%notunderscored`` is not replaced by anything, because it does not include an underscore character."
 msgstr ""
 
 #: ../../source/string/index.rst:159
-# 925e2d98bb4849739120dd48d1dfe1dc
 msgid "For even more complex changes, it is possible to override the :attr:`pattern` attribute and define an entirely new regular expression. The pattern provided must contain four named groups for capturing the escaped delimiter, the named variable, a braced version of the variable name, and invalid delimiter patterns."
 msgstr ""
 
 #: ../../source/string/index.rst:0
-# 031ddf4a39284eb3abf2a770c9d9bea0
 msgid "string_template_defaultpattern.py"
 msgstr ""
 
 #: ../../source/string/index.rst:169
-# 672daa6c3f3147c79542865816252cc4
 msgid "The value of ``t.pattern`` is a compiled regular expression, but the original string is available via its :attr:`pattern` attribute."
 msgstr ""
 
 #: ../../source/string/index.rst:183
-# 844b2aa7a4154c8f9f4f3afb44442605
 msgid "This example defines a new pattern to create a new type of template, using ``{{var}}`` as the variable syntax."
 msgstr ""
 
 #: ../../source/string/index.rst:0
-# 7538fc87a7ff4c9c93a1f10231912cf2
 msgid "string_template_newsyntax.py"
 msgstr ""
 
 #: ../../source/string/index.rst:190
-# 434d833dc3944a0389083321ff0f42a3
 msgid "Both the :attr:`named` and :attr:`braced` patterns must be provided separately, even though they are the same.  Running the sample program generates the following output:"
 msgstr ""
 
 #: ../../source/string/index.rst:211
-# eb7f1b0d32a2479b8ddfdee00ca6219c
 msgid "Formatter"
 msgstr ""
 
 #: ../../source/string/index.rst:213
-# 148a8a0e5ebf4e41ac55fa1b622113bf
 msgid "The ``Formatter`` class implements the same layout specification language as the ``format()`` method of ``str``. Its features include type coersion, alignment, attribute and field references, named and positional template arguments, and type-specific formatting options. Most of the time the ``format()`` method is a more convenient interface to these features, but ``Formatter`` is provided as a way to build subclasses, for cases where variations are needed."
 msgstr ""
 
 #: ../../source/string/index.rst:223
-# 2aaea92bafff46078395a27085340485
 msgid "Constants"
 msgstr ""
 
 #: ../../source/string/index.rst:225
-# a78b83bcc28f42a28f7e17fe9769e60b
 msgid "The ``string`` module includes a number of constants related to ASCII and numerical character sets."
 msgstr ""
 
 #: ../../source/string/index.rst:0
-# 47d87b9fad2f4c8aaaffb5e013a261e5
 msgid "string_constants.py"
 msgstr ""
 
 #: ../../source/string/index.rst:232
-# 00372a3d4e3a4c10b718f0687509b06d
 msgid "These constants are useful when working with ASCII data, but since it is increasingly common to encounter non-ASCII text in some form of Unicode, their application is limited."
 msgstr ""
 
 #: ../../source/string/index.rst:271
-# d0c33a09301d4cd1a44666a5725a0d9e
 msgid ":pydoc:`string`"
 msgstr ""
 
 #: ../../source/string/index.rst:273
-# 1201a856814c4b82a0206d3cf15abe27
 msgid "`String Methods <https://docs.python.org/3/library/stdtypes.html#string-methods>`_ -- Methods of ``str`` objects that replace the deprecated functions in ``string``."
 msgstr ""
 
 #: ../../source/string/index.rst:278
-# 66d5ee1d8d2f4c9a93539a8bdfaa10ab
 msgid ":pep:`292` -- Simpler String Substitutions"
 msgstr ""
 
 #: ../../source/string/index.rst:280
-# d2045013c6bd447d9936a8d89756129e
 msgid "`Format String Syntax <https://docs.python.org/3.5/library/string.html#format-string-syntax>`__ -- The formal definition of the layout specification language used by ``Formatter`` and ``str.format()``."
 msgstr ""
 

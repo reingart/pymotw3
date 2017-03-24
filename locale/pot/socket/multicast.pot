@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,97 +17,78 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/socket/multicast.rst:3
-# 31bf6a1ab5134a16b84a235f61737461
 msgid "Multicast"
 msgstr ""
 
 #: ../../source/socket/multicast.rst:5
-# 272ac4f6777f4c2f8a239146d255ff47
 msgid "Point-to-point connections handle a lot of communication needs, but passing the same information between many peers becomes challenging as the number of direct connections grows.  Sending messages separately to each recipient consumes additional processing time and bandwidth, which can be a problem for applications such as streaming video or audio.  Using *multicast* to deliver messages to more than one endpoint at a time achieves better efficiency because the network infrastructure ensures that the packets are delivered to all recipients."
 msgstr ""
 
 #: ../../source/socket/multicast.rst:15
-# 15eeeaf76d9e4a83a9ea7cd513ad3def
 msgid "Multicast messages are always sent using UDP, since TCP assumes a pair of communicating systems.  The addresses for multicast, called *multicast groups*, are a subset of regular IPv4 address range (224.0.0.0 through 230.255.255.255) reserved for multicast traffic. These addresses are treated specially by network routers and switches, so messages sent to the group can be distributed over the Internet to all recipients that have joined the group."
 msgstr ""
 
 #: ../../source/socket/multicast.rst:25
-# 542818f7e45342549f34dc40ac757193
 msgid "Some managed switches and routers have multicast traffic disabled by default.  If you have trouble with the example programs, check your network hardware settings."
 msgstr ""
 
 #: ../../source/socket/multicast.rst:30
-# 4f86e7900368423882bb3f5936cb050e
 msgid "Sending Multicast Messages"
 msgstr ""
 
 #: ../../source/socket/multicast.rst:32
-# 83711fd55ff34a1ca46a98dd4bf072eb
 msgid "This modified echo client will send a message to a multicast group, then report all of the responses it receives.  Since it has no way of knowing how many responses to expect, it uses a timeout value on the socket to avoid blocking indefinitely while waiting for an answer."
 msgstr ""
 
 #: ../../source/socket/multicast.rst:37
-# c6394c3fa79548efb433d322f0aa0a44
 msgid "The socket also needs to be configured with a *time-to-live* value (TTL) for the messages.  The TTL controls how many networks will receive the packet.  Set the TTL with the ``IP_MULTICAST_TTL`` option and ``setsockopt()``.  The default, ``1``, means that the packets are not forwarded by the router beyond the current network segment.  The value can range up to 255, and should be packed into a single byte."
 msgstr ""
 
 #: ../../source/socket/multicast.rst:0
-# 4abc069bb8764dbfbfa57cf208c0c954
 msgid "socket_multicast_sender.py"
 msgstr ""
 
 #: ../../source/socket/multicast.rst:49
-# fb94167b88694b53a829da1cf62fdad5
 msgid "The rest of the sender looks like the UDP echo client, except that it expects multiple responses so uses a loop to call ``recvfrom()`` until it times out."
 msgstr ""
 
 #: ../../source/socket/multicast.rst:54
-# 34533af00cf54a1884797a6345545525
 msgid "Receiving Multicast Messages"
 msgstr ""
 
 #: ../../source/socket/multicast.rst:56
-# 41e206320a144499a0e68b7894941b45
 msgid "The first step to establishing a multicast receiver is to create the UDP socket. After the regular socket is created and bound to a port, it can be added to the multicast group by using ``setsockopt()`` to change the ``IP_ADD_MEMBERSHIP`` option.  The option value is the 8-byte packed representation of the multicast group address followed by the network interface on which the server should listen for the traffic, identified by its IP address.  In this case, the receiver listens on all interfaces using ``INADDR_ANY``."
 msgstr ""
 
 #: ../../source/socket/multicast.rst:0
-# 538c64770b1f4fd38308b648b39b1aac
 msgid "socket_multicast_receiver.py"
 msgstr ""
 
 #: ../../source/socket/multicast.rst:69
-# dc29e46ee5714a5e909bf1adfbf4206d
 msgid "The main loop for the receiver is just like the regular UDP echo server."
 msgstr ""
 
 #: ../../source/socket/multicast.rst:73
-# ed49bb7f2c5248cc8b34ed65b73e496f
 msgid "Example Output"
 msgstr ""
 
 #: ../../source/socket/multicast.rst:75
-# d4ff3438e222443a9f9587b1c0af0d14
 msgid "This example shows the multicast receiver running on two different hosts. ``A`` has address ``192.168.1.13`` and ``B`` has address ``192.168.1.14``."
 msgstr ""
 
 #: ../../source/socket/multicast.rst:101
-# f40c6d0145a84fb697b01e2c8ba80ba0
 msgid "The sender is running on host ``B``."
 msgstr ""
 
 #: ../../source/socket/multicast.rst:117
-# c6918b5fa053483cb55e09f0a4aeac27
 msgid "The message is sent one time, and two acknowledgements of the outgoing message are received, one from each of host ``A`` and ``B``."
 msgstr ""
 
 #: ../../source/socket/multicast.rst:122
-# 7dc825465bb24a7faff410ede0ebbc64
 msgid "`Wikipedia: Multicast <https://en.wikipedia.org/wiki/Multicast>`__ -- Article describing technical details of multicasting."
 msgstr ""
 
 #: ../../source/socket/multicast.rst:125
-# de84e55f0e7b4dea96969e720c4b5813
 msgid "`Wikipedia: IP Multicast <https://en.wikipedia.org/wiki/IP_multicast>`__ -- Article about IP multicasting, with information about addressing."
 msgstr ""
 

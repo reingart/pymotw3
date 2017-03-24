@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,42 +17,34 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/asyncio/debugging.rst:3
-# afcc4d2d47d740f9a00028659cc936cb
 msgid "Debugging with asyncio"
 msgstr ""
 
 #: ../../source/asyncio/debugging.rst:5
-# 439edf8803fd4474b4b74c9347f1cc04
 msgid "There are several useful debugging features built into ``asyncio``."
 msgstr ""
 
 #: ../../source/asyncio/debugging.rst:8
-# efff665a8db345cbb548df6d2ba19d8f
 msgid "First, the event loop uses :mod:`logging` to emit status messages as it runs. Some of these are available if logging is enabled in an application. Others can be turned on by telling the loop to emit more debugging messages.  Call ``set_debug()`` passing a boolean value indicating whether or not debugging should be enabled."
 msgstr ""
 
 #: ../../source/asyncio/debugging.rst:14
-# 542eaa81ec404322a5037b6eddf0bd7b
 msgid "Because applications built on ``asyncio`` are highly sensitive to greedy coroutines failing to yield control, there is support for detecting slow callbacks built into the event loop. Turn it on by enabling debugging, and control the definition of \"slow\" by setting the ``slow_callback_duration`` property of the loop to the number of seconds after which a warning should be emitted."
 msgstr ""
 
 #: ../../source/asyncio/debugging.rst:21
-# c3c1924b65da47dfb654eb00bd72b12d
 msgid "Finally, if an application using ``asyncio`` exits without cleaning up some of the coroutines or other resources, that may mean there is a logic error preventing some of the application code from running. Enabling ``ResourceWarning`` warnings causes these cases to be reported when the program exits."
 msgstr ""
 
 #: ../../source/asyncio/debugging.rst:0
-# 6208262ef4694023bd83071767777797
 msgid "asyncio_debug.py"
 msgstr ""
 
 #: ../../source/asyncio/debugging.rst:31
-# 32bb20ba22e34adfbb2c98648a02d918
 msgid "When run without debugging enabled, everything looks fine with this application."
 msgstr ""
 
 #: ../../source/asyncio/debugging.rst:51
-# 28309aa96a624a9cbdbbf1bd1dd829c6
 msgid "Turning on debugging exposes some of the issues it has, including the fact that although ``inner()`` finishes it takes more time to do so than the ``slow_callback_duration`` that has been set and that the event loop is not being properly closed when the program exits."
 msgstr ""
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,312 +17,250 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/shutil/index.rst:3
-# 429e4dbef09f43ea937c38f2bef877b4
 msgid "shutil --- High-level File Operations"
 msgstr ""
 
 #: ../../source/shutil/index.rst:8
-# 636940698a694df893da47108690e08e
 msgid "High-level file operations."
 msgstr ""
 
 #: ../../source/shutil/index.rst:10
-# 8535c62565644f1ea3a6d62856f5f207
 msgid "The ``shutil`` module includes high-level file operations such as copying and archiving."
 msgstr ""
 
 #: ../../source/shutil/index.rst:14
-# bb5a2f29d7c44d33907610bae6e9daf8
 msgid "Copying Files"
 msgstr ""
 
 #: ../../source/shutil/index.rst:16
-# f7a6e0facf20409fb778d5f57d0b1521
 msgid "``copyfile()`` copies the contents of the source to the destination and raises ``IOError`` if it does not have permission to write to the destination file."
 msgstr ""
 
 #: ../../source/shutil/index.rst:0
-# 358f3dbdc89a49328b9984049105ea91
 msgid "shutil_copyfile.py"
 msgstr ""
 
 #: ../../source/shutil/index.rst:24
-# 4ac522773c674437a0b511faf03da8a6
 msgid "Because the function opens the input file for reading, regardless of its type, special files (such as Unix device nodes) cannot be copied as new special files with ``copyfile()``."
 msgstr ""
 
 #: ../../source/shutil/index.rst:45
-# 59670dc87cee498fbf0422cd1695718b
 msgid "The implementation of ``copyfile()`` uses the lower-level function ``copyfileobj()``. While the arguments to ``copyfile()`` are filenames, the arguments to ``copyfileobj()`` are open file handles. The optional third argument is a buffer length to use for reading in blocks."
 msgstr ""
 
 #: ../../source/shutil/index.rst:0
-# de1e1b1798b6479aa4370b34c06acac9
 msgid "shutil_copyfileobj.py"
 msgstr ""
 
 #: ../../source/shutil/index.rst:55
-# 3859ce418ea64df19115078d4c67e1d9
 msgid "The default behavior is to read using large blocks.  Use ``-1`` to read all of the input at one time or another positive integer to set a specific block size.  This example uses several different block sizes to show the effect."
 msgstr ""
 
 #: ../../source/shutil/index.rst:82
-# 2d37402ec577404abf193e194ccb7455
 msgid "The ``copy()`` function interprets the output name like the Unix command line tool ``cp``. If the named destination refers to a directory instead of a file, a new file is created in the directory using the base name of the source."
 msgstr ""
 
 #: ../../source/shutil/index.rst:0
-# f829c2d8d3db406e8159fc480672ad16
 msgid "shutil_copy.py"
 msgstr ""
 
 #: ../../source/shutil/index.rst:91
-# ffd25a677a114c5e86e45f05785985fb
 msgid "The permissions of the file are copied along with the contents."
 msgstr ""
 
 #: ../../source/shutil/index.rst:108
-# f144bb140d5a4cada633c8a392aa5703
 msgid "``copy2()`` works like ``copy()``, but includes the access and modification times in the metadata copied to the new file."
 msgstr ""
 
 #: ../../source/shutil/index.rst:0
-# 76df9d6d530b4bbeb0996677fab8d5e9
 msgid "shutil_copy2.py"
 msgstr ""
 
 #: ../../source/shutil/index.rst:115
-# 4d54a7de0bcf4cbea5c306ee7eb9e061
 msgid "The new file has all of the same characteristics as the old version."
 msgstr ""
 
 #: ../../source/shutil/index.rst:140
-# 8b644139846d4ca2a309b9b0af3222f3
 msgid "Copying File Metadata"
 msgstr ""
 
 #: ../../source/shutil/index.rst:142
-# 0782a99b55c24e9d84aab64a9ff6d632
 msgid "By default when a new file is created under Unix, it receives permissions based on the umask of the current user. To copy the permissions from one file to another, use ``copymode()``."
 msgstr ""
 
 #: ../../source/shutil/index.rst:0
-# f309c89ff5c44dbc97c40420e2c3a6f7
 msgid "shutil_copymode.py"
 msgstr ""
 
 #: ../../source/shutil/index.rst:150
-# 0e170a2e164b45c6bcc39396d3541783
 msgid "This example script creates a file to be modified, then uses ``copymode()`` to duplicate the permissions of the script to the example file."
 msgstr ""
 
 #: ../../source/shutil/index.rst:168
-# 339e0e0ed17b45a086664c7591238eaf
 msgid "To copy other metadata about the file use ``copystat()``."
 msgstr ""
 
 #: ../../source/shutil/index.rst:0
-# e86940e41d2b4ac18bbd47409147e00d
 msgid "shutil_copystat.py"
 msgstr ""
 
 #: ../../source/shutil/index.rst:174
-# f30e429c48b4403a8701ca79be2fb442
 msgid "Only the permissions and dates associated with the file are duplicated with ``copystat()``."
 msgstr ""
 
 #: ../../source/shutil/index.rst:202
-# 192790d4d95442c6a664ec1202f151de
 msgid "Working With Directory Trees"
 msgstr ""
 
 #: ../../source/shutil/index.rst:204
-# 574e844b455e4605bfbe588647cf6c4b
 msgid "``shutil`` includes three functions for working with directory trees. To copy a directory from one place to another, use ``copytree()``. It recurses through the source directory tree, copying files to the destination. The destination directory must not exist in advance."
 msgstr ""
 
 #: ../../source/shutil/index.rst:0
-# e6cfbbb130524a5b9f98fc6feba17f88
 msgid "shutil_copytree.py"
 msgstr ""
 
 #: ../../source/shutil/index.rst:214
-# 983cc9214fb1498f9d8d69a31b6b2c5f
 msgid "The ``symlinks`` argument controls whether symbolic links are copied as links or as files. The default is to copy the contents to new files. If the option is true, new symlinks are created within the destination tree."
 msgstr ""
 
 #: ../../source/shutil/index.rst:257
-# 93495923c33f4a0284419816bf5fa79d
 msgid "``copytree()`` accepts two callable arguments to control its behavior. The ``ignore`` argument is called with the name of each directory or subdirectory being copied along with a list of the contents of the directory. It should return a list of items that should be copied. The ``copy_function`` argument is called to actually copy the file."
 msgstr ""
 
 #: ../../source/shutil/index.rst:0
-# 468c877b1793453e9f4e4ad3715f1a83
 msgid "shutil_copytree_verbose.py"
 msgstr ""
 
 #: ../../source/shutil/index.rst:268
-# 85048caf18e84fc2853f352b9bf72596
 msgid "In the example, ``ignore_patterns()`` is used to create an ignore function to skip copying Python source files. ``verbose_copy()`` prints the names of files as they are copied then uses ``copy2()``, the default copy function, to make the copies."
 msgstr ""
 
 #: ../../source/shutil/index.rst:304
-# a4fc107afaf94476b29c510f06968a99
 msgid "To remove a directory and its contents, use ``rmtree()``."
 msgstr ""
 
 #: ../../source/shutil/index.rst:0
-# 00cf4102ff9f4b2f93adec945a06d093
 msgid "shutil_rmtree.py"
 msgstr ""
 
 #: ../../source/shutil/index.rst:310
-# c7bd969cbec7495ca8903a5e13abf0d4
 msgid "Errors are raised as exceptions by default, but can be ignored if the second argument is true, and a special error handler function can be provided in the third argument."
 msgstr ""
 
 #: ../../source/shutil/index.rst:333
-# 20ca9a8c40204aacaddc97734dea879d
 msgid "To move a file or directory from one place to another, use ``move()``."
 msgstr ""
 
 #: ../../source/shutil/index.rst:0
-# 657a9f13e1004544aae28b63b25581a9
 msgid "shutil_move.py"
 msgstr ""
 
 #: ../../source/shutil/index.rst:340
-# d44d2fce58dd40e0ab7a242b55575d94
 msgid "The semantics are similar to those of the Unix command ``mv``. If the source and destination are within the same file system, the source is renamed.  Otherwise the source is copied to the destination and then the source is removed."
 msgstr ""
 
 #: ../../source/shutil/index.rst:361
-# 17c8b99c83e64cf1a88ae16a81d27400
 msgid "Finding Files"
 msgstr ""
 
 #: ../../source/shutil/index.rst:363
-# 002c1b46830b4713872206d747dce522
 msgid "The ``which()`` function scans a search path looking for a named file. The typical use case is to find an executable program on the shell's search path defined in the environment variable ``PATH``."
 msgstr ""
 
 #: ../../source/shutil/index.rst:0
-# a668216d9afa4324a29212621e954e91
 msgid "shutil_which.py"
 msgstr ""
 
 #: ../../source/shutil/index.rst:371
-# 2668d84356724fdbb3bc291550555173
 msgid "If no file matching the search parameters can be found, ``which()`` returns ``None``."
 msgstr ""
 
 #: ../../source/shutil/index.rst:388
-# 413c02bed51448ff8c80603c62a3c2d7
 msgid "``which()`` takes arguments to filter based on the permissions the file has, and the search path to examine. The ``path`` argument defaults to ``os.environ('PATH')``, but can be any string containing directory names separated by ``os.pathsep``. The ``mode`` argument should be a bitmask matching the permissions of the file. By default the mask looks for executable files, but the following example uses a readable bitmask and an alternate search path to find a configuration file."
 msgstr ""
 
 #: ../../source/shutil/index.rst:0
-# a796413b15fe4d828949a3615266f67e
 msgid "shutil_which_regular_file.py"
 msgstr ""
 
 #: ../../source/shutil/index.rst:400
-# 671332f2c70d458fa4dccbeee57c4a8d
 msgid "There is still a race condition searching for readable files this way, because in the time between finding the file and actually trying to use it, the file can be deleted or its permissions can be changed."
 msgstr ""
 
 #: ../../source/shutil/index.rst:419
-# 1f4f74ab9ea841b7ae72eac4607b1a61
 msgid "Archives"
 msgstr ""
 
 #: ../../source/shutil/index.rst:421
-# 09eb930034f040548c331a619432d14c
 msgid "Python's standard library includes many modules for managing archive files such as :mod:`tarfile` and :mod:`zipfile`. There are also several higher-level functions for creating and extracting archives in ``shutil``. ``get_archive_formats()`` returns a sequence of names and descriptions for formats supported on the current system."
 msgstr ""
 
 #: ../../source/shutil/index.rst:0
-# d4f3984bc68d40d0920ec638ed8eb523
 msgid "shutil_get_archive_formats.py"
 msgstr ""
 
 #: ../../source/shutil/index.rst:431
-# 95b8f6b2ead5422c9f49488201d27f0b
 msgid "The formats supported depend on which modules and underlying libraries are available, so the output for this example may change based on where it is run."
 msgstr ""
 
 #: ../../source/shutil/index.rst:451
-# 4bd0c21a733e4136af6f797c7ace5560
 msgid "Use ``make_archive()`` to create a new archive file. Its inputs are designed to best support archiving an entire directory and all of its contents, recursively. By default it uses the current working directory, so that all of the files and subdirectories appear at the top level of the archive. To change that behavior, use the ``root_dir`` argument to move to a new relative position on the filesystem and the ``base_dir`` argument to specify a directory to add to the archive."
 msgstr ""
 
 #: ../../source/shutil/index.rst:0
-# 8daeefdc59ae433597c05f9a3d33cd72
 msgid "shutil_make_archive.py"
 msgstr ""
 
 #: ../../source/shutil/index.rst:463
-# 07446454ee734e79b07bfe14e91fc8c7
 msgid "This example starts within the source directory for the examples for ``shutil`` and moves up one level in the file system, then adds the ``shutil`` directory to a tar archive compressed with gzip. The :mod:`logging` module is configured to show messages from ``make_archive()`` about what it is doing."
 msgstr ""
 
 #: ../../source/shutil/index.rst:508
-# 8dc6c483067c42a8a472f9b5d337306b
 msgid "``shutil`` maintains a registry of formats that can be unpacked on the current system, accessible via ``get_unpack_formats()``."
 msgstr ""
 
 #: ../../source/shutil/index.rst:0
-# f933a8422f714cf4bff059d33b5a6199
 msgid "shutil_get_unpack_formats.py"
 msgstr ""
 
 #: ../../source/shutil/index.rst:515
-# d1b51ae969c24102b054f1a8a0d6fa6a
 msgid "This registry is different from the registry for creating archives because it also includes common file extensions used for each format so that the function for extracting an archive can guess which format to use based on the file extension."
 msgstr ""
 
 #: ../../source/shutil/index.rst:536
-# 0cfe3598b3ce4abaa56a0f9913285663
 msgid "Extract the archive with ``unpack_archive()``, passing the archive file name and optionally the directory where it should be extracted. If no directory is given, the current directory is used."
 msgstr ""
 
 #: ../../source/shutil/index.rst:0
-# bd9d4401977147a696ad6dc88b705874
 msgid "shutil_unpack_archive.py"
 msgstr ""
 
 #: ../../source/shutil/index.rst:544
-# f3aaa3dcca114de59fc0bc76f489fe31
 msgid "In this example ``unpack_archive()`` is able to determine the format of the archive because the filename ends with ``tar.gz``, and that value is associated with the ``gztar`` format in the unpack format registry."
 msgstr ""
 
 #: ../../source/shutil/index.rst:586
-# adca2db373f443848729c641ada60bf1
 msgid "File System Space"
 msgstr ""
 
 #: ../../source/shutil/index.rst:588
-# d968b56f316c4d2185d1417d664dbdd7
 msgid "It can be useful to examine the local file system to see how much space is available before performing a long running operation that may exhaust that space. ``disk_usage()`` returns a tuple with the total space, the amount currently being used, and the amount remaining free."
 msgstr ""
 
 #: ../../source/shutil/index.rst:0
-# dfd3c5da01284a2b91bfbc3b87c4dfad
 msgid "shutil_disk_usage.py"
 msgstr ""
 
 #: ../../source/shutil/index.rst:597
-# 971c814b647f4c40b43be9d9b96ef12e
 msgid "The values returned by ``disk_usage()`` are the number of bytes, so the example program converts them to more readable units before printing them."
 msgstr ""
 
 #: ../../source/shutil/index.rst:619
-# 1db5a7be9235480da8808eb8be8684d8
 msgid ":pydoc:`shutil`"
 msgstr ""
 
 #: ../../source/shutil/index.rst:621
-# 65e99c01fb754b7ea59686b1c84feae7
 msgid ":doc:`/compression` -- Modules for dealing with archive and compression formats."
 msgstr ""
 

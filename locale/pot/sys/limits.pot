@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,222 +17,178 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/sys/limits.rst:5
-# 3704c08be444464d83d84637798e9d98
 msgid "Memory Management and Limits"
 msgstr ""
 
 #: ../../source/sys/limits.rst:7
-# d2682fd9cf0e431ca1e2fc595721fd05
 msgid "``sys`` includes several functions for understanding and controlling memory usage."
 msgstr ""
 
 #: ../../source/sys/limits.rst:11
-# 87f6c45c88a44cd8a88f13890dcd66ee
 msgid "Reference Counts"
 msgstr ""
 
 #: ../../source/sys/limits.rst:13
-# 0e9690c5ac6d4d71a0b61bf7457b22e1
 msgid "The primary implementation of Python (CPython) uses *reference counting* and *garbage collection* for automatic memory management. An object is automatically marked to be collected when its reference count drops to zero.  To examine the reference count of an existing object, use ``getrefcount()``."
 msgstr ""
 
 #: ../../source/sys/limits.rst:0
-# a0b3f4f104344dbc80e894392a23feb3
 msgid "sys_getrefcount.py"
 msgstr ""
 
 #: ../../source/sys/limits.rst:23
-# db3ea980ad2744c785a8d2e57d469c6f
 msgid "The value reported is actually one higher than expected because there is a temporary reference to the object held by ``getrefcount()`` itself."
 msgstr ""
 
 #: ../../source/sys/limits.rst:43
-# df852e236c1244278bf1a24c6c54b88b
 msgid ":mod:`gc` -- Control the garbage collector via the functions exposed in ``gc``."
 msgstr ""
 
 #: ../../source/sys/limits.rst:47
-# bb207e5478014a61a81c3809ff871613
 msgid "Object Size"
 msgstr ""
 
 #: ../../source/sys/limits.rst:49
-# 4f5464c3b527432080baf04265121c17
 msgid "Knowing how many references an object has may help find cycles or a memory leak, but it is not enough to determine what objects are consuming the *most* memory.  That requires knowledge about how big objects are."
 msgstr ""
 
 #: ../../source/sys/limits.rst:0
-# 35b66fc3824b49e6aec38d1f22960794
 msgid "sys_getsizeof.py"
 msgstr ""
 
 #: ../../source/sys/limits.rst:58
-# d3dff199f3bb489999e3589673a198ab
 msgid "``getsizeof()`` reports the size of an object in bytes."
 msgstr ""
 
 #: ../../source/sys/limits.rst:81
-# 70bce6c352cf43238e5c0237574f426c
 msgid "The reported size for a custom class does not include the size of the attribute values."
 msgstr ""
 
 #: ../../source/sys/limits.rst:0
-# 14074d5bd2994396a815da926e3ac304
 msgid "sys_getsizeof_object.py"
 msgstr ""
 
 #: ../../source/sys/limits.rst:88
-# 2f77c0fa749a46dca891f903d9e2eed0
 msgid "This can give a false impression of the amount of memory being consumed."
 msgstr ""
 
 #: ../../source/sys/limits.rst:104
-# 8a9bc2bbeb914eac98aa2392886113a0
 msgid "For a more complete estimate of the space used by a class, provide a ``__sizeof__()`` method to compute the value by aggregating the sizes of attributes of an object."
 msgstr ""
 
 #: ../../source/sys/limits.rst:0
-# 13f5a736f5e541e39db01480bb01da7f
 msgid "sys_getsizeof_custom.py"
 msgstr ""
 
 #: ../../source/sys/limits.rst:112
-# 92260bcc0ed34928ad68cb82d15cf7c6
 msgid "This version adds the base size of the object to the sizes of all of the attributes stored in the internal ``__dict__``."
 msgstr ""
 
 #: ../../source/sys/limits.rst:128
-# 773ad595ae624c439a7cb7d02b95efd6
 msgid "Recursion"
 msgstr ""
 
 #: ../../source/sys/limits.rst:130
-# 28c2bbfabc0846ae850425664a1393a1
 msgid "Allowing infinite recursion in a Python application may introduce a stack overflow in the interpreter itself, leading to a crash. To eliminate this situation, the interpreter provides a way to control the maximum recursion depth using ``setrecursionlimit()`` and ``getrecursionlimit()``."
 msgstr ""
 
 #: ../../source/sys/limits.rst:0
-# 32cee18a3d0742aeaffe1e9682d901fc
 msgid "sys_recursionlimit.py"
 msgstr ""
 
 #: ../../source/sys/limits.rst:140
-# 80a7cf5436c64c40ba1eba5300e9bcbb
 msgid "Once the stack size reaches the recursion limit, the interpreter raises a ``RuntimeError`` exception so the program has an opportunity to handle the situation."
 msgstr ""
 
 #: ../../source/sys/limits.rst:170
-# cc7e68342a14401588a6ddace4ca0914
 msgid "Maximum Values"
 msgstr ""
 
 #: ../../source/sys/limits.rst:172
-# 30c6575932764498a225e3ae8dd07687
 msgid "Along with the runtime configurable values, ``sys`` includes variables defining the maximum values for types that vary from system to system."
 msgstr ""
 
 #: ../../source/sys/limits.rst:0
-# 38efa4b7260a4a67b87c118e51a66665
 msgid "sys_maximums.py"
 msgstr ""
 
 #: ../../source/sys/limits.rst:180
-# 1a11b1de2705483bbef10c53bdbf8920
 msgid "``maxsize`` is the maximum size of a list, dictionary, string, or other data structure dictated by the C interpreter's size type. ``maxunicode`` is the largest integer Unicode point supported by the interpreter as currently configured."
 msgstr ""
 
 #: ../../source/sys/limits.rst:199
-# c26ec8931c264a678b32e98a0653cd78
 msgid "Floating Point Values"
 msgstr ""
 
 #: ../../source/sys/limits.rst:201
-# f8064308d3814597857372e2d83a2fd3
 msgid "The structure ``float_info`` contains information about the floating-point type representation used by the interpreter, based on the underlying system's :c:type:`float` implementation."
 msgstr ""
 
 #: ../../source/sys/limits.rst:0
-# f5bcc9af657f4427b7d5e5f4a67f83c2
 msgid "sys_float_info.py"
 msgstr ""
 
 #: ../../source/sys/limits.rst:209
-# 52ba0dba09424769a1bcba2aecec3515
 msgid "These values depend on the compiler and underlying system.  These examples were produced on OS X 10.9.5 on an Intel Core i7."
 msgstr ""
 
 #: ../../source/sys/limits.rst:242
-# 370f3d2e2d924fe289da654d34057601
 msgid "The ``float.h`` C header file for the local compiler contains more details about these settings."
 msgstr ""
 
 #: ../../source/sys/limits.rst:246
-# 98c1068600764634ac23403a80b2df68
 msgid "Integer Values"
 msgstr ""
 
 #: ../../source/sys/limits.rst:248
-# c460c627922c417ba2ad137574311454
 msgid "The structure ``int_info`` holds information about the internal representation of integers used by the interpreter."
 msgstr ""
 
 #: ../../source/sys/limits.rst:0
-# 684da3744a544b4fb4df3386fbe11fa2
 msgid "sys_int_info.py"
 msgstr ""
 
 #: ../../source/sys/limits.rst:255
-# dfbd850a18f44b328db4f5cb35a02a7c
 msgid "These examples were produced on OS X 10.9.5 on an Intel Core i7."
 msgstr ""
 
 #: ../../source/sys/limits.rst:270
-# 146f1c279e0f4ec9a4a9ca83053a00c3
 msgid "The C type used to store integers internally is determined when the interpreter is built. 64-bit architectures automatically use 30-bit integers by default, and they can be enabled for 32-bit architectures with the configuration flag ``--enable-big-digits``."
 msgstr ""
 
 #: ../../source/sys/limits.rst:277
-# fdc6add272cc41c7bd72f73f386b8612
 msgid "`Build and C API Changes <https://docs.python.org/3.1/whatsnew/3.1.html#build-and-c-api-changes>`__ from *What's New in Python 3.1*"
 msgstr ""
 
 #: ../../source/sys/limits.rst:283
-# 3f8930c108f34edaa58d9502c4059e2e
 msgid "Byte Ordering"
 msgstr ""
 
 #: ../../source/sys/limits.rst:285
-# d645bdc9c12e423aa0106e37c34a3e13
 msgid "``byteorder`` is set to the native byte order."
 msgstr ""
 
 #: ../../source/sys/limits.rst:0
-# 31f4df6edd57426d9feb73287f8fefe0
 msgid "sys_byteorder.py"
 msgstr ""
 
 #: ../../source/sys/limits.rst:291
-# 876e430f986d4dbe94f312693b781c42
 msgid "The value is either ``big`` for big-endian or ``little`` for little-endian."
 msgstr ""
 
 #: ../../source/sys/limits.rst:308
-# e974b29595354119844fde937b4ff566
 msgid "`Wikipedia: Endianness <https://en.wikipedia.org/wiki/Byte_order>`__ -- Description of big and little endian memory systems."
 msgstr ""
 
 #: ../../source/sys/limits.rst:312
-# ba03964efba7465faa5fad5bce961f8c
 msgid ":mod:`array` and :mod:`struct` -- Other modules that depend on the byte order of data."
 msgstr ""
 
 #: ../../source/sys/limits.rst:315
-# 2508c31991f14b9885d85e718c227024
 msgid "``float.h`` -- The C header file for the local compiler contains"
 msgstr ""
 
 #: ../../source/sys/limits.rst:316
-# 9d09ec7300f64ade825a98101b0223f0
 msgid "more details about these settings."
 msgstr ""
 

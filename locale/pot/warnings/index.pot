@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,347 +17,278 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/warnings/index.rst:3
-# 3d04d578f5024af388aea31f463393c7
 msgid "warnings --- Non-fatal Alerts"
 msgstr ""
 
 #: ../../source/warnings/index.rst:8
-# f5a3fac860a646b0837d338ad06d2e58
 msgid "Deliver non-fatal alerts to the user about issues encountered when running a program."
 msgstr ""
 
 #: ../../source/warnings/index.rst:10
-# 0e74d439f4024a889b5cabcbb439b818
 msgid "The ``warnings`` module was introduced by :pep:`230` as a way to warn programmers about changes in language or library features in anticipation of backwards incompatible changes coming with Python 3.0. It can also be used to report recoverable configuration errors or feature degradation from missing libraries.  It is better to deliver user-facing messages via the :mod:`logging` module, though, because warnings sent to the console may be lost."
 msgstr ""
 
 #: ../../source/warnings/index.rst:18
-# 85db1ab31f1645ad9c91f7542012ee54
 msgid "Since warnings are not fatal, a program may encounter the same warn-able situation many times in the course of running. The ``warnings`` module suppresses repeated messages from the same source to cut down on the annoyance of seeing the same warning over and over.  The output can be controlled on a case-by-case basis, using the command line options to the interpreter or by calling functions found in ``warnings``."
 msgstr ""
 
 #: ../../source/warnings/index.rst:27
-# 0b175cdce8bd45e7b383c92e8c7405af
 msgid "Categories and Filtering"
 msgstr ""
 
 #: ../../source/warnings/index.rst:29
-# 3763372ee9774cf19fff2466e2f69499
 msgid "Warnings are categorized using subclasses of the built-in exception class ``Warning``. Several standard values are described in the online documentation for the :mod:`exceptions` module, and custom warnings can be added by subclassing from ``Warning``."
 msgstr ""
 
 #: ../../source/warnings/index.rst:34
-# 7325f213379843f398c16bddc6bb236c
 msgid "Warnings are processed based on *filter* settings.  A filter consists of five parts: the ``action``, ``message``, ``category``, ``module``, and ``line number``.  The ``message`` portion of the filter is a regular expression that is used to match the warning text.  The ``category`` is a name of an exception class.  The ``module`` contains a regular expression to be matched against the module name generating the warning.  And the ``line number`` can be used to change the handling on specific occurrences of a warning."
 msgstr ""
 
 #: ../../source/warnings/index.rst:43
-# a620fbe7e61844a499446d8872f9b7e6
 msgid "When a warning is generated, it is compared against all of the registered filters. The first filter that matches controls the action taken for the warning. If no filter matches, the default action is taken.  The actions understood by the filtering mechanism are listed in :table:`Warning Filter Actions`."
 msgstr ""
 
 #: ../../source/warnings/index.rst:0
-# 21dd4e2fd53f43a9944cd542dad1fded
 msgid "Warning Filter Actions"
 msgstr ""
 
 #: ../../source/warnings/index.rst:52
-# 99c9f684640e4e388c1bf83829c73ece
 msgid "Action"
 msgstr ""
 
 #: ../../source/warnings/index.rst:52
-# 73f24d0dc4384d7daa0a106ca9569bf0
 msgid "Meaning"
 msgstr ""
 
 #: ../../source/warnings/index.rst:54
-# 4db7a307e61b400c924b278d0895c3a2
 msgid "error"
 msgstr ""
 
 #: ../../source/warnings/index.rst:54
-# f83351141c784d6c9cefdb2c688164c3
 msgid "Turn the warning into an exception."
 msgstr ""
 
 #: ../../source/warnings/index.rst:55
-# 6295ad45ff9f44588ba5117bfadaa76d
 msgid "ignore"
 msgstr ""
 
 #: ../../source/warnings/index.rst:55
-# 15a4b3b95e0d433ebfa5ef50b2efcd67
 msgid "Discard the warning."
 msgstr ""
 
 #: ../../source/warnings/index.rst:56
-# 105f89864d4749fdb9e7eb75d933da1e
 msgid "always"
 msgstr ""
 
 #: ../../source/warnings/index.rst:56
-# 29e5f51b524448ad81b9252a6f3daf84
 msgid "Always emit a warning."
 msgstr ""
 
 #: ../../source/warnings/index.rst:57
-# f0ff30727f154e37ad367b9214f1c910
 msgid "default"
 msgstr ""
 
 #: ../../source/warnings/index.rst:57
-# 48a9a27b936f4632a8c5cef49e284844
 msgid "Print the warning the first time it is generated from each location."
 msgstr ""
 
 #: ../../source/warnings/index.rst:58
-# 7274b82a21f049d4acb53dc887c36726
 msgid "module"
 msgstr ""
 
 #: ../../source/warnings/index.rst:58
-# c4fd9de33e1f4b0ab9e6ac56db50483d
 msgid "Print the warning the first time it is generated from each module."
 msgstr ""
 
 #: ../../source/warnings/index.rst:59
-# 24878b3307704088835e41cb90954f85
 msgid "once"
 msgstr ""
 
 #: ../../source/warnings/index.rst:59
-# d1a476d60e564f9293dc479841fb272b
 msgid "Print the warning the first time it is generated."
 msgstr ""
 
 #: ../../source/warnings/index.rst:63
-# a729701a6dc94d7a8cd11e7c2db9a962
 msgid "Generating Warnings"
 msgstr ""
 
 #: ../../source/warnings/index.rst:65
-# 5ba0d8015c0847bf8e1a8d7a698b9cef
 msgid "The simplest way to emit a warning is to call ``warn()`` with the message as an argument."
 msgstr ""
 
 #: ../../source/warnings/index.rst:0
-# 30dbb478c7804fe1baa8fd4657fc63f7
 msgid "warnings_warn.py"
 msgstr ""
 
 #: ../../source/warnings/index.rst:72
-# 6912314495b740ec93f8e29bf43069c3
 msgid "Then, when the program runs, the message is printed."
 msgstr ""
 
 #: ../../source/warnings/index.rst:89
-# af7249f3ce394cf787bdc1bf16367d50
 msgid "Even though the warning is printed, the default behavior is to continue past that point and run the rest of the program. That behavior can be changed with a filter."
 msgstr ""
 
 #: ../../source/warnings/index.rst:0
-# d6ee15e4bfc445c68ca397e03944f76a
 msgid "warnings_warn_raise.py"
 msgstr ""
 
 #: ../../source/warnings/index.rst:97
-# 32f4521f23434aadb5c599c3a2a44fa2
 msgid "In this example, the ``simplefilter()`` function adds an entry to the internal filter list to tell the ``warnings`` module to raise an exception when a ``UserWarning`` warning is issued."
 msgstr ""
 
 #: ../../source/warnings/index.rst:118
-# 95d2425e6aed40a991c66568944b0448
 msgid "The filter behavior can also be controlled from the command line by using the ``-W`` option to the interpreter.  Specify the filter properties as a string with the five parts (action, message, category, module, and line number) separated by colons (``:``). For example, if ``warnings_warn.py`` is run with a filter set to raise an error on ``UserWarning``, an exception is produced."
 msgstr ""
 
 #: ../../source/warnings/index.rst:141
-# 8808c3290be145c493e25d63cd343f6c
 msgid "Since the fields for ``message`` and ``module`` were left blank, they were interpreted as matching anything."
 msgstr ""
 
 #: ../../source/warnings/index.rst:145
-# 0d86a098a82a4234ada7c87db0711f7f
 msgid "Filtering with Patterns"
 msgstr ""
 
 #: ../../source/warnings/index.rst:147
-# 39f810e8f4784edf8bd458b77e5a52f4
 msgid "To filter on more complex rules programmatically, use ``filterwarnings()``. For example, to filter based on the content of the message text, give a regular expression pattern as the ``message`` argument."
 msgstr ""
 
 #: ../../source/warnings/index.rst:0
-# 8fe554938c4043d6b5f4f6111f0f779d
 msgid "warnings_filterwarnings_message.py"
 msgstr ""
 
 #: ../../source/warnings/index.rst:156
-# e2d0a150d0664bcfa112e0d56ed9e085
 msgid "The pattern contains \"``do not``\", but the actual message uses \"``Do not``\". The pattern matches because the regular expression is always compiled to look for case insensitive matches."
 msgstr ""
 
 #: ../../source/warnings/index.rst:174
-# 978ee19b90ac4152920987257629b5ad
 msgid "The example program below generates two warnings."
 msgstr ""
 
 #: ../../source/warnings/index.rst:0
-# 7b247024e51b40f2aaba20ecc5d9a462
 msgid "warnings_filter.py"
 msgstr ""
 
 #: ../../source/warnings/index.rst:180
-# f130f7b1b5cc4cae84555722da85e83c
 msgid "One of the warnings can be ignored using the filter argument on the command line."
 msgstr ""
 
 #: ../../source/warnings/index.rst:196
-# ad6b99b01909433c86ac5e9919c6e8eb
 msgid "The same pattern matching rules apply to the name of the source module containing the call generating the warning. Suppress all messages from the ``warnings_filter`` module by passing the module name as the pattern to the ``module`` argument."
 msgstr ""
 
 #: ../../source/warnings/index.rst:0
-# e006d41ae56d478ea027c9cf924752f5
 msgid "warnings_filterwarnings_module.py"
 msgstr ""
 
 #: ../../source/warnings/index.rst:205
-# b671aaf0a96f4c1c83dc63ee97be27f3
 msgid "Since the filter is in place, no warnings are emitted when ``warnings_filter`` is imported."
 msgstr ""
 
 #: ../../source/warnings/index.rst:219
-# 8d4856ffb767472aad5f3a8d64268709
 msgid "To suppress only the message on line 13 of ``warnings_filter``, include the line number as the last argument to ``filterwarnings()``.  Use the actual line number from the source file to limit the filter, or ``0`` to have the filter apply to all occurrences of the message."
 msgstr ""
 
 #: ../../source/warnings/index.rst:0
-# 39048e0761ec4a5f8434256602db0b9f
 msgid "warnings_filterwarnings_lineno.py"
 msgstr ""
 
 #: ../../source/warnings/index.rst:229
-# 21d746774c5c4e89a4a24e0e310d6213
 msgid "The pattern matches any message, so the important arguments are the module name and line number."
 msgstr ""
 
 #: ../../source/warnings/index.rst:247
-# 020c52353fd24e7bb0697f26329113e2
 msgid "Repeated Warnings"
 msgstr ""
 
 #: ../../source/warnings/index.rst:249
-# 0cee20ba23124099acf7cc4edc854c62
 msgid "By default, most types of warnings are only printed the first time they occur in a given location, with \"location\" defined by the combination of module and line number where the warning is generated."
 msgstr ""
 
 #: ../../source/warnings/index.rst:0
-# 06292390538b4661b355674a1714bbc2
 msgid "warnings_repeated.py"
 msgstr ""
 
 #: ../../source/warnings/index.rst:257
-# f5e2f53b53f945f7b0c0c5be3e3fa16d
 msgid "This example calls the same function several times, but produces a single warning."
 msgstr ""
 
 #: ../../source/warnings/index.rst:273
-# 4c99ce7da9bb4df496d95e310fee17a8
 msgid "The ``\"once\"`` action can be used to suppress instances of the same message from different locations."
 msgstr ""
 
 #: ../../source/warnings/index.rst:0
-# 9d081e36b6fe409aa9a7bd83c3816726
 msgid "warnings_once.py"
 msgstr ""
 
 #: ../../source/warnings/index.rst:280
-# 91a70a21b66147f89c50adbed0eafb3f
 msgid "The message text for all warnings is saved and only unique messages are printed."
 msgstr ""
 
 #: ../../source/warnings/index.rst:296
-# 3f46537ba0e6405f8d7e5058b212ac29
 msgid "Similarly, ``\"module\"`` will suppress repeated messages from the same module, no matter what line number."
 msgstr ""
 
 #: ../../source/warnings/index.rst:300
-# fc2896fcaf864fe9a822fe24184fe3f9
 msgid "Alternate Message Delivery Functions"
 msgstr ""
 
 #: ../../source/warnings/index.rst:302
-# c9e7d1a9439b463287f93094f9637b5c
 msgid "Normally warnings are printed to ``sys.stderr``.  Change that behavior by replacing the ``showwarning()`` function inside the ``warnings`` module. For example, to send warnings to a log file instead of standard error, replace ``showwarning()`` with a function that logs the warning."
 msgstr ""
 
 #: ../../source/warnings/index.rst:0
-# 18afdf98f30f4533bf89f9cd39879708
 msgid "warnings_showwarning.py"
 msgstr ""
 
 #: ../../source/warnings/index.rst:312
-# 2c5de4ca2eb043d59ecee416ce4697b0
 msgid "The warnings are emitted with the rest of the log messages when ``warn()`` is called."
 msgstr ""
 
 #: ../../source/warnings/index.rst:328
-# 7ce872fb863745bf8e24cd0e5da466f8
 msgid "Formatting"
 msgstr ""
 
 #: ../../source/warnings/index.rst:330
-# a430f03b10324ae7b9e5803add7202d9
 msgid "If warnings should go to standard error, but they need to be reformatted, replace ``formatwarning()``."
 msgstr ""
 
 #: ../../source/warnings/index.rst:0
-# 1528b1e785154d55b8ab4a50dc5e83e4
 msgid "warnings_formatwarning.py"
 msgstr ""
 
 #: ../../source/warnings/index.rst:337
-# b2ea3d8661194f1e80c43796d2fa0107
 msgid "The format function must return a single string containing the representation of the warning to be displayed to the user."
 msgstr ""
 
 #: ../../source/warnings/index.rst:357
-# 5d369d0e00584587a1ae2fca15f53e38
 msgid "Stack Level in Warnings"
 msgstr ""
 
 #: ../../source/warnings/index.rst:359
-# 505f04d9130643ecbd5fc2c749260ea2
 msgid "By default, the warning message includes the source line that generated it, when available. It is not always useful to see the line of code with the actual warning message, though. Instead, ``warn()`` can be told how far up the stack it has to go to find the line that called the function containing the warning.  That way, users of a deprecated function can see where the function is called, instead of the implementation of the function."
 msgstr ""
 
 #: ../../source/warnings/index.rst:0
-# 57e3a321fb324409930acc8cc4063bfb
 msgid "warnings_warn_stacklevel.py"
 msgstr ""
 
 #: ../../source/warnings/index.rst:373
-# 43bc4185af3e4b8fa1f6584e0e941fae
 msgid "In this example ``warn()`` needs to go up the stack two levels, one for itself and one for ``old_function()``."
 msgstr ""
 
 #: ../../source/warnings/index.rst:392
-# c8c5e602c57d41bb98cc94177b2c2c6e
 msgid ":pydoc:`warnings`"
 msgstr ""
 
 #: ../../source/warnings/index.rst:394
-# 141dbed6902d4123a482b48ff33715d8
 msgid ":pep:`230` -- Warning Framework"
 msgstr ""
 
 #: ../../source/warnings/index.rst:396
-# 48700dcff3fe4eab91015ede4304ab62
 msgid ":mod:`exceptions` -- Base classes for exceptions and warnings."
 msgstr ""
 
 #: ../../source/warnings/index.rst:398
-# 6f148a4729e24683ac0306d785aa1a73
 msgid ":mod:`logging` -- An alternative mechanism for delivering warnings is to write to the log."
 msgstr ""
 

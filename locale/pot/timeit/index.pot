@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,167 +17,134 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/timeit/index.rst:3
-# 426796c25e5040f4ad5a3c0745d652a2
 msgid "timeit --- Time the execution of small bits of Python code."
 msgstr ""
 
 #: ../../source/timeit/index.rst:8
-# 5149a00206bc4010b12c921015acae41
 msgid "Time the execution of small bits of Python code."
 msgstr ""
 
 #: ../../source/timeit/index.rst:10
-# b808f8380fdb4a26bc2aeceb4fc05053
 msgid "The ``timeit`` module provides a simple interface for determining the execution time of small bits of Python code. It uses a platform-specific time function to provide the most accurate time calculation possible and reduces the impact of start-up or shutdown costs on the time calculation by executing the code repeatedly."
 msgstr ""
 
 #: ../../source/timeit/index.rst:17
-# 9ff71bfcac5a4885adaae27ebbbf423a
 msgid "Module Contents"
 msgstr ""
 
 #: ../../source/timeit/index.rst:19
-# 522330496d1b4003a43f4f9e8c72cd33
 msgid "``timeit`` defines a single public class, ``Timer``. The constructor for ``Timer`` takes a statement to be timed and a \"setup\" statement (used to initialize variables, for example). The Python statements should be strings and can include embedded newlines."
 msgstr ""
 
 #: ../../source/timeit/index.rst:24
-# f952cecd080347dfbee26b2f7c046c64
 msgid "The ``timeit()`` method runs the setup statement one time, then executes the primary statement repeatedly and returns the amount of time that passes. The argument to ``timeit()`` controls how many times to run the statement; the default is 1,000,000."
 msgstr ""
 
 #: ../../source/timeit/index.rst:30
-# 61b385d0f72246fbb9232a427a0308cd
 msgid "Basic Example"
 msgstr ""
 
 #: ../../source/timeit/index.rst:32
-# 2a57dd6902f446a7b004842547a1a298
 msgid "To illustrate how the various arguments to ``Timer`` are used, here is a simple example that prints an identifying value when each statement is executed."
 msgstr ""
 
 #: ../../source/timeit/index.rst:0
-# eef59f111961475f8701b8cd45376efc
 msgid "timeit_example.py"
 msgstr ""
 
 #: ../../source/timeit/index.rst:40
-# 5c6c18dc884544cca3400e417392b81c
 msgid "When run, the output shows the results of the repeated calls to ``print()``."
 msgstr ""
 
 #: ../../source/timeit/index.rst:71
-# 643214ab38554d0da9f595a6f92b7beb
 msgid "``timeit()`` runs the setup statement one time, then calls the main statement ``count`` times. It returns a single floating point value representing the cumulative amount of time spent running the main statement."
 msgstr ""
 
 #: ../../source/timeit/index.rst:76
-# 2f09a50fcd784fc5b323586604776fdf
 msgid "When ``repeat()`` is used, it calls ``timeit()`` several times (3 in this case) and all of the responses are returned in a list."
 msgstr ""
 
 #: ../../source/timeit/index.rst:81
-# 1830cee6eb6c4947a35f0e305c089605
 msgid "Storing Values in a Dictionary"
 msgstr ""
 
 #: ../../source/timeit/index.rst:83
-# ac094868fb114e5da4d0c88358be6f4d
 msgid "This more complex example compares the amount of time it takes to populate a dictionary with a large number of values using a variety of methods. First, a few constants are needed to configure the ``Timer``.  The ``setup_statement`` variable initializes a list of tuples containing strings and integers that will be used by the main statements to build dictionaries using the strings as keys and storing the integers as the associated values."
 msgstr ""
 
 #: ../../source/timeit/index.rst:94
-# 5b7f11305e194eea965728dd94576af5
 msgid "A utility function, ``show_results()``, is defined to print the results in a useful format.  The ``timeit()`` method returns the amount of time it takes to execute the statement repeatedly. The output of ``show_results()`` converts that into the amount of time it takes per iteration, and then further reduces the value to the average amount of time it takes to store one item in the dictionary."
 msgstr ""
 
 #: ../../source/timeit/index.rst:104
-# 13724dc7bb12461c92cc91d35ef24824
 msgid "To establish a baseline, the first configuration tested uses ``__setitem__()``.  All of the other variations avoid overwriting values already in the dictionary, so this simple version should be the fastest."
 msgstr ""
 
 #: ../../source/timeit/index.rst:109
-# a485b5ef4e91467ba51ffc9f32d7ac00
 msgid "The first argument to ``Timer`` is a multi-line string, with white space preserved to ensure that it parses correctly when run. The second argument is a constant established to initialize the list of values and the dictionary."
 msgstr ""
 
 #: ../../source/timeit/index.rst:117
-# 98fc8a5536e54d4487ec2f13612e44e7
 msgid "The next variation uses ``setdefault()`` to ensure that values already in the dictionary are not overwritten."
 msgstr ""
 
 #: ../../source/timeit/index.rst:123
-# a123f76f644e4fcc8b0ef102efa70615
 msgid "This method adds the value only if a ``KeyError`` exception is raised when looking for the existing value."
 msgstr ""
 
 #: ../../source/timeit/index.rst:130
-# bb84bae9a1984b8f9ba358d0aee7a825
 msgid "And the last method uses \"``in``\" to determine if a dictionary has a particular key."
 msgstr ""
 
 #: ../../source/timeit/index.rst:136
-# d6df063111c14187966c188739c9c1a4
 msgid "When run, the script produces the following output."
 msgstr ""
 
 #: ../../source/timeit/index.rst:156
-# 22ec640d910a458e9d306bb3d412a3af
 msgid "Those times are for a MacMini, and will vary depending on what hardware is used and what other programs are running on the system. Experiment with the ``range_size`` and ``count`` variables, since different combinations will produce different results."
 msgstr ""
 
 #: ../../source/timeit/index.rst:162
-# cf44cf3a7da74ed3ac128941d58fb860
 msgid "From the Command Line"
 msgstr ""
 
 #: ../../source/timeit/index.rst:164
-# 95b4e4f07b6748779602182c52859fc4
 msgid "In addition to the programmatic interface, ``timeit`` provides a command line interface for testing modules without instrumentation."
 msgstr ""
 
 #: ../../source/timeit/index.rst:167
-# bdf3ce8d69d7447ca582c0a947c4014b
 msgid "To run the module, use the ``-m`` option to the Python interpreter to find the module and treat it as the main program:"
 msgstr ""
 
 #: ../../source/timeit/index.rst:174
-# 179704fb7b6540cfb0a825abdf2d76c3
 msgid "For example, to get help:"
 msgstr ""
 
 #: ../../source/timeit/index.rst:188
-# 97e7cfe50c0f4c2c9be98fb8c4b46a66
 msgid "The ``statement`` argument works a little differently on the command line than the argument to ``Timer``.  Instead of using one long string, pass each line of the instructions as a separate command line argument. To indent lines (such as inside a loop), embed spaces in the string by enclosing it in quotes."
 msgstr ""
 
 #: ../../source/timeit/index.rst:210
-# 69d0f9354cc74a74ac6270db37c487f7
 msgid "It is also possible to define a function with more complex code, then call the function from the command line."
 msgstr ""
 
 #: ../../source/timeit/index.rst:0
-# a9add8ba106f4a4886e4440e28ad7f72
 msgid "timeit_setitem.py"
 msgstr ""
 
 #: ../../source/timeit/index.rst:217
-# b2104c65a50d4d4daa753dcde903b352
 msgid "To run the test, pass in code that imports the modules and runs the test function."
 msgstr ""
 
 #: ../../source/timeit/index.rst:236
-# 36da65f9aaae4b358a1f171f4ca06976
 msgid ":pydoc:`timeit`"
 msgstr ""
 
 #: ../../source/timeit/index.rst:238
-# a4ae890b12cf4f91a97631f920a10d0c
 msgid ":mod:`profile` -- The ``profile`` module is also useful for performance analysis."
 msgstr ""
 
 #: ../../source/timeit/index.rst:241
-# 673d3e4202ea432d979637a07d02c216
 msgid ":ref:`time-monotonic` -- Discussion of the monotonic clock from the ``time`` module."
 msgstr ""
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,617 +17,494 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/codecs/index.rst:3
-# 98b6f54cf1d34a7c8298dbbd58ab9bd1
 msgid "codecs --- String Encoding and Decoding"
 msgstr ""
 
 #: ../../source/codecs/index.rst:8
-# 7a8d17bbf86145e492400537081a7376
 msgid "Encoders and decoders for converting text between different representations."
 msgstr ""
 
 #: ../../source/codecs/index.rst:11
-# b941d66ee42d468fa5ea19ab915ab15e
 msgid "The ``codecs`` module provides stream and file interfaces for transcoding data.  It is most commonly used to work with Unicode text, but other encodings are also available for other purposes."
 msgstr ""
 
 #: ../../source/codecs/index.rst:16
-# 8a8106071f8849f3b241cab6aa6fadea
 msgid "Unicode Primer"
 msgstr ""
 
 #: ../../source/codecs/index.rst:18
-# f2fbc2c57a1546818392b181e3b7e3bf
 msgid "CPython 3.x differentiates between *text* and *byte* strings. ``bytes`` instances use a sequence of 8-bit byte values.  In contrast, ``str`` strings are managed internally as a sequence of Unicode *code points*.  The code point values are saved as a sequence of 2 or 4 bytes each, depending on the options given when Python was compiled."
 msgstr ""
 
 #: ../../source/codecs/index.rst:25
-# 4d521705b52d46edab65d355fd3e7f1b
 msgid "When ``str`` values are output, they are encoded using one of several standard schemes so that the sequence of bytes can be reconstructed as the same string of text later.  The bytes of the encoded value are not necessarily the same as the code point values, and the encoding defines a way to translate between the two sets of values.  Reading Unicode data also requires knowing the encoding so that the incoming bytes can be converted to the internal representation used by the ``unicode`` class."
 msgstr ""
 
 #: ../../source/codecs/index.rst:34
-# 52e111af007d43759e650313a12b035e
 msgid "The most common encodings for Western languages are ``UTF-8`` and ``UTF-16``, which use sequences of one and two byte values respectively to represent each code point.  Other encodings can be more efficient for storing languages where most of the characters are represented by code points that do not fit into two bytes."
 msgstr ""
 
 #: ../../source/codecs/index.rst:42
-# 127d7b17692747b1b45e333ffc8dde06
 msgid "For more introductory information about Unicode, refer to the list of references at the end of this section.  The *Python Unicode HOWTO* is especially helpful."
 msgstr ""
 
 #: ../../source/codecs/index.rst:47
-# 59e49ea9df1540a9a31c68272c7f3651
 msgid "Encodings"
 msgstr ""
 
 #: ../../source/codecs/index.rst:49
-# 7cd0ad309ee7475b8f926abfa8c3e5ec
 msgid "The best way to understand encodings is to look at the different series of bytes produced by encoding the same string in different ways.  The following examples use this function to format the byte string to make it easier to read."
 msgstr ""
 
 #: ../../source/codecs/index.rst:0
-# 1316fe96d2bb48f9832264860ce188df
 msgid "codecs_to_hex.py"
 msgstr ""
 
 #: ../../source/codecs/index.rst:58
-# 81bb7daa07ea4918a3779d151fc32df1
 msgid "The function uses :mod:`binascii` to get a hexadecimal representation of the input byte string, then insert a space between every ``nbytes`` bytes before returning the value."
 msgstr ""
 
 #: ../../source/codecs/index.rst:75
-# 00e6ea6e57314593a1d08bec947a3652
 msgid "The first encoding example begins by printing the text ``'français'`` using the raw representation of the ``unicode`` class, followed by the name of each character from the Unicode database.  The next two lines encode the string as UTF-8 and UTF-16 respectively, and show the hexadecimal values resulting from the encoding."
 msgstr ""
 
 #: ../../source/codecs/index.rst:0
-# 537b371008e44538a8899b925a5f900e
 msgid "codecs_encodings.py"
 msgstr ""
 
 #: ../../source/codecs/index.rst:85
-# 014e220aa1084eeaa246375af1529183
 msgid "The result of encoding a ``str`` is a ``bytes`` object."
 msgstr ""
 
 #: ../../source/codecs/index.rst:109
-# a0051fdabee4455b94c5531a9fccf75d
 msgid "Given a sequence of encoded bytes as a ``bytes`` instance, the ``decode()`` method translates them to code points and returns the sequence as a ``str`` instance."
 msgstr ""
 
 #: ../../source/codecs/index.rst:0
-# a8b44b152dab4cdaa24c332a8fe70dcf
 msgid "codecs_decode.py"
 msgstr ""
 
 #: ../../source/codecs/index.rst:117
-# 73ca52cb0a9f4646a433db67436e5fb9
 msgid "The choice of encoding used does not change the output type."
 msgstr ""
 
 #: ../../source/codecs/index.rst:135
-# c86391f76b5a4a31a29cc185c1dd5dab
 msgid "The default encoding is set during the interpreter start-up process, when :mod:`site` is loaded.  Refer to the :ref:`sys-unicode-defaults` section from the discussion of :mod:`sys` for a description of the default encoding settings."
 msgstr ""
 
 #: ../../source/codecs/index.rst:141
-# 1f8d17e6d9614d218f36afb9069dad0b
 msgid "Working with Files"
 msgstr ""
 
 #: ../../source/codecs/index.rst:143
-# 802647c695624f6ea7a6b03f88088243
 msgid "Encoding and decoding strings is especially important when dealing with I/O operations.  Whether writing to a file, socket, or other stream, the data must use the proper encoding.  In general, all text data needs to be decoded from its byte representation as it is read, and encoded from the internal values to a specific representation as it is written.  A program can explicitly encode and decode data, but depending on the encoding used it can be non-trivial to determine whether enough bytes have been read in order to fully decode the data. ``codecs`` provides classes that manage the data encoding and decoding, so applications do not have to do that work."
 msgstr ""
 
 #: ../../source/codecs/index.rst:154
-# 7f3efb324bf0415fa1c2214b566e79eb
 msgid "The simplest interface provided by ``codecs`` is an alternative to the built-in ``open()`` function.  The new version works just like the built-in, but adds two new arguments to specify the encoding and desired error handling technique."
 msgstr ""
 
 #: ../../source/codecs/index.rst:0
-# 7a6ecbe2bb2a4c5fab6cb18f425b8f2f
 msgid "codecs_open_write.py"
 msgstr ""
 
 #: ../../source/codecs/index.rst:163
-# e0560dfd5d5b4b0087116822af7a1ded
 msgid "This example starts with a ``unicode`` string with \"ç\" and saves the text to a file using an encoding specified on the command line."
 msgstr ""
 
 #: ../../source/codecs/index.rst:196
-# 786ccf138c2a487d9ae395d8a37e69bd
 msgid "Reading the data with ``open()`` is straightforward, with one catch: the encoding must be known in advance, in order to set up the decoder correctly.  Some data formats, such as XML, specify the encoding as part of the file, but usually it is up to the application to manage. ``codecs`` simply takes the encoding as an argument and assumes it is correct."
 msgstr ""
 
 #: ../../source/codecs/index.rst:0
-# 0a23f39cf2f641b6b33c214f571da958
 msgid "codecs_open_read.py"
 msgstr ""
 
 #: ../../source/codecs/index.rst:207
-# e59a130999d446a285b010842ff7a415
 msgid "This example reads the files created by the previous program, and prints the representation of the resulting ``unicode`` object to the console."
 msgstr ""
 
 #: ../../source/codecs/index.rst:237
-# 21a3bfc2b4d94ffda45ad43a90cd95a4
 msgid "Byte Order"
 msgstr ""
 
 #: ../../source/codecs/index.rst:239
-# 2b782c0c746a490abc709bc83dc78ada
 msgid "Multi-byte encodings such as UTF-16 and UTF-32 pose a problem when transferring the data between different computer systems, either by copying the file directly or with network communication.  Different systems use different ordering of the high and low order bytes.  This characteristic of the data, known as its *endianness*, depends on factors such as the hardware architecture and choices made by the operating system and application developer.  There is not always a way to know in advance what byte order to use for a given set of data, so the multi-byte encodings include a *byte-order marker* (BOM) as the first few bytes of encoded output.  For example, UTF-16 is defined in such a way that 0xFFFE and 0xFEFF are not valid characters, and can be used to indicate the byte order.  ``codecs`` defines constants for the byte order markers used by UTF-16 and UTF-32."
 msgstr ""
 
 #: ../../source/codecs/index.rst:0
-# a7f598913b7b4041a5804110e9d536c3
 msgid "codecs_bom.py"
 msgstr ""
 
 #: ../../source/codecs/index.rst:257
-# da67e54ca73f4270aa649b794fd701c2
 msgid "``BOM``, ``BOM_UTF16``, and ``BOM_UTF32`` are automatically set to the appropriate big-endian or little-endian values depending on the current system's native byte order."
 msgstr ""
 
 #: ../../source/codecs/index.rst:282
-# 92834e8899cc4464b6898484bebbb26d
 msgid "Byte ordering is detected and handled automatically by the decoders in ``codecs``, but an explicit ordering can be specified when encoding."
 msgstr ""
 
 #: ../../source/codecs/index.rst:0
-# 43824e392a8c488e9e84836a6e62032b
 msgid "codecs_bom_create_file.py"
 msgstr ""
 
 #: ../../source/codecs/index.rst:290
-# 04cec53614ee4fd296ab61a132dc0b72
 msgid "``codecs_bom_create_file.py`` figures out the native byte ordering, then uses the alternate form explicitly so the next example can demonstrate auto-detection while reading."
 msgstr ""
 
 #: ../../source/codecs/index.rst:308
-# 303a23d49f864dacb1aa48f46cb00931
 msgid "``codecs_bom_detection.py`` does not specify a byte order when opening the file, so the decoder uses the BOM value in the first two bytes of the file to determine it."
 msgstr ""
 
 #: ../../source/codecs/index.rst:0
-# 2490f44f130143799d0914d9d721f522
 msgid "codecs_bom_detection.py"
 msgstr ""
 
 #: ../../source/codecs/index.rst:316
-# 35f7b96e28c3410c9482fa469c480bdf
 msgid "Since the first two bytes of the file are used for byte order detection, they are not included in the data returned by ``read()``."
 msgstr ""
 
 #: ../../source/codecs/index.rst:333
-# 57791321716c48ebae466bc04187eb79
 msgid "Error Handling"
 msgstr ""
 
 #: ../../source/codecs/index.rst:335
-# 431fbe32c26a49d0a6e5dbdc484d69da
 msgid "The previous sections pointed out the need to know the encoding being used when reading and writing Unicode files.  Setting the encoding correctly is important for two reasons.  If the encoding is configured incorrectly while reading from a file, the data will be interpreted wrong and may be corrupted or simply fail to decode.  Not all Unicode characters can be represented in all encodings, so if the wrong encoding is used while writing then an error will be generated and data may be lost."
 msgstr ""
 
 #: ../../source/codecs/index.rst:344
-# 7e4c10ab9c4743958279c0c55534a4a2
 msgid "``codecs`` uses the same five error handling options that are provided by the ``encode()`` method of ``str`` and the ``decode()`` method of ``bytes``, listed in :table:`Codec Error Handling Modes`."
 msgstr ""
 
 #: ../../source/codecs/index.rst:0
-# 954b7fe50f1b4ae59c18d28298e24149
 msgid "Codec Error Handling Modes"
 msgstr ""
 
 #: ../../source/codecs/index.rst:352
-# c85991817d7d4a12ad8e0932e2e02e70
 msgid "Error Mode"
 msgstr ""
 
 #: ../../source/codecs/index.rst:352
-# a6724a3e2dd04ae8b3c84511464281c8
 msgid "Description"
 msgstr ""
 
 #: ../../source/codecs/index.rst:354
-# c7f4dd67dea143fa95929b36579dce45
 msgid "``strict``"
 msgstr ""
 
 #: ../../source/codecs/index.rst:354
-# 753f57a2d63b4b9491f59aae4d406b25
 msgid "Raises an exception if the data cannot be converted."
 msgstr ""
 
 #: ../../source/codecs/index.rst:355
-# b7b9a1660fbd4ea0886afd4f2dcceb03
 msgid "``replace``"
 msgstr ""
 
 #: ../../source/codecs/index.rst:355
-# 518bf9c50dee47a9b339b8f329988396
 msgid "Substitutes a special marker character for data that cannot be encoded."
 msgstr ""
 
 #: ../../source/codecs/index.rst:356
-# fa4a22f86baf45778ce591deb73bf6d0
 msgid "``ignore``"
 msgstr ""
 
 #: ../../source/codecs/index.rst:356
-# 03d3aa0f87504b6c868d8142638807d8
 msgid "Skips the data."
 msgstr ""
 
 #: ../../source/codecs/index.rst:357
-# 0ca598dfaf0c419bb13a2fd879ca629a
 msgid "``xmlcharrefreplace``"
 msgstr ""
 
 #: ../../source/codecs/index.rst:357
-# 63b55acae5e047bb9b658e50818b47db
 msgid "XML character (encoding only)"
 msgstr ""
 
 #: ../../source/codecs/index.rst:358
-# b46e2bfbd2c040dd9c292be3106e977b
 msgid "``backslashreplace``"
 msgstr ""
 
 #: ../../source/codecs/index.rst:358
-# 6826c14fe2b1427aa452fd8f776489bc
 msgid "escape sequence (encoding only)"
 msgstr ""
 
 #: ../../source/codecs/index.rst:362
-# f0672b834a3845138595b7a10ed04b7b
 msgid "Encoding Errors"
 msgstr ""
 
 #: ../../source/codecs/index.rst:364
-# 28cbc09fce0445459fc93f9767ca849f
 msgid "The most common error condition is receiving a ``UnicodeEncodeError`` when writing Unicode data to an ASCII output stream, such as a regular file or ``sys.stdout`` without a more robust encoding set.  This sample program can be used to experiment with the different error handling modes."
 msgstr ""
 
 #: ../../source/codecs/index.rst:0
-# 8f4b479a19ba4fceb9f9197f8ec7247b
 msgid "codecs_encode_error.py"
 msgstr ""
 
 #: ../../source/codecs/index.rst:374
-# 4704e3f5cd1d4db088f3e81e43545aff
 msgid "While ``strict`` mode is safest for ensuring an application explicitly sets the correct encoding for all I/O operations, it can lead to program crashes when an exception is raised."
 msgstr ""
 
 #: ../../source/codecs/index.rst:391
-# d68498dcb1b14b7e9b92a89d627d8d93
 msgid "Some of the other error modes are more flexible.  For example, ``replace`` ensures that no error is raised, at the expense of possibly losing data that cannot be converted to the requested encoding.  The Unicode character for pi still cannot be encoded in ASCII, but instead of raising an exception the character is replaced with ``?`` in the output."
 msgstr ""
 
 #: ../../source/codecs/index.rst:410
-# 463ed2055a8f4b338be9e8a29b94ba0f
 msgid "To skip over problem data entirely, use ``ignore``.  Any data that cannot be encoded is discarded."
 msgstr ""
 
 #: ../../source/codecs/index.rst:425
-# 265716cc5e8b4a818f7a35b0f846293d
 msgid "There are two lossless error handling options, both of which replace the character with an alternate representation defined by a standard separate from the encoding.  ``xmlcharrefreplace`` uses an XML character reference as a substitute (the list of character references is specified in the W3C document *XML Entity Definitions for Characters*)."
 msgstr ""
 
 #: ../../source/codecs/index.rst:443
-# 2e9759f370c5484791be092d9921983b
 msgid "The other lossless error handling scheme is ``backslashreplace``, which produces an output format like the value returned when ``repr()`` of a ``unicode`` object is printed.  Unicode characters are replaced with ``\\u`` followed by the hexadecimal value of the code point."
 msgstr ""
 
 #: ../../source/codecs/index.rst:462
-# 29fb8f9a14c44982a5691c520dd28cca
 msgid "Decoding Errors"
 msgstr ""
 
 #: ../../source/codecs/index.rst:464
-# 33de7b33605a4e92a8002c5b5b64f90f
 msgid "It is also possible to see errors when decoding data, especially if the wrong encoding is used."
 msgstr ""
 
 #: ../../source/codecs/index.rst:0
-# 999e81e9731f4a6da56fbe60a972b934
 msgid "codecs_decode_error.py"
 msgstr ""
 
 #: ../../source/codecs/index.rst:471
-# 5a347f94f2cf436395d07b022c893e61
 msgid "As with encoding, ``strict`` error handling mode raises an exception if the byte stream cannot be properly decoded.  In this case, a ``UnicodeDecodeError`` results from trying to convert part of the UTF-16 BOM to a character using the UTF-8 decoder."
 msgstr ""
 
 #: ../../source/codecs/index.rst:492
-# 121d819199394da1abf1bc9d565b5d57
 msgid "Switching to ``ignore`` causes the decoder to skip over the invalid bytes.  The result is still not quite what is expected, though, since it includes embedded null bytes."
 msgstr ""
 
 #: ../../source/codecs/index.rst:511
-# 37dd21a1c7454b5aa52a0fcc701d3818
 msgid "In ``replace`` mode invalid bytes are replaced with ``\\uFFFD``, the official Unicode replacement character, which looks like a diamond with a black background containing a white question mark."
 msgstr ""
 
 #: ../../source/codecs/index.rst:533
-# 2335a79d2509421c8b3715f55954c85a
 msgid "Encoding Translation"
 msgstr ""
 
 #: ../../source/codecs/index.rst:535
-# 0e9cdbe39a0d4860af41c99865e0a2be
 msgid "Although most applications will work with ``str`` data internally, decoding or encoding it as part of an I/O operation, there are times when changing a file's encoding without holding on to that intermediate data format is useful.  ``EncodedFile()`` takes an open file handle using one encoding and wraps it with a class that translates the data to another encoding as the I/O occurs."
 msgstr ""
 
 #: ../../source/codecs/index.rst:0
-# 0da208c97ed44e339329b6c790585db1
 msgid "codecs_encodedfile.py"
 msgstr ""
 
 #: ../../source/codecs/index.rst:546
-# d31ce84739914cf583f67f12631534c1
 msgid "This example shows reading from and writing to separate handles returned by ``EncodedFile()``.  No matter whether the handle is used for reading or writing, the ``file_encoding`` always refers to the encoding in use by the open file handle passed as the first argument, and ``data_encoding`` value refers to the encoding in use by the data passing through the ``read()`` and ``write()`` calls."
 msgstr ""
 
 #: ../../source/codecs/index.rst:570
-# a7755018f9fe4ff0a4474eab3437f5a6
 msgid "Non-Unicode Encodings"
 msgstr ""
 
 #: ../../source/codecs/index.rst:572
-# c520d741173a4b84ad4b151af0ff3a7c
 msgid "Although most of the earlier examples use Unicode encodings, ``codecs`` can be used for many other data translations.  For example, Python includes codecs for working with base-64, bzip2, ROT-13, ZIP, and other data formats."
 msgstr ""
 
 #: ../../source/codecs/index.rst:0
-# 958d7bcfbee446b09e7fa8af174de996
 msgid "codecs_rot13.py"
 msgstr ""
 
 #: ../../source/codecs/index.rst:581
-# 8682e37e17c74457ae123bbdc3200d28
 msgid "Any transformation that can be expressed as a function taking a single input argument and returning a byte or Unicode string can be registered as a codec. For the ``'rot_13'`` codec, the input should be a Unicode string and the output will also be a Unicode string."
 msgstr ""
 
 #: ../../source/codecs/index.rst:599
-# 56c8fb953f16484c95ea1ef1e6fa87bc
 msgid "Using ``codecs`` to wrap a data stream provides a simpler interface than working directly with :mod:`zlib`."
 msgstr ""
 
 #: ../../source/codecs/index.rst:0
-# 48c2185c7f3e4825a26304160a64e81a
 msgid "codecs_zlib.py"
 msgstr ""
 
 #: ../../source/codecs/index.rst:606
-# e29b4b2d21a9494fb60681c777b92a7d
 msgid "Not all of the compression or encoding systems support reading a portion of the data through the stream interface using ``readline()`` or ``read()`` because they need to find the end of a compressed segment to expand it.  If a program cannot hold the entire uncompressed data set in memory, use the incremental access features of the compression library, instead of ``codecs``."
 msgstr ""
 
 #: ../../source/codecs/index.rst:630
-# 6989a3af2773424ead6483a87457c38d
 msgid "Incremental Encoding"
 msgstr ""
 
 #: ../../source/codecs/index.rst:632
-# 6a10d140a7a44d28aca5c872d1f0810f
 msgid "Some of the encodings provided, especially ``bz2`` and ``zlib``, may dramatically change the length of the data stream as they work on it. For large data sets, these encodings operate better incrementally, working on one small chunk of data at a time.  The ``IncrementalEncoder`` and ``IncrementalDecoder`` API is designed for this purpose."
 msgstr ""
 
 #: ../../source/codecs/index.rst:0
-# 272859e3b42c46b3a332dc4facde0b24
 msgid "codecs_incremental_bz2.py"
 msgstr ""
 
 #: ../../source/codecs/index.rst:643
-# e40c976e01ad45b6800f0277f813d230
 msgid "Each time data is passed to the encoder or decoder its internal state is updated.  When the state is consistent (as defined by the codec), data is returned and the state resets.  Until that point, calls to ``encode()`` or ``decode()`` will not return any data.  When the last bit of data is passed in, the argument ``final`` should be set to ``True`` so the codec knows to flush any remaining buffered data."
 msgstr ""
 
 #: ../../source/codecs/index.rst:677
-# 3344e001c25b468da8c970a6924807f7
 msgid "Unicode Data and Network Communication"
 msgstr ""
 
 #: ../../source/codecs/index.rst:679
-# 5be0c7353f44475faadd3c3eadc9a754
 msgid "Network sockets are byte-streams, and unlike the standard input and output streams they do not support encoding by default. That means programs that want to send or receive Unicode data over the network must encode into bytes before it is written to a socket.  This server echos data it receives back to the sender."
 msgstr ""
 
 #: ../../source/codecs/index.rst:0
-# c55062ee22874e56a692f70fb5150151
 msgid "codecs_socket_fail.py"
 msgstr ""
 
 #: ../../source/codecs/index.rst:689
-# 852a950395054cffa9e15672f8d8fc4b
 msgid "The data could be encoded explicitly before each call to ``send()``, but missing one call to ``send()`` would result in an encoding error."
 msgstr ""
 
 #: ../../source/codecs/index.rst:711
-# b512436af8e24e15a55640cfed15e1d1
 msgid "Using ``makefile()`` to get a file-like handle for the socket, and then wrapping that with a stream-based reader or writer, means Unicode strings will be encoded on the way in to and out of the socket."
 msgstr ""
 
 #: ../../source/codecs/index.rst:0
-# 88d7894c9bd6410dbbe24dd66f1514c3
 msgid "codecs_socket.py"
 msgstr ""
 
 #: ../../source/codecs/index.rst:719
-# f1fb027f94464ed9b3ed412c9258a03b
 msgid "This example uses ``PassThrough`` to show that the data is encoded before being sent, and the response is decoded after it is received in the client."
 msgstr ""
 
 #: ../../source/codecs/index.rst:740
-# 1467b326a0de4b6b8cfd0de58caf5124
 msgid "Defining a Custom Encoding"
 msgstr ""
 
 #: ../../source/codecs/index.rst:742
-# 86aaef1b4bfa41d6a546352fbf76950e
 msgid "Since Python comes with a large number of standard codecs already, it is unlikely that an application will need to define a custom encoder or decoder.  When it is necessary, though, there are several base classes in ``codecs`` to make the process easier."
 msgstr ""
 
 #: ../../source/codecs/index.rst:747
-# 573c4d3fc8a445acbb32b45700ff9630
 msgid "The first step is to understand the nature of the transformation described by the encoding.  These examples will use an \"invertcaps\" encoding which converts uppercase letters to lowercase, and lowercase letters to uppercase.  Here is a simple definition of an encoding function that performs this transformation on an input string."
 msgstr ""
 
 #: ../../source/codecs/index.rst:0
-# 1f85077545234c63be354ed2bfd368f3
 msgid "codecs_invertcaps.py"
 msgstr ""
 
 #: ../../source/codecs/index.rst:757
-# ba9f4afeb73143bd849881ce3c68fc7d
 msgid "In this case, the encoder and decoder are the same function (as is also the case with ``ROT-13``)."
 msgstr ""
 
 #: ../../source/codecs/index.rst:773
-# 221cc617d64b49268341bd126ca8063b
 msgid "Although it is easy to understand, this implementation is not efficient, especially for very large text strings.  Fortunately, ``codecs`` includes some helper functions for creating *character map* based codecs such as invertcaps.  A character map encoding is made up of two dictionaries.  The *encoding map* converts character values from the input string to byte values in the output and the *decoding map* goes the other way.  Create the decoding map first, and then use ``make_encoding_map()`` to convert it to an encoding map.  The C functions ``charmap_encode()`` and ``charmap_decode()`` use the maps to convert their input data efficiently."
 msgstr ""
 
 #: ../../source/codecs/index.rst:0
-# 4124950b4c0742c7abdef92aceaa2cbf
 msgid "codecs_invertcaps_charmap.py"
 msgstr ""
 
 #: ../../source/codecs/index.rst:789
-# 6f44e3b3d8db42979cb442f4cd406b47
 msgid "Although the encoding and decoding maps for invertcaps are the same, that may not always be the case.  ``make_encoding_map()`` detects situations where more than one input character is encoded to the same output byte and replaces the encoding value with ``None`` to mark the encoding as undefined."
 msgstr ""
 
 #: ../../source/codecs/index.rst:809
-# 27a39801bcd64cca9b1f6742d909f819
 msgid "The character map encoder and decoder support all of the standard error handling methods described earlier, so no extra work is needed to comply with that part of the API."
 msgstr ""
 
 #: ../../source/codecs/index.rst:0
-# 9e93ec1da2c34941897f9332cc48fdea
 msgid "codecs_invertcaps_error.py"
 msgstr ""
 
 #: ../../source/codecs/index.rst:817
-# ba4108305ea04937b2cefc301da6fc33
 msgid "Because the Unicode code point for π is not in the encoding map, the strict error handling mode raises an exception."
 msgstr ""
 
 #: ../../source/codecs/index.rst:835
-# 2c421d751cb849fcbfefab82a1677eab
 msgid "After the encoding and decoding maps are defined, a few additional classes need to be set up, and the encoding should be registered.  ``register()`` adds a search function to the registry so that when a user wants to use the encoding ``codecs`` can locate it.  The search function must take a single string argument with the name of the encoding, and return a ``CodecInfo`` object if it knows the encoding, or ``None`` if it does not."
 msgstr ""
 
 #: ../../source/codecs/index.rst:0
-# 4aeb4daacc004a708e0d8b7fc6b3d713
 msgid "codecs_register.py"
 msgstr ""
 
 #: ../../source/codecs/index.rst:847
-# 21105d29e09e40bdb0002bbbbd1c81b6
 msgid "Multiple search functions can be registered, and each will be called in turn until one returns a ``CodecInfo`` or the list is exhausted.  The internal search function registered by ``codecs`` knows how to load the standard codecs such as UTF-8 from :mod:`encodings`, so those names will never be passed to custom search functions."
 msgstr ""
 
 #: ../../source/codecs/index.rst:870
-# 8296369da1b84e6e955639647a5b0179
 msgid "The ``CodecInfo`` instance returned by the search function tells ``codecs`` how to encode and decode using all of the different mechanisms supported: stateless, incremental, and stream. ``codecs`` includes base classes to help with setting up a character map encoding.  This example puts all of the pieces together to register a search function that returns a ``CodecInfo`` instance configured for the invertcaps codec."
 msgstr ""
 
 #: ../../source/codecs/index.rst:0
-# 40493c5fc4bd4692a68943b7dd921c01
 msgid "codecs_invertcaps_register.py"
 msgstr ""
 
 #: ../../source/codecs/index.rst:882
-# 85ce3c95a7e9438ea08ed567489dd508
 msgid "The stateless encoder/decoder base class is ``Codec``.  Override ``encode()`` and ``decode()`` with the new implementation (in this case, calling ``charmap_encode()`` and ``charmap_decode()`` respectively).  Each method must return a tuple containing the transformed data and the number of the input bytes or characters consumed.  Conveniently, ``charmap_encode()`` and ``charmap_decode()`` already return that information."
 msgstr ""
 
 #: ../../source/codecs/index.rst:890
-# 94911ae6a39f4dacab1aa3856680c0c1
 msgid "``IncrementalEncoder`` and ``IncrementalDecoder`` serve as base classes for the incremental interfaces.  The ``encode()`` and ``decode()`` methods of the incremental classes are defined in such a way that they only return the actual transformed data.  Any information about buffering is maintained as internal state.  The invertcaps encoding does not need to buffer data (it uses a one-to-one mapping).  For encodings that produce a different amount of output depending on the data being processed, such as compression algorithms, ``BufferedIncrementalEncoder`` and ``BufferedIncrementalDecoder`` are more appropriate base classes, since they manage the unprocessed portion of the input."
 msgstr ""
 
 #: ../../source/codecs/index.rst:902
-# 95da4cb3d4234bc1b9445cf898c6f735
 msgid "``StreamReader`` and ``StreamWriter`` need ``encode()`` and ``decode()`` methods, too, and since they are expected to return the same value as the version from ``Codec`` multiple inheritance can be used for the implementation."
 msgstr ""
 
 #: ../../source/codecs/index.rst:926
-# 3e5bf75c6b724ed8b3c7d8b342cde20e
 msgid ":pydoc:`codecs`"
 msgstr ""
 
 #: ../../source/codecs/index.rst:928
-# 9ae2a37fed9e48239742a42e7078694b
 msgid ":mod:`locale` -- Accessing and managing the localization-based configuration settings and behaviors."
 msgstr ""
 
 #: ../../source/codecs/index.rst:931
-# aea9d0e5df5d4176985ca707806dc7df
 msgid ":mod:`io` -- The ``io`` module includes file and stream wrappers that handle encoding and decoding, too."
 msgstr ""
 
 #: ../../source/codecs/index.rst:934
-# b5d0c0fbb44a4a47974d58a14d83c954
 msgid ":mod:`socketserver` -- For a more detailed example of an echo server, see the ``socketserver`` module."
 msgstr ""
 
 #: ../../source/codecs/index.rst:937
-# 025329d3a49b450398fc161439130b3c
 msgid ":mod:`encodings` -- Package in the standard library containing the encoder/decoder implementations provided by Python."
 msgstr ""
 
 #: ../../source/codecs/index.rst:940
-# 3dd31a1864f540d89346bae2a4d85d04
 msgid ":pep:`100` -- Python Unicode Integration PEP."
 msgstr ""
 
 #: ../../source/codecs/index.rst:942
-# c53cda43cf7c4d2ca8b7925efff15f3e
 msgid "`Unicode HOWTO`_ -- The official guide for using Unicode with Python."
 msgstr ""
 
 #: ../../source/codecs/index.rst:944
-# 9f0c53376e494094bcba1865070dba4b
 msgid "`Text vs. Data Instead of Unicode vs. 8-bit <https://docs.python.org/3.0/whatsnew/3.0.html#text-vs-data-instead-of-unicode-vs-8-bit>`__ -- Section of the \"What's New\" article for Python 3.0 covering the text handling changes."
 msgstr ""
 
 #: ../../source/codecs/index.rst:949
-# cdfebe71b06545968baba868fc1f8ee5
 msgid "`Python Unicode Objects <http://effbot.org/zone/unicode-objects.htm>`_ -- Fredrik Lundh's article about using non-ASCII character sets in Python 2.0."
 msgstr ""
 
 #: ../../source/codecs/index.rst:953
-# 3bb9ea1ee37247f6a7c8e18baf25bdf6
 msgid "`How to Use UTF-8 with Python <http://evanjones.ca/python-utf8.html>`__ -- Evan Jones' quick guide to working with Unicode, including XML data and the Byte-Order Marker."
 msgstr ""
 
 #: ../../source/codecs/index.rst:958
-# 897602274e6f4acd9acfa3a4827b8c60
 msgid "`On the Goodness of Unicode <http://www.tbray.org/ongoing/When/200x/2003/04/06/Unicode>`__ -- Introduction to internationalization and Unicode by Tim Bray."
 msgstr ""
 
 #: ../../source/codecs/index.rst:962
-# 9873feb646834a379ee4c33f2052c5a3
 msgid "`On Character Strings <http://www.tbray.org/ongoing/When/200x/2003/04/13/Strings>`__ -- A look at the history of string processing in programming languages, by Tim Bray."
 msgstr ""
 
 #: ../../source/codecs/index.rst:967
-# 14117cce76ed408aa98e52bc4a8d2393
 msgid "`Characters vs. Bytes <http://www.tbray.org/ongoing/When/200x/2003/04/26/UTF>`__ -- Part one of Tim Bray's \"essay on modern character string processing for computer programmers.\"  This installment covers in-memory representation of text in formats other than ASCII bytes."
 msgstr ""
 
 #: ../../source/codecs/index.rst:974
-# 2b24f36a5eb64dcb858f757b3c259697
 msgid "`Endianness <https://en.wikipedia.org/wiki/Endianness>`__ -- Explanation of endianness in Wikipedia."
 msgstr ""
 
 #: ../../source/codecs/index.rst:977
-# 86ca3ce4d05b46e1be5db7d4055c6a68
 msgid "`W3C XML Entity Definitions for Characters <http://www.w3.org/TR/xml-entity-names/>`__ -- Specification for XML representations of character references that cannot be represented in an encoding."
 msgstr ""
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,177 +17,142 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/heapq/index.rst:3
-# 14bf247774aa411389e3c0a48ee705f1
 msgid "heapq -- Heap Sort Algorithm"
 msgstr ""
 
 #: ../../source/heapq/index.rst:9
-# d721a886df624ecf8204bf6a0346cf7f
 msgid "The heapq implements a min-heap sort algorithm suitable for use with Python's lists."
 msgstr ""
 
 #: ../../source/heapq/index.rst:12
-# 2e8c17bbdf914655bd1aa8c2573f973c
 msgid "A *heap* is a tree-like data structure in which the child nodes have a sort-order relationship with the parents. *Binary heaps* can be represented using a list or array organized so that the children of element N are at positions 2 * *N* + 1 and 2 * *N* + 2 (for zero-based indexes). This layout makes it possible to rearrange heaps in place, so it is not necessary to reallocate as much memory when adding or removing items."
 msgstr ""
 
 #: ../../source/heapq/index.rst:20
-# d8e5ac37ddac4a9984dd8320f99cd63f
 msgid "A max-heap ensures that the parent is larger than or equal to both of its children. A min-heap requires that the parent be less than or equal to its children. Python's ``heapq`` module implements a min-heap."
 msgstr ""
 
 #: ../../source/heapq/index.rst:26
-# 671425f61ca347aaac1fe4f7676b5d43
 msgid "Example Data"
 msgstr ""
 
 #: ../../source/heapq/index.rst:28
-# fcb131fbe51f49e3a5a015822cbb3841
 msgid "The examples in this section use the data in ``heapq_heapdata.py``."
 msgstr ""
 
 #: ../../source/heapq/index.rst:0
-# 558bdcb63b4648de808b3caa891f1549
 msgid "heapq_heapdata.py"
 msgstr ""
 
 #: ../../source/heapq/index.rst:34
-# 2c5c65c4d7cd4e60ae9ed592af3082ff
 msgid "The heap output is printed using ``heapq_showtree.py``."
 msgstr ""
 
 #: ../../source/heapq/index.rst:0
-# d081b74b217640edafd51e84a2a9a6bb
 msgid "heapq_showtree.py"
 msgstr ""
 
 #: ../../source/heapq/index.rst:41
-# ef190a2b60114550a67c1341d98a5b63
 msgid "Creating a Heap"
 msgstr ""
 
 #: ../../source/heapq/index.rst:43
-# f49893bc254b4c00b3ba0d4d584c9aa5
 msgid "There are two basic ways to create a heap: ``heappush()`` and ``heapify()``."
 msgstr ""
 
 #: ../../source/heapq/index.rst:0
-# e5ed6e82500d430d9ceaab55624b0cc6
 msgid "heapq_heappush.py"
 msgstr ""
 
 #: ../../source/heapq/index.rst:50
-# 1e16a89c895347e496688828ab9c49e2
 msgid "When ``heappush()`` is used, the heap sort order of the elements is maintained as new items are added from a data source."
 msgstr ""
 
 #: ../../source/heapq/index.rst:97
-# 6935ef51586e401fbd686304d2da19dd
 msgid "If the data is already in memory, it is more efficient to use ``heapify()`` to rearrange the items of the list in place."
 msgstr ""
 
 #: ../../source/heapq/index.rst:0
-# 0695932604444aed820f568b7f457f45
 msgid "heapq_heapify.py"
 msgstr ""
 
 #: ../../source/heapq/index.rst:104
-# 66ab33da9c134e40ba1d73d50d8f91b8
 msgid "The result of building a list in heap order one item at a time is the same as building an unordered list and then calling ``heapify()``."
 msgstr ""
 
 #: ../../source/heapq/index.rst:128
-# 50ee60a1a1474dee8b06929e6ff627db
 msgid "Accessing the Contents of a Heap"
 msgstr ""
 
 #: ../../source/heapq/index.rst:130
-# 2fddbe742e7c499cbe8eb223ed1ecaae
 msgid "Once the heap is organized correctly, use ``heappop()`` to remove the element with the lowest value."
 msgstr ""
 
 #: ../../source/heapq/index.rst:0
-# bdb45581b38b4351b4b7200614cf226b
 msgid "heapq_heappop.py"
 msgstr ""
 
 #: ../../source/heapq/index.rst:137
-# 00bfd5d72cc249d48779848255dfd615
 msgid "In this example, adapted from the stdlib documentation, ``heapify()`` and ``heappop()`` are used to sort a list of numbers."
 msgstr ""
 
 #: ../../source/heapq/index.rst:173
-# d770036f83ca4187ad2fd0a4a2e29399
 msgid "To remove existing elements and replace them with new values in a single operation, use ``heapreplace()``."
 msgstr ""
 
 #: ../../source/heapq/index.rst:0
-# 698799bb04d84546a29e62af2a3a0842
 msgid "heapq_heapreplace.py"
 msgstr ""
 
 #: ../../source/heapq/index.rst:180
-# 1727aabeea85468397bd76f134c5d898
 msgid "Replacing elements in place makes it possible to maintain a fixed-size heap, such as a queue of jobs ordered by priority."
 msgstr ""
 
 #: ../../source/heapq/index.rst:216
-# ebef2bfaad304062a846171513388962
 msgid "Data Extremes from a Heap"
 msgstr ""
 
 #: ../../source/heapq/index.rst:218
-# a44403b7771149e39ddce07cceb82ae4
 msgid "``heapq`` also includes two functions to examine an iterable and find a range of the largest or smallest values it contains."
 msgstr ""
 
 #: ../../source/heapq/index.rst:0
-# ccf3c838ed1a4133b7e4ca6e37025eaa
 msgid "heapq_extremes.py"
 msgstr ""
 
 #: ../../source/heapq/index.rst:225
-# 9d30edbc075d4208892af08527175dbc
 msgid "Using ``nlargest()`` and ``nsmallest()`` is efficient only for relatively small values of *n* > 1, but can still come in handy in a few cases."
 msgstr ""
 
 #: ../../source/heapq/index.rst:246
-# ec2d51f79b3848d5b7043bee8568cbc4
 msgid "Efficiently Merging Sorted Sequences"
 msgstr ""
 
 #: ../../source/heapq/index.rst:248
-# 7199ad2dd0d04c5aac765afec7bda440
 msgid "Combining several sorted sequences into one new sequence is easy for small data sets."
 msgstr ""
 
 #: ../../source/heapq/index.rst:255
-# 3c3061a8414246039d7746b1a76849e4
 msgid "For larger data sets, this technique can use a considerable amount of memory. Instead of sorting the entire combined sequence, ``merge()`` uses a heap to generate a new sequence one item at a time, determining the next item using a fixed amount of memory."
 msgstr ""
 
 #: ../../source/heapq/index.rst:0
-# 31e02d3286084de290d3b81008bae907
 msgid "heapq_merge.py"
 msgstr ""
 
 #: ../../source/heapq/index.rst:264
-# b2ed3b9c4db6496dbd8d9d81fda22539
 msgid "Because the implementation of ``merge()`` uses a heap, it consumes memory based on the number of sequences being merged, rather than the number of items in those sequences."
 msgstr ""
 
 #: ../../source/heapq/index.rst:288
-# e60679fd1c904b8cac0ccd4775f9192d
 msgid ":pydoc:`heapq`"
 msgstr ""
 
 #: ../../source/heapq/index.rst:290
-# 274434d4d9c640f38e34d02ecf8b14cc
 msgid "`Wikipedia: Heap (data structure) <https://en.wikipedia.org/wiki/Heap_(data_structure)>`__ -- A general description of heap data structures."
 msgstr ""
 
 #: ../../source/heapq/index.rst:294
-# 152fd6e1bd094dec88f250c207016597
 msgid ":ref:`Queue-PriorityQueue` -- A priority queue implementation from :mod:`Queue` in the standard library."
 msgstr ""
 

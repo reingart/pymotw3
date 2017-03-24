@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,202 +17,162 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/xml.etree.ElementTree/create.rst:4
-# 02a8d706374844da864b2aa7e4d6f23d
 msgid "Building Documents With Element Nodes"
 msgstr ""
 
 #: ../../source/xml.etree.ElementTree/create.rst:6
-# bdacd968bd264850bc07ff1eec5e7e74
 msgid "In addition to its parsing capabilities, ``xml.etree.ElementTree`` also supports creating well-formed XML documents from ``Element`` objects constructed in an application.  The ``Element`` class used when a document is parsed also knows how to generate a serialized form of its contents, which can then be written to a file or other data stream."
 msgstr ""
 
 #: ../../source/xml.etree.ElementTree/create.rst:13
-# c314a3d0de53436da3b402470d3cc064
 msgid "There are three helper functions useful for creating a hierarchy of ``Element`` nodes.  ``Element()`` creates a standard node, ``SubElement()`` attaches a new node to a parent, and ``Comment()`` creates a node that serializes using XML's comment syntax."
 msgstr ""
 
 #: ../../source/xml.etree.ElementTree/create.rst:0
-# e2448189207b4ef68628cf05fd6eac81
 msgid "ElementTree_create.py"
 msgstr ""
 
 #: ../../source/xml.etree.ElementTree/create.rst:23
-# 13cfe685e4c94f858c7a05e1207660ac
 msgid "The output contains only the XML nodes in the tree, not the XML declaration with version and encoding."
 msgstr ""
 
 #: ../../source/xml.etree.ElementTree/create.rst:41
-# d009c1253f0c4367bc033fc91454375b
 msgid "The ``&`` character in the text of ``child_with_entity_ref`` is converted to the entity reference ``&amp;`` automatically."
 msgstr ""
 
 #: ../../source/xml.etree.ElementTree/create.rst:45
-# 94939f1526e842b8b0fcc61cf8da59ba
 msgid "Pretty-Printing XML"
 msgstr ""
 
 #: ../../source/xml.etree.ElementTree/create.rst:47
-# 741b60ad03ab4dc9834f1ca6becd2d0a
 msgid "``ElementTree`` makes no effort to format the output of ``tostring()`` to make it easy to read because adding extra whitespace changes the contents of the document.  To make the output easier to follow, the rest of the examples will use :mod:`xml.dom.minidom` to re-parse the XML then use its ``toprettyxml()`` method."
 msgstr ""
 
 #: ../../source/xml.etree.ElementTree/create.rst:0
-# 53539f439e664de6a17694a9ee153cca
 msgid "ElementTree_pretty.py"
 msgstr ""
 
 #: ../../source/xml.etree.ElementTree/create.rst:58
-# 01c61b510863499bab19df3995c6aa3d
 msgid "The updated example now looks like"
 msgstr ""
 
 #: ../../source/xml.etree.ElementTree/create.rst:0
-# 2470233ee299448e93a778e3c507c189
 msgid "ElementTree_create_pretty.py"
 msgstr ""
 
 #: ../../source/xml.etree.ElementTree/create.rst:64
-# b81e8c3cedc94972980e0d5880d0213f
 msgid "and the output is easier to read."
 msgstr ""
 
 #: ../../source/xml.etree.ElementTree/create.rst:86
-# 1a16504973ce4b5cb1c9b51fd635cba2
 msgid "In addition to the extra whitespace for formatting, the :mod:`xml.dom.minidom` pretty-printer also adds an XML declaration to the output."
 msgstr ""
 
 #: ../../source/xml.etree.ElementTree/create.rst:91
-# db001f8f1bf546e3b614c26a15ff3010
 msgid "Setting Element Properties"
 msgstr ""
 
 #: ../../source/xml.etree.ElementTree/create.rst:93
-# 96e37d4843ff49b689f3bd5797622686
 msgid "The previous example created nodes with tags and text content, but did not set any attributes of the nodes.  Many of the examples from :ref:`xml.etree.ElementTree.parsing` worked with an OPML file listing podcasts and their feeds.  The ``outline`` nodes in the tree used attributes for the group names and podcast properties. ``ElementTree`` can be used to construct a similar XML file from a CSV input file, setting all of the element attributes as the tree is constructed."
 msgstr ""
 
 #: ../../source/xml.etree.ElementTree/create.rst:0
-# ba928872d9a2461f8158cbaabb0fc765
 msgid "ElementTree_csv_to_xml.py"
 msgstr ""
 
 #: ../../source/xml.etree.ElementTree/create.rst:106
-# d0cc3cc42fc342f98aacad02fb6192d1
 msgid "This example uses two techniques to set the attribute values of new nodes. The root node is configured using ``set()`` to change one attribute at a time. The podcast nodes are given all of their attributes at once by passing a dictionary to the node factory."
 msgstr ""
 
 #: ../../source/xml.etree.ElementTree/create.rst:148
-# 4dd4117d9a1740b5a7f2bd1bae16cd48
 msgid "Building Trees from Lists of Nodes"
 msgstr ""
 
 #: ../../source/xml.etree.ElementTree/create.rst:150
-# 48cb831c35bd41a0bdb92dbadb2ab60e
 msgid "Multiple children can be added to an ``Element`` instance together with the ``extend()`` method.  The argument to ``extend()`` is any iterable, including a ``list`` or another ``Element`` instance."
 msgstr ""
 
 #: ../../source/xml.etree.ElementTree/create.rst:0
-# be9226adb41346e6baf6271f28cdd8bb
 msgid "ElementTree_extend.py"
 msgstr ""
 
 #: ../../source/xml.etree.ElementTree/create.rst:159
-# 0f03c5be96fb41128ed5b5f92c8840c2
 msgid "When a ``list`` is given, the nodes in the list are added directly to the new parent."
 msgstr ""
 
 #: ../../source/xml.etree.ElementTree/create.rst:180
-# 1d67b1ee496b43888aabb6e3689e6763
 msgid "When another ``Element`` instance is given, the children of that node are added to the new parent."
 msgstr ""
 
 #: ../../source/xml.etree.ElementTree/create.rst:0
-# a7212c22d6d345c49f2cdcc110044936
 msgid "ElementTree_extend_node.py"
 msgstr ""
 
 #: ../../source/xml.etree.ElementTree/create.rst:187
-# 8471a56d60f1413ca699550ee10f959e
 msgid "In this case, the node with tag ``root`` created by parsing the XML string has three children, which are added to the ``parent`` node. The ``root`` node is not part of the output tree."
 msgstr ""
 
 #: ../../source/xml.etree.ElementTree/create.rst:211
-# 1d21bc5b8e114a63af9823945f791e49
 msgid "It is important to understand that ``extend()`` does not modify any existing parent-child relationships with the nodes.  If the values passed to ``extend()`` exist somewhere in the tree already, they will still be there, and will be repeated in the output."
 msgstr ""
 
 #: ../../source/xml.etree.ElementTree/create.rst:0
-# a6b0debd5f774dc8948667733bc9049d
 msgid "ElementTree_extend_node_copy.py"
 msgstr ""
 
 #: ../../source/xml.etree.ElementTree/create.rst:220
-# 12b3a29853c9427e8919a1cc5da2839f
 msgid "Setting the :attr:`id` attribute of these children to the Python unique object identifier highlights the fact that the same node objects appear in the output tree more than once."
 msgstr ""
 
 #: ../../source/xml.etree.ElementTree/create.rst:265
-# f2e88dd4fa5448108d06083d46943a8e
 msgid "Serializing XML to a Stream"
 msgstr ""
 
 #: ../../source/xml.etree.ElementTree/create.rst:267
-# 8e1873389aaf4e4aabe5e146a1c5ebb1
 msgid "``tostring()`` is implemented by writing to an in-memory file-like object, then returning a string representing the entire element tree. When working with large amounts of data, it will take less memory and make more efficient use of the I/O libraries to write directly to a file handle using the ``write()`` method of ``ElementTree``."
 msgstr ""
 
 #: ../../source/xml.etree.ElementTree/create.rst:0
-# fde2d3d2a6464dd79c83507213df5a28
 msgid "ElementTree_write.py"
 msgstr ""
 
 #: ../../source/xml.etree.ElementTree/create.rst:277
-# a0de60a455ab469d81e921f7ee7e7051
 msgid "The example uses ``sys.stdout.buffer`` to write to the console instead of ``sys.stdout`` because ``ElementTree`` produces encoded bytes instead of a Unicode string. It could also write to a file opened in binary mode or socket."
 msgstr ""
 
 #: ../../source/xml.etree.ElementTree/create.rst:297
-# b57434bfb725486faa00f669c98c2297
 msgid "The last node in the tree contains no text or sub-nodes, so it is written as an empty tag, ``<empty_child />``.  ``write()`` takes a ``method`` argument to control the handling for empty nodes."
 msgstr ""
 
 #: ../../source/xml.etree.ElementTree/create.rst:0
-# e86c68be31464da394e3c78122faaf9f
 msgid "ElementTree_write_method.py"
 msgstr ""
 
 #: ../../source/xml.etree.ElementTree/create.rst:305
-# 8970f3e24f4f4dc5a7b41285f229b1eb
 msgid "Three methods are supported:"
 msgstr ""
 
 #: ../../source/xml.etree.ElementTree/create.rst:307
-# 5706d1710ca740c2a332a28e021e9ac7
 msgid "``xml``"
 msgstr ""
 
 #: ../../source/xml.etree.ElementTree/create.rst:308
-# 9964bec4fd364299a7ecc94e9c02966d
 msgid "The default method, produces ``<empty_child />``."
 msgstr ""
 
 #: ../../source/xml.etree.ElementTree/create.rst:310
-# 0c154c9b0bf84837be8d3521b20cca5a
 msgid "``html``"
 msgstr ""
 
 #: ../../source/xml.etree.ElementTree/create.rst:310
-# 575eb174241a4514bf24c7c7a040b2ee
 msgid "Produce the tag pair, as is required in HTML documents (``<empty_child></empty_child>``)."
 msgstr ""
 
 #: ../../source/xml.etree.ElementTree/create.rst:313
-# 0122c356bb1f44be868dbf534ad8ee54
 msgid "``text``"
 msgstr ""
 
 #: ../../source/xml.etree.ElementTree/create.rst:313
-# 7dd56f0c97264fddb91afcbceeb19f55
 msgid "Prints only the text of nodes, and skips empty tags entirely."
 msgstr ""
 

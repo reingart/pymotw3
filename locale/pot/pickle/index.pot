@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,202 +17,162 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/pickle/index.rst:3
-# dbed1d9802e34880ad33b763e36f366f
 msgid "pickle --- Object Serialization"
 msgstr ""
 
 #: ../../source/pickle/index.rst:8
-# 8d1aaeb12f614b999ccd493145fcd2db
 msgid "Object serialization"
 msgstr ""
 
 #: ../../source/pickle/index.rst:10
-# 0962665c3fad481c8413c13bfc44a842
 msgid "The ``pickle`` module implements an algorithm for turning an arbitrary Python object into a series of bytes.  This process is also called *serializing* the object. The byte stream representing the object can then be transmitted or stored, and later reconstructed to create a new object with the same characteristics."
 msgstr ""
 
 #: ../../source/pickle/index.rst:18
-# 9fca1483ba9f43b9ae682b4c8aa52065
 msgid "The documentation for ``pickle`` makes clear that it offers no security guarantees. In fact, unpickling data can execute arbitrary code.  Be careful using ``pickle`` for inter-process communication or data storage, and do not trust data that cannot be verified as secure.  See the :mod:`hmac` module for an example of a secure way to verify the source of a pickled data source."
 msgstr ""
 
 #: ../../source/pickle/index.rst:26
-# 6ffd63bb7f7e4127935b62d0dbba9b94
 msgid "Encoding and Decoding Data in Strings"
 msgstr ""
 
 #: ../../source/pickle/index.rst:28
-# 37f013c22f3445e3a3008891d9f23979
 msgid "This first example Uses ``dumps()`` to encode a data structure as a string, then prints the string to the console. It uses a data structure made up of entirely built-in types. Instances of any class can be pickled, as will be illustrated in a later example."
 msgstr ""
 
 #: ../../source/pickle/index.rst:0
-# 622b1cbbc20c46abbdf1602c792065b4
 msgid "pickle_string.py"
 msgstr ""
 
 #: ../../source/pickle/index.rst:37
-# e8b13868a8214167bf2827e8be32f86b
 msgid "By default, the pickle will be written in a binary format most compatible when sharing between Python 3 programs."
 msgstr ""
 
 #: ../../source/pickle/index.rst:55
-# 076bdb6590d24980aed612fafe12b011
 msgid "After the data is serialized, it can be written to a file, socket, pipe, etc.  Later, the file can be read and the data unpickled to construct a new object with the same values."
 msgstr ""
 
 #: ../../source/pickle/index.rst:0
-# 0ee08b9b59b54f4b89fcc8cd096725fd
 msgid "pickle_unpickle.py"
 msgstr ""
 
 #: ../../source/pickle/index.rst:63
-# 87c880ea139045f6bb0469cb890c6b4d
 msgid "The newly constructed object is equal to, but not the same object as, the original."
 msgstr ""
 
 #: ../../source/pickle/index.rst:83
-# 13b5ff453bdf437abb96ff37d83c7753
 msgid "Working with Streams"
 msgstr ""
 
 #: ../../source/pickle/index.rst:85
-# 0254c213615b4ad4a951b4c59d92ec31
 msgid "In addition to ``dumps()`` and ``loads()``, ``pickle`` provides convenience functions for working with file-like streams. It is possible to write multiple objects to a stream, and then read them from the stream without knowing in advance how many objects are written, or how big they are."
 msgstr ""
 
 #: ../../source/pickle/index.rst:0
-# da31206ba6e446bea1340c9c0b6fbb89
 msgid "pickle_stream.py"
 msgstr ""
 
 #: ../../source/pickle/index.rst:95
-# dbcd4fb02caf4b698df1ed5f5279780a
 msgid "The example simulates streams using two ``BytesIO`` buffers.  The first receives the pickled objects, and its value is fed to a second from which ``load()`` reads.  A simple database format could use pickles to store objects, too. The :mod:`shelve` module is one such implementation."
 msgstr ""
 
 #: ../../source/pickle/index.rst:118
-# 4d594b4995be489fa294b7c6553d7182
 msgid "Besides storing data, pickles are handy for inter-process communication. For example, ``os.fork()`` and ``os.pipe()`` can be used to establish worker processes that read job instructions from one pipe and write the results to another pipe. The core code for managing the worker pool and sending jobs in and receiving responses can be reused, since the job and response objects do not have to be based on a particular class. When using pipes or sockets, do not forget to flush after dumping each object, to push the data through the connection to the other end.  See the :mod:`multiprocessing` module for a reusable worker pool manager."
 msgstr ""
 
 #: ../../source/pickle/index.rst:131
-# 52b8a1bba8f7464daccadf4c5944d838
 msgid "Problems Reconstructing Objects"
 msgstr ""
 
 #: ../../source/pickle/index.rst:133
-# f6e1604a48c64a3ba1a1c9016526c511
 msgid "When working with custom classes, the class being pickled must appear in the namespace of the process reading the pickle. Only the data for the instance is pickled, not the class definition. The class name is used to find the constructor to create the new object when unpickling. The following example writes instances of a class to a file."
 msgstr ""
 
 #: ../../source/pickle/index.rst:0
-# 426403b5c32c4c0fbc784748634e1d84
 msgid "pickle_dump_to_file_1.py"
 msgstr ""
 
 #: ../../source/pickle/index.rst:144
-# 2d36c29f6f014fa1aeacaf9738d9dcd9
 msgid "When run, the script creates a file based on the name given as argument on the command line."
 msgstr ""
 
 #: ../../source/pickle/index.rst:161
-# fe391484e3694e07b3241142e7dcb294
 msgid "A simplistic attempt to load the resulting pickled objects fails."
 msgstr ""
 
 #: ../../source/pickle/index.rst:0
-# 2f80488502ef4c93883862be7346470d
 msgid "pickle_load_from_file_1.py"
 msgstr ""
 
 #: ../../source/pickle/index.rst:167
-# 4028c465a8da468693b2f54775c8e4bf
 msgid "This version fails because there is no ``SimpleObject`` class available."
 msgstr ""
 
 #: ../../source/pickle/index.rst:186
-# 30773fb65dca4dc6afd2428511c1c09f
 msgid "The corrected version, which imports ``SimpleObject`` from the original script, succeeds.  Adding this import statement to the end of the import list allows the script to find the class and construct the object."
 msgstr ""
 
 #: ../../source/pickle/index.rst:195
-# 24e522f31a4f41fb817eab9981b48a3e
 msgid "Running the modified script now produces the desired results."
 msgstr ""
 
 #: ../../source/pickle/index.rst:212
-# f7411c1f80414632b06cd766b9f59f90
 msgid "Unpicklable Objects"
 msgstr ""
 
 #: ../../source/pickle/index.rst:214
-# de6c86b50aaf43a4bd1abdfdf0b84c1a
 msgid "Not all objects can be pickled. Sockets, file handles, database connections, and other objects with runtime state that depends on the operating system or another process may not be able to be saved in a meaningful way. Objects that have non-picklable attributes can define ``__getstate__()`` and ``__setstate__()`` to return a subset of the state of the instance to be pickled."
 msgstr ""
 
 #: ../../source/pickle/index.rst:221
-# fbb171aaa6984e949e551146a54eae1c
 msgid "The ``__getstate__()`` method must return an object containing the internal state of the object. One convenient way to represent that state is with a dictionary, but the value can be any picklable object. The state is stored, and passed to ``__setstate__()`` when the object is loaded from the pickle."
 msgstr ""
 
 #: ../../source/pickle/index.rst:0
-# 54614446602044d0a7f98d7336224a21
 msgid "pickle_state.py"
 msgstr ""
 
 #: ../../source/pickle/index.rst:231
-# 9ee64dd88bec4a39a22977d004c6ced7
 msgid "This example uses a separate ``State`` object to hold the internal state of ``MyClass``. When an instance of ``MyClass`` is loaded from a pickle, ``__setstate__()`` is passed a ``State`` instance which it uses to initialize the object."
 msgstr ""
 
 #: ../../source/pickle/index.rst:255
-# a9672210742c4ee39abcebc47b329172
 msgid "If the return value is false, then ``__setstate__()`` is not called when the object is unpickled."
 msgstr ""
 
 #: ../../source/pickle/index.rst:259
-# b31ac1bbc60949a3b3cd78e867654e77
 msgid "Circular References"
 msgstr ""
 
 #: ../../source/pickle/index.rst:261
-# 45cdac293d6e46e6be82b6aa5168c69c
 msgid "The pickle protocol automatically handles circular references between objects, so complex data structures do not need any special handling. Consider the directed graph in :figure:`Pickling a Data Structure With Cycles`.  It includes several cycles, yet the correct structure can be pickled and then reloaded."
 msgstr ""
 
 #: ../../source/pickle/index.rst:0
-# aa527b2b33004d768c57b99c8d7fe3fb
 msgid "Pickling a Data Structure With Cycles"
 msgstr ""
 
 #: ../../source/pickle/index.rst:0
-# 133093b34077445aa383f647dc76ff41
 msgid "pickle_cycle.py"
 msgstr ""
 
 #: ../../source/pickle/index.rst:282
-# 629eb66c77c34ab3b06158a46bd77f25
 msgid "The reloaded nodes are not the same object, but the relationship between the nodes is maintained and only one copy of the object with multiple references is reloaded. Both of these statements can be verified by examining the ``id()`` values for the nodes before and after being passed through pickle."
 msgstr ""
 
 #: ../../source/pickle/index.rst:317
-# 5c7bf1f16c7644eab58a3bcb33b7b0dd
 msgid ":pydoc:`pickle`"
 msgstr ""
 
 #: ../../source/pickle/index.rst:319
-# 285696758f20459e8c496d5b97a2ab67
 msgid ":pep:`3154` -- Pickle protocol version 4"
 msgstr ""
 
 #: ../../source/pickle/index.rst:321
-# f9eb98a9f63443aaa223a95d579412fa
 msgid ":mod:`shelve` -- The ``shelve`` module uses ``pickle`` to store data in a DBM database."
 msgstr ""
 
 #: ../../source/pickle/index.rst:324
-# a94023ca21a545bc886ecfec03c929ea
 msgid "`Pickle: An interesting stack language. <http://peadrop.com/blog/2007/06/18/pickle-an-interesting-stack-language/>`__ -- by Alexandre Vassalotti"
 msgstr ""
 

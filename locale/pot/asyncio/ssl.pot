@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,67 +17,54 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/asyncio/ssl.rst:3
-# 7e1566254bae487dac4d5842d16feb05
 msgid "Using SSL"
 msgstr ""
 
 #: ../../source/asyncio/ssl.rst:5
-# 5b8959f9092f42329132a69cd36b88da
 msgid "``asyncio`` has built-in support for enabling SSL communication on sockets. Passing an ``SSLContext`` instance to the coroutines that create server or client connections enables the support and ensures that the SSL protocol setup is taken care of before the socket is presented as ready for the application to use."
 msgstr ""
 
 #: ../../source/asyncio/ssl.rst:11
-# 01ff71f46fff4be4ad91cefc58bd5024
 msgid "The coroutine-based echo server and client from the previous section can be updated with a few small changes. The first step is to create the certificate and key files. A self-signed certificate can be created with a command like:"
 msgstr ""
 
 #: ../../source/asyncio/ssl.rst:21
-# 66fc6c9afbe84302b36294873d06a0ac
 msgid "The ``openssl`` command will prompt for several values that are used to generate the certificate, and then produce the output files requested."
 msgstr ""
 
 #: ../../source/asyncio/ssl.rst:25
-# 094104e390064e89ab00c497b15d71ab
 msgid "The insecure socket setup in the previous server example uses ``start_server()`` to create the listening socket."
 msgstr ""
 
 #: ../../source/asyncio/ssl.rst:31
-# ab06609a2d5b4a4b841948f488e0c441
 msgid "To add encryption, create an ``SSLContext`` with the certificate and key just generated and then pass the context to ``start_server()``."
 msgstr ""
 
 #: ../../source/asyncio/ssl.rst:38
-# c8f8298e61424176a4b507c6b558c867
 msgid "Similar changes are needed in the client. The old version uses ``open_connection()`` to create the socket connected to the server."
 msgstr ""
 
 #: ../../source/asyncio/ssl.rst:44
-# f9e180cd36604634a617a6a63acab178
 msgid "An ``SSLContext`` is needed again to secure the client-side of the socket. Client identity is not being enforced, so only the certificate needs to be loaded."
 msgstr ""
 
 #: ../../source/asyncio/ssl.rst:51
-# ab50b30fb1bc4ae6a2cb433e0dc8378b
 msgid "One other small changes is needed in the client. Because the SSL connection does not support sending an end-of-file (EOF), the client uses a NULL byte as a message terminator instead."
 msgstr ""
 
 #: ../../source/asyncio/ssl.rst:55
-# 1b83ec1cc85649e8b2e85c7729096c92
 msgid "The old version of the client send loop uses ``write_eof()``."
 msgstr ""
 
 #: ../../source/asyncio/ssl.rst:60
-# f59b55d7196849b5a6f1f23ec3693020
 msgid "The new version sends a zero byte (``b'\\x00'``)."
 msgstr ""
 
 #: ../../source/asyncio/ssl.rst:65
-# 73a0c879e9cc48c2aa81e9a00e392358
 msgid "The ``echo()`` coroutine in the server must look for the NULL byte and close the client connection when it is received."
 msgstr ""
 
 #: ../../source/asyncio/ssl.rst:71
-# 8ecbfc9987f14ee6b80ae14a62952e37
 msgid "Running the server in one window, and the client in another, produces this output."
 msgstr ""
 

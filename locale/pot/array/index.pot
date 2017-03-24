@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,76 +17,60 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/array/index.rst:3
-# 8fff0df5df6d4b07878b70c2ff068561
 msgid "array --- Sequence of Fixed-type Data"
 msgstr ""
 
 #: ../../source/array/index.rst:8
-# d65ae2635e0248d494f25eba012a6ea6
 msgid "Manage sequences of fixed-type numerical data efficiently."
 msgstr ""
 
 #: ../../source/array/index.rst:10
-# 15e03c6cb4644ac2ac167b3e914493d0
 msgid "The ``array`` module defines a sequence data structure that looks very much like a ``list``, except that all of the members have to be of the same primitive type. The types supported are all numeric or other fixed-size primitive types such as bytes."
 msgstr ""
 
 #: ../../source/array/index.rst:15
-# c62b9f432f044363828f07b948e9f08f
 msgid "Refer to :table:`Type Codes for array Members` for some of the supported types. The standard library documentation for ``array`` includes a complete list of type codes."
 msgstr ""
 
 #: ../../source/array/index.rst:0
-# a530ec69d2fc41b0885785bcae52f165
 msgid "Type Codes for array Members"
 msgstr ""
 
 #: ../../source/array/index.rst:23
-# 247fe87a42c5496ca43e939744ded683
 msgid "Code"
 msgstr ""
 
 #: ../../source/array/index.rst:24
-# b41c71fcddf7453b820e4cd2cca4bec6
 msgid "Type"
 msgstr ""
 
 #: ../../source/array/index.rst:25
-# cf88c6acac4245b7acd778fc89b244cb
 msgid "Minimum size (bytes)"
 msgstr ""
 
 #: ../../source/array/index.rst:26
-# e76ef23c1deb4aa29d239c0677f02b11
 msgid "``b``"
 msgstr ""
 
 #: ../../source/array/index.rst:27
 #: ../../source/array/index.rst:30
-# 064460e93f8e491e9b6ddbde71516ca3
-# 7b1bd5f1292140c696d45a8a10111235
 msgid "int"
 msgstr ""
 
 #: ../../source/array/index.rst:28
 #: ../../source/array/index.rst:31
-# e5f4abfbf40e45e689c32143fd85cc68
-# 509d4170352a4d91b4e1956c00b91afc
 msgid "1"
 msgstr ""
 
 #: ../../source/array/index.rst:29
-# 33a3cb360c0c42b19672d4c4f8b6e93f
 msgid "``B``"
 msgstr ""
 
 #: ../../source/array/index.rst:32
-# b4fa851ccda64695a750a4f439b7d272
 msgid "``h``"
 msgstr ""
 
 #: ../../source/array/index.rst:33
-# 9b1659dc26c14dc1b7dfcb1e33d87c61
 msgid "signed short"
 msgstr ""
 
@@ -94,233 +78,182 @@ msgstr ""
 #: ../../source/array/index.rst:37
 #: ../../source/array/index.rst:40
 #: ../../source/array/index.rst:43
-# 42a9aae42cc546f68b069f3eb3ffed6c
-# 58bd2bb5fdf540278ea30164ea51b027
-# eb67f0d2a7b1491bb0666554f9ac52e3
-# b40e1be2f7ca401a9555b8ca8c23f0a3
 msgid "2"
 msgstr ""
 
 #: ../../source/array/index.rst:35
-# bccf96493eb64739bbea320d3e2ae249
 msgid "``H``"
 msgstr ""
 
 #: ../../source/array/index.rst:36
-# 1c10ed9153a54a4d9d4476a2768327cf
 msgid "unsigned short"
 msgstr ""
 
 #: ../../source/array/index.rst:38
-# 50f0cf7f731a4027a62cf34b1417b282
 msgid "``i``"
 msgstr ""
 
 #: ../../source/array/index.rst:39
-# 18934f9be63842dcb6ab78ef277a1171
 msgid "signed int"
 msgstr ""
 
 #: ../../source/array/index.rst:41
-# 3a9398b5e4f6405e8920fa7b5bd1c409
 msgid "``I``"
 msgstr ""
 
 #: ../../source/array/index.rst:42
-# 3545aefaf183400f8d888f277dfcd940
 msgid "unsigned int"
 msgstr ""
 
 #: ../../source/array/index.rst:44
-# e8b1a222d82945d6b7ef83bd7cd75e4f
 msgid "``l``"
 msgstr ""
 
 #: ../../source/array/index.rst:45
-# 33199336e8f6495993d0d91bede20620
 msgid "signed long"
 msgstr ""
 
 #: ../../source/array/index.rst:46
 #: ../../source/array/index.rst:49
 #: ../../source/array/index.rst:58
-# ba18961c0dc34267888fa35586457a6c
-# 65f0afc8a4c245f18a4fdf8a82bcf55a
-# 5fb0d681891b479f929ee09f3aedf44f
 msgid "4"
 msgstr ""
 
 #: ../../source/array/index.rst:47
-# 1a6b18d735c149a0a19cab41c1030959
 msgid "``L``"
 msgstr ""
 
 #: ../../source/array/index.rst:48
-# ed0c3d85dc0842448af8bc0036d2087a
 msgid "unsigned long"
 msgstr ""
 
 #: ../../source/array/index.rst:50
-# 5553015d0a3d44798fe1fc415b472bcb
 msgid "``q``"
 msgstr ""
 
 #: ../../source/array/index.rst:51
-# b94057aa41d34a3593baa37feaf0ffba
 msgid "signed long long"
 msgstr ""
 
 #: ../../source/array/index.rst:52
 #: ../../source/array/index.rst:55
 #: ../../source/array/index.rst:61
-# a5ee33d6770749d59662cad38531c092
-# 7b406a5de57f4c2196f31001468213ef
-# 2a3b527da1464c248cdbcdeddc01a828
 msgid "8"
 msgstr ""
 
 #: ../../source/array/index.rst:53
-# ee72e33ff31e4547bee11dc1f281c939
 msgid "``Q``"
 msgstr ""
 
 #: ../../source/array/index.rst:54
-# 70afbc5d96b647f98c42262d8ffc70ba
 msgid "unsigned long long"
 msgstr ""
 
 #: ../../source/array/index.rst:56
-# ff3b336856f9451a8ba4853c5c3bf48a
 msgid "``f``"
 msgstr ""
 
 #: ../../source/array/index.rst:57
-# 19a319baed4f4704a2b5fa846b26c2db
 msgid "float"
 msgstr ""
 
 #: ../../source/array/index.rst:59
-# b59de7d4ef7d403d923fb29ff856875b
 msgid "``d``"
 msgstr ""
 
 #: ../../source/array/index.rst:60
-# 43aabf8eb339451cbdd801f2869380ce
 msgid "double float"
 msgstr ""
 
 #: ../../source/array/index.rst:64
-# 9e869c5e0af14899a0382988415f6a3c
 msgid "Initialization"
 msgstr ""
 
 #: ../../source/array/index.rst:66
-# fc83858fcb004ca19d52c5ae046aeea0
 msgid "An ``array`` is instantiated with an argument describing the type of data to be allowed, and possibly an initial sequence of data to store in the array."
 msgstr ""
 
 #: ../../source/array/index.rst:0
-# 0876264ecab44a1097d35d826fb8d368
 msgid "array_string.py"
 msgstr ""
 
 #: ../../source/array/index.rst:74
-# fbcb80a991d24504bd5b3399eea29e0c
 msgid "In this example, the array is configured to hold a sequence of bytes and is initialized with a simple byte string."
 msgstr ""
 
 #: ../../source/array/index.rst:94
-# 0e73d469f61044f7ae0718f032b71e33
 msgid "Manipulating Arrays"
 msgstr ""
 
 #: ../../source/array/index.rst:96
-# 4cb64d2a2db44006a8e229d207ca6cbf
 msgid "An ``array`` can be extended and otherwise manipulated in the same ways as other Python sequences."
 msgstr ""
 
 #: ../../source/array/index.rst:0
-# 99b61b6f2e174f77bab0eaa7c744a3f9
 msgid "array_sequence.py"
 msgstr ""
 
 #: ../../source/array/index.rst:103
-# a441b54008804ea3ba923d6ec8a4fd5f
 msgid "The supported operations include slicing, iterating, and adding elements to the end."
 msgstr ""
 
 #: ../../source/array/index.rst:124
-# 942e88caf42a4c0e9a12957f5046d34b
 msgid "Arrays and Files"
 msgstr ""
 
 #: ../../source/array/index.rst:126
-# 35f68bec0322422986d011717f2f7b36
 msgid "The contents of an array can be written to and read from files using built-in methods coded efficiently for that purpose."
 msgstr ""
 
 #: ../../source/array/index.rst:0
-# af22dca54b3e459e932f36001d4f9ae7
 msgid "array_file.py"
 msgstr ""
 
 #: ../../source/array/index.rst:133
-# 6dea4bd66e144180be22a9781e1ab6ad
 msgid "This example illustrates reading the data \"raw,\" meaning directly from the binary file, versus reading it into a new array and converting the bytes to the appropriate types."
 msgstr ""
 
 #: ../../source/array/index.rst:151
-# 7f658f65d3494f32a462f43b78c32058
 msgid "``tofile()`` uses ``tobytes()`` to format the data, and ``fromfile()`` uses ``frombytes()`` to convert it back to an array instance."
 msgstr ""
 
 #: ../../source/array/index.rst:0
-# 66bd97638f9043cfbe3d9c87b17061a0
 msgid "array_tobytes.py"
 msgstr ""
 
 #: ../../source/array/index.rst:158
-# 386fdf5be00442eeb038ee38a0fdd48c
 msgid "Both ``tobytes()`` and ``frombytes()`` work on byte strings, not Unicode strings."
 msgstr ""
 
 #: ../../source/array/index.rst:176
-# fd14b053e80949e88d8710cf94d72cd0
 msgid "Alternative Byte Ordering"
 msgstr ""
 
 #: ../../source/array/index.rst:178
-# 26811c3541124eeea5d2cdd087d2f871
 msgid "If the data in the array is not in the native byte order, or if the data needs to be swapped before being sent to a system with a different byte order (or over the network), it is possible to convert the entire array without iterating over the elements from Python."
 msgstr ""
 
 #: ../../source/array/index.rst:0
-# 3288011612e24d81b08374e6b65393d2
 msgid "array_byteswap.py"
 msgstr ""
 
 #: ../../source/array/index.rst:187
-# 982caaac213b40b28a0c7380284865dc
 msgid "The ``byteswap()`` method switches the byte order of the items in the array from within C, so it is much more efficient than looping over the data in Python."
 msgstr ""
 
 #: ../../source/array/index.rst:212
-# fd920434e65e40dead6f1dcbe852035c
 msgid ":pydoc:`array`"
 msgstr ""
 
 #: ../../source/array/index.rst:214
-# 7e44a56f54e5481faac4bc6c7d4bd0d8
 msgid ":mod:`struct` -- The ``struct`` module."
 msgstr ""
 
 #: ../../source/array/index.rst:216
-# 05be15b0776147b796496b0e7d1e7f15
 msgid "`Numerical Python <http://www.scipy.org>`_ -- NumPy is a Python library for working with large data sets efficiently."
 msgstr ""
 
 #: ../../source/array/index.rst:219
-# 2f22228d678e48599b4e6352e2931bd4
 msgid ":ref:`Python 2 to 3 porting notes for array <porting-array>`"
 msgstr ""
 

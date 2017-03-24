@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,78 +17,61 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/sqlite3/index.rst:3
-# 492706d59db2439c8b753ba5c43aedca
 msgid "sqlite3 --- Embedded Relational Database"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:8
-# a41d6b4fd02a491298d44527997dbd07
 msgid "Implements an embedded relational database with SQL support."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:10
-# 2af3f38e66fc4ac68e996270fad7b2a8
 msgid "The ``sqlite3`` module implements a `Python DB-API 2.0`_ compliant interface to SQLite, an in-process relational database.  SQLite is designed to be embedded in applications, instead of using a separate database server program such as MySQL, PostgreSQL, or Oracle.  It is fast, rigorously tested, and flexible, making it suitable for prototyping and production deployment for some applications."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:20
-# 1aaf31b40f51400a9c004e1d9359023d
 msgid "Creating a Database"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:22
-# f0b163c3a4c540c59ebb5aa5212629eb
 msgid "An SQLite database is stored as a single file on the file system.  The library manages access to the file, including locking it to prevent corruption when multiple writers use it.  The database is created the first time the file is accessed, but the application is responsible for managing the table definitions, or *schema*, within the database."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:28
-# 214c2fbcfd9d4e0d98338297832e4c39
 msgid "This example looks for the database file before opening it with ``connect()`` so it knows when to create the schema for new databases."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:0
-# 9358734316654d9f94889e96b85d469e
 msgid "sqlite3_createdb.py"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:36
-# 607c15258b254a778d74e73d12885652
 msgid "Running the script twice shows that it creates the empty file if it does not exist."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:67
-# e69bdc75512b433c97810a6f8db59b3e
 msgid "After creating the new database file, the next step is to create the schema to define the tables within the database.  The remaining examples in this section all use the same database schema with tables for managing tasks.  The details of the database schema are presented in :table:`The project Table` and :table:`The task Table`."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:0
-# ed70e87b4217489cb0cffd56dd4e450d
 msgid "The project Table"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:76
 #: ../../source/sqlite3/index.rst:86
-# 9437cf6d81d54e2fa4c945121a7c9356
-# 96d4ffc2099348839358a6914f3ce104
 msgid "Column"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:76
 #: ../../source/sqlite3/index.rst:86
-# 43b30546c64f47a2a62ad57f5dd42d56
-# 997128f295f44598a7e0e44dd22b07e7
 msgid "Type"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:76
 #: ../../source/sqlite3/index.rst:86
-# 0f683b6e14414deeb0dfa90ef7b96996
-# aa182a45f35245528c36bca7bf961f0c
 msgid "Description"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:78
-# 925d7e8175964772b41ce1725d9c5650
 msgid "name"
 msgstr ""
 
@@ -97,687 +80,545 @@ msgstr ""
 #: ../../source/sqlite3/index.rst:90
 #: ../../source/sqlite3/index.rst:91
 #: ../../source/sqlite3/index.rst:94
-# 2c0334c2a06d44ad9f3fe731318bc7c6
-# 58eb11b7fef64d0d8421ca5cf81deac3
-# ecac55c7504a4d299cf9b573ee24eebb
-# 2aabda1a13a543c9a4ec5de410c8e43b
-# 4e998d5a022b4abcaef00d5f332fd8be
 msgid "text"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:78
-# 85cceac5c41144b48d6051ea3f1c15d5
 msgid "Project name"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:79
-# 057199b4f39546e9a46fa6bb192e23ae
 msgid "description"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:79
-# 718c05068895434984135d295b917a0d
 msgid "Long project description"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:80
 #: ../../source/sqlite3/index.rst:92
-# dbc57a5cef76453a8a56505f6559a7c0
-# 3972bfcba2864c63af6e406afbd39fba
 msgid "deadline"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:80
 #: ../../source/sqlite3/index.rst:92
 #: ../../source/sqlite3/index.rst:93
-# d53b8ad45cf8442b9445202278d8eb91
-# 9d0eab1e081b49cd93604c223f46e714
-# b25f11b0730c4916807270b0c94995dd
 msgid "date"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:80
-# fb5a0b315c3f4961beafe2e40ab017ce
 msgid "Due date for the entire project"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:0
-# 52b1f1bccd184d98b7ca4026aa20cb28
 msgid "The task Table"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:88
-# 500544c8e4f44b9e9722e4645342bf6b
 msgid "id"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:88
-# 1ff9fb7f5f494e49a3df007c60fe89a9
 msgid "number"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:88
-# a28f1f2b0f304af59245caab11c01a5a
 msgid "Unique task identifier"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:89
-# 82d21c6b3c2e44d0870af6d64f890715
 msgid "priority"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:89
-# 4aee9c217b1a470c85b0edf9abf2c612
 msgid "integer"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:89
-# e0151f2f3df64a46b851a9e078947449
 msgid "Numerical priority, lower is more important"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:90
-# 40daffbbc314494987e8f92a27d3202d
 msgid "details"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:90
-# 4a6c53e37c384656ac856140ce70af24
 msgid "Full task details"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:91
-# f28292bd904f474e8d92228bd444d928
 msgid "status"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:91
-# f1661d84e25b47a7a42207c09eeac546
 msgid "Task status (one of 'new', 'pending', 'done', or 'canceled')."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:92
-# fa1df4a46963406a88f13f00807c172f
 msgid "Due date for this task"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:93
-# 53eca980ebc8430f9e41e7a5e1a59e75
 msgid "completed_on"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:93
-# 851f82fd0b704610a025a54d682459cd
 msgid "When the task was completed."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:94
-# fb90488932924d459abbc99fd9c98395
 msgid "project"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:94
-# 0d7602a0935341c9a65111a081dbdb7a
 msgid "The name of the project for this task."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:97
-# e70be0f8ce0a4cc79a30ea91f4d9d750
 msgid "The *data definition language* (DDL) statements to create the tables are:"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:0
-# 40e9def2b5ab4b9fa12dfbf9654cac7b
 msgid "todo_schema.sql"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:106
-# a0d7283483ec4449b5232cb559f0e456
 msgid "The ``executescript()`` method of the ``Connection`` can be used to run the DDL instructions to create the schema."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:0
-# d23f9466326a414eba3b914d437fbc6d
 msgid "sqlite3_create_schema.py"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:113
-# 2c7a013d5f1243cfb173e1df2b58bc1f
 msgid "After the tables are created, a few ``insert`` statements create a sample project and related tasks.  The ``sqlite3`` command line program can be used to examine the contents of the database."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:143
-# 4f18ee24f5b648539ab4491e4e1ce93c
 msgid "Retrieving Data"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:145
-# 7f4112b803874b6882c0872acca7c000
 msgid "To retrieve the values saved in the ``task`` table from within a Python program, create a ``Cursor`` from a database connection. A cursor produces a consistent view of the data, and is the primary means of interacting with a transactional database system like SQLite."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:0
-# 2bd0805085e34b8ababaf5c42571c4fc
 msgid "sqlite3_select_tasks.py"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:154
-# a61fbac35dcc4f3896a5daf5e6c1c5df
 msgid "Querying is a two step process.  First, run the query with the cursor's ``execute()`` method to tell the database engine what data to collect.  Then, use ``fetchall()`` to retrieve the results.  The return value is a sequence of tuples containing the values for the columns included in the ``select`` clause of the query."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:174
-# 4e1b0ac486254b69875a3d5cf5770ec4
 msgid "The results can be retrieved one at a time with ``fetchone()``, or in fixed-size batches with ``fetchmany()``."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:0
-# 97a9b96307b24ab387999cb5ec3606b4
 msgid "sqlite3_select_variations.py"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:181
-# 89b35a89e8fa45cc9c62b97d5c40174d
 msgid "The value passed to ``fetchmany()`` is the maximum number of items to return.  If fewer items are available, the sequence returned will be smaller than the maximum value."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:204
-# c728ab6934314101af014b4b1ce9b6ca
 msgid "Query Metadata"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:206
-# d9ba5306915d4daba2aeb06e8192c103
 msgid "The DB-API 2.0 specification says that after ``execute()`` has been called, the ``Cursor`` should set its :attr:`description` attribute to hold information about the data that will be returned by the fetch methods.  The API specification say that the description value is a sequence of tuples containing the column name, type, display size, internal size, precision, scale, and a flag that says whether null values are accepted."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:0
-# 5fd9df56e3334b0aa7ede1158f20753f
 msgid "sqlite3_cursor_description.py"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:218
-# b3987b0425dc41d9bcbbeec2c26ddfaa
 msgid "Because ``sqlite3`` does not enforce type or size constraints on data inserted into a database, only the column name value is filled in."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:242
-# 2dd9cd3add4f42d492542623c58fad09
 msgid "Row Objects"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:244
-# 621963effeab43838c8d284249cece42
 msgid "By default, the values returned by the fetch methods as \"rows\" from the database are tuples.  The caller is responsible for knowing the order of the columns in the query and extracting individual values from the tuple.  When the number of values in a query grows, or the code working with the data is spread out in a library, it is usually easier to work with an object and access values using their column names.  That way, the number and order of the tuple contents can change over time as the query is edited, and code depending on the query results is less likely to break."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:254
-# 7c63c37cf37040698bcc77cd017584c8
 msgid "``Connection`` objects have a ``row_factory`` property that allows the calling code to control the type of object created to represent each row in the query result set.  ``sqlite3`` also includes a ``Row`` class intended to be used as a row factory. Column values can be accessed through ``Row`` instances by using the column index or name."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:0
-# 845e2cb55c4046ac85559311a51efb48
 msgid "sqlite3_row_factory.py"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:265
-# ee45c502beba4e6283308528e0f5b5d9
 msgid "This version of the ``sqlite3_select_variations.py`` example has been re-written using ``Row`` instances instead of tuples.  The row from the project table is still printed by accessing the column values through position, but the ``print`` statement for tasks uses keyword lookup instead, so it does not matter that the order of the columns in the query has been changed."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:291
-# ff779d764f9a4672aa112ad113ca278b
 msgid "Using Variables with Queries"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:293
-# 04a3df13d9da47b699ed24d527b16dff
 msgid "Using queries defined as literal strings embedded in a program is inflexible.  For example, when another project is added to the database the query to show the top five tasks should be updated to work with either project.  One way to add more flexibility is to build an SQL statement with the desired query by combining values in Python. However, building a query string in this way is dangerous, and should be avoided.  Failing to correctly escape special characters in the variable parts of the query can result in SQL parsing errors, or worse, a class of security vulnerabilities known as *SQL-injection attacks*, which allow intruders to execute arbitrary SQL statements in the database."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:305
-# 9a36542cf0304df6acf757428f45dde6
 msgid "The proper way to use dynamic values with queries is through *host variables* passed to ``execute()`` along with the SQL instruction. A placeholder value in the SQL is replaced with the value of the host variable when the statement is executed.  Using host variables instead of inserting arbitrary values into the SQL before it is parsed avoids injection attacks because there is no chance that the untrusted values will affect how the SQL is parsed.  SQLite supports two forms for queries with placeholders, positional and named."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:315
-# 3deb8e28da604f328f2f71204d21794c
 msgid "Positional Parameters"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:317
-# a0f832ceb3414937b8de8f4a7c4fe3a6
 msgid "A question mark (``?``) denotes a positional argument, passed to ``execute()`` as a member of a tuple."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:0
-# 0d5e852596ad4fa6a51cded4d1bee429
 msgid "sqlite3_argument_positional.py"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:324
-# 9eff7f0854d9439facf52608d0071163
 msgid "The command line argument is passed safely to the query as a positional argument, and there is no chance for bad data to corrupt the database."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:343
-# fa19ebceb1674663aa4d781d2a64f0c1
 msgid "Named Parameters"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:345
-# 5ebacb762c1a4d53a29076264eb260bd
 msgid "Use named parameters for more complex queries with a lot of parameters, or where some parameters are repeated multiple times within the query. Named parameters are prefixed with a colon (e.g., ``:param_name``)."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:0
-# c0460695008a4241b436f37a7fe95734
 msgid "sqlite3_argument_named.py"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:353
-# a25aadd7080f4e33833b5cf97cd6e4b3
 msgid "Neither positional nor named parameters need to be quoted or escaped, since they are given special treatment by the query parser."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:370
-# 96c3d0d83fa74cc1ae2e1392ca7c7999
 msgid "Query parameters can be used with ``select``, ``insert``, and ``update`` statements.  They can appear in any part of the query where a literal value is legal."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:0
-# 6e31bfdd31c14c06bfbaed9f376a2fd0
 msgid "sqlite3_argument_update.py"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:378
-# 9699f05569634b2e8ec31f962521f8f4
 msgid "This ``update`` statement uses two named parameters.  The ``id`` value is used to find the right row to modify, and the ``status`` value is written to the table."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:399
-# 88388c2e6c904ecd8199c786d2d1ed56
 msgid "Bulk Loading"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:401
-# fc526c5eb01b404d8b45424d6a0a602b
 msgid "To apply the same SQL instruction to a large set of data, use ``executemany()``.  This is useful for loading data, since it avoids looping over the inputs in Python and lets the underlying library apply loop optimizations.  This example program reads a list of tasks from a comma-separated value file using the :mod:`csv` module and loads them into the database."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:0
-# b94e896249f94468861a8301651f75e4
 msgid "sqlite3_load_csv.py"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:412
-# d4133ac44e054368b80aa5c036b5fc05
 msgid "The sample data file ``tasks.csv`` contains:"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:416
-# 72dee40f08584421ad20851761c68ca6
 msgid "Running the program produces:"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:439
-# a251500a0ea74bcfb2887f31b166c046
 msgid "Defining New Column Types"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:441
-# 9ccc81e494ee42f08e01d390fff0e1d1
 msgid "SQLite has native support for integer, floating point, and text columns.  Data of these types is converted automatically by ``sqlite3`` from Python's representation to a value that can be stored in the database, and back again, as needed.  Integer values are loaded from the database into ``int`` or ``long`` variables, depending on the size of the value.  Text is saved and retrieved as ``str``, unless the :attr:`text_factory` for the ``Connection`` has been changed."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:450
-# 19f9b5f150f540b18324a3215722a0fe
 msgid "Although SQLite only supports a few data types internally, ``sqlite3`` includes facilities for defining custom types to allow a Python application to store any type of data in a column. Conversion for types beyond those supported by default is enabled in the database connection using the ``detect_types`` flag.  Use ``PARSE_DECLTYPES`` if the column was declared using the desired type when the table was defined."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:0
-# b38f63e8cdc54604a9287bca2b3be642
 msgid "sqlite3_date_types.py"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:462
-# 6e7b2668774e4826afeb38bc5d2aa5da
 msgid "``sqlite3`` provides converters for date and timestamp columns, using the classes ``date`` and ``datetime`` from the :mod:`datetime` module to represent the values in Python.  Both date-related converters are enabled automatically when type-detection is turned on."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:488
-# 4d204d76483f4ce5b1efee8825b9b668
 msgid "Two functions need to be registered to define a new type.  The *adapter* takes the Python object as input and returns a byte string that can be stored in the database.  The *converter* receives the string from the database and returns a Python object.  Use ``register_adapter()`` to define an adapter function, and ``register_converter()`` for a converter function."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:0
-# 5303e9e10d6b4a619056beb30ae7b681
 msgid "sqlite3_custom_type.py"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:499
-# 732d7b66d1b241a1a65e7accdb766531
 msgid "This example uses :mod:`pickle` to save an object to a string that can be stored in the database, a useful technique for storing arbitrary objects, but one that does not allow querying based on object attributes.  A real *object-relational mapper*, such as SQLAlchemy_, that stores attribute values in their own columns will be more useful for large amounts of data."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:535
-# eb99280c749a4b878fce332cd3bfa908
 msgid "Determining Types for Columns"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:537
-# ee488b9ec974418385fc64e69924b3e0
 msgid "There are two sources for types information about the data for a query.  The original table declaration can be used to identify the type of a real column, as shown earlier.  A type specifier can also be included in the ``select`` clause of the query itself using the form ``as \"name [type]\"``."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:0
-# ed6e41a90f6543a68e862b5dfa1385ba
 msgid "sqlite3_custom_type_column.py"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:547
-# caf8f29cdfad49beae23852379023a34
 msgid "Use the ``detect_types`` flag ``PARSE_COLNAMES`` when the type is part of the query instead of the original table definition."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:579
-# 095b178514d2496cad3cf38a96b4330d
 msgid "Transactions"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:581
-# 4cdd5137769d416c89acf44aec392043
 msgid "One of the key features of relational databases is the use of *transactions* to maintain a consistent internal state.  With transactions enabled, several changes can be made through one connection without effecting any other users until the results are *committed* and flushed to the actual database."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:588
-# cd4ee0f13fe345c4be277bff7effa928
 msgid "Preserving Changes"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:590
-# cba17ea399e344a18c13b70c36b10dfe
 msgid "Changes to the database, either through ``insert`` or ``update`` statements, need to be saved by explicitly calling ``commit()``.  This requirement gives an application an opportunity to make several related changes together, so they are stored *atomically* instead of incrementally, and avoids a situation where partial updates are seen by different clients connecting to the database simultaneously."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:598
-# 63c8a1682f0c41f4a862d6ba821e973c
 msgid "The effect of calling ``commit()`` can be seen with a program that uses several connections to the database.  A new row is inserted with the first connection, and then two attempts are made to read it back using separate connections."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:0
-# bfeb0e37987440e3ac069d71a8576f71
 msgid "sqlite3_transaction_commit.py"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:607
-# 4374dda228cd4622b6aa91fcbc8dc480
 msgid "When ``show_projects()`` is called before ``conn1`` has been committed, the results depend on which connection is used.  Since the change was made through ``conn1``, it sees the altered data. However, ``conn2`` does not.  After committing, the new connection ``conn3`` sees the inserted row."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:639
-# 12a9b1e43065452f8657c0af3591f0cb
 msgid "Discarding Changes"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:641
-# 310ca4eaffea47a2949678c1ebedd5d4
 msgid "Uncommitted changes can also be discarded entirely using ``rollback()``.  The ``commit()`` and ``rollback()`` methods are usually called from different parts of the same ``try:except`` block, with errors triggering a rollback."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:0
-# 083d000fafd84fd583dd54309847f129
 msgid "sqlite3_transaction_rollback.py"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:650
-# 8844322f15d14bb5a6e2c5ea7405199c
 msgid "After calling ``rollback()``, the changes to the database are no longer present."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:676
-# bb05b0b145e24521b94241d56ed48f50
 msgid "Isolation Levels"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:678
-# b5c92ceef6b340b1a856655208e5bd35
 msgid "``sqlite3`` supports three locking modes, called *isolation levels*, that control the technique used to prevent incompatible changes between connections.  The isolation level is set by passing a string as the ``isolation_level`` argument when a connection is opened, so different connections can use different values."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:684
-# bd6e256bdc8f4869bcbf2170fd865f7a
 msgid "This program demonstrates the effect of different isolation levels on the order of events in threads using separate connections to the same database.  Four threads are created.  Two threads write changes to the database by updating existing rows.  The other two threads attempt to read all of the rows from the ``task`` table."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:0
-# 13eaaa650ad848ac804a9106cb75e0af
 msgid "sqlite3_isolation_levels.py"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:694
-# 576fb23bd71f41fea001b7ee5d0f666b
 msgid "The threads are synchronized using an ``Event`` object from the :mod:`threading` module.  The ``writer()`` function connects and make changes to the database, but does not commit before the event fires.  The ``reader()`` function connects, then waits to query the database until after the synchronization event occurs."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:701
-# b1230bf4fc0e4f91b464cd7dc9298f36
 msgid "Deferred"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:703
-# 149a53183a764ea9a9d637073f0ed865
 msgid "The default isolation level is ``DEFERRED``.  Using deferred mode locks the database, but only once a change is begun.  All of the previous examples use deferred mode."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:735
-# 548e4c3bd1614e788c19f5d8275242c6
 msgid "Immediate"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:737
-# 7cd30d23b6a943b280a7de09b608f947
 msgid "Immediate mode locks the database as soon as a change starts and prevents other cursors from making changes until the transaction is committed.  It is suitable for a database with complicated writes, but more readers than writers, since the readers are not blocked while the transaction is ongoing."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:770
-# cda4b05f5c314d49a52d86195fee2d47
 msgid "Exclusive"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:772
-# 8ddb63d643864488a03339a0be4416d8
 msgid "Exclusive mode locks the database to all readers and writers.  Its use should be limited in situations where database performance is important, since each exclusive connection blocks all other users."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:802
-# 18f17327b97b48918cb93de14125dd06
 msgid "Because the first writer has started making changes, the readers and second writer block until it commits.  The ``sleep()`` call introduces an artificial delay in the writer thread to highlight the fact that the other connections are blocking."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:810
-# c60d64793ec84e43ac016091d0c3920d
 msgid "Autocommit"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:812
-# 3e8c3fcb4b624998a5932f368e5a3d09
 msgid "The ``isolation_level`` parameter for the connection can also be set to ``None`` to enable autocommit mode.  With autocommit enabled, each ``execute()`` call is committed immediately when the statement finishes.  Autocommit mode is suited for short transactions, such as those that insert a small amount of data into a single table.  The database is locked for as little time as possible, so there is less chance of contention between threads."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:820
-# 1bfe85e70a574249be6aeeddd9bd8112
 msgid "In ``sqlite3_autocommit.py``, the explicit call to ``commit()`` has been removed and the isolation level is set to ``None``, but otherwise is the same as ``sqlite3_isolation_levels.py``.  The output is different, however, since both writer threads finish their work before either reader starts querying."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:852
-# 5851e78e6dbe4c5491a20d03e8ccaa78
 msgid "In-Memory Databases"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:854
-# 936bf87e9a2e4e648b3360aee35e243a
 msgid "SQLite supports managing an entire database in RAM, instead of relying on a disk file.  In-memory databases are useful for automated testing, where the database does not need to be preserved between test runs, or when experimenting with a schema or other database features.  To open an in-memory database, use the string ``':memory:'`` instead of a filename when creating the ``Connection``.  Each ``':memory:'`` connection creates a separate database instance, so changes made by a cursor in one do not effect other connections."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:864
-# 9493fec2599643798137d6a0f502720a
 msgid "Exporting the Contents of a Database"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:866
-# dbcc0cd098a44dc8be5c0b94f7dae619
 msgid "The contents of an in-memory database can be saved using the ``iterdump()`` method of the ``Connection``.  The iterator returned by ``iterdump()`` produces a series of strings that together build SQL instructions to recreate the state of the database."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:0
-# bc072bf3c5b842ca8dcba2b50b75c24d
 msgid "sqlite3_iterdump.py"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:875
-# 5244ff2a29d14389af7cf79e7266ffd7
 msgid "``iterdump()`` can also be used with databases saved to files, but it is most useful for preserving a database that would not otherwise be saved.  This output has been edited to fit on the page while remaining syntactically correct."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:922
-# 6464040de2944dc396395a1bed9aed41
 msgid "Using Python Functions in SQL"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:924
-# f8c77d06b1684c4c951d989a0891a77c
 msgid "SQL syntax supports calling functions during queries, either in the column list or ``where`` clause of the ``select`` statement.  This feature makes it possible to process data before returning it from the query, and can be used to convert between different formats, perform calculations that would be clumsy in pure SQL, and reuse application code."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:0
-# 80010bc713b745fda6638297f779e824
 msgid "sqlite3_create_function.py"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:935
-# 0ecb9b7614f5468fb55037bc109c5a31
 msgid "Functions are exposed using the ``create_function()`` method of the ``Connection``.  The parameters are the name of the function (as it should be used from within SQL), the number of arguments the function takes, and the Python function to expose."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:997
-# 5f207414cc444a6fa21ecdc9417bf49a
 msgid "Querying with Regular Expressions"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:999
-# ff028bb1b01346769473925e50f444b3
 msgid "Sqlite supports several special user functions that are associated with SQL syntax. For example, a function ``regexp`` can be used in a query to check if a column's string value matches a regular expression using the following syntax."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:1009
-# 0ff88e83dc3c465b9fc6b3ecf756e844
 msgid "This examples associates a function with ``regexp()`` to test values using Python's :mod:`re` module."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:0
-# b82f73aace0b4f9bb5d6a8fc10c201c6
 msgid "sqlite3_regex.py"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:1016
-# 921ea247ffda42e3841fde76c6acc95f
 msgid "The output is all of the tasks where the details column matches the pattern."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:1034
-# 4373ea8941bb4b72845ec63b90b860b2
 msgid "Custom Aggregation"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:1036
-# a36d5d13d873428fa41c04c8464ad0ba
 msgid "An aggregation function collects many pieces of individual data and summarizes it in some way.  Examples of built-in aggregation functions are ``avg()`` (average), ``min()``, ``max()``, and ``count()``."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:1041
-# 5c4cc8a88b0b4765ae0c1565c4b4a0d0
 msgid "The API for aggregators used by ``sqlite3`` is defined in terms of a class with two methods.  The ``step()`` method is called once for each data value as the query is processed.  The ``finalize()`` method is called one time at the end of the query and should return the aggregate value.  This example implements an aggregator for the arithmetic *mode*.  It returns the value that appears most frequently in the input."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:0
-# 1f8dbac13d064c16ad8748e1a6533ebc
 msgid "sqlite3_create_aggregate.py"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:1053
-# 0f3f8ba8a615462588501856ee915c8d
 msgid "The aggregator class is registered with the ``create_aggregate()`` method of the ``Connection``.  The parameters are the name of the function (as it should be used from within SQL), the number of arguments the ``step()`` method takes, and the class to use."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:1078
-# a2eea376fbf84b51b18bcb92eab67c76
 msgid "Threading and Connection Sharing"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:1080
-# 1dc0dbff01fd41e7bf4d6e28877f6ffd
 msgid "For historical reasons having to do with old versions of SQLite, ``Connection`` objects cannot be shared between threads.  Each thread must create its own connection to the database."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:0
-# d882189430dd43c39ca03531b0e168e2
 msgid "sqlite3_threading.py"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:1088
-# ec8644fa92724f8c89df5315a8ad2c88
 msgid "Attempts to share a connection between threads result in an exception."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:1107
-# 9a0bca10f2324c97a0882404860771bb
 msgid "Restricting Access to Data"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:1109
-# 7fe0e10407394fbfbffe3771105d3da6
 msgid "Although SQLite does not have user access controls found in other, larger, relational databases, it does have a mechanism for limiting access to columns.  Each connection can install an *authorizer function* to grant or deny access to columns at runtime based on any desired criteria.  The authorizer function is invoked during the parsing of SQL statements, and is passed five arguments.  The first is an action code indicating the type of operation being performed (reading, writing, deleting, etc.).  The rest of the arguments depend on the action code.  For ``SQLITE_READ`` operations, the arguments are the name of the table, the name of the column, the location in the SQL where the access is occurring (main query, trigger, etc.), and ``None``."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:0
-# b70cadbd9e994c428509ab56e317e004
 msgid "sqlite3_set_authorizer.py"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:1126
-# c85b29bb9ed5447ea450063ac7c67381
 msgid "This example uses ``SQLITE_IGNORE`` to cause the strings from the ``task.details`` column to be replaced with null values in the query results.  It also prevents all access to the ``task.priority`` column by returning ``SQLITE_DENY``, which in turn causes SQLite to raise an exception."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:1179
-# ac4f8a0bdecf4f6d8ad98a2495ac4b89
 msgid "The possible action codes are available as constants in ``sqlite3``, with names prefixed ``SQLITE_``.  Each type of SQL statement can be flagged, and access to individual columns can be controlled as well."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:1197
-# eedfbd5a06c64ecd87b615c7c0d444f5
 msgid ":pydoc:`sqlite3`"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:1199
-# 01e1ec2dc04f46e3a32ee3b8d9bc4718
 msgid ":pep:`249` -- DB API 2.0 Specification (A standard interface for modules that provide access to relational databases.)"
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:1202
-# 9fa8534a73a94a98823b1f31d35fd32b
 msgid "`SQLite`_ -- The official site of the SQLite library."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:1204
-# fea284c38a0c45ceae306cc27edb9fcb
 msgid ":mod:`shelve` -- Key-value store for saving arbitrary Python objects."
 msgstr ""
 
 #: ../../source/sqlite3/index.rst:1206
-# 6ebeba963e9146a78765a3655c061814
 msgid "SQLAlchemy_ -- A popular object-relational mapper that supports SQLite among many other relational databases."
 msgstr ""
 

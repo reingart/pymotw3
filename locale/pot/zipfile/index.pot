@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,277 +17,222 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/zipfile/index.rst:3
-# 00efbc6ae539492b88a342cc9e588066
 msgid "zipfile --- ZIP Archive Access"
 msgstr ""
 
 #: ../../source/zipfile/index.rst:8
-# 8c8fb498cc094220b9fc65a607dc52b7
 msgid "Read and write ZIP archive files."
 msgstr ""
 
 #: ../../source/zipfile/index.rst:10
-# 7b016c6d538442c5905f1e802e4ab541
 msgid "The ``zipfile`` module can be used to manipulate ZIP archive files, the format popularized by the PC program PKZIP."
 msgstr ""
 
 #: ../../source/zipfile/index.rst:14
-# e978404e8c29460781020da74bb8caca
 msgid "Testing ZIP Files"
 msgstr ""
 
 #: ../../source/zipfile/index.rst:16
-# 723735cf8eb54d72943d34a9ae08d742
 msgid "The ``is_zipfile()`` function returns a boolean indicating whether or not the filename passed as an argument refers to a valid ZIP archive."
 msgstr ""
 
 #: ../../source/zipfile/index.rst:0
-# 8113e856ba7746b39a499228b9eb4228
 msgid "zipfile_is_zipfile.py"
 msgstr ""
 
 #: ../../source/zipfile/index.rst:24
-# 1d4de8ca02834595b2c6d4c4cfc74d11
 msgid "If the file does not exist at all, ``is_zipfile()`` returns ``False``."
 msgstr ""
 
 #: ../../source/zipfile/index.rst:43
-# 757ba744da274f95beb03ad1d73ac89c
 msgid "Reading Metadata from an Archive"
 msgstr ""
 
 #: ../../source/zipfile/index.rst:45
-# bf7327f262364ad2a45312a4220b8c53
 msgid "Use the ``ZipFile`` class to work directly with a ZIP archive. It supports methods for reading data about existing archives as well as modifying the archives by adding additional files."
 msgstr ""
 
 #: ../../source/zipfile/index.rst:0
-# ea89b5fbb7234971a155849081a46e6e
 msgid "zipfile_namelist.py"
 msgstr ""
 
 #: ../../source/zipfile/index.rst:53
-# 1683f88d5b50497b89bd9bc1923bbb83
 msgid "The ``namelist()`` method returns the names of the files in an existing archive."
 msgstr ""
 
 #: ../../source/zipfile/index.rst:68
-# 46a12a5f563949e6af5225b4e0836e03
 msgid "The list of names is only part of the information available from the archive, though. To access all of the metadata about the ZIP contents, use the ``infolist()`` or ``getinfo()`` methods."
 msgstr ""
 
 #: ../../source/zipfile/index.rst:0
-# 2ca3d040b65647ff869c432fed87df66
 msgid "zipfile_infolist.py"
 msgstr ""
 
 #: ../../source/zipfile/index.rst:76
-# d101b18724a84496a52ccef3318a362f
 msgid "There are additional fields other than those printed here, but deciphering the values into anything useful requires careful reading of the *PKZIP Application Note* with the ZIP file specification."
 msgstr ""
 
 #: ../../source/zipfile/index.rst:99
-# 0c62805f5a204d85aca509046f1733db
 msgid "If the name of the archive member is known in advance, its ``ZipInfo`` object can be retrieved directly with ``getinfo()``."
 msgstr ""
 
 #: ../../source/zipfile/index.rst:0
-# d2630e1413d5435cb70dcc8a01d9e634
 msgid "zipfile_getinfo.py"
 msgstr ""
 
 #: ../../source/zipfile/index.rst:107
-# 88a0e58a11a241d4a57ec1257b59e8c2
 msgid "If the archive member is not present, ``getinfo()`` raises a ``KeyError``."
 msgstr ""
 
 #: ../../source/zipfile/index.rst:124
-# 30646bbc81eb46f18cd261077ffd63b9
 msgid "Extracting Archived Files From an Archive"
 msgstr ""
 
 #: ../../source/zipfile/index.rst:126
-# 09db9409e6f74860a0783aa67f648a4a
 msgid "To access the data from an archive member, use the ``read()`` method, passing the member's name."
 msgstr ""
 
 #: ../../source/zipfile/index.rst:0
-# 97f12d30e19a48daac81f8efef58e0ec
 msgid "zipfile_read.py"
 msgstr ""
 
 #: ../../source/zipfile/index.rst:133
-# e228d9fdd23b4ff0a70730d1225b0ae9
 msgid "The data is automatically decompressed, if necessary."
 msgstr ""
 
 #: ../../source/zipfile/index.rst:153
-# 8d643340806e479ba0bdbe2365be3313
 msgid "Creating New Archives"
 msgstr ""
 
 #: ../../source/zipfile/index.rst:155
-# a8f50981d0984a9d90ee8c5c0d1e841f
 msgid "To create a new archive, instantiate the ``ZipFile`` with a mode of ``'w'``.  Any existing file is truncated and a new archive is started. To add files, use the ``write()`` method."
 msgstr ""
 
 #: ../../source/zipfile/index.rst:0
-# 9d50cc5ec060498ea4af2bed31fe177d
 msgid "zipfile_write.py"
 msgstr ""
 
 #: ../../source/zipfile/index.rst:163
-# faea188fc36d42088aa27ddb39404076
 msgid "By default, the contents of the archive are not compressed."
 msgstr ""
 
 #: ../../source/zipfile/index.rst:189
-# 88459faec2de452b925f65667cf92e84
 msgid "To add compression, the :mod:`zlib` module is required. If :mod:`zlib` is available, the compression mode for individual files or for the archive as a whole can be set using ``zipfile.ZIP_DEFLATED``. The default compression mode is ``zipfile.ZIP_STORED``, which adds the input data to the archive without compressing it."
 msgstr ""
 
 #: ../../source/zipfile/index.rst:0
-# 7791c72843f74049992359f832d73761
 msgid "zipfile_write_compression.py"
 msgstr ""
 
 #: ../../source/zipfile/index.rst:199
-# bdd95555024d4f44ab0c29529c63471e
 msgid "This time, the archive member is compressed."
 msgstr ""
 
 #: ../../source/zipfile/index.rst:226
-# f7a07dbe9c204413a630a1ef7210d765
 msgid "Using Alternate Archive Member Names"
 msgstr ""
 
 #: ../../source/zipfile/index.rst:228
-# a52584d276d34ebc925215ffabfe8a8f
 msgid "Pass an ``arcname`` value to ``write()`` to add a file to an archive using a name other than the original filename."
 msgstr ""
 
 #: ../../source/zipfile/index.rst:0
-# 26bb3a1598164923a27ce2d5f7f4c9b8
 msgid "zipfile_write_arcname.py"
 msgstr ""
 
 #: ../../source/zipfile/index.rst:235
-# 36c2bd7827ff43ae85b7a97236144968
 msgid "There is no sign of the original filename in the archive."
 msgstr ""
 
 #: ../../source/zipfile/index.rst:259
-# 15ea09d8c5054afe9d5878636898d49c
 msgid "Writing Data from Sources Other Than Files"
 msgstr ""
 
 #: ../../source/zipfile/index.rst:261
-# 12eca02ed8c24122a1f45818757bab0f
 msgid "Sometimes it is necessary to write to a ZIP archive using data that did not come from an existing file. Rather than writing the data to a file, then adding that file to the ZIP archive, use the ``writestr()`` method to add a string of bytes to the archive directly."
 msgstr ""
 
 #: ../../source/zipfile/index.rst:0
-# e757b5648cc54b8eb470e5f5387c0d94
 msgid "zipfile_writestr.py"
 msgstr ""
 
 #: ../../source/zipfile/index.rst:272
-# 885371415e514af6aa2d73d3b6d59f93
 msgid "In this case, the ``compress_type`` argument to ``ZipFile`` was used to compress the data, since ``writestr()`` does not take an argument to specify the compression."
 msgstr ""
 
 #: ../../source/zipfile/index.rst:298
-# 5f8edb5ee84141d7baa005c5f0ee98a0
 msgid "Writing with a ZipInfo Instance"
 msgstr ""
 
 #: ../../source/zipfile/index.rst:300
-# 5d20f5b10dc54a9f89d3befb758bfe90
 msgid "Normally, the modification date is computed when a file or string is added to the archive.  A ``ZipInfo`` instance can be passed to ``writestr()`` to define the modification date and other metadata."
 msgstr ""
 
 #: ../../source/zipfile/index.rst:0
-# 11e56b3638624fc2b1f2769b702dad68
 msgid "zipfile_writestr_zipinfo.py"
 msgstr ""
 
 #: ../../source/zipfile/index.rst:308
-# 6591dd9eb7e948f9953224cdc7ef7b78
 msgid "In this example, the modified time is set to the current time, the data is compressed, and false value for ``create_system`` is used.  A simple comment is also associated with the new file."
 msgstr ""
 
 #: ../../source/zipfile/index.rst:333
-# d11f5ab55dc647d0bab9d946325d84ab
 msgid "Appending to Files"
 msgstr ""
 
 #: ../../source/zipfile/index.rst:335
-# dbbb25537a924e41ab9130b992889baf
 msgid "In addition to creating new archives, it is possible to append to an existing archive or add an archive at the end of an existing file (such as a ``.exe`` file for a self-extracting archive). To open a file to append to it, use mode ``'a'``."
 msgstr ""
 
 #: ../../source/zipfile/index.rst:0
-# 2d16ee3d51ce478fa57602782f5df530
 msgid "zipfile_append.py"
 msgstr ""
 
 #: ../../source/zipfile/index.rst:344
-# 1f423afe7cc047cf9811477ec5bc5062
 msgid "The resulting archive contains two members:"
 msgstr ""
 
 #: ../../source/zipfile/index.rst:387
-# 2a371e46e40a4bc39bdb82fc91eb3a05
 msgid "Python ZIP Archives"
 msgstr ""
 
 #: ../../source/zipfile/index.rst:389
-# 30d4761e04a3411bb98a5a4fc2f915d6
 msgid "Python can import modules from inside ZIP archives using :mod:`zipimport`, if those archives appear in ``sys.path``. The ``PyZipFile`` class can be used to construct a module suitable for use in this way. The extra method ``writepy()`` tells ``PyZipFile`` to scan a directory for ``.py`` files and add the corresponding ``.pyo`` or ``.pyc`` file to the archive. If neither compiled form exists, a ``.pyc`` file is created and added."
 msgstr ""
 
 #: ../../source/zipfile/index.rst:0
-# 516734cb434d476d923b434a1a742bf9
 msgid "zipfile_pyzipfile.py"
 msgstr ""
 
 #: ../../source/zipfile/index.rst:401
-# 4f7e3ee5dc4a4409ac0922471a490908
 msgid "With the debug attribute of the ``PyZipFile`` set to ``3``, verbose debugging is enabled and output is produced as it compiles each ``.py`` file it finds."
 msgstr ""
 
 #: ../../source/zipfile/index.rst:463
-# add32d03429245f696e7e9b157f54ad5
 msgid "Limitations"
 msgstr ""
 
 #: ../../source/zipfile/index.rst:465
-# ad2bd4a8ea314312b893e789e16d70de
 msgid "The ``zipfile`` module does not support ZIP files with appended comments, or multi-disk archives. It does support ZIP files larger than 4 GB that use the ZIP64 extensions."
 msgstr ""
 
 #: ../../source/zipfile/index.rst:471
-# 475e8d9b37ee43648c648a20deff5ac7
 msgid ":pydoc:`zipfile`"
 msgstr ""
 
 #: ../../source/zipfile/index.rst:473
-# ee2766224aa64ceb86e2b4ca66adc02d
 msgid ":mod:`zlib` -- ZIP compression library"
 msgstr ""
 
 #: ../../source/zipfile/index.rst:475
-# f581fe6824be4d3daad31c2a04b09f13
 msgid ":mod:`tarfile` -- Read and write tar archives"
 msgstr ""
 
 #: ../../source/zipfile/index.rst:477
-# c85641e7fddf4d958771b08cc69cba03
 msgid ":mod:`zipimport` -- Import Python modules from ZIP archive."
 msgstr ""
 
 #: ../../source/zipfile/index.rst:479
-# ed5fa2ad8d01466d804c7ae9f86cd417
 msgid "`PKZIP Application Note`_ -- Official specification for the ZIP archive format."
 msgstr ""
 

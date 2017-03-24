@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,87 +17,70 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/sys/threads.rst:5
-# b3d1ded02d7b40e18027caf47a91bcfd
 msgid "Low-level Thread Support"
 msgstr ""
 
 #: ../../source/sys/threads.rst:7
-# 2d56e73a956246efb6765598e91cd69e
 msgid "``sys`` includes low-level functions for controlling and debugging thread behavior."
 msgstr ""
 
 #: ../../source/sys/threads.rst:11
-# 824f17bb055a4fcda6b589789b4d4d75
 msgid "Switch Interval"
 msgstr ""
 
 #: ../../source/sys/threads.rst:13
-# f2648130a6da4e128379c1f6c9315071
 msgid "Python 3 uses a global lock to prevent separate threads from corrupting the interpreter state.  After a configurable time interval, bytecode execution is paused and the interpreter checks if any signal handlers need to be executed. During the same check, the global interpreter lock (GIL) is also released by the current thread and then reacquired, with other threads given priority over the thread which has just released the lock."
 msgstr ""
 
 #: ../../source/sys/threads.rst:21
-# 75c464d767154c45a3b0dc77fc09efa5
 msgid "The default switch interval is 5 milliseconds and the current value can always be retrieved with ``sys.getswitchinterval()``.  Changing the interval with ``sys.setswitchinterval()`` may have an impact on the performance of an application, depending on the nature of the operations being performed."
 msgstr ""
 
 #: ../../source/sys/threads.rst:0
-# 67c0ad228ded41c08349d73dcceb3853
 msgid "sys_switchinterval.py"
 msgstr ""
 
 #: ../../source/sys/threads.rst:31
-# f446076488fa44ffbb511f312b4667b6
 msgid "When the switch interval is less than the amount of time a thread takes to run to completion, the interpreter gives another thread control so that it runs for a while.  This is illustrated in the first set of output where the interval is set to 1 millisecond."
 msgstr ""
 
 #: ../../source/sys/threads.rst:36
-# c6f4621885314ba5a349afa7f07bfea8
 msgid "For longer intervals, the active thread will be able to complete more work before it is forced to release control. This is illustrated by the order of the name values in the queue in the second example using an interval of 10 milliseconds."
 msgstr ""
 
 #: ../../source/sys/threads.rst:58
-# d8e7036496cb48a78879bb272c77b300
 msgid "Many factors other than the switch interval may control the context switching behavior of Python's threads.  For example, when a thread performs I/O it releases the GIL and may therefore allow another thread to take over execution."
 msgstr ""
 
 #: ../../source/sys/threads.rst:64
-# 9bd43ddd110c4d4da88391ac61d5aa8d
 msgid "Debugging"
 msgstr ""
 
 #: ../../source/sys/threads.rst:66
-# b806338b6999494faa8aaa8c932c699f
 msgid "Identifying deadlocks can be one of the most difficult aspects of working with threads.  ``sys._current_frames()`` can help by showing exactly where a thread is stopped."
 msgstr ""
 
 #: ../../source/sys/threads.rst:0
-# 34ef13dc854f4a86a365ea738a29ffc9
 msgid "sys_current_frames.py"
 msgstr ""
 
 #: ../../source/sys/threads.rst:77
-# 87fa853065c8457da4eb6c6dc174fa25
 msgid "The dictionary returned by ``sys._current_frames()`` is keyed on the thread identifier, rather than its name.  A little work is needed to map those identifiers back to the thread object."
 msgstr ""
 
 #: ../../source/sys/threads.rst:81
-# 658139dfda354d729bd9f918f8c344b4
 msgid "Since **Thread-1** does not sleep, it finishes before its status is checked.  Since it is no longer active, it does not appear in the output.  **Thread-2** acquires the lock ``blocker``, then sleeps for a short period.  Meanwhile **Thread-3** tries to acquire ``blocker`` but cannot because **Thread-2** already has it."
 msgstr ""
 
 #: ../../source/sys/threads.rst:106
-# 617ec31eb9a84ed0a4eb3be04f02d195
 msgid ":mod:`threading` -- The ``threading`` module includes classes for creating Python threads."
 msgstr ""
 
 #: ../../source/sys/threads.rst:109
-# 8f71397fbe54442bb34a29430b4c24b8
 msgid ":mod:`Queue` -- The ``Queue`` module provides a thread-safe implementation of a FIFO data structure."
 msgstr ""
 
 #: ../../source/sys/threads.rst:112
-# 01e98d7b204442218569a1e895246887
 msgid "`Reworking the GIL <https://mail.python.org/pipermail/python-dev/2009-October/093321.html>`_ -- Email from Antoine Pitrou to the python-dev mailing list describing the GIL implementation changes to introduce the switch interval."
 msgstr ""
 

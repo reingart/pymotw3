@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,52 +17,42 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/internet_protocols.rst:3
-# 5d3e8106a27d4ac183d532a851e96aac
 msgid "The Internet"
 msgstr ""
 
 #: ../../source/internet_protocols.rst:5
-# 96a551519788443daf55c6ac74751ed1
 msgid "The Internet is a pervasive aspect of modern computing.  Even small, single-use scripts frequently interact with remote services to send or receive data.  Python's rich set of tools for working with web protocols makes it well suited for programming web-based applications, either as a client or a server."
 msgstr ""
 
 #: ../../source/internet_protocols.rst:11
-# b1fece56da174357bd5dfa4147073170
 msgid "The :mod:`urllib.parse` module manipulates URL strings, splitting and combining their components, and is useful in clients and servers."
 msgstr ""
 
 #: ../../source/internet_protocols.rst:14
-# d3e3cacc74c4490cbf87d60c5af6f916
 msgid "The :mod:`urllib.request` module implements an API for retrieving content remotely."
 msgstr ""
 
 #: ../../source/internet_protocols.rst:17
-# 3b166ff9059c47559b1a920d829308c7
 msgid "HTTP POST requests are usually \"form encoded\" with :mod:`urllib`. Binary data sent through a POST should be encoded with :mod:`base64` first, to comply with the message format standard."
 msgstr ""
 
 #: ../../source/internet_protocols.rst:21
-# f603d1ccc6594878b8b37085aa1444f6
 msgid "Well-behaved clients that access many sites as a spider or crawler should use :mod:`urllib.robotparser` to ensure they have permission before placing a heavy load on the remote server."
 msgstr ""
 
 #: ../../source/internet_protocols.rst:25
-# 5a895af687d74fab92ed1c2ba8b3bad1
 msgid "To create a custom web server with Python, without requiring any external frameworks, use :mod:`http.server` as a starting point.  It handles the HTTP protocol, so the only customization needed is the application code for responding to the incoming requests."
 msgstr ""
 
 #: ../../source/internet_protocols.rst:30
-# b2ab11688aae4b548d0fc39ed12dfabb
 msgid "Session state in the server can be managed through cookies created and parsed by the :mod:`http.cookies` module.  Full support for expiration, path, domain, and other cookie settings makes it easy to configure the session."
 msgstr ""
 
 #: ../../source/internet_protocols.rst:35
-# 71b6af3dc7494e0bbf4908ed6bf581ee
 msgid "The :mod:`uuid` module is used for generating identifiers for resources that need unique values.  UUIDs are good for automatically generating Uniform Resource Name (URN) values, where the name of the resource needs to be unique but does not need to convey any meaning."
 msgstr ""
 
 #: ../../source/internet_protocols.rst:40
-# eb424238f0974c8f9723344752db3bef
 msgid "Python's standard library includes support for two web-based remote procedure call mechanisms.  The JavaScript Object Notation (JSON) encoding scheme used in AJAX communication and REST API is implemented in :mod:`json`.  It works equally well in the client or the server. Complete XML-RPC client and server libraries are also included in :mod:`xmlrpc.client` and :mod:`xmlrpc.server` respectively."
 msgstr ""
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,117 +17,94 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/collections/counter.rst:3
-# 900509bd43b746fcbaa38c37f723c534
 msgid "Counter --- Count Hashable Objects"
 msgstr ""
 
 #: ../../source/collections/counter.rst:5
-# 83c6a519d9af4fd8b8eca9da3d942b7e
 msgid "A ``Counter`` is a container that keeps track of how many times equivalent values are added.  It can be used to implement the same algorithms for which other languages commonly use bag or multiset data structures."
 msgstr ""
 
 #: ../../source/collections/counter.rst:11
-# 7d099768d6494e5688ca2fed321f5897
 msgid "Initializing"
 msgstr ""
 
 #: ../../source/collections/counter.rst:13
-# ee20099f20c94ae591efad4ef5c1bbdd
 msgid "``Counter`` supports three forms of initialization.  Its constructor can be called with a sequence of items, a dictionary containing keys and counts, or using keyword arguments that map string names to counts."
 msgstr ""
 
 #: ../../source/collections/counter.rst:0
-# 6b5b715c2e984738b35c0dc51ba29db3
 msgid "collections_counter_init.py"
 msgstr ""
 
 #: ../../source/collections/counter.rst:22
-# 66d36a0c46c74e1e96674ae80f980b99
 msgid "The results of all three forms of initialization are the same."
 msgstr ""
 
 #: ../../source/collections/counter.rst:38
-# 08ec6606524f4690b8ac692952595530
 msgid "An empty ``Counter`` can be constructed with no arguments and populated via the ``update()`` method."
 msgstr ""
 
 #: ../../source/collections/counter.rst:0
-# 17a47f59cc5b4ea3b97384c8dcd8ea88
 msgid "collections_counter_update.py"
 msgstr ""
 
 #: ../../source/collections/counter.rst:45
-# 0d14935ab5f4444ca9858eebb04d9859
 msgid "The count values are increased based on the new data, rather than replaced.  In the preceding example, the count for ``a`` goes from ``3`` to ``4``."
 msgstr ""
 
 #: ../../source/collections/counter.rst:64
-# 512c995369144068a2edb86adbc4fc77
 msgid "Accessing Counts"
 msgstr ""
 
 #: ../../source/collections/counter.rst:66
-# 5ab3f89367454cda9f3753cd207c058e
 msgid "Once a ``Counter`` is populated, its values can be retrieved using the dictionary API."
 msgstr ""
 
 #: ../../source/collections/counter.rst:0
-# ff33efffc530468ab7c45c81889c5d70
 msgid "collections_counter_get_values.py"
 msgstr ""
 
 #: ../../source/collections/counter.rst:73
-# 06d051c8b24b43dd8f8bd072697dc18e
 msgid "``Counter`` does not raise ``KeyError`` for unknown items. If a value has not been seen in the input (as with ``e`` in this example), its count is ``0``."
 msgstr ""
 
 #: ../../source/collections/counter.rst:93
-# 0c84de9e84d54c98a73e4c53dcd1dc84
 msgid "The ``elements()`` method returns an iterator that produces all of the items known to the ``Counter``."
 msgstr ""
 
 #: ../../source/collections/counter.rst:0
-# 42451af4a3cc4bf5b970d95d0ce3d4d8
 msgid "collections_counter_elements.py"
 msgstr ""
 
 #: ../../source/collections/counter.rst:100
-# a72a6e402e4f49fc9c803d334ed3df92
 msgid "The order of elements is not guaranteed, and items with counts less than or equal to zero are not included."
 msgstr ""
 
 #: ../../source/collections/counter.rst:117
-# 1bb51e983e354ac5821711ffaef2be81
 msgid "Use ``most_common()`` to produce a sequence of the *n* most frequently encountered input values and their respective counts."
 msgstr ""
 
 #: ../../source/collections/counter.rst:0
-# 8155fed6c69e4a23b96b8ded03211d3b
 msgid "collections_counter_most_common.py"
 msgstr ""
 
 #: ../../source/collections/counter.rst:124
-# 3388153b83ca4bfd94601d9f45f36d63
 msgid "This example counts the letters appearing in all of the words in the system dictionary to produce a frequency distribution, then prints the three most common letters.  Leaving out the argument to ``most_common()`` produces a list of all the items, in order of frequency."
 msgstr ""
 
 #: ../../source/collections/counter.rst:146
-# 95090b7bdc25486f8fdad78f2cc15385
 msgid "Arithmetic"
 msgstr ""
 
 #: ../../source/collections/counter.rst:148
-# b24827c127034612a27fefc826ef2f12
 msgid "``Counter`` instances support arithmetic and set operations for aggregating results. This example shows the standard operators for creating new ``Counter`` instances, but the in-place operators ``+=``, ``-=``, ``&=``, and ``|=`` are also supported."
 msgstr ""
 
 #: ../../source/collections/counter.rst:0
-# 26004ab7f1ae412c90dcb1fadf4610b2
 msgid "collections_counter_arithmetic.py"
 msgstr ""
 
 #: ../../source/collections/counter.rst:157
-# dce5b4b91ac64b94a3f25afaf5396ec5
 msgid "Each time a new ``Counter`` is produced through an operation, any items with zero or negative counts are discarded.  The count for ``a`` is the same in ``c1`` and ``c2``, so subtraction leaves it at zero."
 msgstr ""
 

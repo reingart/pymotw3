@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,277 +17,222 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/urllib.parse/index.rst:3
-# 4994a9b23e3d4ff4a3460709453b1f9e
 msgid "urllib.parse --- Split URLs into Components"
 msgstr ""
 
 #: ../../source/urllib.parse/index.rst:8
-# f86525ad22b143769d769344991c6eb2
 msgid "Split URL into components"
 msgstr ""
 
 #: ../../source/urllib.parse/index.rst:10
-# 8afb735763c44010afe5ad44a35dd1fd
 msgid "The ``urllib.parse`` module provides functions for manipulating URLs and their component parts, to either break them down or build them up."
 msgstr ""
 
 #: ../../source/urllib.parse/index.rst:15
-# 78bc88c0dee2457f9d0fc6d1996f7f80
 msgid "Parsing"
 msgstr ""
 
 #: ../../source/urllib.parse/index.rst:17
-# ccbc9d66168c4ee2a835df76ebbd7d6c
 msgid "The return value from the ``urlparse()`` function is a ``ParseResult`` object that acts like a ``tuple`` with six elements."
 msgstr ""
 
 #: ../../source/urllib.parse/index.rst:0
-# ffeeab2f2d624653bb1885bd2baf82e5
 msgid "urllib_parse_urlparse.py"
 msgstr ""
 
 #: ../../source/urllib.parse/index.rst:25
-# 6aa6403a51c540c881d958e94260869e
 msgid "The parts of the URL available through the tuple interface are the scheme, network location, path, path segment parameters (separated from the path by a semicolon), query, and fragment."
 msgstr ""
 
 #: ../../source/urllib.parse/index.rst:43
-# c20e5de1ce0f4b668a0ad87a8e4ef615
 msgid "Although the return value acts like a tuple, it is really based on a ``namedtuple``, a subclass of ``tuple`` that supports accessing the parts of the URL via named attributes as well as indexes.  In addition to being easier to use for the programmer, the attribute API also offers access to several values not available in the ``tuple`` API."
 msgstr ""
 
 #: ../../source/urllib.parse/index.rst:0
-# 02ba5ddd85094d13981f04f9f7e45ee8
 msgid "urllib_parse_urlparseattrs.py"
 msgstr ""
 
 #: ../../source/urllib.parse/index.rst:54
-# bfe3765d64da44c4aca2426c4c0fd8a3
 msgid "The ``username`` and ``password`` are available when present in the input URL, and set to ``None`` when not. The ``hostname`` is the same value as ``netloc``, in all lower case and with the port value stripped.  And the ``port`` is converted to an integer when present and ``None`` when not."
 msgstr ""
 
 #: ../../source/urllib.parse/index.rst:80
-# 879517d3933e4a488944ad2a6bede46d
 msgid "The ``urlsplit()`` function is an alternative to ``urlparse()``. It behaves a little differently, because it does not split the parameters from the URL. This is useful for URLs following :rfc:`2396`, which supports parameters for each segment of the path."
 msgstr ""
 
 #: ../../source/urllib.parse/index.rst:0
-# 9e30e4e0f6924a9ca5f46033654a8117
 msgid "urllib_parse_urlsplit.py"
 msgstr ""
 
 #: ../../source/urllib.parse/index.rst:89
-# 98868b19c5dd4626aaf07b63e460f2fb
 msgid "Since the parameters are not split out, the tuple API will show five elements instead of six, and there is no ``params`` attribute."
 msgstr ""
 
 #: ../../source/urllib.parse/index.rst:115
-# bb8a6c195470456b8ce92e2781c06658
 msgid "To simply strip the fragment identifier from a URL, such as when finding a base page name from a URL, use ``urldefrag()``."
 msgstr ""
 
 #: ../../source/urllib.parse/index.rst:0
-# 646d5abce34247dab87cc4c1b5fb4ed1
 msgid "urllib_parse_urldefrag.py"
 msgstr ""
 
 #: ../../source/urllib.parse/index.rst:122
-# 43caee2eb2d04aa9a368abb5de6a3df9
 msgid "The return value is a ``DefragResult``, based on ``namedtuple``, containing the base URL and the fragment."
 msgstr ""
 
 #: ../../source/urllib.parse/index.rst:140
-# 53437c53ad414f9caabb239e9e09f1cb
 msgid "Unparsing"
 msgstr ""
 
 #: ../../source/urllib.parse/index.rst:142
-# 31602a59d92e4ec8860ac4ed61ea1298
 msgid "There are several ways to assemble the parts of a split URL back together into a single string. The parsed URL object has a ``geturl()`` method."
 msgstr ""
 
 #: ../../source/urllib.parse/index.rst:0
-# 3b3e5ce799a145d8a132c90d7f020ba2
 msgid "urllib_parse_geturl.py"
 msgstr ""
 
 #: ../../source/urllib.parse/index.rst:150
-# 6c70d19cede54cc08a336a984e7c8c96
 msgid "``geturl()`` only works on the object returned by ``urlparse()`` or ``urlsplit()``."
 msgstr ""
 
 #: ../../source/urllib.parse/index.rst:166
-# e339aa0cba714153a5e85921d1bc7dd9
 msgid "A regular tuple containing strings can be combined into a URL with ``urlunparse()``."
 msgstr ""
 
 #: ../../source/urllib.parse/index.rst:0
-# fa6d96dad5ba4b90b42bbf6c8defef38
 msgid "urllib_parse_urlunparse.py"
 msgstr ""
 
 #: ../../source/urllib.parse/index.rst:173
-# 8333ff7717ff4157b1800c2d324273f2
 msgid "While the ``ParseResult`` returned by ``urlparse()`` can be used as a tuple, this example explicitly creates a new tuple to show that ``urlunparse()`` works with normal tuples, too."
 msgstr ""
 
 #: ../../source/urllib.parse/index.rst:196
-# 549684a9d9bb4436ae851213f9163ad9
 msgid "If the input URL included superfluous parts, those may be dropped from the reconstructed URL."
 msgstr ""
 
 #: ../../source/urllib.parse/index.rst:0
-# b688aa9913f8435cb2b86c85a34197f7
 msgid "urllib_parse_urlunparseextra.py"
 msgstr ""
 
 #: ../../source/urllib.parse/index.rst:203
-# c2f7ed78ffe741ce8ded25ea9431e413
 msgid "In this case, ``parameters``, ``query``, and ``fragment`` are all missing in the original URL. The new URL does not look the same as the original, but is equivalent according to the standard."
 msgstr ""
 
 #: ../../source/urllib.parse/index.rst:226
-# e48ab3fe41854eb4bc7c94f731ad0831
 msgid "Joining"
 msgstr ""
 
 #: ../../source/urllib.parse/index.rst:228
-# ef025606817e4d9aa98505c6242b859a
 msgid "In addition to parsing URLs, :mod:`urlparse` includes ``urljoin()`` for constructing absolute URLs from relative fragments."
 msgstr ""
 
 #: ../../source/urllib.parse/index.rst:0
-# 6e5d31f628f14cd994b5ce7d4b713bca
 msgid "urllib_parse_urljoin.py"
 msgstr ""
 
 #: ../../source/urllib.parse/index.rst:236
-# da5a595ecb084bab9dbc5070cf4341f8
 msgid "In the example, the relative portion of the path (``\"../\"``) is taken into account when the second URL is computed."
 msgstr ""
 
 #: ../../source/urllib.parse/index.rst:252
-# d4be9f42f27d4a5f82f4291ffb27eccc
 msgid "Non-relative paths are handled in the same way as by ``os.path.join()``."
 msgstr ""
 
 #: ../../source/urllib.parse/index.rst:0
-# c484f32be64643cc929677cbe6bea089
 msgid "urllib_parse_urljoin_with_path.py"
 msgstr ""
 
 #: ../../source/urllib.parse/index.rst:259
-# ad8329f2e70f4f0ea96ee5c3e67ba1ed
 msgid "If the path being joined to the URL starts with a slash (``/``), it resets the URL's path to the top level.  If it does not start with a slash, it is appended to the end of the path for the URL."
 msgstr ""
 
 #: ../../source/urllib.parse/index.rst:279
-# bca9870501a94b67810f5f65993f9a49
 msgid "Encoding Query Arguments"
 msgstr ""
 
 #: ../../source/urllib.parse/index.rst:281
-# 92a5c0f44d354f8cb2a655a51df9f5e8
 msgid "Before arguments can be added to a URL, they need to be encoded."
 msgstr ""
 
 #: ../../source/urllib.parse/index.rst:0
-# 75408c280fb3417ea27237e11dcfb687
 msgid "urllib_parse_urlencode.py"
 msgstr ""
 
 #: ../../source/urllib.parse/index.rst:287
-# 42ee24f9489a43d1a1caa8fbec51c75a
 msgid "Encoding replaces special characters like spaces to ensure they are passed to the server using a format that complies with the standard."
 msgstr ""
 
 #: ../../source/urllib.parse/index.rst:302
-# 78df9de9cdea4d2290d2e4b5c083f266
 msgid "To pass a sequence of values using separate occurrences of the variable in the query string, set ``doseq`` to ``True`` when calling ``urlencode()``."
 msgstr ""
 
 #: ../../source/urllib.parse/index.rst:0
-# 7e6580c6a2444c86aa407241d6586f3d
 msgid "urllib_parse_urlencode_doseq.py"
 msgstr ""
 
 #: ../../source/urllib.parse/index.rst:310
-# 7bf88cd1360549ea8d80c23538c1db5d
 msgid "The result is a query string with several values associated with the same name."
 msgstr ""
 
 #: ../../source/urllib.parse/index.rst:326
-# 0ac9224d55e8492191890c20ef3e4485
 msgid "To decode the query string, use ``parse_qs()`` or ``parse_qsl()``."
 msgstr ""
 
 #: ../../source/urllib.parse/index.rst:0
-# c7d2c94488094a47add71d32062f2c5b
 msgid "urllib_parse_parse_qs.py"
 msgstr ""
 
 #: ../../source/urllib.parse/index.rst:332
-# 82dd7ed047924ca4bd361dccdbe449d3
 msgid "The return value from ``parse_qs()`` is a dictionary mapping names to values, while ``parse_qsl()`` returns a list of tuples containing a name and a value."
 msgstr ""
 
 #: ../../source/urllib.parse/index.rst:349
-# 09c92b295a234ab881483bd820001053
 msgid "Special characters within the query arguments that might cause parse problems with the URL on the server side are \"quoted\" when passed to ``urlencode()``. To quote them locally to make safe versions of the strings, use the ``quote()`` or ``quote_plus()`` functions directly."
 msgstr ""
 
 #: ../../source/urllib.parse/index.rst:0
-# 0eacdf0ac4c5406fbf71107157310b76
 msgid "urllib_parse_quote.py"
 msgstr ""
 
 #: ../../source/urllib.parse/index.rst:359
-# dc70689f8878449db188c60662e20501
 msgid "The quoting implementation in ``quote_plus()`` is more aggressive about the characters it replaces."
 msgstr ""
 
 #: ../../source/urllib.parse/index.rst:377
-# 40c5bd66c54e47e79ff44b29d080cce4
 msgid "To reverse the quote operations, use ``unquote()`` or ``unquote_plus()``, as appropriate."
 msgstr ""
 
 #: ../../source/urllib.parse/index.rst:0
-# 7d79dfe55567412882d65a2aeee97d80
 msgid "urllib_parse_unquote.py"
 msgstr ""
 
 #: ../../source/urllib.parse/index.rst:384
-# 5923ea4d7cf147458ae926169ff45163
 msgid "The encoded value is converted back to a normal string URL."
 msgstr ""
 
 #: ../../source/urllib.parse/index.rst:402
-# f250004493414cb9bf81e5c2727f5087
 msgid ":pydoc:`urllib.parse`"
 msgstr ""
 
 #: ../../source/urllib.parse/index.rst:404
-# d313f3e349ce43889b012c25acf56056
 msgid ":mod:`urllib.request` -- Retrieve the contents of a resource identified by a URL."
 msgstr ""
 
 #: ../../source/urllib.parse/index.rst:407
-# e243e3336bb14f4e8bb6ba8ab0cfbf8d
 msgid ":rfc:`1738` -- Uniform Resource Locator (URL) syntax"
 msgstr ""
 
 #: ../../source/urllib.parse/index.rst:409
-# 1e1b5eac74a04b2e9e37e1f4cc66d5ed
 msgid ":rfc:`1808` -- Relative URLs"
 msgstr ""
 
 #: ../../source/urllib.parse/index.rst:411
-# e3b5e237d055463f9f16fc2289bc05b7
 msgid ":rfc:`2396` -- Uniform Resource Identifier (URI) generic syntax"
 msgstr ""
 
 #: ../../source/urllib.parse/index.rst:413
-# 3eaa12815e934fa0a76788a0c2d7dd8d
 msgid ":rfc:`3986` -- Uniform Resource Identifier (URI) syntax"
 msgstr ""
 

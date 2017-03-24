@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,292 +17,234 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/sysconfig/index.rst:3
-# dce09d050cee4099b12a7b4e4b986989
 msgid "sysconfig --- Interpreter Compile-time Configuration"
 msgstr ""
 
 #: ../../source/sysconfig/index.rst:8
-# 9f6a42b2fcfe4c4cbfbfcc52a03d120d
 msgid "Access the configuration settings used to build Python."
 msgstr ""
 
 #: ../../source/sysconfig/index.rst:10
-# a899d68941cb4cc384e75b4ba082e8d9
 msgid "The features of ``sysconfig`` have been extracted from :mod:`distutils` to create a stand-alone module.  It includes functions for determining the settings used to compile and install the current interpreter."
 msgstr ""
 
 #: ../../source/sysconfig/index.rst:16
-# ef7c31313ac143448b2abb2d4aaa249a
 msgid "Configuration Variables"
 msgstr ""
 
 #: ../../source/sysconfig/index.rst:18
-# 827f6469fdfa4d17bae1c9c08b96fdec
 msgid "Access the build-time configuration settings is provided through two functions.  ``get_config_vars()`` returns a dictionary mapping the configuration variable names to values."
 msgstr ""
 
 #: ../../source/sysconfig/index.rst:0
-# 497298d94b514dcdb8bbdda7b689cf94
 msgid "sysconfig_get_config_vars.py"
 msgstr ""
 
 #: ../../source/sysconfig/index.rst:26
-# 1b1d582f1fca46e78a719c6f2f67afc9
 msgid "The level of detail available through the ``sysconfig`` API depends on the platform where a program is running.  On POSIX systems such as Linux and OS X, the ``Makefile`` used to build the interpreter and ``config.h`` header file generated for the build are parsed and all of the variables found within are available.  On non-POSIX systems such as Windows, the settings are limited to a few paths, filename extensions, and version details."
 msgstr ""
 
 #: ../../source/sysconfig/index.rst:71
-# fcf3d562e1ab4dc388da0240b7da4c01
 msgid "Passing variable names to ``get_config_vars()`` changes the return value to a ``list`` created by appending all of the values for those variables together."
 msgstr ""
 
 #: ../../source/sysconfig/index.rst:0
-# 0cc01b1929f04bbbb481290d5022e83d
 msgid "sysconfig_get_config_vars_by_name.py"
 msgstr ""
 
 #: ../../source/sysconfig/index.rst:79
-# 4a916fa924d843c4a09a3e5a326fef89
 msgid "This example builds a list of all of the installation base directories where modules can be found on the current system."
 msgstr ""
 
 #: ../../source/sysconfig/index.rst:98
-# fae0dae6c7074d9789d3677142a1ff73
 msgid "When only a single configuration value is needed, use ``get_config_var()`` to retrieve it."
 msgstr ""
 
 #: ../../source/sysconfig/index.rst:0
-# d026ad6fd6b44988be8a8227386aa7d9
 msgid "sysconfig_get_config_var.py"
 msgstr ""
 
 #: ../../source/sysconfig/index.rst:105
-# a807e2e6de6449cbaa8e882812e9223c
 msgid "If the variable is not found, ``get_config_var()`` returns ``None`` instead of raising an exception."
 msgstr ""
 
 #: ../../source/sysconfig/index.rst:123
-# d141222602904df4aa0015498f1dbbae
 msgid "Installation Paths"
 msgstr ""
 
 #: ../../source/sysconfig/index.rst:125
-# e13e564da1f14a2197614cbfce4207b1
 msgid "``sysconfig`` is primarily meant to be used by installation and packaging tools.  As a result, while it provides access to general configuration settings such as the interpreter version, it is focused on the information needed to locate parts of the Python distribution currently installed on a system.  The locations used for installing a package depend on the *scheme* used."
 msgstr ""
 
 #: ../../source/sysconfig/index.rst:132
-# c0f5321366c74603819398eb04b76be6
 msgid "A scheme is a set of platform-specific default directories organized based on the platform's packaging standards and guidelines.  There are different schemes for installing into a site-wide location or a private directory owned by the user.  The full set of schemes can be accessed with ``get_scheme_names()``."
 msgstr ""
 
 #: ../../source/sysconfig/index.rst:0
-# 2c22fff4cc1f4f50a8692d9934e184a7
 msgid "sysconfig_get_scheme_names.py"
 msgstr ""
 
 #: ../../source/sysconfig/index.rst:142
-# 798437f202e04bb2b43ec12c70a9d6c2
 msgid "There is no concept of a \"current scheme\" per se.  The default scheme depends on the platform, and the actual scheme used depends on options given to the installation program.  If the current system is running a POSIX-compliant operating system, the default is ``posix_prefix``. Otherwise the default is the operating system name, as defined by ``os.name``."
 msgstr ""
 
 #: ../../source/sysconfig/index.rst:166
-# e524c18aca7e4d08ae15cb4b436ffd50
 msgid "Each scheme defines a set of paths used for installing packages.  For a list of the path names, use ``get_path_names()``."
 msgstr ""
 
 #: ../../source/sysconfig/index.rst:0
-# fbdeac3434c94b43b094c4d85fec936b
 msgid "sysconfig_get_path_names.py"
 msgstr ""
 
 #: ../../source/sysconfig/index.rst:173
-# 725a797dc93149d2bc8810974edd2bf7
 msgid "Some of the paths may be the same for a given scheme, but installers should not make any assumptions about what the actual paths are.  Each name has a particular semantic meaning, so the correct name should be used to find the path for a given file during installation.  Refer to :table:`Path Names Used in sysconfig` for a complete list of the path names and their meaning."
 msgstr ""
 
 #: ../../source/sysconfig/index.rst:0
-# 069572dce5334af096506cf577686f82
 msgid "Path Names Used in sysconfig"
 msgstr ""
 
 #: ../../source/sysconfig/index.rst:183
-# d627c9d5ea7b4590ada9ae7d3d41afb8
 msgid "Name"
 msgstr ""
 
 #: ../../source/sysconfig/index.rst:183
-# 4bfe9ac5bf144449bacfbf92aaafa504
 msgid "Description"
 msgstr ""
 
 #: ../../source/sysconfig/index.rst:185
-# 9591f4745d0b439aa019d1ac83aa520e
 msgid "``stdlib``"
 msgstr ""
 
 #: ../../source/sysconfig/index.rst:185
-# cc2fc998d928410eba5ae4b45296f8d9
 msgid "Standard Python library files, not platform-specific"
 msgstr ""
 
 #: ../../source/sysconfig/index.rst:186
-# abfbe43a634345adbd54f1a07314235d
 msgid "``platstdlib``"
 msgstr ""
 
 #: ../../source/sysconfig/index.rst:186
-# 7b4dea762cb04729a05b583a4ec40106
 msgid "Standard Python library files, platform-specific"
 msgstr ""
 
 #: ../../source/sysconfig/index.rst:187
-# 0d1a606a9505403e9fb4b972d1852600
 msgid "``platlib``"
 msgstr ""
 
 #: ../../source/sysconfig/index.rst:187
-# 7d80092d87774cc6990c054ff3b7fefe
 msgid "Site-specific, platform-specific files"
 msgstr ""
 
 #: ../../source/sysconfig/index.rst:188
-# b39c4de2be8a451da11b4362e4243067
 msgid "``purelib``"
 msgstr ""
 
 #: ../../source/sysconfig/index.rst:188
-# 7e731533cf764fdcbc7702617ac46b31
 msgid "Site-specific, non-platform-specific files"
 msgstr ""
 
 #: ../../source/sysconfig/index.rst:189
-# c2e246e19f654c569be41680978532ee
 msgid "``include``"
 msgstr ""
 
 #: ../../source/sysconfig/index.rst:189
-# 5248c3ad8c1e4040880f0013036f9883
 msgid "Header files, not platform-specific"
 msgstr ""
 
 #: ../../source/sysconfig/index.rst:190
-# 982b4c8147f046c3af69464628f312c5
 msgid "``platinclude``"
 msgstr ""
 
 #: ../../source/sysconfig/index.rst:190
-# 5798a3f4b22a4f73b6cb26c9d1321444
 msgid "Header files, platform-specific"
 msgstr ""
 
 #: ../../source/sysconfig/index.rst:191
-# 782bd818f02a46449becc3e6bc437a05
 msgid "``scripts``"
 msgstr ""
 
 #: ../../source/sysconfig/index.rst:191
-# 4697b69290244e0e867c67e573b26edd
 msgid "Executable script files"
 msgstr ""
 
 #: ../../source/sysconfig/index.rst:192
-# 0d64ff3a7edb4fe0938f1e69ad52fd9c
 msgid "``data``"
 msgstr ""
 
 #: ../../source/sysconfig/index.rst:192
-# ef8b4e58349b49abbe25c2e28bba7d0d
 msgid "Data files"
 msgstr ""
 
 #: ../../source/sysconfig/index.rst:213
-# cd05cf8da92547b9ba475ce882484032
 msgid "Use ``get_paths()`` to retrieve the actual directories associated with a scheme."
 msgstr ""
 
 #: ../../source/sysconfig/index.rst:0
-# 541514293eee4b30bc8f817221a14c1f
 msgid "sysconfig_get_paths.py"
 msgstr ""
 
 #: ../../source/sysconfig/index.rst:220
-# 2c94b509abe14630867ce1ec6fb51d59
 msgid "This example shows the difference between the system-wide paths used for ``posix_prefix`` under a framework build on Mac OS X, and the user-specific values for ``posix_user``."
 msgstr ""
 
 #: ../../source/sysconfig/index.rst:275
-# 019170aa274d4a6d9a83ce90aaa36399
 msgid "For an individual path, call ``get_path()``."
 msgstr ""
 
 #: ../../source/sysconfig/index.rst:0
-# 02fbcf1fd63649998d9e5f4d7c05e99e
 msgid "sysconfig_get_path.py"
 msgstr ""
 
 #: ../../source/sysconfig/index.rst:281
-# 6f475bf20fed4649a9efba684c156ed9
 msgid "Using ``get_path()`` is equivalent to saving the value of ``get_paths()`` and looking up the individual key in the dictionary. If several paths are needed, ``get_paths()`` is more efficient because it does not recompute all of the paths each time."
 msgstr ""
 
 #: ../../source/sysconfig/index.rst:308
-# 2b3c96e2f25c4f4c8b2b8dd5c1cbc891
 msgid "Python Version and Platform"
 msgstr ""
 
 #: ../../source/sysconfig/index.rst:310
-# 622c9e2a858342e68e62d6c63eba7407
 msgid "While :mod:`sys` includes some basic platform identification (see :ref:`sys-build-time-info`), it is not specific enough to be used for installing binary packages because ``sys.platform`` does not always include information about hardware architecture, instruction size, or other values that effect the compatibility of binary libraries.  For a more precise platform specifier, use ``get_platform()``."
 msgstr ""
 
 #: ../../source/sysconfig/index.rst:0
-# aea1d9501234406084b48929b7347311
 msgid "sysconfig_get_platform.py"
 msgstr ""
 
 #: ../../source/sysconfig/index.rst:321
-# e1675369991f46c8b4baba2b027c6805
 msgid "The interpreter used to prepare this sample output was compiled for Mac OS X 10.6 compatibility, so that is the version number included in the platform string."
 msgstr ""
 
 #: ../../source/sysconfig/index.rst:337
-# 3ccf1ee767c64ca9af6717cf55e74ea3
 msgid "As a convenience, the interpreter version from ``sys.version_info`` is also available through ``get_python_version()`` in ``sysconfig``."
 msgstr ""
 
 #: ../../source/sysconfig/index.rst:0
-# be170e2eb5a4405181eddd97a1378566
 msgid "sysconfig_get_python_version.py"
 msgstr ""
 
 #: ../../source/sysconfig/index.rst:345
-# 161f30ba8d3f4c0bbab4e6b90c11c161
 msgid "``get_python_version()`` returns a string suitable for use when building a version-specific path."
 msgstr ""
 
 #: ../../source/sysconfig/index.rst:369
-# eba2ed50239848eaa7d03bdf2a1b0e37
 msgid ":pydoc:`sysconfig`"
 msgstr ""
 
 #: ../../source/sysconfig/index.rst:371
-# 5c16edd15bcd4654a3001c1b447a09b6
 msgid ":mod:`distutils` -- ``sysconfig`` used to be part of the ``distutils`` package."
 msgstr ""
 
 #: ../../source/sysconfig/index.rst:374
-# 4427e050b62142c28ee4bfbff35c4466
 msgid ":mod:`site` -- The ``site`` module describes the paths searched when importing in more detail."
 msgstr ""
 
 #: ../../source/sysconfig/index.rst:377
-# 196d291d406a483e8f8fea9a1c61e2fc
 msgid ":mod:`os` -- Includes ``os.name``, the name of the current operating system."
 msgstr ""
 
 #: ../../source/sysconfig/index.rst:380
-# dd766025d55647c68bd42b170cdbcaae
 msgid ":mod:`sys` -- Includes other build-time information such as the platform."
 msgstr ""
 

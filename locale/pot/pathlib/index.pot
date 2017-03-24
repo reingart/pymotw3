@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,417 +17,334 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/pathlib/index.rst:3
-# 0f330a1a4f8b40479cde0491bc73f55d
 msgid "pathlib --- Filesystem Paths as Objects"
 msgstr ""
 
 #: ../../source/pathlib/index.rst:8
-# 438e47464eb549f4a06a293df2d1da93
 msgid "Parse, build, test, and otherwise work on filenames and paths using an object-oriented API instead of low-level string operations."
 msgstr ""
 
 #: ../../source/pathlib/index.rst:13
-# bbfcf9847965491eb6b8186a3d7a293b
 msgid "Path Representations"
 msgstr ""
 
 #: ../../source/pathlib/index.rst:15
-# d6fd620bf740435a9e1977229023fd5e
 msgid "``pathlib`` includes classes for managing filesystem paths formatted using either the POSIX standard or Microsoft Windows syntax. It includes so called \"pure\" classes, which operate on strings but do not interact with an actual filesystem, and \"concrete\" classes, which extend the API to include operations that reflect or modify data on the local filesystem."
 msgstr ""
 
 #: ../../source/pathlib/index.rst:22
-# 92ed229bc0354e3fa1f923bf5a6b5b51
 msgid "The pure classes ``PurePosixPath`` and ``PureWindowsPath`` can be instantiated and used on any operating system, since they only work on names. To instantiate the correct class for working with a real filesystem, use ``Path`` to get either a ``PosixPath`` or ``WindowsPath``, depending on the platform."
 msgstr ""
 
 #: ../../source/pathlib/index.rst:29
-# b2220ba09fa34247b00ae8848c526cdb
 msgid "Building Paths"
 msgstr ""
 
 #: ../../source/pathlib/index.rst:31
-# d1be86d3c6874fb0bfdb133fcca0e55d
 msgid "To instantiate a new path, give a string as the first argument. The string representation of the path object is this name value. To create a new path referring to a value relative to an existing path, use the ``/`` operator to extend the path. The argument to the operator can either be a string or another path object."
 msgstr ""
 
 #: ../../source/pathlib/index.rst:0
-# 2c23004269854e8cb31a520fc077c797
 msgid "pathlib_operator.py"
 msgstr ""
 
 #: ../../source/pathlib/index.rst:41
-# b05722c8e9504cab8de865773025632f
 msgid "As the value for ``root`` in the example output shows, the operator combines the path values as they are given, and does not normalize the result when it contains the parent directory reference ``\"..\"``. However, if a segment begins with the path separator it is interpreted as a new \"root\" reference in the same way as ``os.path.join()``.  Extra path separators are removed from the middle of the path value, as in the ``etc`` example here."
 msgstr ""
 
 #: ../../source/pathlib/index.rst:65
-# a2c9701549214a2693391039c26bbdb5
 msgid "The concrete path classes include a ``resolve()`` method for normalizing a path by looking at the filesystem for directories and symbolic links and producing the absolute path referred to by a name."
 msgstr ""
 
 #: ../../source/pathlib/index.rst:0
-# fd95e2a02ced4068b57520e99ba1893a
 msgid "pathlib_resolve.py"
 msgstr ""
 
 #: ../../source/pathlib/index.rst:73
-# e56946c678774f8485a724c8c030ac6e
 msgid "Here the relative path is converted to the absolute path to ``/usr/share``. If the input path includes symlinks, those are expanded as well to allow the resolved path to refer directly to the target."
 msgstr ""
 
 #: ../../source/pathlib/index.rst:90
-# b996cefcb3fb48bb8f80274c4318b178
 msgid "To build paths when the segments are not known in advance, use ``joinpath()``, passing each path segment as a separate argument."
 msgstr ""
 
 #: ../../source/pathlib/index.rst:0
-# cb4fbcea890d43148bbae9c10d2215b6
 msgid "pathlib_joinpath.py"
 msgstr ""
 
 #: ../../source/pathlib/index.rst:97
-# 9dfc2642b35449f99e5b20cf072a3574
 msgid "As with the ``/`` operator, calling ``joinpath()`` creates a new instance."
 msgstr ""
 
 #: ../../source/pathlib/index.rst:112
-# 5bee7e2aea5b4d03bd53f7f770bb2a3b
 msgid "Given an existing path object, it is easy to build a new one with minor differences such as referring to a different file in the same directory. Use ``with_name()`` to create a new path that replaces the name portion of a path with a different file name. Use ``with_suffix()`` to create a new path that replaces the file name's extension with a different value."
 msgstr ""
 
 #: ../../source/pathlib/index.rst:0
-# 318ed90fdabf461c9566aa1cc7209ac0
 msgid "pathlib_from_existing.py"
 msgstr ""
 
 #: ../../source/pathlib/index.rst:123
-# fb92aa0bfa1646eaac0124161fc0744c
 msgid "Both methods return new objects, and the original is left unchanged."
 msgstr ""
 
 #: ../../source/pathlib/index.rst:140
-# 8f399c4c02394ee09f76203b501061f2
 msgid "Parsing Paths"
 msgstr ""
 
 #: ../../source/pathlib/index.rst:142
-# fbe468a39e484609865e692f6679ce35
 msgid "Path objects have methods and properties for extracting partial values from the name. For example, the ``parts`` property produces a sequence of path segments parsed based on the path separator value."
 msgstr ""
 
 #: ../../source/pathlib/index.rst:0
-# 070797d2eef242089000383549580128
 msgid "pathlib_parts.py"
 msgstr ""
 
 #: ../../source/pathlib/index.rst:150
-# 6549df88df6e41e3ad569b700afda8aa
 msgid "The sequence is a tuple, reflecting the immutability of the path instance."
 msgstr ""
 
 #: ../../source/pathlib/index.rst:165
-# 65e6017ae7ce4b6a8b8921480abb0456
 msgid "There are two ways to navigate \"up\" the filesystem hierarchy from a given path object. The ``parent`` property refers to a new path instance for the directory containing the path, the value returned by ``os.path.dirname()``.  The ``parents`` property is an iterable that produces parent directory references, continually going \"up\" the path hierarchy until reaching the root."
 msgstr ""
 
 #: ../../source/pathlib/index.rst:0
-# 065e2932a799431fa4db96adb03a51ee
 msgid "pathlib_parents.py"
 msgstr ""
 
 #: ../../source/pathlib/index.rst:176
-# 9e5298909f404ff9ba7a6b0fb4965716
 msgid "The example iterates over the ``parents`` property and prints the member values."
 msgstr ""
 
 #: ../../source/pathlib/index.rst:196
-# fb3c4fb583ae40e7b778673e164f1975
 msgid "Other parts of the path can be accessed through properties of the path object.  The ``name`` property holds the last part of the path, after the final path separator (the same value that ``os.path.basename()`` produces). The ``suffix`` property holds the value after the extension separator and the ``stem`` property holds the portion of the name before the suffix."
 msgstr ""
 
 #: ../../source/pathlib/index.rst:0
-# c8e9142efef941c28a6ec70d5911e8a4
 msgid "pathlib_name.py"
 msgstr ""
 
 #: ../../source/pathlib/index.rst:207
-# a0f0da23abb34b5db82b08b014aee2d2
 msgid "Although the ``suffix`` and ``stem`` values are similar to the values produced by ``os.path.splitext()``, the values are based only on the value of ``name`` and not the full path."
 msgstr ""
 
 #: ../../source/pathlib/index.rst:227
-# 723760876d8a45488afa6a30fcf94442
 msgid "Creating Concrete Paths"
 msgstr ""
 
 #: ../../source/pathlib/index.rst:229
-# e74f38a2f9994aad88113a139165475f
 msgid "Instances of the concrete ``Path`` class can be created from string arguments referring to the name (or potential name) of a file, directory, or symbolic link on the file system. The class also provides several convenience methods for building instances using commonly used locations that change, such as the current working directory and the user's home directory."
 msgstr ""
 
 #: ../../source/pathlib/index.rst:0
-# ada47e9928f44e5e8b9fbce87f0fb045
 msgid "pathlib_convenience.py"
 msgstr ""
 
 #: ../../source/pathlib/index.rst:240
-# fc841b010d0046f48d544a72e12549e5
 msgid "Both methods create ``Path`` instances pre-populated with an absolute file system reference."
 msgstr ""
 
 #: ../../source/pathlib/index.rst:261
-# 8ba15d62eaf7487cb075717d2c9cf97d
 msgid "Directory Contents"
 msgstr ""
 
 #: ../../source/pathlib/index.rst:263
-# 0e23a4ad42834d61aac46205f5d752e0
 msgid "There are three methods for accessing the directory listings to discover the names of files available on the file system. ``iterdir()`` is a generator, yielding a new ``Path`` instance for each item in the containing directory."
 msgstr ""
 
 #: ../../source/pathlib/index.rst:0
-# 29ca51db9acb4da08b0a382809f2631f
 msgid "pathlib_iterdir.py"
 msgstr ""
 
 #: ../../source/pathlib/index.rst:272
-# 064ef2e616204e5ebe44aefbd5938d1e
 msgid "If the ``Path`` does not refer to a directory, ``iterdir()`` raises ``NotADirectoryError``."
 msgstr ""
 
 #: ../../source/pathlib/index.rst:312
-# ed156651c2894898acb71bfc04f4ecbd
 msgid "Use ``glob()`` to find only files matching a pattern."
 msgstr ""
 
 #: ../../source/pathlib/index.rst:0
-# 446012e0975841dba68bf0a2782a6566
 msgid "pathlib_glob.py"
 msgstr ""
 
 #: ../../source/pathlib/index.rst:318
-# 00a1be9830584edeaa961d6947773eae
 msgid "This example shows all of the reStructuredText_ input files in the parent directory of the script."
 msgstr ""
 
 #: ../../source/pathlib/index.rst:357
-# da73ad39008741728a50e8e242638675
 msgid "The glob processor supports recursive scanning using the pattern prefix ``**`` or by calling ``rglob()`` instead of ``glob()``."
 msgstr ""
 
 #: ../../source/pathlib/index.rst:0
-# 5843f824c7e74d8fb8f9902a70571a98
 msgid "pathlib_rglob.py"
 msgstr ""
 
 #: ../../source/pathlib/index.rst:364
-# 31dc61711e23405f8202be715c33d839
 msgid "Because this example starts from the parent directory, a recursive search is necessary to find the example files matching ``pathlib_*.py``."
 msgstr ""
 
 #: ../../source/pathlib/index.rst:401
-# c389a604cbbc4ea3bc5cddf152127b1e
 msgid "Reading and Writing Files"
 msgstr ""
 
 #: ../../source/pathlib/index.rst:403
-# 1468d83f8ffe4e8cafa5ac40bc13b72b
 msgid "Each ``Path`` instance includes methods for working with the contents of the file to which it refers. For immediately retrieving the contents, use ``read_bytes()`` or ``read_text()``. To write to the file, use ``write_bytes()`` or ``write_text()``.  Use the ``open()`` method to open the file and retain the file handle, instead of passing the name to the built-in ``open()`` function."
 msgstr ""
 
 #: ../../source/pathlib/index.rst:0
-# 5e48c1f128504f2e8e8abe9524304619
 msgid "pathlib_read_write.py"
 msgstr ""
 
 #: ../../source/pathlib/index.rst:414
-# 5532633bafa94e2aa6c5da5bdb25fbb3
 msgid "The convenience methods do some type checking before opening the file and writing to it, but otherwise they are equivalent to doing the operation directly."
 msgstr ""
 
 #: ../../source/pathlib/index.rst:432
-# f89326e276404ec881c18ed272869f67
 msgid "Manipulating Directories and Symbolic Links"
 msgstr ""
 
 #: ../../source/pathlib/index.rst:434
-# 7966d1dd798746feb984572efa1ac7f3
 msgid "Paths representing directories or symbolic links that do not exist can be used to create the associated file system entries."
 msgstr ""
 
 #: ../../source/pathlib/index.rst:0
-# a1655199640e48018182b4f7090329fd
 msgid "pathlib_mkdir.py"
 msgstr ""
 
 #: ../../source/pathlib/index.rst:441
-# 50809731caa74c0cb8b0cd5bdb15a8e9
 msgid "If the path already exists, ``mkdir()`` raises a ``FileExistsError``."
 msgstr ""
 
 #: ../../source/pathlib/index.rst:470
-# 34f7be8ec5664a91ae55581aa9f868da
 msgid "Use ``symlink_to()`` to create a symbolic link. The link will be named based on the path's value and will refer to the name given as argument to ``symlink_to()``."
 msgstr ""
 
 #: ../../source/pathlib/index.rst:0
-# 060f157997624209af19880ff37e0867
 msgid "pathlib_symlink_to.py"
 msgstr ""
 
 #: ../../source/pathlib/index.rst:478
-# b419330e47a44c19bb8ec5469af0bd9a
 msgid "This example creates a symbolic link, then uses ``resolve()`` to read the link to find what it points to and print the name."
 msgstr ""
 
 #: ../../source/pathlib/index.rst:496
-# 3aa30e50c6bd4c05a901702665236341
 msgid "File Types"
 msgstr ""
 
 #: ../../source/pathlib/index.rst:498
-# def53f35aeb34ac58b34d05c2a843f09
 msgid "A ``Path`` instance includes several methods for testing the type of file refered to by the path. This example creates several files of different types and tests those as well as a few other device-specific files available on the local operating system."
 msgstr ""
 
 #: ../../source/pathlib/index.rst:0
-# a767f56496924fc7b0eae5492b0f309d
 msgid "pathlib_types.py"
 msgstr ""
 
 #: ../../source/pathlib/index.rst:507
-# b4a6890d88be4d7ca0f522c8cc1e55d1
 msgid "Each of the methods, ``is_dir()``, ``is_file()``, ``is_symlink()``, ``is_socket()``, ``is_fifo()``, ``is_block_device()``, and ``is_char_device()``, takes no arguments."
 msgstr ""
 
 #: ../../source/pathlib/index.rst:531
-# 7bd73639ae6c4fd291d22d116af988cd
 msgid "File Properties"
 msgstr ""
 
 #: ../../source/pathlib/index.rst:533
-# 81932754a8b145428823eb06b9d940a9
 msgid "Detailed information about a file can be accessed using the methods ``stat()`` or ``lstat()`` (for checking the status of something that might be a symbolic link). These methods produce the same results as ``os.stat()`` and ``os.lstat()``."
 msgstr ""
 
 #: ../../source/pathlib/index.rst:0
-# 009b5584f3de4bcabb4921e4c2f075a5
 msgid "pathlib_stat.py"
 msgstr ""
 
 #: ../../source/pathlib/index.rst:542
-# 6d2e3ed7c5774611b8d55098c5791d03
 msgid "The output will vary depending on how the example code was installed. Try passing different filenames on the command line to ``pathlib_stat.py``."
 msgstr ""
 
 #: ../../source/pathlib/index.rst:577
-# 3745f1acea8543daa7e7f5c182e686d8
 msgid "For simpler access to information about the owner of a file, use ``owner()`` and ``group()``."
 msgstr ""
 
 #: ../../source/pathlib/index.rst:0
-# f51328922a4a4136b00530678d85550b
 msgid "pathlib_ownership.py"
 msgstr ""
 
 #: ../../source/pathlib/index.rst:584
-# 3fbcb374964e4928bde3fcc41bd0b2b9
 msgid "While ``stat()`` returns numerical system ID values, these methods look up the name associated with the IDs."
 msgstr ""
 
 #: ../../source/pathlib/index.rst:599
-# 4ee42a878bc74511bc2edf4a3e966720
 msgid "The ``touch()`` method works like the Unix command ``touch`` to create a file or update an existing file's modification time and permissions."
 msgstr ""
 
 #: ../../source/pathlib/index.rst:0
-# f5246fa26bf24cfb9e95cf1ba1d251db
 msgid "pathlib_touch.py"
 msgstr ""
 
 #: ../../source/pathlib/index.rst:607
-# edc75b82a6624801a34a4def53d594fb
 msgid "Running this example more than once updates the existing file on subsequent runs."
 msgstr ""
 
 #: ../../source/pathlib/index.rst:633
-# f631172ab4a84b9ba19d962f009e228b
 msgid "Permissions"
 msgstr ""
 
 #: ../../source/pathlib/index.rst:635
-# fcb19b39f72c456daa4a8517553692e7
 msgid "On Unix-like systems, file permissions can be changed using ``chmod()``, passing the mode as an integer. Mode values can be constructed using constants defined in the :mod:`stat` module.  This example toggles the user's execute permission bit."
 msgstr ""
 
 #: ../../source/pathlib/index.rst:0
-# 9bc17b6a1e654af1ab219ab1951aa031
 msgid "pathlib_chmod.py"
 msgstr ""
 
 #: ../../source/pathlib/index.rst:644
-# 0d6ad0645cfd4dd68fe0bd818afda08c
 msgid "The script assumes it has the permissions necessary to modify the mode of the file when run."
 msgstr ""
 
 #: ../../source/pathlib/index.rst:662
-# f6e01270a0cb4305acf1e8b6a99f935c
 msgid "Deleting"
 msgstr ""
 
 #: ../../source/pathlib/index.rst:664
-# dd1b1dcd05304fb89a9290e191d2b0e4
 msgid "There are two methods for removing things from the file system, depending on the type.  To remove an empty directory, use ``rmdir()``."
 msgstr ""
 
 #: ../../source/pathlib/index.rst:0
-# 1b5ef028e3f64e748661d1484f94231f
 msgid "pathlib_rmdir.py"
 msgstr ""
 
 #: ../../source/pathlib/index.rst:672
-# 08f3f47eb2594b53baa699d94d69e34b
 msgid "A ``FileNotFoundError`` exception is raised if the post-conditions are already met and the directory does not exist. It is also an error to try to remove a directory that is not empty."
 msgstr ""
 
 #: ../../source/pathlib/index.rst:703
-# 0063c1a9c5f04aa6872cc8bf7fb16596
 msgid "For files, symbolic links, and most other path types use ``unlink()``."
 msgstr ""
 
 #: ../../source/pathlib/index.rst:0
-# a086de807db741e99f6e45b9a984c77b
 msgid "pathlib_unlink.py"
 msgstr ""
 
 #: ../../source/pathlib/index.rst:710
-# 94e2942737184c02baf16c3fdd59a8cb
 msgid "The user must have permission to remove the file, symbolic link, socket, or other file system object."
 msgstr ""
 
 #: ../../source/pathlib/index.rst:735
-# aae4969b216149889188f8fa8dbf37a4
 msgid ":pydoc:`pathlib`"
 msgstr ""
 
 #: ../../source/pathlib/index.rst:737
-# 9a5ca0ef6aa046108b37bfaeae5e61e0
 msgid ":mod:`os.path` -- Platform-independent manipulation of filenames"
 msgstr ""
 
 #: ../../source/pathlib/index.rst:739
-# 8e19f121b3bf434594ee9099b9632a73
 msgid ":ref:`os-stat` -- Discussion of ``os.stat()`` and ``os.lstat()``."
 msgstr ""
 
 #: ../../source/pathlib/index.rst:741
-# 3a0e78ae36f042d285b9d0c62f5ff934
 msgid ":mod:`glob` -- Unix shell pattern matching for filenames"
 msgstr ""
 
 #: ../../source/pathlib/index.rst:743
-# 15acc835651444a3b3bfd21378c33f20
 msgid ":pep:`428` -- The pathlib module"
 msgstr ""
 

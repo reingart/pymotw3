@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,292 +17,225 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/collections/abc.rst:3
-# 0d9ba60d79884b52885b268b57a4a6fe
 msgid "collections.abc --- Abstract Base Classes for Containers"
 msgstr ""
 
 #: ../../source/collections/abc.rst:8
-# cb142c02106b462aa8c31543f4bf19f4
 msgid "Abstract base classes for container data types."
 msgstr ""
 
 #: ../../source/collections/abc.rst:10
-# 607df941305f46ebb4b33fe5fcba4fc5
 msgid "The ``collections.abc`` module contains abstract base classes that define the APIs for container data structures built into Python and provided by the ``collections`` module. Refer to :table:`Abstract Base Classes` for a list of the classes and their purposes."
 msgstr ""
 
 #: ../../source/collections/abc.rst:0
-# 423f481e131f4da9a112393efb1984e0
 msgid "Abstract Base Classes"
 msgstr ""
 
 #: ../../source/collections/abc.rst:19
-# 5c67278f2f1f4c6388595715f8195511
 msgid "Class"
 msgstr ""
 
 #: ../../source/collections/abc.rst:20
-# 60da0c9020214f809fc61eb52a625649
 msgid "Base Class(es)"
 msgstr ""
 
 #: ../../source/collections/abc.rst:21
-# 75ad451d22014811ad16f0031615aa55
 msgid "API Purpose"
 msgstr ""
 
 #: ../../source/collections/abc.rst:22
-# d79423bbb343424da3e7fe3fab9ce8c3
 msgid "Container"
 msgstr ""
 
 #: ../../source/collections/abc.rst:24
-# 1c58889f9c0b4d468303a91d950bebb3
 msgid "Basic container features, such as the ``in`` operator."
 msgstr ""
 
 #: ../../source/collections/abc.rst:25
-# cd74392477fb4d88a1dacbefb659f9a4
 msgid "Hashable"
 msgstr ""
 
 #: ../../source/collections/abc.rst:27
-# 272a05bca2c6497ebe53d9a0b8ba1f18
 msgid "Adds support for providing a hash value for the container instance."
 msgstr ""
 
 #: ../../source/collections/abc.rst:28
 #: ../../source/collections/abc.rst:32
-# b05774a6e26049a2830249d2950ad756
-# d0a04db898a447e18d3d6a4b71c565bc
 msgid "Iterable"
 msgstr ""
 
 #: ../../source/collections/abc.rst:30
-# 156e1e90e2034efbb3e4dd0b19ef2007
 msgid "Can create an iterator over the container contents."
 msgstr ""
 
 #: ../../source/collections/abc.rst:31
 #: ../../source/collections/abc.rst:35
-# 7a8cd86d85e34467ae09609333263435
-# b5717ae9e22c4dd6addb74cc2cbc9bd3
 msgid "Iterator"
 msgstr ""
 
 #: ../../source/collections/abc.rst:33
-# cd620b101d2f410a8891ee0a903ad15c
 msgid "Is an iterator over the container contents."
 msgstr ""
 
 #: ../../source/collections/abc.rst:34
-# 6e1c528c59fa458ca330d2c368cfd62d
 msgid "Generator"
 msgstr ""
 
 #: ../../source/collections/abc.rst:36
-# fad5b409ab7a4e2488be16b5be12d608
 msgid "Extends iterators with the generator protocol from PEP 342."
 msgstr ""
 
 #: ../../source/collections/abc.rst:37
 #: ../../source/collections/abc.rst:67
-# a211d12e5be449f8948fc458bfbee2a4
-# 1b8256ed733a4ae09e766b000c99075a
 msgid "Sized"
 msgstr ""
 
 #: ../../source/collections/abc.rst:39
-# 9a163ceaddbe413bb2156f9cabbe1a85
 msgid "Adds methods for containers that know how big they are."
 msgstr ""
 
 #: ../../source/collections/abc.rst:40
-# 3b493b7f7a0c415893f3944ff1cb9552
 msgid "Callable"
 msgstr ""
 
 #: ../../source/collections/abc.rst:42
-# 972dd5d34b97414799ab488dccdc0eeb
 msgid "For containers that can be invoked as a function."
 msgstr ""
 
 #: ../../source/collections/abc.rst:43
 #: ../../source/collections/abc.rst:48
 #: ../../source/collections/abc.rst:52
-# 6f0318e364ac45adab8bf00a7518a923
-# a4963c0dafc34b008df84a65d6d28a9c
-# db67222f00f04eea93ee9adecc2fa81b
 msgid "Sequence"
 msgstr ""
 
 #: ../../source/collections/abc.rst:44
 #: ../../source/collections/abc.rst:55
 #: ../../source/collections/abc.rst:61
-# d31b840fbc4c43d688e63f97780f86ab
-# 6dd2854488c349be90ebaa752d992b83
-# 9e3c02091ab8404d8216ff27e3e4e990
 msgid "Sized, Iterable, Container"
 msgstr ""
 
 #: ../../source/collections/abc.rst:45
-# 20909ae6d4ca4ed38172082bfb832179
 msgid "Supports retrieving individual items, iterating, and changing the order of items."
 msgstr ""
 
 #: ../../source/collections/abc.rst:47
-# 95598faaf5c44bb7a288e181ef484223
 msgid "MutableSequence"
 msgstr ""
 
 #: ../../source/collections/abc.rst:49
-# 4d4b5990afec4e8fb202355518d9f929
 msgid "Supports adding and removing items to an instance after it has been created."
 msgstr ""
 
 #: ../../source/collections/abc.rst:51
-# 3d44d4d350a54bf1a8fe2e00df67e99e
 msgid "ByteString"
 msgstr ""
 
 #: ../../source/collections/abc.rst:53
-# 8e2dd5bc59844fbc94e774d1d078a6ea
 msgid "Combined API of ``bytes`` and ``bytearray``."
 msgstr ""
 
 #: ../../source/collections/abc.rst:54
 #: ../../source/collections/abc.rst:58
-# 69037ff44c7047fab3f6f879b5c71b47
-# 9cc3d7b2b19f49c2893ad157c04a92e6
 msgid "Set"
 msgstr ""
 
 #: ../../source/collections/abc.rst:56
-# 454ebd0b51c44f749af06b0c4634440c
 msgid "Supports set operations such as intersection and union."
 msgstr ""
 
 #: ../../source/collections/abc.rst:57
-# 2c21e633128b4c4189fc4834e1d5f8a3
 msgid "MutableSet"
 msgstr ""
 
 #: ../../source/collections/abc.rst:59
-# 7e93d007900d45f9881e65e626d6496c
 msgid "Adds methods for manipulating the set contents after it is created."
 msgstr ""
 
 #: ../../source/collections/abc.rst:60
 #: ../../source/collections/abc.rst:64
-# f83f4b12e71146e3b10e01a19ccf0b52
-# 0683715d7a154680b3af9f532e415dc6
 msgid "Mapping"
 msgstr ""
 
 #: ../../source/collections/abc.rst:62
-# 8dbb42cf492f482ab66bf43fa89efcad
 msgid "Defines the read-only API used by ``dict``."
 msgstr ""
 
 #: ../../source/collections/abc.rst:63
-# 1cc17e416fed4149814ae21625cb2856
 msgid "MutableMapping"
 msgstr ""
 
 #: ../../source/collections/abc.rst:65
-# 7151889635e9478abd94602e3bb66763
 msgid "Defines the methods for manipulating the contents of a mapping after it is created."
 msgstr ""
 
 #: ../../source/collections/abc.rst:66
 #: ../../source/collections/abc.rst:76
-# c3481eec110049c7b16a0979549601da
-# 636e47ad28b74aef9dbd725361d7c9b2
 msgid "MappingView"
 msgstr ""
 
 #: ../../source/collections/abc.rst:68
-# 66daccd6a77343e38502fa946efd7224
 msgid "Defines the view API for accessing a mapping from an iterator."
 msgstr ""
 
 #: ../../source/collections/abc.rst:69
-# 5ebef7c8fff74ea0b76a30a12fd522ab
 msgid "ItemsView"
 msgstr ""
 
 #: ../../source/collections/abc.rst:70
 #: ../../source/collections/abc.rst:73
-# 2d3ce8fe8a684f69ac386f6d885dc0e0
-# d998820577d14cf2b1a504a2b4924f37
 msgid "MappingView, Set"
 msgstr ""
 
 #: ../../source/collections/abc.rst:71
 #: ../../source/collections/abc.rst:74
 #: ../../source/collections/abc.rst:77
-# 33e7263da27d4206b12c05386e9d38db
-# 23a29b4409654474a32bc7ffa0df778c
-# 1f790715a9694baf8e2cae22edc069c3
 msgid "Part of the view API."
 msgstr ""
 
 #: ../../source/collections/abc.rst:72
-# b5825c0dfcec4b67ab4a707c5778bdf3
 msgid "KeysView"
 msgstr ""
 
 #: ../../source/collections/abc.rst:75
-# 4b5b40c56ec74469b403e171401a6b1d
 msgid "ValuesView"
 msgstr ""
 
 #: ../../source/collections/abc.rst:78
 #: ../../source/collections/abc.rst:83
-# 0082ba49d13b4f699582a3568b989f72
-# b619ecd889e8490f8fcfade1f6743770
 msgid "Awaitable"
 msgstr ""
 
 #: ../../source/collections/abc.rst:80
-# be6a5bcf9fe14055a2a0ade54ad1a54e
 msgid "API for objects that can be used in ``await`` expressions, such as coroutines."
 msgstr ""
 
 #: ../../source/collections/abc.rst:82
-# e8a0b8da94b541cda768c0bea5a83db0
 msgid "Coroutine"
 msgstr ""
 
 #: ../../source/collections/abc.rst:84
-# 66286b9fef474dca9079f6ddcc085c5e
 msgid "API for classes that implement the coroutine protocol."
 msgstr ""
 
 #: ../../source/collections/abc.rst:85
 #: ../../source/collections/abc.rst:90
-# e4dfcf4ab09d42c3a15f91e410dc9993
-# 25e7af67659e4f5893267e43a751c621
 msgid "AsyncIterable"
 msgstr ""
 
 #: ../../source/collections/abc.rst:87
-# 4de246a55b164b5a889a12512c2eff6e
 msgid "API for iterables compatible with ``async for``, as defined in PEP 492."
 msgstr ""
 
 #: ../../source/collections/abc.rst:89
-# 95b7184c8df04882bdf3f859f65cd2c9
 msgid "AsyncIterator"
 msgstr ""
 
 #: ../../source/collections/abc.rst:91
-# 33a58a89e6f54aabb3db46f187be96f2
 msgid "API for asynchronous iterators."
 msgstr ""
 
 #: ../../source/collections/abc.rst:93
-# 7c53950b33c749d2ab43d9883772faaf
 msgid "In addition to clearly defining the APIs for containers with different semantics, these abstract base classes can be used to test whether an object supports an API before invoking it using ``isinstance()``. Some of the classes also provide implementations of methods, and they can be used as mix-ins to build up custom container types without implementing every method from scratch."
 msgstr ""
 

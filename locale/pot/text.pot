@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,32 +17,26 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/text.rst:3
-# 1d7b733c991c4379ad9007a10eef17fb
 msgid "Text"
 msgstr ""
 
 #: ../../source/text.rst:5
-# dae2188539664f6cbfefb384fe60f377
 msgid "The ``str`` class is the most obvious text processing tool available to Python programmers, but there are plenty of other tools in the standard library to make advanced text manipulation simple."
 msgstr ""
 
 #: ../../source/text.rst:9
-# 3527e2dc297b4406ae72b55355328119
 msgid "Programs may use ``string.Template`` as a simple way to parameterize strings beyond the features of ``str`` objects. While not as feature-rich as templates defined by many of the web frameworks or extension modules available from the Python Package Index, ``string.Template`` is a good middle ground for user-modifiable templates in which dynamic values need to be inserted into otherwise static text."
 msgstr ""
 
 #: ../../source/text.rst:17
-# 4c4fd5bddc114092a2fd8c24f4a85cd2
 msgid "The :mod:`textwrap` module includes tools for formatting text from paragraphs by limiting the width of output, adding indentation, and inserting line breaks to wrap lines consistently."
 msgstr ""
 
 #: ../../source/text.rst:21
-# 5cbfa7232b1a48348013b2b4ee8cd340
 msgid "The standard library includes two modules for comparing text values that go beyond the built-in equality and sort comparison supported by string objects.  :mod:`re` provides a complete regular expression library, implemented in C for speed.  Regular expressions are well suited for finding substrings within a larger data set, comparing strings against a pattern more complex than another fixed string, and mild parsing."
 msgstr ""
 
 #: ../../source/text.rst:29
-# 4ee59afbb4254b8aa6c581164e4a1341
 msgid ":mod:`difflib`, in contrast, computes the actual differences between sequences of text in terms of the parts added, removed, or changed.  The output of the comparison functions in :mod:`difflib` can be used to provide more detailed feedback to the user about where changes occur in two inputs, how a document has changed over time, and so on."
 msgstr ""
 

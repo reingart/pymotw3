@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,92 +17,74 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/asyncio/synchronization.rst:3
-# 1844f3b6a6c945358e7a465a485b126c
 msgid "Synchronization Primitives"
 msgstr ""
 
 #: ../../source/asyncio/synchronization.rst:5
-# 4124f42a95b048daa3b3c70a50edfa9f
 msgid "Although ``asyncio`` applications usually run as a single-threaded process, they are still built as concurrent applications. Each coroutine or task may execute in an unpredictable order, based on delays and interrupts from I/O and other external events. To support safe concurrency, ``asyncio`` includes implementations of some of the same low-level primitives found in the :mod:`threading` and :mod:`multiprocessing` modules."
 msgstr ""
 
 #: ../../source/asyncio/synchronization.rst:14
-# 7e9a42f99ae74c328e1e99bb456cd8a2
 msgid "Locks"
 msgstr ""
 
 #: ../../source/asyncio/synchronization.rst:16
-# 789ff06a52c94c4fb04f5b2f5c29fcc3
 msgid "A ``Lock`` can be used to guard access to a shared resource. Only the holder of the lock can use the resource. Multiple attempts to acquire the lock will block so that there is only one holder at a time."
 msgstr ""
 
 #: ../../source/asyncio/synchronization.rst:0
-# 4f5d05ee40fe4ba2bca5f5e8287c7c45
 msgid "asyncio_lock.py"
 msgstr ""
 
 #: ../../source/asyncio/synchronization.rst:25
-# ffa224cd1f0e456ab34787bdc8dd4663
 msgid "A lock can be invoked directly, using ``await`` to acquire it and calling the ``release()`` method when done as in ``coro2()`` in this example. They also can be used as asynchronous context managers with the ``with await`` keywords, as in ``coro1()``."
 msgstr ""
 
 #: ../../source/asyncio/synchronization.rst:52
-# 8352acff84b34c4f82daf7dd614a502b
 msgid "Events"
 msgstr ""
 
 #: ../../source/asyncio/synchronization.rst:54
-# 1b913affa0a44861a2efb870169143a8
 msgid "An ``asyncio.Event`` is based on ``threading.Event``, and is used to allow multiple consumers to wait for something to happen without looking for a specific value to be associated with the notification."
 msgstr ""
 
 #: ../../source/asyncio/synchronization.rst:0
-# 2d277c56dd4641d5b7a4e4bdebc2e0f0
 msgid "asyncio_event.py"
 msgstr ""
 
 #: ../../source/asyncio/synchronization.rst:63
-# d928e7936ce34d389dc8f2308523c365
 msgid "As with the ``Lock``, both ``coro1()`` and ``coro2()`` wait for the event to be set. The difference is that both can start as soon as the event state changes, and they do not need to acquire a unique hold on the event object."
 msgstr ""
 
 #: ../../source/asyncio/synchronization.rst:87
-# 809c9b99271f4d5383133ec099f20951
 msgid "Conditions"
 msgstr ""
 
 #: ../../source/asyncio/synchronization.rst:89
-# c152f315971e4bd6b21aa57e765f294e
 msgid "A ``Condition`` works similarly to an ``Event`` except that rather than notifying all waiting coroutines the number of waiters awakened is controlled with an argument to ``notify()``."
 msgstr ""
 
 #: ../../source/asyncio/synchronization.rst:0
-# 01b2ed9e9e834730bb4d90c1de572bb9
 msgid "asyncio_condition.py"
 msgstr ""
 
 #: ../../source/asyncio/synchronization.rst:97
-# 7e2168a8778047fe9daf83b4e37a4e4b
 msgid "This example starts five consumers of the ``Condition``. Each uses the ``wait()`` method to wait for a notification that they can proceed. ``manipulate_condition()`` notifies one consumer, then two consumers, then all of the remaining consumers."
 msgstr ""
 
 #: ../../source/asyncio/synchronization.rst:134
-# c57cd0b15b2a40859ba2a218e8e2850c
 msgid "Queues"
 msgstr ""
 
 #: ../../source/asyncio/synchronization.rst:136
-# 9a6fad0964014db7aadd84c777b5d6b6
 msgid "An ``asyncio.Queue`` provides a first-in, first-out data structure for coroutines like a ``queue.Queue`` does for threads or a ``multiprocessing.Queue`` does for processes."
 msgstr ""
 
 #: ../../source/asyncio/synchronization.rst:0
-# c8ca2f53716948e6bbf88cfe6489601e
 msgid "asyncio_queue.py"
 msgstr ""
 
 #: ../../source/asyncio/synchronization.rst:144
-# 5093771542c54ad697b3aa59e33de4b5
 msgid "Adding items with ``put()`` or removing items with ``get()`` are both asynchronous operations, since the queue size might be fixed (blocking an addition) or the queue might be empty (blocking a call to fetch an item)."
 msgstr ""
 

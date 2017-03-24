@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,37 +17,30 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/multiprocessing/mapreduce.rst:2
-# e75c0251a5fb47bebc550d6e223b79bf
 msgid "Implementing MapReduce"
 msgstr ""
 
 #: ../../source/multiprocessing/mapreduce.rst:4
-# 288fdb9fc5f64a56b6aac280bbc570e0
 msgid "The ``Pool`` class can be used to create a simple single-server MapReduce implementation.  Although it does not give the full benefits of distributed processing, it does illustrate how easy it is to break some problems down into distributable units of work."
 msgstr ""
 
 #: ../../source/multiprocessing/mapreduce.rst:9
-# 702561dc0766460dbf4fd5e80c79c96a
 msgid "In a MapReduce-based system, input data is broken down into chunks for processing by different worker instances.  Each chunk of input data is *mapped* to an intermediate state using a simple transformation.  The intermediate data is then collected together and partitioned based on a key value so that all of the related values are together.  Finally, the partitioned data is *reduced* to a result set."
 msgstr ""
 
 #: ../../source/multiprocessing/mapreduce.rst:0
-# f0f0b40519594723abb302513930383f
 msgid "multiprocessing_mapreduce.py"
 msgstr ""
 
 #: ../../source/multiprocessing/mapreduce.rst:20
-# 51fc9ace99c6488ba77946755ea8e5a3
 msgid "The following example script uses SimpleMapReduce to counts the \"words\" in the reStructuredText source for this article, ignoring some of the markup."
 msgstr ""
 
 #: ../../source/multiprocessing/mapreduce.rst:0
-# f66b07332a514e4b9c7d9d2b1440ca77
 msgid "multiprocessing_wordcount.py"
 msgstr ""
 
 #: ../../source/multiprocessing/mapreduce.rst:28
-# 7590566223394844b0932135d434a6b0
 msgid "The ``file_to_words()`` function converts each input file to a sequence of tuples containing the word and the number ``1`` (representing a single occurrence). The data is divided up by ``partition()`` using the word as the key, so the resulting structure consists of a key and a sequence of ``1`` values representing each occurrence of the word. The partitioned data is converted to a set of tuples containing a word and the count for that word by ``count_words()`` during the reduction phase."
 msgstr ""
 

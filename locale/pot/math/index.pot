@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,682 +17,546 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/math/index.rst:3
-# a5d8cc298f3149dab0a37373650d5b68
 msgid "math --- Mathematical Functions"
 msgstr ""
 
 #: ../../source/math/index.rst:8
-# 9d29a9d70bee4af4b0211eb8813df405
 msgid "Provides functions for specialized mathematical operations."
 msgstr ""
 
 #: ../../source/math/index.rst:10
-# 678bd206ef0d4b3280ae489221d488d5
 msgid "The ``math`` module implements many of the IEEE functions that would normally be found in the native platform C libraries for complex mathematical operations using floating point values, including logarithms and trigonometric operations."
 msgstr ""
 
 #: ../../source/math/index.rst:16
-# a2c75ac2033947699faedfa3805a8eb4
 msgid "Special Constants"
 msgstr ""
 
 #: ../../source/math/index.rst:18
-# 68fe706e0bf24e61968f6c812f92a910
 msgid "Many math operations depend on special constants.  ``math`` includes values for π (pi), e, nan (not a number), and infinity."
 msgstr ""
 
 #: ../../source/math/index.rst:0
-# 09cac692f63543a1bff8f10a80d2d7e1
 msgid "math_constants.py"
 msgstr ""
 
 #: ../../source/math/index.rst:25
-# 78cabfd19f1a4b7ea02050ead382aa81
 msgid "Both π and e are limited in precision only by the platform's floating point C library."
 msgstr ""
 
 #: ../../source/math/index.rst:44
-# 55ff8783440844fbbbf0452e216e37e2
 msgid "Testing for Exceptional Values"
 msgstr ""
 
 #: ../../source/math/index.rst:46
-# 43dd90b8eee44bd1803bd606e4387004
 msgid "Floating point calculations can result in two types of exceptional values.  The first of these, ``inf`` (infinity), appears when the ``double`` used to hold a floating point value overflows from a value with a large absolute value."
 msgstr ""
 
 #: ../../source/math/index.rst:0
-# 970d1c50ed3343419c45dc625328e036
 msgid "math_isinf.py"
 msgstr ""
 
 #: ../../source/math/index.rst:55
-# 108ca6d6fb284295aee077a0d91f8138
 msgid "When the exponent in this example grows large enough, the square of ``x`` no longer fits inside a ``double``, and the value is recorded as infinite."
 msgstr ""
 
 #: ../../source/math/index.rst:83
-# fa25319b249842d9b6b8b16e31a42b1b
 msgid "Not all floating point overflows result in ``inf`` values, however. Calculating an exponent with floating point values, in particular, raises ``OverflowError`` instead of preserving the ``inf`` result."
 msgstr ""
 
 #: ../../source/math/index.rst:0
-# 53e0346d641f4990892685165bce7084
 msgid "math_overflow.py"
 msgstr ""
 
 #: ../../source/math/index.rst:92
-# eec8c43fadd9418ba167bd72454c69c1
 msgid "This discrepancy is caused by an implementation difference in the library used by C Python."
 msgstr ""
 
 #: ../../source/math/index.rst:109
-# 75a65c72499440e29f00e77974fea637
 msgid "Division operations using infinite values are undefined.  The result of dividing a number by infinity is ``nan`` (not a number)."
 msgstr ""
 
 #: ../../source/math/index.rst:0
-# cf521cc15ee645159dc5c1142eaf5912
 msgid "math_isnan.py"
 msgstr ""
 
 #: ../../source/math/index.rst:116
-# e92ca6bfd2b54452a1a6aaf354750050
 msgid "``nan`` does not compare as equal to any value, even itself, so to check for ``nan`` use ``isnan()``."
 msgstr ""
 
 #: ../../source/math/index.rst:135
-# a1df640737fb4cc9aa45219e07ea1c09
 msgid "Use ``isfinite()`` to check for regular numbers or either of the special values ``inf`` or ``nan``."
 msgstr ""
 
 #: ../../source/math/index.rst:0
-# 20ceabcd899e44219ff15954d5d41915
 msgid "math_isfinite.py"
 msgstr ""
 
 #: ../../source/math/index.rst:142
-# 77eb240e96184420ad303cca62e94373
 msgid "``isfinite()`` returns false for either of the exceptional cases, and true otherwise."
 msgstr ""
 
 #: ../../source/math/index.rst:163
-# 05e65822f3ad4c7eb9847414ad3aab5e
 msgid "Comparing"
 msgstr ""
 
 #: ../../source/math/index.rst:165
-# f1d43b65a79e446cb3f9307342a76933
 msgid "Comparisons for floating point values can be error prone, with each step of the computation potentially introducing errors due to the numerical representation. The ``isclose()`` function uses a stable algorithm to minimize these errors and provide a way for relative as well as absolute comparisons. The formula used is equivalent to"
 msgstr ""
 
 #: ../../source/math/index.rst:175
-# 03765ab1c80d4e60b74aba2726a293df
 msgid "By default, ``isclose()`` uses relative comparison with the tolerance set to ``1e-09``, meaning that the difference between the values must be less than or equal to ``1e-09`` times the larger absolute value between ``a`` and ``b``. Passing a keyword argument ``rel_tol`` to ``isclose()`` changes the tolerance. In this example, the values must be within 10% of each other."
 msgstr ""
 
 #: ../../source/math/index.rst:0
-# 3d8163dbde0b45989ff89d3cde1c735c
 msgid "math_isclose.py"
 msgstr ""
 
 #: ../../source/math/index.rst:186
-# ad8e2d173e3a4af397fbacbd658d364c
 msgid "The comparison between ``0.1`` and ``0.09`` fails because of the error representing ``0.1``."
 msgstr ""
 
 #: ../../source/math/index.rst:207
-# e8b7f7c36ed848fd808987f06a834fd3
 msgid "To use a fixed or \"absolute\" tolerance, pass ``abs_tol`` instead of ``rel_tol``."
 msgstr ""
 
 #: ../../source/math/index.rst:0
-# 37ab95948a404c12a7a206f002c85f0d
 msgid "math_isclose_abs_tol.py"
 msgstr ""
 
 #: ../../source/math/index.rst:214
-# 20a78a04e0a342dd8ab55d215f8f16ce
 msgid "For an absolute tolerance, the difference between the input values must be less than the tolerance given."
 msgstr ""
 
 #: ../../source/math/index.rst:233
-# 7417146bb7ea4a50a360fa9b48349689
 msgid "``nan`` and ``inf`` are special cases."
 msgstr ""
 
 #: ../../source/math/index.rst:0
-# 9fcabca0cc9f4d088ea293bd7fa82cb4
 msgid "math_isclose_inf.py"
 msgstr ""
 
 #: ../../source/math/index.rst:239
-# cfb8043f2e854a519af43a2fad6e1741
 msgid "``nan`` is never close to another value, including itself. ``inf`` is only close to itself."
 msgstr ""
 
 #: ../../source/math/index.rst:258
-# 1a69eed9c9e447a1bb7832e2a86eb3e6
 msgid "Converting Floating Point Values to Integers"
 msgstr ""
 
 #: ../../source/math/index.rst:260
-# 4fb5ed87f3da4956802b59765b651014
 msgid "The ``math`` module includes three functions for converting floating point values to whole numbers.  Each takes a different approach, and will be useful in different circumstances."
 msgstr ""
 
 #: ../../source/math/index.rst:264
-# 6aa6be9a9e2e4ad38963760bc31f2df6
 msgid "The simplest is ``trunc()``, which truncates the digits following the decimal, leaving only the significant digits making up the whole number portion of the value.  ``floor()`` converts its input to the largest preceding integer, and ``ceil()`` (ceiling) produces the largest integer following sequentially after the input value."
 msgstr ""
 
 #: ../../source/math/index.rst:0
-# 4ee2169fee1644808959a99081bc2629
 msgid "math_integers.py"
 msgstr ""
 
 #: ../../source/math/index.rst:274
-# fc48e95829304da7b4498a2cad23e0c3
 msgid "``trunc()`` is equivalent to converting to ``int`` directly."
 msgstr ""
 
 #: ../../source/math/index.rst:299
-# a6c4152964bc427ea9d7b14037c3d17f
 msgid "Alternate Representations of Floating Point Values"
 msgstr ""
 
 #: ../../source/math/index.rst:301
-# 63490157e52149eb89e822fc18eb7fe4
 msgid "``modf()`` takes a single floating point number and returns a tuple containing the fractional and whole number parts of the input value."
 msgstr ""
 
 #: ../../source/math/index.rst:0
-# a257a62b9ed944f6ac93b95ae06b664b
 msgid "math_modf.py"
 msgstr ""
 
 #: ../../source/math/index.rst:308
-# c143cad6b60d41929445957ddc6d708b
 msgid "Both numbers in the return value are floats."
 msgstr ""
 
 #: ../../source/math/index.rst:327
-# 0251da0f787849aea4dad67a6f6ad1f0
 msgid "``frexp()`` returns the mantissa and exponent of a floating point number, and can be used to create a more portable representation of the value."
 msgstr ""
 
 #: ../../source/math/index.rst:0
-# 91fd00ca154a4af5a9e794ff00b4682c
 msgid "math_frexp.py"
 msgstr ""
 
 #: ../../source/math/index.rst:335
-# aaa01a2661894f4d996469678736dcc3
 msgid "``frexp()`` uses the formula ``x = m * 2**e``, and returns the values ``m`` and ``e``."
 msgstr ""
 
 #: ../../source/math/index.rst:354
-# 04c4819c7c7e4b0bb9e359edd37ec9c4
 msgid "``ldexp()`` is the inverse of ``frexp()``."
 msgstr ""
 
 #: ../../source/math/index.rst:0
-# 71404f2501984db7b73c2195dee2eba7
 msgid "math_ldexp.py"
 msgstr ""
 
 #: ../../source/math/index.rst:360
-# 186221f8b5c84212875b55d7a16222a9
 msgid "Using the same formula as ``frexp()``, ``ldexp()`` takes the mantissa and exponent values as arguments and returns a floating point number."
 msgstr ""
 
 #: ../../source/math/index.rst:382
-# 28e6a56deeb946afbc6bf14eb0b54912
 msgid "Positive and Negative Signs"
 msgstr ""
 
 #: ../../source/math/index.rst:384
-# 4124c7e0a3844c49b239a07988cd7585
 msgid "The absolute value of a number is its value without a sign.  Use ``fabs()`` to calculate the absolute value of a floating point number."
 msgstr ""
 
 #: ../../source/math/index.rst:0
-# 647c0c61c739461da55492e0d5ccc1d4
 msgid "math_fabs.py"
 msgstr ""
 
 #: ../../source/math/index.rst:392
-# 089247b07e10414ba4d5cc3482a86e1a
 msgid "In practical terms, the absolute value of a ``float`` is represented as a positive value."
 msgstr ""
 
 #: ../../source/math/index.rst:410
-# e8bc67ea4aab4fdead6b51c9eb92e847
 msgid "To determine the sign of a value, either to give a set of values the same sign or to compare two values, use ``copysign()`` to set the sign of a known good value."
 msgstr ""
 
 #: ../../source/math/index.rst:0
-# e66d8dfb819344c0ba58a5c2be99ab95
 msgid "math_copysign.py"
 msgstr ""
 
 #: ../../source/math/index.rst:418
-# cd8422a45d6b464bb3d85bd96b78c009
 msgid "An extra function like ``copysign()`` is needed because comparing nan and -nan directly with other values does not work."
 msgstr ""
 
 #: ../../source/math/index.rst:442
-# 8482d05a31224883aedba42835b33249
 msgid "Commonly Used Calculations"
 msgstr ""
 
 #: ../../source/math/index.rst:444
-# e11a897813714f21963d96b45e433017
 msgid "Representing precise values in binary floating point memory is challenging.  Some values cannot be represented exactly, and the more often a value is manipulated through repeated calculations, the more likely a representation error will be introduced.  ``math`` includes a function for computing the sum of a series of floating point numbers using an efficient algorithm that minimizes such errors."
 msgstr ""
 
 #: ../../source/math/index.rst:0
-# 5713090c984946188a370c34e793ee78
 msgid "math_fsum.py"
 msgstr ""
 
 #: ../../source/math/index.rst:455
-# 7388346db7154f88b724f624a0fb480f
 msgid "Given a sequence of ten values, each equal to ``0.1``, the expected value for the sum of the sequence is ``1.0``.  Since ``0.1`` cannot be represented exactly as a floating point value, however, errors are introduced into the sum unless it is calculated with ``fsum()``."
 msgstr ""
 
 #: ../../source/math/index.rst:475
-# 2a4269a0f27c407f9aa0fdca8167410d
 msgid "``factorial()`` is commonly used to calculate the number of permutations and combinations of a series of objects.  The factorial of a positive integer ``n``, expressed ``n!``, is defined recursively as ``(n-1)! * n`` and stops with ``0! == 1``."
 msgstr ""
 
 #: ../../source/math/index.rst:0
-# 0c0ff70761774bb4b43f42fc1b59a809
 msgid "math_factorial.py"
 msgstr ""
 
 #: ../../source/math/index.rst:484
-# 6c770ff4470e458685c101865fee1062
 msgid "``factorial()`` only works with whole numbers, but does accept ``float`` arguments as long as they can be converted to an integer without losing value."
 msgstr ""
 
 #: ../../source/math/index.rst:507
-# b446dc14f20245aa81bc38b2b2fdad22
 msgid "``gamma()`` is like ``factorial()``, except it works with real numbers and the value is shifted down by one (gamma is equal to ``(n - 1)!``)."
 msgstr ""
 
 #: ../../source/math/index.rst:0
-# 33b24f58485e4374b63af0b6a47dab81
 msgid "math_gamma.py"
 msgstr ""
 
 #: ../../source/math/index.rst:515
-# 767f62b1e8d74e77966b21bc642a59e2
 msgid "Since zero causes the start value to be negative, it is not allowed."
 msgstr ""
 
 #: ../../source/math/index.rst:535
-# caaf628ceb084c11ac6fa3e8b100fbe7
 msgid "``lgamma()`` returns the natural logarithm of the absolute value of gamma for the input value."
 msgstr ""
 
 #: ../../source/math/index.rst:0
-# 855b21da1afd48ab9c4a34c7feacf0ac
 msgid "math_lgamma.py"
 msgstr ""
 
 #: ../../source/math/index.rst:542
-# 641b4bd410f04f79818ed63ba26e0eb3
 msgid "Using ``lgamma()`` retains more precision than calculating the logarithm separately using the results of ``gamma()``."
 msgstr ""
 
 #: ../../source/math/index.rst:563
-# eed78244edef44f5907d67f4c01de384
 msgid "The modulo operator (``%``) computes the remainder of a division expression (i.e., ``5 % 2 = 1``).  The operator built into the language works well with integers but, as with so many other floating point operations, intermediate calculations cause representational issues that result in a loss of data.  ``fmod()`` provides a more accurate implementation for floating point values."
 msgstr ""
 
 #: ../../source/math/index.rst:0
-# 076e960ad12f4218a020bae23a6efeb9
 msgid "math_fmod.py"
 msgstr ""
 
 #: ../../source/math/index.rst:574
-# 2641cecb8e0a4b9390bb4d206d87ea10
 msgid "A potentially more frequent source of confusion is the fact that the algorithm used by ``fmod()`` for computing modulo is also different from that used by ``%``, so the sign of the result is different."
 msgstr ""
 
 #: ../../source/math/index.rst:594
-# 8985b3cdc1b54ddfad9fea3ce711bc62
 msgid "Use ``gcd()`` to find the largest integer that can divide evenly into two integers, the greatest common divisor."
 msgstr ""
 
 #: ../../source/math/index.rst:0
-# e2bdba4d9b114c20b51ac2540049204a
 msgid "math_gcd.py"
 msgstr ""
 
 #: ../../source/math/index.rst:601
-# 0cd9fb87d6d4496b9c89251c9d6395aa
 msgid "If both values are ``0``, the result is ``0``."
 msgstr ""
 
 #: ../../source/math/index.rst:620
-# 1f6e09f2a8574f74a9bee45f53859ea2
 msgid "Exponents and Logarithms"
 msgstr ""
 
 #: ../../source/math/index.rst:622
-# df02279b64ee4013b758b6da76344ffe
 msgid "Exponential growth curves appear in economics, physics, and other sciences.  Python has a built-in exponentiation operator (\"``**``\"), but ``pow()`` can be useful when a callable function is needed as an argument to another function."
 msgstr ""
 
 #: ../../source/math/index.rst:0
-# 457e8f42b54742b4a19cbbcead9361a6
 msgid "math_pow.py"
 msgstr ""
 
 #: ../../source/math/index.rst:631
-# 77095d29573348fc966879933a098b8f
 msgid "Raising ``1`` to any power always returns ``1.0``, as does raising any value to a power of ``0.0``.  Most operations on the not-a-number value ``nan`` return ``nan``.  If the exponent is less than ``1``, ``pow()`` computes a root."
 msgstr ""
 
 #: ../../source/math/index.rst:654
-# 3ccdcf2e61d34be49c0e26bd1fcc508e
 msgid "Since square roots (exponent of ``1/2``) are used so frequently, there is a separate function for computing them."
 msgstr ""
 
 #: ../../source/math/index.rst:0
-# cc275d117bd9469cbf0e0bb6cdf86829
 msgid "math_sqrt.py"
 msgstr ""
 
 #: ../../source/math/index.rst:661
-# 59b25ffca6ca492fb6a3e6b4fc727adb
 msgid "Computing the square roots of negative numbers requires *complex numbers*, which are not handled by ``math``.  Any attempt to calculate a square root of a negative value results in a ``ValueError``."
 msgstr ""
 
 #: ../../source/math/index.rst:680
-# f0ee184a734c471b920467000e241fad
 msgid "The logarithm function finds ``y`` where ``x = b ** y``.  By default, ``log()`` computes the natural logarithm (the base is *e*).  If a second argument is provided, that value is used as the base."
 msgstr ""
 
 #: ../../source/math/index.rst:0
-# 42934b87cb724b609d979383227d9c9a
 msgid "math_log.py"
 msgstr ""
 
 #: ../../source/math/index.rst:688
-# 2ca43e60bbe546a7b94cd0adcf452aa1
 msgid "Logarithms where ``x`` is less than one yield negative results."
 msgstr ""
 
 #: ../../source/math/index.rst:704
-# 851996e8305148f8b655b5d4cbe57aa3
 msgid "There are three variations of ``log()``.  Given floating point representation and rounding errors, the computed value produced by ``log(x, b)`` has limited accuracy, especially for some bases. ``log10()`` computes ``log(x, 10)``, using a more accurate algorithm than ``log()``."
 msgstr ""
 
 #: ../../source/math/index.rst:0
-# ad933d8aafcd424e9e0f427c9e50881e
 msgid "math_log10.py"
 msgstr ""
 
 #: ../../source/math/index.rst:714
-# dba13c1950d14853a94e63b499cda37c
 msgid "The lines in the output with trailing ``*`` highlight the inaccurate values."
 msgstr ""
 
 #: ../../source/math/index.rst:740
-# be1aa3de427b4c76be95f4c38975da42
 msgid "Similar to ``log10()``, ``log2()`` calculates the equivalent of ``math.log(x, 2)``."
 msgstr ""
 
 #: ../../source/math/index.rst:0
-# aac24ee466d14a49a38dcb5ee3f7407b
 msgid "math_log2.py"
 msgstr ""
 
 #: ../../source/math/index.rst:747
-# efab67f2183e4579af1aa524b82d85b6
 msgid "Depending on the underlying platform, using the built-in and special-purpose function can offer better performance and accuracy by using special-purpose algorithms for base 2 that are not found in the more general purpose function."
 msgstr ""
 
 #: ../../source/math/index.rst:775
-# ecffcaf94e0644a7958b76c72e3d981d
 msgid "``log1p()`` calculates the Newton-Mercator series (the natural logarithm of ``1+x``)."
 msgstr ""
 
 #: ../../source/math/index.rst:0
-# 0718051bfd434a7e954b441917be4f2c
 msgid "math_log1p.py"
 msgstr ""
 
 #: ../../source/math/index.rst:782
-# de4d9121cec64fee9c464f2e758561d4
 msgid "``log1p()`` is more accurate for values of ``x`` very close to zero because it uses an algorithm that compensates for round-off errors from the initial addition."
 msgstr ""
 
 #: ../../source/math/index.rst:801
-# 8d9b4f9c14694998ae45850302a7af83
 msgid "``exp()`` computes the exponential function (``e**x``)."
 msgstr ""
 
 #: ../../source/math/index.rst:0
-# 81504795577242c8b836850afaf56754
 msgid "math_exp.py"
 msgstr ""
 
 #: ../../source/math/index.rst:807
-# 89ad5b06fa1c4725be5e468bd59cf630
 msgid "As with other special-case functions, it uses an algorithm that produces more accurate results than the general-purpose equivalent ``math.pow(math.e, x)``."
 msgstr ""
 
 #: ../../source/math/index.rst:825
-# 668d8558874b48089fd2631335a288bc
 msgid "``expm1()`` is the inverse of ``log1p()``, and calculates ``e**x - 1``."
 msgstr ""
 
 #: ../../source/math/index.rst:0
-# 93c9e9481d964ceebed54836cccb0d4d
 msgid "math_expm1.py"
 msgstr ""
 
 #: ../../source/math/index.rst:832
-# 4afb8ea254904effa7a37a8d85a24df1
 msgid "Small values of ``x`` lose precision when the subtraction is performed separately, like with ``log1p()``."
 msgstr ""
 
 #: ../../source/math/index.rst:850
-# 8aee7c038db64c45bd5cef19ebcbf102
 msgid "Angles"
 msgstr ""
 
 #: ../../source/math/index.rst:852
-# 06f96290c6704490a20427b756e6e6b7
 msgid "Although degrees are more commonly used in everyday discussions of angles, radians are the standard unit of angular measure in science and math.  A radian is the angle created by two lines intersecting at the center of a circle, with their ends on the circumference of the circle spaced one radius apart."
 msgstr ""
 
 #: ../../source/math/index.rst:858
-# deada07b65074769a592b9458f99924c
 msgid "The circumference is calculated as ``2πr``, so there is a relationship between radians and π, a value that shows up frequently in trigonometric calculations.  That relationship leads to radians being used in trigonometry and calculus, because they result in more compact formulas."
 msgstr ""
 
 #: ../../source/math/index.rst:864
-# f4391e46a4104ff18c1c42cc6244e344
 msgid "To convert from degrees to radians, use ``radians()``."
 msgstr ""
 
 #: ../../source/math/index.rst:0
-# faedd4cb956149129f2bb34ad919d9e5
 msgid "math_radians.py"
 msgstr ""
 
 #: ../../source/math/index.rst:870
-# 57dcf95539d347e6ba4305f00e108649
 msgid "The formula for the conversion is ``rad = deg * π / 180``."
 msgstr ""
 
 #: ../../source/math/index.rst:893
-# c21b71117dc849a294b139cf1b794dbe
 msgid "To convert from radians to degrees, use ``degrees()``."
 msgstr ""
 
 #: ../../source/math/index.rst:0
-# 58ce6d7c25194bfeab2d336887c1f123
 msgid "math_degrees.py"
 msgstr ""
 
 #: ../../source/math/index.rst:899
-# 18fd0461a3484d8ebc7d93cef2809d14
 msgid "The formula is ``deg = rad * 180 / π``."
 msgstr ""
 
 #: ../../source/math/index.rst:924
-# 9ddfcdf77536474ba9e2d6f2b0c04a13
 msgid "Trigonometry"
 msgstr ""
 
 #: ../../source/math/index.rst:926
-# 0afae09eadac4bd8b7c23f58826f391a
 msgid "Trigonometric functions relate angles in a triangle to the lengths of its sides.  They show up in formulas with periodic properties such as harmonics, circular motion, or when dealing with angles.  All of the trigonometric functions in the standard library take angles expressed as radians."
 msgstr ""
 
 #: ../../source/math/index.rst:932
-# f272240a00424bce998a5ca0520c2d55
 msgid "Given an angle in a right triangle, the *sine* is the ratio of the length of the side opposite the angle to the hypotenuse (``sin A = opposite/hypotenuse``).  The *cosine* is the ratio of the length of the adjacent side to the hypotenuse (``cos A = adjacent/hypotenuse``). And the *tangent* is the ratio of the opposite side to the adjacent side (``tan A = opposite/adjacent``)."
 msgstr ""
 
 #: ../../source/math/index.rst:0
-# 1988bdb55b8c49efb6ee98501b7c7c60
 msgid "math_trig.py"
 msgstr ""
 
 #: ../../source/math/index.rst:943
-# 777956eef6f24f47975722fbfd865152
 msgid "The tangent can also be defined as the ratio of the sine of the angle to its cosine, and since the cosine is 0 for π/2 and 3π/2 radians, the tangent is infinite."
 msgstr ""
 
 #: ../../source/math/index.rst:973
-# b30d3318746d408b9fb61dd4356aa0f1
 msgid "Given a point ``(x, y)``, the length of the hypotenuse for the triangle between the points [(0, 0), (``x``, 0), (``x``, ``y``)] is ``(x**2 + y**2) ** 1/2``, and can be computed with ``hypot()``."
 msgstr ""
 
 #: ../../source/math/index.rst:0
-# fb8264935fc84effa78dd0031f233d72
 msgid "math_hypot.py"
 msgstr ""
 
 #: ../../source/math/index.rst:981
-# c59ea05a460c4740951c9ec9925acb56
 msgid "Points on the circle always have hypotenuse equal to 1."
 msgstr ""
 
 #: ../../source/math/index.rst:1002
-# 6802c3b01bc54f8683261371e4e9b27f
 msgid "The same function can be used to find the distance between two points."
 msgstr ""
 
 #: ../../source/math/index.rst:0
-# a3dabc72b49349e1ae233a72e0cc63bd
 msgid "math_distance_2_points.py"
 msgstr ""
 
 #: ../../source/math/index.rst:1008
-# 1efe354c9ea24ccaa9d0f310ef40077a
 msgid "Use the difference in the ``x`` and ``y`` values to move one endpoint to the origin, and then pass the results to ``hypot()``."
 msgstr ""
 
 #: ../../source/math/index.rst:1028
-# 59a97e90efba45cfa07763476f323b0c
 msgid "``math`` also defines inverse trigonometric functions."
 msgstr ""
 
 #: ../../source/math/index.rst:0
-# 70c7a0229c554594a883e3918a8bb728
 msgid "math_inverse_trig.py"
 msgstr ""
 
 #: ../../source/math/index.rst:1034
-# f4f5fb963131404d82ab088980fa3dbb
 msgid "``1.57`` is roughly equal to ``π/2``, or 90 degrees, the angle at which the sine is 1 and the cosine is 0."
 msgstr ""
 
 #: ../../source/math/index.rst:1063
-# 62847a5a0f1243638df69604fb3badf8
 msgid "Hyperbolic Functions"
 msgstr ""
 
 #: ../../source/math/index.rst:1065
-# 7620965a78f54a71a27fe6183792cd41
 msgid "Hyperbolic functions appear in linear differential equations and are used when working with electromagnetic fields, fluid dynamics, special relativity, and other advanced physics and mathematics."
 msgstr ""
 
 #: ../../source/math/index.rst:0
-# 8b97e8977e3e4ab1b982b2f7aa56f97d
 msgid "math_hyperbolic.py"
 msgstr ""
 
 #: ../../source/math/index.rst:1073
-# 712ad3d3608a456396124ddf628ee129
 msgid "Whereas the cosine and sine functions enscribe a circle, the hyperbolic cosine and hyperbolic sine form half of a hyperbola."
 msgstr ""
 
 #: ../../source/math/index.rst:1095
-# 6675bbcc1e7e4300b4f6612233373399
 msgid "Inverse hyperbolic functions ``acosh()``, ``asinh()``, and ``atanh()`` are also available."
 msgstr ""
 
 #: ../../source/math/index.rst:1099
-# c67ef2a0ea8f4a37994df622f09b29f8
 msgid "Special Functions"
 msgstr ""
 
 #: ../../source/math/index.rst:1101
-# 63b3a680c1b840129538aca642ee8921
 msgid "The Gauss Error function is used in statistics."
 msgstr ""
 
 #: ../../source/math/index.rst:0
-# 9e0412beb17d425fa2051c5c5ad343d8
 msgid "math_erf.py"
 msgstr ""
 
 #: ../../source/math/index.rst:1107
-# a1592279bca24740969f92b480ca100f
 msgid "For the error function, ``erf(-x) == -erf(x)``."
 msgstr ""
 
 #: ../../source/math/index.rst:1133
-# dd6e221730e54b3492aaba45c78bfa60
 msgid "The complimentary error function is ``1 - erf(x)``."
 msgstr ""
 
 #: ../../source/math/index.rst:0
-# 5145a8f17fa64efd8cdaa71eb6b8cb6b
 msgid "math_erfc.py"
 msgstr ""
 
 #: ../../source/math/index.rst:1139
-# cf1970e009e8462fa025849f5316ebee
 msgid "The implementation of ``erfc()`` avoids precision errors for small values of ``x`` when subtracting from 1."
 msgstr ""
 
 #: ../../source/math/index.rst:1169
-# 6b3773af5efc4f7a98c11a0d3ed8b653
 msgid ":pydoc:`math`"
 msgstr ""
 
 #: ../../source/math/index.rst:1171
-# 117a9d85d0c74922b3c31a70efe2da42
 msgid "`IEEE floating point arithmetic in Python <http://www.johndcook.com/blog/2009/07/21/ieee-arithmetic-python/>`__ -- Blog post by John Cook about how special values arise and are dealt with when doing math in Python."
 msgstr ""
 
 #: ../../source/math/index.rst:1176
-# 8eca63a57f0f4522a06d8845f02a9486
 msgid "`SciPy <http://scipy.org/>`_ -- Open source libraryes for scientific and mathematical calculations in Python."
 msgstr ""
 
 #: ../../source/math/index.rst:1179
-# 3e22c75f61824ceeb15c2edede6faf88
 msgid ":pep:`485` -- \"A function for testing approximate equality\""
 msgstr ""
 

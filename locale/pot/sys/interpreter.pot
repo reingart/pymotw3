@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,347 +17,278 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/sys/interpreter.rst:5
-# dc1f20b3ce574dc3ab88f613c7e52174
 msgid "Interpreter Settings"
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:7
-# 02b498e01d6045b781e5f5235d967835
 msgid "``sys`` contains attributes and functions for accessing compile-time or runtime configuration settings for the interpreter."
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:13
-# 81b1a5103ae54d7eb51852e25247dd94
 msgid "Build-time Version Information"
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:15
-# 21728e98a68547658b15952cc6ba230f
 msgid "The version used to build the C interpreter is available in a few forms.  ``sys.version`` is a human-readable string that usually includes the full version number as well as information about the build date, compiler, and platform.  ``sys.hexversion`` is easier to use for checking the interpreter version since it is a simple integer.  When formatted using ``hex()``, it is clear that parts of ``sys.hexversion`` come from the version information also visible in the more readable ``sys.version_info`` (a five-part namedtuple representing just the version number). The separate C API version used by the current interpreter is saved in ``sys.api_version``."
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:0
-# 4ffef55fad3c4a51aca3f2173405fe16
 msgid "sys_version_values.py"
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:30
-# bdca8198f3fc41fabe2ff121bcf067d8
 msgid "All of the values depend on the actual interpreter used to run the sample program."
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:52
-# c9c4d8d7508a4d60bbdbe808f292b121
 msgid "The operating system platform used to build the interpreter is saved as ``sys.platform``."
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:0
-# 37eba75905054e70b06d034d2cab3945
 msgid "sys_platform.py"
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:59
-# 80d34c75518d4434a1da8b9574a3bf95
 msgid "For most Unix systems, the value comes from combining the output of ``uname -s`` with the first part of the version in ``uname -r``. For other operating systems there is a hard-coded table of values."
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:77
-# d38056d31a44493f8a94dd6597a28711
 msgid "`Platform values <https://docs.python.org/3/library/sys.html#sys.platform>`_ -- Hard-coded values of ``sys.platform`` for systems without ``uname``."
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:83
-# 5592f88e7f254fb090b26fd4651909d5
 msgid "Interpreter Implementation"
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:85
-# dfd49d4508f64acea187ccff9a2e0dc6
 msgid "The CPython interpreter is one of several implementations of the Python language.  ``sys.implementation`` is provided to detect the current implementation for libraries that need to work around any differences in interpreters."
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:0
-# 64b44595adda4013a1fbd6149ef3980b
 msgid "sys_implementation.py"
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:94
-# cecaddd503234094af7798d2459d8406
 msgid "``sys.implementation.version`` is the same as ``sys.version_info`` for CPython, but will be different for other interpreters."
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:115
-# 26badeac188440808a615e0a333a6898
 msgid ":pep:`421` -- Adding ``sys.implementation``"
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:118
-# 53f6183608e24029b52af5065dc3a167
 msgid "Command Line Options"
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:120
-# 155a5321310944eaa79a35dd4a90b336
 msgid "The CPython interpreter accepts several command-line options to control its behavior, listed in :table:`CPython Command Line Option Flags`."
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:0
-# 836993fd16bd4781805068ef403f9c57
 msgid "CPython Command Line Option Flags"
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:128
-# 3cf9679249cf45ac839be58d1fd6f0b4
 msgid "Option"
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:129
-# 67e998d30e604b92ae7c85792a8b0c79
 msgid "Meaning"
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:130
-# 060d6ef0059c4f6b80564afba8dadc6e
 msgid "``-B``"
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:131
-# df4cab36ed3f4ca187b0133657561513
 msgid "do not write .py[co] files on import"
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:132
-# 180a15910a024f4ab7f147d16e7fc1d7
 msgid "``-b``"
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:133
-# 418bb22f0d1b4d619656aae83fed5451
 msgid "issue warnings about converting bytes to string without decoding properly and comparing bytes with strings"
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:135
-# 539ab4177af64c58b40d6d3f05f3a8b6
 msgid "``-bb``"
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:136
-# 46d08a37fdb84bcd84476e8f6f91f8dd
 msgid "convert bytes warnings to errors"
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:137
-# 9897120296354792912c3e1e8802161f
 msgid "``-d``"
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:138
-# f499aea3f2bf46f48da9b48eb44f4e86
 msgid "debug output from parser"
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:139
-# 3f2c09be83884869aa1dbbc88991fe53
 msgid "``-E``"
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:140
-# 93e3b0c9f62241b78a327d10b8fad739
 msgid "ignore PYTHON* environment variables (such as PYTHONPATH)"
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:141
-# 9cf211b7caf84a88991eb34f09899992
 msgid "``-i``"
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:142
-# c8f43a955519401482f3b258944dd86a
 msgid "inspect interactively after running script"
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:143
-# 7b22fff940964a119d9ef805521dcdec
 msgid "``-O``"
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:144
-# 79830ce1f10945109ac18cecf49e8350
 msgid "optimize generated bytecode slightly"
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:145
-# 1b1dc49b4d984fbcb081d63b6dd4ebd5
 msgid "``-OO``"
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:146
-# 0d512f78cc9142f09064e3a043781f01
 msgid "remove doc-strings in addition to the -O optimizations"
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:147
-# 3b3c65a6a7054ce89109c0357bd129e7
 msgid "``-s``"
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:148
-# fc3539df0c0d4fe981b53fc29810e39a
 msgid "do not add user site directory to sys.path"
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:149
-# 951bf658b3b048a08e7f499eae836691
 msgid "``-S``"
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:150
-# 198130b336b84d81a9107fd77a09d7db
 msgid "do not run 'import site' on initialization"
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:151
-# de9ac3192b3d4b46b25c2bd77f0a4dbe
 msgid "``-t``"
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:152
-# 9080aff8b5804dad959b9ac09f07311c
 msgid "issue warnings about inconsistent tab usage"
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:153
-# 608284ff936d49cf88ff363078092caf
 msgid "``-tt``"
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:154
-# f3a049535cc5495da496db455b967d13
 msgid "issue errors for inconsistent tab usage"
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:155
-# 971d74fbc4234776a69b7d0155351547
 msgid "``-v``"
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:156
-# 3c2a20a4369d4e6a88e0a35fdd3b0834
 msgid "verbose"
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:158
-# 061e684b5e364588b31606b8abab7eee
 msgid "Some of these are available for programs to check through ``sys.flags``."
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:0
-# fdd5458f21de458bac71c176675dad3e
 msgid "sys_flags.py"
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:165
-# bafdc7ed5e54421c9ad69dc475f24087
 msgid "Experiment with ``sys_flags.py`` to learn how the command line options map to the flags settings."
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:186
-# 9935e221f21f4f259db06679808f68d6
 msgid "Unicode Defaults"
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:188
-# 73043594531c4ebaa8cf37b5833c2ad7
 msgid "To get the name of the default Unicode encoding the interpreter is using, call ``getdefaultencoding()``.  The value is set during start-up, and cannot be changed."
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:192
-# f2cb16128e46423b95bfcef619fe06ec
 msgid "The internal encoding default and the file system encoding may be different for some operating systems, so there is a separate way to retrieve the file system setting.  ``getfilesystemencoding()`` returns an OS-specific (*not* file system-specific) value."
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:0
-# c49f9d9bc2384616aef2daa89fa1f852
 msgid "sys_unicode.py"
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:201
-# 9bc01f0ecd4745e8882077858024fc39
 msgid "Rather than relying on the global default encoding, most Unicode experts recommend making an application explicitly Unicode-aware. This provides two benefits: different Unicode encodings for different data sources can be handled more cleanly, and the number of assumptions about encodings in the application code is reduced."
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:222
-# 0258681819ba4d06b8de2803f35259d3
 msgid "Interactive Prompts"
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:224
-# 52acded2ace54ad5a00e8da9f19da9d6
 msgid "The interactive interpreter uses two separate prompts for indicating the default input level (``ps1``) and the \"continuation\" of a multi-line statement (``ps2``).  The values are only used by the interactive interpreter."
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:238
-# 6182fc9a85d5471fb20810e4838572e1
 msgid "Either or both prompt can be changed to a different string."
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:252
-# ae324aadaa71460d82a52cd0713ef6dd
 msgid "Alternately, any object that can be converted to a string (via ``__str__``) can be used for the prompt."
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:0
-# cc55b57eee4f4ea2a02421be614cb1a5
 msgid "sys_ps1.py"
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:259
-# e7b98a513fe44a11a401e6928d7eebd7
 msgid "The ``LineCounter`` keeps track of how many times it has been used, so the number in the prompt increases each time."
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:277
-# 0ebefcaeb1f847e2a3bb915f67315857
 msgid "Display Hook"
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:279
-# 1218b818fcb449b2b42e7de87699ab40
 msgid "``sys.displayhook`` is invoked by the interactive interpreter each time the user enters an expression.  The result of evaluating the expression is passed as the only argument to the function."
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:0
-# 2d31c2734d82467babe474401ddb1fbe
 msgid "sys_displayhook.py"
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:287
-# ca7bbfa917ff4bccaa359198261b9499
 msgid "The default value (saved in ``sys.__displayhook__``) prints the result to stdout and saves it in ``_`` for easy reference later."
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:329
-# 938f9013c69e48ec90a77b3c55e9c4fd
 msgid "Install Location"
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:331
-# c73b785ae7854b89a60e84427af36a27
 msgid "The path to the actual interpreter program is available in ``sys.executable`` on all systems for which having a path to the interpreter makes sense.  This can be useful for ensuring that the correct interpreter is being used, and also gives clues about paths that might be set based on the interpreter location."
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:337
-# c2793da84ff34f54935eb3e3a31b6827
 msgid "``sys.prefix`` refers to the parent directory of the interpreter installation.  It usually includes ``bin`` and ``lib`` directories for executables and installed modules, respectively."
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:0
-# e384e8fd10ed41469a71888bf5acfe2f
 msgid "sys_locations.py"
 msgstr ""
 
 #: ../../source/sys/interpreter.rst:345
-# 744ff94f1679425db2b15f8aff5d58b9
 msgid "This example output was produced on a Mac running a framework build installed from python.org."
 msgstr ""
 

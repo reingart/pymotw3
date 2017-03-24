@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,202 +17,162 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/enum/index.rst:3
-# f91a4bd09ef847a1a1dedac4c8cca158
 msgid "enum -- Enumeration Type"
 msgstr ""
 
 #: ../../source/enum/index.rst:8
-# f946756746d946bc9279d0bcb4e3aa8f
 msgid "The ``enum`` module defines an enumeration type with iteration and comparison capabilities. It can be used to create well-defined symbols for values, instead of using literal integers or strings."
 msgstr ""
 
 #: ../../source/enum/index.rst:13
-# 8d8d4bd864914ec9a8a7e9a4c95d80e9
 msgid "Creating Enumerations"
 msgstr ""
 
 #: ../../source/enum/index.rst:15
-# 6194baa8a89d4a9bb57114f34479ea36
 msgid "A new enumeration is defined using the ``class`` syntax by subclassing ``Enum`` and adding class attributes describing the values."
 msgstr ""
 
 #: ../../source/enum/index.rst:0
-# e98628600be14a6393613d58e1a6122b
 msgid "enum_create.py"
 msgstr ""
 
 #: ../../source/enum/index.rst:22
-# d03bf58dd6c344b5818d3c8fff01508e
 msgid "The members of the ``Enum`` are converted to instances as the class is parsed. Each instance has a ``name`` property corresponding to the member name and a ``value`` property corresponding to the value assigned to the name in the class definition."
 msgstr ""
 
 #: ../../source/enum/index.rst:42
-# 6454a8ad5046463a89c7218187cf4d9a
 msgid "Iteration"
 msgstr ""
 
 #: ../../source/enum/index.rst:44
-# bf709035ca474d95a77a2be53643d90b
 msgid "Iterating over the enum *class* produces the individual members of the enumeration."
 msgstr ""
 
 #: ../../source/enum/index.rst:0
-# 33054679aa9e4c98abc1f14c741e58a8
 msgid "enum_iterate.py"
 msgstr ""
 
 #: ../../source/enum/index.rst:51
-# 09b7e254c40a4f009e3b89e972d88fa4
 msgid "The members are produced in the order they are declared in the class definition. The names and values are not used to sort them in any way."
 msgstr ""
 
 #: ../../source/enum/index.rst:73
-# 97eb21848abd4a4f9d0d369351a77b03
 msgid "Comparing Enums"
 msgstr ""
 
 #: ../../source/enum/index.rst:75
-# 00bacde08d0749c287397010545e6482
 msgid "Because enumeration members are not ordered, they support only comparison by identity and equality."
 msgstr ""
 
 #: ../../source/enum/index.rst:0
-# 637d6125f89b4caebceba81d380b0591
 msgid "enum_comparison.py"
 msgstr ""
 
 #: ../../source/enum/index.rst:82
-# 218bbc94c4374df78b1de6995d322e29
 msgid "The greater-than and less-than comparison operators raise ``TypeError`` exceptions."
 msgstr ""
 
 #: ../../source/enum/index.rst:100
-# eaec1f721b444ea1a5fc8b4daa64b97f
 msgid "Use the ``IntEnum`` class for enumerations where the members need to behave more like numbers---for example, to support comparisons."
 msgstr ""
 
 #: ../../source/enum/index.rst:0
-# 412c3b8bce054f1eb400481c900118c2
 msgid "enum_intenum.py"
 msgstr ""
 
 #: ../../source/enum/index.rst:127
-# 0dd5a84db1ff4e03afc5f9bef78f87c0
 msgid "Unique Enumeration Values"
 msgstr ""
 
 #: ../../source/enum/index.rst:129
-# acd2639f6c534c81957bac927f78d5ca
 msgid "Enum members with the same value are tracked as alias references to the same member object. Aliases do not cause repeated values to be present in the iterator for the ``Enum``."
 msgstr ""
 
 #: ../../source/enum/index.rst:0
-# 38e86a990c6044b4b5f7706a617e157a
 msgid "enum_aliases.py"
 msgstr ""
 
 #: ../../source/enum/index.rst:137
-# 10609e8dfb4c4ff5aad20df061bec51f
 msgid "Because ``by_design`` and ``closed`` are aliases for other members, they do not appear separately in the output when iterating over the ``Enum``. The canonical name for a member is the first name attached to the value."
 msgstr ""
 
 #: ../../source/enum/index.rst:163
-# e197c4bb565249ca87cd0e1e2c73f71c
 msgid "To require all members to have unique values, add the ``@unique`` decorator to the ``Enum``."
 msgstr ""
 
 #: ../../source/enum/index.rst:0
-# 642a5bb89be64b38971c38b8feb788f6
 msgid "enum_unique_enforce.py"
 msgstr ""
 
 #: ../../source/enum/index.rst:170
-# 18b9c50aca044cb5876d4f1bea0bb2f0
 msgid "Members with repeated values trigger a ``ValueError`` exception when the ``Enum`` class is being interpreted."
 msgstr ""
 
 #: ../../source/enum/index.rst:193
-# 221618bb52a7410bbc5a3c61f716b3a4
 msgid "Creating Enumerations Programmatically"
 msgstr ""
 
 #: ../../source/enum/index.rst:195
-# d4996b9bd26747e5b9967dab1b7de430
 msgid "In some cases, it is more convenient to create enumerations programmatically, rather than hard-coding them in a class definition. For those situations, ``Enum`` also supports passing the member names and values to the class constructor."
 msgstr ""
 
 #: ../../source/enum/index.rst:0
-# ce93d791b707468a9c60a6cdc86f0124
 msgid "enum_programmatic_create.py"
 msgstr ""
 
 #: ../../source/enum/index.rst:204
-# c12f881880ad417189994bb0ddeedba4
 msgid "The ``value`` argument is the name of the enumeration, which is used to build the representation of members. The ``names`` argument lists the members of the enumeration. When a single string is passed, it is split on whitespace and commas, and the resulting tokens are used as names for the members, which are automatically assigned values starting with ``1``."
 msgstr ""
 
 #: ../../source/enum/index.rst:232
-# a24acb6cb9e44f5fa5e439c1f4d7d3bd
 msgid "For more control over the values associated with members, the ``names`` string can be replaced with a sequence of two-part tuples or a dictionary mapping names to values."
 msgstr ""
 
 #: ../../source/enum/index.rst:0
-# 54a857b358fd428dbec53fec5e1b122e
 msgid "enum_programmatic_mapping.py"
 msgstr ""
 
 #: ../../source/enum/index.rst:240
-# b1934b7f1b594059a8bd0e7b3e325ffd
 msgid "In this example, a list of two-part tuples is given instead of a single string containing only the member names. This makes it possible to reconstruct the ``BugStatus`` enumeration with the members in the same order as the version defined in ``enum_create.py``."
 msgstr ""
 
 #: ../../source/enum/index.rst:265
-# f4a9271c75ac452bb399bcc2c4d06c06
 msgid "Non-integer Member Values"
 msgstr ""
 
 #: ../../source/enum/index.rst:267
-# 0dd9a1e2a8f9472da5fce5c96b2b8a64
 msgid "Enum member values are not restricted to integers. In fact, any type of object can be associated with a member. If the value is a tuple, the members are passed as individual arguments to ``__init__()``."
 msgstr ""
 
 #: ../../source/enum/index.rst:0
-# af3cd33b3c2e4b34bf2beee21f9aafc5
 msgid "enum_tuple_values.py"
 msgstr ""
 
 #: ../../source/enum/index.rst:275
-# de6e1994cbb54811a6f42a4ec2d9d8af
 msgid "In this example, each member value is a tuple containing the numerical ID (such as might be stored in a database) and a list of valid transitions away from the current state."
 msgstr ""
 
 #: ../../source/enum/index.rst:294
-# cbf0a176561348a59ea29dfe779d34d3
 msgid "For more complex cases, tuples might become unwieldy. Since member values can be any type of object, dictionaries can be used for cases where there are a lot of separate attributes to track for each enum value. Complex values are passed directly to ``__init__()`` as the only argument other than ``self``."
 msgstr ""
 
 #: ../../source/enum/index.rst:0
-# 6e2b51f2f0134e83ba04d7ad9d445fcd
 msgid "enum_complex_values.py"
 msgstr ""
 
 #: ../../source/enum/index.rst:304
-# 54899d4226584115830e14821e736517
 msgid "This example expresses the same data as the previous example, using dictionaries rather than tuples."
 msgstr ""
 
 #: ../../source/enum/index.rst:324
-# bfdee9d78103463db5edf4e0162b6f34
 msgid ":pydoc:`enum`"
 msgstr ""
 
 #: ../../source/enum/index.rst:326
-# e780c048db034c92a27f4209db15cafa
 msgid ":pep:`435` -- Adding an Enum type to the Python standard library"
 msgstr ""
 
 #: ../../source/enum/index.rst:328
-# d92a2736c5ee4f21800ccb70a945ff22
 msgid "`flufl.enum <http://pythonhosted.org/flufl.enum/>`_ -- The original inspiration for ``enum``, by Barry Warsaw."
 msgstr ""
 

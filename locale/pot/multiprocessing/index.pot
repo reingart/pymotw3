@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PyMOTW-3 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-24 20:15-0300\n"
+"POT-Creation-Date: 2017-03-24 20:41-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,47 +17,38 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../source/multiprocessing/index.rst:3
-# 73d1e0a8b0c341029ead9e3ab7bd45d8
 msgid "multiprocessing --- Manage Processes Like Threads"
 msgstr ""
 
 #: ../../source/multiprocessing/index.rst:8
-# 1ab74b19d22d47e6b3ee7ba05a68df20
 msgid "Provides an API for managing processes."
 msgstr ""
 
 #: ../../source/multiprocessing/index.rst:10
-# 498962a7bf694865ac6d05e3c50509d2
 msgid "The ``multiprocessing`` module includes an API for dividing work up between multiple processes based on the API for :mod:`threading`.  In some cases ``multiprocessing`` is a drop-in replacement, and can be used instead of ``threading`` to take advantage of multiple CPU cores to avoid computational bottlenecks associated with Python's global interpreter lock."
 msgstr ""
 
 #: ../../source/multiprocessing/index.rst:17
-# 15080ec3399647fabece70d9586a2bda
 msgid "Due to the similarity, the first few examples here are modified from the ``threading`` examples.  Features provided by ``multiprocessing`` but not available in ``threading`` are covered later."
 msgstr ""
 
 #: ../../source/multiprocessing/index.rst:31
-# 0b4e96b73e934ce4a8660931af7319da
 msgid ":pydoc:`multiprocessing`"
 msgstr ""
 
 #: ../../source/multiprocessing/index.rst:33
-# c459b076f81e42b4b54ed9c7509cb5a0
 msgid ":mod:`threading` -- High-level API for working with threads."
 msgstr ""
 
 #: ../../source/multiprocessing/index.rst:35
-# f34e1e0bb1f542ffbe5d464043f41315
 msgid "`MapReduce - Wikipedia <https://en.wikipedia.org/wiki/MapReduce>`__ -- Overview of MapReduce on Wikipedia."
 msgstr ""
 
 #: ../../source/multiprocessing/index.rst:39
-# 666954c8f294474b865ade2055e1b296
 msgid "`MapReduce: Simplified Data Processing on Large Clusters <http://research.google.com/archive/mapreduce.html>`__ -- Google Labs presentation and paper on MapReduce."
 msgstr ""
 
 #: ../../source/multiprocessing/index.rst:43
-# 57936ff08c0f478192ce637929945496
 msgid ":mod:`operator` -- Operator tools such as ``itemgetter``."
 msgstr ""
 
